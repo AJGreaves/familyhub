@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Delius|News+Cycle|Patrick+Hand+SC&display=swap");
+/* Fonts */
+body {
+  font-family: "News Cycle", sans-serif;
+  color: #000034; }
+
+h1, h2 {
+  font-family: "Delius", cursive;
+  color: #ed6a5a; }
+
+.navbar {
+  font-family: "Delius", cursive; }
+
+/*# sourceMappingURL=main.css.map */
