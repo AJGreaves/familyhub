@@ -11,4 +11,20 @@ h1, h2 {
 .navbar {
   font-family: "Delius", cursive; }
 
+/* Background colours */
+.bg-platinum {
+  background-color: #e6ebe0; }
+
+/* Background images */
+.hero-img {
+  height: 400px;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  position: relative; }
+
+.hero-home {
+  background-image: url("https://annagilhespy.com/wp-content/uploads/2019/02/heroabout.jpg");
+  background-position: center 35%; }
+
 /*# sourceMappingURL=main.css.map */
