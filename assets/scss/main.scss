@@ -25,10 +25,45 @@ body {
 h1, h2 {
     font-family: $heading;
     color: $terracotta;
+    margin-top: 2.5rem;
 }
 
 .navbar {
     font-family: $heading;
+}
+
+/* Icons */
+
+.fa-chevron-right,
+.fa-chevron-left {
+    font-size: 2.5rem;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: $light-blue;
+    border: $light-blue;
+}
+
+.btn-primary:hover {
+    background-color: $mid-blue;
+    border: $mid-blue;
+}
+
+.btn-search {
+    color: #fff;
+    background-color: $terracotta;
+    border: $terracotta;
+    opacity: 0.8;
+}
+
+.btn-search:hover {
+    opacity: 1;
+    color: #fff;
+}
+
+.heading-btn {
+    margin-top: 2.7rem;
 }
 
 /* Background colours */
@@ -42,6 +77,11 @@ h1, h2 {
 .container-fluid,
 .row {
     padding: 0;
+}
+
+hr {
+    border-top: 2px solid $dark-blue;
+    opacity: 0.5;
 }
 
 /* Background images */
@@ -63,4 +103,26 @@ h1, h2 {
 
 .carousel-chevron {
     color: $blond;
+}
+
+.carousel-control-prev, 
+.carousel-control-next {
+    width: 10%;
+}
+
+/* CARDS */
+
+/* MEDIA QUERIES */
+
+/* medium size screens and up */
+@media screen and (min-width: 768px) {
+    .fa-chevron-right,
+    .fa-chevron-left {
+        font-size: 4rem;
+    }
+    /* creates more space around carousel controls in medium screens and up */
+    .carousel-control-prev, 
+    .carousel-control-next {
+        width: 15%;
+    }
 }

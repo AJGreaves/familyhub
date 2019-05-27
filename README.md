@@ -193,6 +193,7 @@ Further reading and troubleshooting on cloning a repository from GitHub [here](h
 - The photographs for the hero images were sourced from [Pexels](https://www.pexels.com/)
 
 ### Code
+- Template code for multi-card carousel using bootstrap classes taken from [MDBootstrap](https://mdbootstrap.com/docs/jquery/javascript/carousel/) and heavily modified to suit the sites needs.
 - Box shadow codes were generated at [CSS matic | box-shadow](https://cssmatic.com/box-shadow).
 - Code for adding the correct prefixes to css was created using [AutoPrefixer](https://autoprefixer.github.io/).
 
