@@ -15,6 +15,11 @@ h1, h2 {
 .bg-platinum {
   background-color: #e6ebe0; }
 
+/* CONTAINERS */
+.container-fluid,
+.row {
+  padding: 0; }
+
 /* Background images */
 .hero-img {
   height: 400px;
@@ -24,7 +29,7 @@ h1, h2 {
   position: relative; }
 
 .hero-home {
-  background-image: url("https://annagilhespy.com/wp-content/uploads/2019/02/heroabout.jpg");
-  background-position: center 35%; }
+  background-image: url("https://i.ibb.co/744CXN6/painthands.jpg");
+  background-position: center; }
 
 /*# sourceMappingURL=main.css.map */

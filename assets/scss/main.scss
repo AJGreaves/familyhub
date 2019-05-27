@@ -37,6 +37,13 @@ h1, h2 {
     background-color: $platinum;
 }
 
+/* CONTAINERS */
+
+.container-fluid,
+.row {
+    padding: 0;
+}
+
 /* Background images */
 
 .hero-img{
@@ -48,6 +55,6 @@ h1, h2 {
 }
 
 .hero-home{
-    background-image: url("https://annagilhespy.com/wp-content/uploads/2019/02/heroabout.jpg");
-    background-position: center 35%;
+    background-image: url("https://i.ibb.co/744CXN6/painthands.jpg");
+    background-position: center;
 }
