@@ -196,7 +196,7 @@ and edited slightly to fit project needs */
 }
 
 hr {
-    border-top: 2px solid $dark-blue;
+    border-top: 2px solid $mid-blue;
     opacity: 0.5;
 }
 
@@ -260,6 +260,15 @@ shadow added to give depth and contrast with the image for readability */
 .carousel-control-prev,
 .carousel-control-next {
     width: 10%;
+}
+
+/* CARDS */
+.familyhub-card {
+    margin-bottom: 1rem;
+}
+
+#search-page-wrapper .familyhub-card {
+    margin-bottom: 2rem;
 }
 
 /* FOOTER */

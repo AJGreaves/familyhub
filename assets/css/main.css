@@ -143,7 +143,7 @@ and edited slightly to fit project needs */
   padding: 0; }
 
 hr {
-  border-top: 2px solid #000034;
+  border-top: 2px solid #5ca4a9;
   opacity: 0.5; }
 
 footer hr {
@@ -195,6 +195,13 @@ shadow added to give depth and contrast with the image for readability */
 .carousel-control-prev,
 .carousel-control-next {
   width: 10%; }
+
+/* CARDS */
+.familyhub-card {
+  margin-bottom: 1rem; }
+
+#search-page-wrapper .familyhub-card {
+  margin-bottom: 2rem; }
 
 /* FOOTER */
 footer {
