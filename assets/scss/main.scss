@@ -2,12 +2,9 @@
 
 // VARIABLES 
 // fonts
-$main-text: 'News Cycle',
-sans-serif;
-$heading: 'Delius',
-cursive;
-$capitalized-heading: 'Patrick Hand SC',
-cursive;
+$main-text: 'News Cycle', sans-serif;
+$heading: 'Delius', cursive;
+$capitalized-heading: 'Patrick Hand SC', cursive;
 
 // colours 
 $platinum: #e6ebe0;
@@ -267,9 +264,43 @@ shadow added to give depth and contrast with the image for readability */
     width: 10%;
 }
 
+/* SEARCH FILTER */
+
+.filter-heading {
+    margin: 0;
+}
+
+.filter-heading-button {
+    font-family: $main-text;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: all 0.5s ease-in-out 0.1s;
+    color: $mid-blue;
+    /* overriding bootstrap css */
+    text-decoration: none;
+}
+
+.filter-heading-button:hover {
+    color: $dark-blue;
+    text-decoration: none;
+}
+
+.btn-link:focus {
+    text-decoration: none;
+}
+
 /* CARDS */
 .familyhub-card {
     margin-bottom: 1rem;
+}
+
+.familyhub-card-header {
+    padding: 0;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.filter-options {
+    color: $dark-blue;
 }
 
 #search-page-wrapper .familyhub-card {

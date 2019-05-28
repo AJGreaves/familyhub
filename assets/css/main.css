@@ -200,9 +200,36 @@ shadow added to give depth and contrast with the image for readability */
 .carousel-control-next {
   width: 10%; }
 
+/* SEARCH FILTER */
+.filter-heading {
+  margin: 0; }
+
+.filter-heading-button {
+  font-family: "News Cycle", sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  transition: all 0.5s ease-in-out 0.1s;
+  color: #5ca4a9;
+  /* overriding bootstrap css */
+  text-decoration: none; }
+
+.filter-heading-button:hover {
+  color: #000034;
+  text-decoration: none; }
+
+.btn-link:focus {
+  text-decoration: none; }
+
 /* CARDS */
 .familyhub-card {
   margin-bottom: 1rem; }
+
+.familyhub-card-header {
+  padding: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
+
+.filter-options {
+  color: #000034; }
 
 #search-page-wrapper .familyhub-card {
   margin-bottom: 2rem; }
