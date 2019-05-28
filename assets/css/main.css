@@ -19,6 +19,11 @@ footer h4 {
   text-transform: uppercase;
   margin-top: 1rem; }
 
+#search-results {
+  font-family: "News Cycle", sans-serif;
+  font-size: 1.8rem;
+  color: #000034; }
+
 .navbar {
   font-family: "Delius", cursive; }
 
