@@ -68,37 +68,159 @@
                     <!--START: Actitivies search filters -->
                     <form id="activity-filters" class="col-lg-3">
                         <div class="accordion" id="activity-filters-accordion">
+                            
+                            <!-- Location Options -->
                             <div class="card">
                                 <div class="familyhub-card-header" id="activity-filter-location">
                                     <h2 class="filter-heading">
-                                        <button class="btn btn-link filter-heading-button" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <button class="btn btn-link filter-heading-button" type="button" data-toggle="collapse" data-target="#collapseLocation" aria-expanded="true" aria-controls="collapseLocation">
                                             Location
                                         </button>
                                     </h2>
                                 </div>
 
-                                <div id="collapseOne" class="collapse filter-options show" aria-labelledby="activity-filter-location" data-parent="#activity-filters-accordion">
+                                <div id="collapseLocation" class="collapse filter-options show" aria-labelledby="activity filter by location" data-parent="#activity-filters-accordion">
                                     <div class="card-body">
-                                        
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="aalsmeer">
+                                            <label class="form-check-label" for="aalsmeer">
+                                            Aalsmeer
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="badhoevedorp">
+                                            <label class="form-check-label" for="badhoevedorp">
+                                            Badhoevedorp
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="bloemendaal">
+                                            <label class="form-check-label" for="bloemendaal">
+                                            Bloemendaal
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="cruquius">
+                                            <label class="form-check-label" for="cruquius">
+                                            Cruquius
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="haarlem">
+                                            <label class="form-check-label" for="haarlem">
+                                            Haarlem
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="heemstede">
+                                            <label class="form-check-label" for="heemstede">
+                                            Heemstede
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="hillegom">
+                                            <label class="form-check-label" for="hillegom">
+                                            Hillegom
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="hoofddorp">
+                                            <label class="form-check-label" for="hoofddorp">
+                                            Hoofddorp
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="lisse">
+                                            <label class="form-check-label" for="lisse">
+                                            Lisse
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="nieuw-vennep">
+                                            <label class="form-check-label" for="nieuw-vennep">
+                                            Nieuw-Vennep
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="santpoort-noord">
+                                            <label class="form-check-label" for="santpoort-noord">
+                                            Santpoort-Noord
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="uithorn">
+                                            <label class="form-check-label" for="uithorn">
+                                            Uithorn
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="zandvoort">
+                                            <label class="form-check-label" for="zandvoort">
+                                            Zandvoort
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            
+                            <!-- Category Options -->
                             <div class="card">
-                                <div class="familyhub-card-header" id="headingTwo">
+                                <div class="familyhub-card-header" id="activity-filter-category">
                                     <h2 class="filter-heading">
-                                        <button class="btn btn-link filter-heading-button collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                            Collapsible Group Item #2
+                                        <button class="btn btn-link filter-heading-button collapsed" type="button" data-toggle="collapse" data-target="#collapseCategory" aria-expanded="false" aria-controls="collapseCategory">
+                                            Category
                                         </button>
                                     </h2>
                                 </div>
-                                <div id="collapseTwo" class="collapse filter-options" aria-labelledby="headingTwo" data-parent="#activity-filters-accordion">
+                                <div id="collapseCategory" class="collapse filter-options" aria-labelledby="activity filter by category" data-parent="#activity-filters-accordion">
                                     <div class="card-body">
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
-                                        on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
-                                        craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="sports">
+                                            <label class="form-check-label" for="sports">
+                                            Sports
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="creative">
+                                            <label class="form-check-label" for="creative">
+                                            Creative
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="scienceTech">
+                                            <label class="form-check-label" for="scienceTech">
+                                            Science & Tech
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="cultureMusic">
+                                            <label class="form-check-label" for="cultureMusic">
+                                            Cultural & Music
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="yogaMindfulness">
+                                            <label class="form-check-label" for="yogaMindfulness">
+                                            Yoga & Mindfulnes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="museumsExhibitions">
+                                            <label class="form-check-label" for="nature">
+                                            Museums & Exhibitions
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="parksPlaygrounds">
+                                            <label class="form-check-label" for="hillegom">
+                                            Parks & playgrounds
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            
+                            <!-- Age Range Options -->
                             <div class="card">
                                 <div class="familyhub-card-header" id="headingThree">
                                     <h2 class="filter-heading">
