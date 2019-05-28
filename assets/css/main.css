@@ -144,7 +144,8 @@ shadow added to give depth and contrast with the image for readability */
 /* FOOTER */
 footer {
   background-color: #5ca4a9;
-  color: white; }
+  color: white;
+  margin-top: 3rem; }
 
 footer p,
 footer a {
