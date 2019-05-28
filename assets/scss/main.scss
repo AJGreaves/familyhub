@@ -28,6 +28,14 @@ h1, h2 {
     margin-top: 2.5rem;
 }
 
+footer h3 {
+    font-family: $main-text;
+    font-size: 1rem;
+    color: white;
+    text-transform: uppercase;
+    margin-top: 1rem;
+}
+
 .navbar {
     font-family: $heading;
 }
@@ -110,7 +118,19 @@ hr {
     width: 10%;
 }
 
-/* CARDS */
+/* FOOTER */
+
+footer {
+    background-color: $mid-blue;
+    color: white;
+}
+
+footer p,
+footer a {
+    margin-bottom: 0.3rem;
+    color: $platinum;
+    display: block;
+}
 
 /* MEDIA QUERIES */
 

@@ -9,6 +9,13 @@ h1, h2 {
   color: #ed6a5a;
   margin-top: 2.5rem; }
 
+footer h3 {
+  font-family: "News Cycle", sans-serif;
+  font-size: 1rem;
+  color: white;
+  text-transform: uppercase;
+  margin-top: 1rem; }
+
 .navbar {
   font-family: "Delius", cursive; }
 
@@ -72,7 +79,16 @@ hr {
 .carousel-control-next {
   width: 10%; }
 
-/* CARDS */
+/* FOOTER */
+footer {
+  background-color: #5ca4a9;
+  color: white; }
+
+footer p,
+footer a {
+  margin-bottom: 0.3rem;
+  color: #e6ebe0; }
+
 /* MEDIA QUERIES */
 /* medium size screens and up */
 @media screen and (min-width: 768px) {
