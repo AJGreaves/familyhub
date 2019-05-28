@@ -7,6 +7,7 @@ body {
 h1, h2 {
   font-family: "Delius", cursive;
   color: #ed6a5a;
+  font-size: 1.8rem;
   margin-top: 2.5rem; }
 
 footer h3,
@@ -251,6 +252,10 @@ html {
     width: 75%; } }
 /* medium size screens and up */
 @media screen and (min-width: 768px) {
+  h1,
+  h2 {
+    font-size: 2.5rem; }
+
   .fa-chevron-right,
   .fa-chevron-left {
     font-size: 4rem; }

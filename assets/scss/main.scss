@@ -25,6 +25,7 @@ body {
 h1, h2 {
     font-family: $heading;
     color: $terracotta;
+    font-size: 1.8rem;
     margin-top: 2.5rem;
 }
 
@@ -325,6 +326,11 @@ html {
 
 /* medium size screens and up */
 @media screen and (min-width: 768px) {
+    h1, 
+    h2 {
+        font-size: 2.5rem;
+    }
+    
     .fa-chevron-right,
     .fa-chevron-left {
         font-size: 4rem;
