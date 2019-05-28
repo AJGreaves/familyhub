@@ -207,24 +207,36 @@ footer a:hover {
 
 /* MODALS */
 #search-modal {
+  display: none;
   height: 100vh;
-  width: 100vw;
   position: fixed;
   z-index: 100;
   bottom: 0;
   right: 0;
-  /* makes modal background darker but still has transparency */
-  background-color: rgba(0, 0, 0, 0.4); }
+  /* makes modal background darker but still has transparency 
+  stops content inside tihs element also being transparent, 
+  which was what was happening when using opacity */
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: all 0.5 linear; }
 
 .search-modal-content-box {
-  max-width: 800px;
-  height: 400px;
+  max-width: 550px;
+  height: 300px;
   margin: 4rem;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
   background-color: white;
   border-radius: 8px;
   border: 1px solid black;
   /* Credit: code for box shadow taken from https://codepen.io/sdthornton/pen/wBZdXq */
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+
+#search-input-field {
+  width: 100%; }
+
+#search-modal-submit-button {
+  margin-top: 1rem;
+  text-align: center; }
 
 /* scroll behaviour, adds smooth scrolling when 
 jumping to different parts of the same page */
@@ -232,6 +244,11 @@ html {
   scroll-behavior: smooth; }
 
 /* MEDIA QUERIES */
+/* small size screens and up */
+@media screen and (min-width: 576px) {
+  /* keeps search bar and search button in one line */
+  #search-input-field {
+    width: 75%; } }
 /* medium size screens and up */
 @media screen and (min-width: 768px) {
   .fa-chevron-right,
@@ -250,6 +267,10 @@ html {
 
   #search-btn {
     right: 30px;
-    bottom: 100px; } }
+    bottom: 100px; }
+
+  #search-input-field {
+    /* keeps search bar and search button in one line */
+    width: 80%; } }
 
 /*# sourceMappingURL=main.css.map */
