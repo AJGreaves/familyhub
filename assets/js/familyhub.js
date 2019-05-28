@@ -5,8 +5,10 @@ window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     document.getElementById("to-top-btn").style.display = "block";
+    document.getElementById("search-btn").style.display = "block";
   } else {
     document.getElementById("to-top-btn").style.display = "none";
+    document.getElementById("search-btn").style.display = "none";
   }
 }
 

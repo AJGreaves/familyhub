@@ -130,16 +130,33 @@ and edited slightly to fit project needs */
     border: none; 
     outline: none; 
     cursor: pointer;
+    color: $terracotta;
+    opacity: 0.5;
     background-color: transparent;
     transition: all 0.5s ease-in-out 0.1s;
 }
 
-.floating-btn {
-    color: $terracotta;
-    opacity: 0.5;
+#to-top-btn:hover {
+    opacity: 1;
 }
 
-#to-top-btn:hover {
+/* positions search icon above to top button */
+#search-btn {
+    display: none; 
+    position: fixed; 
+    bottom: 75px; 
+    right: 5px; 
+    z-index: 99; 
+    border: none; 
+    outline: none; 
+    cursor: pointer;
+    color: $dark-blue;
+    opacity: 0.5;
+    background-color: transparent;
+    transition: all 0.5s ease-in-out 0.1s;
+}
+
+#search-btn:hover {
     opacity: 1;
 }
 
@@ -273,7 +290,12 @@ html {
     }
     /* adds more spacing around floating button */
     #to-top-btn {
-    right: 30px; 
-    bottom: 30px;
+        right: 30px; 
+        bottom: 30px;
+    }
+    
+    #search-btn {
+        right: 30px; 
+        bottom: 100px;
     }
 }
