@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Delius|News+Cycle|Patrick+Hand+SC:400,500,700,900&display=swap');
 
 // VARIABLES 
-
 // fonts
-$main-text: 'News Cycle', sans-serif;
-$heading: 'Delius', cursive;
-$capitalized-heading: 'Patrick Hand SC', cursive;
+$main-text: 'News Cycle',
+sans-serif;
+$heading: 'Delius',
+cursive;
+$capitalized-heading: 'Patrick Hand SC',
+cursive;
 
 // colours 
 $platinum: #e6ebe0;
@@ -22,7 +24,8 @@ body {
     color: $dark-blue;
 }
 
-h1, h2 {
+h1,
+h2 {
     font-family: $heading;
     color: $terracotta;
     font-size: 1.8rem;
@@ -49,8 +52,8 @@ footer h4 {
     font-size: 2.5rem;
 }
 
-.social-icon-shadow{
-    text-shadow: 2px 2px rgba(0,0,0,0.5);
+.social-icon-shadow {
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 .social-icons-footer a {
@@ -59,30 +62,31 @@ footer h4 {
     margin-left: 0.5rem;
 }
 
-.fab{
-    color: #ffffff; 
-    -o-transition: all 0.2s ease-in-out 0.2s; 
+.fab {
+    color: #ffffff;
+    -o-transition: all 0.2s ease-in-out 0.2s;
     transition: all 0.2s ease-in-out 0.2s;
     -moz-transition: all 0.2s ease-in-out 0.2s;
     -webkit-transition: all 0.2s ease-in-out 0.2s;
 }
 
 /* UX feature, social icons grow and change colour when hovered over */
-.fab:hover{
-    -webkit-transform: scale(1.4);
-        -ms-transform: scale(1.4);
-            transform: scale(1.4);
-}
-  
-.fa-instagram:hover{
-    color: #fbad50;
-} 
 
-.fa-facebook:hover{
+.fab:hover {
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+}
+
+.fa-instagram:hover {
+    color: #fbad50;
+}
+
+.fa-facebook:hover {
     color: #3b5998;
 }
 
-.fa-twitter:hover{
+.fa-twitter:hover {
     color: #38A1F3;
 }
 
@@ -116,20 +120,30 @@ footer h4 {
     color: #fff;
 }
 
+.search-input-field {
+    display: inline;
+}
+
+#search-page-search-button {
+    margin-bottom: 4px;
+    margin-top: 1rem;
+}
+
 .heading-btn {
     margin-top: 2.7rem;
 }
 
 /* credit: code for floating buttons taken from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp 
 and edited slightly to fit project needs */
+
 #to-top-btn {
-    display: none; 
-    position: fixed; 
-    bottom: 15px; 
-    right: 5px; 
-    z-index: 99; 
-    border: none; 
-    outline: none; 
+    display: none;
+    position: fixed;
+    bottom: 15px;
+    right: 5px;
+    z-index: 99;
+    border: none;
+    outline: none;
     cursor: pointer;
     color: $terracotta;
     opacity: 0.5;
@@ -142,14 +156,15 @@ and edited slightly to fit project needs */
 }
 
 /* positions search icon above to top button */
+
 #search-btn {
-    display: none; 
-    position: fixed; 
-    bottom: 75px; 
-    right: 5px; 
-    z-index: 99; 
-    border: none; 
-    outline: none; 
+    display: none;
+    position: fixed;
+    bottom: 75px;
+    right: 5px;
+    z-index: 99;
+    border: none;
+    outline: none;
     cursor: pointer;
     color: $dark-blue;
     opacity: 0.5;
@@ -186,7 +201,7 @@ footer hr {
 
 /* BACKGROUND IMAGES */
 
-.hero-img{
+.hero-img {
     height: 400px;
     background-repeat: no-repeat;
     -webkit-background-size: cover;
@@ -194,13 +209,19 @@ footer hr {
     position: relative;
 }
 
-.hero-home{
+.hero-home {
     background-image: url("https://i.ibb.co/744CXN6/painthands.jpg");
+    background-position: center;
+}
+
+.hero-search {
+    background-image: url("https://i.ibb.co/y8bx9BL/kidswim.jpg");
     background-position: center;
 }
 
 /* positions text in the middle of the hero image, 
 shadow added to give depth and contrast with the image for readability */
+
 .hero-img-tagline {
     font-family: $capitalized-heading;
     color: #fff;
@@ -230,7 +251,7 @@ shadow added to give depth and contrast with the image for readability */
     color: $blond;
 }
 
-.carousel-control-prev, 
+.carousel-control-prev,
 .carousel-control-next {
     width: 10%;
 }
@@ -270,17 +291,18 @@ footer a:hover {
 }
 
 /* MODALS */
+
 #search-modal {
-    display: none; 
+    display: none;
     height: 100vh;
     position: fixed;
     z-index: 100;
-    bottom: 0; 
-    right: 0; 
+    bottom: 0;
+    right: 0;
     /* makes modal background darker but still has transparency 
     stops content inside tihs element also being transparent, 
     which was what was happening when using opacity */
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
     transition: all 0.5 linear;
 }
 
@@ -295,10 +317,10 @@ footer a:hover {
     border-radius: 8px;
     border: 1px solid black;
     /* Credit: code for box shadow taken from https://codepen.io/sdthornton/pen/wBZdXq */
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
-#search-input-field {
+.search-input-field {
     width: 100%;
 }
 
@@ -317,40 +339,46 @@ html {
 /* MEDIA QUERIES */
 
 /* small size screens and up */
+
 @media screen and (min-width: 576px) {
     /* keeps search bar and search button in one line */
-    #search-input-field {
+    .search-input-field {
         width: 75%;
+    }
+    #search-page-search-button {
+        /* keeps search bar and search button in one line */
+        margin-top: 0;
     }
 }
 
 /* medium size screens and up */
+
 @media screen and (min-width: 768px) {
-    h1, 
+    h1,
     h2 {
         font-size: 2.5rem;
     }
-    
+
     .fa-chevron-right,
     .fa-chevron-left {
         font-size: 4rem;
     }
     /* creates more space around carousel controls */
-    .carousel-control-prev, 
+    .carousel-control-prev,
     .carousel-control-next {
         width: 15%;
     }
     /* adds more spacing around floating button */
     #to-top-btn {
-        right: 30px; 
+        right: 30px;
         bottom: 30px;
     }
-    
+
     #search-btn {
-        right: 30px; 
+        right: 30px;
         bottom: 100px;
     }
-    #search-input-field {
+    .search-input-field {
         /* keeps search bar and search button in one line */
         width: 80%;
     }
