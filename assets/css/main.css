@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Delius|News+Cycle|Patrick+Hand+SC&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Delius|News+Cycle|Patrick+Hand+SC:400,500,700,900&display=swap");
 /* Fonts */
 body {
   font-family: "News Cycle", sans-serif;
@@ -16,6 +16,14 @@ footer h3 {
   text-transform: uppercase;
   margin-top: 1rem; }
 
+footer a {
+  color: #e6ebe0;
+  transition: all 0.5s ease-in-out 0.1s; }
+
+footer a:hover {
+  text-decoration: none;
+  color: white; }
+
 .navbar {
   font-family: "Delius", cursive; }
 
@@ -25,13 +33,18 @@ footer h3 {
   font-size: 2.5rem; }
 
 /* Buttons */
-.btn-primary {
-  background-color: #9bc1bc;
-  border: #9bc1bc; }
+.btn {
+  font-weight: 500; }
 
-.btn-primary:hover {
+.btn-readmore {
+  background-color: #9bc1bc;
+  border: #9bc1bc;
+  color: #fff; }
+
+.btn-readmore:hover {
   background-color: #5ca4a9;
-  border: #5ca4a9; }
+  border: #5ca4a9;
+  color: #e6ebe0; }
 
 .btn-search {
   color: #fff;
@@ -87,7 +100,8 @@ footer {
 footer p,
 footer a {
   margin-bottom: 0.3rem;
-  color: #e6ebe0; }
+  color: #e6ebe0;
+  display: block; }
 
 /* MEDIA QUERIES */
 /* medium size screens and up */

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Delius|News+Cycle|Patrick+Hand+SC&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Delius|News+Cycle|Patrick+Hand+SC:400,500,700,900&display=swap');
 
 // VARIABLES 
 
@@ -36,6 +36,16 @@ footer h3 {
     margin-top: 1rem;
 }
 
+footer a {
+    color: $platinum;
+    transition: all 0.5s ease-in-out 0.1s;
+}
+
+footer a:hover {
+    text-decoration: none;
+    color: white;
+}
+
 .navbar {
     font-family: $heading;
 }
@@ -48,14 +58,21 @@ footer h3 {
 }
 
 /* Buttons */
-.btn-primary {
-    background-color: $light-blue;
-    border: $light-blue;
+
+.btn {
+    font-weight: 500;
 }
 
-.btn-primary:hover {
+.btn-readmore {
+    background-color: $light-blue;
+    border: $light-blue;
+    color: #fff;
+}
+
+.btn-readmore:hover {
     background-color: $mid-blue;
     border: $mid-blue;
+    color: $platinum;
 }
 
 .btn-search {
