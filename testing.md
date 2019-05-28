@@ -89,9 +89,27 @@ And also in the Chrome Developer Tools device simulators on all options and orie
 
 #### Unsolved bugs
 
-1. **Bug X**
+1. **Custom modal opacity issues**
 
-    - List details here
+    - The entire contence of my custom search modal was becoming transparent when I tried to use the opacity css property on it's container. 
+    - To solve this I switched to using rgba values instead, which have built in transparency but do not effect any further elements contained within. 
+```css
+#search-modal {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 100;
+    bottom: 0; 
+    right: 0; 
+    /* 
+    I stopped using the following code, 
+    and replaced it with the code below it:
+    background-color: black;
+    opacity: 0.4;
+    */
+    background-color: rgba(0,0,0,0.4);
+}
+```
 
 ## Further testing: 
 1. Asked fellow students, friends and family to look at the site on their devices and report any issues they found.

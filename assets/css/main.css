@@ -82,7 +82,7 @@ footer h4 {
 .heading-btn {
   margin-top: 2.7rem; }
 
-/* CREDIT: code for floating buttons taken from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp 
+/* credit: code for floating buttons taken from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp 
 and edited slightly to fit project needs */
 #to-top-btn {
   display: none;
@@ -204,6 +204,27 @@ footer a:hover {
 .copyright,
 .social-icons-footer {
   margin-bottom: 2rem; }
+
+/* MODALS */
+#search-modal {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  right: 0;
+  /* makes modal background darker but still has transparency */
+  background-color: rgba(0, 0, 0, 0.4); }
+
+.search-modal-content-box {
+  max-width: 800px;
+  height: 400px;
+  margin: 4rem;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid black;
+  /* Credit: code for box shadow taken from https://codepen.io/sdthornton/pen/wBZdXq */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
 
 /* scroll behaviour, adds smooth scrolling when 
 jumping to different parts of the same page */
