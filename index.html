@@ -50,7 +50,12 @@
     <!-- Hero image -->
     <div class="container-fluid">
         <div class="row no-gutters">
-            <div class="col-12 hero-img hero-home"></div>
+            <div class="col-12 hero-img hero-home">
+                <!-- first header with a break in it in the right place for small screens, 
+                the other header for text all in one line only visible on medium screens and up -->
+                <h1 class="text-center hero-img-tagline d-md-none">Family events &<br>activities for kids</h1>
+                <h1 class="text-center hero-img-tagline d-none d-md-block">Family events & activities for kids</h1>
+            </div>
         </div>
     </div>
     <main>
@@ -1389,6 +1394,24 @@
                 </div>
                 <div class="col-12 col-md-5">
                     <h3>About</h3>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="about-pic-wrapper">
+                                <div class="about-pic"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                            sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                            magna aliquam erat volutpat. 
+                            </p>
+                            <p>
+                            Duis autem vel eum iriure
+                            dolor in hendrerit in vulputate velit esse molestie consequat,
+                            vel illum dolore eu feugiat. 
+                            </p>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-12 col-md-3">
                     <h3>Popular links</h3>

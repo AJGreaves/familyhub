@@ -194,6 +194,7 @@ Further reading and troubleshooting on cloning a repository from GitHub [here](h
 
 ### Code
 - Template code for multi-card carousel using bootstrap classes taken from [MDBootstrap](https://mdbootstrap.com/docs/jquery/javascript/carousel/) and heavily modified to suit the sites needs.
+- Text shadow generated using [CSS3 Text Shadow Generator](https://css3gen.com/text-shadow/)
 - Box shadow codes were generated at [CSS matic | box-shadow](https://cssmatic.com/box-shadow).
 - Code for adding the correct prefixes to css was created using [AutoPrefixer](https://autoprefixer.github.io/).
 

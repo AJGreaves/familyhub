@@ -50,14 +50,14 @@ footer a:hover {
     font-family: $heading;
 }
 
-/* Icons */
+/* ICONS */
 
 .fa-chevron-right,
 .fa-chevron-left {
     font-size: 2.5rem;
 }
 
-/* Buttons */
+/* BUTTONS */
 
 .btn {
     font-weight: 500;
@@ -91,7 +91,7 @@ footer a:hover {
     margin-top: 2.7rem;
 }
 
-/* Background colours */
+/* BACKGROUND COLOURS */
 
 .bg-platinum {
     background-color: $platinum;
@@ -109,7 +109,7 @@ hr {
     opacity: 0.5;
 }
 
-/* Background images */
+/* BACKGROUND IMAGES */
 
 .hero-img{
     height: 400px;
@@ -122,6 +122,31 @@ hr {
 .hero-home{
     background-image: url("https://i.ibb.co/744CXN6/painthands.jpg");
     background-position: center;
+}
+
+/* positions text in the middle of the hero image, 
+shadow added to give depth and contrast with the image for readability */
+.hero-img-tagline {
+    font-family: $capitalized-heading;
+    color: #fff;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.9);
+    position: absolute;
+    left: 0;
+    bottom: 5%;
+    width: 100%;
+}
+
+.about-pic-wrapper {
+    width: 100px;
+    height: 100px;
+    margin: 1rem;
+}
+
+.about-pic {
+    background-image: url("../images/anna.jpg");
+    background-size: cover;
+    height: 100%;
+    border-radius: 50%;
 }
 
 /* CAROUSELS */
