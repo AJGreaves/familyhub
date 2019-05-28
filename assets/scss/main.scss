@@ -128,14 +128,14 @@ footer h4 {
     z-index: 99; 
     border: none; 
     outline: none; 
-    background-color: $terracotta; 
-    color: white;
     cursor: pointer;
-    padding: 15px;
-    border-radius: 50px; 
-    font-size: 18px;
-    opacity: 0.5;
+    background-color: transparent;
     transition: all 0.5s ease-in-out 0.1s;
+}
+
+.floating-btn {
+    color: $terracotta;
+    opacity: 0.5;
 }
 
 #to-top-btn:hover {
