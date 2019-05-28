@@ -28,22 +28,13 @@ h1, h2 {
     margin-top: 2.5rem;
 }
 
-footer h3 {
+footer h3,
+footer h4 {
     font-family: $main-text;
     font-size: 1rem;
     color: white;
     text-transform: uppercase;
     margin-top: 1rem;
-}
-
-footer a {
-    color: $platinum;
-    transition: all 0.5s ease-in-out 0.1s;
-}
-
-footer a:hover {
-    text-decoration: none;
-    color: white;
 }
 
 .navbar {
@@ -55,6 +46,43 @@ footer a:hover {
 .fa-chevron-right,
 .fa-chevron-left {
     font-size: 2.5rem;
+}
+
+.social-icon-shadow{
+    text-shadow: 2px 2px rgba(0,0,0,0.5);
+}
+
+.social-icons-footer a {
+    display: inline;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.fab{
+    color: #ffffff; 
+    -o-transition: all 0.2s ease-in-out 0.2s; 
+    transition: all 0.2s ease-in-out 0.2s;
+    -moz-transition: all 0.2s ease-in-out 0.2s;
+    -webkit-transition: all 0.2s ease-in-out 0.2s;
+}
+
+/* UX feature, social icons grow and change colour when hovered over */
+.fab:hover{
+    -webkit-transform: scale(1.4);
+        -ms-transform: scale(1.4);
+            transform: scale(1.4);
+}
+  
+.fa-instagram:hover{
+    color: #fbad50;
+} 
+
+.fa-facebook:hover{
+    color: #3b5998;
+}
+
+.fa-twitter:hover{
+    color: #38A1F3;
 }
 
 /* BUTTONS */
@@ -106,6 +134,11 @@ footer a:hover {
 
 hr {
     border-top: 2px solid $dark-blue;
+    opacity: 0.5;
+}
+
+footer hr {
+    border-top: 2px solid $platinum;
     opacity: 0.5;
 }
 
@@ -174,6 +207,25 @@ footer a {
     display: block;
 }
 
+footer h4 {
+    margin-top: auto;
+}
+
+footer a {
+    color: $platinum;
+    transition: all 0.5s ease-in-out 0.1s;
+}
+
+footer a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.copyright,
+.social-icons-footer {
+    margin-bottom: 2rem;
+}
+
 /* MEDIA QUERIES */
 
 /* medium size screens and up */
@@ -187,4 +239,5 @@ footer a {
     .carousel-control-next {
         width: 15%;
     }
+
 }
