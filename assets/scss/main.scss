@@ -119,12 +119,13 @@ footer h4 {
     margin-top: 2.7rem;
 }
 
-/* CREDIT: code for floating buttons taken from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp */
+/* CREDIT: code for floating buttons taken from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp 
+and edited slightly to fit project needs */
 #to-top-btn {
     display: none; 
     position: fixed; 
-    bottom: 50px; 
-    right: 30px; 
+    bottom: 15px; 
+    right: 5px; 
     z-index: 99; 
     border: none; 
     outline: none; 
@@ -265,10 +266,14 @@ html {
     .fa-chevron-left {
         font-size: 4rem;
     }
-    /* creates more space around carousel controls in medium screens and up */
+    /* creates more space around carousel controls */
     .carousel-control-prev, 
     .carousel-control-next {
         width: 15%;
     }
-
+    /* adds more spacing around floating button */
+    #to-top-btn {
+    right: 30px; 
+    bottom: 30px;
+    }
 }
