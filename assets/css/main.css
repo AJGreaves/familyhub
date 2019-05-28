@@ -166,6 +166,10 @@ footer hr {
   background-image: url("https://i.ibb.co/y8bx9BL/kidswim.jpg");
   background-position: center; }
 
+.hero-activities {
+  background-image: url("https://i.ibb.co/9VkHCkq/pumpkin.jpg");
+  background-position: center 20%; }
+
 /* positions text in the middle of the hero image, 
 shadow added to give depth and contrast with the image for readability */
 .hero-img-tagline {
