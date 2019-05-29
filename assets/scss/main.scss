@@ -284,6 +284,10 @@ shadow added to give depth and contrast with the image for readability */
 
 .filter-heading {
     margin: 0;
+    font-family: $main-text;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: $mid-blue;
 }
 
 .filter-heading-button {
@@ -313,6 +317,11 @@ shadow added to give depth and contrast with the image for readability */
 
 .familyhub-card-header {
     padding: 0;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.familyhub-card-header-no-button {
+    padding: 0.7rem;
     border-bottom: 1px solid rgba(0,0,0,.125);
 }
 
