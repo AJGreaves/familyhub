@@ -1,4 +1,4 @@
-
+$( document ).ready(function() {
 // CREDIT: code for floating buttons taken from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp 
 window.onscroll = function() {scrollFunction()};
 
@@ -19,9 +19,7 @@ function topFunction() {
 } 
 
 function openSearch() {
-    document.getElementById("search-modal").style.display = "block";
+    $("#search-modal").toggleClass('active');
 }
 
-function clickSearch() {
-    document.getElementById("search-modal").style.display = "none";
-}
+})

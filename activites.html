@@ -479,8 +479,11 @@
         <i class="fas fa-chevron-circle-up fa-3x" aria-hidden="true"></i>
     </button>
     <button onclick="openSearch()" id="search-btn" class="floating-btn" title="Search">
-        <i class="fas fa-search fa-3x" aria-hidden="true"></i>
-    </button>
+        <!-- Adds circle backrgound to search icon to make it match the other floating button -->
+        <div class="icon-circle">
+            <i class="fas fa-search fa-2x" aria-hidden="true"></i>
+        </div>
+    </button> 
 
     <!-- search modal -->
     <div id="search-modal" class="container-fluid">
@@ -499,7 +502,7 @@
         </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
