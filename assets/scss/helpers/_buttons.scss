@@ -1,0 +1,101 @@
+/* BUTTONS */
+
+.btn {
+    font-weight: 500;
+}
+
+.btn-readmore {
+    background-color: $light-blue;
+    border: $light-blue;
+    color: #fff;
+}
+
+.btn-readmore:hover {
+    background-color: $mid-blue;
+    border: $mid-blue;
+    color: $platinum;
+}
+
+.btn-search {
+    color: #fff;
+    background-color: $terracotta;
+    border: $terracotta;
+    opacity: 0.8;
+}
+
+.icon-circle {
+    height: 48px;
+    width: 48px;
+    background-color: $dark-blue;
+    border-radius: 50%;
+    position: relative;
+}
+
+.fa-search {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.btn-search:hover {
+    opacity: 1;
+    color: #fff;
+}
+
+.search-input-field {
+    display: inline;
+}
+
+#search-page-search-button {
+    margin-bottom: 4px;
+    margin-top: 1rem;
+}
+
+.heading-btn {
+    margin-top: 2.7rem;
+}
+
+/* credit: code for floating buttons taken from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp 
+and edited slightly to fit project needs */
+
+#to-top-btn {
+    display: none;
+    position: fixed;
+    bottom: 15px;
+    right: 5px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: $terracotta;
+    opacity: 0.5;
+    background-color: transparent;
+    transition: all 0.5s ease-in-out 0.1s;
+}
+
+#to-top-btn:hover {
+    opacity: 1;
+}
+
+/* positions search icon above to top button */
+
+#search-btn {
+    display: none;
+    position: fixed;
+    bottom: 75px;
+    right: 5px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: $dark-blue;
+    opacity: 0.5;
+    background-color: transparent;
+    transition: all 0.5s ease-in-out 0.1s;
+}
+
+#search-btn:hover {
+    opacity: 1;
+}

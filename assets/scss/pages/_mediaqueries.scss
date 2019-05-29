@@ -1,0 +1,49 @@
+
+
+/* MEDIA QUERIES */
+
+/* small size screens and up */
+
+@media screen and (min-width: 576px) {
+    /* keeps search bar and search button in one line */
+    .search-input-field {
+        width: 75%;
+    }
+    #search-page-search-button {
+        /* keeps search bar and search button in one line */
+        margin-top: 0;
+    }
+}
+
+/* medium size screens and up */
+
+@media screen and (min-width: 768px) {
+    h1,
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    .fa-chevron-right,
+    .fa-chevron-left {
+        font-size: 4rem;
+    }
+    /* creates more space around carousel controls */
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 15%;
+    }
+    /* adds more spacing around floating button */
+    #to-top-btn {
+        right: 30px;
+        bottom: 30px;
+    }
+
+    #search-btn {
+        right: 30px;
+        bottom: 100px;
+    }
+    .search-input-field {
+        /* keeps search bar and search button in one line */
+        width: 80%;
+    }
+}

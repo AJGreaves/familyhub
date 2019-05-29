@@ -1,0 +1,114 @@
+/* BACKGROUND COLOURS */
+
+.bg-platinum {
+    background-color: $platinum;
+}
+
+/* CONTAINERS */
+
+.container-fluid,
+.row {
+    padding: 0;
+}
+
+hr {
+    border-top: 2px solid $mid-blue;
+    opacity: 0.5;
+}
+
+footer hr {
+    border-top: 2px solid $platinum;
+    opacity: 0.5;
+}
+
+/* BACKGROUND IMAGES */
+
+.hero-img {
+    height: 400px;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-home {
+    background-image: url("https://i.ibb.co/744CXN6/painthands.jpg");
+    background-position: center;
+}
+
+.hero-search {
+    background-image: url("https://i.ibb.co/y8bx9BL/kidswim.jpg");
+    background-position: center;
+}
+
+.hero-activities {
+    background-image: url("https://i.ibb.co/9VkHCkq/pumpkin.jpg");
+    background-position: center 20%;
+}
+
+/* positions text in the middle of the hero image, 
+shadow added to give depth and contrast with the image for readability */
+
+.hero-img-tagline {
+    font-family: $capitalized-heading;
+    color: #fff;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.9);
+    position: absolute;
+    left: 0;
+    bottom: 5%;
+    width: 100%;
+}
+
+.about-pic-wrapper {
+    width: 100px;
+    height: 100px;
+    margin: 1rem;
+}
+
+.about-pic {
+    background-image: url("../images/anna.jpg");
+    background-size: cover;
+    height: 100%;
+    border-radius: 50%;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: $mid-blue;
+    color: white;
+    margin-top: 3rem;
+}
+
+footer p,
+footer a {
+    margin-bottom: 0.3rem;
+    color: $platinum;
+    display: block;
+}
+
+footer h4 {
+    margin-top: auto;
+}
+
+footer a {
+    color: $platinum;
+    transition: all 0.5s ease-in-out 0.1s;
+}
+
+footer a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.copyright,
+.social-icons-footer {
+    margin-bottom: 2rem;
+}
+
+/* scroll behaviour, adds smooth scrolling when 
+jumping to different parts of the same page */
+
+html {
+    scroll-behavior: smooth;
+}

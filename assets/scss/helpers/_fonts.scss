@@ -1,0 +1,33 @@
+/* Fonts */
+
+.navbar {
+    font-family: $heading;
+}
+
+body {
+    font-family: $main-text;
+    color: $dark-blue;
+}
+
+h1,
+h2 {
+    font-family: $heading;
+    color: $terracotta;
+    font-size: 1.8rem;
+    margin-top: 2.5rem;
+}
+
+footer h3,
+footer h4 {
+    font-family: $main-text;
+    font-size: 1rem;
+    color: white;
+    text-transform: uppercase;
+    margin-top: 1rem;
+}
+
+#search-results {
+    font-family: $main-text;
+    font-size: 1.8rem;
+    color: $dark-blue;
+}

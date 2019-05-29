@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Delius|News+Cycle|Patrick+Hand+SC:400,500,700,900&display=swap");
 /* Fonts */
+.navbar {
+  font-family: "Delius", cursive; }
+
 body {
   font-family: "News Cycle", sans-serif;
   color: #000034; }
@@ -23,44 +26,6 @@ footer h4 {
   font-family: "News Cycle", sans-serif;
   font-size: 1.8rem;
   color: #000034; }
-
-.navbar {
-  font-family: "Delius", cursive; }
-
-/* ICONS */
-.fa-chevron-right,
-.fa-chevron-left {
-  font-size: 2.5rem; }
-
-.social-icon-shadow {
-  text-shadow: 2px 2px rgba(0, 0, 0, 0.5); }
-
-.social-icons-footer a {
-  display: inline;
-  margin-right: 0.5rem;
-  margin-left: 0.5rem; }
-
-.fab {
-  color: #ffffff;
-  -o-transition: all 0.2s ease-in-out 0.2s;
-  transition: all 0.2s ease-in-out 0.2s;
-  -moz-transition: all 0.2s ease-in-out 0.2s;
-  -webkit-transition: all 0.2s ease-in-out 0.2s; }
-
-/* UX feature, social icons grow and change colour when hovered over */
-.fab:hover {
-  -webkit-transform: scale(1.4);
-  -ms-transform: scale(1.4);
-  transform: scale(1.4); }
-
-.fa-instagram:hover {
-  color: #fbad50; }
-
-.fa-facebook:hover {
-  color: #3b5998; }
-
-.fa-twitter:hover {
-  color: #38A1F3; }
 
 /* BUTTONS */
 .btn {
@@ -147,6 +112,130 @@ and edited slightly to fit project needs */
 #search-btn:hover {
   opacity: 1; }
 
+/* ICONS */
+.fa-chevron-right,
+.fa-chevron-left {
+  font-size: 2.5rem; }
+
+.social-icon-shadow {
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.5); }
+
+.social-icons-footer a {
+  display: inline;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem; }
+
+.fab {
+  color: #ffffff;
+  -o-transition: all 0.2s ease-in-out 0.2s;
+  transition: all 0.2s ease-in-out 0.2s;
+  -moz-transition: all 0.2s ease-in-out 0.2s;
+  -webkit-transition: all 0.2s ease-in-out 0.2s; }
+
+/* UX feature, social icons grow and change colour when hovered over */
+.fab:hover {
+  -webkit-transform: scale(1.4);
+  -ms-transform: scale(1.4);
+  transform: scale(1.4); }
+
+.fa-instagram:hover {
+  color: #fbad50; }
+
+.fa-facebook:hover {
+  color: #3b5998; }
+
+.fa-twitter:hover {
+  color: #38A1F3; }
+
+/* CAROUSELS */
+.carousel-chevron {
+  color: #f4f1bb; }
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 10%; }
+
+/* MODALS */
+#search-modal {
+  display: none;
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  /* makes modal background darker but still has transparency 
+  stops content inside tihs element also being transparent, 
+  which was what was happening when using opacity */
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: all 0.5s ease-in-out 0.2s; }
+
+#search-modal.active {
+  display: block;
+  opacity: 1; }
+
+.search-modal-content-box {
+  max-width: 550px;
+  height: 300px;
+  margin: 4rem;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid black;
+  /* Credit: code for box shadow taken from https://codepen.io/sdthornton/pen/wBZdXq */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+
+.search-input-field {
+  width: 100%; }
+
+#search-modal-submit-button {
+  margin-top: 1rem;
+  text-align: center; }
+
+/* SEARCH FILTER */
+.filter-heading {
+  margin: 0;
+  font-family: "News Cycle", sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #5ca4a9; }
+
+.filter-heading-button {
+  font-family: "News Cycle", sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  transition: all 0.5s ease-in-out 0.1s;
+  color: #5ca4a9;
+  /* overriding bootstrap css */
+  text-decoration: none; }
+
+.filter-heading-button:hover {
+  color: #000034;
+  text-decoration: none; }
+
+.btn-link:focus {
+  text-decoration: none;
+  color: #000034; }
+
+/* CARDS */
+.familyhub-card {
+  margin-bottom: 1rem; }
+
+.familyhub-card-header {
+  padding: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
+
+.familyhub-card-header-no-button {
+  padding: 0.7rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
+
+.filter-options {
+  color: #000034; }
+
+#search-page-wrapper .familyhub-card {
+  margin-bottom: 2rem; }
+
 /* BACKGROUND COLOURS */
 .bg-platinum {
   background-color: #e6ebe0; }
@@ -206,57 +295,6 @@ shadow added to give depth and contrast with the image for readability */
   height: 100%;
   border-radius: 50%; }
 
-/* CAROUSELS */
-.carousel-chevron {
-  color: #f4f1bb; }
-
-.carousel-control-prev,
-.carousel-control-next {
-  width: 10%; }
-
-/* SEARCH FILTER */
-.filter-heading {
-  margin: 0;
-  font-family: "News Cycle", sans-serif;
-  font-size: 1rem;
-  text-transform: uppercase;
-  color: #5ca4a9; }
-
-.filter-heading-button {
-  font-family: "News Cycle", sans-serif;
-  font-size: 1rem;
-  text-transform: uppercase;
-  transition: all 0.5s ease-in-out 0.1s;
-  color: #5ca4a9;
-  /* overriding bootstrap css */
-  text-decoration: none; }
-
-.filter-heading-button:hover {
-  color: #000034;
-  text-decoration: none; }
-
-.btn-link:focus {
-  text-decoration: none;
-  color: #000034; }
-
-/* CARDS */
-.familyhub-card {
-  margin-bottom: 1rem; }
-
-.familyhub-card-header {
-  padding: 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
-
-.familyhub-card-header-no-button {
-  padding: 0.7rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
-
-.filter-options {
-  color: #000034; }
-
-#search-page-wrapper .familyhub-card {
-  margin-bottom: 2rem; }
-
 /* FOOTER */
 footer {
   background-color: #5ca4a9;
@@ -283,44 +321,6 @@ footer a:hover {
 .copyright,
 .social-icons-footer {
   margin-bottom: 2rem; }
-
-/* MODALS */
-#search-modal {
-  display: none;
-  height: 100vh;
-  position: fixed;
-  z-index: 100;
-  bottom: 0;
-  right: 0;
-  opacity: 0;
-  /* makes modal background darker but still has transparency 
-  stops content inside tihs element also being transparent, 
-  which was what was happening when using opacity */
-  background-color: rgba(0, 0, 0, 0.4);
-  transition: all 0.5s ease-in-out 0.2s; }
-
-#search-modal.active {
-  display: block;
-  opacity: 1; }
-
-.search-modal-content-box {
-  max-width: 550px;
-  height: 300px;
-  margin: 4rem;
-  padding-right: 1.5rem;
-  padding-left: 1.5rem;
-  background-color: white;
-  border-radius: 8px;
-  border: 1px solid black;
-  /* Credit: code for box shadow taken from https://codepen.io/sdthornton/pen/wBZdXq */
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
-
-.search-input-field {
-  width: 100%; }
-
-#search-modal-submit-button {
-  margin-top: 1rem;
-  text-align: center; }
 
 /* scroll behaviour, adds smooth scrolling when 
 jumping to different parts of the same page */

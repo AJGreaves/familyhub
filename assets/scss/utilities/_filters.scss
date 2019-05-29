@@ -1,0 +1,52 @@
+/* SEARCH FILTER */
+
+.filter-heading {
+    margin: 0;
+    font-family: $main-text;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: $mid-blue;
+}
+
+.filter-heading-button {
+    font-family: $main-text;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: all 0.5s ease-in-out 0.1s;
+    color: $mid-blue;
+    /* overriding bootstrap css */
+    text-decoration: none;
+}
+
+.filter-heading-button:hover {
+    color: $dark-blue;
+    text-decoration: none;
+}
+
+.btn-link:focus {
+    text-decoration: none;
+    color: $dark-blue;
+}
+
+/* CARDS */
+.familyhub-card {
+    margin-bottom: 1rem;
+}
+
+.familyhub-card-header {
+    padding: 0;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.familyhub-card-header-no-button {
+    padding: 0.7rem;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.filter-options {
+    color: $dark-blue;
+}
+
+#search-page-wrapper .familyhub-card {
+    margin-bottom: 2rem;
+}
