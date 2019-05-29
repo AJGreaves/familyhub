@@ -28,29 +28,7 @@
     color: $dark-blue;
 }
 
-/* CARDS */
-.familyhub-card {
-    margin-bottom: 1rem;
-}
-
-.familyhub-card-header {
-    padding: 0;
-    border-bottom: 1px solid rgba(0,0,0,.125);
-}
-
-.familyhub-card-header-no-button {
-    padding: 0.7rem;
-    border-bottom: 1px solid rgba(0,0,0,.125);
-}
-
-.filter-options {
-    color: $dark-blue;
-}
-
-#search-page-wrapper .familyhub-card {
-    margin-bottom: 2rem;
-}
-
-.input-group > .form-control {
-    width: 168px;
+/* to stop datepicker stretching too far out */
+.gj-datepicker {
+    max-width: 215px;
 }
