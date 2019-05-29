@@ -157,7 +157,6 @@ and edited slightly to fit project needs */
 
 /* MODALS */
 #search-modal {
-  display: none;
   height: 100vh;
   position: fixed;
   z-index: 100;
@@ -168,10 +167,11 @@ and edited slightly to fit project needs */
   stops content inside tihs element also being transparent, 
   which was what was happening when using opacity */
   background-color: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
   transition: all 0.5s ease-in-out 0.2s; }
 
 #search-modal.active {
-  display: block;
+  pointer-events: auto;
   opacity: 1; }
 
 .search-modal-content-box {
