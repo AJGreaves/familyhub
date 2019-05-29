@@ -4,11 +4,11 @@ window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    document.getElementById("to-top-btn").style.display = "block";
-    document.getElementById("search-btn").style.display = "block";
+    $("#to-top-btn").addClass('active');
+    $("#search-btn").addClass('active');
   } else {
-    document.getElementById("to-top-btn").style.display = "none";
-    document.getElementById("search-btn").style.display = "none";
+    $("#to-top-btn").removeClass('active');
+    $("#search-btn").removeClass('active');
   }
 }
 

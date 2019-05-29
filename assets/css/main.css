@@ -78,7 +78,6 @@ footer h4 {
 /* credit: code for floating buttons taken from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp 
 and edited slightly to fit project needs */
 #to-top-btn {
-  display: none;
   position: fixed;
   bottom: 15px;
   right: 5px;
@@ -87,16 +86,12 @@ and edited slightly to fit project needs */
   outline: none;
   cursor: pointer;
   color: #ed6a5a;
-  opacity: 0.5;
+  opacity: 0;
   background-color: transparent;
   transition: all 0.5s ease-in-out 0.1s; }
 
-#to-top-btn:hover {
-  opacity: 1; }
-
 /* positions search icon above to top button */
 #search-btn {
-  display: none;
   position: fixed;
   bottom: 75px;
   right: 5px;
@@ -105,12 +100,17 @@ and edited slightly to fit project needs */
   outline: none;
   cursor: pointer;
   color: #000034;
-  opacity: 0.5;
+  opacity: 0;
   background-color: transparent;
   transition: all 0.5s ease-in-out 0.1s; }
 
-#search-btn:hover {
+#search-btn:hover,
+#to-top-btn:hover {
   opacity: 1; }
+
+#search-btn.active,
+#to-top-btn.active {
+  opacity: 0.5; }
 
 /* ICONS */
 .fa-chevron-right,
