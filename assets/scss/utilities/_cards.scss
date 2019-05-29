@@ -1,0 +1,29 @@
+/* CARDS */
+.familyhub-card {
+    margin-bottom: 1rem;
+    /* CREDIT: Code for box shadow taken from https://codepen.io/sdthornton/pen/wBZdXq */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.familyhub-card:hover {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.familyhub-card-header {
+    padding: 0;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.familyhub-card-header-no-button {
+    padding: 0.7rem;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.filter-options {
+    color: $dark-blue;
+}
+
+#search-page-wrapper .familyhub-card {
+    margin-bottom: 2rem;
+}
