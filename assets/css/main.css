@@ -98,19 +98,22 @@ and edited slightly to fit project needs */
   z-index: 99;
   border: none;
   outline: none;
-  cursor: pointer;
   color: #000034;
-  opacity: 0;
   background-color: transparent;
+  /* button hidden and inactive until user starts to scroll, 
+  then js adds active class to it */
+  opacity: 0;
+  pointer-events: none;
   transition: all 0.5s ease-in-out 0.1s; }
+
+#search-btn.active,
+#to-top-btn.active {
+  pointer-events: auto;
+  opacity: 0.5; }
 
 #search-btn.active:hover,
 #to-top-btn.active:hover {
   opacity: 1; }
-
-#search-btn.active,
-#to-top-btn.active {
-  opacity: 0.5; }
 
 /* ICONS */
 .fa-chevron-right,
