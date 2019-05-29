@@ -218,7 +218,8 @@ shadow added to give depth and contrast with the image for readability */
   text-decoration: none; }
 
 .btn-link:focus {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #000034; }
 
 /* CARDS */
 .familyhub-card {

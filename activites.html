@@ -321,7 +321,41 @@
                                     </div>
                                 </div>
                             </div>
+                            
+                            <!-- In / Out Options -->
+                            <div class="card">
+                                <div class="familyhub-card-header" id="activity-filter-in-out">
+                                    <h2 class="filter-heading">
+                                        <button class="btn btn-link filter-heading-button collapsed" type="button" data-toggle="collapse" data-target="#collapseInOut" aria-expanded="false" aria-controls="collapseInOut">
+                                            Indoor or Outdoor
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseInOut" class="collapse filter-options" aria-labelledby="activity filter by indoors or outdoors" data-parent="#activity-filters-accordion">
+                                    <div class="card-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" value="" id="indoor">
+                                            <label class="form-check-label" for="indoor">
+                                            Indoor
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" value="" id="outdoor">
+                                            <label class="form-check-label" for="outdoor">
+                                            Outdoor
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" value="" id="inOrOut">
+                                            <label class="form-check-label" for="inOrOut">
+                                            Either
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        <a href="#" class="btn btn-search mt-4">Clear filters</a>
                     </form>
                     <!--END: Actitivies search filters -->
 
