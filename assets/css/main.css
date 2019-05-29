@@ -239,6 +239,9 @@ and edited slightly to fit project needs */
 #search-page-wrapper .familyhub-card {
   margin-bottom: 2rem; }
 
+.input-group > .form-control {
+  width: 168px; }
+
 /* BACKGROUND COLOURS */
 .bg-platinum {
   background-color: #e6ebe0; }
@@ -277,8 +280,8 @@ footer hr {
   background-position: center 20%; }
 
 .hero-events {
-  background-image: url("https://i.ibb.co/FJwBMmL/splash.jpg");
-  background-position: center 60%; }
+  background-image: url("https://i.ibb.co/Z2mFv47/festival.jpg");
+  background-position: center 90%; }
 
 /* positions text in the middle of the hero image, 
 shadow added to give depth and contrast with the image for readability */

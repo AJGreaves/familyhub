@@ -36,3 +36,12 @@ function topFunction() {
 function openSearch() {
     $("#search-modal").toggleClass('active');
 }
+
+// datepicker function code written by fellow student Sean Murphy, 
+// who gave it to me to demonstrate how to get it working
+$(function () {
+  $("#datepicker").datepicker({ 
+        autoclose: true, 
+        todayHighlight: true
+  }).datepicker('update', new Date());
+});

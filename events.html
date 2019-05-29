@@ -8,9 +8,10 @@
     <meta name="description" content="Family events and activities for kids in Haarlemmermeer and Haarlem, in English">
     <meta name="keywords" content="">
     <meta name="author" content="Anna Greaves">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="assets/css/main.css" type="text/css">
     <title>Family Hub | Events</title>
@@ -93,7 +94,7 @@
                                                 </button>
                                             </h2>
                                         </div>
-    
+
                                         <div id="collapseLocation" class="collapse filter-options show" aria-labelledby="event filter by location" data-parent="#event-filters-accordion">
                                             <div class="card-body">
                                                 <div class="form-check">
@@ -177,7 +178,7 @@
                                             </div>
                                         </div>
                                     </div>
-    
+
                                     <!-- Date Options -->
                                     <div class="card">
                                         <div class="familyhub-card-header" id="activity-filter-category">
@@ -189,11 +190,13 @@
                                         </div>
                                         <div id="collapseDate" class="collapse filter-options" aria-labelledby="activity filter by date" data-parent="#event-filters-accordion">
                                             <div class="card-body">
-                                                date selection options here
+                                                <label>Select Date: </label>
+                                                <input id="datepicker" class="input-group date" data-date-format="mm-dd-yyyy">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                                             </div>
                                         </div>
                                     </div>
-    
+
                                     <!-- Age Range Options -->
                                     <div class="card">
                                         <div class="familyhub-card-header" id="event-filter-age-range">
@@ -238,7 +241,7 @@
                                             </div>
                                         </div>
                                     </div>
-    
+
                                     <!-- In / Out Options -->
                                     <div class="card">
                                         <div class="familyhub-card-header" id="event-filter-in-out">
@@ -271,23 +274,41 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Price Options -->
                                     <div class="card">
                                         <div class="familyhub-card-header" id="activity-filter-category">
                                             <h2 class="filter-heading">
                                                 <button class="btn btn-link filter-heading-button collapsed" type="button" data-toggle="collapse" data-target="#collapsePrice" aria-expanded="false" aria-controls="collapsePrice">
-                                                    Date
+                                                    Price
                                                 </button>
                                             </h2>
                                         </div>
                                         <div id="collapsePrice" class="collapse filter-options" aria-labelledby="event filter by price" data-parent="#event-filters-accordion">
                                             <div class="card-body">
-                                                price selection options here
+                                                <div class="custom-control custom-switch">
+                                                    <!-- LATER: add JS to disable price range options when free is toggled on -->
+                                                    <input type="checkbox" class="custom-control-input" id="isFreeToggle">
+                                                    <label class="custom-control-label" for="isFreeToggle">Free</label>
+                                                </div>
+                                                <label class="mr-sm-2 mt-3" for="priceRangeStart">Min</label>
+                                                <select class="custom-select mr-sm-2" id="priceRangeStart">
+                                                    <option value="0">€0</option>
+                                                    <option value="10">€10</option>
+                                                    <option value="25">€20</option>
+                                                    <option value="50">€35</option>
+                                                </select>
+                                                <label class="mr-sm-2 mt-3" for="priceRangeEnd">Max</label>
+                                                <select class="custom-select mr-sm-2" id="priceRangeEnd">
+                                                    <option value="10">€10</option>
+                                                    <option value="25">€20</option>
+                                                    <option value="50">€35</option>
+                                                    <option value="50">€50+</option>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
-    
+
                                     <a href="#" class="btn btn-search mt-4">Clear filters</a>
                                 </div>
                             </form>
@@ -403,7 +424,9 @@
                                 </div>
                                 <div class="filter-options">
                                     <div class="card-body">
-                                        Date options go here
+                                        <label>Select Date: </label>
+                                        <input id="datepicker" class="input-group date" data-date-format="mm-dd-yyyy">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                                     </div>
                                 </div>
                             </div>
@@ -481,7 +504,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <!-- Price Options -->
                             <div class="card">
                                 <div class="familyhub-card-header-no-button">
@@ -491,7 +514,25 @@
                                 </div>
                                 <div class="filter-options">
                                     <div class="card-body">
-                                        Price options go here
+                                        <div class="custom-control custom-switch">
+                                            <!-- LATER: add JS to disable price range options when free is toggled on -->
+                                            <input type="checkbox" class="custom-control-input" id="isFreeToggle">
+                                            <label class="custom-control-label" for="isFreeToggle">Free</label>
+                                        </div>
+                                        <label class="mr-sm-2 mt-3" for="priceRangeStart">Min</label>
+                                        <select class="custom-select mr-sm-2" id="priceRangeStart">
+                                            <option value="0">€0</option>
+                                            <option value="10">€10</option>
+                                            <option value="25">€20</option>
+                                            <option value="50">€35</option>
+                                        </select>
+                                        <label class="mr-sm-2 mt-3" for="priceRangeEnd">Max</label>
+                                        <select class="custom-select mr-sm-2" id="priceRangeEnd">
+                                            <option value="10">€10</option>
+                                            <option value="25">€20</option>
+                                            <option value="50">€35</option>
+                                            <option value="50">€50+</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -618,13 +659,13 @@
     <!-- floating search and go to top buttons -->
     <button id="to-top-btn" class="floating-btn" title="Go to top">
         <i class="fas fa-chevron-circle-up fa-3x" aria-hidden="true"></i>
-    </button> 
+    </button>
     <button id="search-btn" class="floating-btn" title="Search">
         <!-- Adds circle backrgound to search icon to make it match the other floating button -->
         <div class="icon-circle">
             <i class="fas fa-search fa-2x" aria-hidden="true"></i>
         </div>
-    </button> 
+    </button>
 
     <!-- search modal -->
     <div id="search-modal" class="container-fluid">
@@ -649,6 +690,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"></script>
 
     <script src="assets/js/familyhub.js"></script>
 </body>
