@@ -18,6 +18,8 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 } 
 
+// when user clicks on search icon the search modal adds the active class, 
+// adding css to display: block; opacity: 1; 
 function openSearch() {
     $("#search-modal").toggleClass('active');
 }
