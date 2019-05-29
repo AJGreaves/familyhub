@@ -42,3 +42,27 @@
 .fa-twitter:hover {
     color: #38A1F3;
 }
+
+.custom-calendar-icon {
+    width: 60px;
+    text-align: center;
+    font-family: $capitalized-heading;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    margin-top: -30px;
+    margin-left: 10px;
+}
+
+.display-month {
+    height: 20px;
+    background-color: $terracotta;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.display-day {
+    height: 40px;
+    background-color: #fff;
+    color: $terracotta;
+    font-size: 25px;
+}
