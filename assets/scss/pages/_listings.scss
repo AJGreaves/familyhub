@@ -18,7 +18,8 @@ ul {
     padding: 0;
 }
 
-#activity-listing-wrapper h3 {
+#activity-listing-wrapper h3,
+#event-listing-wrapper h3 {
     font-family: $main-text;
     font-size: 1.1rem;
     color: $terracotta;
