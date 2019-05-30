@@ -32,6 +32,9 @@ footer h4 {
   font-size: 1.8rem;
   color: #000034; }
 
+.bold {
+  font-weight: 700; }
+
 /* BUTTONS */
 .btn {
   font-weight: 500; }
@@ -125,6 +128,9 @@ and edited slightly to fit project needs */
 .icon {
   margin-right: 1rem; }
 
+.icon-sm {
+  margin-left: 0.75rem; }
+
 .fa-chevron-right,
 .fa-chevron-left {
   font-size: 2.5rem; }
@@ -182,6 +188,12 @@ and edited slightly to fit project needs */
   color: #ed6a5a;
   font-size: 25px;
   border-radius: 0 0 5px 5px; }
+
+.fa-times {
+  color: #ed6a5a; }
+
+.fa-check {
+  color: #94b659; }
 
 /* CAROUSELS */
 .carousel-chevron {
@@ -393,6 +405,9 @@ ul {
 
 #listing-details p {
   margin-bottom: 0.5rem; }
+
+#listing-details li {
+  margin-bottom: 1rem; }
 
 /* MEDIA QUERIES */
 /* small size screens and up */

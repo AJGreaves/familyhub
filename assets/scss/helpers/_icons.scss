@@ -5,6 +5,9 @@
     margin-right: 1rem;
 }
 
+.icon-sm {
+    margin-left: 0.75rem;
+}
 
 .fa-chevron-right,
 .fa-chevron-left {
@@ -74,4 +77,12 @@
     color: $terracotta;
     font-size: 25px;
     border-radius: 0 0 5px 5px;
+}
+
+.fa-times {
+    color: $terracotta;
+}
+
+.fa-check {
+    color: $green;
 }
