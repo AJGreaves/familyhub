@@ -165,13 +165,16 @@ and edited slightly to fit project needs */
   -ms-transform: scale(1.4);
   transform: scale(1.4); }
 
-.fa-instagram:hover {
+.fa-instagram:hover,
+#activity-listing-business-social-links .fa-instagram:hover {
   color: #fbad50; }
 
-.fa-facebook:hover {
+.fa-facebook:hover,
+#activity-listing-business-social-links .fa-facebook:hover {
   color: #3b5998; }
 
-.fa-twitter:hover {
+.fa-twitter:hover,
+#activity-listing-business-social-links .fa-twitter:hover {
   color: #38A1F3; }
 
 .custom-calendar-icon {
@@ -203,6 +206,10 @@ and edited slightly to fit project needs */
 
 .fa-check {
   color: #94b659; }
+
+#activity-listing-business-social-links .fab {
+  color: #000034;
+  font-size: 2rem; }
 
 /* ------------------------------
     Carousels
@@ -314,6 +321,15 @@ and edited slightly to fit project needs */
 /* ------------------------------
     All pages
 ------------------------------ */
+/* !important needed here to override more specific heading colours in _listings.scss */
+a {
+  color: #5ca4a9 !important;
+  transition: all 0.2s ease-in-out 0.2s; }
+
+a:hover {
+  text-decoration: none;
+  color: #9bc1bc !important; }
+
 /* ------------------------------
     Background colours
 ------------------------------ */
@@ -438,8 +454,21 @@ ul {
 #listing-details p {
   margin-bottom: 0.5rem; }
 
-#listing-details li {
-  margin-bottom: 1rem; }
+#listing-details li,
+#listing-contact-links li {
+  margin-bottom: 0.3rem; }
+
+#listing-contact-links h5 {
+  font-family: "Patrick Hand SC", cursive;
+  font-size: 1.2rem;
+  color: #000034; }
+
+#listing-contact-links i {
+  font-size: 1.2rem; }
+
+#activity-listing-business-social-links li {
+  display: inline;
+  margin-right: 0.5rem; }
 
 /* ------------------------------
     Media Queries

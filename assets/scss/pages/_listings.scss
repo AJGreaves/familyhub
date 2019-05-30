@@ -25,6 +25,24 @@ ul {
     margin-bottom: 0.5rem;
 }
 
-#listing-details li {
-    margin-bottom: 1rem;
+#listing-details li,
+#listing-contact-links li {
+    margin-bottom: 0.3rem;
 }
+
+
+#listing-contact-links h5 {
+    font-family: $capitalized-heading;
+    font-size: 1.2rem;
+    color: $dark-blue;
+}
+
+#listing-contact-links i {
+    font-size: 1.2rem;
+}
+
+#activity-listing-business-social-links li {
+    display: inline;
+    margin-right: 0.5rem;
+}
+

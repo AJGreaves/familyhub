@@ -42,15 +42,18 @@
     transform: scale(1.4);
 }
 
-.fa-instagram:hover {
+.fa-instagram:hover,
+#activity-listing-business-social-links .fa-instagram:hover {
     color: #fbad50;
 }
 
-.fa-facebook:hover {
+.fa-facebook:hover,
+#activity-listing-business-social-links .fa-facebook:hover, {
     color: #3b5998;
 }
 
-.fa-twitter:hover {
+.fa-twitter:hover,
+#activity-listing-business-social-links .fa-twitter:hover {
     color: #38A1F3;
 }
 
@@ -87,4 +90,9 @@
 
 .fa-check {
     color: $green;
+}
+
+#activity-listing-business-social-links .fab {
+    color: $dark-blue;
+    font-size: 2rem;
 }
