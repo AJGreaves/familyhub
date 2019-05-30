@@ -207,7 +207,8 @@ and edited slightly to fit project needs */
 .fa-check {
   color: #94b659; }
 
-#activity-listing-business-social-links .fab {
+#activity-listing-business-social-links .fab,
+#social-share-icons .fab {
   color: #000034;
   font-size: 2rem; }
 
@@ -469,9 +470,14 @@ ul {
 #listing-contact-links i {
   font-size: 1.2rem; }
 
-#activity-listing-business-social-links li {
+#activity-listing-business-social-links li,
+#social-share-icons li,
+#social-share-icons h3 {
   display: inline;
   margin-right: 0.5rem; }
+
+#social-share-icons ul {
+  margin-top: 1rem; }
 
 table {
   margin-bottom: 1rem; }
