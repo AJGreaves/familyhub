@@ -11,8 +11,13 @@ h1,
 h2 {
   font-family: "Delius", cursive;
   color: #ed6a5a;
-  font-size: 1.8rem;
   margin-top: 2.5rem; }
+
+h1 {
+  font-size: 1.8rem; }
+
+h2 {
+  font-size: 1.5rem; }
 
 footer h3,
 footer h4 {
@@ -380,9 +385,11 @@ html {
     margin-top: 0; } }
 /* medium size screens and up */
 @media screen and (min-width: 768px) {
-  h1,
-  h2 {
+  h1 {
     font-size: 2.5rem; }
+
+  h2 {
+    font-size: 2.2rem; }
 
   .fa-chevron-right,
   .fa-chevron-left {
