@@ -327,12 +327,10 @@ footer .social-icon-shadow {
 ------------------------------ */
 /* !important needed here to override more specific heading colours in _listings.scss */
 a {
-  color: #5ca4a9 !important;
   transition: all 0.2s ease-in-out 0.2s; }
 
 a:hover {
-  text-decoration: none;
-  color: #9bc1bc !important; }
+  text-decoration: none; }
 
 /* ------------------------------
     Background colours
@@ -467,6 +465,13 @@ ul {
 #listing-details li,
 #listing-contact-links li {
   margin-bottom: 0.3rem; }
+
+#listing-contact-links a {
+  color: #5ca4a9;
+  transform: all 0.2s ease-in-out 0.2s; }
+
+#listing-contact-links a:hover {
+  color: #9bc1bc; }
 
 #listing-contact-links h5 {
   font-family: "Patrick Hand SC", cursive;

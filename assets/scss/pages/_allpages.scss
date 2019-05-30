@@ -5,13 +5,11 @@
 /* !important needed here to override more specific heading colours in _listings.scss */
 
 a {
-    color: $mid-blue!important;
     transition: all 0.2s ease-in-out 0.2s;
 }
 
 a:hover {
     text-decoration: none;
-    color: $light-blue!important; 
 }
 
 
