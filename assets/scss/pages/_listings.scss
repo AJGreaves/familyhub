@@ -1,0 +1,21 @@
+.listing-img {
+    width: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    padding: 0;
+}
+
+#listing-details h3 {
+    font-family: $capitalized-heading;
+    font-size: 1.5rem;
+    color: $dark-blue;
+}
+
+#listing-details p {
+    margin-bottom: 0.5rem;
+}
