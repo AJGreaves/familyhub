@@ -411,10 +411,11 @@ footer {
   color: white;
   margin-top: 3rem; }
 
+/* !important overriding css from earlier */
 footer p,
 footer a {
   margin-bottom: 0.3rem;
-  color: #e6ebe0;
+  color: #e6ebe0 !important;
   display: block; }
 
 footer h4 {
@@ -426,7 +427,7 @@ footer a {
 
 footer a:hover {
   text-decoration: none;
-  color: white; }
+  color: white !important; }
 
 .copyright,
 .social-icons-footer {

@@ -14,6 +14,7 @@ a:hover {
     color: $light-blue!important; 
 }
 
+
 /* ------------------------------
     Background colours
 ------------------------------ */
@@ -109,10 +110,12 @@ footer {
     margin-top: 3rem;
 }
 
+
+/* !important overriding css from earlier */
 footer p,
 footer a {
     margin-bottom: 0.3rem;
-    color: $platinum;
+    color: $platinum!important;
     display: block;
 }
 
@@ -127,7 +130,7 @@ footer a {
 
 footer a:hover {
     text-decoration: none;
-    color: white;
+    color: white!important;
 }
 
 .copyright,
