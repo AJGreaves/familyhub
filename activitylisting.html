@@ -75,13 +75,15 @@
                                     </li>
                                     <li>
                                         <h3><i class="fas fa-child icon"></i>Ages</h3>
-                                        <div class="row">
-                                            <div class="col-6">
+                                        <div class="row no-gutters">
+                                            <!-- column classes here make room for each age group to be in line nicely on every screen size -->
+                                            <div class="col-6 col-md-12 col-lg-6">
                                                 <p>Under 4<i class="fas fa-times icon-sm"></i></p>
                                                 <p>4-6yr<i class="fa fa-check icon-sm"></i></p>
                                                 <p>6-8yr<i class="fa fa-check icon-sm"></i></p>
                                             </div>
-                                            <div class="col-6">
+                                            
+                                            <div class="col-6 col-md-12 col-lg-6">
                                                 <p>8-10yr<i class="fa fa-check icon-sm"></i></p>
                                                 <p>10-12yr<i class="fas fa-times icon-sm"></i></p>
                                                 <p>12yr +<i class="fas fa-times icon-sm"></i></p>
@@ -90,36 +92,65 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="col-6">open times</div>
+                            <div class="col-6">
+                                <h3><i class="fas fa-calendar-week icon"></i>Open times</h3>
+                                <!-- opening times table -->
+                                <table class="table table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Day</th>
+                                            <th scope="col">Open</th>
+                                            <th scope="col">Close</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Mon</th>
+                                            <td>15:15</td>
+                                            <td>18:00</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Tue</th>
+                                            <td>15:15</td>
+                                            <td>18:00</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Wed</th>
+                                            <td colspan="2">Closed</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Thu</th>
+                                            <td>15:15</td>
+                                            <td>18:00</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Fri</th>
+                                            <td>15:15</td>
+                                            <td>18:00</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Sat</th>
+                                            <td colspan="2">Closed</td>                                        
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Sun</th>
+                                            <td colspan="2">Closed</td>                                        
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                             <div class="col-12">address, website, email address, social links</div>
                         </div>
                     </div>
                     <div class="col-12">
                         <h2>Activity description</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-                        magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-                        quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                        ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
-                        dolor in hendrerit in vulputate velit esse molestie consequat,
-                        vel illum dolore eu feugiat nulla facilisis at vero eros et
-                        accumsan et iusto odio dignissim qui blandit praesent luptatum
-                        zzril delenit augue duis dolore te feugait nulla facilisi.
-                        <br><br>
-                        Nam liber tempor cum soluta nobis eleifend option congue
-                        nihil imperdiet doming id quod mazim placerat facer possim
-                        assum. Typi non habent claritatem insitam; est usus legentis
-                        in iis qui facit eorum claritatem. 
-                        <br><br>
-                        Investigationes
-                        demonstraverunt lectores legere me lius quod ii legunt saepius.
-                        Claritas est etiam processus dynamicus, qui sequitur mutationem
-                        consuetudium lectorum. Mirum est notare quam littera gothica,
-                        quam nunc putamus parum claram, anteposuerit litterarum formas
-                        humanitatis per seacula quarta decima et quinta decima. 
-                        <br><br>
-                        Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes
-                        in futurum.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis
+                            nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim
+                            qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+                            <br><br> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.
+                            <br><br> Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc
+                            putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima.
+                            <br><br> Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
                     </div>
                     <div class="col-12 col-md-6"> Share icons </div>
                     <div class="col-12 col-md-6"> Return to search button </div>
@@ -194,13 +225,13 @@
     <!-- floating search and go to top buttons -->
     <button id="to-top-btn" class="floating-btn" title="Go to top">
         <i class="fas fa-chevron-circle-up fa-3x" aria-hidden="true"></i>
-    </button> 
+    </button>
     <button id="search-btn" class="floating-btn" title="Search">
         <!-- Adds circle backrgound to search icon to make it match the other floating button -->
         <div class="icon-circle">
             <i class="fas fa-search fa-2x" aria-hidden="true"></i>
         </div>
-    </button> 
+    </button>
 
     <!-- search modal -->
     <div id="search-modal" class="container-fluid">

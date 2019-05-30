@@ -389,8 +389,12 @@ jumping to different parts of the same page */
 html {
   scroll-behavior: smooth; }
 
+/* ------------------------------
+    Listing pages
+------------------------------ */
 .listing-img {
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 2rem; }
 
 li {
   list-style: none; }
