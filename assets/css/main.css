@@ -49,7 +49,8 @@ footer h4 {
 .btn-readmore {
   background-color: #9bc1bc;
   border: #9bc1bc;
-  color: #fff; }
+  color: #fff;
+  transition: all 0.3s ease-in-out 0.3s; }
 
 .btn-readmore:hover {
   background-color: #5ca4a9;
@@ -60,7 +61,12 @@ footer h4 {
   color: #fff;
   background-color: #ed6a5a;
   border: #ed6a5a;
-  opacity: 0.8; }
+  opacity: 0.8;
+  transition: all 0.3s ease-in-out 0.3s; }
+
+.btn-search:hover {
+  opacity: 1;
+  color: #fff; }
 
 .icon-circle {
   height: 48px;
@@ -74,10 +80,6 @@ footer h4 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #fff; }
-
-.btn-search:hover {
-  opacity: 1;
   color: #fff; }
 
 .search-input-field {
@@ -103,7 +105,7 @@ and edited slightly to fit project needs */
   color: #ed6a5a;
   opacity: 0;
   background-color: transparent;
-  transition: all 0.5s ease-in-out 0.1s; }
+  transition: all 0.5s ease-in-out 0.2s; }
 
 /* positions search icon above to top button */
 #search-btn {
@@ -119,7 +121,7 @@ and edited slightly to fit project needs */
   then js adds active class to it */
   opacity: 0;
   pointer-events: none;
-  transition: all 0.5s ease-in-out 0.1s; }
+  transition: all 0.5s ease-in-out 0.2s; }
 
 #search-btn.active,
 #to-top-btn.active {

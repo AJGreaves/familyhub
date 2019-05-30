@@ -10,6 +10,7 @@
     background-color: $light-blue;
     border: $light-blue;
     color: #fff;
+    transition: all 0.3s ease-in-out 0.3s;
 }
 
 .btn-readmore:hover {
@@ -23,6 +24,12 @@
     background-color: $terracotta;
     border: $terracotta;
     opacity: 0.8;
+    transition: all 0.3s ease-in-out 0.3s;
+}
+
+.btn-search:hover {
+    opacity: 1;
+    color: #fff;
 }
 
 .icon-circle {
@@ -38,11 +45,6 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #fff;
-}
-
-.btn-search:hover {
-    opacity: 1;
     color: #fff;
 }
 
@@ -73,7 +75,7 @@ and edited slightly to fit project needs */
     color: $terracotta;
     opacity: 0;
     background-color: transparent;
-    transition: all 0.5s ease-in-out 0.1s;
+    transition: all 0.5s ease-in-out 0.2s;
 }
 
 /* positions search icon above to top button */
@@ -91,7 +93,7 @@ and edited slightly to fit project needs */
     then js adds active class to it */
     opacity: 0;
     pointer-events: none;
-    transition: all 0.5s ease-in-out 0.1s;
+    transition: all 0.5s ease-in-out 0.2s;
 }
 
 #search-btn.active,
