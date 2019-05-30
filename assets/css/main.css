@@ -491,6 +491,14 @@ table {
 td {
   padding-right: 0.5rem; }
 
+#create-account-wrapper h3 {
+  font-size: 1.2rem;
+  color: #5ca4a9;
+  margin-bottom: 1.2rem; }
+
+#create-account-wrapper label {
+  color: #ed6a5a; }
+
 /* ------------------------------
     Media Queries
 ------------------------------ */
