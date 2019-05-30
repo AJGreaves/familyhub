@@ -446,7 +446,7 @@ li {
 ul {
   padding: 0; }
 
-#listing-details h3 {
+#activity-listing-wrapper h3 {
   font-family: "Patrick Hand SC", cursive;
   font-size: 1.5rem;
   color: #000034; }
@@ -469,6 +469,12 @@ ul {
 #activity-listing-business-social-links li {
   display: inline;
   margin-right: 0.5rem; }
+
+table {
+  margin-bottom: 1rem; }
+
+td {
+  padding-right: 0.5rem; }
 
 /* ------------------------------
     Media Queries

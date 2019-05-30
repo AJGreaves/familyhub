@@ -15,7 +15,7 @@ ul {
     padding: 0;
 }
 
-#listing-details h3 {
+#activity-listing-wrapper h3 {
     font-family: $capitalized-heading;
     font-size: 1.5rem;
     color: $dark-blue;
@@ -46,3 +46,10 @@ ul {
     margin-right: 0.5rem;
 }
 
+table {
+    margin-bottom: 1rem;
+}
+
+td {
+    padding-right: 0.5rem;
+}
