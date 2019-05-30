@@ -455,9 +455,10 @@ ul {
   padding: 0; }
 
 #activity-listing-wrapper h3 {
-  font-family: "Patrick Hand SC", cursive;
-  font-size: 1.5rem;
-  color: #ed6a5a; }
+  font-family: "News Cycle", sans-serif;
+  font-size: 1.1rem;
+  color: #ed6a5a;
+  text-transform: uppercase; }
 
 #listing-details p {
   margin-bottom: 0.5rem; }

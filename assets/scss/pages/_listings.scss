@@ -19,9 +19,10 @@ ul {
 }
 
 #activity-listing-wrapper h3 {
-    font-family: $capitalized-heading;
-    font-size: 1.5rem;
+    font-family: $main-text;
+    font-size: 1.1rem;
     color: $terracotta;
+    text-transform: uppercase;
 }
 
 #listing-details p {
