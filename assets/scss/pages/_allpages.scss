@@ -1,10 +1,19 @@
-/* BACKGROUND COLOURS */
+/* ------------------------------
+    All pages
+------------------------------ */
+
+
+/* ------------------------------
+    Background colours
+------------------------------ */
 
 .bg-platinum {
     background-color: $platinum;
 }
 
-/* CONTAINERS */
+/* ------------------------------
+    Containers
+------------------------------ */
 
 .container-fluid,
 .row {
@@ -21,7 +30,9 @@ footer hr {
     opacity: 0.5;
 }
 
-/* BACKGROUND IMAGES */
+/* ------------------------------
+    Background images
+------------------------------ */
 
 .hero-img {
     height: 400px;
@@ -77,7 +88,9 @@ shadow added to give depth and contrast with the image for readability */
     border-radius: 50%;
 }
 
-/* FOOTER */
+/* ------------------------------
+    Footer
+------------------------------ */
 
 footer {
     background-color: $mid-blue;

@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Delius|News+Cycle|Patrick+Hand+SC:400,500,700,900&display=swap");
-/* Fonts */
+/* ------------------------------
+    Variables
+------------------------------ */
+/* ------------------------------
+    Fonts
+------------------------------ */
 .navbar {
   font-family: "Delius", cursive; }
 
@@ -35,7 +40,9 @@ footer h4 {
 .bold {
   font-weight: 700; }
 
-/* BUTTONS */
+/* ------------------------------
+    Buttons
+------------------------------ */
 .btn {
   font-weight: 500; }
 
@@ -123,7 +130,9 @@ and edited slightly to fit project needs */
 #to-top-btn.active:hover {
   opacity: 1; }
 
-/* ICONS */
+/* ------------------------------
+    Icons
+------------------------------ */
 /* adds spacing between icons and headings */
 .icon {
   margin-right: 1rem; }
@@ -195,7 +204,9 @@ and edited slightly to fit project needs */
 .fa-check {
   color: #94b659; }
 
-/* CAROUSELS */
+/* ------------------------------
+    Carousels
+------------------------------ */
 .carousel-chevron {
   color: #f4f1bb; }
 
@@ -203,7 +214,9 @@ and edited slightly to fit project needs */
 .carousel-control-next {
   width: 10%; }
 
-/* MODALS */
+/* ------------------------------
+    Modals
+------------------------------ */
 #search-modal {
   height: 100vh;
   position: fixed;
@@ -241,7 +254,9 @@ and edited slightly to fit project needs */
   margin-top: 1rem;
   text-align: center; }
 
-/* SEARCH FILTER */
+/* ------------------------------
+    Search filters
+------------------------------ */
 .filter-heading {
   margin: 0;
   font-family: "News Cycle", sans-serif;
@@ -270,7 +285,9 @@ and edited slightly to fit project needs */
 .gj-datepicker {
   max-width: 215px; }
 
-/* CARDS */
+/* ------------------------------
+    Cards
+------------------------------ */
 .familyhub-card {
   margin-bottom: 1rem;
   /* CREDIT: Code for box shadow taken from https://codepen.io/sdthornton/pen/wBZdXq */
@@ -294,11 +311,18 @@ and edited slightly to fit project needs */
 #search-page-wrapper .familyhub-card {
   margin-bottom: 2rem; }
 
-/* BACKGROUND COLOURS */
+/* ------------------------------
+    All pages
+------------------------------ */
+/* ------------------------------
+    Background colours
+------------------------------ */
 .bg-platinum {
   background-color: #e6ebe0; }
 
-/* CONTAINERS */
+/* ------------------------------
+    Containers
+------------------------------ */
 .container-fluid,
 .row {
   padding: 0; }
@@ -311,7 +335,9 @@ footer hr {
   border-top: 2px solid #e6ebe0;
   opacity: 0.5; }
 
-/* BACKGROUND IMAGES */
+/* ------------------------------
+    Background images
+------------------------------ */
 .hero-img {
   height: 400px;
   background-repeat: no-repeat;
@@ -357,7 +383,9 @@ shadow added to give depth and contrast with the image for readability */
   height: 100%;
   border-radius: 50%; }
 
-/* FOOTER */
+/* ------------------------------
+    Footer
+------------------------------ */
 footer {
   background-color: #5ca4a9;
   color: white;
@@ -413,7 +441,9 @@ ul {
 #listing-details li {
   margin-bottom: 1rem; }
 
-/* MEDIA QUERIES */
+/* ------------------------------
+    Media Queries
+------------------------------ */
 /* small size screens and up */
 @media screen and (min-width: 576px) {
   /* keeps search bar and search button in one line */
