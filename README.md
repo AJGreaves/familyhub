@@ -198,6 +198,7 @@ Further reading and troubleshooting on cloning a repository from GitHub [here](h
 - Code for floating buttons taken from this [W3Schools post](https://www.w3schools.com/howto/howto_js_scroll_to_top.asp)
 - Box shadow codes were taken from [Material Design Box Shadows](https://codepen.io/sdthornton/pen/wBZdXq).
 - Code for adding the correct prefixes to css was created using [AutoPrefixer](https://autoprefixer.github.io/).
+- Hex to RGBA colour converter: http://hex2rgba.devoth.com/
 
 ### Acknowledgements
 
