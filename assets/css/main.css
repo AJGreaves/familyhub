@@ -411,11 +411,10 @@ footer {
   color: white;
   margin-top: 3rem; }
 
-/* !important overriding css from earlier */
 footer p,
 footer a {
   margin-bottom: 0.3rem;
-  color: #e6ebe0 !important;
+  color: #e6ebe0;
   display: block; }
 
 footer h4 {
@@ -427,7 +426,7 @@ footer a {
 
 footer a:hover {
   text-decoration: none;
-  color: white !important; }
+  color: #fff; }
 
 .copyright,
 .social-icons-footer {
@@ -468,13 +467,6 @@ ul {
 #listing-contact-links li {
   margin-bottom: 0.3rem; }
 
-#listing-contact-links a {
-  color: #5ca4a9;
-  transform: all 0.2s ease-in-out 0.2s; }
-
-#listing-contact-links a:hover {
-  color: #9bc1bc; }
-
 #listing-contact-links h5 {
   font-family: "Patrick Hand SC", cursive;
   font-size: 1.2rem;
@@ -498,7 +490,18 @@ table {
 td {
   padding-right: 0.5rem; }
 
-#create-account-wrapper h3 {
+/* ------------------------------
+    Forms
+------------------------------ */
+a.fh-link {
+  color: #5ca4a9;
+  transition: all 0.3s ease-in-out 0.3s; }
+
+a.fh-link:hover {
+  color: #9bc1bc; }
+
+#create-account-wrapper h3,
+#login-wrapper h3 {
   font-size: 1.2rem;
   color: #5ca4a9;
   margin-bottom: 1.2rem; }

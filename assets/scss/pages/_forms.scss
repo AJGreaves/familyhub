@@ -6,6 +6,17 @@ a.fh-link {
     color: $mid-blue;
     transition: all 0.3s ease-in-out 0.3s;
 }
-a.fh-link {
+a.fh-link:hover {
     color: $light-blue;
+}
+
+#create-account-wrapper h3,
+#login-wrapper h3 {
+    font-size: 1.2rem;
+    color: $mid-blue;
+    margin-bottom: 1.2rem;
+}
+
+#create-account-wrapper label {
+    color: $terracotta;
 }
