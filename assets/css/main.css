@@ -341,6 +341,15 @@ footer .social-icon-shadow {
 #search-page-wrapper .familyhub-card {
   margin-bottom: 2rem; }
 
+#my-account-wrapper .familyhub-card {
+  margin-top: 2.5rem; }
+
+.inactive {
+  opacity: 0.6; }
+
+.expired {
+  color: #ed6a5a; }
+
 /* ------------------------------
     All pages
 ------------------------------ */
