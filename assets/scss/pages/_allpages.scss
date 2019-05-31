@@ -109,11 +109,10 @@ footer {
 }
 
 
-/* !important overriding css from earlier */
 footer p,
 footer a {
     margin-bottom: 0.3rem;
-    color: $platinum!important;
+    color: $platinum;
     display: block;
 }
 
@@ -128,7 +127,7 @@ footer a {
 
 footer a:hover {
     text-decoration: none;
-    color: white!important;
+    color: #fff;
 }
 
 .copyright,
