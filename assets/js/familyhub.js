@@ -39,13 +39,15 @@ function openSearch() {
 
 // datepicker function code written by fellow student Sean Murphy, 
 // who gave it to me to demonstrate how to get it working
-$("#datepicker1").datepicker({ 
-  autoclose: true, 
-  todayHighlight: true,
-  uiLibrary: 'bootstrap4'
-})
-$("#datepicker2").datepicker({ 
-  autoclose: true, 
-  todayHighlight: true,
-  uiLibrary: 'bootstrap4'
-})
+
+['#eventFilterDatepickerSm', 
+'#eventFilterDatepickerLg', 
+'#activityStartDate', 
+'#activityEndDate'].forEach(datepick => {
+    $(datepick).datepicker({ 
+    autoclose: true, 
+  	todayHighlight: true,
+  	uiLibrary: 'bootstrap4'
+	});
+});
+

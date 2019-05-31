@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="assets/css/main.css" type="text/css">
     <title>Family Hub | Add Activity</title>
@@ -74,12 +75,20 @@
                         <div class="col-12">
                             <hr>
                         </div>
-                        <div class="col-12">
-                            <div class="row">
-                                <div class="col-12 col-md-6">start and end dates</div>
-                                <div class="col-12 col-md-6">opening times table</div>
+                        <div class="form-row">
+                            <div class="form-group col-12 col-md-6">
+                                <label>Start Date: </label>
+                                <input id="activityStartDate" class="input-group date datepicker-wider" data-date-format="mm-dd-yyyy">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                <label>End Date: </label>
+                                <input id="activityEndDate" class="input-group date datepicker-wider" data-date-format="mm-dd-yyyy">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                opening times table
                             </div>
                         </div>
+
                         <div class="col-12">
                             <hr>
                         </div>
@@ -242,7 +251,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>    
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"></script>
 
     <script src="assets/js/familyhub.js"></script>
 </body>
