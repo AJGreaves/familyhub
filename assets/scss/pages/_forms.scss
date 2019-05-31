@@ -36,3 +36,10 @@ a.fh-link:hover {
 #add-edit-activity-wrapper .gj-datepicker {
     max-width: 100%;
 }
+
+#activityStartDate,
+#activityEndDate,
+#startTime,
+#endTime {
+    pointer-events: none;
+}

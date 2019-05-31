@@ -153,6 +153,7 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
     - The project used **Browserstack** to test functionality on all browsers and devices.
 - [AutoPrefixer](https://autoprefixer.github.io/)
     - The project used **AutoPrefixer** to make sure all css prefixes were the most up to date versions. 
+- https://gijgo.com/ date and time pickers
 
 ## Testing 
 

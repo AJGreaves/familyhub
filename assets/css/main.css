@@ -164,6 +164,10 @@ and edited slightly to fit project needs */
 #to-top-btn.active:hover {
   opacity: 1; }
 
+/* overrides timepicker border css from gijgo css that did not match datepicker */
+.btn-outline-secondary {
+  border: 1px solid #ced4da; }
+
 /* ------------------------------
     Icons
 ------------------------------ */
@@ -338,6 +342,11 @@ footer .social-icon-shadow {
 /* to stop datepicker stretching too far out */
 .gj-datepicker {
   max-width: 215px; }
+
+/* Forces user to use datepicker and removes ability to type input into date field */
+#eventFilterDatepickerSm,
+#eventFilterDatepickerLg {
+  pointer-events: none; }
 
 /* ------------------------------
     Cards
@@ -582,6 +591,12 @@ a.fh-link:hover {
 /* make datepicker fields wider in add listing pages */
 #add-edit-activity-wrapper .gj-datepicker {
   max-width: 100%; }
+
+#activityStartDate,
+#activityEndDate,
+#startTime,
+#endTime {
+  pointer-events: none; }
 
 /* ------------------------------
     Media Queries

@@ -145,3 +145,8 @@ and edited slightly to fit project needs */
 #to-top-btn.active:hover {
     opacity: 1;
 }
+
+/* overrides timepicker border css from gijgo css that did not match datepicker */
+.btn-outline-secondary {
+    border: 1px solid #ced4da;
+}

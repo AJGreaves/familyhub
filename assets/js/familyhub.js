@@ -51,3 +51,10 @@ function openSearch() {
 	});
 });
 
+['#startTime', 
+'#endTime'].forEach(timepick => {
+    $(timepick).timepicker({ 
+    autoclose: true, 
+  	uiLibrary: 'bootstrap4'
+	});
+});
