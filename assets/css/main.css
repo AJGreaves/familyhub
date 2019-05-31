@@ -592,10 +592,10 @@ a.fh-link:hover {
 #add-edit-activity-wrapper .gj-datepicker {
   max-width: 100%; }
 
-#activityStartDate,
-#activityEndDate,
-#startTime,
-#endTime {
+/* forces users to use the date/time pickers instead of adding their own input */
+#activityStartDate, #activityEndDate,
+#startTimeMon, #startTimeTue, #startTimeWed, #startTimeThu, #startTimeFri, #startTimeSat, #startTimeSun,
+#endTimeMon, #endTimeTue, #endTimeWed, #endTimeThu, #endTimeFri, #endTimeSat, #endTimeSun {
   pointer-events: none; }
 
 /* positions checkbox and labels for weekday open + close times in the form
@@ -608,8 +608,11 @@ a.fh-link:hover {
   /* set to 75% in media queries for medium screens and up */
   padding-left: 50%; }
 
-.weekday-checkbox-row {
+.weekday-checkbox-row-top {
   padding-top: 2.35rem; }
+
+.weekday-checkbox-row {
+  padding-top: 0.4; }
 
 /* ------------------------------
     Media Queries

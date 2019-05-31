@@ -51,8 +51,20 @@ function openSearch() {
 	});
 });
 
-['#startTime', 
-'#endTime'].forEach(timepick => {
+['#startTimeMon', 
+'#endTimeMon',
+'#startTimeTue', 
+'#endTimeTue',
+'#startTimeWed', 
+'#endTimeWed',
+'#startTimeThu', 
+'#endTimeThu',
+'#startTimeFri', 
+'#endTimeFri',
+'#startTimeSat', 
+'#endTimeSat',
+'#startTimeSun', 
+'#endTimeSun',].forEach(timepick => {
     $(timepick).timepicker({ 
     autoclose: true, 
   	uiLibrary: 'bootstrap4'
