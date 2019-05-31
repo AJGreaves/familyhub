@@ -345,10 +345,13 @@ footer .social-icon-shadow {
   margin-top: 2.5rem; }
 
 .inactive {
-  opacity: 0.6; }
+  opacity: 0.5; }
 
-.expired {
-  color: #ed6a5a; }
+p.expired {
+  color: #000034;
+  font-size: 0.75rem;
+  display: inline-block;
+  margin-left: 0.25rem; }
 
 /* ------------------------------
     All pages
