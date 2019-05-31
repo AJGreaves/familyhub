@@ -62,186 +62,206 @@
                             <h1>Add new activity</h1>
                             <hr>
                         </div>
-                        <div class="form-row">
-                            <div class="form-group col-12">
-                                <label for="accountId">Activity Title</label>
-                                <input id="accountId" class="form-control" type="text" placeholder="Your activity title">
+                        <div class="col-12">
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="accountId">Activity Title</label>
+                                    <input id="accountId" class="form-control" type="text" placeholder="Your activity title">
+                                </div>
                             </div>
                         </div>
                         <div class="col-12">
                             <hr>
                         </div>
-                        <div class="form-row">
-                            <div class="form-group col-12 col-md-4">
-                                <div class="form-row">
-                                    <div class="form-group col-6 col-md-12">
-                                        <label>Start Date: </label>
-                                        <input id="activityStartDate" class="no-click input-group date datepicker-wider" data-date-format="mm-dd-yyyy">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        <div class="col-12">
+                            <div class="form-row">
+                                <div class="form-group col-12 col-md-4">
+                                    <div class="form-row">
+                                        <div class="form-group col-6 col-md-12">
+                                            <label>Start Date: </label>
+                                            <input id="activityStartDate" class="no-click input-group date datepicker-wider" data-date-format="mm-dd-yyyy">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                        </div>
+                                        <div class="form-group col-6 col-md-12">
+                                            <label>End Date: </label>
+                                            <input id="activityEndDate" class="no-click input-group date datepicker-wider" data-date-format="mm-dd-yyyy">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                        </div>
+    
                                     </div>
-                                    <div class="form-group col-6 col-md-12">
-                                        <label>End Date: </label>
-                                        <input id="activityEndDate" class="no-click input-group date datepicker-wider" data-date-format="mm-dd-yyyy">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                                    </div>
-                                    
+    
                                 </div>
-                                
-                            </div>
-                            <div class="form-group col-12 col-md-8">
-                                
-                                <!-- Monday times -->
-                                <div class="form-row">
-                                    <div class="form-group weekday-checkbox-row-top col-2 col-md-4">
-                                        <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="mon">
-                                        <label class="form-check-label weekday-checkbox-label" for="mon">
-                                        Mon
-                                        </label>
+                                <div class="form-group col-12 col-md-8">
+    
+                                    <!-- Monday times -->
+                                    <div class="form-row">
+                                        <div class="form-group weekday-checkbox-row-top col-2 col-md-4">
+                                            <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="mon">
+                                            <label class="form-check-label weekday-checkbox-label" for="mon">
+                                            Mon
+                                            </label>
+                                        </div>
+                                        <div class="form-group col-5 col-md-4">
+                                            <label>Start time </label>
+                                            <input id="startTimeMon" class="no-click input-group date">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+                                        </div>
+                                        <div class="form-group col-5 col-md-4">
+                                            <label>End Time </label>
+                                            <input id="endTimeMon" class="no-click input-group date">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+                                        </div>
                                     </div>
-                                    <div class="form-group col-5 col-md-4">
-                                        <label>Start time </label>
-                                        <input id="startTimeMon" class="no-click input-group date">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+    
+                                    <!-- Tuesday times -->
+                                    <div class="form-row">
+                                        <div class="form-group weekday-checkbox-row col-2 col-md-4">
+                                            <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="tue">
+                                            <label class="form-check-label weekday-checkbox-label" for="tue">
+                                            Tue
+                                            </label>
+                                        </div>
+                                        <div class="form-group col-5 col-md-4">
+                                            <input id="startTimeTue" class="no-click input-group date">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+                                        </div>
+                                        <div class="form-group col-5 col-md-4">
+                                            <input id="endTimeTue" class="no-click input-group date">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+                                        </div>
                                     </div>
-                                    <div class="form-group col-5 col-md-4">
-                                        <label>End Time </label>
-                                        <input id="endTimeMon" class="no-click input-group date">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+    
+                                    <!-- Wednesday times -->
+                                    <div class="form-row">
+                                        <div class="form-group weekday-checkbox-row col-2 col-md-4">
+                                            <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="wed">
+                                            <label class="form-check-label weekday-checkbox-label" for="wed">
+                                            Wed
+                                            </label>
+                                        </div>
+                                        <div class="form-group col-5 col-md-4">
+                                            <input id="startTimeWed" class="no-click input-group date">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+                                        </div>
+                                        <div class="form-group col-5 col-md-4">
+                                            <input id="endTimeWed" class="no-click input-group date">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+                                        </div>
+                                    </div>
+    
+                                    <!-- Thursday times -->
+                                    <div class="form-row">
+                                        <div class="form-group weekday-checkbox-row col-2 col-md-4">
+                                            <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="thu">
+                                            <label class="form-check-label weekday-checkbox-label" for="thu">
+                                            Thu
+                                            </label>
+                                        </div>
+                                        <div class="form-group col-5 col-md-4">
+                                            <input id="startTimeThu" class="no-click input-group date">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+                                        </div>
+                                        <div class="form-group col-5 col-md-4">
+                                            <input id="endTimeThu" class="no-click input-group date">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+                                        </div>
+                                    </div>
+    
+                                    <!-- Friday times -->
+                                    <div class="form-row">
+                                        <div class="form-group weekday-checkbox-row col-2 col-md-4">
+                                            <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="Fri">
+                                            <label class="form-check-label weekday-checkbox-label" for="Fri">
+                                            Fri
+                                            </label>
+                                        </div>
+                                        <div class="form-group col-5 col-md-4">
+                                            <input id="startTimeFri" class="no-click input-group date">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+                                        </div>
+                                        <div class="form-group col-5 col-md-4">
+                                            <input id="endTimeFri" class="no-click input-group date">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+                                        </div>
+                                    </div>
+    
+                                    <!-- Saturday times -->
+                                    <div class="form-row">
+                                        <div class="form-group weekday-checkbox-row col-2 col-md-4">
+                                            <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="Sat">
+                                            <label class="form-check-label weekday-checkbox-label" for="Sat">
+                                            Sat
+                                            </label>
+                                        </div>
+                                        <div class="form-group col-5 col-md-4">
+                                            <input id="startTimeSat" class="no-click input-group date">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+                                        </div>
+                                        <div class="form-group col-5 col-md-4">
+                                            <input id="endTimeSat" class="no-click input-group date">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+                                        </div>
+                                    </div>
+    
+                                    <!-- Sunday times -->
+                                    <div class="form-row">
+                                        <div class="form-group weekday-checkbox-row col-2 col-md-4">
+                                            <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="Sun">
+                                            <label class="form-check-label weekday-checkbox-label" for="Sun">
+                                            Sun
+                                            </label>
+                                        </div>
+                                        <div class="form-group col-5 col-md-4">
+                                            <input id="startTimeSun" class="no-click input-group date">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+                                        </div>
+                                        <div class="form-group col-5 col-md-4">
+                                            <input id="endTimeSun" class="no-click input-group date">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+                                        </div>
                                     </div>
                                 </div>
-                                
-                                <!-- Tuesday times -->
-                                <div class="form-row">
-                                    <div class="form-group weekday-checkbox-row col-2 col-md-4">
-                                        <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="tue">
-                                        <label class="form-check-label weekday-checkbox-label" for="tue">
-                                        Tue
-                                        </label>
-                                    </div>
-                                    <div class="form-group col-5 col-md-4">
-                                        <input id="startTimeTue" class="no-click input-group date">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
-                                    </div>
-                                    <div class="form-group col-5 col-md-4">
-                                        <input id="endTimeTue" class="no-click input-group date">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
-                                    </div>
-                                </div>
-                                
-                                <!-- Wednesday times -->
-                                <div class="form-row">
-                                    <div class="form-group weekday-checkbox-row col-2 col-md-4">
-                                        <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="wed">
-                                        <label class="form-check-label weekday-checkbox-label" for="wed">
-                                        Wed
-                                        </label>
-                                    </div>
-                                    <div class="form-group col-5 col-md-4">
-                                        <input id="startTimeWed" class="no-click input-group date">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
-                                    </div>
-                                    <div class="form-group col-5 col-md-4">
-                                        <input id="endTimeWed" class="no-click input-group date">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
-                                    </div>
-                                </div>
-                                
-                                <!-- Thursday times -->
-                                <div class="form-row">
-                                    <div class="form-group weekday-checkbox-row col-2 col-md-4">
-                                        <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="thu">
-                                        <label class="form-check-label weekday-checkbox-label" for="thu">
-                                        Thu
-                                        </label>
-                                    </div>
-                                    <div class="form-group col-5 col-md-4">
-                                        <input id="startTimeThu" class="no-click input-group date">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
-                                    </div>
-                                    <div class="form-group col-5 col-md-4">
-                                        <input id="endTimeThu" class="no-click input-group date">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
-                                    </div>
-                                </div>
-                                
-                                <!-- Friday times -->
-                                <div class="form-row">
-                                    <div class="form-group weekday-checkbox-row col-2 col-md-4">
-                                        <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="Fri">
-                                        <label class="form-check-label weekday-checkbox-label" for="Fri">
-                                        Fri
-                                        </label>
-                                    </div>
-                                    <div class="form-group col-5 col-md-4">
-                                        <input id="startTimeFri" class="no-click input-group date">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
-                                    </div>
-                                    <div class="form-group col-5 col-md-4">
-                                        <input id="endTimeFri" class="no-click input-group date">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
-                                    </div>
-                                </div>
-                                
-                                <!-- Saturday times -->
-                                <div class="form-row">
-                                    <div class="form-group weekday-checkbox-row col-2 col-md-4">
-                                        <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="Sat">
-                                        <label class="form-check-label weekday-checkbox-label" for="Sat">
-                                        Sat
-                                        </label>
-                                    </div>
-                                    <div class="form-group col-5 col-md-4">
-                                        <input id="startTimeSat" class="no-click input-group date">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
-                                    </div>
-                                    <div class="form-group col-5 col-md-4">
-                                        <input id="endTimeSat" class="no-click input-group date">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
-                                    </div>
-                                </div>
-                                
-                                <!-- Sunday times -->
-                                <div class="form-row">
-                                    <div class="form-group weekday-checkbox-row col-2 col-md-4">
-                                        <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="Sun">
-                                        <label class="form-check-label weekday-checkbox-label" for="Sun">
-                                        Sun
-                                        </label>
-                                    </div>
-                                    <div class="form-group col-5 col-md-4">
-                                        <input id="startTimeSun" class="no-click input-group date">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
-                                    </div>
-                                    <div class="form-group col-5 col-md-4">
-                                        <input id="endTimeSun" class="no-click input-group date">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
-                                    </div>
-                                </div>
+                            </div>    
+                        </div>
+                        
+                        <div class="col-12">
+                            <hr>
+                        </div>
 
-                                
+                        <div class="col-12">
+                            <h3>Activity location</h3>
+                            <div class="form-row">
+                                <div class="form-group col-12 col-md-6">
+                                    <label for="addressLine1" required>Adress line 1</label>
+                                    <input id="addressLine1" class="form-control" type="text" placeholder="Street name and number">
+                                    <label for="addressLine1"required>Postcode</label>
+                                    <input id="addressLine1" class="form-control" type="text" placeholder="Street name and number">
+                                </div>
+                                <div class="form-group col-12 col-md-6">
+                                    <label for="town">Town / City</label>
+                                    <select class="form-control" required>
+                                        <option disabled>Select</option>
+                                        <option>Aalsmeer</option>
+                                        <option>Badhoevedorp</option>
+                                        <option>Bloemendaal</option>
+                                        <option>Cruquius</option>
+                                        <option>Haarlem</option>
+                                        <option>Heemstede</option>
+                                        <option>Hillegom</option>
+                                        <option>Hoofddorp</option>
+                                        <option>Lisse</option>
+                                        <option>Nieuw-Vennep</option>
+                                        <option>Santpoort-Noord</option>
+                                        <option>Uithorn</option>
+                                        <option>Zandvoort </option>
+                                    </select>
+                                </div>
                             </div>
+                            
                         </div>
 
-                        <div class="col-12">
-                            <hr>
-                        </div>
-                        <div class="col-12">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h3>Location</h3>
-                                </div>
-                                <div class="col-12 col-md-6">Address</div>
-                                <div class="col-12 col-md-6">Town dropdown select</div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <hr>
-                        </div>
                         <div class="col-12 col-md-6">Categories checkboxes</div>
-                        <!-- show this hr only on mobiles -->
-                        <div class="col-12 d-md-none">
-                            <hr>
-                        </div>
+
                         <div class="col-12 col-md-6">
                             <div class="row">
                                 <div class="col-12">
@@ -250,14 +270,10 @@
                                 <div class="col-6">3 age range checkboxes</div>
                                 <div class="col-6">other 3 checkboxes</div>
 
-                                <!-- show this hr only on mobiles -->
-                                <div class="col-12 d-md-none">
-                                    <hr>
-                                </div>
-
                                 <div class="col-12">indoor / outdoor checkboxes</div>
                             </div>
                         </div>
+                        
                         <div class="col-12">
                             <hr>
                         </div>
