@@ -60,13 +60,14 @@
                     <form>
                         <div class="col-12">
                             <h1>Add new activity</h1>
+                            <small>* = required</small>
                             <hr>
                         </div>
                         <div class="col-12">
                             <div class="form-row">
                                 <div class="form-group col-12">
-                                    <label for="accountId">Activity Title</label>
-                                    <input id="accountId" class="form-control" type="text" placeholder="Your activity title">
+                                    <label for="accountId">Activity Title *</label>
+                                    <input id="accountId" class="form-control" type="text" placeholder="Your activity title" required>
                                 </div>
                             </div>
                         </div>
@@ -78,13 +79,13 @@
                                 <div class="form-group col-12 col-md-4">
                                     <div class="form-row">
                                         <div class="form-group col-6 col-md-12">
-                                            <label>Start Date: </label>
-                                            <input id="activityStartDate" class="no-click input-group date datepicker-wider" data-date-format="mm-dd-yyyy">
+                                            <label>Start Date: *</label>
+                                            <input id="activityStartDate" class="no-click input-group date datepicker-wider" data-date-format="mm-dd-yyyy" required>
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                                         </div>
                                         <div class="form-group col-6 col-md-12">
-                                            <label>End Date: </label>
-                                            <input id="activityEndDate" class="no-click input-group date datepicker-wider" data-date-format="mm-dd-yyyy">
+                                            <label>End Date: *</label>
+                                            <input id="activityEndDate" class="no-click input-group date datepicker-wider" data-date-format="mm-dd-yyyy" required>
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                                         </div>
     
@@ -232,9 +233,9 @@
                             <h3>Activity location</h3>
                             <div class="form-row">
                                 <div class="form-group col-12 col-md-6">
-                                    <label for="addressLine1" required>Adress line 1</label>
+                                    <label for="addressLine1" required>Adress line 1 *</label>
                                     <input id="addressLine1" class="form-control" type="text" placeholder="Street name and number">
-                                    <label for="addressLine1"required>Postcode</label>
+                                    <label for="addressLine1" required>Postcode *</label>
                                     <input id="addressLine1" class="form-control" type="text" placeholder="Street name and number">
                                 </div>
                                 <div class="form-group col-12 col-md-6">
@@ -263,7 +264,7 @@
                             <div class="form-row">
                                 <!-- Categories -->
                                 <div class="form-group col-12 col-md-6">
-                                    <h3>Categories</h3>
+                                    <h3>Categories *</h3>
                                     <small>Select all that apply</small>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="" id="sports">
@@ -315,7 +316,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-12 col-md-6">
-                                    <h3>Age range</h3>
+                                    <h3>Age range *</h3>
                                     <small>Select all that apply</small>
                                     
                                     <div class="form-check">
@@ -355,7 +356,7 @@
                                         </label>
                                     </div>
                                     
-                                    <h3>indoor / outdoor</h3>
+                                    <h3>indoor / outdoor *</h3>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="" id="activity_indoor">
                                         <label class="form-check-label" for="activity_indoor">
@@ -381,23 +382,43 @@
                         <div class="col-12">
                             <hr>
                         </div>
-                        <div class="col-12 col-md-6">
-                            <h3>Contact info</h3>
+                        
+                        <div class="col-12">
+                            <div class="form-row">
+                                <div class="form-group col-12 col-md-6">
+                                    <h3>Contact info</h3>
+                                    <label for="activity_contact">Contact name</label>
+                                    <input id="activity_contact" class="form-control" type="text" placeholder="Name">
+                                    <label for="activity_email">Email address *</label>
+                                    <input id="activity_email" class="form-control" type="email" placeholder="Email" required>
+                                    <label for="activity_url">Website url *</label>
+                                    <input id="activity_url" class="form-control" type="text" placeholder="https://www..." required>
+                                </div>
+                                <div class="form-group col-12 col-md-6">
+                                    <h3>Social links</h3>
+                                    <label for="activity_facebook">Facebook url</label>
+                                    <input id="activity_facebook" class="form-control" type="text" placeholder="https://www.faceb...">
+                                    <label for="activity_twitter">Twitter url</label>
+                                    <input id="activity_twitter" class="form-control" type="text" placeholder="https://www.twitt...">
+                                    <label for="activity_instagram">Twitter url</label>
+                                    <input id="activity_instagram" class="form-control" type="text" placeholder="https://www.insta...">
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-12 d-md-none">
-                            <hr>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <h3>Social links</h3>
-                        </div>
+                        
                         <div class="col-12">
                             <hr>
                         </div>
-                        <div class="col-12 col-md-6">
-                            <h3>Activity description</h3>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <h3>Activity photograph upload</h3>
+                        
+                        <div class="col-12">
+                            <div class="form-row">
+                                <div class="form-group col-12 col-md-6">
+                                    <h3>Activity description</h3>
+                                </div>
+                                <div class="form-group col-12 col-md-6">
+                                    <h3>Activity photograph upload</h3>
+                                </div>
+                            </div>
                         </div>
                         <button class="btn btn-readmore">publish</button>
                         <button class="btn btn-delete">Delete</button>
