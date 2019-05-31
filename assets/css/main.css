@@ -54,8 +54,7 @@ footer h4 {
 
 .btn-readmore:hover {
   background-color: #5ca4a9;
-  border: #5ca4a9;
-  color: #e6ebe0; }
+  border: #5ca4a9; }
 
 .btn-search {
   color: #fff;
@@ -71,6 +70,20 @@ footer h4 {
 .btn-search:hover {
   opacity: 1;
   color: #fff; }
+
+.btn-create {
+  background-color: #94b659;
+  border: #94b659;
+  opacity: 0.7;
+  color: #fff;
+  transition: all 0.3s ease-in-out 0.3s; }
+
+.btn-create:hover {
+  opacity: 1;
+  color: #fff; }
+
+.btn-create:focus {
+  box-shadow: 0 0 0 0.2rem rgba(148, 182, 89, 0.25); }
 
 .icon-circle {
   height: 48px;
@@ -406,6 +419,13 @@ shadow added to give depth and contrast with the image for readability */
   background-size: cover;
   height: 100%;
   border-radius: 50%; }
+
+/* ------------------------------
+    Account pages
+------------------------------ */
+#my-account-wrapper h2 {
+  /* Needed to make button in same column display correctly */
+  display: inline-block; }
 
 /* ------------------------------
     Footer

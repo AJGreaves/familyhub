@@ -16,7 +16,6 @@
 .btn-readmore:hover {
     background-color: $mid-blue;
     border: $mid-blue;
-    color: $platinum;
 }
 
 .btn-search {
@@ -35,6 +34,23 @@
 .btn-search:hover {
     opacity: 1;
     color: #fff;
+}
+
+.btn-create {
+    background-color: $green;
+    border: $green;
+    opacity: 0.7;
+    color: #fff;
+    transition: all 0.3s ease-in-out 0.3s;
+}
+
+.btn-create:hover {
+    opacity: 1;
+    color: #fff;
+}
+
+.btn-create:focus {
+    box-shadow: 0 0 0 .2rem rgba(148, 182, 89,.25);
 }
 
 .icon-circle {

@@ -99,6 +99,15 @@ shadow added to give depth and contrast with the image for readability */
 }
 
 /* ------------------------------
+    Account pages
+------------------------------ */
+
+#my-account-wrapper h2 {
+    /* Needed to make button in same column display correctly */
+    display: inline-block;
+}
+
+/* ------------------------------
     Footer
 ------------------------------ */
 
