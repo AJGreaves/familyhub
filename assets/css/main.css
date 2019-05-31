@@ -601,10 +601,12 @@ a.fh-link:hover {
 /* positions checkbox and labels for weekday open + close times in the form
 % used to make position responsive */
 .weekday-checkbox {
-  margin-left: 50%; }
+  /* set to 50% in media queries for medium screens and up */
+  margin-left: 3%; }
 
 .weekday-checkbox-label {
-  padding-left: 20%; }
+  /* set to 75% in media queries for medium screens and up */
+  padding-left: 50%; }
 
 .weekday-checkbox-row {
   padding-top: 2.35rem; }
@@ -649,6 +651,14 @@ a.fh-link:hover {
 
   .search-input-field {
     /* keeps search bar and search button in one line */
-    width: 80%; } }
+    width: 80%; }
+
+  /* positions checkbox and labels for weekday open + close times in the form
+  % used to make position responsive */
+  .weekday-checkbox {
+    margin-left: 50%; }
+
+  .weekday-checkbox-label {
+    padding-left: 75%; } }
 
 /*# sourceMappingURL=main.css.map */

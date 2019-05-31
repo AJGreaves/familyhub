@@ -48,11 +48,13 @@ a.fh-link:hover {
 /* positions checkbox and labels for weekday open + close times in the form
 % used to make position responsive */
 .weekday-checkbox {
-    margin-left: 50%;
+    /* set to 50% in media queries for medium screens and up */
+    margin-left: 3%;
 }
 
 .weekday-checkbox-label {
-    padding-left: 20%;
+    /* set to 75% in media queries for medium screens and up */
+    padding-left: 50%;
 }
 
 .weekday-checkbox-row {
