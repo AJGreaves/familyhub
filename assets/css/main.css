@@ -593,9 +593,7 @@ a.fh-link:hover {
   max-width: 100%; }
 
 /* forces users to use the date/time pickers instead of adding their own input */
-#activityStartDate, #activityEndDate,
-#startTimeMon, #startTimeTue, #startTimeWed, #startTimeThu, #startTimeFri, #startTimeSat, #startTimeSun,
-#endTimeMon, #endTimeTue, #endTimeWed, #endTimeThu, #endTimeFri, #endTimeSat, #endTimeSun {
+.no-click {
   pointer-events: none; }
 
 /* positions checkbox and labels for weekday open + close times in the form
