@@ -55,81 +55,91 @@
         <section>
 
             <div id="add-edit-activity-wrapper" class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h1>Add new activity</h1>
-                        <hr>
-                    </div>
-                    <div class="col-12 col-md-6">Account ID</div>
-                    <div class="col-12 col-md-6">Activity title</div>
-                    <div class="col-12">
-                        <hr>
-                    </div>
-                    <div class="col-12">
-                        <div class="row">
-                            <div class="col-12 col-md-6">start and end dates</div>
-                            <div class="col-12 col-md-6">opening times table</div>
+                <div class="row justify-content-center">
+                    <form>
+                        <div class="col-12">
+                            <h1>Add new activity</h1>
+                            <hr>
                         </div>
-                    </div>
-                    <div class="col-12">
-                        <hr>
-                    </div>
-                    <div class="col-12">
-                        <div class="row">
-                            <div class="col-12">
-                                <h3>Location</h3>
+                        <div class="form-row">
+                            <div class="form-group col-12 col-md-6">
+                                <label for="accountId">Activity Title</label>
+                                <input id="accountId" class="form-control" type="text" placeholder="Your activity title">
                             </div>
-                            <div class="col-12 col-md-6">Address</div>
-                            <div class="col-12 col-md-6">Town dropdown select</div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="accountId">Account ID</label>
+                                <input id="accountId" class="form-control" type="text" placeholder="007" readonly>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-12">
-                        <hr>
-                    </div>
-                    <div class="col-12 col-md-6">Categories checkboxes</div>
-                    <!-- show this hr only on mobiles -->
-                    <div class="col-12 d-md-none">
-                        <hr>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="row">
-                            <div class="col-12">
-                                <h3>age range</h3>
+                        <div class="col-12">
+                            <hr>
+                        </div>
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12 col-md-6">start and end dates</div>
+                                <div class="col-12 col-md-6">opening times table</div>
                             </div>
-                            <div class="col-6">3 age range checkboxes</div>
-                            <div class="col-6">other 3 checkboxes</div>
-                            
-                            <!-- show this hr only on mobiles -->
-                            <div class="col-12 d-md-none">
-                                <hr>
+                        </div>
+                        <div class="col-12">
+                            <hr>
+                        </div>
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3>Location</h3>
+                                </div>
+                                <div class="col-12 col-md-6">Address</div>
+                                <div class="col-12 col-md-6">Town dropdown select</div>
                             </div>
+                        </div>
+                        <div class="col-12">
+                            <hr>
+                        </div>
+                        <div class="col-12 col-md-6">Categories checkboxes</div>
+                        <!-- show this hr only on mobiles -->
+                        <div class="col-12 d-md-none">
+                            <hr>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3>age range</h3>
+                                </div>
+                                <div class="col-6">3 age range checkboxes</div>
+                                <div class="col-6">other 3 checkboxes</div>
 
-                            <div class="col-12">indoor / outdoor checkboxes</div>
+                                <!-- show this hr only on mobiles -->
+                                <div class="col-12 d-md-none">
+                                    <hr>
+                                </div>
+
+                                <div class="col-12">indoor / outdoor checkboxes</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-12">
-                        <hr>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <h3>Contact info</h3>
-                    </div>
-                    <div class="col-12 d-md-none">
-                        <hr>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <h3>Social links</h3>
-                    </div>
-                    <div class="col-12">
-                        <hr>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <h3>Activity description</h3>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <h3>Activity photograph upload</h3>
-                    </div>
-                    <button class="btn btn-readmore">publish</button>
-                    <button class="btn btn-delete">Delete</button>
+                        <div class="col-12">
+                            <hr>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <h3>Contact info</h3>
+                        </div>
+                        <div class="col-12 d-md-none">
+                            <hr>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <h3>Social links</h3>
+                        </div>
+                        <div class="col-12">
+                            <hr>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <h3>Activity description</h3>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <h3>Activity photograph upload</h3>
+                        </div>
+                        <button class="btn btn-readmore">publish</button>
+                        <button class="btn btn-delete">Delete</button>
+                    </form>
                 </div>
             </div>
 

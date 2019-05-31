@@ -575,6 +575,10 @@ a.fh-link:hover {
 #login-wrapper label {
   color: #ed6a5a; }
 
+.form-row {
+  margin-right: 5px;
+  margin-left: 5px; }
+
 /* ------------------------------
     Media Queries
 ------------------------------ */
