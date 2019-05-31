@@ -48,13 +48,14 @@ footer h4 {
 
 .btn-readmore {
   background-color: #9bc1bc;
-  border: #9bc1bc;
+  border: 1px solid #9bc1bc;
   color: #fff;
   transition: all 0.3s ease-in-out 0.3s; }
 
 .btn-readmore:hover {
   background-color: #5ca4a9;
-  border: #5ca4a9; }
+  border: 1px solid #5ca4a9;
+  color: #fff; }
 
 .btn-search {
   color: #fff;
@@ -84,6 +85,20 @@ footer h4 {
 
 .btn-create:focus {
   box-shadow: 0 0 0 0.2rem rgba(148, 182, 89, 0.25); }
+
+.btn-delete {
+  background-color: #dc3545;
+  border: 1px solid #dc3545;
+  color: #fff;
+  transition: all 0.3s ease-in-out 0.3s; }
+
+.btn-delete:hover {
+  background-color: #c0303e;
+  border: 1px solid #c0303e;
+  color: #fff; }
+
+.btn-delete:focus {
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25); }
 
 .icon-circle {
   height: 48px;

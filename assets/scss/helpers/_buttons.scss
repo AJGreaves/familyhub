@@ -8,14 +8,15 @@
 
 .btn-readmore {
     background-color: $light-blue;
-    border: $light-blue;
+    border: 1px solid $light-blue;
     color: #fff;
     transition: all 0.3s ease-in-out 0.3s;
 }
 
 .btn-readmore:hover {
     background-color: $mid-blue;
-    border: $mid-blue;
+    border: 1px solid $mid-blue;
+    color: #fff;
 }
 
 .btn-search {
@@ -51,6 +52,23 @@
 
 .btn-create:focus {
     box-shadow: 0 0 0 .2rem rgba(148, 182, 89,.25);
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    border: 1px solid #dc3545;
+    color: #fff;
+    transition: all 0.3s ease-in-out 0.3s;
+}
+
+.btn-delete:hover {
+    background-color: #c0303e;
+    border: 1px solid #c0303e;
+    color: #fff;
+}
+
+.btn-delete:focus {
+    box-shadow: 0 0 0 .2rem rgba(220, 53, 69,.25);
 }
 
 .icon-circle {
