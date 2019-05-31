@@ -76,7 +76,7 @@
                             <hr>
                         </div>
                         <div class="form-row">
-                            <div class="form-group col-12 col-md-6">
+                            <div class="form-group col-12 col-md-3">
                                 <label>Start Date: </label>
                                 <input id="activityStartDate" class="input-group date datepicker-wider" data-date-format="mm-dd-yyyy">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
@@ -84,13 +84,27 @@
                                 <input id="activityEndDate" class="input-group date datepicker-wider" data-date-format="mm-dd-yyyy">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                             </div>
-                            <div class="form-group col-12 col-md-6">
-                                <label>Start time </label>
-                                <input id="startTime" class="input-group date">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
-                                <label>End Time </label>
-                                <input id="endTime" class="input-group date">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+                            <div class="form-group col-12 col-md-9">
+                                <div class="form-row">
+                                    <div class="form-group weekday-checkbox-row col-2">
+                                        <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="monday">
+                                        <label class="form-check-label weekday-checkbox-label" for="monday">
+                                        Mon
+                                        </label>
+                                    </div>
+                                    <div class="form-group col-5">
+                                        <label>Start time </label>
+                                        <input id="startTime" class="input-group date">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+                                    </div>
+                                    <div class="form-group col-5">
+                                        <label>End Time </label>
+                                        <input id="endTime" class="input-group date">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+                                    </div>
+                                </div>
+
+                                
                             </div>
                         </div>
 
@@ -256,7 +270,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"></script>
 
     <script src="assets/js/familyhub.js"></script>

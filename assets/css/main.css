@@ -598,6 +598,17 @@ a.fh-link:hover {
 #endTime {
   pointer-events: none; }
 
+/* positions checkbox and labels for weekday open + close times in the form
+% used to make position responsive */
+.weekday-checkbox {
+  margin-left: 50%; }
+
+.weekday-checkbox-label {
+  padding-left: 20%; }
+
+.weekday-checkbox-row {
+  padding-top: 2.35rem; }
+
 /* ------------------------------
     Media Queries
 ------------------------------ */
