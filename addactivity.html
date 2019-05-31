@@ -76,24 +76,24 @@
                         <div class="col-12">
                             <div class="form-row">
                                 <div class="form-group col-12 col-md-4">
+                                    <h3>Dates and Times</h3>
                                     <div class="form-row">
-                                        <div class="form-group col-6 col-md-12">
-                                            <h3>Dates and Times</h3>
+                                        <div class="form-group col-6 col-md-12 col-xl-6">
                                             <label>Start Date: *</label>
                                             <input id="activityStartDate" class="no-click input-group date datepicker-wider" data-date-format="mm-dd-yyyy" required>
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                                         </div>
-                                        <div class="form-group col-6 col-md-12">
+                                        <div class="form-group col-6 col-md-12 col-xl-6">
                                             <label>End Date: *</label>
                                             <input id="activityEndDate" class="no-click input-group date datepicker-wider" data-date-format="mm-dd-yyyy" required>
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                                         </div>
-    
+
                                     </div>
-    
+
                                 </div>
                                 <div class="form-group col-12 col-md-8">
-    
+
                                     <!-- Monday times -->
                                     <div class="form-row">
                                         <div class="form-group weekday-checkbox-row-top col-2 col-md-4">
@@ -113,7 +113,7 @@
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                                         </div>
                                     </div>
-    
+
                                     <!-- Tuesday times -->
                                     <div class="form-row">
                                         <div class="form-group weekday-checkbox-row col-2 col-md-4">
@@ -131,7 +131,7 @@
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                                         </div>
                                     </div>
-    
+
                                     <!-- Wednesday times -->
                                     <div class="form-row">
                                         <div class="form-group weekday-checkbox-row col-2 col-md-4">
@@ -149,7 +149,7 @@
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                                         </div>
                                     </div>
-    
+
                                     <!-- Thursday times -->
                                     <div class="form-row">
                                         <div class="form-group weekday-checkbox-row col-2 col-md-4">
@@ -167,7 +167,7 @@
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                                         </div>
                                     </div>
-    
+
                                     <!-- Friday times -->
                                     <div class="form-row">
                                         <div class="form-group weekday-checkbox-row col-2 col-md-4">
@@ -185,7 +185,7 @@
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                                         </div>
                                     </div>
-    
+
                                     <!-- Saturday times -->
                                     <div class="form-row">
                                         <div class="form-group weekday-checkbox-row col-2 col-md-4">
@@ -203,7 +203,7 @@
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                                         </div>
                                     </div>
-    
+
                                     <!-- Sunday times -->
                                     <div class="form-row">
                                         <div class="form-group weekday-checkbox-row col-2 col-md-4">
@@ -222,9 +222,9 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>    
+                            </div>
                         </div>
-                        
+
                         <div class="col-12">
                             <hr>
                         </div>
@@ -233,15 +233,14 @@
                             <h3>Activity location</h3>
                             <div class="form-row">
                                 <div class="form-group col-12 col-md-6">
-                                    <label for="addressLine1" required>Adress line 1 *</label>
-                                    <input id="addressLine1" class="form-control" type="text" placeholder="Street name and number">
-                                    <label for="addressLine1" required>Postcode *</label>
-                                    <input id="addressLine1" class="form-control" type="text" placeholder="Street name and number">
+                                    <label for="addressLine1">Adress line 1 *</label>
+                                    <input id="addressLine1" class="form-control" type="text" placeholder="Street name and number" required>
+                                    <label for="postcode" class="mt-3">Postcode *</label>
+                                    <input id="postcode" class="form-control" type="text" placeholder="Postcode" required>
                                 </div>
                                 <div class="form-group col-12 col-md-6">
                                     <label for="town">Town / City</label>
-                                    <select class="form-control" required>
-                                        <option disabled>Select</option>
+                                    <select id="town" class="form-control" size="13" required>
                                         <option>Aalsmeer</option>
                                         <option>Badhoevedorp</option>
                                         <option>Bloemendaal</option>
@@ -258,14 +257,13 @@
                                     </select>
                                 </div>
                             </div>
-                            
+
                             <hr>
-                            
+
                             <div class="form-row">
                                 <!-- Categories -->
                                 <div class="form-group col-12 col-md-6">
                                     <h3>Categories *</h3>
-                                    <small>Select all that apply</small>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="" id="sports">
                                         <label class="form-check-label" for="sports">
@@ -314,11 +312,11 @@
                                             Parks and playgrounds
                                         </label>
                                     </div>
+                                    <small>Select all that apply</small>
                                 </div>
                                 <div class="form-group col-12 col-md-6">
                                     <h3>Age range *</h3>
-                                    <small>Select all that apply</small>
-                                    
+
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="" id="activity_age_under_4">
                                         <label class="form-check-label" for="activity_age_under_4">
@@ -355,8 +353,9 @@
                                             12yr +
                                         </label>
                                     </div>
-                                    
-                                    <h3>indoor / outdoor *</h3>
+                                    <small>Select all that apply</small>
+
+                                    <h3 class="mt-4">indoor / outdoor *</h3>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="" id="activity_indoor">
                                         <label class="form-check-label" for="activity_indoor">
@@ -378,58 +377,63 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-12">
                             <hr>
                         </div>
-                        
+
                         <div class="col-12">
                             <div class="form-row">
                                 <div class="form-group col-12 col-md-6">
-                                    <h3>Contact info</h3>
+                                    <h3>Contact info *</h3>
                                     <label for="activity_contact">Contact name</label>
                                     <input id="activity_contact" class="form-control" type="text" placeholder="Name">
-                                    <label for="activity_email">Email address *</label>
+                                    <label for="activity_email" class="mt-3">Email address *</label>
                                     <input id="activity_email" class="form-control" type="email" placeholder="Email" required>
-                                    <label for="activity_url">Website url *</label>
+                                    <label for="activity_url" class="mt-3">Website url *</label>
                                     <input id="activity_url" class="form-control" type="text" placeholder="https://www..." required>
                                 </div>
                                 <div class="form-group col-12 col-md-6">
                                     <h3>Social links</h3>
                                     <label for="activity_facebook">Facebook url</label>
                                     <input id="activity_facebook" class="form-control" type="text" placeholder="https://www.faceb...">
-                                    <label for="activity_twitter">Twitter url</label>
+                                    <label for="activity_twitter" class="mt-3">Twitter url</label>
                                     <input id="activity_twitter" class="form-control" type="text" placeholder="https://www.twitt...">
-                                    <label for="activity_instagram">Twitter url</label>
+                                    <label for="activity_instagram" class="mt-3">Instagram url</label>
                                     <input id="activity_instagram" class="form-control" type="text" placeholder="https://www.insta...">
                                 </div>
                             </div>
                         </div>
-                        
+
+                        <div class="col-12">
+                            <hr>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-group">
+                                <h3><i class="fas fa-upload icon"></i>Activity image upload</h3>
+                                <img src="https://i.ibb.co/BsZ4gWC/background-activity.png" class="add-listing-image" alt="activity image">
+                                <label for="exampleFormControlFile1" class="mt-3">Upload your image</label>
+                                <input type="file" class="form-control-file" id="exampleFormControlFile1" required>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <hr>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <h3>Activity description</h3>
+                                <textarea class="form-control" id="activity_description" rows="11" placeholder="The first sentence of this description will also appear with your activity listing in Family Hub search." required></textarea>
+        
+                            </div>
+                        </div>
                         <div class="col-12">
                             <hr>
                         </div>
                         
-                        <div class="col-12">
-                            <div class="form-row">
-                                <div class="form-group col-12">
-                                    <h3><i class="fas fa-upload icon"></i>Activity image upload</h3>
-                                    <img src="https://i.ibb.co/BsZ4gWC/background-activity.png" class="add-listing-image">
-                                    <label for="exampleFormControlFile1">Upload your image</label>
-                                    <input type="file" class="form-control-file" id="exampleFormControlFile1" required>
-                                </div>
-                                <div class="form-group col-12">
-                                    <h3>Activity description</h3>
-                                    <div class="form-group">
-                                        <textarea class="form-control" id="activity_description" rows="11" 
-                                        placeholder="The first sentence of this description will also appear with your activity listing in Family Hub search." required></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <!-- margins line button edge up with filed above it -->
-                        <button class="btn btn-search ml-4">Preview</button>
-                        <button class="btn btn-readmore ml-3">Publish</button>
+                        <button class="btn btn-search ml-4" type="submit">Preview</button>
+                        <button class="btn btn-readmore ml-3" type="submit">Publish</button>
                         <button class="btn btn-delete ml-3">Delete</button>
                     </form>
                 </div>
@@ -502,15 +506,15 @@
     </footer>
 
     <!-- floating search and go to top buttons -->
-    <button id="to-top-btn" class="floating-btn" title="Go to top">
+    <a id="to-top-btn" class="floating-btn" title="Go to top">
         <i class="fas fa-chevron-circle-up fa-3x" aria-hidden="true"></i>
-    </button>
-    <button id="search-btn" class="floating-btn" title="Search">
+    </a>
+    <a id="search-btn" class="floating-btn" title="Search">
         <!-- Adds circle backrgound to search icon to make it match the other floating button -->
         <div class="icon-circle">
             <i class="fas fa-search fa-2x" aria-hidden="true"></i>
         </div>
-    </button>
+    </a>
 
     <!-- search modal -->
     <div id="search-modal" class="container-fluid">
@@ -521,10 +525,10 @@
                 <!-- text-center class moves search button to the middle -->
                 <form class="text-center">
                     <input id="search-input-field" class="form-control mx-auto" type="search" placeholder="What are you looking for?" aria-label="Search">
-                    <a href="search.html" id="search-modal-submit-button" class="btn btn-search" type="submit">
+                    <a href="search.html" id="search-modal-submit-button" class="btn btn-search">
                         Search
                     </a>
-                    <button id="search-modal-submit-button" class="btn btn-search" type="submit">
+                    <button id="search-modal-close-button" class="btn btn-search" type="submit">
                         Close
                     </button>
                 </form>

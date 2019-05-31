@@ -572,7 +572,8 @@ a.fh-link:hover {
 
 #create-account-wrapper h3,
 #login-wrapper h3,
-#account-settings-wrapper h3 {
+#account-settings-wrapper h3,
+#add-edit-activity-wrapper h3 {
   font-size: 1.2rem;
   color: #5ca4a9;
   margin-bottom: 1.2rem; }
@@ -617,6 +618,16 @@ a.fh-link:hover {
 
 .add-listing-image:hover {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+
+input.no-click {
+  margin-bottom: 0; }
+
+.form-control {
+  max-width: 350px; }
+
+#activity_description,
+#accountId {
+  max-width: 100%; }
 
 /* ------------------------------
     Media Queries
