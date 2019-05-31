@@ -102,8 +102,9 @@ shadow added to give depth and contrast with the image for readability */
     Account pages
 ------------------------------ */
 
-#my-account-wrapper h2 {
-    /* Needed to make button in same column display correctly */
+#my-account-wrapper h2,
+#my-account-wrapper h1 {
+    /* Needed to make buttons in same column display correctly */
     display: inline-block;
 }
 
