@@ -60,7 +60,6 @@
                     <form>
                         <div class="col-12">
                             <h1>Add new activity</h1>
-                            <small>* = required</small>
                             <hr>
                         </div>
                         <div class="col-12">
@@ -79,6 +78,7 @@
                                 <div class="form-group col-12 col-md-4">
                                     <div class="form-row">
                                         <div class="form-group col-6 col-md-12">
+                                            <h3>Dates and Times</h3>
                                             <label>Start Date: *</label>
                                             <input id="activityStartDate" class="no-click input-group date datepicker-wider" data-date-format="mm-dd-yyyy" required>
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
@@ -412,16 +412,25 @@
                         
                         <div class="col-12">
                             <div class="form-row">
-                                <div class="form-group col-12 col-md-6">
-                                    <h3>Activity description</h3>
+                                <div class="form-group col-12">
+                                    <h3><i class="fas fa-upload icon"></i>Activity image upload</h3>
+                                    <img src="https://i.ibb.co/BsZ4gWC/background-activity.png" class="add-listing-image">
+                                    <label for="exampleFormControlFile1">Upload your image</label>
+                                    <input type="file" class="form-control-file" id="exampleFormControlFile1" required>
                                 </div>
-                                <div class="form-group col-12 col-md-6">
-                                    <h3>Activity photograph upload</h3>
+                                <div class="form-group col-12">
+                                    <h3>Activity description</h3>
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="activity_description" rows="11" 
+                                        placeholder="The first sentence of this description will also appear with your activity listing in Family Hub search." required></textarea>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <button class="btn btn-readmore">publish</button>
-                        <button class="btn btn-delete">Delete</button>
+                        <!-- margins line button edge up with filed above it -->
+                        <button class="btn btn-search ml-4">Preview</button>
+                        <button class="btn btn-readmore ml-3">Publish</button>
+                        <button class="btn btn-delete ml-3">Delete</button>
                     </form>
                 </div>
             </div>
