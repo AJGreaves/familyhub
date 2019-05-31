@@ -11,10 +11,15 @@ a.fh-link:hover {
 }
 
 #create-account-wrapper h3,
-#login-wrapper h3 {
+#login-wrapper h3,
+#account-settings-wrapper h3 {
     font-size: 1.2rem;
     color: $mid-blue;
     margin-bottom: 1.2rem;
+}
+
+#account-settings-wrapper h3 {
+    margin-bottom: 0.5rem;
 }
 
 #create-account-wrapper label,

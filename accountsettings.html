@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="assets/css/main.css" type="text/css">
-    <title>Family Hub | Create New Account</title>
+    <title>Family Hub | Account Settings</title>
 </head>
 
 <body>
@@ -41,7 +41,7 @@
                     <a class="nav-link" href="#">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="createaccount.html">Create account <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="createaccount.html">Create account</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="login.html">Log in</a>
@@ -51,36 +51,44 @@
     </nav>
 
     <main>
-        <!-- Section: Create an account -->
+        <!-- Section: Account settings -->
         <section>
 
-            <div id="create-account-wrapper" class="container">
+            <div id="account-settings-wrapper" class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h1>Create an account</h1>
+                        <h1>Edit account</h1>
                         <hr>
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-11 col-md-6 col-lg-5 col-xl-4 card familyhub-card p-4">
-                        <h3>Create an account to post your event or activity to Family Hub</h3>
+                    <div class="col-11 col-md-8 col-lg-6 card familyhub-card p-4">
+                        <h3>Account Settings</h3>
                         <form id="new-account-form">
                             <div class="form-group">
-                                <label for="newEmailInput">Email address</label>
-                                <input type="email" class="form-control" id="newEmailInput" aria-describedby="emailHelp" placeholder="Enter email" required>
-                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                <label for="business-name">Business name</label>
+                                <input class="form-control" type="text" id="business-name" placeholder="Enter your business name">
                             </div>
                             <div class="form-group">
-                                <label for="newPasswordInput">Password</label>
-                                <input type="password" class="form-control" id="newPasswordInput" placeholder="Password" required>
+                                <label for="kvkNum">KVK number</label>
+                                <input class="form-control" type="text" id="kvkNum" placeholder="KVK number">
                             </div>
-                            <div class="form-group form-check">
-                                <input type="checkbox" class="form-check-input" id="termsAndConditions" required>
-                                <label class="form-check-label" for="termsAndConditions">I agree to the <a class="fh-link" href="#" target="_blank">terms and conditions</a></label>
+                            <div class="form-group">
+                                <label for="oldEmailInput">Change email</label>
+                                <input type="email" class="form-control" id="oldEmailInput" aria-describedby="emailHelp" placeholder="Current email">
                             </div>
-                            <button type="submit" class="btn btn-search">Create account</button>
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="newEmailInput" aria-describedby="emailHelp" placeholder="New email">
+                            </div>
+                            <div class="form-group">
+                                <label for="oldPasswordInput">Change password</label>
+                                <input type="password" class="form-control" id="oldPasswordInput" placeholder="Current password" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="newPasswordInput" placeholder="New password">
+                            </div>
+                            <button type="submit" class="btn btn-search">Update account</button>
                         </form>
-                        <p class="mt-2">Already have an account?  <a class="fh-link" href="login.html">Log in</a></p>
                     </div>
                 </div>
             </div>
