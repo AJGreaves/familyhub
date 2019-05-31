@@ -64,6 +64,10 @@ footer h4 {
   opacity: 0.8;
   transition: all 0.3s ease-in-out 0.3s; }
 
+/* changes default btn outline to one that matches this buttons custom colour */
+.btn-search:focus {
+  box-shadow: 0 0 0 0.2rem rgba(237, 106, 90, 0.25); }
+
 .btn-search:hover {
   opacity: 1;
   color: #fff; }
@@ -506,7 +510,8 @@ a.fh-link:hover {
   color: #5ca4a9;
   margin-bottom: 1.2rem; }
 
-#create-account-wrapper label {
+#create-account-wrapper label,
+#login-wrapper label {
   color: #ed6a5a; }
 
 /* ------------------------------

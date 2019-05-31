@@ -27,6 +27,11 @@
     transition: all 0.3s ease-in-out 0.3s;
 }
 
+/* changes default btn outline to one that matches this buttons custom colour */
+.btn-search:focus {
+    box-shadow: 0 0 0 .2rem rgba(237, 106, 90,.25);
+}
+
 .btn-search:hover {
     opacity: 1;
     color: #fff;
