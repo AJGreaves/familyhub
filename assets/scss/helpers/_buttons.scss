@@ -37,6 +37,12 @@
     color: #fff;
 }
 
+#search-modal-close-button,
+#search-modal-submit-button {
+    margin-top: 1rem;
+    text-align: center;
+}
+
 .btn-create {
     background-color: $green;
     border: $green;

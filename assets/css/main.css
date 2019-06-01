@@ -72,6 +72,11 @@ footer h4 {
   opacity: 1;
   color: #fff; }
 
+#search-modal-close-button,
+#search-modal-submit-button {
+  margin-top: 1rem;
+  text-align: center; }
+
 .btn-create {
   background-color: #94b659;
   border: #94b659;
@@ -307,10 +312,6 @@ footer .social-icon-shadow {
 
 .search-input-field {
   width: 100%; }
-
-#search-modal-submit-button {
-  margin-top: 1rem;
-  text-align: center; }
 
 /* ------------------------------
     Search filters
