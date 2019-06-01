@@ -43,7 +43,8 @@ function openSearch() {
 ['#eventFilterDatepickerSm', 
 '#eventFilterDatepickerLg', 
 '#activityStartDate', 
-'#activityEndDate'].forEach(datepick => {
+'#activityEndDate',
+'#eventDate'].forEach(datepick => {
     $(datepick).datepicker({ 
     autoclose: true, 
   	todayHighlight: true,

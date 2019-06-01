@@ -195,7 +195,7 @@
                                         <div id="collapseDate" class="collapse filter-options" aria-labelledby="event filter by date" data-parent="#event-filters-accordion">
                                             <div class="card-body">
                                                 <label>Select Date: </label>
-                                                <input id="eventFilterDatepickerSm" class="no-click input-group date" data-date-format="mm-dd-yyyy">
+                                                <input id="eventFilterDatepickerSm" class="datepicker input-group date" data-date-format="mm-dd-yyyy">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                                             </div>
                                         </div>
@@ -298,16 +298,20 @@
                                                 <label class="mr-sm-2 mt-3" for="priceRangeStart">Min</label>
                                                 <select class="custom-select mr-sm-2" id="priceRangeStart">
                                                     <option value="0">€0</option>
+                                                    <option value="5">€5</option>
                                                     <option value="10">€10</option>
-                                                    <option value="25">€20</option>
-                                                    <option value="50">€35</option>
+                                                    <option value="15">€15</option>
+                                                    <option value="20">€20</option>
+                                                    <option value="25">€25+</option>
                                                 </select>
                                                 <label class="mr-sm-2 mt-3" for="priceRangeEnd">Max</label>
                                                 <select class="custom-select mr-sm-2" id="priceRangeEnd">
+                                                    <option value="0">€0</option>
+                                                    <option value="5">€5</option>
                                                     <option value="10">€10</option>
-                                                    <option value="25">€20</option>
-                                                    <option value="50">€35</option>
-                                                    <option value="50">€50+</option>
+                                                    <option value="15">€15</option>
+                                                    <option value="20">€20</option>
+                                                    <option value="25">€25+</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -429,7 +433,7 @@
                                 <div class="filter-options">
                                     <div class="card-body">
                                         <label>Select Date: </label>
-                                        <input id="eventFilterDatepickerLg" class="no-click input-group date" data-date-format="mm-dd-yyyy">
+                                        <input id="eventFilterDatepickerLg" class="input-group date" data-date-format="mm-dd-yyyy">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                                     </div>
                                 </div>
