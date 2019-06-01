@@ -55,7 +55,7 @@
         <!-- Section: Account settings -->
         <section>
 
-            <div id="add-edit-activity-wrapper" class="container">
+            <div id="add-edit-event-wrapper" class="container">
                 <div class="row p-2 justify-content-center">
                     <form>
                         <div class="col-12">
@@ -64,11 +64,11 @@
                         </div>
                         <div class="col-12">
                             <div class="form-row">
-                                <div class="form-group col-12 col-md-6">
+                                <div class="form-group col-12 col-md-9">
                                     <label for="accountId">Event Title *</label>
                                     <input id="accountId" class="form-control" type="text" placeholder="Your event title" required>
                                 </div>
-                                <div class="form-group col-12 col-md-6">
+                                <div class="form-group col-12 col-md-3">
                                     <label for="eventDate">Event Date</label>
                                     <input id="eventDate" class="no-click input-group date datepicker-wider" data-date-format="mm-dd-yyyy" required>
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
@@ -84,13 +84,9 @@
                                     <div class="form-row">
                                         
                                         <div class="form-group col-6 col-md-12 col-xl-6">
-                                            <label>Price Range</label>
-                                            <div class="custom-control custom-switch">
-                                                <input type="checkbox" class="custom-control-input" id="isFreeToggle">
-                                                <label class="custom-control-label" for="isFreeToggle">Free</label>
-                                            </div>
-                                            <label for="event_price_start">From</label>
-                                            <select id="event_price_start" class="form-control" required>
+                                            <h3>Price Range</h3>
+                                            <label for="event_price_start">Prices from:</label>
+                                            <select id="event_price_start" class="form-control mb-3">
                                                 <option value="" disabled>Select</option>
                                                 <option value="0">€0</option>
                                                 <option value="5">€5</option>
@@ -99,6 +95,19 @@
                                                 <option value="20">€20</option>
                                                 <option value="25">€25+</option>
                                             </select>
+                                            <label for="event_price_end">To:</label>
+                                            <select id="event_price_end" class="form-control mb-3">
+                                                <option value="" disabled>Select</option>
+                                                <option value="5">€5</option>
+                                                <option value="10">€10</option>
+                                                <option value="15">€15</option>
+                                                <option value="20">€20</option>
+                                                <option value="25">€25+</option>
+                                            </select>
+                                            <div class="custom-control custom-switch">
+                                                <input type="checkbox" class="custom-control-input" id="isFreeToggle">
+                                                <label class="custom-control-label" for="isFreeToggle">Free</label>
+                                            </div>
                                         </div>
 
                                     </div>

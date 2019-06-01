@@ -13,7 +13,8 @@ a.fh-link:hover {
 #create-account-wrapper h3,
 #login-wrapper h3,
 #account-settings-wrapper h3,
-#add-edit-activity-wrapper h3 {
+#add-edit-activity-wrapper h3,
+#add-edit-event-wrapper h3 {
     font-size: 1.2rem;
     color: $mid-blue;
     margin-bottom: 1.2rem;
@@ -83,3 +84,4 @@ input.no-click {
 #accountId {
     max-width: 100%;
 }
+
