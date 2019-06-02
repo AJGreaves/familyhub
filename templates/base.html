@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}" type="text/css">
-    <title>Home | Family Hub</title>
+    <title>{{title}} | Family Hub</title>
 </head>
 
 <body>
@@ -35,13 +35,19 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('home_page')}}">Home</a>
+                    <a class="nav-link {% if active == 'home' %}active{% endif %}" href="{{url_for('home_page')}}">
+                        Home {% if active == 'home' %}<span class="sr-only">(current)</span>{% endif %}
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="activities.html">Activities</a>
+                    <a class="nav-link {% if active == 'activities' %}active{% endif %}" href="{{url_for('activities_page')}}">
+                        Activities {% if active == 'activities' %}<span class="sr-only">(current)</span>{% endif %}
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="events.html">Events</a>
+                    <a class="nav-link {% if active == 'events' %}active{% endif %}" href="{{url_for('events_page')}}">
+                        Events {% if active == 'events' %}<span class="sr-only">(current)</span>{% endif %}
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
@@ -93,7 +99,7 @@
                 </div>
                 <div class="col-12 col-md-3">
                     <h3>Popular links</h3>
-                    <a href="activities.html">Activities</a>
+                    <a href="{{url_for('activities_page')}}">Activities</a>
                     <a href="events.html">Events</a>
                     <a href="#">Privacy Policy</a>
                     <a href="createaccount.html">Create an account</a>
