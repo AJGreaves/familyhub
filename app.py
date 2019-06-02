@@ -21,8 +21,13 @@ def events_page():
 
 # Contact page
 @app.route('/contact')
-def events_page():
+def contact_page():
     return render_template("contact.html", title="Contact", active="contact")
+
+# Create Account page
+@app.route('/newaccount')
+def new_account_page():
+    return render_template("newaccount.html", title="Create Account", active="newAccount")
 
 if __name__ == '__main__':
     app.run(host=os.getenv('IP'), port=os.getenv('PORT'), debug=True)
