@@ -39,5 +39,15 @@ def login_page():
 def search_page():
     return render_template("search.html", title="Search")
 
+# Activity listing page - see if possible to update this to different routes based on each activity title
+@app.route('/activity-listing')
+def activity_listing_page():
+    return render_template("activitylisting.html", title="Activity Listing")
+
+# Event listing page - see if possible to update this to different routes based on each event title
+@app.route('/event-listing')
+def event_listing_page():
+    return render_template("eventlisting.html", title="Event Listing")
+
 if __name__ == '__main__':
     app.run(host=os.getenv('IP'), port=os.getenv('PORT'), debug=True)
