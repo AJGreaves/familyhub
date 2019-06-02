@@ -5,6 +5,7 @@
 /* !important needed here to override more specific heading colours in _listings.scss */
 
 a {
+    -webkit-transition: all 0.2s ease-in-out 0.2s;
     transition: all 0.2s ease-in-out 0.2s;
 }
 
@@ -47,7 +48,6 @@ footer hr {
 .hero-img {
     height: 400px;
     background-repeat: no-repeat;
-    -webkit-background-size: cover;
     background-size: cover;
     position: relative;
 }
@@ -132,6 +132,7 @@ footer h4 {
 
 footer a {
     color: $platinum;
+    -webkit-transition: all 0.5s ease-in-out 0.1s;
     transition: all 0.5s ease-in-out 0.1s;
 }
 

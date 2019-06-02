@@ -10,6 +10,7 @@
     background-color: $light-blue;
     border: 1px solid $light-blue;
     color: #fff;
+    -webkit-transition: all 0.3s ease-in-out 0.3s;
     transition: all 0.3s ease-in-out 0.3s;
 }
 
@@ -24,12 +25,14 @@
     background-color: $terracotta;
     border: $terracotta;
     opacity: 0.8;
+    -webkit-transition: all 0.3s ease-in-out 0.3s;
     transition: all 0.3s ease-in-out 0.3s;
 }
 
 /* changes default btn outline to one that matches this buttons custom colour */
 .btn-search:focus {
-    box-shadow: 0 0 0 .2rem rgba(237, 106, 90,.25);
+    -webkit-box-shadow: 0 0 0 .2rem rgba(237, 106, 90,.25);
+            box-shadow: 0 0 0 .2rem rgba(237, 106, 90,.25);
 }
 
 .btn-search:hover {
@@ -48,6 +51,7 @@
     border: $green;
     opacity: 0.7;
     color: #fff;
+    -webkit-transition: all 0.3s ease-in-out 0.3s;
     transition: all 0.3s ease-in-out 0.3s;
 }
 
@@ -57,13 +61,15 @@
 }
 
 .btn-create:focus {
-    box-shadow: 0 0 0 .2rem rgba(148, 182, 89,.25);
+    -webkit-box-shadow: 0 0 0 .2rem rgba(148, 182, 89,.25);
+            box-shadow: 0 0 0 .2rem rgba(148, 182, 89,.25);
 }
 
 .btn-delete {
     background-color: #dc3545;
     border: 1px solid #dc3545;
     color: #fff;
+    -webkit-transition: all 0.3s ease-in-out 0.3s;
     transition: all 0.3s ease-in-out 0.3s;
 }
 
@@ -74,7 +80,8 @@
 }
 
 .btn-delete:focus {
-    box-shadow: 0 0 0 .2rem rgba(220, 53, 69,.25);
+    -webkit-box-shadow: 0 0 0 .2rem rgba(220, 53, 69,.25);
+            box-shadow: 0 0 0 .2rem rgba(220, 53, 69,.25);
 }
 
 .icon-circle {
@@ -89,7 +96,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     color: #fff;
 }
 
@@ -120,6 +128,7 @@ and edited slightly to fit project needs */
     color: $terracotta;
     opacity: 0;
     background-color: transparent;
+    -webkit-transition: all 0.5s ease-in-out 0.2s;
     transition: all 0.5s ease-in-out 0.2s;
 }
 
@@ -138,6 +147,7 @@ and edited slightly to fit project needs */
     then js adds active class to it */
     opacity: 0;
     pointer-events: none;
+    -webkit-transition: all 0.5s ease-in-out 0.2s;
     transition: all 0.5s ease-in-out 0.2s;
 }
 
