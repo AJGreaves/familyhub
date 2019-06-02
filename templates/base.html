@@ -20,7 +20,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-md navbar-light bg-platinum">
         <a class="navbar-brand" href="{{url_for('home_page')}}">
-            <img src="{{url_for('static', filename='img/logo_transparent.png')}}" width="30" height="30" class="d-inline-block align-top" alt="Family Hub Logo">
+            <img id="nav-logo" src="{{url_for('static', filename='img/logo_transparent.png')}}" class="d-inline-block align-top" alt="Family Hub Logo">
         Family Hub
         </a>
         <button class="navbar-toggler" 
@@ -156,7 +156,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-    <script src="assets/js/familyhub.js"></script>
+    <script src="{{url_for('static', filename='js/familyhub.js')}}"></script>
 </body>
 
 </html>

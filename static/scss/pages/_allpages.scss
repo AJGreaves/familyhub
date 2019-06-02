@@ -2,8 +2,12 @@
     All pages
 ------------------------------ */
 
-/* !important needed here to override more specific heading colours in _listings.scss */
+#nav-logo {
+    width: 30px;
+    height: 30px;
+}
 
+/* !important needed here to override more specific heading colours in _listings.scss */
 a {
     -webkit-transition: all 0.2s ease-in-out 0.2s;
     transition: all 0.2s ease-in-out 0.2s;

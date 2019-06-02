@@ -477,6 +477,11 @@ p.expired {
 /* ------------------------------
     All pages
 ------------------------------ */
+#nav-logo {
+  width: 30px;
+  height: 30px;
+}
+
 /* !important needed here to override more specific heading colours in _listings.scss */
 a {
   -webkit-transition: all 0.2s ease-in-out 0.2s;
