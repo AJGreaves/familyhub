@@ -29,5 +29,15 @@ def contact_page():
 def new_account_page():
     return render_template("newaccount.html", title="Create Account", active="newAccount")
 
+# Contact page
+@app.route('/login')
+def login_page():
+    return render_template("login.html", title="Log In", active="login")
+
+# Search page
+@app.route('/search')
+def search_page():
+    return render_template("search.html", title="Search")
+
 if __name__ == '__main__':
     app.run(host=os.getenv('IP'), port=os.getenv('PORT'), debug=True)
