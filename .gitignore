@@ -1,4 +1,4 @@
 # folders
 .venv
 .vscode
-
+__pycache__
