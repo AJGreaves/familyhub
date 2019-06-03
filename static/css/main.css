@@ -331,8 +331,17 @@ footer .social-icon-shadow {
 /* ------------------------------
     Carousels
 ------------------------------ */
+/* works with js to slow carousels down. 
+Credit: https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed-that-bootstrap-carousel-slides-in-items/18633703 */
+.carousel-inner .carousel-item {
+  transition: -webkit-transform 2s ease;
+  -webkit-transition: -webkit-transform 2s ease;
+  transition: transform 2s ease;
+  transition: transform 2s ease, -webkit-transform 2s ease;
+}
+
 .carousel-chevron {
-  color: #f4f1bb;
+  color: #9b997a;
 }
 
 .carousel-control-prev,
@@ -375,7 +384,7 @@ footer .social-icon-shadow {
   border: 1px solid black;
   /* Credit: code for box shadow taken from https://codepen.io/sdthornton/pen/wBZdXq */
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .search-input-field {
@@ -594,7 +603,7 @@ shadow added to give depth and contrast with the image for readability */
     Footer
 ------------------------------ */
 footer {
-  background-color: #5ca4a9;
+  background-color: #346861;
   color: white;
   margin-top: 3rem;
 }
@@ -626,7 +635,7 @@ footer a:hover {
   margin-bottom: 2rem;
 }
 
-/* scroll behaviour, adds smooth scrolling when 
+/* scroll behavior, adds smooth scrolling when 
 jumping to different parts of the same page */
 html {
   scroll-behavior: smooth;

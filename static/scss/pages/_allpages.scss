@@ -53,6 +53,7 @@ footer hr {
     opacity: 0.5;
 }
 
+
 /* ------------------------------
     Background images
 ------------------------------ */
@@ -125,7 +126,7 @@ shadow added to give depth and contrast with the image for readability */
 ------------------------------ */
 
 footer {
-    background-color: $mid-blue;
+    background-color: $mid-blue-hover;
     color: white;
     margin-top: 3rem;
 }
@@ -158,7 +159,7 @@ footer a:hover {
     margin-bottom: 2rem;
 }
 
-/* scroll behaviour, adds smooth scrolling when 
+/* scroll behavior, adds smooth scrolling when 
 jumping to different parts of the same page */
 
 html {
