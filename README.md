@@ -154,6 +154,7 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
 - [AutoPrefixer](https://autoprefixer.github.io/)
     - The project used **AutoPrefixer** to make sure all css prefixes were the most up to date versions. 
 - https://gijgo.com/ date and time pickers
+- pylint-flask to fix pylint issues in vscode
 
 ## Testing 
 

@@ -81,13 +81,6 @@ And also in the Chrome Developer Tools device simulators on all options and orie
 
 ### Bugs discovered: 
 #### Solved bugs
-1. **Bug 1**
-
-- details: 
-    - fix:
-    - 
-
-#### Unsolved bugs
 
 1. **Custom modal opacity issues**
 
@@ -110,6 +103,17 @@ And also in the Chrome Developer Tools device simulators on all options and orie
     background-color: rgba(0,0,0,0.4);
 }
 ```
+
+2. **pylinter on vscode causing errors**
+    - Trying to import one py file into another was throwing confusing errors, running only once and then refusing to work again.
+    - Fix: installed pylint-flask and the pylinter started working correctly again.
+
+
+#### Unsolved bugs
+
+1. 
+
+
 
 ## Further testing: 
 1. Asked fellow students, friends and family to look at the site on their devices and report any issues they found.
