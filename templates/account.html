@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-12">
                     <h1>My account</h1>
-                    <a href="accountsettings.html" aria-label="Account settings">
+                    <a href="{{url_for('settings_page')}}" aria-label="Account settings">
                         <i class="fas fa-cog float-right heading-btn"></i>
                     </a>
                     <hr>
@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-12">
                     <h2>My Activities</h2>
-                    <a href="#" class="heading-btn btn btn-create float-right">Add new activity</a>
+                    <a href="{{url_for('new_activity_page')}}" class="heading-btn btn btn-create float-right">Add New Activity</a>
                     <hr>
                 </div>
             </div>
@@ -65,7 +65,7 @@
                 <div class="col-12">
                     <hr>
                     <h2>My Events</h2>
-                    <a href="#" class="heading-btn btn btn-create float-right">Add new event</a>
+                    <a href="{{url_for('new_event_page')}}" class="heading-btn btn btn-create float-right">Add New Event</a>
                     <hr>
                 </div>
             </div>

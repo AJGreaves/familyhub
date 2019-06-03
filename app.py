@@ -59,5 +59,15 @@ def settings_page():
 def my_account_page():
     return render_template("account.html", title="My Account", loginStatus=True)
 
+# Add new event page
+@app.route('/add-new-event')
+def new_event_page():
+    return render_template("addevent.html", title="Add New Event", loginStatus=True)
+
+# Add new activity page
+@app.route('/add-new-activity')
+def new_activity_page():
+    return render_template("addactivity.html", title="Add New Activity", loginStatus=True)
+
 if __name__ == '__main__':
     app.run(host=os.getenv('IP'), port=os.getenv('PORT'), debug=True)
