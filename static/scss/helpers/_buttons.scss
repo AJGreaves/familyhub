@@ -8,16 +8,16 @@
 }
 
 .btn-readmore {
-    background-color: $light-blue;
-    border: 1px solid $light-blue;
+    background-color: $mid-blue;
+    border: 1px solid $mid-blue;
     color: #fff;
     -webkit-transition: all 0.3s ease-in-out 0.3s;
     transition: all 0.3s ease-in-out 0.3s;
 }
 
 .btn-readmore:hover {
-    background-color: $mid-blue;
-    border: 1px solid $mid-blue;
+    background-color: $mid-blue-hover;
+    border: 1px solid $mid-blue-hover;
     color: #fff;
 }
 
@@ -25,7 +25,6 @@
     color: #fff;
     background-color: $terracotta;
     border: $terracotta;
-    opacity: 0.8;
     -webkit-transition: all 0.3s ease-in-out 0.3s;
     transition: all 0.3s ease-in-out 0.3s;
 }
@@ -37,7 +36,8 @@
 }
 
 .btn-search:hover {
-    opacity: 1;
+    background-color: $terracotta-hover;
+    border: $terracotta-hover;
     color: #fff;
 }
 
@@ -50,14 +50,14 @@
 .btn-create {
     background-color: $green;
     border: $green;
-    opacity: 0.7;
     color: #fff;
     -webkit-transition: all 0.3s ease-in-out 0.3s;
     transition: all 0.3s ease-in-out 0.3s;
 }
 
 .btn-create:hover {
-    opacity: 1;
+    background-color: $green-hover;
+    border: $green-hover;
     color: #fff;
 }
 
@@ -67,16 +67,16 @@
 }
 
 .btn-delete {
-    background-color: #dc3545;
-    border: 1px solid #dc3545;
+    background-color: $red;
+    border: 1px solid $red;
     color: #fff;
     -webkit-transition: all 0.3s ease-in-out 0.3s;
     transition: all 0.3s ease-in-out 0.3s;
 }
 
 .btn-delete:hover {
-    background-color: #c0303e;
-    border: 1px solid #c0303e;
+    background-color: $red-hover;
+    border: 1px solid $red-hover;
     color: #fff;
 }
 

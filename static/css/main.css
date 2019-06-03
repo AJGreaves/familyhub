@@ -57,16 +57,16 @@ footer h4 {
 }
 
 .btn-readmore {
-  background-color: #9bc1bc;
-  border: 1px solid #9bc1bc;
+  background-color: #5ca4a9;
+  border: 1px solid #5ca4a9;
   color: #fff;
   -webkit-transition: all 0.3s ease-in-out 0.3s;
   transition: all 0.3s ease-in-out 0.3s;
 }
 
 .btn-readmore:hover {
-  background-color: #5ca4a9;
-  border: 1px solid #5ca4a9;
+  background-color: #346861;
+  border: 1px solid #346861;
   color: #fff;
 }
 
@@ -74,7 +74,6 @@ footer h4 {
   color: #fff;
   background-color: #ed6a5a;
   border: #ed6a5a;
-  opacity: 0.8;
   -webkit-transition: all 0.3s ease-in-out 0.3s;
   transition: all 0.3s ease-in-out 0.3s;
 }
@@ -86,7 +85,8 @@ footer h4 {
 }
 
 .btn-search:hover {
-  opacity: 1;
+  background-color: #e7422e;
+  border: #e7422e;
   color: #fff;
 }
 
@@ -99,14 +99,14 @@ footer h4 {
 .btn-create {
   background-color: #94b659;
   border: #94b659;
-  opacity: 0.7;
   color: #fff;
   -webkit-transition: all 0.3s ease-in-out 0.3s;
   transition: all 0.3s ease-in-out 0.3s;
 }
 
 .btn-create:hover {
-  opacity: 1;
+  background-color: #687d44;
+  border: #687d44;
   color: #fff;
 }
 
