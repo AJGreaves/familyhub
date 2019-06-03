@@ -791,7 +791,8 @@ input.no-click {
 }
 
 #contactMessage,
-#add-edit-event-wrapper textarea {
+#add-edit-event-wrapper textarea,
+#add-edit-activity-wrapper textarea {
   min-width: 100%;
 }
 
