@@ -42,9 +42,9 @@ function openSearch() {
 
 ['#eventFilterDatepickerSm', 
 '#eventFilterDatepickerLg', 
-'#activityStartDate', 
-'#activityEndDate',
-'#eventDate'].forEach(datepick => {
+'#start', 
+'#end',
+'#date'].forEach(datepick => {
     $(datepick).datepicker({ 
     autoclose: true, 
   	todayHighlight: true,
@@ -52,20 +52,20 @@ function openSearch() {
 	});
 });
 
-['#startTimeMon', 
-'#endTimeMon',
-'#startTimeTue', 
-'#endTimeTue',
-'#startTimeWed', 
-'#endTimeWed',
-'#startTimeThu', 
-'#endTimeThu',
-'#startTimeFri', 
-'#endTimeFri',
-'#startTimeSat', 
-'#endTimeSat',
-'#startTimeSun', 
-'#endTimeSun',].forEach(timepick => {
+['#monStart', 
+'#monEnd',
+'#tueStart', 
+'#tueEnd',
+'#wedStart', 
+'#wedEnd',
+'#thuStart', 
+'#thuEnd',
+'#friStart', 
+'#friEnd',
+'#satStart', 
+'#satEnd',
+'#sunStart', 
+'#sunEnd',].forEach(timepick => {
     $(timepick).timepicker({ 
     autoclose: true, 
   	uiLibrary: 'bootstrap4'
