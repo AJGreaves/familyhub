@@ -720,6 +720,7 @@ a.fh-link:hover {
   font-size: 1.2rem;
   color: #5ca4a9;
   margin-bottom: 1.2rem;
+  text-transform: capitalize;
 }
 
 #account-settings-wrapper h3 {
