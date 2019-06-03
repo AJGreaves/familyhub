@@ -206,19 +206,19 @@
                                         <div id="collapseInOut" class="collapse filter-options" aria-labelledby="event filter by indoors or outdoors" data-parent="#event-filters-accordion">
                                             <div class="card-body">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" value="" id="indoor">
+                                                    <input class="form-check-input" type="radio" name="indoor-outdoor-options" value="indoor" id="indoor">
                                                     <label class="form-check-label" for="indoor">
                                                     Indoor
                                                     </label>
                                                 </div>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" value="" id="outdoor">
+                                                    <input class="form-check-input" type="radio" name="indoor-outdoor-options" value="outdoor" id="outdoor">
                                                     <label class="form-check-label" for="outdoor">
                                                     Outdoor
                                                     </label>
                                                 </div>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" value="" id="inOrOut">
+                                                    <input class="form-check-input" type="radio" name="indoor-outdoor-options" value="inOrOut" id="inOrOut">
                                                     <label class="form-check-label" for="inOrOut">
                                                     Either
                                                     </label>
@@ -250,11 +250,9 @@
                                                     <option value="10">€10</option>
                                                     <option value="15">€15</option>
                                                     <option value="20">€20</option>
-                                                    <option value="25">€25+</option>
                                                 </select>
                                                 <label class="mr-sm-2 mt-3" for="priceRangeEnd">Max</label>
                                                 <select class="custom-select mr-sm-2" id="priceRangeEnd">
-                                                    <option value="0">€0</option>
                                                     <option value="5">€5</option>
                                                     <option value="10">€10</option>
                                                     <option value="15">€15</option>
@@ -440,19 +438,19 @@
                                 <div class="filter-options">
                                     <div class="card-body">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" value="" id="indoor">
+                                            <input class="form-check-input" type="radio" name="indoor-outdoor-options" value="indoor" id="indoor">
                                             <label class="form-check-label" for="indoor">
                                             Indoor
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" value="" id="outdoor">
+                                            <input class="form-check-input" type="radio" name="indoor-outdoor-options" value="outdoor" id="outdoor">
                                             <label class="form-check-label" for="outdoor">
                                             Outdoor
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" value="" id="inOrOut">
+                                            <input class="form-check-input" type="radio" name="indoor-outdoor-options" value="inOrOut" id="inOrOut">
                                             <label class="form-check-label" for="inOrOut">
                                             Either
                                             </label>
@@ -478,16 +476,18 @@
                                         <label class="mr-sm-2 mt-3" for="priceRangeStart">Min</label>
                                         <select class="custom-select mr-sm-2" id="priceRangeStart">
                                             <option value="0">€0</option>
+                                            <option value="5">€5</option>
                                             <option value="10">€10</option>
-                                            <option value="25">€20</option>
-                                            <option value="50">€35</option>
+                                            <option value="15">€15</option>
+                                            <option value="20">€20</option>
                                         </select>
                                         <label class="mr-sm-2 mt-3" for="priceRangeEnd">Max</label>
                                         <select class="custom-select mr-sm-2" id="priceRangeEnd">
-                                            <option value="10">€10</option>
-                                            <option value="25">€20</option>
-                                            <option value="50">€35</option>
-                                            <option value="50">€50+</option>
+                                                <option value="5">€5</option>
+                                                <option value="10">€10</option>
+                                                <option value="15">€15</option>
+                                                <option value="20">€20</option>
+                                                <option value="25">€25+</option>
                                         </select>
                                     </div>
                                 </div>
