@@ -70,13 +70,13 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         My Account
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item {% if active == 'myAccount' %}active{% endif %}" href="{{url_for('my_account_page')}}">My Listings</a>
-                        <a class="dropdown-item" href="#">Add New Event</a>
-                        <a class="dropdown-item" href="#">Add New Activity</a>
+                    <div class="dropdown-menu bg-platinum" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{url_for('my_account_page')}}">My Listings</a>
+                        <a class="dropdown-item" href="{{url_for('new_event_page')}}">Add New Event</a>
+                        <a class="dropdown-item" href="{{url_for('new_activity_page')}}">Add New Activity</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Settings</a>
-                        <a class="dropdown-item {% if active == 'logout' %}active{% endif %}" href="#">Log out</a>
+                        <a class="dropdown-item" href="{{url_for('settings_page')}}">Settings</a>
+                        <a class="dropdown-item" href="#">Log out</a>
                     </div>
                 </li>
                 {% endif %}                
