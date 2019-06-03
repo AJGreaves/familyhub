@@ -49,31 +49,42 @@
                         Events {% if active == 'events' %}<span class="sr-only">(current)</span>{% endif %}
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link {% if active == 'contact' %}contact{% endif %}" href="{{url_for('contact_page')}}">
-                        Contact {% if active == 'contact' %}<span class="sr-only">(current)</span>{% endif %}
-                    </a>
-                </li>
+
+                <!-- create account and log in navigation items only visible when not logged in -->
+                {% if loginStatus != True %}
                 <li class="nav-item">
                     <a class="nav-link {% if active == 'newAccount' %}active{% endif %}" href="{{url_for('new_account_page')}}">
                         Create Account {% if active == 'newAccount' %}<span class="sr-only">(current)</span>{% endif %}
                     </a>
                 </li>
-                {% if loginStatus != True %}
                 <li class="nav-item">
                     <a class="nav-link {% if active == 'login' %}active{% endif %}" href="{{url_for('login_page')}}">
                         Log In {% if active == 'login' %}<span class="sr-only">(current)</span>{% endif %}
                     </a>
                 </li>
                 {% endif %}
+
+                <!-- My account dropdown menu only visible when logged in -->
                 {% if loginStatus == True %}
-                <li class="nav-item">
-                    <a class="nav-link {% if active == 'myAccount' %}active{% endif %}" href="{{url_for('my_account_page')}}"> My Account</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        My Account
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item {% if active == 'myAccount' %}active{% endif %}" href="{{url_for('my_account_page')}}">My Listings</a>
+                        <a class="dropdown-item" href="#">Add New Event</a>
+                        <a class="dropdown-item" href="#">Add New Activity</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Settings</a>
+                        <a class="dropdown-item {% if active == 'logout' %}active{% endif %}" href="#">Log out</a>
+                    </div>
                 </li>
+                {% endif %}                
                 <li class="nav-item">
-                    <a class="nav-link {% if active == 'logout' %}active{% endif %}" href="#">Log out</a>
+                    <a class="nav-link {% if active == 'contact' %}contact{% endif %}" href="{{url_for('contact_page')}}">
+                        Contact {% if active == 'contact' %}<span class="sr-only">(current)</span>{% endif %}
+                    </a>
                 </li>
-                {% endif %}
             </ul>
         </div>
     </nav>
