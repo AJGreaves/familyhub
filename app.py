@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for, request
+from flask import Flask, redirect, render_template, request, url_for
 from app.keys import Keywords
 
 # create instance of flask and assign it to "app"
