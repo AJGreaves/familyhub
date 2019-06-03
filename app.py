@@ -98,6 +98,14 @@ def new_event_page():
                             loginStatus=True,
                             keywords=Keywords.generic())
 
+# Edit existing event page
+@app.route('/edit-event')
+def edit_event_page():
+    return render_template("editevent.html", 
+                            title="Edit Event", 
+                            loginStatus=True,
+                            keywords=Keywords.generic())
+
 # Add new activity page
 @app.route('/add-new-activity')
 def new_activity_page():
