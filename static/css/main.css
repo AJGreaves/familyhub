@@ -19,6 +19,7 @@ h2 {
   font-family: "Delius", cursive;
   color: #ed6a5a;
   margin-top: 2.5rem;
+  text-transform: capitalize;
 }
 
 h1 {
