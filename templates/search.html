@@ -38,7 +38,7 @@
                             <div class="card-body">
                                 <h4 class="card-title">Card title</h4>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="activitylisting.html" class="btn btn-readmore">Read More</a>
+                                <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                             <div class="card-body">
                                 <h4 class="card-title">Card title</h4>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="activitylisting.html" class="btn btn-readmore">Read More</a>
+                                <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                             <div class="card-body">
                                 <h4 class="card-title">Card title</h4>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="activitylisting.html" class="btn btn-readmore">Read More</a>
+                                <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -69,8 +69,8 @@
                         <hr>
                     </div>
                     <div class="col-12 text-center">
-                        <button type="button" class="btn btn-search mr-1 mr-md-3">Search activities</button>
-                        <button type="button" class="btn btn-search ml-1 ml-md-3">Search events</button>
+                        <a href="{{url_for('activities_page')}}" class="btn btn-search mr-1 mr-md-3">Search activities</a>
+                        <a href="{{url_for('events_page')}}" class="btn btn-search ml-1 ml-md-3">Search events</a>
                     </div>
                 </div>
             </div>
