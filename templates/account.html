@@ -1,0 +1,110 @@
+{% extends 'base.html' %} {% block content %}
+
+    <!-- Section: My account -->
+    <main>
+
+        <div id="my-account-wrapper" class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>My account</h1>
+                    <a href="accountsettings.html" aria-label="Account settings">
+                        <i class="fas fa-cog float-right heading-btn"></i>
+                    </a>
+                    <hr>
+                </div>
+            </div>
+
+            <!-- Section: My Activities -->
+            <div class="row">
+                <div class="col-12">
+                    <h2>My Activities</h2>
+                    <a href="#" class="heading-btn btn btn-create float-right">Add new activity</a>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card familyhub-card">
+                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title">Card title</h4>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                    <!-- buttons outside cards so inacive opacity setting does not effect them -->
+                    <a href="#" class="btn btn-readmore">Edit</a>
+                    <a href="#" class="btn btn-delete">Delete</a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card familyhub-card">
+                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title">Card title</h4>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-readmore">Edit</a>
+                    <a href="#" class="btn btn-delete">Delete</a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card familyhub-card inactive">
+                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title">Card title</h4>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-readmore">Edit</a>
+                    <a href="#" class="btn btn-delete">Delete</a>
+                    <p class="expired">Expired. Add new dates to activate</p>
+                </div>
+            </div>
+
+            <!-- Section: My Events -->
+            <div class="row">
+                <div class="col-12">
+                    <hr>
+                    <h2>My Events</h2>
+                    <a href="#" class="heading-btn btn btn-create float-right">Add new event</a>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card familyhub-card">
+                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
+                        <div class="custom-calendar-icon">
+                            <div class="display-month">JUN</div>
+                            <div class="display-day">25</div>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Card title</h4>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-readmore">Edit</a>
+                    <a href="#" class="btn btn-delete">Delete</a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card familyhub-card inactive">
+                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
+                        <div class="custom-calendar-icon">
+                            <div class="display-month">JAN</div>
+                            <div class="display-day">5</div>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Card title</h4>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-readmore">Edit</a>
+                    <a href="#" class="btn btn-delete">Delete</a>
+                    <p class="expired">Expired. Add new dates to activate</p>
+                </div>
+            </div>
+
+        </div>
+
+
+    </main>
+{% endblock %}

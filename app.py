@@ -49,5 +49,15 @@ def activity_listing_page():
 def event_listing_page():
     return render_template("eventlisting.html", title="Event Listing")
 
+# Search page
+@app.route('/settings')
+def settings_page():
+    return render_template("settings.html", title="Account Settings", loginStatus=True)
+
+# Account page - all listings for this account
+@app.route('/account')
+def my_account_page():
+    return render_template("account.html", title="My Account", loginStatus=True)
+
 if __name__ == '__main__':
     app.run(host=os.getenv('IP'), port=os.getenv('PORT'), debug=True)

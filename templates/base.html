@@ -59,11 +59,21 @@
                         Create Account {% if active == 'newAccount' %}<span class="sr-only">(current)</span>{% endif %}
                     </a>
                 </li>
+                {% if loginStatus != True %}
                 <li class="nav-item">
                     <a class="nav-link {% if active == 'login' %}active{% endif %}" href="{{url_for('login_page')}}">
                         Log In {% if active == 'login' %}<span class="sr-only">(current)</span>{% endif %}
                     </a>
                 </li>
+                {% endif %}
+                {% if loginStatus == True %}
+                <li class="nav-item">
+                    <a class="nav-link {% if active == 'myAccount' %}active{% endif %}" href="{{url_for('my_account_page')}}"> My Account</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if active == 'logout' %}active{% endif %}" href="#">Log out</a>
+                </li>
+                {% endif %}
             </ul>
         </div>
     </nav>
