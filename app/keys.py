@@ -4,7 +4,10 @@ activities_keywords = ['activities for kids', 'kids', 'fun things to do', 'activ
 
 events_keywords = ['events for kids', 'kids', 'fun things to do', 'event', 'kids day out', 'family days out', 'family festival', 'music', 'kids events', 'in english', 'family hub', 'familyhub', 'Aalsmeer', 'Badhoevedorp','Bloemendaal', 'Cruquius', 'Haarlem', 'Heemstede', 'Hillegom', 'Hoofddorp', 'Lisse', 'Nieuw-Vennep', 'Santpoort-Noord', 'Uithorn', 'Zandvoort', 'Haarlemmermeer' ]
 
+generic_keywords = ['events', 'activities', 'for kids', 'in haarlem', 'in haarlemmermeer', 'in hoofddorp', 'kids sports', 'after school clubs', 'kids adventures', 'netherlands', 'holland', 'nederland', 'dutch', 'kids', 'fun', 'out and about']
+
 class Keywords:
-    home = ', '.join(str(word) for word in home_keywords)
-    activities = ', '.join(str(activity) for activity in activities_keywords)
-    events = ', '.join(str(event) for event in events_keywords)
+    home = ', '.join(str(keyword) for keyword in home_keywords)
+    activities = ', '.join(str(keyword) for keyword in activities_keywords)
+    events = ', '.join(str(keyword) for keyword in events_keywords)
+    generic = ', '.join(str(keyword) for keyword in generic_keywords)

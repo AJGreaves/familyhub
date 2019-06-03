@@ -34,67 +34,77 @@ def events_page():
 def contact_page():
     return render_template("contact.html", 
                             title="Contact", 
-                            active="contact")
+                            active="contact",
+                            keywords=Keywords.generic)
 
 # Create Account page
 @app.route('/newaccount')
 def new_account_page():
     return render_template("newaccount.html", 
                             title="Create Account", 
-                            active="newAccount")
+                            active="newAccount",
+                            keywords=Keywords.generic)
 
 # Contact page
 @app.route('/login')
 def login_page():
     return render_template("login.html", 
                             title="Log In", 
-                            active="login")
+                            active="login",
+                            keywords=Keywords.generic)
 
 # Search page
 @app.route('/search')
 def search_page():
     return render_template("search.html", 
-                            title="Search")
+                            title="Search",
+                            keywords=Keywords.generic)
 
 # Activity listing page - see if possible to update this to different routes based on each activity title
 @app.route('/activity-listing')
 def activity_listing_page():
     return render_template("activitylisting.html", 
-                            title="Activity Listing")
+                            title="Activity Listing",
+                            keywords=Keywords.generic)
 
 # Event listing page - see if possible to update this to different routes based on each event title
 @app.route('/event-listing')
 def event_listing_page():
     return render_template("eventlisting.html", 
-                            title="Event Listing")
+                            title="Event Listing",
+                            keywords=Keywords.generic)
 
 # Search page
 @app.route('/settings')
 def settings_page():
     return render_template("settings.html", 
                             title="Account Settings", 
-                            loginStatus=True)
+                            loginStatus=True,
+                            keywords=Keywords.generic)
 
 # Account page - all listings for this account
 @app.route('/account')
 def my_account_page():
     return render_template("account.html", 
                             title="My Account", 
-                            loginStatus=True)
+                            loginStatus=True,
+                            keywords=Keywords.generic)
 
 # Add new event page
 @app.route('/add-new-event')
 def new_event_page():
     return render_template("addevent.html", 
                             title="Add New Event", 
-                            loginStatus=True)
+                            loginStatus=True,
+                            keywords=Keywords.generic)
 
 # Add new activity page
 @app.route('/add-new-activity')
 def new_activity_page():
     return render_template("addactivity.html", 
                             title="Add New Activity", 
-                            loginStatus=True)
+                            loginStatus=True,
+                            keywords=Keywords.generic)
 
 if __name__ == '__main__':
     app.run(host=os.getenv('IP'), 
