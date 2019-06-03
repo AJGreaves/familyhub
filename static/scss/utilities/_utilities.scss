@@ -2,8 +2,17 @@
     Carousels
 ------------------------------ */
 
+/* works with js to slow carousels down. 
+Credit: https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed-that-bootstrap-carousel-slides-in-items/18633703 */
+.carousel-inner .carousel-item {
+    transition: -webkit-transform 2s ease;
+    -webkit-transition: -webkit-transform 2s ease;
+    transition: transform 2s ease;
+    transition: transform 2s ease, -webkit-transform 2s ease;
+    }
+
 .carousel-chevron {
-    color: $blond;
+    color: $platinum-dark;
 }
 
 .carousel-control-prev,
@@ -27,6 +36,7 @@
     which was what was happening when using opacity */
     background-color: rgba(0, 0, 0, 0.4);
     pointer-events: none;
+    -webkit-transition: all 0.5s ease-in-out 0.2s;
     transition: all 0.5s ease-in-out 0.2s;
 }
 
@@ -45,7 +55,8 @@
     border-radius: 8px;
     border: 1px solid black;
     /* Credit: code for box shadow taken from https://codepen.io/sdthornton/pen/wBZdXq */
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .search-input-field {

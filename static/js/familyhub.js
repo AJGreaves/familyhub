@@ -1,4 +1,7 @@
 
+// works with css to slow carousels movement down https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed-that-bootstrap-carousel-slides-in-items/18633703 */
+jQuery.fn.carousel.Constructor.TRANSITION_DURATION = 2000;
+
 // CREDIT: code for floating buttons taken from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp 
 window.onscroll = function() {scrollFunction()};
 
