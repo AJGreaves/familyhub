@@ -106,6 +106,14 @@ def new_activity_page():
                             loginStatus=True,
                             keywords=Keywords.generic)
 
+# Edit existing activity page
+@app.route('/edit-activity')
+def edit_activity_page():
+    return render_template("editactivity.html", 
+                            title="Edit Activity", 
+                            loginStatus=True,
+                            keywords=Keywords.generic)
+
 if __name__ == '__main__':
     app.run(host=os.getenv('IP'), 
             port=os.getenv('PORT'), 
