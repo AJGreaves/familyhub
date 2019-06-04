@@ -18,6 +18,7 @@
 </head>
 
 <body>
+
     <!-- Navigation -->
     {% include 'partials/_navbar.html' %}
 
@@ -27,19 +28,23 @@
     <!-- Footer -->
     {% include 'partials/_footer.html' %}
 
-    <!-- floating search and go to top buttons -->
+    <!-- Floating search and go to top buttons -->
     {% include 'partials/_floating_btns.html' %}
 
-    <!-- search modal -->
+    <!-- Search modal -->
     {% include 'partials/_search_modal.html' %}
 
+    <!-- Bootstrap scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     
+    <!-- Gijgo scripts for datepickers and timepickers scripts -->
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"></script>
 
+    <!-- Project scripts -->
     <script src="{{url_for('static', filename='js/familyhub.js')}}"></script>
+
 </body>
 
 </html>
