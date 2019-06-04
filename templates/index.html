@@ -32,14 +32,6 @@
 
                 <div id="recommended-sm-carousel" class="carousel slide carousel-multi-item d-block d-md-none" data-ride="carousel">
 
-                    <!--Indicators-->
-                    <ol class="carousel-indicators">
-                        <li data-target="#recommended-sm-carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#recommended-sm-carousel" data-slide-to="1"></li>
-                        <li data-target="#recommended-sm-carousel" data-slide-to="2"></li>
-                    </ol>
-                    <!--/.Indicators-->
-
                     <!--Slides-->
                     <div class="carousel-inner" role="listbox">
 
@@ -47,42 +39,27 @@
                         <div class="carousel-item active">
                             <div class="row justify-content-center">
                                 <div class="col-10">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                
+                                    {% include 'partials/_activity_card.html' %}
+
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="row justify-content-center">
                                 <div class="col-10">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+
+                                    {% include 'partials/_activity_card.html' %}
+
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="row justify-content-center">
-                                <div class="col-10">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                <div class="col-10">                                    
+
+                                    {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
                             </div>
                         </div>
@@ -109,16 +86,6 @@
 
                 <div id="recommended-md-carousel" class="carousel slide carousel-multi-item d-none d-md-block d-lg-none" data-ride="carousel">
 
-                    <!--Indicators-->
-                    <ol class="carousel-indicators">
-                        <li data-target="#recommended-md-carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#recommended-md-carousel" data-slide-to="1"></li>
-                        <li data-target="#recommended-md-carousel" data-slide-to="2"></li>
-                        <li data-target="#recommended-md-carousel" data-slide-to="3"></li>
-                        <li data-target="#recommended-md-carousel" data-slide-to="4"></li>
-                    </ol>
-                    <!--/.Indicators-->
-
                     <!--Slides-->
                     <div class="carousel-inner" role="listbox">
 
@@ -126,25 +93,15 @@
                         <div class="carousel-item active">
                             <div class="row justify-content-center">
                                 <div class="col-md-4">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
 
                                 <div class="col-md-4">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
                             </div>
                         </div>
@@ -154,25 +111,15 @@
                         <div class="carousel-item">
                             <div class="row justify-content-center">
                                 <div class="col-md-4">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
 
                                 <div class="col-md-4">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
 
                             </div>
@@ -183,25 +130,15 @@
                         <div class="carousel-item">
                             <div class="row justify-content-center">
                                 <div class="col-md-4">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
 
                                 <div class="col-md-4">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
 
                             </div>
@@ -212,25 +149,15 @@
                         <div class="carousel-item">
                             <div class="row justify-content-center">
                                 <div class="col-md-4">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
 
                                 <div class="col-md-4">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
                             </div>
                             <!--/.Fourth slide-->
@@ -254,14 +181,6 @@
                 per carousel row depending on screen width -->
                 <div id="recommended-lg-carousel" class="carousel slide carousel-multi-item  d-none d-lg-block" data-ride="carousel">
 
-                    <!--Indicators-->
-                    <ol class="carousel-indicators">
-                        <li data-target="#recommended-lg-carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#recommended-lg-carousel" data-slide-to="1"></li>
-                        <li data-target="#recommended-lg-carousel" data-slide-to="2"></li>
-                    </ol>
-                    <!--/.Indicators-->
-
                     <!--Slides-->
                     <div class="carousel-inner" role="listbox">
 
@@ -269,36 +188,21 @@
                         <div class="carousel-item active">
                             <div class="row justify-content-center">
                                 <div class="col-lg-3">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
 
                                 <div class="col-lg-3">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
 
                                 <div class="col-lg-3">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
                             </div>
                         </div>
@@ -308,36 +212,21 @@
                         <div class="carousel-item">
                             <div class="row justify-content-center">
                                 <div class="col-lg-3">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
 
                                 <div class="col-lg-3">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
 
                                 <div class="col-lg-3">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
                             </div>
                         </div>
@@ -347,36 +236,21 @@
                         <div class="carousel-item">
                             <div class="row justify-content-center">
                                 <div class="col-lg-3">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
 
                                 <div class="col-lg-3">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
 
                                 <div class="col-lg-3">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
                             </div>
                         </div>
@@ -407,7 +281,7 @@
                         <h1>What's on?</h1>
                     </div>
                     <div class="col-6">
-                        <a href="events.html" class="heading-btn btn btn-search float-right">Search events</a>
+                        <a href="{{url_for('events_page')}}" class="heading-btn btn btn-search float-right">Search events</a>
                     </div>
                 </div>
                 <hr>
@@ -422,19 +296,6 @@
 
                 <div id="events-sm-carousel" class="carousel slide carousel-multi-item d-block d-md-none" data-ride="carousel">
 
-                    <!--Indicators-->
-                    <ol class="carousel-indicators">
-                        <li data-target="#events-sm-carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#events-sm-carousel" data-slide-to="1"></li>
-                        <li data-target="#events-sm-carousel" data-slide-to="2"></li>
-                        <li data-target="#events-sm-carousel" data-slide-to="3"></li>
-                        <li data-target="#events-sm-carousel" data-slide-to="4"></li>
-                        <li data-target="#events-sm-carousel" data-slide-to="5"></li>
-                        <li data-target="#events-sm-carousel" data-slide-to="6"></li>
-                        <li data-target="#events-sm-carousel" data-slide-to="7"></li>
-                    </ol>
-                    <!--/.Indicators-->
-
                     <!--Slides-->
                     <div class="carousel-inner" role="listbox">
 
@@ -442,144 +303,72 @@
                         <div class="carousel-item active">
                             <div class="row justify-content-center">
                                 <div class="col-10">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
-                                        <div class="custom-calendar-icon">
-                                            <div class="display-month">JUN</div>
-                                            <div class="display-day">25</div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('event_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+
+                                        {% include 'partials/_event_card.html' %}
+
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="row justify-content-center">
                                 <div class="col-10">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg" alt="Card image cap">
-                                        <div class="custom-calendar-icon">
-                                            <div class="display-month">JUN</div>
-                                            <div class="display-day">25</div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('event_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_event_card.html' %}
+                                        
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="row justify-content-center">
                                 <div class="col-10">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg" alt="Card image cap">
-                                        <div class="custom-calendar-icon">
-                                            <div class="display-month">JUN</div>
-                                            <div class="display-day">25</div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('event_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_event_card.html' %}
+                                        
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="row justify-content-center">
                                 <div class="col-10">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg" alt="Card image cap">
-                                        <div class="custom-calendar-icon">
-                                            <div class="display-month">JUN</div>
-                                            <div class="display-day">25</div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('event_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_event_card.html' %}
+                                        
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="row justify-content-center">
                                 <div class="col-10">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
-                                        <div class="custom-calendar-icon">
-                                            <div class="display-month">JUN</div>
-                                            <div class="display-day">25</div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('event_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_event_card.html' %}
+                                        
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="row justify-content-center">
                                 <div class="col-10">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" alt="Card image cap">
-                                        <div class="custom-calendar-icon">
-                                            <div class="display-month">JUN</div>
-                                            <div class="display-day">25</div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('event_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_event_card.html' %}
+                                        
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="row justify-content-center">
                                 <div class="col-10">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
-                                        <div class="custom-calendar-icon">
-                                            <div class="display-month">JUN</div>
-                                            <div class="display-day">25</div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('event_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_event_card.html' %}
+                                        
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="row justify-content-center">
                                 <div class="col-10">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg" alt="Card image cap">
-                                        <div class="custom-calendar-icon">
-                                            <div class="display-month">JUN</div>
-                                            <div class="display-day">25</div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('event_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_event_card.html' %}
+                                        
                                 </div>
                             </div>
 
@@ -606,16 +395,6 @@
 
                 <div id="events-md-carousel" class="carousel slide carousel-multi-item d-none d-md-block d-lg-none" data-ride="carousel">
 
-                    <!--Indicators-->
-                    <ol class="carousel-indicators">
-                        <li data-target="#events-md-carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#events-md-carousel" data-slide-to="1"></li>
-                        <li data-target="#events-md-carousel" data-slide-to="2"></li>
-                        <li data-target="#events-md-carousel" data-slide-to="3"></li>
-                        <li data-target="#events-md-carousel" data-slide-to="4"></li>
-                    </ol>
-                    <!--/.Indicators-->
-
                     <!--Slides-->
                     <div class="carousel-inner" role="listbox">
 
@@ -623,33 +402,15 @@
                         <div class="carousel-item active">
                             <div class="row justify-content-center">
                                 <div class="col-md-4">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg" alt="Card image cap">
-                                        <div class="custom-calendar-icon">
-                                            <div class="display-month">JUN</div>
-                                            <div class="display-day">25</div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('event_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_event_card.html' %}
+                                        
                                 </div>
 
                                 <div class="col-md-4">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg" alt="Card image cap">
-                                        <div class="custom-calendar-icon">
-                                            <div class="display-month">JUN</div>
-                                            <div class="display-day">25</div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('event_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_event_card.html' %}
+                                        
                                 </div>
 
                             </div>
@@ -660,33 +421,15 @@
                         <div class="carousel-item">
                             <div class="row justify-content-center">
                                 <div class="col-md-4">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
-                                        <div class="custom-calendar-icon">
-                                            <div class="display-month">JUN</div>
-                                            <div class="display-day">25</div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('event_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_event_card.html' %}
+                                        
                                 </div>
 
                                 <div class="col-md-4">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
-                                        <div class="custom-calendar-icon">
-                                            <div class="display-month">JUN</div>
-                                            <div class="display-day">25</div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('event_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_event_card.html' %}
+                                        
                                 </div>
 
                             </div>
@@ -697,33 +440,15 @@
                         <div class="carousel-item">
                             <div class="row justify-content-center">
                                 <div class="col-md-4">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
-                                        <div class="custom-calendar-icon">
-                                            <div class="display-month">JUN</div>
-                                            <div class="display-day">25</div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('event_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_event_card.html' %}
+                                        
                                 </div>
 
                                 <div class="col-md-4">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" alt="Card image cap">
-                                        <div class="custom-calendar-icon">
-                                            <div class="display-month">JUN</div>
-                                            <div class="display-day">25</div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('event_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_event_card.html' %}
+                                        
                                 </div>
                             </div>
                         </div>
@@ -733,33 +458,15 @@
                         <div class="carousel-item">
                             <div class="row justify-content-center">
                                 <div class="col-md-4">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg" alt="Card image cap">
-                                        <div class="custom-calendar-icon">
-                                            <div class="display-month">JUN</div>
-                                            <div class="display-day">25</div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('event_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_event_card.html' %}
+                                        
                                 </div>
 
                                 <div class="col-md-4">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg" alt="Card image cap">
-                                        <div class="custom-calendar-icon">
-                                            <div class="display-month">JUN</div>
-                                            <div class="display-day">25</div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('event_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_event_card.html' %}
+                                        
                                 </div>
                             </div>
                             <!--/.Fourth slide-->
@@ -783,14 +490,6 @@
                 per carousel row depending on screen width -->
                 <div id="events-lg-carousel" class="carousel slide carousel-multi-item  d-none d-lg-block" data-ride="carousel">
 
-                    <!--Indicators-->
-                    <ol class="carousel-indicators">
-                        <li data-target="#events-lg-carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#events-lg-carousel" data-slide-to="1"></li>
-                        <li data-target="#events-lg-carousel" data-slide-to="2"></li>
-                    </ol>
-                    <!--/.Indicators-->
-
                     <!--Slides-->
                     <div class="carousel-inner" role="listbox">
 
@@ -798,48 +497,21 @@
                         <div class="carousel-item active">
                             <div class="row justify-content-center">
                                 <div class="col-lg-3">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
-                                        <div class="custom-calendar-icon">
-                                            <div class="display-month">JUN</div>
-                                            <div class="display-day">25</div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('event_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_event_card.html' %}
+                                        
                                 </div>
 
                                 <div class="col-lg-3">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" alt="Card image cap">
-                                        <div class="custom-calendar-icon">
-                                            <div class="display-month">JUN</div>
-                                            <div class="display-day">25</div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('event_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_event_card.html' %}
+                                        
                                 </div>
 
                                 <div class="col-lg-3">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg" alt="Card image cap">
-                                        <div class="custom-calendar-icon">
-                                            <div class="display-month">JUN</div>
-                                            <div class="display-day">25</div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('event_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_event_card.html' %}
+                                        
                                 </div>
                             </div>
                         </div>
@@ -849,48 +521,21 @@
                         <div class="carousel-item">
                             <div class="row justify-content-center">
                                 <div class="col-lg-3">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
-                                        <div class="custom-calendar-icon">
-                                            <div class="display-month">JUN</div>
-                                            <div class="display-day">25</div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('event_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_event_card.html' %}
+                                        
                                 </div>
 
                                 <div class="col-lg-3">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
-                                        <div class="custom-calendar-icon">
-                                            <div class="display-month">JUN</div>
-                                            <div class="display-day">25</div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('event_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_event_card.html' %}
+                                        
                                 </div>
 
                                 <div class="col-lg-3">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg" alt="Card image cap">
-                                        <div class="custom-calendar-icon">
-                                            <div class="display-month">JUN</div>
-                                            <div class="display-day">25</div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('event_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_event_card.html' %}
+                                        
                                 </div>
                             </div>
                         </div>
@@ -900,48 +545,21 @@
                         <div class="carousel-item">
                             <div class="row justify-content-center">
                                 <div class="col-lg-3">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg" alt="Card image cap">
-                                        <div class="custom-calendar-icon">
-                                            <div class="display-month">JUN</div>
-                                            <div class="display-day">25</div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('event_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_event_card.html' %}
+                                        
                                 </div>
 
                                 <div class="col-lg-3">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg" alt="Card image cap">
-                                        <div class="custom-calendar-icon">
-                                            <div class="display-month">JUN</div>
-                                            <div class="display-day">25</div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('event_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_event_card.html' %}
+                                        
                                 </div>
 
                                 <div class="col-lg-3">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
-                                        <div class="custom-calendar-icon">
-                                            <div class="display-month">JUN</div>
-                                            <div class="display-day">25</div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('event_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_event_card.html' %}
+                                        
                                 </div>
                             </div>
                         </div>
@@ -971,7 +589,7 @@
                         <h1>Activities</h1>
                     </div>
                     <div class="col-6">
-                        <a href="activities.html" class="heading-btn btn btn-search float-right">Search activities</a>
+                        <a href="{{url_for('activities_page')}}" class="heading-btn btn btn-search float-right">Search activities</a>
                     </div>
                 </div>
                 <hr>
@@ -986,19 +604,6 @@
 
                 <div id="activities-sm-carousel" class="carousel slide carousel-multi-item d-block d-md-none" data-ride="carousel">
 
-                    <!--Indicators-->
-                    <ol class="carousel-indicators">
-                        <li data-target="#activities-sm-carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#activities-sm-carousel" data-slide-to="1"></li>
-                        <li data-target="#activities-sm-carousel" data-slide-to="2"></li>
-                        <li data-target="#activities-sm-carousel" data-slide-to="3"></li>
-                        <li data-target="#activities-sm-carousel" data-slide-to="4"></li>
-                        <li data-target="#activities-sm-carousel" data-slide-to="5"></li>
-                        <li data-target="#activities-sm-carousel" data-slide-to="6"></li>
-                        <li data-target="#activities-sm-carousel" data-slide-to="7"></li>
-                    </ol>
-                    <!--/.Indicators-->
-
                     <!--Slides-->
                     <div class="carousel-inner" role="listbox">
 
@@ -1006,112 +611,72 @@
                         <div class="carousel-item active">
                             <div class="row justify-content-center">
                                 <div class="col-10">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="row justify-content-center">
                                 <div class="col-10">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="row justify-content-center">
                                 <div class="col-10">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="row justify-content-center">
                                 <div class="col-10">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="row justify-content-center">
                                 <div class="col-10">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="row justify-content-center">
                                 <div class="col-10">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="row justify-content-center">
                                 <div class="col-10">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="row justify-content-center">
                                 <div class="col-10">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
                             </div>
 
@@ -1138,16 +703,6 @@
 
                 <div id="activities-md-carousel" class="carousel slide carousel-multi-item d-none d-md-block d-lg-none" data-ride="carousel">
 
-                    <!--Indicators-->
-                    <ol class="carousel-indicators">
-                        <li data-target="#activities-md-carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#activities-md-carousel" data-slide-to="1"></li>
-                        <li data-target="#activities-md-carousel" data-slide-to="2"></li>
-                        <li data-target="#activities-md-carousel" data-slide-to="3"></li>
-                        <li data-target="#activities-md-carousel" data-slide-to="4"></li>
-                    </ol>
-                    <!--/.Indicators-->
-
                     <!--Slides-->
                     <div class="carousel-inner" role="listbox">
 
@@ -1155,25 +710,15 @@
                         <div class="carousel-item active">
                             <div class="row justify-content-center">
                                 <div class="col-md-4">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
 
                                 <div class="col-md-4">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
 
                             </div>
@@ -1184,25 +729,15 @@
                         <div class="carousel-item">
                             <div class="row justify-content-center">
                                 <div class="col-md-4">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
 
                                 <div class="col-md-4">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
 
                             </div>
@@ -1213,25 +748,15 @@
                         <div class="carousel-item">
                             <div class="row justify-content-center">
                                 <div class="col-md-4">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
 
                                 <div class="col-md-4">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
                             </div>
                         </div>
@@ -1241,25 +766,15 @@
                         <div class="carousel-item">
                             <div class="row justify-content-center">
                                 <div class="col-md-4">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
 
                                 <div class="col-md-4">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
                             </div>
                             <!--/.Fourth slide-->
@@ -1283,14 +798,6 @@
                 per carousel row depending on screen width -->
                 <div id="activities-lg-carousel" class="carousel slide carousel-multi-item  d-none d-lg-block" data-ride="carousel">
 
-                    <!--Indicators-->
-                    <ol class="carousel-indicators">
-                        <li data-target="#activities-lg-carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#activities-lg-carousel" data-slide-to="1"></li>
-                        <li data-target="#activities-lg-carousel" data-slide-to="2"></li>
-                    </ol>
-                    <!--/.Indicators-->
-
                     <!--Slides-->
                     <div class="carousel-inner" role="listbox">
 
@@ -1298,36 +805,21 @@
                         <div class="carousel-item active">
                             <div class="row justify-content-center">
                                 <div class="col-lg-3">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
 
                                 <div class="col-lg-3">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
 
                                 <div class="col-lg-3">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
                             </div>
                         </div>
@@ -1337,36 +829,21 @@
                         <div class="carousel-item">
                             <div class="row justify-content-center">
                                 <div class="col-lg-3">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
 
                                 <div class="col-lg-3">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
 
                                 <div class="col-lg-3">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
                             </div>
                         </div>
@@ -1376,36 +853,21 @@
                         <div class="carousel-item">
                             <div class="row justify-content-center">
                                 <div class="col-lg-3">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
 
                                 <div class="col-lg-3">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
 
                                 <div class="col-lg-3">
-                                    <div class="card familyhub-card">
-                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="{{url_for('activity_listing_page')}}" class="btn btn-readmore">Read More</a>
-                                        </div>
-                                    </div>
+                                    
+                                        {% include 'partials/_activity_card.html' %}
+                                    
                                 </div>
                             </div>
                         </div>
