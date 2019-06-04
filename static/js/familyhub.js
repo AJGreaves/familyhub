@@ -27,6 +27,14 @@ $('#search-modal-submit-button').click(function() {
     openSearch();
 });
 
+$('#delete-button').click(function() {
+  openDeleteWarningModal();
+});
+
+$('#delete-modal-submit-button').click(function() {
+  openDeleteWarningModal();
+});
+
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
@@ -38,6 +46,10 @@ function topFunction() {
 // adding css to display: block; opacity: 1; 
 function openSearch() {
     $("#search-modal").toggleClass('active');
+}
+
+function openDeleteWarningModal() {
+    $('#delete-warning-modal').toggleClass('active');
 }
 
 // datepicker function code written by fellow student Sean Murphy, 

@@ -24,7 +24,8 @@ Credit: https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed
     Modals
 ------------------------------ */
 
-#search-modal {
+#search-modal,
+#delete-warning-modal {
     height: 100vh;
     position: fixed;
     z-index: 100;
@@ -32,7 +33,7 @@ Credit: https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed
     right: 0;
     opacity: 0;
     /* makes modal background darker but still has transparency 
-    stops content inside tihs element also being transparent, 
+    stops content inside this element also being transparent, 
     which was what was happening when using opacity */
     background-color: rgba(0, 0, 0, 0.4);
     pointer-events: none;
@@ -40,14 +41,15 @@ Credit: https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed
     transition: all 0.5s ease-in-out 0.2s;
 }
 
-#search-modal.active {
+#search-modal.active,
+#delete-warning-modal.active {
     pointer-events: auto;
     opacity: 1;
 }
 
-.search-modal-content-box {
+.modal-content-box {
     max-width: 550px;
-    height: 300px;
+    min-height: 300px;
     margin: 4rem;
     padding-right: 1.5rem;
     padding-left: 1.5rem;
@@ -57,6 +59,17 @@ Credit: https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed
     /* Credit: code for box shadow taken from https://codepen.io/sdthornton/pen/wBZdXq */
     -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+#delete-warning-modal h3 {
+    font-family: $capitalized-heading;
+    color: $terracotta;
+    text-align: center;
+}
+
+#delete-warning-modal p {
+    font-size: 1.5rem;
+    color: $terracotta-hover;
 }
 
 .search-input-field {
