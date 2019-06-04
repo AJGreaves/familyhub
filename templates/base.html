@@ -24,98 +24,14 @@
     <!-- Main content -->
     {% block content %} {% endblock %}
     
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <h3>Contact</h3>
-                    <p>
-                        <i class="fas fa-map-marker-alt"></i> Lindholm 19, 2133CM Hoofddorp
-                    </p>
-                    <p>
-                        <i class="fas fa-at"></i> contact@family-hub.nl
-                    </p>
-                    <p>
-                        <i class="far fa-registered"></i> KVK: 53409159
-                    </p>
-                </div>
-                <div class="col-12 col-md-5">
-                    <h3>About</h3>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="about-pic-wrapper">
-                                <div class="about-pic"></div>
-                            </div>
-                        </div>
-                        <div class="col-lg-8">
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                            </p>
-                            <p>
-                                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-3">
-                    <h3>Popular links</h3>
-                    <a href="{{url_for('activities_page')}}">Activities</a>
-                    <a href="{{url_for('events_page')}}">Events</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="{{url_for('new_account_page')}}">Create an account</a>
-                    <a href="{{url_for('login_page')}}">Log in</a>
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-12 col-md-9 text-center text-md-left copyright">
-                    <small>Copyright 2019 all rights reserved</small>
-                </div>
-                <div class="col-12 col-md-3 text-center social-icons-footer">
-                    <h4>Stay Connected</h4>
-                    <a class="ic-fb social-icon-shadow" href="https://www.facebook.com/" target="_blank" aria-label="Find us on Facebook" rel="noopener">
-						<i class="fab fa-facebook fa-2x"></i>
-					</a>
-                    <a class="ic-ins social-icon-shadow" href="https://www.instagram.com/" target="_blank" aria-label="Find us on Instagram" rel="noopener">
-						<i class="fab fa-instagram fa-2x"></i>
-					</a>
-                    <a class="ic-twi social-icon-shadow" href="https://www.twitter.com/" target="_blank" aria-label="Find us on Twitter" rel="noopener">
-						<i class="fab fa-twitter fa-2x"></i>
-					</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer -->
+    {% include 'partials/_footer.html' %}
 
     <!-- floating search and go to top buttons -->
-    <button id="to-top-btn" class="floating-btn" title="Go to top">
-        <i class="fas fa-chevron-circle-up fa-3x" aria-hidden="true"></i>
-    </button>
-    <button id="search-btn" class="floating-btn" title="Search">
-        <!-- Adds circle background to search icon to make it match the other floating button -->
-        <div class="icon-circle">
-            <i class="fas fa-search fa-2x" aria-hidden="true"></i>
-        </div>
-    </button>
+    {% include 'partials/_floating_btns.html' %}
 
     <!-- search modal -->
-    <div id="search-modal" class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-10 col-md-8 col-lg-6 search-modal-content-box">
-                <h2>Search</h2>
-                <hr>
-                <!-- text-center class moves search button to the middle -->
-                <form class="text-center">
-                    <input id="search-input-field" class="form-control mx-auto" type="search" placeholder="What are you looking for?" aria-label="Search">
-                    <a href="{{url_for('search_page')}}" id="search-modal-submit-button" class="btn btn-search" type="submit">
-                        Search
-                    </a>
-                    <button id="search-modal-submit-button" class="btn btn-search" type="submit">
-                        Close
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
+    {% include 'partials/_search_modal.html' %}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
