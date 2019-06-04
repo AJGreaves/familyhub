@@ -261,17 +261,17 @@ footer .social-icon-shadow {
 }
 
 .fa-instagram:hover,
-#activity-listing-business-social-links .fa-instagram:hover {
+#listing-business-social-links .fa-instagram:hover {
   color: #fbad50;
 }
 
 .fa-facebook:hover,
-#activity-listing-business-social-links .fa-facebook:hover {
+#listing-business-social-links .fa-facebook:hover {
   color: #3b5998;
 }
 
 .fa-twitter:hover,
-#activity-listing-business-social-links .fa-twitter:hover {
+#listing-business-social-links .fa-twitter:hover {
   color: #38A1F3;
 }
 
@@ -311,7 +311,7 @@ footer .social-icon-shadow {
   color: #94b659;
 }
 
-#activity-listing-business-social-links .fab,
+#listing-business-social-links .fab,
 #social-share-icons .fab {
   color: #000034;
   font-size: 2rem;
@@ -689,7 +689,7 @@ ul {
   font-size: 1.2rem;
 }
 
-#activity-listing-business-social-links li,
+#listing-business-social-links li,
 #social-share-icons li,
 #social-share-icons h3 {
   display: inline;
