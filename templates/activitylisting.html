@@ -1,201 +1,172 @@
 {% extends 'base.html' %} {% block content %}
 
-    <main>
-        <!-- Section: activity listing -->
-        <section>
+<main>
+    <!-- Section: activity listing -->
+    <section>
 
-            <div id="activity-listing-wrapper" class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h1>Dummy activity lessons title here</h1>
-                        <hr>
+        <div id="activity-listing-wrapper" class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Dummy activity lessons title here</h1>
+                    <hr>
+                </div>
+                <!-- activity image -->
+                <div class="col-12 col-lg-6">
+                    <div class="activity-listing-image">
+                        <img class="listing-img" src="https://i.ibb.co/V2xjYyZ/kidsgym.jpg"></img>
                     </div>
-                    <!-- activity image -->
-                    <div class="col-12 col-lg-6">
-                        <div class="activity-listing-image">
-                            <img class="listing-img" src="https://i.ibb.co/V2xjYyZ/kidsgym.jpg"></img>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <!-- activity details -->
+                    <div id="listing-details" class="row">
+
+                        <!-- dates and age groups -->
+                        <div class="col-6">
+
+                            <!-- dates table -->
+                            <h3><i class="far fa-calendar-alt icon"></i>Dates</h3>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            From:
+                                        </td>
+                                        <td>
+                                            Jul 23 2019
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            To:
+                                        </td>
+                                        <td>
+                                            Oct 17 2019
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <!-- ages table -->
+                            <h3><i class="fas fa-child icon"></i>Ages</h3>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            Under 4
+                                        </td>
+                                        <td>
+                                            <i class="fas fa-times icon-sm"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            4 - 6 yr
+                                        </td>
+                                        <td>
+                                            <i class="fa fa-check icon-sm"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            6 - 8 yr
+                                        </td>
+                                        <td>
+                                            <i class="fa fa-check icon-sm"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            8 - 10 yr
+                                        </td>
+                                        <td>
+                                            <i class="fa fa-check icon-sm"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            10 - 12 yr
+                                        </td>
+                                        <td>
+                                            <i class="fas fa-times icon-sm"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            12 yr +
+                                        </td>
+                                        <td>
+                                            <i class="fas fa-times icon-sm"></i>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                    </div>
-                    <div class="col-12 col-lg-6">
-                        <!-- activity details -->
-                        <div id="listing-details" class="row">
 
-                            <!-- dates and age groups -->
-                            <div class="col-6">
+                        <!-- opening times table -->
+                        <div class="col-6">
+                            {% include 'partials/listings/_open_times.html' %}
+                        </div>
+                        <div id="listing-contact-links" class="col-12 col-md-6">
+                            {% include 'partials/listings/_contact.html' %}
+                        </div>
 
-                                <!-- dates table -->
-                                <h3><i class="far fa-calendar-alt icon"></i>Dates</h3>
-                                <table>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                From:
-                                            </td>
-                                            <td>
-                                                Jul 23 2019
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                To:
-                                            </td>
-                                            <td>
-                                                Oct 17 2019
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <!-- ages table -->
-                                <h3><i class="fas fa-child icon"></i>Ages</h3>
-                                <table>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                Under 4
-                                            </td>
-                                            <td>
-                                                <i class="fas fa-times icon-sm"></i>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                4 - 6 yr
-                                            </td>
-                                            <td>
-                                                <i class="fa fa-check icon-sm"></i>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                6 - 8 yr
-                                            </td>
-                                            <td>
-                                                <i class="fa fa-check icon-sm"></i>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                8 - 10 yr
-                                            </td>
-                                            <td>
-                                                <i class="fa fa-check icon-sm"></i>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                10 - 12 yr
-                                            </td>
-                                            <td>
-                                                <i class="fas fa-times icon-sm"></i>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                12 yr +
-                                            </td>
-                                            <td>
-                                                <i class="fas fa-times icon-sm"></i>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-                            <!-- opening times table -->
-                            <div class="col-6">
-                                <h3><i class="fas fa-calendar-week icon"></i>Open times</h3>
-                                <table class="table table-sm">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Day</th>
-                                            <th scope="col">Open</th>
-                                            <th scope="col">Close</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">Mon</th>
-                                            <td>15:15</td>
-                                            <td>18:00</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Tue</th>
-                                            <td>15:15</td>
-                                            <td>18:00</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Wed</th>
-                                            <td colspan="2">Closed</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Thu</th>
-                                            <td>15:15</td>
-                                            <td>18:00</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Fri</th>
-                                            <td>15:15</td>
-                                            <td>18:00</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Sat</th>
-                                            <td colspan="2">Closed</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Sun</th>
-                                            <td colspan="2">Closed</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-                            <!-- Contact links -->
+                        <div id="listing-business-social-links" class="col-12 col-md-6">
                             {% include 'partials/listings/_social.html' %}
                         </div>
                     </div>
-                    
-                    <!-- listing description -->
-                    <div class="col-12">
-                        <h3>More info</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis
-                            nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim
-                            qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-                            <br><br> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.
-                            <br><br> Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc
-                            putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima.
-                            <br><br> Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
-                    </div>
-                    
-                    <!-- share a link to this page on social media -->
-                    <div id="social-share-icons" class="col-12 col-md-6">
-                        <h3>Share</h3>
-                        <ul>
-                            <li>
-                                <a href="#" target="_blank" aria-label="Share this page on facebook" rel="noopener"> 
-                                    <i class="fab fa-facebook social-icon-shadow"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank" aria-label="Share this page on Twitter" rel="noopener">
-                                    <i class="fab fa-twitter social-icon-shadow"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank" aria-label="Share this page on Instagram" rel="noopener">
-                                    <i class="fab fa-instagram social-icon-shadow"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-12 col-md-6 text-center text-md-left"> 
-                        <a href="{{url_for('activities_page')}}" class="heading-btn btn btn-search">Search more activities</a>
-                    </div>
+                </div>
+
+                <!-- listing description -->
+                <div class="col-12">
+                    <h3>More info</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
+                        ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
+                        tation ullamcorper suscipit lobortis
+                        nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in
+                        vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero
+                        eros et accumsan et iusto odio dignissim
+                        qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+                        <br><br> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod
+                        mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis
+                        qui facit eorum claritatem.
+                        <br><br> Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.
+                        Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est
+                        notare quam littera gothica, quam nunc
+                        putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et
+                        quinta decima.
+                        <br><br> Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+                </div>
+
+                <!-- share a link to this page on social media -->
+                <div id="social-share-icons" class="col-12 col-md-6">
+                    <h3>Share</h3>
+                    <ul>
+                        <li>
+                            <a href="#" target="_blank" aria-label="Share this page on facebook" rel="noopener">
+                                <i class="fab fa-facebook social-icon-shadow"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank" aria-label="Share this page on Twitter" rel="noopener">
+                                <i class="fab fa-twitter social-icon-shadow"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank" aria-label="Share this page on Instagram" rel="noopener">
+                                <i class="fab fa-instagram social-icon-shadow"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 text-center text-md-left">
+                    <a href="{{url_for('activities_page')}}" class="heading-btn btn btn-search">Search more
+                        activities</a>
                 </div>
             </div>
+        </div>
 
-        </section>
+    </section>
 
-    </main>
+</main>
 
 {% endblock %}
