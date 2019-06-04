@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'layout/base.html' %} {% block content %}
     
     <!-- Hero image -->
     <div class="container-fluid">
@@ -21,10 +21,10 @@
                     </div>
 
                     <!--START: Activities search filters for MOBILE ONLY -->
-                    {% include 'partials/search_filters/_activities_sm.html' %}
+                    {% include 'components/search_filters/activities_sm.html' %}
 
                     <!--START: Activities search filters for TABLETS + UP -->
-                    {% include 'partials/search_filters/_activities_md.html' %}
+                    {% include 'components/search_filters/activities_md.html' %}
 
                     <!--START: Activities search results -->
                     <div id="activity-results" class="col-md-8 col-lg-9">
@@ -34,13 +34,13 @@
                                 <hr>
                             </div>
                             <div class="col-12 col-sm-6 col-lg-4">
-                                    {% include 'partials/cards/_activity.html' %}
+                                    {% include 'components/cards/activity.html' %}
                             </div>
                             <div class="col-12 col-sm-6 col-lg-4">
-                                    {% include 'partials/cards/_activity.html' %}
+                                    {% include 'components/cards/activity.html' %}
                             </div>
                             <div class="col-12 col-sm-6 col-lg-4">
-                                    {% include 'partials/cards/_activity.html' %}
+                                    {% include 'components/cards/activity.html' %}
                             </div>
 
                         </div>

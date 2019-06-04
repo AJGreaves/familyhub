@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'layout/base.html' %} {% block content %}
     <!-- Hero image -->
     <div class="container-fluid">
         <div class="row no-gutters">
@@ -19,11 +19,11 @@
                     </div>
 
                     <!--START: Events search filters for MOBILE ONLY -->
-                    {% include 'partials/search_filters/_events_sm.html' %}
+                    {% include 'components/search_filters/events_sm.html' %}
 
 
                     <!--START: Event search filters for TABLETS + UP -->
-                    {% include 'partials/search_filters/_events_md.html' %}
+                    {% include 'components/search_filters/events_md.html' %}
 
                     <!--START: events search results -->
                     <div id="events-results" class="col-md-8 col-lg-9">
@@ -33,13 +33,13 @@
                                 <hr>
                             </div>
                             <div class="col-12 col-sm-6 col-lg-4">
-                                    {% include 'partials/cards/_event.html' %}
+                                    {% include 'components/cards/event.html' %}
                             </div>
                             <div class="col-12 col-sm-6 col-lg-4">
-                                    {% include 'partials/cards/_event.html' %}
+                                    {% include 'components/cards/event.html' %}
                             </div>
                             <div class="col-12 col-sm-6 col-lg-4">
-                                    {% include 'partials/cards/_event.html' %}
+                                    {% include 'components/cards/event.html' %}
                             </div>
 
                         </div>
