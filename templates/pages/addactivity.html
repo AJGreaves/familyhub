@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'layout/base.html' %} {% block content %}
 
 <main>
     <!-- Section: Add new activity -->
@@ -11,7 +11,7 @@
                         <h1>Add New Activity</h1>
                         <hr>
                     </div>
-                    {% include 'partials/forms/_add_edit_activity.html' %}
+                    {% include 'components/forms/add_edit_activity.html' %}
 
                     <!-- margins line button edge up with filed above it -->
                     <button class="btn btn-search ml-4" type="submit">Preview</button>

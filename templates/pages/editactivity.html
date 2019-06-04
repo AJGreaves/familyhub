@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'layout/base.html' %} {% block content %}
 
     <main>
         <!-- Section: Edit activity. Auto populate this form with data from existing listing -->
@@ -12,7 +12,7 @@
                             <hr>
                         </div>
                         
-                        {% include 'partials/forms/_add_edit_activity.html' %}
+                        {% include 'components/forms/add_edit_activity.html' %}
                         
                         <!-- margins line button edge up with filed above it -->
                         <button class="btn btn-search ml-4" type="submit">Preview</button>
