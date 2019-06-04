@@ -1,0 +1,222 @@
+{% block activities_mobile %}
+                    
+                    <!-- created to save space. On mobiles accordion form is collapsible, 
+                    on larger screens filters are in a separate element that is 
+                    visible on the left side of the screen on larger screens-->
+                        <div class="filters-wrapper-mobile col-12 d-md-none accordion" id="filter-dropdown">
+
+                            <div class="familyhub-card-header" id="filter-dropdown-heading">
+                                <h2 class="filter-heading">
+                                    <button class="btn btn-link filter-heading-button" type="button" data-toggle="collapse" data-target="#collapseFilter" aria-expanded="false" aria-controls="collapseFilter">
+                                        Filter Search
+                                    </button>
+                                </h2>
+                            </div>
+    
+    
+                            <div id="collapseFilter" class="collapse filter-options" aria-labelledby="filter your search" data-parent="#filter-dropdown">
+    
+                                <form id="activity-filters">
+                                    <div class="accordion" id="activity-filters-accordion">
+                                        <!-- Location Options -->
+                                        {% include 'partials\forms\_location.html' %}
+        
+                                        <!-- Category Options -->
+                                        <div class="card">
+                                            <div class="familyhub-card-header" id="activity-filter-category">
+                                                <h2 class="filter-heading">
+                                                    <button class="btn btn-link filter-heading-button collapsed" type="button" data-toggle="collapse" data-target="#collapseCategory" aria-expanded="false" aria-controls="collapseCategory">
+                                                        Category
+                                                    </button>
+                                                </h2>
+                                            </div>
+                                            <div id="collapseCategory" class="collapse filter-options" aria-labelledby="activity filter by category" data-parent="#activity-filters-accordion">
+                                                <div class="card-body">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="sports">
+                                                        <label class="form-check-label" for="sports">
+                                                        Sports
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="creative">
+                                                        <label class="form-check-label" for="creative">
+                                                        Creative
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="scienceTech">
+                                                        <label class="form-check-label" for="scienceTech">
+                                                        Science & Tech
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="cultureMusic">
+                                                        <label class="form-check-label" for="cultureMusic">
+                                                        Cultural & Music
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="yogaMindfulness">
+                                                        <label class="form-check-label" for="yogaMindfulness">
+                                                        Yoga & Mindfulnes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="museumsExhibitions">
+                                                        <label class="form-check-label" for="nature">
+                                                        Museums & Exhibitions
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="parksPlaygrounds">
+                                                        <label class="form-check-label" for="hillegom">
+                                                        Parks & playgrounds
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+        
+                                        <!-- Age Range Options -->
+                                        <div class="card">
+                                            <div class="familyhub-card-header" id="activity-filter-age-range">
+                                                <h2 class="filter-heading">
+                                                    <button class="btn btn-link filter-heading-button collapsed" type="button" data-toggle="collapse" data-target="#collapseAgeRange" aria-expanded="false" aria-controls="collapseAgeRange">
+                                                        Age range
+                                                    </button>
+                                                </h2>
+                                            </div>
+                                            <div id="collapseAgeRange" class="collapse filter-options" aria-labelledby="activity filter by age range" data-parent="#activity-filters-accordion">
+                                                <div class="card-body">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="age-under-4">
+                                                        <label class="form-check-label" for="age-under-4">
+                                                        Under 4 yrs
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="age-4-6">
+                                                        <label class="form-check-label" for="age-4-6">
+                                                        4 - 6 yrs
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="age-6-8">
+                                                        <label class="form-check-label" for="age-6-8">
+                                                        6 - 8 yrs
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="age-8-10">
+                                                        <label class="form-check-label" for="age-8-10">
+                                                        8 - 10 yrs
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="age-10-12">
+                                                        <label class="form-check-label" for="age-10-12">
+                                                        10 - 12 yrs
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+        
+                                        <!-- Days Options -->
+                                        <div class="card">
+                                            <div class="familyhub-card-header" id="activity-filter-days">
+                                                <h2 class="filter-heading">
+                                                    <button class="btn btn-link filter-heading-button collapsed" type="button" data-toggle="collapse" data-target="#collapseDays" aria-expanded="false" aria-controls="collapseDays">
+                                                        Days of the week
+                                                    </button>
+                                                </h2>
+                                            </div>
+                                            <div id="collapseDays" class="collapse filter-options" aria-labelledby="activity filter by days of the week" data-parent="#activity-filters-accordion">
+                                                <div class="card-body">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="monday">
+                                                        <label class="form-check-label" for="monday">
+                                                        Monday
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="tuesday">
+                                                        <label class="form-check-label" for="tuesday">
+                                                        Tuesday
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="wednesday">
+                                                        <label class="form-check-label" for="wednesday">
+                                                        Wednesday
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="thursday">
+                                                        <label class="form-check-label" for="thursday">
+                                                        Thursday
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="friday">
+                                                        <label class="form-check-label" for="friday">
+                                                        Friday
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="saturday">
+                                                        <label class="form-check-label" for="saturday">
+                                                        Saturday
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="sunday">
+                                                        <label class="form-check-label" for="sunday">
+                                                        Sunday
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+        
+                                        <!-- In / Out Options -->
+                                        <div class="card">
+                                            <div class="familyhub-card-header" id="activity-filter-in-out">
+                                                <h2 class="filter-heading">
+                                                    <button class="btn btn-link filter-heading-button collapsed" type="button" data-toggle="collapse" data-target="#collapseInOut" aria-expanded="false" aria-controls="collapseInOut">
+                                                        Indoor or Outdoor
+                                                    </button>
+                                                </h2>
+                                            </div>
+                                            <div id="collapseInOut" class="collapse filter-options" aria-labelledby="activity filter by indoors or outdoors" data-parent="#activity-filters-accordion">
+                                                <div class="card-body">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" value="" id="indoor">
+                                                        <label class="form-check-label" for="indoor">
+                                                        Indoor
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" value="" id="outdoor">
+                                                        <label class="form-check-label" for="outdoor">
+                                                        Outdoor
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" value="" id="inOrOut">
+                                                        <label class="form-check-label" for="inOrOut">
+                                                        Either
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+        
+                                        <a href="#" class="btn btn-search mt-4">Clear filters</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+{% endblock %}
