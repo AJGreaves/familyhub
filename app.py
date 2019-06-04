@@ -8,7 +8,7 @@ app = Flask(__name__)
 # Home page
 @app.route('/')
 def home_page():
-    return render_template("index.html", 
+    return render_template("pages/index.html", 
                             title="Home", 
                             active="home",
                             keywords=Keywords.home())
@@ -16,7 +16,7 @@ def home_page():
 # Activities page
 @app.route('/activities')
 def activities_page():
-    return render_template("activities.html", 
+    return render_template("pages/activities.html", 
                             title="Activities", 
                             active="activities",
                             keywords=Keywords.activities())
@@ -24,7 +24,7 @@ def activities_page():
 # Events page
 @app.route('/events')
 def events_page():
-    return render_template("events.html",
+    return render_template("pages/events.html",
                             title="Events", 
                             active="events",
                             keywords=Keywords.events())
@@ -32,7 +32,7 @@ def events_page():
 # Contact page
 @app.route('/contact')
 def contact_page():
-    return render_template("contact.html", 
+    return render_template("pages/contact.html", 
                             title="Contact", 
                             active="contact",
                             keywords=Keywords.generic())
@@ -40,7 +40,7 @@ def contact_page():
 # Create Account page
 @app.route('/newaccount')
 def new_account_page():
-    return render_template("newaccount.html", 
+    return render_template("pages/newaccount.html", 
                             title="Create Account", 
                             active="newAccount",
                             keywords=Keywords.generic())
@@ -48,7 +48,7 @@ def new_account_page():
 # Contact page
 @app.route('/login')
 def login_page():
-    return render_template("login.html", 
+    return render_template("pages/login.html", 
                             title="Log In", 
                             active="login",
                             keywords=Keywords.generic())
@@ -56,28 +56,28 @@ def login_page():
 # Search page
 @app.route('/search')
 def search_page():
-    return render_template("search.html", 
+    return render_template("pages/search.html", 
                             title="Search",
                             keywords=Keywords.generic())
 
 # Activity listing page - see if possible to update this to different routes based on each activity title
 @app.route('/activity-listing')
 def activity_listing_page():
-    return render_template("activitylisting.html", 
+    return render_template("pages/activitylisting.html", 
                             title="Activity Listing",
                             keywords=Keywords.generic())
 
 # Event listing page - see if possible to update this to different routes based on each event title
 @app.route('/event-listing')
 def event_listing_page():
-    return render_template("eventlisting.html", 
+    return render_template("pages/eventlisting.html", 
                             title="Event Listing",
                             keywords=Keywords.generic())
 
 # Search page
 @app.route('/settings')
 def settings_page():
-    return render_template("settings.html", 
+    return render_template("pages/settings.html", 
                             title="Account Settings", 
                             loginStatus=True,
                             keywords=Keywords.generic())
@@ -85,7 +85,7 @@ def settings_page():
 # Account page - all listings for this account
 @app.route('/account')
 def my_account_page():
-    return render_template("account.html", 
+    return render_template("pages/account.html", 
                             title="My Account", 
                             loginStatus=True,
                             keywords=Keywords.generic())
@@ -93,7 +93,7 @@ def my_account_page():
 # Add new event page
 @app.route('/add-new-event')
 def new_event_page():
-    return render_template("addevent.html", 
+    return render_template("pages/addevent.html", 
                             title="Add New Event", 
                             loginStatus=True,
                             keywords=Keywords.generic())
@@ -101,7 +101,7 @@ def new_event_page():
 # Edit existing event page
 @app.route('/edit-event')
 def edit_event_page():
-    return render_template("editevent.html", 
+    return render_template("pages/editevent.html", 
                             title="Edit Event", 
                             loginStatus=True,
                             keywords=Keywords.generic())
@@ -109,7 +109,7 @@ def edit_event_page():
 # Add new activity page
 @app.route('/add-new-activity')
 def new_activity_page():
-    return render_template("addactivity.html", 
+    return render_template("pages/addactivity.html", 
                             title="Add New Activity", 
                             loginStatus=True,
                             keywords=Keywords.generic())
@@ -117,7 +117,7 @@ def new_activity_page():
 # Edit existing activity page
 @app.route('/edit-activity')
 def edit_activity_page():
-    return render_template("editactivity.html", 
+    return render_template("pages/editactivity.html", 
                             title="Edit Activity", 
                             loginStatus=True,
                             keywords=Keywords.generic())
