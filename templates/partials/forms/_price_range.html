@@ -1,28 +1,20 @@
 {% block price_range %}
 
-<div class="card-body">
-    <div class="custom-control custom-switch">
-        <!-- LATER: add JS to disable price range options when free is toggled on -->
-        <input type="checkbox" class="custom-control-input"
-            id="isFreeToggle1">
-        <label class="custom-control-label" for="isFreeToggle1">Free</label>
-    </div>
-    <label class="mr-sm-2 mt-3" for="priceRangeStart">Min</label>
-    <select class="custom-select mr-sm-2" id="priceRangeStart">
-        <option value="0">€0</option>
-        <option value="5">€5</option>
-        <option value="10">€10</option>
-        <option value="15">€15</option>
-        <option value="20">€20</option>
-    </select>
-    <label class="mr-sm-2 mt-3" for="priceRangeEnd">Max</label>
-    <select class="custom-select mr-sm-2" id="priceRangeEnd">
-        <option value="5">€5</option>
-        <option value="10">€10</option>
-        <option value="15">€15</option>
-        <option value="20">€20</option>
-        <option value="25">€25+</option>
-    </select>
-</div>
+<label class="mr-sm-2 mt-3" for="priceRangeStart">Min</label>
+<select class="custom-select mr-sm-2" id="priceRangeStart">
+    <option value="0">€0</option>
+    <option value="5">€5</option>
+    <option value="10">€10</option>
+    <option value="15">€15</option>
+    <option value="20">€20</option>
+</select>
+<label class="mr-sm-2 mt-3" for="priceRangeEnd">Max</label>
+<select class="custom-select mr-sm-2" id="priceRangeEnd">
+    <option value="5">€5</option>
+    <option value="10">€10</option>
+    <option value="15">€15</option>
+    <option value="20">€20</option>
+    <option value="25">€25+</option>
+</select>
 
 {% endblock %}

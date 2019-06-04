@@ -23,17 +23,15 @@ visible on the left side of the screen on larger screens-->
                 <div class="card">
                     <div class="familyhub-card-header" id="event-filter-location">
                         <h2 class="filter-heading">
-                            <button class="btn btn-link filter-heading-button" type="button"
-                                data-toggle="collapse" data-target="#collapseLocation"
-                                aria-expanded="true" aria-controls="collapseLocation">
+                            <button class="btn btn-link filter-heading-button" type="button" data-toggle="collapse"
+                                data-target="#collapseLocation" aria-expanded="true" aria-controls="collapseLocation">
                                 Location
                             </button>
                         </h2>
                     </div>
 
                     <div id="collapseLocation" class="collapse filter-options show"
-                        aria-labelledby="event filter by location"
-                        data-parent="#event-filters-accordion">
+                        aria-labelledby="event filter by location" data-parent="#event-filters-accordion">
 
                         <!-- Location Options -->
                         {% include 'partials/forms/_location.html' %}
@@ -44,22 +42,20 @@ visible on the left side of the screen on larger screens-->
                 <div class="card">
                     <div class="familyhub-card-header" id="event-filter-category">
                         <h2 class="filter-heading">
-                            <button class="btn btn-link filter-heading-button collapsed"
-                                type="button" data-toggle="collapse" data-target="#collapseDate"
-                                aria-expanded="false" aria-controls="collapseDate">
+                            <button class="btn btn-link filter-heading-button collapsed" type="button"
+                                data-toggle="collapse" data-target="#collapseDate" aria-expanded="false"
+                                aria-controls="collapseDate">
                                 Date
                             </button>
                         </h2>
                     </div>
-                    <div id="collapseDate" class="collapse filter-options"
-                        aria-labelledby="event filter by date"
+                    <div id="collapseDate" class="collapse filter-options" aria-labelledby="event filter by date"
                         data-parent="#event-filters-accordion">
                         <div class="card-body">
                             <label>Select Date: </label>
                             <input id="eventFilterDatepickerSm" class="datepicker input-group date"
                                 data-date-format="mm-dd-yyyy">
-                            <span class="input-group-addon"><i
-                                    class="glyphicon glyphicon-calendar"></i></span>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                         </div>
                     </div>
                 </div>
@@ -68,16 +64,15 @@ visible on the left side of the screen on larger screens-->
                 <div class="card">
                     <div class="familyhub-card-header" id="event-filter-age-range">
                         <h2 class="filter-heading">
-                            <button class="btn btn-link filter-heading-button collapsed"
-                                type="button" data-toggle="collapse" data-target="#collapseAgeRange"
-                                aria-expanded="false" aria-controls="collapseAgeRange">
+                            <button class="btn btn-link filter-heading-button collapsed" type="button"
+                                data-toggle="collapse" data-target="#collapseAgeRange" aria-expanded="false"
+                                aria-controls="collapseAgeRange">
                                 Age range
                             </button>
                         </h2>
                     </div>
                     <div id="collapseAgeRange" class="collapse filter-options"
-                        aria-labelledby="event filter by age range"
-                        data-parent="#event-filters-accordion">
+                        aria-labelledby="event filter by age range" data-parent="#event-filters-accordion">
 
                         <!-- Age Range Options -->
                         {% include 'partials/forms/_age_range.html' %}
@@ -89,16 +84,15 @@ visible on the left side of the screen on larger screens-->
                 <div class="card">
                     <div class="familyhub-card-header" id="event-filter-in-out">
                         <h2 class="filter-heading">
-                            <button class="btn btn-link filter-heading-button collapsed"
-                                type="button" data-toggle="collapse" data-target="#collapseInOut"
-                                aria-expanded="false" aria-controls="collapseInOut">
+                            <button class="btn btn-link filter-heading-button collapsed" type="button"
+                                data-toggle="collapse" data-target="#collapseInOut" aria-expanded="false"
+                                aria-controls="collapseInOut">
                                 Indoor or Outdoor
                             </button>
                         </h2>
                     </div>
                     <div id="collapseInOut" class="collapse filter-options"
-                        aria-labelledby="event filter by indoors or outdoors"
-                        data-parent="#event-filters-accordion">
+                        aria-labelledby="event filter by indoors or outdoors" data-parent="#event-filters-accordion">
 
                         <!-- In / Out Options -->
                         {% include 'partials/forms/_indoor_outdoor.html' %}
@@ -109,19 +103,29 @@ visible on the left side of the screen on larger screens-->
                 <div class="card">
                     <div class="familyhub-card-header" id="event-filter-category">
                         <h2 class="filter-heading">
-                            <button class="btn btn-link filter-heading-button collapsed"
-                                type="button" data-toggle="collapse" data-target="#collapsePrice"
-                                aria-expanded="false" aria-controls="collapsePrice">
+                            <button class="btn btn-link filter-heading-button collapsed" type="button"
+                                data-toggle="collapse" data-target="#collapsePrice" aria-expanded="false"
+                                aria-controls="collapsePrice">
                                 Price
                             </button>
                         </h2>
                     </div>
-                    <div id="collapsePrice" class="collapse filter-options"
-                        aria-labelledby="event filter by price"
+                    <div id="collapsePrice" class="collapse filter-options" aria-labelledby="event filter by price"
                         data-parent="#event-filters-accordion">
-                        
-                        <!-- Price Options -->
-                        {% include 'partials/forms/_price_range.html' %}
+
+                        <!-- Price -->
+                        <div class="card-body">
+                            <div class="custom-control custom-switch">
+                                <!-- IsFree toggle not in partials because needs unique id to work -->
+                                <!-- LATER: add JS to disable price range options when free is toggled on -->
+                                <input type="checkbox" class="custom-control-input" id="isFreeToggle1">
+                                <label class="custom-control-label" for="isFreeToggle1">Free</label>
+                            </div>
+
+                            <!-- Price Options -->
+                            {% include 'partials/forms/_price_range.html' %}
+
+                        </div>
 
                     </div>
                 </div>
