@@ -1,113 +1,132 @@
 {% block activities_sm %}
-                    
-                    <!-- created to save space. On mobiles accordion form is collapsible, 
+
+<!-- created to save space. On mobiles accordion form is collapsible, 
                     on larger screens filters are in a separate element that is 
                     visible on the left side of the screen on larger screens-->
-                        <div class="filters-wrapper-mobile col-12 d-md-none accordion" id="filter-dropdown">
+<div class="filters-wrapper-mobile col-12 d-md-none accordion" id="filter-dropdown">
 
-                            <div class="familyhub-card-header" id="filter-dropdown-heading">
-                                <h2 class="filter-heading">
-                                    <button class="btn btn-link filter-heading-button" type="button" data-toggle="collapse" data-target="#collapseFilter" aria-expanded="false" aria-controls="collapseFilter">
-                                        Filter Search
-                                    </button>
-                                </h2>
-                            </div>
-    
-                            <div id="collapseFilter" class="collapse filter-options" aria-labelledby="filter your search" data-parent="#filter-dropdown">
-    
-                                <form id="activity-filters">
-                                    <div class="accordion" id="activity-filters-accordion">
-                                        
-                                        <!-- Locations -->
-                                        <div class="card">
-                                            <div class="familyhub-card-header" id="activity-filter-location">
-                                                <h2 class="filter-heading">
-                                                    <button class="btn btn-link filter-heading-button" type="button" data-toggle="collapse" data-target="#collapseLocation" aria-expanded="true" aria-controls="collapseLocation">
-                                                        Location
-                                                    </button>
-                                                </h2>
-                                            </div> 
+    <div class="familyhub-card-header" id="filter-dropdown-heading">
+        <h2 class="filter-heading">
+            <button class="btn btn-link filter-heading-button" type="button" data-toggle="collapse"
+                data-target="#collapseFilter" aria-expanded="false" aria-controls="collapseFilter">
+                Filter Search
+            </button>
+        </h2>
+    </div>
 
-                                            <div id="collapseLocation" class="collapse filter-options show" aria-labelledby="activity filter by location" data-parent="#activity-filters-accordion">
+    <div id="collapseFilter" class="collapse filter-options" aria-labelledby="filter your search"
+        data-parent="#filter-dropdown">
 
-                                                <!-- Location Options -->
-                                                {% include 'partials/forms/_location_checkboxes.html' %}
+        <form id="activity-filters">
+            <div class="accordion" id="activity-filters-accordion">
 
-                                            </div>
-                                        </div>
-        
-                                        <!-- Categories -->
-                                        <div class="card">
-                                            <div class="familyhub-card-header" id="activity-filter-category">
-                                                <h2 class="filter-heading">
-                                                    <button class="btn btn-link filter-heading-button collapsed" type="button" data-toggle="collapse" data-target="#collapseCategory" aria-expanded="false" aria-controls="collapseCategory">
-                                                        Category
-                                                    </button>
-                                                </h2>
-                                            </div>
-                                            <div id="collapseCategory" class="collapse filter-options" aria-labelledby="activity filter by category" data-parent="#activity-filters-accordion">
-                                                
-                                                <!-- Category Options -->
-                                                {% include 'partials/forms/_categories.html' %}
+                <!-- Locations -->
+                <div class="card">
+                    <div class="familyhub-card-header" id="activity-filter-location">
+                        <h2 class="filter-heading">
+                            <button class="btn btn-link filter-heading-button" type="button" data-toggle="collapse"
+                                data-target="#collapseLocation" aria-expanded="true" aria-controls="collapseLocation">
+                                Location
+                            </button>
+                        </h2>
+                    </div>
 
-                                            </div>
-                                        </div>
-        
-                                        <!-- Age Range -->
-                                        <div class="card">
-                                            <div class="familyhub-card-header" id="activity-filter-age-range">
-                                                <h2 class="filter-heading">
-                                                    <button class="btn btn-link filter-heading-button collapsed" type="button" data-toggle="collapse" data-target="#collapseAgeRange" aria-expanded="false" aria-controls="collapseAgeRange">
-                                                        Age range
-                                                    </button>
-                                                </h2>
-                                            </div>
-                                            <div id="collapseAgeRange" class="collapse filter-options" aria-labelledby="activity filter by age range" data-parent="#activity-filters-accordion">
-                                                
-                                                <!-- Age Range Options -->
-                                                {% include 'partials/forms/_age_range.html' %}
+                    <div id="collapseLocation" class="collapse filter-options show"
+                        aria-labelledby="activity filter by location" data-parent="#activity-filters-accordion">
 
-                                            </div>
-                                        </div>
-        
-                                        <!-- Days -->
-                                        <div class="card">
-                                            <div class="familyhub-card-header" id="activity-filter-days">
-                                                <h2 class="filter-heading">
-                                                    <button class="btn btn-link filter-heading-button collapsed" type="button" data-toggle="collapse" data-target="#collapseDays" aria-expanded="false" aria-controls="collapseDays">
-                                                        Days of the week
-                                                    </button>
-                                                </h2>
-                                            </div>
-                                            <div id="collapseDays" class="collapse filter-options" aria-labelledby="activity filter by days of the week" data-parent="#activity-filters-accordion">
-                                                
-                                                <!-- Days Options -->
-                                                {% include 'partials/forms/_days.html' %}
+                        <!-- Location Options -->
+                        {% include 'partials/forms/_location_checkboxes.html' %}
 
-                                            </div>
-                                        </div>
-        
-                                        <!-- In / Out -->
-                                        <div class="card">
-                                            <div class="familyhub-card-header" id="activity-filter-in-out">
-                                                <h2 class="filter-heading">
-                                                    <button class="btn btn-link filter-heading-button collapsed" type="button" data-toggle="collapse" data-target="#collapseInOut" aria-expanded="false" aria-controls="collapseInOut">
-                                                        Indoor or Outdoor
-                                                    </button>
-                                                </h2>
-                                            </div>
-                                            <div id="collapseInOut" class="collapse filter-options" aria-labelledby="activity filter by indoors or outdoors" data-parent="#activity-filters-accordion">
-                                                
-                                                <!-- In / Out Options -->
-                                                {% include 'partials/forms/_indoor_outdoor.html' %}
+                    </div>
+                </div>
 
-                                            </div>
-                                        </div>
-        
-                                        <a href="#" class="btn btn-search mt-4">Clear filters</a>
-                                    </div>
-                                </form>
-                            </div>
+                <!-- Categories -->
+                <div class="card">
+                    <div class="familyhub-card-header" id="activity-filter-category">
+                        <h2 class="filter-heading">
+                            <button class="btn btn-link filter-heading-button collapsed" type="button"
+                                data-toggle="collapse" data-target="#collapseCategory" aria-expanded="false"
+                                aria-controls="collapseCategory">
+                                Category
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseCategory" class="collapse filter-options"
+                        aria-labelledby="activity filter by category" data-parent="#activity-filters-accordion">
+
+                        <!-- Category Options -->
+                        <div class="card-body">
+                            {% include 'partials/forms/_categories.html' %}
                         </div>
+
+                    </div>
+                </div>
+
+                <!-- Age Range -->
+                <div class="card">
+                    <div class="familyhub-card-header" id="activity-filter-age-range">
+                        <h2 class="filter-heading">
+                            <button class="btn btn-link filter-heading-button collapsed" type="button"
+                                data-toggle="collapse" data-target="#collapseAgeRange" aria-expanded="false"
+                                aria-controls="collapseAgeRange">
+                                Age range
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseAgeRange" class="collapse filter-options"
+                        aria-labelledby="activity filter by age range" data-parent="#activity-filters-accordion">
+
+                        <!-- Age Range Options -->
+                        {% include 'partials/forms/_age_range.html' %}
+
+                    </div>
+                </div>
+
+                <!-- Days -->
+                <div class="card">
+                    <div class="familyhub-card-header" id="activity-filter-days">
+                        <h2 class="filter-heading">
+                            <button class="btn btn-link filter-heading-button collapsed" type="button"
+                                data-toggle="collapse" data-target="#collapseDays" aria-expanded="false"
+                                aria-controls="collapseDays">
+                                Days of the week
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseDays" class="collapse filter-options"
+                        aria-labelledby="activity filter by days of the week" data-parent="#activity-filters-accordion">
+
+                        <!-- Days Options -->
+                        {% include 'partials/forms/_days.html' %}
+
+                    </div>
+                </div>
+
+                <!-- In / Out -->
+                <div class="card">
+                    <div class="familyhub-card-header" id="activity-filter-in-out">
+                        <h2 class="filter-heading">
+                            <button class="btn btn-link filter-heading-button collapsed" type="button"
+                                data-toggle="collapse" data-target="#collapseInOut" aria-expanded="false"
+                                aria-controls="collapseInOut">
+                                Indoor or Outdoor
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseInOut" class="collapse filter-options"
+                        aria-labelledby="activity filter by indoors or outdoors"
+                        data-parent="#activity-filters-accordion">
+
+                        <!-- In / Out Options -->
+                        {% include 'partials/forms/_indoor_outdoor.html' %}
+
+                    </div>
+                </div>
+
+                <a href="#" class="btn btn-search mt-4">Clear filters</a>
+            </div>
+        </form>
+    </div>
+</div>
 
 {% endblock %}
