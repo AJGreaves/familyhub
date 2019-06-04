@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'layout/base.html' %} {% block content %}
     <main>
         <!-- Section: Contact Family Hub -->
         <section>
@@ -35,7 +35,7 @@
                     </div>
                     <!-- this block hidden on mobile, as it was displaying right above the same info in the footer -->
                     <div class="col-md-5 d-none d-md-block">
-                        {% include 'partials/_fh_address.html' %}
+                        {% include 'components/misc/fh_address.html' %}
                     </div>
                 </div>
             </div>
