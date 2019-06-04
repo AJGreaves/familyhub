@@ -97,3 +97,8 @@ input.no-click {
     min-width: 100%;
 }
 
+/* customizes bootstrap on-off switches to project brand colour */
+.custom-control-input:checked ~ .custom-control-label::before{
+    border-color: $mid-blue;
+    background-color: $mid-blue;
+}
