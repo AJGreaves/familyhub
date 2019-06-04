@@ -23,25 +23,9 @@
         <div class="form-group col-12 col-md-6">
             <h3>Price Range</h3>
             <label for="from">Prices from:</label>
-            <select id="from" class="form-control mb-3">
-                <option value="">Select</option>
-                <option value="0">€0</option>
-                <option value="5">€5</option>
-                <option value="10">€10</option>
-                <option value="15">€15</option>
-                <option value="20">€20</option>
-                <option value="25">€25+</option>
-            </select>
-            <label for="to">To:</label>
-            <select id="to" class="form-control mb-3">
-                <option value="">Select</option>
-                <option value="5">€5</option>
-                <option value="10">€10</option>
-                <option value="15">€15</option>
-                <option value="20">€20</option>
-                <option value="25">€25+</option>
-            </select>
-            <div class="custom-control custom-switch">
+            <input type="number" class="form-control">
+            <small>Please round to nearest euro</small>
+            <div class="custom-control custom-switch pt-4">
                 <input type="checkbox" class="custom-control-input" id="isFree">
                 <label class="custom-control-label" for="isFree">Free</label>
             </div>
@@ -49,12 +33,12 @@
 
         <div class="form-group col-12 col-md-6">
             <h3>Event location</h3>
-            <label for="address">Address line 1 *</label>
+            <label for="address">Address *</label>
             <input id="address" class="form-control" type="text" placeholder="Street name and number" required>
             <label for="postcode" class="mt-3">Postcode *</label>
             <input id="postcode" class="form-control" type="text" placeholder="Postcode" required>
 
-            <label for="town" class="mt-3">Town / City</label>
+            <label for="town" class="mt-3">Town / City *</label>
             <select id="town" class="form-control" required>
                 <option value="">Select</option>
                 <option value="Aalsmeer">Aalsmeer</option>
