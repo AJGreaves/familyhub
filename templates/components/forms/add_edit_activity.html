@@ -173,10 +173,10 @@
     <h3>Activity location</h3>
     <div class="form-row">
         <div class="form-group col-12 col-md-6">
-            {% include 'partials/forms/_get_address.html' %}
+            {% include 'components/forms/get_address.html' %}
         </div>
         <div class="form-group col-12 col-md-6">
-            {% include 'partials/forms/_location_dropdown.html' %}
+            {% include 'components/forms/location_dropdown.html' %}
         </div>
     </div>
 
@@ -187,16 +187,16 @@
         <div class="form-group col-12 col-md-6">
             <h3>Categories *</h3>
 
-            {% include 'partials/forms/_categories.html' %}
+            {% include 'components/forms/categories.html' %}
 
         </div>
         <div class="form-group col-12 col-md-6">
             <h3>Age range *</h3>
-            {% include 'partials/forms/_age_range.html' %}
+            {% include 'components/forms/age_range.html' %}
 
             <!-- heading outside partial because needs margin top in this form but not in another the partial is used in-->
             <h3 class="mt-3">indoor / outdoor *</h3>
-            {% include 'partials/forms/_in_out_checkboxes.html' %}
+            {% include 'components/forms/in_out_checkboxes.html' %}
         </div>
     </div>
 </div>
@@ -206,7 +206,7 @@
 </div>
 
 <div class="col-12">
-    {% include 'partials/forms/_get_contact_info.html' %}
+    {% include 'components/forms/get_contact_info.html' %}
 </div>
 
 <div class="col-12">
