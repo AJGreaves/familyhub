@@ -797,17 +797,16 @@ input.no-click {
   max-width: 350px;
 }
 
+/* widen width of fields in desired places */
+#contactMessage,
+#add-edit-event-wrapper textarea,
+#add-edit-activity-wrapper textarea,
 #activity_description,
 #accountId,
 #imgUrl,
-#searchInput {
+#searchInput,
+#account-settings-wrapper input {
   max-width: 100%;
-}
-
-#contactMessage,
-#add-edit-event-wrapper textarea,
-#add-edit-activity-wrapper textarea {
-  min-width: 100%;
 }
 
 #add-edit-event-wrapper .form-check.radio {
