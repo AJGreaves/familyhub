@@ -2,13 +2,15 @@
     Forms
 ------------------------------ */
 
-a.fh-link {
+a.fh-link,
+#contact-wrapper a {
     color: $mid-blue;
     -webkit-transition: all 0.3s ease-in-out 0.3s;
     transition: all 0.3s ease-in-out 0.3s;
 }
+#contact-wrapper a:hover,
 a.fh-link:hover {
-    color: $light-blue;
+    color: $mid-blue-hover;
 }
 
 #create-account-wrapper h3,
@@ -88,7 +90,8 @@ input.no-click {
 
 #activity_description,
 #accountId,
-#imgUrl {
+#imgUrl,
+#searchInput {
     max-width: 100%;
 }
 
