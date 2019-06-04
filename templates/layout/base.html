@@ -20,22 +20,22 @@
 <body>
 
     <!-- Navigation -->
-    {% include 'partials/_navbar.html' %}
+    {% include 'layout/nav.html' %}
 
     <!-- Main content -->
     {% block content %} {% endblock %}
     
     <!-- Footer -->
-    {% include 'partials/_footer.html' %}
+    {% include 'layout/footer.html' %}
 
     <!-- Floating search and go to top buttons -->
-    {% include 'partials/_floating_btns.html' %}
+    {% include 'components/misc/floating_btns.html' %}
 
     <!-- Search modal -->
-    {% include 'partials/_search_modal.html' %}
+    {% include 'components/modals/search_modal.html' %}
 
     <!-- Delete warning modal -->
-    {% include 'partials/_delete_warning_modal.html' %}
+    {% include 'components/modals/delete_warning_modal.html' %}
 
     <!-- Bootstrap scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
