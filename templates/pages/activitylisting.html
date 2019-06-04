@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'layout/base.html' %} {% block content %}
 
 <main>
     <!-- Section: activity listing -->
@@ -47,23 +47,23 @@
                             </table>
 
                             <!-- ages table -->
-                            {% include 'partials/listings/_ages_table.html' %}
+                            {% include 'components/listings/ages_table.html' %}
 
                         </div>
 
                         <!-- opening times table -->
                         <div class="col-6">
-                            {% include 'partials/listings/_open_times.html' %}
+                            {% include 'components/listings/open_times.html' %}
                         </div>
 
                         <!-- contact -->
                         <div id="listing-contact-links" class="col-12 col-md-6">
-                            {% include 'partials/listings/_contact.html' %}
+                            {% include 'components/listings/contact.html' %}
                         </div>
 
                         <!-- social -->
                         <div id="listing-business-social-links" class="col-12 col-md-6">
-                            {% include 'partials/listings/_social.html' %}
+                            {% include 'components/listings/social.html' %}
                         </div>
                     </div>
                 </div>
@@ -90,7 +90,7 @@
                 </div>
 
                 <!-- share this listing page on social media -->
-                {% include 'partials/listings/_share.html' %}
+                {% include 'components/listings/share.html' %}
 
                 <div class="col-12 col-md-6 text-center text-md-left">
                     <a href="{{url_for('activities_page')}}" class="heading-btn btn btn-search">Search more
