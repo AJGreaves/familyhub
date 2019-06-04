@@ -31,10 +31,8 @@ visible on the left side of the screen on larger screens-->
         <div class="filter-options">
             <div class="card-body">
                 <label>Select Date: </label>
-                <input id="eventFilterDatepickerLg" class="input-group date"
-                    data-date-format="mm-dd-yyyy">
-                <span class="input-group-addon"><i
-                    class="glyphicon glyphicon-calendar"></i></span>
+                <input id="eventFilterDatepickerLg" class="input-group date" data-date-format="mm-dd-yyyy">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
             </div>
         </div>
     </div>
@@ -49,7 +47,9 @@ visible on the left side of the screen on larger screens-->
         <div class="filter-options">
 
             <!-- Age Range Options -->
-            {% include 'partials/forms/_age_range.html' %}
+            <div class="card-body">
+                {% include 'partials/forms/_age_range.html' %}
+            </div>
 
         </div>
     </div>
@@ -64,7 +64,9 @@ visible on the left side of the screen on larger screens-->
         <div class="filter-options">
 
             <!-- In / Out Options -->
-            {% include 'partials/forms/_indoor_outdoor.html' %}
+            <div class="card-body">
+                {% include 'partials/forms/_indoor_outdoor.html' %}
+            </div>
 
         </div>
     </div>
@@ -83,11 +85,10 @@ visible on the left side of the screen on larger screens-->
                 <div class="custom-control custom-switch">
                     <!-- IsFree toggle not in partials because needs unique id to work -->
                     <!-- LATER: add JS to disable price range options when free is toggled on -->
-                    <input type="checkbox" class="custom-control-input"
-                        id="isFreeToggle2">
+                    <input type="checkbox" class="custom-control-input" id="isFreeToggle2">
                     <label class="custom-control-label" for="isFreeToggle2">Free</label>
                 </div>
-                
+
                 <!-- Price Options -->
                 {% include 'partials/forms/_price_range.html' %}
 

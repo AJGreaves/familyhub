@@ -50,60 +50,11 @@
         <!-- Categories -->
         <div class="form-group col-12 col-md-6">
             <h3>Age range *</h3>
-
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="under4">
-                <label class="form-check-label" for="under4">
-                    Under 4yr
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="age4to6">
-                <label class="form-check-label" for="age4to6">
-                    4 - 6yr
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="age6to8">
-                <label class="form-check-label" for="age6to8">
-                    6 - 8yr
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="age8to10">
-                <label class="form-check-label" for="age8to10">
-                    8 - 10yr
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="age10to12">
-                <label class="form-check-label" for="age10to12">
-                    10 - 12yr
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="age12up">
-                <label class="form-check-label" for="age12up">
-                    12yr +
-                </label>
-            </div>
-            <small>Select all that apply</small>
+            {% include 'partials/forms/_age_range.html' %}
         </div>
         <div class="form-group col-12 col-md-6">
             <h3>indoor / outdoor *</h3>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="indoor">
-                <label class="form-check-label" for="indoor">
-                    Indoor
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="outdoor">
-                <label class="form-check-label" for="outdoor">
-                    Outdoor
-                </label>
-            </div>
-            <small>Select all that apply</small>
+            {% include 'partials/forms/_in_out_checkboxes.html' %}
         </div>
     </div>
 </div>
