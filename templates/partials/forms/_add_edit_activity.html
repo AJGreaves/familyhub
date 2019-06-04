@@ -1,350 +1,352 @@
 {% block add_edit_activity %}
 
 <div class="col-12">
-        <div class="form-row">
-            <div class="form-group col-12">
-                <label for="accountId">Activity Title *</label>
-                <input id="accountId" class="form-control" type="text" placeholder="Your activity title" required>
-            </div>
+    <div class="form-row">
+        <div class="form-group col-12">
+            <label for="accountId">Activity Title *</label>
+            <input id="accountId" class="form-control" type="text" placeholder="Your activity title" required>
         </div>
     </div>
-    <div class="col-12">
-        <hr>
-    </div>
-    <div class="col-12">
-        <div class="form-row">
-            <div class="form-group col-12 col-md-4">
-                <h3>Dates and Times</h3>
-                <div class="form-row">
-                    <div class="form-group col-6 col-md-12 col-xl-6">
-                        <label>Start Date: *</label>
-                        <input id="start" class="no-click input-group date datepicker-wider" data-date-format="mm-dd-yyyy" required>
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                    </div>
-                    <div class="form-group col-6 col-md-12 col-xl-6">
-                        <label>End Date: *</label>
-                        <input id="end" class="no-click input-group date datepicker-wider" data-date-format="mm-dd-yyyy" required>
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                    </div>
-
+</div>
+<div class="col-12">
+    <hr>
+</div>
+<div class="col-12">
+    <div class="form-row">
+        <div class="form-group col-12 col-md-4">
+            <h3>Dates and Times</h3>
+            <div class="form-row">
+                <div class="form-group col-6 col-md-12 col-xl-6">
+                    <label>Start Date: *</label>
+                    <input id="start" class="no-click input-group date datepicker-wider" data-date-format="mm-dd-yyyy"
+                        required>
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                </div>
+                <div class="form-group col-6 col-md-12 col-xl-6">
+                    <label>End Date: *</label>
+                    <input id="end" class="no-click input-group date datepicker-wider" data-date-format="mm-dd-yyyy"
+                        required>
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                 </div>
 
             </div>
-            <div class="form-group col-12 col-md-8">
 
-                <!-- Monday times -->
-                <div class="form-row">
-                    <div class="form-group weekday-checkbox-row-top col-2 col-md-4">
-                        <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="mon">
-                        <label class="form-check-label weekday-checkbox-label" for="mon">
+        </div>
+        <div class="form-group col-12 col-md-8">
+
+            <!-- Monday times -->
+            <div class="form-row">
+                <div class="form-group weekday-checkbox-row-top col-2 col-md-4">
+                    <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="mon">
+                    <label class="form-check-label weekday-checkbox-label" for="mon">
                         Mon
-                        </label>
-                    </div>
-                    <div class="form-group col-5 col-md-4">
-                        <label>Start time </label>
-                        <input id="monStart" class="no-click input-group date">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
-                    </div>
-                    <div class="form-group col-5 col-md-4">
-                        <label>End Time </label>
-                        <input id="monEnd" class="no-click input-group date">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
-                    </div>
+                    </label>
                 </div>
+                <div class="form-group col-5 col-md-4">
+                    <label>Start time </label>
+                    <input id="monStart" class="no-click input-group date">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+                </div>
+                <div class="form-group col-5 col-md-4">
+                    <label>End Time </label>
+                    <input id="monEnd" class="no-click input-group date">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+                </div>
+            </div>
 
-                <!-- Tuesday times -->
-                <div class="form-row">
-                    <div class="form-group weekday-checkbox-row col-2 col-md-4">
-                        <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="tue">
-                        <label class="form-check-label weekday-checkbox-label" for="tue">
+            <!-- Tuesday times -->
+            <div class="form-row">
+                <div class="form-group weekday-checkbox-row col-2 col-md-4">
+                    <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="tue">
+                    <label class="form-check-label weekday-checkbox-label" for="tue">
                         Tue
-                        </label>
-                    </div>
-                    <div class="form-group col-5 col-md-4">
-                        <input id="tueStart" class="no-click input-group date">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
-                    </div>
-                    <div class="form-group col-5 col-md-4">
-                        <input id="tueEnd" class="no-click input-group date">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
-                    </div>
+                    </label>
                 </div>
+                <div class="form-group col-5 col-md-4">
+                    <input id="tueStart" class="no-click input-group date">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+                </div>
+                <div class="form-group col-5 col-md-4">
+                    <input id="tueEnd" class="no-click input-group date">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+                </div>
+            </div>
 
-                <!-- Wednesday times -->
-                <div class="form-row">
-                    <div class="form-group weekday-checkbox-row col-2 col-md-4">
-                        <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="wed">
-                        <label class="form-check-label weekday-checkbox-label" for="wed">
+            <!-- Wednesday times -->
+            <div class="form-row">
+                <div class="form-group weekday-checkbox-row col-2 col-md-4">
+                    <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="wed">
+                    <label class="form-check-label weekday-checkbox-label" for="wed">
                         Wed
-                        </label>
-                    </div>
-                    <div class="form-group col-5 col-md-4">
-                        <input id="wedStart" class="no-click input-group date">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
-                    </div>
-                    <div class="form-group col-5 col-md-4">
-                        <input id="wedEnd" class="no-click input-group date">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
-                    </div>
+                    </label>
                 </div>
+                <div class="form-group col-5 col-md-4">
+                    <input id="wedStart" class="no-click input-group date">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+                </div>
+                <div class="form-group col-5 col-md-4">
+                    <input id="wedEnd" class="no-click input-group date">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+                </div>
+            </div>
 
-                <!-- Thursday times -->
-                <div class="form-row">
-                    <div class="form-group weekday-checkbox-row col-2 col-md-4">
-                        <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="thu">
-                        <label class="form-check-label weekday-checkbox-label" for="thu">
+            <!-- Thursday times -->
+            <div class="form-row">
+                <div class="form-group weekday-checkbox-row col-2 col-md-4">
+                    <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="thu">
+                    <label class="form-check-label weekday-checkbox-label" for="thu">
                         Thu
-                        </label>
-                    </div>
-                    <div class="form-group col-5 col-md-4">
-                        <input id="thuStart" class="no-click input-group date">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
-                    </div>
-                    <div class="form-group col-5 col-md-4">
-                        <input id="thuEnd" class="no-click input-group date">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
-                    </div>
+                    </label>
                 </div>
+                <div class="form-group col-5 col-md-4">
+                    <input id="thuStart" class="no-click input-group date">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+                </div>
+                <div class="form-group col-5 col-md-4">
+                    <input id="thuEnd" class="no-click input-group date">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+                </div>
+            </div>
 
-                <!-- Friday times -->
-                <div class="form-row">
-                    <div class="form-group weekday-checkbox-row col-2 col-md-4">
-                        <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="Fri">
-                        <label class="form-check-label weekday-checkbox-label" for="Fri">
+            <!-- Friday times -->
+            <div class="form-row">
+                <div class="form-group weekday-checkbox-row col-2 col-md-4">
+                    <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="Fri">
+                    <label class="form-check-label weekday-checkbox-label" for="Fri">
                         Fri
-                        </label>
-                    </div>
-                    <div class="form-group col-5 col-md-4">
-                        <input id="friStart" class="no-click input-group date">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
-                    </div>
-                    <div class="form-group col-5 col-md-4">
-                        <input id="friEnd" class="no-click input-group date">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
-                    </div>
+                    </label>
                 </div>
+                <div class="form-group col-5 col-md-4">
+                    <input id="friStart" class="no-click input-group date">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+                </div>
+                <div class="form-group col-5 col-md-4">
+                    <input id="friEnd" class="no-click input-group date">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+                </div>
+            </div>
 
-                <!-- Saturday times -->
-                <div class="form-row">
-                    <div class="form-group weekday-checkbox-row col-2 col-md-4">
-                        <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="Sat">
-                        <label class="form-check-label weekday-checkbox-label" for="Sat">
+            <!-- Saturday times -->
+            <div class="form-row">
+                <div class="form-group weekday-checkbox-row col-2 col-md-4">
+                    <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="Sat">
+                    <label class="form-check-label weekday-checkbox-label" for="Sat">
                         Sat
-                        </label>
-                    </div>
-                    <div class="form-group col-5 col-md-4">
-                        <input id="satStart" class="no-click input-group date">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
-                    </div>
-                    <div class="form-group col-5 col-md-4">
-                        <input id="satEnd" class="no-click input-group date">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
-                    </div>
+                    </label>
                 </div>
+                <div class="form-group col-5 col-md-4">
+                    <input id="satStart" class="no-click input-group date">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+                </div>
+                <div class="form-group col-5 col-md-4">
+                    <input id="satEnd" class="no-click input-group date">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+                </div>
+            </div>
 
-                <!-- Sunday times -->
-                <div class="form-row">
-                    <div class="form-group weekday-checkbox-row col-2 col-md-4">
-                        <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="Sun">
-                        <label class="form-check-label weekday-checkbox-label" for="Sun">
+            <!-- Sunday times -->
+            <div class="form-row">
+                <div class="form-group weekday-checkbox-row col-2 col-md-4">
+                    <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="Sun">
+                    <label class="form-check-label weekday-checkbox-label" for="Sun">
                         Sun
-                        </label>
-                    </div>
-                    <div class="form-group col-5 col-md-4">
-                        <input id="sunStart" class="no-click input-group date">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
-                    </div>
-                    <div class="form-group col-5 col-md-4">
-                        <input id="sunEnd" class="no-click input-group date">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
-                    </div>
+                    </label>
+                </div>
+                <div class="form-group col-5 col-md-4">
+                    <input id="sunStart" class="no-click input-group date">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
+                </div>
+                <div class="form-group col-5 col-md-4">
+                    <input id="sunEnd" class="no-click input-group date">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="col-12">
-        <hr>
-    </div>
+<div class="col-12">
+    <hr>
+</div>
 
-    <div class="col-12">
-        <h3>Activity location</h3>
-        <div class="form-row">
-            <div class="form-group col-12 col-md-6">
-                <label for="addressLine1">Adress line 1 *</label>
-                <input id="addressLine1" class="form-control" type="text" placeholder="Street name and number" required>
-                <label for="postcode" class="mt-3">Postcode *</label>
-                <input id="postcode" class="form-control" type="text" placeholder="Postcode" required>
-            </div>
-            <div class="form-group col-12 col-md-6">
-                {% include 'partials/forms/_location_dropdown.html' %}
-            </div>
+<div class="col-12">
+    <h3>Activity location</h3>
+    <div class="form-row">
+        <div class="form-group col-12 col-md-6">
+            {% include 'partials/forms/_address.html' %}
         </div>
-
-        <hr>
-
-        <div class="form-row">
-            <!-- Categories -->
-            <div class="form-group col-12 col-md-6">
-                <h3>Categories *</h3>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="sports">
-                    <label class="form-check-label" for="sports">
-                        Sports
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="creative">
-                    <label class="form-check-label" for="creative">
-                        Creative
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="scienceTech">
-                    <label class="form-check-label" for="scienceTech">
-                        Science & Tech
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="cultureMusic">
-                    <label class="form-check-label" for="cultureMusic">
-                        Cultural & Music
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="yogaMindfulness">
-                    <label class="form-check-label" for="yogaMindfulness">
-                        Yoga & Mindfulness
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="nature">
-                    <label class="form-check-label" for="nature">
-                        Nature Clubs
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="museumsExhibitions">
-                    <label class="form-check-label" for="museumsExhibitions">
-                        Museums & Exhibitions
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="parksPlaygrounds">
-                    <label class="form-check-label" for="parksPlaygrounds">
-                        Parks and playgrounds
-                    </label>
-                </div>
-                <small>Select all that apply</small>
-            </div>
-            <div class="form-group col-12 col-md-6">
-                <h3>Age range *</h3>
-
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="under4">
-                    <label class="form-check-label" for="under4">
-                        Under 4yr
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="age4to6">
-                    <label class="form-check-label" for="age4to6">
-                        4 - 6yr
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="age6to8">
-                    <label class="form-check-label" for="age6to8">
-                        6 - 8yr
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="age8to10">
-                    <label class="form-check-label" for="age8to10">
-                        8 - 10yr
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="age10to12">
-                    <label class="form-check-label" for="age10to12">
-                        10 - 12yr
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="age12up">
-                    <label class="form-check-label" for="age12up">
-                        12yr +
-                    </label>
-                </div>
-                <small>Select all that apply</small>
-
-                <h3 class="mt-4">indoor / outdoor *</h3>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="indoor">
-                    <label class="form-check-label" for="indoor">
-                        Indoor
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="outdoor">
-                    <label class="form-check-label" for="outdoor">
-                        Outdoor
-                    </label>
-                </div>
-                <small>Select all that apply</small>
-            </div>
+        <div class="form-group col-12 col-md-6">
+            {% include 'partials/forms/_location_dropdown.html' %}
         </div>
     </div>
 
-    <div class="col-12">
-        <hr>
-    </div>
+    <hr>
 
-    <div class="col-12">
-        <div class="form-row">
-            <div class="form-group col-12 col-md-6">
-                <h3>Contact info *</h3>
-                <label for="email" class="mt-3">Email address *</label>
-                <input id="email" class="form-control" type="email" placeholder="Email" required>
-                <label for="url" class="mt-3">Website url *</label>
-                <input id="url" class="form-control" type="text" placeholder="https://www..." required>
+    <div class="form-row">
+        <!-- Categories -->
+        <div class="form-group col-12 col-md-6">
+            <h3>Categories *</h3>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="sports">
+                <label class="form-check-label" for="sports">
+                    Sports
+                </label>
             </div>
-            <div class="form-group col-12 col-md-6">
-                <h3>Social links</h3>
-                <label for="facebook">Facebook url</label>
-                <input id="facebook" class="form-control" type="text" placeholder="https://www.faceb...">
-                <label for="twitter" class="mt-3">Twitter url</label>
-                <input id="twitter" class="form-control" type="text" placeholder="https://www.twitt...">
-                <label for="instagram" class="mt-3">Instagram url</label>
-                <input id="instagram" class="form-control" type="text" placeholder="https://www.insta...">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="creative">
+                <label class="form-check-label" for="creative">
+                    Creative
+                </label>
             </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="scienceTech">
+                <label class="form-check-label" for="scienceTech">
+                    Science & Tech
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="cultureMusic">
+                <label class="form-check-label" for="cultureMusic">
+                    Cultural & Music
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="yogaMindfulness">
+                <label class="form-check-label" for="yogaMindfulness">
+                    Yoga & Mindfulness
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="nature">
+                <label class="form-check-label" for="nature">
+                    Nature Clubs
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="museumsExhibitions">
+                <label class="form-check-label" for="museumsExhibitions">
+                    Museums & Exhibitions
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="parksPlaygrounds">
+                <label class="form-check-label" for="parksPlaygrounds">
+                    Parks and playgrounds
+                </label>
+            </div>
+            <small>Select all that apply</small>
+        </div>
+        <div class="form-group col-12 col-md-6">
+            <h3>Age range *</h3>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="under4">
+                <label class="form-check-label" for="under4">
+                    Under 4yr
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="age4to6">
+                <label class="form-check-label" for="age4to6">
+                    4 - 6yr
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="age6to8">
+                <label class="form-check-label" for="age6to8">
+                    6 - 8yr
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="age8to10">
+                <label class="form-check-label" for="age8to10">
+                    8 - 10yr
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="age10to12">
+                <label class="form-check-label" for="age10to12">
+                    10 - 12yr
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="age12up">
+                <label class="form-check-label" for="age12up">
+                    12yr +
+                </label>
+            </div>
+            <small>Select all that apply</small>
+
+            <h3 class="mt-4">indoor / outdoor *</h3>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="indoor">
+                <label class="form-check-label" for="indoor">
+                    Indoor
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="outdoor">
+                <label class="form-check-label" for="outdoor">
+                    Outdoor
+                </label>
+            </div>
+            <small>Select all that apply</small>
         </div>
     </div>
+</div>
 
-    <div class="col-12">
-        <hr>
-    </div>
+<div class="col-12">
+    <hr>
+</div>
 
-    <div class="col-12">
-        <div class="form-group">
-            <h3>Activity image upload</h3>
-            <p>Please upload the photo for your listing to a free image hosting site
-            (we recommend <a href="https://imgbb.com/" target="_blank" aria-label="ImgBB">ImgBB</a>) and paste the direct url for it here</p>
-            <input id="imgUrl" class="form-control" type="text" placeholder="https://..." required>
+<div class="col-12">
+    <div class="form-row">
+        <div class="form-group col-12 col-md-6">
+            <h3>Contact info *</h3>
+            <label for="email" class="mt-3">Email address *</label>
+            <input id="email" class="form-control" type="email" placeholder="Email" required>
+            <label for="url" class="mt-3">Website url *</label>
+            <input id="url" class="form-control" type="text" placeholder="https://www..." required>
+        </div>
+        <div class="form-group col-12 col-md-6">
+            <h3>Social links</h3>
+            <label for="facebook">Facebook url</label>
+            <input id="facebook" class="form-control" type="text" placeholder="https://www.faceb...">
+            <label for="twitter" class="mt-3">Twitter url</label>
+            <input id="twitter" class="form-control" type="text" placeholder="https://www.twitt...">
+            <label for="instagram" class="mt-3">Instagram url</label>
+            <input id="instagram" class="form-control" type="text" placeholder="https://www.insta...">
         </div>
     </div>
-    <div class="col-12">
-        <hr>
-    </div>
-    <div class="col-12">
-        <div class="form-group">
-            <h3>Activity description</h3>
-            <textarea class="form-control" id="description" rows="11" placeholder="The first sentence of this description will also appear with your activity listing in Family Hub search." required></textarea>
+</div>
 
-        </div>
-    </div>
-    <div class="col-12">
-        <hr>
-    </div>
+<div class="col-12">
+    <hr>
+</div>
 
-    {% endblock %}
+<div class="col-12">
+    <div class="form-group">
+        <h3>Activity image upload</h3>
+        <p>Please upload the photo for your listing to a free image hosting site
+            (we recommend <a href="https://imgbb.com/" target="_blank" aria-label="ImgBB">ImgBB</a>) and paste the
+            direct url for it here</p>
+        <input id="imgUrl" class="form-control" type="text" placeholder="https://..." required>
+    </div>
+</div>
+<div class="col-12">
+    <hr>
+</div>
+<div class="col-12">
+    <div class="form-group">
+        <h3>Activity description</h3>
+        <textarea class="form-control" id="description" rows="11"
+            placeholder="The first sentence of this description will also appear with your activity listing in Family Hub search."
+            required></textarea>
+
+    </div>
+</div>
+<div class="col-12">
+    <hr>
+</div>
+
+{% endblock %}
