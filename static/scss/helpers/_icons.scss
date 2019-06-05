@@ -11,6 +11,7 @@
     margin-left: 0.75rem;
 }
 
+/* chevrons for carousels */
 .fa-chevron-right,
 .fa-chevron-left {
     font-size: 2.5rem;
@@ -59,34 +60,46 @@ footer .social-icon-shadow {
     color: #38A1F3;
 }
 
+/* creates custom calendar icon for event listing cards
+and positions it floating over the bottom right edge
+of the listing image */
+
 .custom-calendar-icon {
-    width: 60px;
+    width: 47px;
     text-align: center;
     font-family: $capitalized-heading;
     -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
             box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     margin-top: -30px;
-    margin-left: 10px;
+    margin-left: 80%;
     border-radius: 5px;
 }
 
 .display-month {
-    height: 20px;
-    background-color: $terracotta;
+    height: 17px;
+    background-color: $terracotta-hover;
     color: #fff;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 12px;
     border-radius: 5px 5px 0 0;
 }
 
 .display-day {
-    height: 40px;
+    height: 30px;
     background-color: #fff;
-    color: $terracotta;
-    font-size: 25px;
+    color: $terracotta-hover;
+    font-size: 20px;
     border-radius: 0 0 5px 5px;
 }
 
+/* adjust height of card body under custom calendar icon 
+so that it is inline with activity cards that have no calendar icon */
+.custom-calendar-icon ~ .card-body {
+    padding-top: 3.5px;
+}
+
+/* check and cross icons for clearly showing what ages groups 
+each listing is for */
 .fa-times {
     color: $terracotta;
 }
@@ -101,6 +114,7 @@ footer .social-icon-shadow {
     font-size: 2rem;
 }
 
+/* settings icon for account settings page */
 .fa-cog {
     font-size: 2.5rem;
     color: slategrey;
