@@ -1,9 +1,19 @@
 import os
 from flask import Flask, redirect, render_template, request, url_for
+from config import Config
+from pymongo import MongoClient
+from bson.objectid import ObjectId
 from familyhubapp.keys import Keywords
 
 # create instance of flask and assign it to "app"
-app = Flask(__name__) 
+app = Flask(__name__)
+app.config.from_object(Config)
+
+# MongoDB URI / Assign db
+client = MongoClient(Config.MONGO_URI)
+db = client.familyHub
+
+print(Config.MONGO_URI)
 
 # Home page
 @app.route('/')

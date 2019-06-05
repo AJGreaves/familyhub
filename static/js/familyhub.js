@@ -1,3 +1,24 @@
+document.getElementById('newAccountSubmit').addEventListener('click', createNewAccount);
+
+function createNewAccount(e){
+  e.preventDefault();
+
+  let email = document.getElementById('newEmailInput').value;
+  let password = document.getElementById('newPasswordInput').value;
+  let businessName = null;
+
+  fetch('accounts.json', {
+    method: 'PUSH',
+    headers: {
+      'Accept': 'application/json, text/plain, */*',
+      'Content-type': 'application/json'
+    },
+    body:JSON.stringify({email:email, password:password, businessName:businessName})
+  })
+  .then((res) => res.json())
+  .then((data) => console.log(data))
+}
+
 
 // works with css to slow carousels movement down https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed-that-bootstrap-carousel-slides-in-items/18633703 */
 jQuery.fn.carousel.Constructor.TRANSITION_DURATION = 2000;
@@ -5,6 +26,8 @@ jQuery.fn.carousel.Constructor.TRANSITION_DURATION = 2000;
 // CREDIT: code for floating buttons taken from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp 
 window.onscroll = function() {scrollFunction()};
 
+
+// makes floating buttons for search and go to top visible once user starts scrolling.
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     $("#to-top-btn").addClass('active');
@@ -18,6 +41,12 @@ function scrollFunction() {
 $('#to-top-btn').click(function() {
     topFunction();
 });
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+} 
 
 $('#search-btn').click(function() {
     openSearch();
@@ -35,13 +64,6 @@ $('#delete-modal-submit-button').click(function() {
   openDeleteWarningModal();
 });
 
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-} 
-
 // when user clicks on search icon the search modal adds the active class, 
 // adding css to display: block; opacity: 1; 
 function openSearch() {
@@ -54,7 +76,6 @@ function openDeleteWarningModal() {
 
 // datepicker function code written by fellow student Sean Murphy, 
 // who gave it to me to demonstrate how to get it working
-
 ['#eventFilterDatepickerSm', 
 '#eventFilterDatepickerLg', 
 '#start', 

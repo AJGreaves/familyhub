@@ -1,42 +1,49 @@
 {% extends 'layout/base.html' %} {% block content %}
 
-    <main>
-        <!-- Section: Create an account -->
-        <section>
+<main>
+    <!-- Section: Create an account -->
+    <section>
 
-            <div id="create-account-wrapper" class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h1>Create an account</h1>
-                        <hr>
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-11 col-md-6 col-lg-5 col-xl-4 card familyhub-card p-4">
-                        <h3>Create an account to post your event or activity to Family Hub</h3>
-                        <form id="new-account-form">
-                            <div class="form-group">
-                                <label for="newEmailInput">Email address</label>
-                                <input type="email" class="form-control" id="newEmailInput" aria-describedby="emailHelp" placeholder="Enter email" required>
-                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                            </div>
-                            <div class="form-group">
-                                <label for="newPasswordInput">Password</label>
-                                <input type="password" class="form-control" id="newPasswordInput" placeholder="Password" required>
-                            </div>
-                            <div class="form-group form-check">
-                                <input type="checkbox" class="form-check-input" id="termsAndConditions" required>
-                                <label class="form-check-label" for="termsAndConditions">I agree to the <a class="fh-link" href="#" target="_blank">terms and conditions</a></label>
-                            </div>
-                            <button type="submit" class="btn btn-search">Create account</button>
-                        </form>
-                        <p class="mt-2">Already have an account?  <a class="fh-link" href="{{url_for('login_page')}}">Log in</a></p>
-                    </div>
+        <div id="create-account-wrapper" class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Create an account</h1>
+                    <hr>
                 </div>
             </div>
+            <div class="row justify-content-center">
+                <div class="col-11 col-md-6 col-lg-5 col-xl-4 card familyhub-card p-4">
+                    <h3>Create an account to post your event or activity to Family Hub</h3>
+                    <form id="new-account-form">
+                        <div class="form-group">
+                            <label for="newEmailInput">Email address</label>
+                            <input id="newEmailInput" type="email" class="form-control" maxlength="40"
+                                aria-describedby="emailHelp" placeholder="Enter email" required>
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                                else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="newPasswordInput">Password</label>
+                            <input id="newPasswordInput" type="password" class="form-control"
+                                maxlength="20" placeholder="Password" required>
+                        </div>
+                        <div class="form-group form-check">
+                            <input id="termsAndConditions" type="checkbox" class="form-check-input"
+                                value="termsAndConditions" required>
+                            <label class="form-check-label" for="termsAndConditions">I agree to the <a class="fh-link"
+                                    href="#" target="_blank">terms and conditions</a></label>
+                        </div>
+                        <button id="newAccountSubmit" type="submit" class="btn btn-search">Create account</button>
+                    </form>
+                    <p class="mt-2">Already have an account? <a class="fh-link" href="{{url_for('login_page')}}">
+                        Log in</a>
+                    </p>
+                </div>
+            </div>
+        </div>
 
-        </section>
+    </section>
 
-    </main>
+</main>
 
 {% endblock %}
