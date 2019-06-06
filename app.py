@@ -10,10 +10,11 @@ app = Flask(__name__)
 app.config.from_object(Config)
 
 # MongoDB URI / Assign db
-client = MongoClient(Config.MONGO_URI)
+
+client = MongoClient("mongodb://root:IC4oW8lBcCssBsgh@myfirstcluster-shard-00-00-qtxun.mongodb.net:27017,myfirstcluster-shard-00-01-qtxun.mongodb.net:27017,myfirstcluster-shard-00-02-qtxun.mongodb.net:27017/familyHub?ssl=true&replicaSet=MyFirstCluster-shard-0&authSource=admin&retryWrites=true&w=majority")
 db = client.familyHub
 
-print(Config.MONGO_URI)
+# print(Config.MONGO_URI)
 
 # Home page
 @app.route('/')
