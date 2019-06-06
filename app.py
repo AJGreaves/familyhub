@@ -11,15 +11,13 @@ app.config.from_object(Config)
 
 # MongoDB URI / Assign db
 
-client = MongoClient("mongodb://root:IC4oW8lBcCssBsgh@myfirstcluster-shard-00-00-qtxun.mongodb.net:27017,myfirstcluster-shard-00-01-qtxun.mongodb.net:27017,myfirstcluster-shard-00-02-qtxun.mongodb.net:27017/familyHub?ssl=true&replicaSet=MyFirstCluster-shard-0&authSource=admin&retryWrites=true&w=majority")
+client = MongoClient(Config.MONGO_URI)
 db = client.familyHub
 
-# print(Config.MONGO_URI)
-
-@app.route('/test', methods=['GET', 'POST'])
+@app.route('/newaccount', methods=['GET', 'POST'])
 def index():
     
-    """ Your Database Call """
+    """ Database Call """
     users = db.users.find({})
     users = [user for user in users]
     print([user for user in users])
@@ -41,7 +39,11 @@ def index():
         }
         return json.dumps(response)
 
-    return render_template('test.html', users=users)
+    return render_template('pages/newaccount.html', 
+                            users=users,
+                            title="Create Account", 
+                            active="newAccount",
+                            keywords=Keywords.generic())
 
 # Home page
 @app.route('/')

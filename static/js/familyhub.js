@@ -13,7 +13,7 @@ newAccountForm.addEventListener('submit', (event) => {
     businessName: businessName,
   }
   
-  fetch('/', {
+  fetch('/newaccount', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
