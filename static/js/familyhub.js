@@ -1,32 +1,43 @@
-const newAccountForm = document.querySelector('#new-account-form');
 
-newAccountForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  
-  const email = document.querySelector('#newEmailInput').value;
-  const password = document.querySelector('#newPasswordInput').value;
-  const businessName = null;
-  
-  const data = {
-    email: email,
-    password: password,
-    businessName: businessName,
-  }
-  
-  fetch('/newaccount', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data)
-  })
-  .then(res => res.json())
-  .then(data => console.log(JSON.stringify(data)),
-        window.location.replace('/account'))
-  .catch(err => console.log(err));
-  
-});
+/** 
+* checks if page has an element with this id before launching the POST request, 
+* prevents errors in the console on pages that do not contain this element
+**/
 
+if (document.querySelector('#new-account-form')) {      
+
+  const newAccountForm = document.querySelector('#new-account-form');
+
+  newAccountForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    
+    const email = document.querySelector('#newEmailInput').value;
+    const password = document.querySelector('#newPasswordInput').value;
+    const businessName = null;
+    
+    const data = {
+      email: email,
+      password: password,
+      businessName: businessName,
+    }
+    
+    fetch('/newaccount', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(data => console.log(JSON.stringify(data)),
+
+      // sends user to /account page once completed form is sent
+      window.location.replace('/account'))
+      
+    .catch(err => console.log(err));
+    
+  });
+}
 
 // works with css to slow carousels movement down https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed-that-bootstrap-carousel-slides-in-items/18633703 */
 jQuery.fn.carousel.Constructor.TRANSITION_DURATION = 2000;
