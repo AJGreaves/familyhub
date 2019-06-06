@@ -1,23 +1,29 @@
-document.getElementById('newAccountSubmit').addEventListener('click', createNewAccount);
+const newAccountForm = document.querySelector('#new-account-form');
 
-function createNewAccount(e){
-  e.preventDefault();
-
-  let email = document.getElementById('newEmailInput').value;
-  let password = document.getElementById('newPasswordInput').value;
-  let businessName = null;
-
-  fetch('accounts.json', {
-    method: 'PUSH',
+newAccountForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  
+  const email = document.querySelector('#newEmailInput').value;
+  const password = document.querySelector('#newPasswordInput').value;
+  const businessName = null;
+  
+  const data = {
+    email: email,
+    password: password,
+    businessName: businessName,
+  }
+  
+  fetch('/', {
+    method: 'POST',
     headers: {
-      'Accept': 'application/json, text/plain, */*',
-      'Content-type': 'application/json'
+      'Content-Type': 'application/json',
     },
-    body:JSON.stringify({email:email, password:password, businessName:businessName})
+    body: JSON.stringify(data)
   })
-  .then((res) => res.json())
-  .then((data) => console.log(data))
-}
+  .then(res => res.json())
+  .then(data => console.log(JSON.stringify(data)))
+  .catch(err => console.log(err));
+});
 
 
 // works with css to slow carousels movement down https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed-that-bootstrap-carousel-slides-in-items/18633703 */
