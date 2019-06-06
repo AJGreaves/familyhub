@@ -84,7 +84,7 @@ And also in the Chrome Developer Tools device simulators on all options and orie
 
 1. **Custom modal opacity issues**
 
-    - The entire contence of my custom search modal was becoming transparent when I tried to use the opacity css property on it's container. 
+    - The entire contents of my custom search modal was becoming transparent when I tried to use the opacity css property on it's container. 
     - To solve this I switched to using rgba values instead, which have built in transparency but do not effect any further elements contained within. 
 ```css
 #search-modal {
@@ -107,6 +107,23 @@ And also in the Chrome Developer Tools device simulators on all options and orie
 2. **pylinter on vscode causing errors**
     - Trying to import one py file into another was throwing confusing errors, running only once and then refusing to work again.
     - Fix: installed pylint-flask and the pylinter started working correctly again.
+
+3. **Connection issues with vscode to MongoDB**
+    - Despite my connection string to mongodb working perfectly on cloud9, and other students vscode machines. If I tried to connect to it from my machine I got the following error: 
+`pymongo.errors.ConfigurationError: The DNS response does not contain an answer to the question: _mongodb._tcp.<clustername>-qtxun.mongodb.net. IN SRV`
+
+    - multiple attempts to fix this involved: 
+        - checking my mongodb password was correct (it was)
+        - logging my MONGO_URI connection string to the terminal to check it was coming through from the enviroment variable (it was)
+        - giving the connection string to another student to try on his machine (it worked fine!)
+        - Checking that I had installed dnspython in both my .venv and also globally
+    - FIX: After a lengthy call with MongoDB customer service, the solution was to change the connection string from an SRV to `mongodb://<username>:<password>@<clustername>-shard-00-00-qtxun.mongodb.net:27017,<clustername>-shard-00-01-qtxun.mongodb.net:27017,<clustername>-shard-00-02-qtxun.mongodb.net:27017/test?ssl=true&replicaSet=<clustername>-shard-0&authSource=admin&retryWrites=true&w=majority` which allowed me to connect. 
+
+    - The explanation for why this happend from MongoDB customer service was as follows: 
+
+    _The issue you encountered has to do with how your python driver or network is resolving the DNS records in relation to the SRV string._
+
+    _The root cause could be due to an older python version that is installed, a network environment restriction or an old pymongo version._
 
 
 #### Unsolved bugs
