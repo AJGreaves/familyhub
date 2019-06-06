@@ -21,7 +21,8 @@ newAccountForm.addEventListener('submit', (event) => {
     body: JSON.stringify(data)
   })
   .then(res => res.json())
-  .then(data => console.log(JSON.stringify(data)))
+  .then(data => console.log(JSON.stringify(data)),
+        window.location.replace('/account'))
   .catch(err => console.log(err));
   
 });
