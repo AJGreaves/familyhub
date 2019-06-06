@@ -23,6 +23,7 @@ newAccountForm.addEventListener('submit', (event) => {
   .then(res => res.json())
   .then(data => console.log(JSON.stringify(data)))
   .catch(err => console.log(err));
+  
 });
 
 

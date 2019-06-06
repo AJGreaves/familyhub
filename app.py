@@ -1,5 +1,5 @@
 import os, json
-from flask import Flask, redirect, render_template, request, url_for
+from flask import Flask, redirect, render_template, request, url_for, jsonify
 from config import Config
 from pymongo import MongoClient
 from bson.objectid import ObjectId
@@ -20,13 +20,13 @@ def index():
     """ Database Call """
     users = db.users.find({})
     users = [user for user in users]
-    print([user for user in users])
-
 
     """ POST REQUEST """
     if request.method == 'POST':
         post_request = request.get_json()
-        print(post_request)
+        
+        # sends pre packaged up json created in JS from the form to the database
+        db.users.insert_one(post_request)
 
         response = {
             "response": [
@@ -37,6 +37,7 @@ def index():
                 }
             ]
         }
+
         return json.dumps(response)
 
     return render_template('pages/newaccount.html', 
