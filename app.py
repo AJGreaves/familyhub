@@ -1,4 +1,4 @@
-import os
+import os, json
 from flask import Flask, redirect, render_template, request, url_for
 from config import Config
 from pymongo import MongoClient
@@ -15,6 +15,33 @@ client = MongoClient("mongodb://root:IC4oW8lBcCssBsgh@myfirstcluster-shard-00-00
 db = client.familyHub
 
 # print(Config.MONGO_URI)
+
+@app.route('/test', methods=['GET', 'POST'])
+def index():
+    
+    """ Your Database Call """
+    users = db.users.find({})
+    users = [user for user in users]
+    print([user for user in users])
+
+
+    """ POST REQUEST """
+    if request.method == 'POST':
+        post_request = request.get_json()
+        print(post_request)
+
+        response = {
+            "response": [
+                {
+                    "email": post_request['email'],
+                    "password": post_request['password'],
+                    "businessName": post_request['businessName'],
+                }
+            ]
+        }
+        return json.dumps(response)
+
+    return render_template('test.html', users=users)
 
 # Home page
 @app.route('/')
