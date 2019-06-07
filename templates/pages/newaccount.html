@@ -16,6 +16,11 @@
                     <h3>Create an account to post your event or activity to Family Hub</h3>
                     <form id="new-account-form">
                         <div class="form-group">
+                            <label for="newUsername">Username</label>
+                            <input id="newUsername" type="text" class="form-control" maxlength="40"
+                                aria-describedby="Enter a username" placeholder="Enter a username" required>
+                        </div>
+                        <div class="form-group">
                             <label for="newEmailInput">Email address</label>
                             <input id="newEmailInput" type="email" class="form-control" maxlength="40"
                                 aria-describedby="emailHelp" placeholder="Enter email" required>
@@ -24,8 +29,8 @@
                         </div>
                         <div class="form-group">
                             <label for="newPasswordInput">Password</label>
-                            <input id="newPasswordInput" type="password" class="form-control"
-                                maxlength="20" placeholder="Password" required>
+                            <input id="newPasswordInput" type="password" class="form-control" maxlength="20" minlength="8"
+                                placeholder="Password" required>
                         </div>
                         <div class="form-group form-check">
                             <input id="termsAndConditions" type="checkbox" class="form-check-input"
@@ -36,7 +41,7 @@
                         <button id="newAccountSubmit" type="submit" class="btn btn-search">Create account</button>
                     </form>
                     <p class="mt-2">Already have an account? <a class="fh-link" href="{{url_for('login_page')}}">
-                        Log in</a>
+                            Log in</a>
                     </p>
                 </div>
             </div>
