@@ -114,8 +114,11 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
  
 ### Existing Features
 
-1. **Feature 1**
+1. **Password hash**
     - list details of feature here  
+2. search filters
+3. account page
+4. carousels
 
 <div align="center">
 <img src="#" alt="feature 1 screenshot" >
@@ -123,8 +126,8 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
 
 ### Features Left to Implement
 
-1. **Feature to implement 1**
-    - list details here
+1. **Email authentication**
+    - Implementation of email authentication of user account before registration complete
 
 ## Technologies Used
 
