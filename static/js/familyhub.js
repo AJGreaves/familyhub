@@ -92,8 +92,8 @@ if (document.querySelector('#login-form')) {
       }
       else {
         if (data.passwordCorrect) {
-          // if user match and password match, log user in
-          alert('you are logged in');
+          // if user match and password match, launch logged in modal
+          openLoggedInModal();
         }
         else {
           // if user match but no password match, respond with alert
@@ -155,11 +155,15 @@ $('#delete-modal-submit-button').click(function() {
 // when user clicks on search icon the search modal adds the active class, 
 // adding css to display: block; opacity: 1; 
 function openSearch() {
-    $("#search-modal").toggleClass('active');
+  $("#search-modal").toggleClass('active');
 }
 
 function openDeleteWarningModal() {
-    $('#delete-warning-modal').toggleClass('active');
+  $('#delete-warning-modal').toggleClass('active');
+}
+
+function openLoggedInModal() {
+  $('#loggedInModal').addClass('active');
 }
 
 // datepicker function code written by fellow student Sean Murphy, 

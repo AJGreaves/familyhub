@@ -1,0 +1,28 @@
+{% block logged_in_modal %}
+
+<div id="loggedInModal" class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-10 col-md-8 col-lg-6 modal-content-box text-center py-3">
+            <h2>Log in successful</h2>
+            <hr>
+            <p class="mt-5">
+                Where would you like to go next?
+            </p>
+            <div class="container-fluid">
+                <div class="row mt-3">
+                    <div class="col-12 col-md-4">
+                        <a href="{{url_for('my_account_page')}}" class="btn btn-readmore my-2" aria-label="My listings">My listings</a>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <a href="{{url_for('new_event_page')}}" class="btn btn-create my-2" aria-label="Add new event">Add new event</a>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <a href="{{url_for('new_activity_page')}}" class="btn btn-search my-2" aria-label="Add new activity">Add new activity</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -369,7 +369,8 @@ Credit: https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed
 #search-modal,
 #delete-warning-modal,
 #newUserConfirmModal,
-#userExistsModal {
+#userExistsModal,
+#loggedInModal {
   height: 100vh;
   position: fixed;
   z-index: 100;
@@ -388,7 +389,8 @@ Credit: https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed
 #search-modal.active,
 #delete-warning-modal.active,
 #newUserConfirmModal.active,
-#userExistsModal.active {
+#userExistsModal.active,
+#loggedInModal.active {
   pointer-events: auto;
   opacity: 1;
 }
