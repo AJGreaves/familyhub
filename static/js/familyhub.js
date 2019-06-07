@@ -1,7 +1,7 @@
-
 /** 
 * checks if page has an element with this id before launching the POST request, 
-* prevents errors in the console on pages that do not contain this element
+* prevents errors in the console on pages that do not contain this element.
+* suggested by fellow student Seán Murphy
 **/
 
 if (document.querySelector('#new-account-form')) {      
@@ -9,6 +9,7 @@ if (document.querySelector('#new-account-form')) {
   const newAccountForm = document.querySelector('#new-account-form');
 
   newAccountForm.addEventListener('submit', (event) => {
+    // prevents default behaviour of submit button to refresh page
     event.preventDefault();
     
     const email = document.querySelector('#newEmailInput').value;
@@ -29,11 +30,9 @@ if (document.querySelector('#new-account-form')) {
       body: JSON.stringify(data)
     })
     .then(res => res.json())
-    .then(data => console.log(JSON.stringify(data)),
-
-      // sends user to /account page once completed form is sent
-      window.location.replace('/account'))
-      
+    .then(data => console.log(JSON.stringify(data))
+    
+    )
     .catch(err => console.log(err));
     
   });
