@@ -59,7 +59,6 @@ def new_account_page():
         post_request = request.get_json()
 
         user = db.users.find_one({"email": post_request['email']})
-        print(user)
 
         if not user:
             
@@ -75,9 +74,29 @@ def new_account_page():
                             active="newAccount",
                             keywords=Keywords.generic())
 
-# Contact page
-@app.route('/login')
+# login page
+@app.route('/login', methods=['GET', 'POST'])
 def login_page():
+
+    if request.method == 'POST':
+        post_request = request.get_json()
+
+        user = db.users.find_one({"email": post_request['email']})
+        print(user)
+
+        passwordCorrect = False
+
+        if user: 
+            # check if passwords match, 
+            if check_password_hash(user['password'], post_request['password']):
+                passwordCorrect = True
+
+        response = {
+            "userMatch": True if user else False,
+            "passwordCorrect": passwordCorrect,
+        }
+        return json.dumps(response)
+
     return render_template("pages/login.html", 
                             title="Log In", 
                             active="login",

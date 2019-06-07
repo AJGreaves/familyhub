@@ -60,6 +60,54 @@ function userExistsModal() {
   $('#userExistsModal').toggleClass('active');
 }
 
+
+if (document.querySelector('#login-form')) {      
+
+  const loginForm = document.querySelector('#login-form');
+
+  loginForm.addEventListener('submit', (event) => {
+    // prevents default behaviour of submit button to refresh page
+    event.preventDefault();
+    
+    const email = document.querySelector('#loginEmail').value;
+    const password = document.querySelector('#loginPassword').value;
+    
+    const data = {
+      email: email,
+      password: password
+    }
+    
+    fetch('/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.userMatch == false) {
+        // if no user match respond with alert
+        alert('no user account with this email address. Create account? Y/N');
+      }
+      else {
+        if (data.passwordCorrect) {
+          // if user match and password match, log user in
+          alert('you are logged in');
+        }
+        else {
+          // if user match but no password match, respond with alert
+          alert('incorrect password, try again');
+        }
+      }
+    })
+    .catch(err => console.log(err));
+    
+  });
+}
+
+
+
 // works with css to slow carousels movement down https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed-that-bootstrap-carousel-slides-in-items/18633703 */
 jQuery.fn.carousel.Constructor.TRANSITION_DURATION = 2000;
 
