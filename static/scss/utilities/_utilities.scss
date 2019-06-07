@@ -25,7 +25,8 @@ Credit: https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed
 ------------------------------ */
 
 #search-modal,
-#delete-warning-modal {
+#delete-warning-modal,
+#newUserConfirmModal {
     height: 100vh;
     position: fixed;
     z-index: 100;
@@ -42,7 +43,8 @@ Credit: https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed
 }
 
 #search-modal.active,
-#delete-warning-modal.active {
+#delete-warning-modal.active,
+#newUserConfirmModal.active {
     pointer-events: auto;
     opacity: 1;
 }
@@ -50,7 +52,7 @@ Credit: https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed
 .modal-content-box {
     max-width: 550px;
     min-height: 300px;
-    margin: 4rem;
+    margin-top: 30vh;
     padding-right: 1.5rem;
     padding-left: 1.5rem;
     background-color: white;
