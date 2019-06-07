@@ -2,19 +2,19 @@
 
 <div id="newUserConfirmModal" class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-10 col-md-8 col-lg-6 modal-content-box">
+        <div class="col-10 col-md-8 col-lg-6 modal-content-box text-center">
             <h2>Welcome to Family Hub!</h2>
             <hr>
-            <h3>Congratulations! Your account has been registered.</h3>
-            <p class="text-center">
-                To continue please log in
+            <h3>Your account has been registered.</h3>
+            <p>
+                To continue, please log in
             </p>
             <!-- text-center class moves log in button to the middle -->
-            <form class="text-center">
-                <a href="{{url_for('login_page')}}" id="confirm-delete" class="btn btn-readmore m-3 mb-5" type="submit">
+            <form">
+                <a href="{{url_for('login_page')}}" class="btn btn-readmore m-3 mb-5" type="submit">
                     Log in
                 </a>
-            </form>
+            </form">
         </div>
     </div>
 </div>
