@@ -15,9 +15,16 @@ client = MongoClient(Config.MONGO_URI)
 db = client.familyHub
 
 @app.route('/newaccount', methods=['GET', 'POST'])
-def index():
 
-    # post request
+'''
+- newUser function takes data collected with fetch in JS, checks if user already exists in the database
+if not then it encrypts the password before sending complete object to mongodb.
+It then returns to JS if the user already existed or not so JS can provide feedback to the user based on that condition.
+- function also renders the newaccount page to be viewed
+'''
+
+def newUser():
+
     if request.method == 'POST':
         post_request = request.get_json()
 
@@ -25,9 +32,8 @@ def index():
         print(user)
 
         if not user:
-            # takes password and encrypts it before sending to database
+            
             post_request['password'] = generate_password_hash(post_request['password'])
-            # sends pre packaged up json created in JS from the form to the database
             db.users.insert_one(post_request)
 
         response = {"response": False if user else True}
