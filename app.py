@@ -16,12 +16,12 @@ db = client.familyHub
 
 @app.route('/newaccount', methods=['GET', 'POST'])
 
-'''
-- newUser function takes data collected with fetch in JS, checks if user already exists in the database
-if not then it encrypts the password before sending complete object to mongodb.
-It then returns to JS if the user already existed or not so JS can provide feedback to the user based on that condition.
-- function also renders the newaccount page to be viewed
-'''
+
+# newUser function takes data collected with fetch in JS, checks if user already exists in the database
+# if not then it encrypts the password before sending complete object to mongodb.
+# It then returns to JS if the user already existed or not so JS can provide feedback to the user based on that condition.
+# function also renders the newaccount page to be viewed
+
 
 def newUser():
 
