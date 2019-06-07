@@ -368,7 +368,8 @@ Credit: https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed
 ------------------------------ */
 #search-modal,
 #delete-warning-modal,
-#newUserConfirmModal {
+#newUserConfirmModal,
+#userExistsModal {
   height: 100vh;
   position: fixed;
   z-index: 100;
@@ -386,7 +387,8 @@ Credit: https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed
 
 #search-modal.active,
 #delete-warning-modal.active,
-#newUserConfirmModal.active {
+#newUserConfirmModal.active,
+#userExistsModal.active {
   pointer-events: auto;
   opacity: 1;
 }
@@ -405,7 +407,8 @@ Credit: https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
-#delete-warning-modal h3 {
+#delete-warning-modal h3,
+#userExistsModal h3 {
   font-family: "Patrick Hand SC", cursive;
   color: #ed6a5a;
   text-align: center;
