@@ -1,5 +1,5 @@
 import os, json
-from flask import Flask, redirect, render_template, request, url_for, jsonify
+from flask import Flask, redirect, render_template, request, url_for, jsonify, session
 from config import Config
 from pymongo import MongoClient
 from bson.objectid import ObjectId
@@ -16,6 +16,7 @@ db = client.familyHub
 
 # Home page
 @app.route('/')
+@app.route('/index')
 def home_page():
     return render_template("pages/index.html", 
                             title="Home", 
@@ -85,15 +86,18 @@ def login_page():
         print(user)
 
         passwordCorrect = False
+        username = ' '
 
         if user: 
             # check if passwords match, 
             if check_password_hash(user['password'], post_request['password']):
                 passwordCorrect = True
+                username = user['username']
 
         response = {
             "userMatch": True if user else False,
             "passwordCorrect": passwordCorrect,
+            "username": username
         }
         return json.dumps(response)
 
