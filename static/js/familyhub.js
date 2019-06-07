@@ -30,12 +30,15 @@ if (document.querySelector('#new-account-form')) {
       body: JSON.stringify(data)
     })
     .then(res => res.json())
-    .then(data => console.log(JSON.stringify(data))
-    
-    )
+    .then(data => console.log(JSON.stringify(data)),
+    confirmAccountModal())
     .catch(err => console.log(err));
     
   });
+}
+
+function confirmAccountModal() {
+  $('#newUserConfirmModal').addClass('active');
 }
 
 // works with css to slow carousels movement down https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed-that-bootstrap-carousel-slides-in-items/18633703 */
