@@ -24,14 +24,23 @@ if (document.querySelector('#new-account-form')) {
     
     fetch('/newaccount', {
       method: 'POST',
+      cors: '*same-origin',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data)
     })
     .then(res => res.json())
-    .then(data => console.log(JSON.stringify(data)),
-    confirmAccountModal())
+    .then(data => {
+      if (data.response) {
+        // if response confirms this is not an existing account, new account is created and confirm account modal is activated
+        confirmAccountModal();
+      }
+      else {
+        // if response is false (account already exists)
+        alert('this email is already registered. Log in? Y/N');
+      }
+    })
     .catch(err => console.log(err));
     
   });

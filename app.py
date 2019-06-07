@@ -3,6 +3,7 @@ from flask import Flask, redirect, render_template, request, url_for, jsonify
 from config import Config
 from pymongo import MongoClient
 from bson.objectid import ObjectId
+from werkzeug.security import generate_password_hash, check_password_hash
 from familyhubapp.keys import Keywords
 
 # create instance of flask and assign it to "app"
@@ -10,38 +11,30 @@ app = Flask(__name__)
 app.config.from_object(Config)
 
 # MongoDB URI / Assign db
-
 client = MongoClient(Config.MONGO_URI)
 db = client.familyHub
 
 @app.route('/newaccount', methods=['GET', 'POST'])
 def index():
-    
-    """ Database Call """
-    users = db.users.find({})
-    users = [user for user in users]
 
-    """ POST REQUEST """
+    # post request
     if request.method == 'POST':
         post_request = request.get_json()
+
+        user = db.users.find_one({"email": post_request['email']})
+        print(user)
+
+        if not user:
+            # takes password and encrypts it before sending to database
+            post_request['password'] = generate_password_hash(post_request['password'])
+            # sends pre packaged up json created in JS from the form to the database
+            db.users.insert_one(post_request)
+
+        response = {"response": False if user else True}
         
-        # sends pre packaged up json created in JS from the form to the database
-        db.users.insert_one(post_request)
-
-        response = {
-            "response": [
-                {
-                    "email": post_request['email'],
-                    "password": post_request['password'],
-                    "businessName": post_request['businessName'],
-                }
-            ]
-        }
-
         return json.dumps(response)
 
     return render_template('pages/newaccount.html', 
-                            users=users,
                             title="Create Account", 
                             active="newAccount",
                             keywords=Keywords.generic())
