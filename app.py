@@ -14,37 +14,6 @@ app.config.from_object(Config)
 client = MongoClient(Config.MONGO_URI)
 db = client.familyHub
 
-@app.route('/newaccount', methods=['GET', 'POST'])
-
-
-# newUser function takes data collected with fetch in JS, checks if user already exists in the database
-# if not then it encrypts the password before sending complete object to mongodb.
-# It then returns to JS if the user already existed or not so JS can provide feedback to the user based on that condition.
-# function also renders the newaccount page to be viewed
-
-
-def newUser():
-
-    if request.method == 'POST':
-        post_request = request.get_json()
-
-        user = db.users.find_one({"email": post_request['email']})
-        print(user)
-
-        if not user:
-            
-            post_request['password'] = generate_password_hash(post_request['password'])
-            db.users.insert_one(post_request)
-
-        response = {"response": False if user else True}
-        
-        return json.dumps(response)
-
-    return render_template('pages/newaccount.html', 
-                            title="Create Account", 
-                            active="newAccount",
-                            keywords=Keywords.generic())
-
 # Home page
 @app.route('/')
 def home_page():
@@ -77,10 +46,31 @@ def contact_page():
                             active="contact",
                             keywords=Keywords.generic())
 
-# Create Account page
-@app.route('/newaccount')
+@app.route('/newaccount', methods=['GET', 'POST'])
+
+# new_account_page takes data collected with fetch in JS, checks if user already exists in the database
+# if not then it encrypts the password before sending complete object to mongodb.
+# It then returns to JS if the user already existed or not so JS can provide feedback to the user based on that condition.
+# page also renders the newaccount page to be viewed
+
 def new_account_page():
-    return render_template("pages/newaccount.html", 
+
+    if request.method == 'POST':
+        post_request = request.get_json()
+
+        user = db.users.find_one({"email": post_request['email']})
+        print(user)
+
+        if not user:
+            
+            post_request['password'] = generate_password_hash(post_request['password'])
+            db.users.insert_one(post_request)
+
+        response = {"response": False if user else True}
+        
+        return json.dumps(response)
+
+    return render_template('pages/newaccount.html', 
                             title="Create Account", 
                             active="newAccount",
                             keywords=Keywords.generic())
