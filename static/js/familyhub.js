@@ -12,14 +12,14 @@ if (document.querySelector('#new-account-form')) {
     // prevents default behaviour of submit button to refresh page
     event.preventDefault();
     
+    const username = document.querySelector('#newUsername').value;
     const email = document.querySelector('#newEmailInput').value;
     const password = document.querySelector('#newPasswordInput').value;
-    const businessName = null;
     
     const data = {
       email: email,
       password: password,
-      businessName: businessName,
+      username: username,
     }
     
     fetch('/newaccount', {
@@ -93,7 +93,7 @@ if (document.querySelector('#login-form')) {
       else {
         if (data.passwordCorrect) {
           // if user match and password match, launch logged in modal
-          openLoggedInModal();
+          openLoggedInModal(data.username);
         }
         else {
           // if user match but no password match, respond with alert
@@ -153,7 +153,7 @@ $('#delete-modal-submit-button').click(function() {
 });
 
 // when user clicks on search icon the search modal adds the active class, 
-// adding css to display: block; opacity: 1; 
+// adding css to opacity: 1; 
 function openSearch() {
   $("#search-modal").toggleClass('active');
 }
@@ -162,7 +162,8 @@ function openDeleteWarningModal() {
   $('#delete-warning-modal').toggleClass('active');
 }
 
-function openLoggedInModal() {
+function openLoggedInModal(username) {
+  $('#welcomeMessage').text('Welcome ' + username + '.');
   $('#loggedInModal').addClass('active');
 }
 
