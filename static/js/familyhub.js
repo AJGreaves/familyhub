@@ -38,7 +38,7 @@ if (document.querySelector('#new-account-form')) {
       }
       else {
         // if response is false (account already exists)
-        alert('this email is already registered. Log in? Y/N');
+        userExistsModal();
       }
     })
     .catch(err => console.log(err));
@@ -46,8 +46,18 @@ if (document.querySelector('#new-account-form')) {
   });
 }
 
+// activation code for modals
+
+$('#closeUserExistsModal').click(function() {
+  userExistsModal();
+})
+
 function confirmAccountModal() {
   $('#newUserConfirmModal').addClass('active');
+}
+
+function userExistsModal() {
+  $('#userExistsModal').toggleClass('active');
 }
 
 // works with css to slow carousels movement down https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed-that-bootstrap-carousel-slides-in-items/18633703 */
