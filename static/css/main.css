@@ -763,6 +763,10 @@ a.fh-link:hover {
   text-transform: capitalize;
 }
 
+#login-wrapper h3 {
+  text-transform: none;
+}
+
 #account-settings-wrapper h3 {
   margin-bottom: 0.5rem;
 }
@@ -833,6 +837,7 @@ input.no-click {
 #accountId,
 #imgUrl,
 #searchInput,
+#login-wrapper input,
 #account-settings-wrapper input {
   max-width: 100%;
 }
