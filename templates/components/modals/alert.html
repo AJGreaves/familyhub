@@ -1,0 +1,18 @@
+{% block alert %}
+
+<div id="alertModal" class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-10 col-md-8 col-lg-6 modal-content-box text-center">
+            <h2 id="alertHeading"></h2>
+            <hr>
+            <h3 id="alertSubheading"></h3>
+            <p id="alertMessage"></p>
+            <!-- text-center class moves log in button to the middle -->
+            <a href="{{url_for('login_page')}}" class="btn btn-search m-3 mb-5" type="submit">
+                close
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

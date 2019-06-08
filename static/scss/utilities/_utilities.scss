@@ -28,7 +28,8 @@ Credit: https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed
 #delete-warning-modal,
 #newUserConfirmModal,
 #userExistsModal,
-#loggedInModal {
+#loggedInModal,
+#alertModal {
     height: 100vh;
     position: fixed;
     z-index: 100;
@@ -48,7 +49,8 @@ Credit: https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed
 #delete-warning-modal.active,
 #newUserConfirmModal.active,
 #userExistsModal.active,
-#loggedInModal.active {
+#loggedInModal.active,
+#alertModal.active {
     pointer-events: auto;
     opacity: 1;
 }
