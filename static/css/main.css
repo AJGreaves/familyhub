@@ -658,6 +658,10 @@ shadow added to give depth and contrast with the image for readability */
   margin-bottom: 1.5rem;
 }
 
+#page404-column p {
+  font-size: 1.5rem;
+}
+
 /* ------------------------------
     Account pages
 ------------------------------ */
