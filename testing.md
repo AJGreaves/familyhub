@@ -125,6 +125,10 @@ And also in the Chrome Developer Tools device simulators on all options and orie
 
     _The root cause could be due to an older python version that is installed, a network environment restriction or an old pymongo version._
 
+4. **Go back button js would not work**
+    - On my custom "permission denied" page, the "Go Back" button was designed to return the user to whichever page they were previously on. 
+    - I did my best to avoid inline scripts, but all solutions tried did not work. 
+    - Fix: Used an line script on the button in html.
 
 #### Unsolved bugs
 

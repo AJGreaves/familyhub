@@ -22,9 +22,21 @@
                 <h2>You do not have permission to go to that page</h2>
                 <p>Please log in or go back,<br>you rebel!</p>
                 <a href="{{ url_for('login_page') }}" class="btn btn-search my-2 mr-2">Log in</a>
-                <a href="#" class="btn btn-readmore m-2">Go Back</a>
+                <!-- Bug fix: Several solutions to get this button to move the user back to the page they were on previously
+                did not work. Solution was to use inline script. -->
+                <button id="#goBackBtn" type="button" onClick="javascript:history.go(-1)" class="btn btn-readmore m-2">Go Back</button>
             </div>
         </div>
     </div>
+    <!-- Bootstrap scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+    <!-- Gijgo scripts for datepickers and timepickers scripts -->
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"></script>
+
+    <!-- Project scripts -->
+    <script src="{{url_for('static', filename='js/familyhub.js')}}"></script>
 </body>
 </html>
