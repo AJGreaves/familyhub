@@ -98,6 +98,12 @@ def new_account_page():
 # All this data is then returned to JS to respond accordingly to the browser
 
 def login_page():
+    # check if user is not already logged in
+    if 'user' in session:
+        user_in_db = db.users.find_one({"username": session['user']})
+        if user_in_db:
+            # If already logged in, redirect user to account page
+            return redirect(url_for('my_account_page', user=user_in_db['username']))
 
     if request.method == 'POST':
         # gets data from form from JS
@@ -130,6 +136,13 @@ def login_page():
                             title="Log In", 
                             active="login",
                             keywords=Keywords.generic())
+
+# log out page
+@app.route('/logout')
+def logout():
+    # Clear the session
+    session.clear()
+    return redirect(url_for('home_page'))
 
 # Search page
 @app.route('/search')
