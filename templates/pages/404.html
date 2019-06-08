@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Family events and activities for kids in Haarlemmermeer and Haarlem, in English">
+    <meta name="keywords" content="{{ keywords }}">
+    <meta name="author" content="Anna Greaves">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon" />
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}" type="text/css">
+    <title>404 page not found | FamilyHub</title>
+</head>
+<body>
+    <div id="backgroundImg404Wrapper" class="container-fluid">
+        <div id="backgroundImg404" class="row no-gutters">
+            <div id="page404-column" class="col-12">
+                <h1>404 - Page not found</h1>
+                <hr>
+                <h2>Oops! Looks like this page is really good at Hide and Seek!</h2>
+                <p>Try the links below</p>
+                <a href="{{ url_for('home_page') }}" class="btn btn-search my-2 mr-2">Home</a>
+                <a href="{{ url_for('activities_page') }}" class="btn btn-readmore m-2">Activities</a>
+                <a href="{{ url_for('events_page') }}" class="btn btn-create m-2">Events</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
