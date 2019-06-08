@@ -49,7 +49,7 @@
 
 .btn-create {
     background-color: $green;
-    border: $green;
+    border: 1px solid $green;
     color: #fff;
     -webkit-transition: all 0.3s ease-in-out 0.3s;
     transition: all 0.3s ease-in-out 0.3s;
@@ -57,7 +57,7 @@
 
 .btn-create:hover {
     background-color: $green-hover;
-    border: $green-hover;
+    border: 1px solid $green-hover;
     color: #fff;
 }
 

@@ -85,6 +85,20 @@ footer hr {
     background-position: center 90%;
 }
 
+#backgroundImg404Wrapper {
+    height: 100vh;
+    width: 100vw;
+}
+
+#backgroundImg404 {
+    background-image: url('https://i.ibb.co/x7qBFvB/stop-sm.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100% 90%;
+    background-attachment: fixed;
+    height: 100%;
+}
+
 /* positions text in the middle of the hero image, 
 shadow added to give depth and contrast with the image for readability */
 
@@ -109,6 +123,25 @@ shadow added to give depth and contrast with the image for readability */
     background-size: cover;
     height: 100%;
     border-radius: 50%;
+}
+
+/* ------------------------------
+    404 page
+------------------------------ */
+
+#page404-column {
+    padding: 2rem 2rem;
+}
+
+#page404-column h1 {
+    margin-top: 0.5rem;
+}
+
+#page404-column h2 {
+    font-family: $main-text;
+    color: $mid-blue-hover;
+    text-transform: none;
+    margin-bottom: 1.5rem;
 }
 
 /* ------------------------------

@@ -237,6 +237,12 @@ def edit_activity_page():
                             loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
+# Edit existing activity page
+@app.route('/404')
+def page_not_found404():
+    #---------------------------------------------------- permission
+    return render_template("pages/404.html")
+
 if __name__ == '__main__':
     app.run(host=os.getenv('IP'), 
             port=os.getenv('PORT'), 
