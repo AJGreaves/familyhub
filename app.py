@@ -240,8 +240,12 @@ def edit_activity_page():
 # Edit existing activity page
 @app.route('/404')
 def page_not_found404():
-    #---------------------------------------------------- permission
     return render_template("pages/404.html")
+
+# No permission page
+@app.route('/permission-denied')
+def permission_denied():
+    return render_template("pages/permission.html")
 
 if __name__ == '__main__':
     app.run(host=os.getenv('IP'), 

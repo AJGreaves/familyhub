@@ -601,7 +601,7 @@ footer hr {
   background-position: center 90%;
 }
 
-#backgroundImg404Wrapper {
+#backgroundImgWrapper {
   height: 100vh;
   width: 100vw;
 }
@@ -611,6 +611,15 @@ footer hr {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 100% 90%;
+  background-attachment: fixed;
+  height: 100%;
+}
+
+#backgroundImgPermission {
+  background-image: url("https://i.ibb.co/K9gzGDV/rock-on-sm.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 100% 10%;
   background-attachment: fixed;
   height: 100%;
 }
@@ -640,26 +649,26 @@ shadow added to give depth and contrast with the image for readability */
   border-radius: 50%;
 }
 
-/* ------------------------------
-    404 page
------------------------------- */
-#page404-column {
+/* ---------------------------------
+    404 + permission denied pages
+--------------------------------- */
+#errorPageColumn {
   padding: 2rem 2rem;
 }
 
-#page404-column h1 {
+#errorPageColumn h1 {
   margin-top: 0.5rem;
 }
 
-#page404-column h2 {
+#errorPageColumn h2 {
   font-family: "News Cycle", sans-serif;
   color: #346861;
   text-transform: none;
   margin-bottom: 1.5rem;
 }
 
-#page404-column p {
-  font-size: 1.5rem;
+#errorPageColumn p {
+  font-size: 1.2rem;
 }
 
 /* ------------------------------
@@ -952,11 +961,19 @@ input.no-click {
     background-image: url("https://i.ibb.co/0hykW4m/stop.jpg");
     background-position: 90% 90%;
   }
-  #page404-column {
+  #errorPageColumn {
     padding: 5rem 5rem;
   }
-  #page404-column h1 {
+  #errorPageColumn h1 {
     margin-top: auto;
+  }
+}
+
+/* large screens and up */
+@media screen and (min-width: 992px) {
+  #backgroundImgPermission {
+    background-image: url("https://i.ibb.co/RYfs1R8/rock-on.jpg");
+    background-position: 90% 90%;
   }
 }
 /*# sourceMappingURL=main.css.map */

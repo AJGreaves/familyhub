@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,23 +11,20 @@
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}" type="text/css">
-    <title>404 page not found | FamilyHub</title>
+    <title>Rebel | FamilyHub</title>
 </head>
-
 <body>
     <div id="backgroundImgWrapper" class="container-fluid">
-        <div id="backgroundImg404" class="row no-gutters">
-            <div id="errorPageColumn" class="col-12">
-                <h1>404 - Page not found</h1>
+        <div id="backgroundImgPermission" class="row no-gutters">
+            <div id="errorPageColumn" class="col-12 col-md-10 col-lg-8">
+                <h1>Oi cheeky!</h1>
                 <hr>
-                <h2>Oh! Looks like this page is <i>really</i> good at Hide and Seek!</h2>
-                <p>Try the links below</p>
-                <a href="{{ url_for('home_page') }}" class="btn btn-search my-2 mr-2">Home</a>
-                <a href="{{ url_for('activities_page') }}" class="btn btn-readmore m-2">Activities</a>
-                <a href="{{ url_for('events_page') }}" class="btn btn-create m-2">Events</a>
+                <h2>You do not have permission to go to that page</h2>
+                <p>Please log in or go back,<br>you rebel!</p>
+                <a href="{{ url_for('login_page') }}" class="btn btn-search my-2 mr-2">Log in</a>
+                <a href="#" class="btn btn-readmore m-2">Go Back</a>
             </div>
         </div>
     </div>
 </body>
-
 </html>
