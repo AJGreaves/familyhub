@@ -100,32 +100,32 @@ def new_account_page():
 def login_page():
 
     if request.method == 'POST':
+        # gets data from form from JS
         post_request = request.get_json()
 
-        user = ' '
-
         # checks user input against usernames in the database
-        user = db.users.find_one({"email": post_request['loginInput']})
+        
+        user = db.users.find_one({"username": post_request['loginInput']})
         print(user)
 
-        # if no usernames then check input against email addresses in the database
-        if not user:
-            user = db.users.find_one({"username": post_request['loginInput']})
-            print(user)
-
         passwordCorrect = False
+        username = ' '
+
+        if not user:
+            user = db.users.find_one({"email": post_request['loginInput']})
 
         if user: 
             # check if passwords match, 
             if check_password_hash(user['password'], post_request['password']):
                 # Log user in (add to session)
                 # session['user'] = user['username']
-                passwordCorrect = True
+                passwordCorrect = True    
+                username = user['username']    
 
         response = {
             "userMatch": True if user else False,
             "passwordCorrect": passwordCorrect,
-            "username": user['username']
+            "username": username
         }
         return json.dumps(response)
 
