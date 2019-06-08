@@ -18,33 +18,42 @@ db = client.familyHub
 @app.route('/')
 @app.route('/index')
 def home_page():
+    loggedIn = True if 'user' in session else False
+
     return render_template("pages/index.html", 
                             title="Home", 
                             active="home",
+                            loggedIn=loggedIn,
                             keywords=Keywords.home())
 
 # Activities page
 @app.route('/activities')
 def activities_page():
+    loggedIn = True if 'user' in session else False
     return render_template("pages/activities.html", 
                             title="Activities", 
                             active="activities",
+                            loggedIn=loggedIn,
                             keywords=Keywords.activities())
 
 # Events page
 @app.route('/events')
 def events_page():
+    loggedIn = True if 'user' in session else False
     return render_template("pages/events.html",
                             title="Events", 
                             active="events",
+                            loggedIn=loggedIn,
                             keywords=Keywords.events())
 
 # Contact page
 @app.route('/contact')
 def contact_page():
+    loggedIn = True if 'user' in session else False
     return render_template("pages/contact.html", 
                             title="Contact", 
                             active="contact",
+                            loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
 @app.route('/newaccount', methods=['GET', 'POST'])
@@ -55,7 +64,7 @@ def contact_page():
 # page also renders the newaccount page to be viewed
 
 def new_account_page():
-
+    # -------------------------------------------------------- you don't have permission if not logged in page
     if request.method == 'POST':
         post_request = request.get_json()
 
@@ -87,6 +96,7 @@ def new_account_page():
     return render_template('pages/newaccount.html', 
                             title="Create Account", 
                             active="newAccount",
+                            loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
 # login page
@@ -98,8 +108,10 @@ def new_account_page():
 # All this data is then returned to JS to respond accordingly to the browser
 
 def login_page():
+
+    loggedIn = True if 'user' in session else False
     # check if user is not already logged in
-    if 'user' in session:
+    if loggedIn:
         user_in_db = db.users.find_one({"username": session['user']})
         if user_in_db:
             # If already logged in, redirect user to account page
@@ -135,6 +147,7 @@ def login_page():
     return render_template("pages/login.html", 
                             title="Log In", 
                             active="login",
+                            loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
 # log out page
@@ -147,70 +160,81 @@ def logout():
 # Search page
 @app.route('/search')
 def search_page():
+    loggedIn = True if 'user' in session else False
     return render_template("pages/search.html", 
                             title="Search",
+                            loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
 # Activity listing page - see if possible to update this to different routes based on each activity title
 @app.route('/activity-listing')
 def activity_listing_page():
+    loggedIn = True if 'user' in session else False
     return render_template("pages/activitylisting.html", 
                             title="Activity Listing",
+                            loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
 # Event listing page - see if possible to update this to different routes based on each event title
 @app.route('/event-listing')
 def event_listing_page():
+    loggedIn = True if 'user' in session else False
     return render_template("pages/eventlisting.html", 
                             title="Event Listing",
+                            loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
 # Search page
 @app.route('/settings')
 def settings_page():
+    #---------------------------------------------------- permission
     return render_template("pages/settings.html", 
                             title="Account Settings", 
-                            loginStatus=True,
                             keywords=Keywords.generic())
 
 # Account page - all listings for this account
 @app.route('/account')
 def my_account_page():
+    #---------------------------------------------------- permission
     return render_template("pages/account.html", 
                             title="My Account", 
-                            loginStatus=True,
+                            loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
 # Add new event page
 @app.route('/add-new-event')
 def new_event_page():
+    #---------------------------------------------------- permission
     return render_template("pages/addevent.html", 
                             title="Add New Event", 
-                            loginStatus=True,
+                            loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
 # Edit existing event page
 @app.route('/edit-event')
 def edit_event_page():
+    #---------------------------------------------------- permission
     return render_template("pages/editevent.html", 
                             title="Edit Event", 
-                            loginStatus=True,
+                            loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
 # Add new activity page
 @app.route('/add-new-activity')
 def new_activity_page():
+    #---------------------------------------------------- permission
     return render_template("pages/addactivity.html", 
                             title="Add New Activity", 
-                            loginStatus=True,
+                            loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
 # Edit existing activity page
 @app.route('/edit-activity')
 def edit_activity_page():
+    #---------------------------------------------------- permission
     return render_template("pages/editactivity.html", 
                             title="Edit Activity", 
-                            loginStatus=True,
+                            loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
 if __name__ == '__main__':
