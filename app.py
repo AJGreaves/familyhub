@@ -64,7 +64,15 @@ def contact_page():
 # page also renders the newaccount page to be viewed
 
 def new_account_page():
-    # -------------------------------------------------------- you don't have permission if not logged in page
+    loggedIn = True if 'user' in session else False
+
+    if loggedIn:
+        user_in_db = db.users.find_one({"username": session['user']})
+        if user_in_db:
+            # If already logged in, redirect user to account page
+            return redirect(url_for('my_account_page', user=user_in_db['username']))
+
+
     if request.method == 'POST':
         post_request = request.get_json()
 
@@ -187,7 +195,11 @@ def event_listing_page():
 # Search page
 @app.route('/settings')
 def settings_page():
-    #---------------------------------------------------- permission
+    loggedIn = True if 'user' in session else False
+
+    if not loggedIn:
+        return redirect(url_for('permission_denied'))
+
     return render_template("pages/settings.html", 
                             title="Account Settings", 
                             keywords=Keywords.generic())
@@ -195,7 +207,11 @@ def settings_page():
 # Account page - all listings for this account
 @app.route('/account')
 def my_account_page():
-    #---------------------------------------------------- permission
+    loggedIn = True if 'user' in session else False
+
+    if not loggedIn:
+        return redirect(url_for('permission_denied'))
+
     return render_template("pages/account.html", 
                             title="My Account", 
                             loggedIn=loggedIn,
@@ -204,7 +220,12 @@ def my_account_page():
 # Add new event page
 @app.route('/add-new-event')
 def new_event_page():
-    #---------------------------------------------------- permission
+
+    loggedIn = True if 'user' in session else False
+
+    if not loggedIn:
+        return redirect(url_for('permission_denied'))
+
     return render_template("pages/addevent.html", 
                             title="Add New Event", 
                             loggedIn=loggedIn,
@@ -213,7 +234,12 @@ def new_event_page():
 # Edit existing event page
 @app.route('/edit-event')
 def edit_event_page():
-    #---------------------------------------------------- permission
+    
+    loggedIn = True if 'user' in session else False
+
+    if not loggedIn:
+        return redirect(url_for('permission_denied'))
+
     return render_template("pages/editevent.html", 
                             title="Edit Event", 
                             loggedIn=loggedIn,
@@ -222,7 +248,12 @@ def edit_event_page():
 # Add new activity page
 @app.route('/add-new-activity')
 def new_activity_page():
-    #---------------------------------------------------- permission
+    
+    loggedIn = True if 'user' in session else False
+
+    if not loggedIn:
+        return redirect(url_for('permission_denied'))
+
     return render_template("pages/addactivity.html", 
                             title="Add New Activity", 
                             loggedIn=loggedIn,
@@ -231,16 +262,21 @@ def new_activity_page():
 # Edit existing activity page
 @app.route('/edit-activity')
 def edit_activity_page():
-    #---------------------------------------------------- permission
+    
+    loggedIn = True if 'user' in session else False
+
+    if not loggedIn:
+        return redirect(url_for('permission_denied'))
+
     return render_template("pages/editactivity.html", 
                             title="Edit Activity", 
                             loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
-# Edit existing activity page
-@app.route('/404')
-def page_not_found404():
-    return render_template("pages/404.html")
+# 404 error page
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('pages/404.html'), 404
 
 # No permission page
 @app.route('/permission-denied')
