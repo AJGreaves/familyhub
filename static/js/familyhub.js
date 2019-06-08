@@ -32,13 +32,12 @@ if (document.querySelector('#new-account-form')) {
     })
     .then(res => res.json())
     .then(data => {
-      if (data.response) {
+
+      if (data.emailExists || data.userExists) {
+        userExistsModal(data.emailExists, data.userExists)
+      } else {
         // if response confirms this is not an existing account, new account is created and confirm account modal is activated
-        confirmAccountModal();
-      }
-      else {
-        // if response is false (account already exists)
-        userExistsModal();
+        confirmAccountModal(username);
       }
     })
     .catch(err => console.log(err));
@@ -52,11 +51,33 @@ $('#closeUserExistsModal').click(function() {
   userExistsModal();
 })
 
-function confirmAccountModal() {
+function confirmAccountModal(username) {
+  $('#alertHeading').text('Welcome to Family Hub ' + username + '!')
   $('#newUserConfirmModal').addClass('active');
 }
 
-function userExistsModal() {
+/**
+ * @param {bool} emailExists 
+ * @param {bool} userExists 
+ * userExistsModal takes booleans sent from python on if the user or email
+ * already exists in the database. Responds with a modal message to give the
+ * user the appropriate feedback so they know what to do next.
+ */
+
+function userExistsModal(emailExists, userExists) {
+  if (emailExists && userExists) {
+    $('#alertHeading').text('Hello again');
+    $('#alertMessage').text('This account is already registered to Family Hub');
+    $('#logInBtn').removeClass('d-none');
+  } else if (emailExists) {
+    $('#alertHeading').text('Hello again');
+    $('#alertMessage').text('This email is already registered to Family Hub');
+    $('#logInBtn').removeClass('d-none');
+  } else if (userExists) {
+    $('#alertHeading').text('Sorry');
+    $('#alertMessage').text('This username is already in use, please choose another');
+    $('#logInBtn').addClass('d-none');
+  }
   $('#userExistsModal').toggleClass('active');
 }
 

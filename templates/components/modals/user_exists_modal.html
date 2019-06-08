@@ -3,13 +3,13 @@
 <div id="userExistsModal" class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-10 col-md-8 col-lg-6 modal-content-box text-center">
-            <h2 class="text-left">Hello again</h2>
+            <h2 id="alertHeading" class="text-left"></h2>
             <hr>
-            <p class="my-5">This email is already registered to Family Hub</p>
+            <p id="alertMessage" class="my-5"></p>
             <button id="closeUserExistsModal" class="btn btn-search m-3 mb-5" type="submit">
                 Close
             </button>
-            <a href="{{url_for('login_page')}}" class="btn btn-readmore m-3 mb-5">
+            <a id="logInBtn" href="{{url_for('login_page')}}" class="btn btn-readmore m-3 mb-5">
                 Log in
             </a>
         </div>
