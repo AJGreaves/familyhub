@@ -69,11 +69,11 @@ if (document.querySelector('#login-form')) {
     // prevents default behaviour of submit button to refresh page
     event.preventDefault();
     
-    const email = document.querySelector('#loginEmail').value;
+    const loginInput = document.querySelector('#loginInput').value;
     const password = document.querySelector('#loginPassword').value;
     
     const data = {
-      email: email,
+      loginInput: loginInput,
       password: password
     }
     
@@ -88,7 +88,7 @@ if (document.querySelector('#login-form')) {
     .then(data => {
       if (data.userMatch == false) {
         // if no user match respond with alert
-        alert('no user account with this email address. Create account? Y/N');
+        alert('no user account with this username or email address. Create account? Y/N');
       }
       else {
         if (data.passwordCorrect) {

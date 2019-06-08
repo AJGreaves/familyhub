@@ -77,27 +77,41 @@ def new_account_page():
 
 # login page
 @app.route('/login', methods=['GET', 'POST'])
+
+# login_page takes data collected with fetch in JS, checks if user exists in the database
+# If the user is in the database it then compares the password provided with the hashed one from the database
+# If the password is correct the value of passwordCorrect is set to True
+# All this data is then returned to JS to respond accordingly to the browser
+
 def login_page():
 
     if request.method == 'POST':
         post_request = request.get_json()
 
-        user = db.users.find_one({"email": post_request['email']})
+        user = ' '
+
+        # checks user input against usernames in the database
+        user = db.users.find_one({"email": post_request['loginInput']})
         print(user)
 
+        # if no usernames then check input against email addresses in the database
+        if not user:
+            user = db.users.find_one({"username": post_request['loginInput']})
+            print(user)
+
         passwordCorrect = False
-        username = ' '
 
         if user: 
             # check if passwords match, 
             if check_password_hash(user['password'], post_request['password']):
+                # Log user in (add to session)
+                # session['user'] = user['username']
                 passwordCorrect = True
-                username = user['username']
 
         response = {
             "userMatch": True if user else False,
             "passwordCorrect": passwordCorrect,
-            "username": username
+            "username": user['username']
         }
         return json.dumps(response)
 
