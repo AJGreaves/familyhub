@@ -59,14 +59,28 @@ def new_account_page():
     if request.method == 'POST':
         post_request = request.get_json()
 
-        user = db.users.find_one({"email": post_request['email']})
+        emailExists = True
+        userExists = True
 
-        if not user:
-            
+        user_email = db.users.find_one({"email": post_request['email']})
+        user_username = db.users.find_one({"username": post_request['username']})
+
+        if not user_email:
+            emailExists = False
+        elif not user_username:
+            userExists = False
+
+        if not user_username and not user_email:
+            userExists = False
+            emailExists = False
             post_request['password'] = generate_password_hash(post_request['password'])
             db.users.insert_one(post_request)
 
-        response = {"response": False if user else True}
+        response = {
+            "emailExists": emailExists,
+            "userExists": userExists,
+            "username": post_request['username']
+        }
         
         return json.dumps(response)
 
