@@ -109,17 +109,17 @@ if (document.querySelector('#login-form')) {
     .then(data => {
       if (data.userMatch == false) {
         // if no user match respond with alert
-        alert('no user account with this username or email address. Create account? Y/N');
-      }
-      else {
-        if (data.passwordCorrect) {
+        let message = 'no user match';
+        alertModal(message);
+      } else if (data.passwordCorrect == false) {
+        // if no password match respond with alert
+        let message = 'no password match';
+        alertModal(message);
+      } else if (data.passwordCorrect) {
           // if user match and password match, launch logged in modal
           openLoggedInModal(data.username);
-        }
-        else {
-          // if user match but no password match, respond with alert
-          alert('incorrect password, try again');
-        }
+      } else {
+          console.log('error with login form')
       }
     })
     .catch(err => console.log(err));
@@ -127,7 +127,26 @@ if (document.querySelector('#login-form')) {
   });
 }
 
+function alertModal(message) {
+  switch (message) {
+    case 'no user match' :
+      $('#alertHeading').text('Sorry');
+      $('#alertMessage').text('No account with this username or email address.\n Please try again.');
+      break;
+    case 'no password match' :
+      $('#alertHeading').text('Incorrect password');
+      $('#alertMessage').text('Please try again.');
+      break;
+    default:
+      break;
+  }
+  $('#alertModal').addClass('active');
+}
 
+function openLoggedInModal(username) {
+  $('#welcomeMessage').text('Welcome ' + username + '.');
+  $('#loggedInModal').addClass('active');
+}
 
 // works with css to slow carousels movement down https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed-that-bootstrap-carousel-slides-in-items/18633703 */
 jQuery.fn.carousel.Constructor.TRANSITION_DURATION = 2000;
@@ -165,6 +184,12 @@ $('#search-modal-submit-button').click(function() {
     openSearch();
 });
 
+// when user clicks on search icon the search modal adds the active class, 
+// adding css to opacity: 1; 
+function openSearch() {
+  $("#search-modal").toggleClass('active');
+}
+
 $('#delete-button').click(function() {
   openDeleteWarningModal();
 });
@@ -173,20 +198,10 @@ $('#delete-modal-submit-button').click(function() {
   openDeleteWarningModal();
 });
 
-// when user clicks on search icon the search modal adds the active class, 
-// adding css to opacity: 1; 
-function openSearch() {
-  $("#search-modal").toggleClass('active');
-}
-
 function openDeleteWarningModal() {
   $('#delete-warning-modal').toggleClass('active');
 }
 
-function openLoggedInModal(username) {
-  $('#welcomeMessage').text('Welcome ' + username + '.');
-  $('#loggedInModal').addClass('active');
-}
 
 // datepicker function code written by fellow student Sean Murphy, 
 // who gave it to me to demonstrate how to get it working
