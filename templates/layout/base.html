@@ -18,13 +18,12 @@
 </head>
 
 <body>
-
     <!-- Navigation -->
     {% include 'layout/nav.html' %}
 
     <!-- Main content -->
     {% block content %} {% endblock %}
-    
+
     <!-- Footer -->
     {% include 'layout/footer.html' %}
 
@@ -36,12 +35,17 @@
 
     <!-- Delete warning modal -->
     {% include 'components/modals/delete_warning_modal.html' %}
+    
+    <!-- Spinner -->
+    <div id="spinner-wrapper">
+        <div id="spinner" Title="loading"></div>
+    </div>
 
     <!-- Bootstrap scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    
+
     <!-- Gijgo scripts for datepickers and timepickers scripts -->
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"></script>
 
