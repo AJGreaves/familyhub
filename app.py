@@ -5,6 +5,7 @@ from pymongo import MongoClient
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 from familyhubapp.keys import Keywords
+from datetime import datetime
 
 # create instance of flask and assign it to "app"
 app = Flask(__name__)
@@ -73,12 +74,22 @@ def new_event_page():
         # convert form to a dict
         post_request = request.form.to_dict()
 
-        print(post_request)
+        # credit for date processing code to fellow student Seán Murphy 
+        date = post_request['date'].split('/')
+        date = f"{date[2]}-{date[0]}-{date[1]}"
+        date = datetime.strptime(date, '%Y-%m-%d')
 
+        # process number returning from form as string into int
+        if post_request.get('from'):
+            price_string = post_request.get('from')
+            price_int = int(price_string)
+
+        # create new object with username from post_request dict, username from databas and
+        # all other values converted as needed to be store correctly in the database
         obj = {'username': user['username'], 
                 'title': post_request.get('title'),
                 'imgUrl': post_request.get('imgUrl'),
-                'date': post_request.get('date'), #??
+                'date': date, 
                 'address': {'addressLine1': post_request.get('addressLine1'),
                             'postcode': post_request.get('postcode'),
                             'town': post_request.get('town')},
@@ -88,7 +99,7 @@ def new_event_page():
                             'age8to10': True if post_request.get('age8to10') else False,
                             'age10to12': True if post_request.get('age10to12') else False,
                             'age12up': True if post_request.get('age12up') else False},
-                'price': {'from': post_request.get('imgUrl') if post_request.get('imgUrl') else None,
+                'price': {'from': price_int if post_request.get('from') else None,
                             'isFree': True if post_request.get('isFree') else False},
                 'indoor': True if post_request.get('indoor') else False,
                 'outdoor': True if post_request.get('outdoor') else False,
@@ -98,10 +109,8 @@ def new_event_page():
                             'twitter': post_request.get('twitter') if post_request.get('twitter') else None,
                             'instagram': post_request.get('instagram') if post_request.get('instagram') else None},
                 'description': post_request.get('description')}
-        
-        print(obj)
 
-        # db.events.insert_one(obj)
+        db.events.insert_one(obj)
 
     return render_template("pages/addevent.html", 
                             title="Add New Event", 
