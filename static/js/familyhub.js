@@ -280,6 +280,7 @@ $('#isFreeToggle').click(function() {
 
   if ($from.attr('required')) {
     $from.attr('disabled', '').removeAttr('required');
+    $from.val('0');
   } else {
     $from.attr('required', '').removeAttr('disabled');
   }
