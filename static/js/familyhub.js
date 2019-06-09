@@ -286,3 +286,12 @@ $('#isFree').click(function() {
   }
 
 })
+
+$('.submit-js').click(function() {
+  let $from = $('#from');
+
+  if (!$from.attr('required')) {
+    $from.attr('required', '').removeAttr('disabled');
+    $from.val('0');
+  }
+})
