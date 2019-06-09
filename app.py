@@ -76,6 +76,16 @@ def new_event_page():
         instagram = None if not request.form['instagram'] else request.form['instagram']
         print(priceFrom, facebook, twitter, instagram)
 
+        under4 = True if request.form['under4'] else False
+        age4to6 = True if request.form['age4to6'] else False
+        age6to8 = True if request.form['age6to8'] else False
+        age8to10 = True if request.form['age8to10'] else False
+        age10to12 = True if request.form['age10to12'] else False
+        age12up = True if request.form['age12up'] else False
+        isFree = True if request.form['isFree'] else False
+        indoor = True if request.form['indoor'] else False
+        outdoor = True if request.form['outdoor'] else False
+
         db.events.insert_one({'username': user['username'], 
                         'title': request.form['title'],
                         'imgUrl': request.form['imgUrl'],
@@ -83,16 +93,16 @@ def new_event_page():
                         'address': {'addressLine1': request.form['addressLine1'],
                                     'postcode': request.form['postcode'],
                                     'town': request.form['town']},
-                        'ageRange': {'under4': request.form['under4'],
-                                    'age4to6': request.form['age4to6'],
-                                    'age6to8': request.form['age6to8'],
-                                    'age8to10': request.form['age8to10'],
-                                    'age10to12': request.form['age10to12'],
-                                    'age12up': request.form['age12up']},
+                        'ageRange': {'under4': under4,
+                                    'age4to6': age4to6,
+                                    'age6to8': age6to8,
+                                    'age8to10': age8to10,
+                                    'age10to12': age10to12,
+                                    'age12up': age12up},
                         'price': {'from': priceFrom,
-                                    'isFree': request.form['isFree']},
-                        'indoor': request.form['indoor'],
-                        'outdoor': request.form['outdoor'],
+                                    'isFree': isFree},
+                        'indoor': indoor,
+                        'outdoor': outdoor,
                         'contact': {'url': request.form['url'],
                                     'email': request.form['email'],
                                     'facebook': facebook,
