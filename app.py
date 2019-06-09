@@ -56,6 +56,55 @@ def contact_page():
                             loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
+# Add new event page
+@app.route('/add-new-event', methods=['GET', 'POST'])
+def new_event_page():
+
+    loggedIn = True if 'user' in session else False
+
+    if not loggedIn:
+        return redirect(url_for('permission_denied'))
+    else: 
+        # get user data from database
+        user = db.users.find_one({"username": session['user']})
+
+    if request.method == 'POST':
+        # set values for optional inputs
+        priceFrom = None if not request.form['from'] else request.form['from']
+        facebook = None if not request.form['facebook'] else request.form['facebook']
+        twitter = None if not request.form['twitter'] else request.form['twitter']
+        instagram = None if not request.form['instagram'] else request.form['instagram']
+        print(priceFrom, facebook, twitter, instagram)
+
+        db.events.insert_one({'username': user['username'], 
+                        'title': request.form['title'],
+                        'imgUrl': request.form['imgUrl'],
+                        'date': request.form['date'],
+                        'address': {'addressLine1': request.form['addressLine1'],
+                                    'postcode': request.form['postcode'],
+                                    'town': request.form['town']},
+                        'ageRange': {'under4': request.form['under4'],
+                                    'age4to6': request.form['age4to6'],
+                                    'age6to8': request.form['age6to8'],
+                                    'age8to10': request.form['age8to10'],
+                                    'age10to12': request.form['age10to12'],
+                                    'age12up': request.form['age12up']},
+                        'price': {'from': priceFrom,
+                                    'isFree': request.form['isFree']},
+                        'indoor': request.form['indoor'],
+                        'outdoor': request.form['outdoor'],
+                        'contact': {'url': request.form['url'],
+                                    'email': request.form['email'],
+                                    'facebook': facebook,
+                                    'twitter': twitter,
+                                    'instagram': instagram},
+                        'description': request.form['description']})
+
+    return render_template("pages/addevent.html", 
+                            title="Add New Event", 
+                            loggedIn=loggedIn,
+                            keywords=Keywords.generic())
+
 @app.route('/newaccount', methods=['GET', 'POST'])
 
 # new_account_page takes data collected with fetch in JS, checks if user already exists in the database
@@ -214,20 +263,6 @@ def my_account_page():
 
     return render_template("pages/account.html", 
                             title="My Account", 
-                            loggedIn=loggedIn,
-                            keywords=Keywords.generic())
-
-# Add new event page
-@app.route('/add-new-event')
-def new_event_page():
-
-    loggedIn = True if 'user' in session else False
-
-    if not loggedIn:
-        return redirect(url_for('permission_denied'))
-
-    return render_template("pages/addevent.html", 
-                            title="Add New Event", 
                             loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
