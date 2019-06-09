@@ -192,10 +192,14 @@ Further reading and troubleshooting on cloning a repository from GitHub [here](h
 - text in this project was written by...
 
 ### Media
+#### Animations
+- Spinner https://dribbble.com/shots/5578478-Working-on-a-loading-animation-for-our-new-mobile-app
+- Hide and seek bot for 404 page: https://dribbble.com/shots/3480375-Stealth-Bot
 
 #### Images
 - The FamilyHub logo was created using [Hatchful](https://hatchful.shopify.com).
 - The photographs for the hero images were sourced from [Pexels](https://www.pexels.com/)
+
 
 ### Code
 - Template code for multi-card carousel using bootstrap classes taken from [MDBootstrap](https://mdbootstrap.com/docs/jquery/javascript/carousel/) and heavily modified to suit the sites needs.

@@ -636,13 +636,17 @@ footer hr {
   width: 100vw;
 }
 
-#backgroundImg404 {
-  background-image: url("https://i.ibb.co/x7qBFvB/stop-sm.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 100% 90%;
-  background-attachment: fixed;
-  height: 100%;
+#texture {
+  background: url("../img/robot-background.jpg");
+  background-repeat: repeat;
+}
+
+#animation404 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
 }
 
 #backgroundImgPermission {
@@ -694,6 +698,7 @@ shadow added to give depth and contrast with the image for readability */
   font-family: "News Cycle", sans-serif;
   color: #346861;
   text-transform: none;
+  margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
@@ -987,15 +992,17 @@ input.no-click {
   .weekday-checkbox-label {
     padding-left: 75%;
   }
-  #backgroundImg404 {
-    background-image: url("https://i.ibb.co/0hykW4m/stop.jpg");
-    background-position: 90% 90%;
-  }
   #errorPageColumn {
     padding: 5rem 5rem;
   }
-  #errorPageColumn h1 {
+  #errorPageColumn h1,
+  #errorPageColumn h2 {
     margin-top: auto;
+  }
+  #animation404 {
+    left: auto;
+    right: 0;
+    width: auto;
   }
 }
 

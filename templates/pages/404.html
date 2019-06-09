@@ -15,18 +15,19 @@
     <title>404 page not found | FamilyHub</title>
 </head>
 
-<body>
+<body id="texture">
     <div id="backgroundImgWrapper" class="container-fluid">
-        <div id="backgroundImg404" class="row no-gutters">
+        <div class="row no-gutters">
             <div id="errorPageColumn" class="col-12">
                 <h1>404 - Page not found</h1>
                 <hr>
                 <h2>Oh! Looks like this page is <i>really</i> good at Hide and Seek!</h2>
                 <p>Try the links below</p>
-                <a href="{{ url_for('home_page') }}" class="btn btn-search my-2 mr-2">Home</a>
-                <a href="{{ url_for('activities_page') }}" class="btn btn-readmore m-2">Activities</a>
-                <a href="{{ url_for('events_page') }}" class="btn btn-create m-2">Events</a>
+                <a href="{{ url_for('home_page') }}" class="btn btn-search my-2 mr-1 mr-sm-2">Home</a>
+                <a href="{{ url_for('activities_page') }}" class="btn btn-readmore m-1 m-sm-2">Activities</a>
+                <a href="{{ url_for('events_page') }}" class="btn btn-create m-1 m-sm-2">Events</a>
             </div>
+            <img id="animation404" src="static/animations/hide-and-seek.gif" alt="hide and seek robot"/>
         </div>
     </div>
 </body>
