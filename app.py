@@ -15,6 +15,9 @@ app.config.from_object(Config)
 client = MongoClient(Config.MONGO_URI)
 db = client.familyHub
 
+
+# =========================================================================== #
+
 # Home page
 @app.route('/')
 @app.route('/index')
@@ -27,6 +30,9 @@ def home_page():
                             loggedIn=loggedIn,
                             keywords=Keywords.home())
 
+
+# =========================================================================== #
+
 # Activities page
 @app.route('/activities')
 def activities_page():
@@ -36,6 +42,9 @@ def activities_page():
                             active="activities",
                             loggedIn=loggedIn,
                             keywords=Keywords.activities())
+
+
+# =========================================================================== #
 
 # Events page
 @app.route('/events')
@@ -47,6 +56,9 @@ def events_page():
                             loggedIn=loggedIn,
                             keywords=Keywords.events())
 
+
+# =========================================================================== #
+
 # Contact page
 @app.route('/contact')
 def contact_page():
@@ -57,7 +69,19 @@ def contact_page():
                             loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
+# =========================================================================== #
+
 # Add new event page
+
+# Checks if user is logged in, if not redirects to permission denied page.
+# Gets user data from the database using the session username.
+# Converts data from form into dict, so can be processed before sending to database.
+# Processes date information to turn it into format needed to store date in mongodb.
+# Processes number string into int for storing correctly.
+# creates new object with username from post_request dict, username from databas and
+# all boolean values converted as needed to be store correctly in the database,
+# and finally inserts that data into the database.
+
 @app.route('/add-new-event', methods=['GET', 'POST'])
 def new_event_page():
 
@@ -66,12 +90,10 @@ def new_event_page():
     if not loggedIn:
         return redirect(url_for('permission_denied'))
     else: 
-        # get user data from database
         user = db.users.find_one({"username": session['user']})
 
     if request.method == 'POST':
 
-        # convert form to a dict
         post_request = request.form.to_dict()
 
         # credit for date processing code to fellow student Seán Murphy 
@@ -79,13 +101,10 @@ def new_event_page():
         date = f"{date[2]}-{date[0]}-{date[1]}"
         date = datetime.strptime(date, '%Y-%m-%d')
 
-        # process number returning from form as string into int
         if post_request.get('from'):
             price_string = post_request.get('from')
             price_int = int(price_string)
 
-        # create new object with username from post_request dict, username from databas and
-        # all other values converted as needed to be store correctly in the database
         obj = {'username': user['username'], 
                 'title': post_request.get('title'),
                 'imgUrl': post_request.get('imgUrl'),
@@ -117,20 +136,23 @@ def new_event_page():
                             loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
-@app.route('/newaccount', methods=['GET', 'POST'])
+# =========================================================================== #
 
-# new_account_page takes data collected with fetch in JS, checks if user already exists in the database
-# if not then it encrypts the password before sending complete object to mongodb.
+# new account page
+
+# Takes data collected with fetch in JS, checks if user already exists in the database.
+# if they are redirect them to account page
+# if they are not then it encrypts the password before sending complete object to mongodb.
 # It then returns to JS if the user already existed or not so JS can provide feedback to the user based on that condition.
 # page also renders the newaccount page to be viewed
 
+@app.route('/newaccount', methods=['GET', 'POST'])
 def new_account_page():
     loggedIn = True if 'user' in session else False
 
     if loggedIn:
         user_in_db = db.users.find_one({"username": session['user']})
         if user_in_db:
-            # If already logged in, redirect user to account page
             return redirect(url_for('my_account_page', user=user_in_db['username']))
 
 
@@ -168,29 +190,28 @@ def new_account_page():
                             loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
-# login page
-@app.route('/login', methods=['GET', 'POST'])
 
-# login_page takes data collected with fetch in JS, checks if user exists in the database
+# =========================================================================== #
+
+# login page
+
+# Takes data collected with fetch in JS, checks if user exists in the database
 # If the user is in the database it then compares the password provided with the hashed one from the database
 # If the password is correct the value of passwordCorrect is set to True
 # All this data is then returned to JS to respond accordingly to the browser
 
+@app.route('/login', methods=['GET', 'POST'])
 def login_page():
 
     loggedIn = True if 'user' in session else False
-    # check if user is not already logged in
+
     if loggedIn:
         user_in_db = db.users.find_one({"username": session['user']})
         if user_in_db:
-            # If already logged in, redirect user to account page
             return redirect(url_for('my_account_page', user=user_in_db['username']))
 
     if request.method == 'POST':
-        # gets data from form from JS
         post_request = request.get_json()
-
-        # checks user input against usernames in the database
         
         user = db.users.find_one({ '$or': [ { 'username': post_request['loginInput'] }, { 'email': post_request['loginInput'] } ]})
         print(user)
@@ -199,9 +220,7 @@ def login_page():
         username = ' '
 
         if user: 
-            # check if passwords match, 
             if check_password_hash(user['password'], post_request['password']):
-                # Log user in (add to session)
                 session['user'] = user['username']
                 passwordCorrect = True    
                 username = user['username']    
@@ -219,12 +238,18 @@ def login_page():
                             loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
+
+# =========================================================================== #
+
 # log out page
 @app.route('/logout')
 def logout():
     # Clear the session
     session.clear()
     return redirect(url_for('home_page'))
+
+
+# =========================================================================== #
 
 # Search page
 @app.route('/search')
@@ -235,6 +260,9 @@ def search_page():
                             loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
+
+# =========================================================================== #
+
 # Activity listing page - see if possible to update this to different routes based on each activity title
 @app.route('/activity-listing')
 def activity_listing_page():
@@ -244,6 +272,9 @@ def activity_listing_page():
                             loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
+
+# =========================================================================== #
+
 # Event listing page - see if possible to update this to different routes based on each event title
 @app.route('/event-listing')
 def event_listing_page():
@@ -252,6 +283,9 @@ def event_listing_page():
                             title="Event Listing",
                             loggedIn=loggedIn,
                             keywords=Keywords.generic())
+
+
+# =========================================================================== #
 
 # Search page
 @app.route('/settings')
@@ -265,6 +299,9 @@ def settings_page():
                             title="Account Settings", 
                             keywords=Keywords.generic())
 
+
+# =========================================================================== #
+
 # Account page - all listings for this account
 @app.route('/account')
 def my_account_page():
@@ -277,6 +314,9 @@ def my_account_page():
                             title="My Account", 
                             loggedIn=loggedIn,
                             keywords=Keywords.generic())
+
+
+# =========================================================================== #
 
 # Edit existing event page
 @app.route('/edit-event')
@@ -292,6 +332,9 @@ def edit_event_page():
                             loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
+
+# =========================================================================== #
+
 # Add new activity page
 @app.route('/add-new-activity')
 def new_activity_page():
@@ -305,6 +348,9 @@ def new_activity_page():
                             title="Add New Activity", 
                             loggedIn=loggedIn,
                             keywords=Keywords.generic())
+
+
+# =========================================================================== #
 
 # Edit existing activity page
 @app.route('/edit-activity')
@@ -320,15 +366,24 @@ def edit_activity_page():
                             loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
+
+# =========================================================================== #
+
 # 404 error page
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('pages/404.html'), 404
 
+
+# =========================================================================== #
+
 # No permission page
 @app.route('/permission-denied')
 def permission_denied():
     return render_template("pages/permission.html")
+
+
+# =========================================================================== #
 
 if __name__ == '__main__':
     app.run(host=os.getenv('IP'), 
