@@ -21,6 +21,8 @@ if (document.querySelector('#new-account-form')) {
       password: password,
       username: username,
     }
+    
+    showLoading();
 
     fetch('/newaccount', {
         method: 'POST',
@@ -32,6 +34,7 @@ if (document.querySelector('#new-account-form')) {
       })
       .then(res => res.json())
       .then(data => {
+        hideLoading();
         if (data.emailExists || data.userExists) {
           userExistsModal(data.emailExists, data.userExists)
         } else {
@@ -103,7 +106,7 @@ if (document.querySelector('#login-form')) {
       loginInput: loginInput,
       password: password
     }
-
+    showLoading();
     fetch('/login', {
         method: 'POST',
         headers: {
@@ -113,6 +116,7 @@ if (document.querySelector('#login-form')) {
       })
       .then(res => res.json())
       .then(data => {
+        hideLoading();
         if (data.userMatch == false) {
           let message = 'no user match';
           alertModal(message);
@@ -255,3 +259,14 @@ function openDeleteWarningModal() {
     uiLibrary: 'bootstrap4'
   });
 });
+
+/**
+ * Spinner animation. 
+ */
+
+function showLoading(){
+document.getElementById("spinner-wrapper").style = "visibility: visible";
+}
+function hideLoading(){
+document.getElementById("spinner-wrapper").style = "visibility: hidden";
+}
