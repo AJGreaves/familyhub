@@ -22,12 +22,12 @@
 
         <div class="form-group col-12 col-md-6">
             <h3>Price Range</h3>
-            <label for="from">Prices from:</label>
-            <input type="number" class="form-control">
+            <label for="from">Price (per person) from:</label>
+            <input name="from" id="from" type="number" class="form-control" required>
             <small>Please round to nearest euro</small>
             <div class="custom-control custom-switch pt-4">
-                <input type="checkbox" class="custom-control-input" id="isFree">
-                <label class="custom-control-label" for="isFree">Free</label>
+                <input type="checkbox" class="custom-control-input" id="isFreeToggle">
+                <label class="custom-control-label" for="isFreeToggle" name="isFreeToggle">Free</label>
             </div>
         </div>
 

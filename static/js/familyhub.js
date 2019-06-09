@@ -270,3 +270,18 @@ document.getElementById("spinner-wrapper").style = "visibility: visible";
 function hideLoading(){
 document.getElementById("spinner-wrapper").style = "visibility: hidden";
 }
+
+/**
+ * toggle disabled/required attributes on elements when on/off switch clicked
+ */
+
+$('#isFreeToggle').click(function() {
+  let $from = $('#from');
+
+  if ($from.attr('required')) {
+    $from.attr('disabled', '').removeAttr('required');
+  } else {
+    $from.attr('required', '').removeAttr('disabled');
+  }
+
+})
