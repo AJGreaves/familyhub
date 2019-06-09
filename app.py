@@ -74,49 +74,34 @@ def new_event_page():
         post_request = request.form.to_dict()
 
         print(post_request)
-        
-        obj = {
-            'under4': True if post_request.get('under4') else False,
-            'age4to6': True if post_request.get('age4to6') else False,
-            'age6to8': True if post_request.get('age6to8') else False,
-            'age8to10': True if post_request.get('age8to10') else False,
-            'age10to12': True if post_request.get('age10to12') else False,
-            'age12up': True if post_request.get('age12up') else False 
-        }
+
+        obj = {'username': user['username'], 
+                'title': post_request.get('title'),
+                'imgUrl': post_request.get('imgUrl'),
+                'date': post_request.get('date'), #??
+                'address': {'addressLine1': post_request.get('addressLine1'),
+                            'postcode': post_request.get('postcode'),
+                            'town': post_request.get('town')},
+                'ageRange': {'under4': True if post_request.get('under4') else False,
+                            'age4to6': True if post_request.get('age4to6') else False,
+                            'age6to8': True if post_request.get('age6to8') else False,
+                            'age8to10': True if post_request.get('age8to10') else False,
+                            'age10to12': True if post_request.get('age10to12') else False,
+                            'age12up': True if post_request.get('age12up') else False},
+                'price': {'from': post_request.get('imgUrl') if post_request.get('imgUrl') else None,
+                            'isFree': True if post_request.get('isFree') else False},
+                'indoor': True if post_request.get('indoor') else False,
+                'outdoor': True if post_request.get('outdoor') else False,
+                'contact': {'url': post_request.get('url'),
+                            'email': post_request.get('email'),
+                            'facebook': post_request.get('facebook') if post_request.get('facebook') else None,
+                            'twitter': post_request.get('twitter') if post_request.get('twitter') else None,
+                            'instagram': post_request.get('instagram') if post_request.get('instagram') else None},
+                'description': post_request.get('description')}
         
         print(obj)
 
-        # set values for optional inputs
-        priceFrom = None if not request.form['from'] else request.form['from']
-        facebook = None if not request.form['facebook'] else request.form['facebook']
-        twitter = None if not request.form['twitter'] else request.form['twitter']
-        instagram = None if not request.form['instagram'] else request.form['instagram']
-        print(priceFrom, facebook, twitter, instagram)
-
-
-        # db.events.insert_one({'username': user['username'], 
-        #                 'title': request.form['title'],
-        #                 'imgUrl': request.form['imgUrl'],
-        #                 'date': request.form['date'],
-        #                 'address': {'addressLine1': request.form['addressLine1'],
-        #                             'postcode': request.form['postcode'],
-        #                             'town': request.form['town']},
-        #                 'ageRange': {'under4': under4,
-        #                             'age4to6': age4to6,
-        #                             'age6to8': age6to8,
-        #                             'age8to10': age8to10,
-        #                             'age10to12': age10to12,
-        #                             'age12up': age12up},
-        #                 'price': {'from': priceFrom,
-        #                             'isFree': isFree},
-        #                 'indoor': indoor,
-        #                 'outdoor': outdoor,
-        #                 'contact': {'url': request.form['url'],
-        #                             'email': request.form['email'],
-        #                             'facebook': facebook,
-        #                             'twitter': twitter,
-        #                             'instagram': instagram},
-        #                 'description': request.form['description']})
+        # db.events.insert_one(obj)
 
     return render_template("pages/addevent.html", 
                             title="Add New Event", 
