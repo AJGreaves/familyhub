@@ -21,7 +21,7 @@ if (document.querySelector('#new-account-form')) {
       password: password,
       username: username,
     }
-    
+
     showLoading();
 
     fetch('/newaccount', {
@@ -125,7 +125,7 @@ if (document.querySelector('#login-form')) {
           alertModal(message);
         } else if (data.passwordCorrect) {
           openLoggedInModal(data.username);
-        } 
+        }
       })
       .catch(err => console.log(err));
 
@@ -166,9 +166,9 @@ function openLoggedInModal(username) {
 }
 
 /*
-* works with css to slow carousels movement down 
-* Credit: https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed-that-bootstrap-carousel-slides-in-items/18633703 
-*/
+ * works with css to slow carousels movement down 
+ * Credit: https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed-that-bootstrap-carousel-slides-in-items/18633703 
+ */
 jQuery.fn.carousel.Constructor.TRANSITION_DURATION = 2000;
 
 // CREDIT: code for floating buttons taken from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp 
@@ -239,6 +239,7 @@ function openDeleteWarningModal() {
   });
 });
 
+
 ['#monStart',
   '#monEnd',
   '#tueStart',
@@ -260,22 +261,24 @@ function openDeleteWarningModal() {
   });
 });
 
+
 /**
  * Spinner animation. 
  */
 
-function showLoading(){
-document.getElementById("spinner-wrapper").style = "visibility: visible";
+function showLoading() {
+  document.getElementById("spinner-wrapper").style = "visibility: visible";
 }
-function hideLoading(){
-document.getElementById("spinner-wrapper").style = "visibility: hidden";
+
+function hideLoading() {
+  document.getElementById("spinner-wrapper").style = "visibility: hidden";
 }
 
 /**
  * toggle disabled/required attributes on elements when on/off switch clicked
  */
 
-$('#isFree').click(function() {
+$('#isFree').click(function () {
   let $from = $('#from');
 
   if ($from.attr('required')) {
@@ -287,7 +290,27 @@ $('#isFree').click(function() {
 
 })
 
-$('.submit-js').click(function() {
+$('#mon').click(function () {
+  let $start = $('#monStart');
+  let $end = $('#monEnd');
+
+  if ($start.attr('required')) {
+    $start.attr('disabled', '').removeAttr('required').val('');
+    $end.attr('disabled', '').removeAttr('required').val('');
+    $('.monday-times').each(function(){
+      $(this).removeClass('active');
+    })
+  } else {
+    $start.attr('required', '').removeAttr('disabled');
+    $end.attr('required', '').removeAttr('disabled');
+    $('.monday-times').each(function(){
+      $(this).addClass('active');
+    })
+  }
+
+})
+
+$('.submit-js').click(function () {
   let $from = $('#from');
 
   if (!$from.attr('required')) {

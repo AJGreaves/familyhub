@@ -43,30 +43,29 @@ a.fh-link:hover {
     margin-left: 5px;
 }
 
-/* forces users to use the date/time pickers instead of adding their own input */
-.no-click {
+/*  stops user clicking on these elements until they are removed by clicking a switch  */
+.no-click,
+.mon-times {
     pointer-events: none;
 }
 
-
-/* positions checkbox and labels for weekday open + close times in the form
-% used to make position responsive */
-.weekday-checkbox {
-    /* set to 50% in media queries for medium screens and up */
-    margin-left: 3%;
+.mon-times.active {
+    pointer-events: auto;
 }
 
-.weekday-checkbox-label {
-    /* set to 75% in media queries for medium screens and up */
-    padding-left: 50%;
-}
 
-.weekday-checkbox-row-top {
+.weekday-switch-row-top {
     padding-top: 2.35rem;
 }
 
-.weekday-checkbox-row {
+.weekday-switch-row {
     padding-top: 0.4rem;
+}
+
+/* lines up switches next to start/end times */
+#activityForm .custom-switch {
+    float: right;
+    width: 70px;
 }
 
 .add-listing-image {

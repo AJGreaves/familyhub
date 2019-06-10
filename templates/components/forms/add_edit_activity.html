@@ -3,161 +3,161 @@
 <div class="col-12">
     <div class="form-row">
         <div class="form-group col-12">
-            <label for="accountId">Activity Title *</label>
-            <input id="accountId" class="form-control" type="text" placeholder="Your activity title" required>
+            <label for="title">Activity Title *</label>
+            <input id="title" name="title" class="form-control" type="text" placeholder="Your activity title" required>
         </div>
     </div>
 </div>
 <div class="col-12">
     <hr>
 </div>
-<div class="col-12">
+<div id="activityForm" class="col-12">
     <div class="form-row">
-        <div class="form-group col-12 col-md-4">
+        <div class="form-group col-12 col-md-6">
             <h3>Dates and Times</h3>
             <div class="form-row">
-                <div class="form-group col-6 col-md-12">
+                <div class="form-group col-6 col-md-12 col-lg-6">
                     <label>Start Date: *</label>
-                    <input id="start" class="no-click input-group date datepicker-wider" data-date-format="mm-dd-yyyy"
-                        required>
+                    <input id="start" name="start" class="no-click input-group date datepicker-wider"
+                        data-date-format="dd-mm-yyyy" required>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                 </div>
-                <div class="form-group col-6 col-md-12">
+                <div class="form-group col-6 col-md-12 col-lg-6">
                     <label>End Date: *</label>
-                    <input id="end" class="no-click input-group date datepicker-wider" data-date-format="mm-dd-yyyy"
-                        required>
+                    <input id="end" name="end" class="no-click input-group date datepicker-wider"
+                        data-date-format="dd-mm-yyyy" required>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                 </div>
 
             </div>
 
         </div>
-        <div class="form-group col-12 col-md-8">
+        <div class="form-group col-12 col-md-6">
 
             <!-- Monday times -->
             <div class="form-row">
-                <div class="form-group weekday-checkbox-row-top col-2 col-md-4">
-                    <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="mon">
-                    <label class="form-check-label weekday-checkbox-label" for="mon">
-                        Mon
-                    </label>
+                <div class="form-group weekday-switch-row-top col-2">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" name="mon" id="mon">
+                        <label class="custom-control-label" for="mon">Mon</label>
+                    </div>
                 </div>
-                <div class="form-group col-5 col-md-4">
+                <div class="form-group col-5 mon-times">
                     <label>Start time </label>
-                    <input id="monStart" class="no-click input-group date">
+                    <input id="monStart" class="no-click input-group date" disabled>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                 </div>
-                <div class="form-group col-5 col-md-4">
+                <div class="form-group col-5 mon-times">
                     <label>End Time </label>
-                    <input id="monEnd" class="no-click input-group date">
+                    <input id="monEnd" class="no-click input-group date" disabled>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                 </div>
             </div>
 
             <!-- Tuesday times -->
             <div class="form-row">
-                <div class="form-group weekday-checkbox-row col-2 col-md-4">
-                    <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="tue">
-                    <label class="form-check-label weekday-checkbox-label" for="tue">
-                        Tue
-                    </label>
+                <div class="form-group weekday-switch-row col-2">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" name="tue" id="tue">
+                        <label class="custom-control-label" for="tue">Tue</label>
+                    </div>
                 </div>
-                <div class="form-group col-5 col-md-4">
-                    <input id="tueStart" class="no-click input-group date">
+                <div class="form-group col-5">
+                    <input id="tueStart" class="no-click input-group date" disabled>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                 </div>
-                <div class="form-group col-5 col-md-4">
-                    <input id="tueEnd" class="no-click input-group date">
+                <div class="form-group col-5">
+                    <input id="tueEnd" class="no-click input-group date" disabled>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                 </div>
             </div>
 
             <!-- Wednesday times -->
             <div class="form-row">
-                <div class="form-group weekday-checkbox-row col-2 col-md-4">
-                    <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="wed">
-                    <label class="form-check-label weekday-checkbox-label" for="wed">
-                        Wed
-                    </label>
+                <div class="form-group weekday-switch-row col-2">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" name="wed" id="wed">
+                        <label class="custom-control-label" for="wed">Wed</label>
+                    </div>
                 </div>
-                <div class="form-group col-5 col-md-4">
-                    <input id="wedStart" class="no-click input-group date">
+                <div class="form-group col-5">
+                    <input id="wedStart" class="no-click input-group date" disabled>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                 </div>
-                <div class="form-group col-5 col-md-4">
-                    <input id="wedEnd" class="no-click input-group date">
+                <div class="form-group col-5">
+                    <input id="wedEnd" class="no-click input-group date" disabled>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                 </div>
             </div>
 
             <!-- Thursday times -->
             <div class="form-row">
-                <div class="form-group weekday-checkbox-row col-2 col-md-4">
-                    <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="thu">
-                    <label class="form-check-label weekday-checkbox-label" for="thu">
-                        Thu
-                    </label>
+                <div class="form-group weekday-switch-row col-2">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" name="thu" id="thu">
+                        <label class="custom-control-label" for="thu">Thu</label>
+                    </div>
                 </div>
-                <div class="form-group col-5 col-md-4">
-                    <input id="thuStart" class="no-click input-group date">
+                <div class="form-group col-5">
+                    <input id="thuStart" class="no-click input-group date" disabled>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                 </div>
-                <div class="form-group col-5 col-md-4">
-                    <input id="thuEnd" class="no-click input-group date">
+                <div class="form-group col-5">
+                    <input id="thuEnd" class="no-click input-group date" disabled>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                 </div>
             </div>
 
             <!-- Friday times -->
             <div class="form-row">
-                <div class="form-group weekday-checkbox-row col-2 col-md-4">
-                    <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="Fri">
-                    <label class="form-check-label weekday-checkbox-label" for="Fri">
-                        Fri
-                    </label>
+                <div class="form-group weekday-switch-row col-2">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" name="fri" id="fri">
+                        <label class="custom-control-label" for="fri">Fri</label>
+                    </div>
                 </div>
-                <div class="form-group col-5 col-md-4">
-                    <input id="friStart" class="no-click input-group date">
+                <div class="form-group col-5">
+                    <input id="friStart" class="no-click input-group date" disabled>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                 </div>
-                <div class="form-group col-5 col-md-4">
-                    <input id="friEnd" class="no-click input-group date">
+                <div class="form-group col-5">
+                    <input id="friEnd" class="no-click input-group date" disabled>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                 </div>
             </div>
 
             <!-- Saturday times -->
             <div class="form-row">
-                <div class="form-group weekday-checkbox-row col-2 col-md-4">
-                    <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="Sat">
-                    <label class="form-check-label weekday-checkbox-label" for="Sat">
-                        Sat
-                    </label>
+                <div class="form-group weekday-switch-row col-2">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" name="sat" id="sat">
+                        <label class="custom-control-label" for="sat">Sat</label>
+                    </div>
                 </div>
-                <div class="form-group col-5 col-md-4">
-                    <input id="satStart" class="no-click input-group date">
+                <div class="form-group col-5">
+                    <input id="satStart" class="no-click input-group date" disabled>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                 </div>
-                <div class="form-group col-5 col-md-4">
-                    <input id="satEnd" class="no-click input-group date">
+                <div class="form-group col-5">
+                    <input id="satEnd" class="no-click input-group date" disabled>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                 </div>
             </div>
 
             <!-- Sunday times -->
             <div class="form-row">
-                <div class="form-group weekday-checkbox-row col-2 col-md-4">
-                    <input class="form-check-input weekday-checkbox" type="checkbox" value="" id="Sun">
-                    <label class="form-check-label weekday-checkbox-label" for="Sun">
-                        Sun
-                    </label>
+                <div class="form-group weekday-switch-row col-2">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" name="sun" id="sun">
+                        <label class="custom-control-label" for="sun">Sun</label>
+                    </div>
                 </div>
-                <div class="form-group col-5 col-md-4">
-                    <input id="sunStart" class="no-click input-group date">
+                <div class="form-group col-5">
+                    <input id="sunStart" class="no-click input-group date" disabled>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                 </div>
-                <div class="form-group col-5 col-md-4">
-                    <input id="sunEnd" class="no-click input-group date">
+                <div class="form-group col-5">
+                    <input id="sunEnd" class="no-click input-group date" disabled>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                 </div>
             </div>
