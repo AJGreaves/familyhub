@@ -355,6 +355,47 @@ function activateTimes($start, $end, $times) {
   }
 }
 
+/**
+ * Functions to make sure at least one checkbox is selected for categories, 
+ * age range and indoor/outdoor in add/edit forms
+ */
+
+$(function(){
+  var categoriesCheckboxes = $('.categories :checkbox[required]');
+  categoriesCheckboxes.change(function(){
+      if(categoriesCheckboxes.is(':checked')) {
+        categoriesCheckboxes.removeAttr('required');
+      } else {
+        categoriesCheckboxes.attr('required', 'required');
+      }
+  });
+});
+
+$(function(){
+  var ageRangeCheckboxes = $('.age-range-js:checkbox[required]');
+  ageRangeCheckboxes.change(function(){
+      if(ageRangeCheckboxes.is(':checked')) {
+        ageRangeCheckboxes.removeAttr('required');
+      } else {
+        ageRangeCheckboxes.attr('required', 'required');
+      }
+  });
+});
+
+$(function(){
+  var inOutCheckboxes = $('.in-out-js:checkbox[required]');
+  inOutCheckboxes.change(function(){
+      if(inOutCheckboxes.is(':checked')) {
+        inOutCheckboxes.removeAttr('required');
+      } else {
+        inOutCheckboxes.attr('required', 'required');
+      }
+  });
+});
+
+
+
+
 $('.submit-js').click(function () {
   let $from = $('#from');
 
