@@ -313,6 +313,37 @@ function activateTimes($start, $end, $times) {
   }
 }
 
+$('input.compare-mon-js').change(function() {
+  let twoTimes = false;
+  let count = 0;
+
+  $('.compare-mon-js').each(function(){
+    if ($(this).val().length > 0 ) {
+      count += 1;
+    } 
+    
+    if (count == 2) {
+      twoTimes = true;
+    }
+  })
+
+  if (twoTimes) {
+    let times = [];
+    $('.compare-mon-js').each(function() {
+      let time = $(this).val();
+      times.push(time);
+    })
+
+  }
+
+    // let compare = $('.compare-mon-js');
+    // console.log(compare);
+    // let first = compare[0];
+    // let second = compare[1];
+  }
+)
+
+
 /**
  * Function to make sure at least one checkbox is selected for categories, 
  * age range and indoor/outdoor in add/edit forms
