@@ -336,13 +336,71 @@ def edit_event_page():
 # =========================================================================== #
 
 # Add new activity page
-@app.route('/add-new-activity')
+@app.route('/add-new-activity', methods=['GET', 'POST'])
 def new_activity_page():
     
     loggedIn = True if 'user' in session else False
 
     if not loggedIn:
         return redirect(url_for('permission_denied'))
+    else: 
+        user = db.users.find_one({"username": session['user']})
+
+    if request.method == 'POST':
+
+        post_request = request.form.to_dict()
+        print('POST REQUEST')
+        print(post_request)
+
+        start = post_request['start'].split('/')
+        start = f"{start[2]}-{start[0]}-{start[1]}"
+        start = datetime.strptime(start, '%Y-%m-%d')
+
+        end = post_request['end'].split('/')
+        end = f"{end[2]}-{end[0]}-{end[1]}"
+        end = datetime.strptime(end, '%Y-%m-%d')
+
+        openTimes = ['monStart','monEnd', 'tueStart', 'tueEnd', 
+                'wedStart', 'wedEnd', 'thuStart', 'thuEnd',
+                'friStart', 'friEnd', 'satStart', 'satEnd',
+                'sunStart', 'sunEnd']
+
+        formattedOpenTimes = { }
+
+        for time_name in openTimes:
+            if post_request.get(time_name):
+                time = time_name
+                time = post_request[time].split(':')
+                time = f"{time[0]}:{time[1]}:00"
+                time = datetime.strptime(time, '%H:%M:%S')
+                formattedOpenTimes[time_name] = time
+        print('FORMATTED OPEN TIMES: ')
+        print(formattedOpenTimes)
+
+
+        # obj = {'username': user['username'], 
+        #         'title': post_request.get('title'),
+        #         'imgUrl': post_request.get('imgUrl'),
+        #         'dates': { 'start': start, 'end': end },
+        #         'address': {'addressLine1': post_request.get('addressLine1'),
+        #                     'postcode': post_request.get('postcode'),
+        #                     'town': post_request.get('town')},
+        #         'ageRange': {'under4': True if post_request.get('under4') else False,
+        #                     'age4to6': True if post_request.get('age4to6') else False,
+        #                     'age6to8': True if post_request.get('age6to8') else False,
+        #                     'age8to10': True if post_request.get('age8to10') else False,
+        #                     'age10to12': True if post_request.get('age10to12') else False,
+        #                     'age12up': True if post_request.get('age12up') else False},
+        #         'indoor': True if post_request.get('indoor') else False,
+        #         'outdoor': True if post_request.get('outdoor') else False,
+        #         'contact': {'url': post_request.get('url'),
+        #                     'email': post_request.get('email'),
+        #                     'facebook': post_request.get('facebook') if post_request.get('facebook') else None,
+        #                     'twitter': post_request.get('twitter') if post_request.get('twitter') else None,
+        #                     'instagram': post_request.get('instagram') if post_request.get('instagram') else None},
+        #         'description': post_request.get('description')}
+
+        # # db.events.insert_one(obj)
 
     return render_template("pages/addactivity.html", 
                             title="Add New Activity", 

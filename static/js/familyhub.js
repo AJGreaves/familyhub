@@ -330,8 +330,6 @@ $(selectors).each(function(i) {
   });
 })
 
-
-
 $('.submit-js').click(function () {
   let $from = $('#from');
 

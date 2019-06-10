@@ -936,7 +936,8 @@ input.no-click {
 #imgUrl,
 #searchInput,
 #login-wrapper input,
-#account-settings-wrapper input {
+#account-settings-wrapper input,
+.full-width {
   max-width: 100%;
 }
 
