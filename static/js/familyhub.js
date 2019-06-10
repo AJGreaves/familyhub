@@ -287,8 +287,9 @@ $('#isFree').click(function () {
   } else {
     $from.attr('required', '').removeAttr('disabled');
   }
-
 })
+
+/* functions to activate start / end times for days only when that day is clicked */
 
 $('#mon').click(function () {
   let $start = $('#monStart')
