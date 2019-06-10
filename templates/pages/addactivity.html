@@ -6,7 +6,7 @@
 
         <div id="add-edit-activity-wrapper" class="container">
             <div class="row p-2 justify-content-center">
-                <form>
+                <form method=POST >
                     <div class="col-12">
                         <h1>Add New Activity</h1>
                         <hr>
@@ -14,8 +14,8 @@
                     {% include 'components/forms/add_edit_activity.html' %}
 
                     <!-- margins line button edge up with filed above it -->
-                    <button class="btn btn-search ml-4" type="submit">Preview</button>
-                    <button class="btn btn-readmore ml-3" type="submit">Publish</button>
+                    <button class="btn btn-search ml-4 submit-js" type="submit">Preview</button>
+                    <button class="btn btn-readmore ml-3 submit-js" type="submit">Publish</button>
                     <button id="delete-button" class="btn btn-delete ml-3">Delete</button>
                 </form>
             </div>
