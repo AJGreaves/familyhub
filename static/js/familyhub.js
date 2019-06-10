@@ -289,56 +289,13 @@ $('#isFree').click(function () {
   }
 })
 
-/* functions to activate start / end times for days only when that day is clicked */
+/* to activate start / end times for days only when that day is clicked */
 
-$('#mon').click(function () {
-  let $start = $('#monStart')
-  let $end = $('#monEnd')
-  let $times = $('.mon-times')
-  activateTimes($start, $end, $times);
-})
+$(".click-days-js").click(function () { 
+  let day = this.id;
+  activateTimes($('#' + day + 'Start'), $('#' + day + 'End'), $('.' + day + '-times'));
+});
 
-$('#tue').click(function () {
-  let $start = $('#tueStart')
-  let $end = $('#tueEnd')
-  let $times = $('.tue-times')
-  activateTimes($start, $end, $times);
-})
-
-$('#wed').click(function () {
-  let $start = $('#wedStart')
-  let $end = $('#wedEnd')
-  let $times = $('.wed-times')
-  activateTimes($start, $end, $times);
-})
-
-$('#thu').click(function () {
-  let $start = $('#thuStart')
-  let $end = $('#thuEnd')
-  let $times = $('.thu-times')
-  activateTimes($start, $end, $times);
-})
-
-$('#fri').click(function () {
-  let $start = $('#friStart')
-  let $end = $('#friEnd')
-  let $times = $('.fri-times')
-  activateTimes($start, $end, $times);
-})
-
-$('#sat').click(function () {
-  let $start = $('#satStart')
-  let $end = $('#satEnd')
-  let $times = $('.sat-times')
-  activateTimes($start, $end, $times);
-})
-
-$('#sun').click(function () {
-  let $start = $('#sunStart')
-  let $end = $('#sunEnd')
-  let $times = $('.sun-times')
-  activateTimes($start, $end, $times);
-})
 
 function activateTimes($start, $end, $times) {
   if ($start.attr('required')) {
