@@ -291,24 +291,69 @@ $('#isFree').click(function () {
 })
 
 $('#mon').click(function () {
-  let $start = $('#monStart');
-  let $end = $('#monEnd');
+  let $start = $('#monStart')
+  let $end = $('#monEnd')
+  let $times = $('.mon-times')
+  activateTimes($start, $end, $times);
+})
 
+$('#tue').click(function () {
+  let $start = $('#tueStart')
+  let $end = $('#tueEnd')
+  let $times = $('.tue-times')
+  activateTimes($start, $end, $times);
+})
+
+$('#wed').click(function () {
+  let $start = $('#wedStart')
+  let $end = $('#wedEnd')
+  let $times = $('.wed-times')
+  activateTimes($start, $end, $times);
+})
+
+$('#thu').click(function () {
+  let $start = $('#thuStart')
+  let $end = $('#thuEnd')
+  let $times = $('.thu-times')
+  activateTimes($start, $end, $times);
+})
+
+$('#fri').click(function () {
+  let $start = $('#friStart')
+  let $end = $('#friEnd')
+  let $times = $('.fri-times')
+  activateTimes($start, $end, $times);
+})
+
+$('#sat').click(function () {
+  let $start = $('#satStart')
+  let $end = $('#satEnd')
+  let $times = $('.sat-times')
+  activateTimes($start, $end, $times);
+})
+
+$('#sun').click(function () {
+  let $start = $('#sunStart')
+  let $end = $('#sunEnd')
+  let $times = $('.sun-times')
+  activateTimes($start, $end, $times);
+})
+
+function activateTimes($start, $end, $times) {
   if ($start.attr('required')) {
     $start.attr('disabled', '').removeAttr('required').val('');
     $end.attr('disabled', '').removeAttr('required').val('');
-    $('.monday-times').each(function(){
+    $times.each(function(){
       $(this).removeClass('active');
     })
   } else {
     $start.attr('required', '').removeAttr('disabled');
     $end.attr('required', '').removeAttr('disabled');
-    $('.monday-times').each(function(){
+    $times.each(function(){
       $(this).addClass('active');
     })
   }
-
-})
+}
 
 $('.submit-js').click(function () {
   let $from = $('#from');

@@ -870,11 +870,23 @@ a.fh-link:hover {
 
 /*  stops user clicking on these elements until they are removed by clicking a switch  */
 .no-click,
-.mon-times {
+.mon-times,
+.tue-times,
+.wed-times,
+.thu-times,
+.fri-times,
+.sat-times,
+.sun-times {
   pointer-events: none;
 }
 
-.mon-times.active {
+.mon-times.active,
+.tue-times.active,
+.wed-times.active,
+.thu-times.active,
+.fri-times.active,
+.sat-times.active,
+.sun-times.active {
   pointer-events: auto;
 }
 
