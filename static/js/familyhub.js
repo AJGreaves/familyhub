@@ -313,7 +313,10 @@ function activateTimes($start, $end, $times) {
   }
 }
 
-// $('input.compare-mon-js').change(function()
+/**
+ * activates functions to count and compare opening times
+ * on each day of the week
+ */
 $('input.compare-js').change(function() {
   
   let dayId = this.id;
@@ -325,6 +328,12 @@ $('input.compare-js').change(function() {
   }
 
 })
+
+/**
+ * Returns true if both start and end fields for a specific
+ * day of the week have been filled in
+ * @param {string} day 
+ */
 
 function countTimes(day) {
   let count = 0;
@@ -347,6 +356,7 @@ function countTimes(day) {
  * Function takes array of two values times and compares them to see if the 
  * user selected end time the same as or before the start time. If incorrect input 
  * the end time is deleted so user cannot submit form with incorrect data
+ * @param {string} day 
  */
 
 function compareTimes(day) {
@@ -354,10 +364,12 @@ function compareTimes(day) {
   let times = [];
   input =  $('.compare-' + day + '-js');
   dayId = $('#' + day + 'End');
+
   input.each(function() {
     let time = $(this).val();
     times.push(time);
   })
+  
   first = times[0].split(':').map(Number);
   second = times[1].split(':').map(Number);
 
