@@ -289,7 +289,7 @@ $('#isFree').click(function () {
   }
 })
 
-/* to activate start / end times for days only when that day is clicked */
+/* to activate fields to input start / end times for days only when that day is clicked */
 
 $(".click-days-js").click(function () { 
   let day = this.id;
@@ -314,7 +314,6 @@ function activateTimes($start, $end, $times) {
 }
 
 $('input.compare-mon-js').change(function() {
-  let twoTimes = false;
   let count = 0;
 
   $('.compare-mon-js').each(function(){
@@ -323,26 +322,35 @@ $('input.compare-mon-js').change(function() {
     } 
     
     if (count == 2) {
-      twoTimes = true;
+      compareTimes();
     }
   })
+})
 
-  if (twoTimes) {
-    let times = [];
-    $('.compare-mon-js').each(function() {
-      let time = $(this).val();
-      times.push(time);
-    })
+/**
+ * Function takes array of two values times and compares them to see if the 
+ * user selected end time the same as or before the start time. 
+ */
 
-  }
+function compareTimes() {
+  
+  let times = [];
+  input =  $('.compare-mon-js');
+  $(input).each(function() {
+    let time = $(this).val();
+    times.push(time);
+  })
+  first = times[0].split(':').map(Number);
+  second = times[1].split(':').map(Number);
 
-    // let compare = $('.compare-mon-js');
-    // console.log(compare);
-    // let first = compare[0];
-    // let second = compare[1];
-  }
-)
-
+  if ((first[0] === second[0]) && (first[1] === second[1])) {
+    alert("Your start and finish times cannot be the same.");
+  } else if ((first[0] > second[0]) || ((first[0] === second[0]) && (first[1] > second[1]))) {
+    alert("You selected an earlier finish time than the start time!");
+    $('#monEnd').removeAttr('value');
+  } 
+  
+}
 
 /**
  * Function to make sure at least one checkbox is selected for categories, 
