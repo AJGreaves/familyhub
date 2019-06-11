@@ -313,30 +313,48 @@ function activateTimes($start, $end, $times) {
   }
 }
 
-$('input.compare-mon-js').change(function() {
-  let count = 0;
+// $('input.compare-mon-js').change(function()
+$('input.compare-js').change(function() {
+  
+  let dayId = this.id;
+  let day = dayId.substring(0, 3);
+  console.log(day);
 
-  $('.compare-mon-js').each(function(){
+  if (countTimes(day)) {
+    compareTimes(day);
+  }
+
+})
+
+function countTimes(day) {
+  let count = 0;
+  let selector = $('.compare-'+ day +'-js');
+
+  selector.each(function(){
     if ($(this).val().length > 0 ) {
       count += 1;
     } 
-    
-    if (count == 2) {
-      compareTimes();
-    }
-  })
-})
+  });
+
+  if (count == 2) {
+    return true;
+  } else {
+    return false
+  }
+}
 
 /**
  * Function takes array of two values times and compares them to see if the 
- * user selected end time the same as or before the start time. 
+ * user selected end time the same as or before the start time. If incorrect input 
+ * the end time is deleted so user cannot submit form with incorrect data
  */
 
-function compareTimes() {
+function compareTimes(day) {
   
   let times = [];
-  input =  $('.compare-mon-js');
-  $(input).each(function() {
+  input =  $('.compare-' + day + '-js');
+  dayId = $('#' + day + 'End');
+  input.each(function() {
     let time = $(this).val();
     times.push(time);
   })
@@ -345,9 +363,10 @@ function compareTimes() {
 
   if ((first[0] === second[0]) && (first[1] === second[1])) {
     alert("Your start and finish times cannot be the same.");
+    dayId.val('');
   } else if ((first[0] > second[0]) || ((first[0] === second[0]) && (first[1] > second[1]))) {
     alert("You selected an earlier finish time than the start time!");
-    $('#monEnd').removeAttr('value');
+    dayId.val('');
   } 
   
 }
