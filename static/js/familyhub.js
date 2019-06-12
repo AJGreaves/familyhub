@@ -109,6 +109,7 @@ if (document.querySelector('#login-form')) {
     showLoading();
     fetch('/login', {
         method: 'POST',
+        cors: '*same-origin',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -125,6 +126,52 @@ if (document.querySelector('#login-form')) {
           alertModal(message);
         } else if (data.passwordCorrect) {
           openLoggedInModal(data.username);
+        }
+      })
+      .catch(err => console.log(err));
+
+  });
+}
+
+if (document.querySelector('#edit-account-form')) {
+
+  const editAccountForm = document.querySelector('#edit-account-form');
+
+  editAccountForm.addEventListener('submit', (e) => {
+    // prevents default behaviour of submit button to refresh page
+    e.preventDefault();
+
+    const oldEmail = document.querySelector('#oldEmailInput').value;
+    const newEmail = document.querySelector('#newEmailInput').value;
+    const oldPassword = document.querySelector('#oldPasswordInput').value;
+    const newPassword = document.querySelector('#newPasswordInput').value;
+
+    const data = {
+      oldEmail: oldEmail,
+      newEmail: newEmail,
+      oldPassword: oldPassword,
+      newPassword: newPassword
+    }
+    console.log(data)
+    showLoading();
+    fetch('/settings', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+      })
+      .then(res => res.json())
+      .then(data => {
+        hideLoading();
+        if (data.emailUpdated) {
+          alert('your email has been successfully updated');
+        } else if (data.passwordUpdated) {
+          alert('your password has been successfully updated');
+        } else if (data.changeEmail == false) {
+          alert('incorrect current email');
+        } else if (data.changePassword == false) {
+          alert('incorrect current password');
         }
       })
       .catch(err => console.log(err));

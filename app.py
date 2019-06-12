@@ -219,13 +219,48 @@ def event_listing_page():
 
 # =========================================================================== #
 
-# Search page
-@app.route('/settings')
+# Settings page
+@app.route('/settings', methods=['GET', 'POST'])
 def settings_page():
     loggedIn = True if 'user' in session else False
 
     if not loggedIn:
         return redirect(url_for('permission_denied'))
+
+    else: 
+        user = db.users.find_one({"username": session['user']})
+
+    if request.method == 'POST':
+
+        post_request = request.get_json()
+
+        print(post_request)
+
+        changeEmail = True if post_request['newEmail'] else False
+        changePassword = True if post_request['newPassword'] else False
+        emailUpdated = False
+        passwordUpdated = False
+        print(changeEmail)
+
+
+        if changeEmail:
+            if user['email'] == post_request['oldEmail']:
+                db.users.find_one_and_update({"_id": user["_id"]}, {"$": {"email", post_request["newEmail"]}})
+                emailUpdated = True
+
+        if changePassword:
+            if check_password_hash(user['password'], post_request['oldPassword']):
+                post_request['newPassword'] = generate_password_hash(post_request['newPassword'])
+                db.users.find_one_and_update({"_id": user["_id"]}, {"$": {"password", post_request["newPassword"]}})
+                passwordUpdated = True
+
+        response = {
+            "changeEmail": changeEmail,
+            "changePassword": changePassword,
+            "emailUpdated": emailUpdated,
+            "passwordUpdated": passwordUpdated
+        }
+        return json.dumps(response)
 
     return render_template("pages/settings.html", 
                             title="Account Settings", 
