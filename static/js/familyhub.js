@@ -137,7 +137,7 @@ if (document.querySelector('#login-form')) {
  * of the alert modal to match the needs for this use.
  * @param {string} message 
  */
-function alertModal(message) {
+function alertModal(message, date1, date2) {
   switch (message) {
     case 'no user match':
       $('#alertHeading').text('Sorry');
@@ -154,6 +154,15 @@ function alertModal(message) {
     case 'start end times wrong':
       $('#alertHeading').text('Error');
       $('#alertMessage').text('You selected an earlier finish time than the start time!');
+      break;
+    case 'dates match':
+      $('#alertHeading').text('Error');
+      $('#alertMessage').text('Your start and finish dates cannot be the same.');
+      break;
+    case 'start end dates wrong':
+      $('#alertHeading').text('Error');
+      $('#alertMessage').text('You input a finish date ' + date2);
+      $('#alertMessageLine2').text('that is before your start date ' + date1);
       break;
     default:
       break;
@@ -417,12 +426,12 @@ function compareDates(key) {
   second = dates[1].split('/').map(Number);
 
   if (first[0] === second[0] && first[1] === second[1] && first[2] === second[2]) {
-    alert('those dates are the same!');
+    alertModal('dates match');
     $('#end').val('');
   } else if (first[2] > second[2] 
           || first[2] === second[2] && first[1] > second[1]
           || first[2] === second[2] && first[1] === second[1] && first[0] > second[0]) {
-    alert('that end date ('+ dates[1] +') is before the start date ('+ dates[0] +')!');
+    alertModal('start end dates wrong', dates[0], dates[1]);
     $('#end').val('');
   }
 }
