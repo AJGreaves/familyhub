@@ -349,7 +349,7 @@ $('input.compare-js').change(function() {
 
   if (day === 'sta' || day === 'end') {
     if (countTimes("date")) {
-      compareDates("date");
+      compareDates();
     }
   }
 
@@ -383,9 +383,9 @@ function countTimes(day) {
 }
 
 /**
- * Function takes array of two values times and compares them to see if the 
- * user selected end time the same as or before the start time. If incorrect input 
- * the end time is deleted so user cannot submit form with incorrect data
+ * Function uses day value string to construct array of the two times input and compares 
+ * them to see if the user selected end time the same as or before the start time. 
+ * If incorrect input the end time is deleted so user cannot submit form with incorrect data
  * @param {string} day 
  */
 
@@ -413,9 +413,15 @@ function compareTimes(day) {
   
 }
 
-function compareDates(key) {
+/**
+ * Function constructs an array of the two dates input and compares 
+ * them to see if the user selected end date the same as or before the start date. 
+ * If incorrect input the end date is deleted so user cannot submit form with incorrect data
+ */
+
+function compareDates() {
   let dates = [];
-  input =  $('.compare-' + key + '-js');
+  input =  $('.compare-date-js');
 
   input.each(function() {
     let date = $(this).val();
