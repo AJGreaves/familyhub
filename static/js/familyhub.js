@@ -339,8 +339,9 @@ function activateTimes($start, $end, $times) {
 }
 
 /**
- * activates functions to count and compare opening times
- * on each day of the week
+ * activates functions to count and 
+ * compare date input and time input values
+ * and return alert modals for incorrect input
  */
 $('input.compare-js').change(function() {
   
@@ -349,11 +350,9 @@ $('input.compare-js').change(function() {
 
   if (day === 'sta' || day === 'end') {
     if (countTimes("date")) {
-      compareDates();
+      compareDates("date");
     }
-  }
-
-  if (countTimes(day)) {
+  } else if (countTimes(day)) {
     compareTimes(day);
   }
 
@@ -378,7 +377,7 @@ function countTimes(day) {
   if (count == 2) {
     return true;
   } else {
-    return false
+    return false;
   }
 }
 
