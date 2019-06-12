@@ -337,12 +337,10 @@ $('input.compare-js').change(function() {
   
   let dayId = this.id;
   let day = dayId.substring(0, 3);
-  console.log(day);
 
   if (day === 'sta' || day === 'end') {
     if (countTimes("date")) {
-      dates = $('.compare-date-js').val();
-      console.log(dates);
+      compareDates("date");
     }
   }
 
@@ -406,8 +404,27 @@ function compareTimes(day) {
   
 }
 
-function compareDates(date) {
-  console.log(date);
+function compareDates(key) {
+  let dates = [];
+  input =  $('.compare-' + key + '-js');
+
+  input.each(function() {
+    let date = $(this).val();
+    dates.push(date);
+  })
+
+  first = dates[0].split('/').map(Number);
+  second = dates[1].split('/').map(Number);
+
+  if (first[0] === second[0] && first[1] === second[1] && first[2] === second[2]) {
+    alert('those dates are the same!');
+    $('#end').val('');
+  } else if (first[2] > second[2] 
+          || first[2] === second[2] && first[1] > second[1]
+          || first[2] === second[2] && first[1] === second[1] && first[0] > second[0]) {
+    alert('that end date ('+ dates[1] +') is before the start date ('+ dates[0] +')!');
+    $('#end').val('');
+  }
 }
 
 /**
