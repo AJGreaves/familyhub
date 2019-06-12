@@ -147,11 +147,24 @@ function alertModal(message) {
       $('#alertHeading').text('Incorrect password');
       $('#alertMessage').text('Please try again.');
       break;
+    case 'times match':
+      $('#alertHeading').text('Error');
+      $('#alertMessage').text('Your start and finish times cannot be the same.');
+      break;
+    case 'start end times wrong':
+      $('#alertHeading').text('Error');
+      $('#alertMessage').text('You selected an earlier finish time than the start time!');
+      break;
     default:
       break;
   }
-  $('#alertModal').addClass('active');
+  $('#alertModal').toggleClass('active');
 }
+
+$('#alertModalClose').click(function(e) {
+  e.preventDefault();
+  alertModal();
+})
 
 /**
  * Function takes username for this user passed from the 
@@ -173,7 +186,7 @@ jQuery.fn.carousel.Constructor.TRANSITION_DURATION = 2000;
 
 // CREDIT: code for floating buttons taken from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp 
 window.onscroll = function () {
-  scrollFunction()
+  scrollFunction();
 };
 
 // makes floating buttons for search and go to top visible once user starts scrolling.
@@ -235,7 +248,10 @@ function openDeleteWarningModal() {
   $(datepick).datepicker({
     autoclose: true,
     todayHighlight: true,
-    uiLibrary: 'bootstrap4'
+    uiLibrary: 'bootstrap4',
+    format: 'dd/mm/yyyy',
+    todayBtn: "linked",
+    language: "it",
   });
 });
 
@@ -323,6 +339,13 @@ $('input.compare-js').change(function() {
   let day = dayId.substring(0, 3);
   console.log(day);
 
+  if (day === 'sta' || day === 'end') {
+    if (countTimes("date")) {
+      dates = $('.compare-date-js').val();
+      console.log(dates);
+    }
+  }
+
   if (countTimes(day)) {
     compareTimes(day);
   }
@@ -369,18 +392,22 @@ function compareTimes(day) {
     let time = $(this).val();
     times.push(time);
   })
-  
+
   first = times[0].split(':').map(Number);
   second = times[1].split(':').map(Number);
 
   if ((first[0] === second[0]) && (first[1] === second[1])) {
-    alert("Your start and finish times cannot be the same.");
+    alertModal("times match");
     dayId.val('');
   } else if ((first[0] > second[0]) || ((first[0] === second[0]) && (first[1] > second[1]))) {
-    alert("You selected an earlier finish time than the start time!");
+    alertModal("start end times wrong");
     dayId.val('');
   } 
   
+}
+
+function compareDates(date) {
+  console.log(date);
 }
 
 /**
