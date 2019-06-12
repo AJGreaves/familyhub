@@ -98,7 +98,7 @@ def new_event_page():
 
         # credit for date processing code to fellow student Seán Murphy 
         date = post_request['date'].split('/')
-        date = f"{date[2]}-{date[0]}-{date[1]}"
+        date = f"{date[2]}-{date[1]}-{date[0]}"
         date = datetime.strptime(date, '%Y-%m-%d')
 
         if post_request.get('from'):
@@ -364,7 +364,7 @@ def new_activity_page():
         print(post_request)
 
         start = post_request['start'].split('/')
-        start = f"{start[2]}-{start[0]}-{start[1]}"
+        start = f"{start[2]}-{start[1]}-{start[0]}"
         start = datetime.strptime(start, '%Y-%m-%d')
 
         end = post_request['end'].split('/')
