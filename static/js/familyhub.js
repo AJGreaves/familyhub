@@ -349,7 +349,7 @@ $('input.compare-js').change(function() {
   let day = dayId.substring(0, 3);
 
   if (day === 'sta' || day === 'end') {
-    if (countTimes("date")) {
+    if (countTwo('.compare-date-js')) {
       compareDates("date");
     }
   } else if (countTimes(day)) {
@@ -359,14 +359,13 @@ $('input.compare-js').change(function() {
 })
 
 /**
- * Returns true if both start and end fields for a specific
- * day of the week have been filled in
+ * Returns true if both fileds to be compared have been filled in
  * @param {string} day 
  */
 
-function countTimes(day) {
+function countTwo(key) {
   let count = 0;
-  let selector = $('.compare-'+ day +'-js');
+  let selector = $(key);
 
   selector.each(function(){
     if ($(this).val().length > 0 ) {
@@ -470,3 +469,48 @@ $('.submit-js').click(function () {
 $(".collapse-link").click(function() {
   $(this).children('i').toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
 })
+
+$('.email-input-js').change(function() {
+  if (noValues('.email-input-js')) {
+    $('.email-input-js').each(function() {
+      $(this).removeAttr('required');
+    })
+    $('#editAccountBtn').attr('disabled');
+  }
+
+  if (countTwo('.email-input-js')) {
+    input =  $('.email-input-js');
+    emails = []
+    input.each(function() {
+      $(this).attr('required','required');
+      let email = $(this).val();
+      emails.push(email);
+    })
+
+    if (emails[0] === emails[1]) {
+      alert('both these emails are the same');
+      $('#newEmailInput').val('');
+    }
+
+  $('#editAccountBtn').removeAttr('disabled');
+  } else {
+    $('#editAccountBtn').attr('disabled','disabled');
+  }
+})
+
+function noValues(key) {
+  let count = 0;
+  let selector = $(key);
+
+  selector.each(function(){
+    if ($(this).val().length > 0 ) {
+      count += 1;
+    } 
+  });
+
+  if (count === 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
