@@ -470,33 +470,48 @@ $(".collapse-link").click(function() {
   $(this).children('i').toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
 })
 
-$('.email-input-js').change(function() {
-  if (noValues('.email-input-js')) {
-    $('.email-input-js').each(function() {
-      $(this).removeAttr('required');
-    })
-    $('#editAccountBtn').attr('disabled');
-  }
+/**
+ * function for settings page where users can change their email address and/or password in the database
+ * settings page has two fields each for making this change. First field to add the current email or password, 
+ * and second field to add the replacement. This function activates and disables the relevant fields so the form
+ * cannot be sent with only one of the two fields filled in, but deactivates the required attribute on a pair
+ * of fields if both are emptied. 
+ */
 
-  if (countTwo('.email-input-js')) {
-    input =  $('.email-input-js');
-    emails = []
-    input.each(function() {
-      $(this).attr('required','required');
-      let email = $(this).val();
-      emails.push(email);
-    })
-
-    if (emails[0] === emails[1]) {
-      alert('both these emails are the same');
-      $('#newEmailInput').val('');
+inputClasses = [".email-input-js", ".password-input-js"]
+$(inputClasses).each(function(i) {
+  $(inputClasses[i]).change(function() {
+    if (noValues(inputClasses[i])) {
+      $(inputClasses[i]).each(function() {
+        $(this).removeAttr('required');
+      })
+      $('#editAccountBtn').attr('disabled');
     }
-
-  $('#editAccountBtn').removeAttr('disabled');
-  } else {
-    $('#editAccountBtn').attr('disabled','disabled');
-  }
+  
+    if (countTwo(inputClasses[i])) {
+      input =  $(inputClasses[i]);
+      values = []
+      input.each(function() {
+        $(this).attr('required','required');
+        let val = $(this).val();
+        values.push(val);
+      })
+  
+      if (values[0] === values[1] && values[i] === ".email-input-js") {
+        alert('both these emails are the same');
+        $('#newEmailInput').val('');
+      } else if (values[0] === values[1] && values[i] === ".password-input-js") {
+        alert('both these passwords are the same');
+        $('#newPasswordInput').val('');
+      }
+  
+    $('#editAccountBtn').removeAttr('disabled');
+    } else {
+      $('#editAccountBtn').attr('disabled','disabled');
+    }
+  })
 })
+
 
 function noValues(key) {
   let count = 0;
