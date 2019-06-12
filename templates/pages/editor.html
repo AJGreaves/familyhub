@@ -1,0 +1,45 @@
+{% extends 'layout/base.html' %} {% block content %}
+
+    <main>
+        <!-- Section: editor for activities and events -->
+        <section>
+
+            <div id="add-edit-activity-wrapper" class="container">
+                <div class="row p-2 justify-content-center">
+                    <form method=POST >
+                        <div class="col-12">
+                            <h1>
+                                {% if editor == 'new' %}Add New 
+                                {% elif editor == 'edit' %}Edit
+                                {% endif %}
+                                {% if type == 'activity' %} Activity 
+                                {% elif type == 'event' %} Event 
+                                {% endif %}
+                            </h1>
+                            <hr>
+                        </div>
+
+                        {% if type == 'activity' %}
+                        {% include 'components/forms/add_edit_activity.html' %}
+                        {% elif type == 'event' %}
+                        {% include 'components/forms/add_edit_event.html' %}
+                        {% endif %}
+                        
+
+                        <!-- margins line button edge up with filed above it -->
+                        <button class="btn btn-search ml-4 submit-js" type="submit">Preview</button>
+                        <button class="btn btn-readmore ml-3 submit-js" type="submit">
+                                {% if editor == 'new' %}Publish 
+                                {% elif editor == 'edit' %}Update
+                                {% endif %}
+                        </button>
+                        <button id="delete-button" class="btn btn-delete ml-3">Delete</button>
+                    </form>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+{% endblock %}

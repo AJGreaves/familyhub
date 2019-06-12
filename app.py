@@ -71,73 +71,6 @@ def contact_page():
 
 # =========================================================================== #
 
-# Add new event page
-
-# Checks if user is logged in, if not redirects to permission denied page.
-# Gets user data from the database using the session username.
-# Converts data from form into dict, so can be processed before sending to database.
-# Processes date information to turn it into format needed to store date in mongodb.
-# Processes number string into int for storing correctly.
-# creates new object with username from post_request dict, username from databas and
-# all boolean values converted as needed to be store correctly in the database,
-# and finally inserts that data into the database.
-
-@app.route('/add-new-event', methods=['GET', 'POST'])
-def new_event_page():
-
-    loggedIn = True if 'user' in session else False
-
-    if not loggedIn:
-        return redirect(url_for('permission_denied'))
-    else: 
-        user = db.users.find_one({"username": session['user']})
-
-    if request.method == 'POST':
-
-        post_request = request.form.to_dict()
-
-        # credit for date processing code to fellow student Seán Murphy 
-        date = post_request['date'].split('/')
-        date = f"{date[2]}-{date[1]}-{date[0]}"
-        date = datetime.strptime(date, '%Y-%m-%d')
-
-        if post_request.get('from'):
-            price_string = post_request.get('from')
-            price_int = int(price_string)
-
-        obj = {'username': user['username'], 
-                'title': post_request.get('title'),
-                'imgUrl': post_request.get('imgUrl'),
-                'date': date, 
-                'address': {'addressLine1': post_request.get('addressLine1'),
-                            'postcode': post_request.get('postcode'),
-                            'town': post_request.get('town')},
-                'ageRange': {'under4': True if post_request.get('under4') else False,
-                            'age4to6': True if post_request.get('age4to6') else False,
-                            'age6to8': True if post_request.get('age6to8') else False,
-                            'age8to10': True if post_request.get('age8to10') else False,
-                            'age10to12': True if post_request.get('age10to12') else False,
-                            'age12up': True if post_request.get('age12up') else False},
-                'price': {'from': price_int if post_request.get('from') else None,
-                            'isFree': True if post_request.get('isFree') else False},
-                'indoor': True if post_request.get('indoor') else False,
-                'outdoor': True if post_request.get('outdoor') else False,
-                'contact': {'url': post_request.get('url'),
-                            'email': post_request.get('email'),
-                            'facebook': post_request.get('facebook') if post_request.get('facebook') else None,
-                            'twitter': post_request.get('twitter') if post_request.get('twitter') else None,
-                            'instagram': post_request.get('instagram') if post_request.get('instagram') else None},
-                'description': post_request.get('description')}
-
-        db.events.insert_one(obj)
-
-    return render_template("pages/addevent.html", 
-                            title="Add New Event", 
-                            loggedIn=loggedIn,
-                            keywords=Keywords.generic())
-
-# =========================================================================== #
-
 # new account page
 
 # Takes data collected with fetch in JS, checks if user already exists in the database.
@@ -318,6 +251,75 @@ def my_account_page():
 
 # =========================================================================== #
 
+# Add new event page
+
+# Checks if user is logged in, if not redirects to permission denied page.
+# Gets user data from the database using the session username.
+# Converts data from form into dict, so can be processed before sending to database.
+# Processes date information to turn it into format needed to store date in mongodb.
+# Processes number string into int for storing correctly.
+# creates new object with username from post_request dict, username from databas and
+# all boolean values converted as needed to be store correctly in the database,
+# and finally inserts that data into the database.
+
+@app.route('/add-new-event', methods=['GET', 'POST'])
+def new_event_page():
+
+    loggedIn = True if 'user' in session else False
+
+    if not loggedIn:
+        return redirect(url_for('permission_denied'))
+    else: 
+        user = db.users.find_one({"username": session['user']})
+
+    if request.method == 'POST':
+
+        post_request = request.form.to_dict()
+
+        # credit for date processing code to fellow student Seán Murphy 
+        date = post_request['date'].split('/')
+        date = f"{date[2]}-{date[1]}-{date[0]}"
+        date = datetime.strptime(date, '%Y-%m-%d')
+
+        if post_request.get('from'):
+            price_string = post_request.get('from')
+            price_int = int(price_string)
+
+        obj = {'username': user['username'], 
+                'title': post_request.get('title'),
+                'imgUrl': post_request.get('imgUrl'),
+                'date': date, 
+                'address': {'addressLine1': post_request.get('addressLine1'),
+                            'postcode': post_request.get('postcode'),
+                            'town': post_request.get('town')},
+                'ageRange': {'under4': True if post_request.get('under4') else False,
+                            'age4to6': True if post_request.get('age4to6') else False,
+                            'age6to8': True if post_request.get('age6to8') else False,
+                            'age8to10': True if post_request.get('age8to10') else False,
+                            'age10to12': True if post_request.get('age10to12') else False,
+                            'age12up': True if post_request.get('age12up') else False},
+                'price': {'from': price_int if post_request.get('from') else None,
+                            'isFree': True if post_request.get('isFree') else False},
+                'indoor': True if post_request.get('indoor') else False,
+                'outdoor': True if post_request.get('outdoor') else False,
+                'contact': {'url': post_request.get('url'),
+                            'email': post_request.get('email'),
+                            'facebook': post_request.get('facebook') if post_request.get('facebook') else None,
+                            'twitter': post_request.get('twitter') if post_request.get('twitter') else None,
+                            'instagram': post_request.get('instagram') if post_request.get('instagram') else None},
+                'description': post_request.get('description')}
+
+        db.events.insert_one(obj)
+
+    return render_template("pages/editor.html", 
+                            title="Add New Event", 
+                            editor="new",
+                            type="event",
+                            loggedIn=loggedIn,
+                            keywords=Keywords.generic())
+
+# =========================================================================== #
+
 # Edit existing event page
 @app.route('/edit-event')
 def edit_event_page():
@@ -327,8 +329,10 @@ def edit_event_page():
     if not loggedIn:
         return redirect(url_for('permission_denied'))
 
-    return render_template("pages/editevent.html", 
+    return render_template("pages/editor.html", 
                             title="Edit Event", 
+                            editor="edit",
+                            type="event",
                             loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
@@ -434,8 +438,10 @@ def new_activity_page():
 
         db.activities.insert_one(obj)
 
-    return render_template("pages/addactivity.html", 
+    return render_template("pages/editor.html", 
                             title="Add New Activity", 
+                            editor="new",
+                            type="activity",
                             loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
@@ -451,8 +457,10 @@ def edit_activity_page():
     if not loggedIn:
         return redirect(url_for('permission_denied'))
 
-    return render_template("pages/editactivity.html", 
+    return render_template("pages/editor.html", 
                             title="Edit Activity", 
+                            editor="edit",
+                            type="activity",
                             loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
