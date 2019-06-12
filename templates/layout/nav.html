@@ -55,7 +55,7 @@
                 <div class="dropdown-menu bg-platinum" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{{url_for('my_account_page')}}">My Listings</a>
                     <a class="dropdown-item" href="{{url_for('new_event_page')}}">Add New Event</a>
-                    <a class="dropdown-item" href="{{url_for('new_activity_page')}}">Add New Activity</a>
+                    <a class="dropdown-item" href="{{url_for('new_activity_page', username=session['user'])}}">Add New Activity</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="{{url_for('settings_page')}}">Settings</a>
                     <a class="dropdown-item" href="{{url_for('logout')}}">Log out</a>

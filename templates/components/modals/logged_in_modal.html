@@ -18,7 +18,7 @@
                         <a href="{{url_for('new_event_page')}}" class="btn btn-create my-2" aria-label="Add new event">Add new event</a>
                     </div>
                     <div class="col-12 col-md-4">
-                        <a href="{{url_for('new_activity_page')}}" class="btn btn-search my-2" aria-label="Add new activity">Add new activity</a>
+                        <a href="{{url_for('new_activity_page', username=session['user'])}}" class="btn btn-search my-2" aria-label="Add new activity">Add new activity</a>
                     </div>
                 </div>
             </div>

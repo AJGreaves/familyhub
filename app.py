@@ -229,6 +229,7 @@ def settings_page():
 
     return render_template("pages/settings.html", 
                             title="Account Settings", 
+                            loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
 
@@ -350,8 +351,8 @@ def edit_event_page():
 # all boolean values converted as needed to be store correctly in the database,
 # and finally inserts that data into the database.
 
-@app.route('/add-new-activity', methods=['GET', 'POST'])
-def new_activity_page():
+@app.route('/editor/<username>/new-activity', methods=['GET', 'POST'])
+def new_activity_page(username):
     
     loggedIn = True if 'user' in session else False
 

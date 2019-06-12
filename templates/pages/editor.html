@@ -18,14 +18,13 @@
                             </h1>
                             <hr>
                         </div>
-
+                        
                         {% if type == 'activity' %}
                         {% include 'components/forms/add_edit_activity.html' %}
                         {% elif type == 'event' %}
                         {% include 'components/forms/add_edit_event.html' %}
                         {% endif %}
                         
-
                         <!-- margins line button edge up with filed above it -->
                         <button class="btn btn-search ml-4 submit-js" type="submit">Preview</button>
                         <button class="btn btn-readmore ml-3 submit-js" type="submit">
