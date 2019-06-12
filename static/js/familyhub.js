@@ -466,3 +466,7 @@ $('.submit-js').click(function () {
     $from.val('0');
   }
 })
+
+$(".collapse-link").click(function() {
+  $(this).children('i').toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
+})

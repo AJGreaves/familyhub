@@ -52,6 +52,16 @@ footer h4 {
 /* ------------------------------
     Buttons
 ------------------------------ */
+button:disabled {
+  background-color: #926b65;
+  border: #926b65;
+}
+
+button:disabled:hover {
+  background-color: #746d6c;
+  border: #746d6c;
+}
+
 .btn {
   font-weight: 500;
   text-transform: capitalize;
@@ -827,6 +837,7 @@ td {
     Forms
 ------------------------------ */
 a.fh-link,
+#account-settings-wrapper a,
 #contact-wrapper a {
   color: #5ca4a9;
   -webkit-transition: all 0.3s ease-in-out 0.3s;
@@ -834,8 +845,13 @@ a.fh-link,
 }
 
 #contact-wrapper a:hover,
+#account-settings-wrapper a:hover,
 a.fh-link:hover {
   color: #346861;
+}
+
+#account-settings-wrapper a {
+  font-size: 1.1rem;
 }
 
 #create-account-wrapper h3,
@@ -848,6 +864,10 @@ a.fh-link:hover {
   color: #5ca4a9;
   margin-bottom: 1.2rem;
   text-transform: capitalize;
+}
+
+#account-settings-wrapper h3 {
+  color: #ed6a5a;
 }
 
 #login-wrapper h3 {
@@ -949,6 +969,10 @@ input.no-click {
 .custom-control-input:checked ~ .custom-control-label::before {
   border-color: #5ca4a9;
   background-color: #5ca4a9;
+}
+
+#edit-account-form input {
+  margin-bottom: 1rem;
 }
 
 /* ------------------------------

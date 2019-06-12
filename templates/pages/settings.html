@@ -14,22 +14,27 @@
                 <div class="row justify-content-center">
                     <div class="col-10 col-sm-8 col-md-6 col-xl-4 card familyhub-card p-4">
                         <h3>Account Settings</h3>
-                        <form id="new-account-form">
-                            <div class="form-group">
-                                <label for="oldEmailInput">Change email</label>
-                                <input type="email" class="form-control" id="oldEmailInput" aria-describedby="emailHelp" placeholder="Current email">
+                        <hr>
+                        <form id="edit-account-form" method="POST">
+                            <div class="mb-4">
+                                <a data-toggle="collapse" href="#emailCollapse" class="collapse-link" aria-expanded="false" aria-controls="emailCollapse"><i class="fas fa-chevron-down"></i> Change email </a>
                             </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control" id="newEmailInput" aria-describedby="emailHelp" placeholder="New email">
+                            <div id="emailCollapse" class="form-group collapse">
+                                <label for="oldEmailInput">Current email</label>
+                                <input name="oldEmailInput" type="email" class="form-control" id="oldEmailInput" aria-describedby="emailHelp" placeholder="Current email">
+                                <label for="newEmailInput">New email</label>
+                                <input name="newEmailInput" type="email" class="form-control" id="newEmailInput" aria-describedby="emailHelp" placeholder="New email">
                             </div>
-                            <div class="form-group">
-                                <label for="oldPasswordInput">Change password</label>
-                                <input type="password" class="form-control" id="oldPasswordInput" placeholder="Current password">
+                            <div class="mb-4">
+                                <a data-toggle="collapse" href="#passwordCollapse" class="collapse-link" aria-expanded="false" aria-controls="passwordCollapse"><i class="fas fa-chevron-down"></i> Change password</a>
                             </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" id="newPasswordInput" placeholder="New password">
+                            <div id="passwordCollapse" class="form-group collapse">
+                                <label for="oldPasswordInput">Current password</label>
+                                <input name="oldPasswordInput" type="password" class="form-control" id="oldPasswordInput" placeholder="Current password">
+                                <label for="newPasswordInput">New password</label>
+                                <input name="newPasswordInput" type="password" class="form-control" id="newPasswordInput" placeholder="New password">
                             </div>
-                            <button type="submit" class="btn btn-search">Update account</button>
+                            <button type="submit" class="btn btn-search" disabled>Update account</button>
                         </form>
                     </div>
                 </div>

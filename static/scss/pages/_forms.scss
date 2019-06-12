@@ -3,14 +3,20 @@
 ------------------------------ */
 
 a.fh-link,
+#account-settings-wrapper a,
 #contact-wrapper a {
     color: $mid-blue;
     -webkit-transition: all 0.3s ease-in-out 0.3s;
     transition: all 0.3s ease-in-out 0.3s;
 }
 #contact-wrapper a:hover,
+#account-settings-wrapper a:hover,
 a.fh-link:hover {
     color: $mid-blue-hover;
+}
+
+#account-settings-wrapper a {
+    font-size: 1.1rem;
 }
 
 #create-account-wrapper h3,
@@ -23,6 +29,10 @@ a.fh-link:hover {
     color: $mid-blue;
     margin-bottom: 1.2rem;
     text-transform: capitalize;
+}
+
+#account-settings-wrapper h3 {
+    color: $terracotta;
 }
 
 #login-wrapper h3 {
@@ -125,4 +135,8 @@ input.no-click {
 .custom-control-input:checked ~ .custom-control-label::before{
     border-color: $mid-blue;
     background-color: $mid-blue;
+}
+
+#edit-account-form input {
+    margin-bottom: 1rem;
 }
