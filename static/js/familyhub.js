@@ -164,6 +164,14 @@ function alertModal(message, date1, date2) {
       $('#alertMessage').text('You input a finish date ' + date2);
       $('#alertMessageLine2').text('that is before your start date ' + date1);
       break;
+    case 'passwords must not match':
+      $('#alertHeading').text('Error');
+      $('#alertMessage').text('These passwords are the same.');
+      break;
+    case 'emails must not match':
+      $('#alertHeading').text('Error');
+      $('#alertMessage').text('These emails are the same.');
+      break;
     default:
       break;
   }
@@ -497,11 +505,11 @@ $(inputClasses).each(function(i) {
         values.push(val);
       })
   
-      if (values[0] === values[1] && values[i] === ".email-input-js") {
-        alert('both these emails are the same');
+      if (values[0] === values[1] && inputClasses[i] === ".email-input-js") {
+        alertModal("emails must not match");
         $('#newEmailInput').val('');
-      } else if (values[0] === values[1] && values[i] === ".password-input-js") {
-        alert('both these passwords are the same');
+      } else if (values[0] === values[1] && inputClasses[i] === ".password-input-js") {
+        alertModal("passwords must not match");
         $('#newPasswordInput').val('');
       }
   
