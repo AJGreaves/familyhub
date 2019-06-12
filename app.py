@@ -147,7 +147,6 @@ def login_page():
         post_request = request.get_json()
         
         user = db.users.find_one({ '$or': [ { 'username': post_request['loginInput'] }, { 'email': post_request['loginInput'] } ]})
-        print(user)
 
         passwordCorrect = False
         username = ' '
@@ -364,8 +363,6 @@ def new_activity_page():
     if request.method == 'POST':
 
         post_request = request.form.to_dict()
-        print('POST REQUEST')
-        print(post_request)
 
         start = post_request['start'].split('/')
         start = f"{start[2]}-{start[1]}-{start[0]}"
@@ -389,8 +386,6 @@ def new_activity_page():
                 time = f"{time[0]}:{time[1]}:00"
                 time = datetime.strptime(time, '%H:%M:%S')
                 openTimesDict[time_name] = time
-        print('FORMATTED OPEN TIMES: ')
-        print(openTimesDict)
 
         obj = {'username': user['username'], 
                 'title': post_request.get('title'),
