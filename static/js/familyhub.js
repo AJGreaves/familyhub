@@ -246,9 +246,9 @@ function alertModal(message, date1, date2) {
       message.text('Current email is incorrect.');
       break;
     case 'password incorrect':
-        heading.text('Error');
-        message.text('Current password is incorrect.');
-        break;
+      heading.text('Error');
+      message.text('Current password is incorrect.');
+      break;
     default:
       break;
   }
@@ -268,8 +268,19 @@ $('#alertModalClose').click(function (e) {
  */
 
 function openLoggedInModal(username) {
-  $('#welcomeMessage').text('Welcome ' + username + '.');
+  name = capFirst(username);
+  $('#welcomeMessage').text('Welcome ' + name + '.');
   $('#loggedInModal').addClass('active');
+}
+
+/**
+ * Funciton takes a string and capitalizes the first letter.
+ * Code credit: https://paulund.co.uk/how-to-capitalize-the-first-letter-of-a-string-in-javascript
+ * @param {string} string 
+ */
+
+function capFirst(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 /*
