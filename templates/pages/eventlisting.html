@@ -3,11 +3,14 @@
 <main>
     <!-- Section: activity listing -->
     <section>
+        {% if preview == True %}
         <div id="preview-bar">
             <h1>Preview</h1>
             <p>This is a preview of how your activity listing will look on Family Hub. It is not published yet.</p>
             <strong>Click "Publish" button to confirm.</strong>
         </div>
+        {% endif %}
+
         <div id="event-listing-wrapper" class="container">
             <div class="row">
                 <div class="col-12">
@@ -94,9 +97,18 @@
                 <!-- share this listing page on social media -->
                 {% include 'components/listings/share.html' %}
                 
+                {% if preview == True %}
+                <div class="col-12 col-md-6 text-center text-md-left">
+                    <a href="#" class="heading-btn btn btn-create">Edit</a>
+                </div>                
+                <div class="col-12 col-md-6 text-center text-md-left">
+                    <a href="#" class="heading-btn btn btn-search">Publish</a>
+                </div>
+                {% else %}
                 <div class="col-12 col-md-6 text-center text-md-left">
                     <a href="{{url_for('events_page')}}" class="heading-btn btn btn-search">Search more events</a>
                 </div>
+                {% endif %}
             </div>
         </div>
 

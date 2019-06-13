@@ -404,7 +404,7 @@ def edit_event_page():
 # and finally inserts that data into the database.
 
 @app.route('/editor/<username>/new-activity', methods=['GET', 'POST'])
-def new_activity_page():
+def new_activity_page(username):
     
     loggedIn = True if 'user' in session else False
 
@@ -493,6 +493,25 @@ def new_activity_page():
                             loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
+
+# =========================================================================== #
+
+# preview event page
+@app.route('/editor/<username>/preview-activity')
+def preview_activity_page():
+    
+    loggedIn = True if 'user' in session else False
+
+    if not loggedIn:
+        return redirect(url_for('permission_denied'))
+    else:
+        user = db.users.find_one({"username": session['user']})
+
+    return render_template("pages/activitylisting.html", 
+                            title="Preview", 
+                            preview=True,
+                            loggedIn=loggedIn,
+                            keywords=Keywords.generic())
 
 # =========================================================================== #
 
