@@ -26,9 +26,10 @@
                         {% endif %}
                         
                         <!-- margins line button edge up with filed above it -->
-                        <a {% if type == 'activity' %} href="{{ url_for('preview_activity_page', username=session['user']) }}" 
-                            {% elif type == 'event' %} href="{{ url_for('preview_event_page', username=session['user']) }}" 
-                            {% endif %} class="btn btn-search ml-4 submit-js" type="submit">Preview</a>
+                        <button {% if type == 'activity' %} href="{{ url_for('preview_activity_page', username=session['user']) }}" 
+                            {% elif type == 'event' %} href="#" 
+                            {% endif %} class="btn btn-search ml-4 submit-js" type="submit">Preview</button>
+                            <!--{{ url_for('preview_event_page', username=session['user']) }}-->
                         <button id="delete-button" class="btn btn-delete ml-3">Delete</button>
                     </form>
                 </div>

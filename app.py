@@ -2,6 +2,7 @@ import os, json
 from flask import Flask, redirect, render_template, request, url_for, jsonify, session
 from config import Config
 from pymongo import MongoClient
+from pymongo.collection import ReturnDocument
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 from familyhubapp.keys import Keywords
@@ -338,8 +339,12 @@ def new_event_page(username):
                             'twitter': post_request.get('twitter') if post_request.get('twitter') else None,
                             'instagram': post_request.get('instagram') if post_request.get('instagram') else None},
                 'description': post_request.get('description')}
+        print(obj)
+        newEvent_id = db.events.insert_one(obj).inserted_id
+        print(newEvent_id)
 
-        db.events.insert_one(obj)
+
+        # return redirect(url_for('preview_event_page'))
 
     return render_template("pages/editor.html", 
                             title="Add New Event", 
@@ -353,7 +358,7 @@ def new_event_page(username):
 
 # preview event page
 @app.route('/editor/<username>/preview-event')
-def preview_event_page():
+def preview_event_page(username):
     
     loggedIn = True if 'user' in session else False
 
