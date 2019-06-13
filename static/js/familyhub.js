@@ -196,58 +196,58 @@ function checkAndUpdate(item) {
  */
 function alertModal(message, date1, date2) {
   const heading = $('#alertHeading');
-  const message = $('#alertMessage');
+  const message1 = $('#alertMessage');
   const message2 = $('#alertMessageLine2');
 
   switch (message) {
     case 'no user match':
       heading.text('Sorry');
-      message.text('No account with this username or email address.\n Please try again.');
+      message1.text('No account with this username or email address.\n Please try again.');
       break;
     case 'no password match':
       heading.text('Incorrect password');
-      message.text('Please try again.');
+      message1.text('Please try again.');
       break;
     case 'times match':
       heading.text('Error');
-      message.text('Your start and finish times cannot be the same.');
+      message1.text('Your start and finish times cannot be the same.');
       break;
     case 'start end times wrong':
       heading.text('Error');
-      message.text('You selected an earlier finish time than the start time.');
+      message1.text('You selected an earlier finish time than the start time.');
       break;
     case 'dates match':
       heading.text('Error');
-      message.text('Your start and finish dates cannot be the same.');
+      message1.text('Your start and finish dates cannot be the same.');
       break;
     case 'start end dates wrong':
       heading.text('Error');
-      message.text('You input a finish date ' + date2);
+      message1.text('You input a finish date ' + date2);
       message2.text('that is before your start date ' + date1);
       break;
     case 'passwords must not match':
       heading.text('Error');
-      message.text('These passwords are the same.');
+      message1.text('These passwords are the same.');
       break;
     case 'emails must not match':
       heading.text('Error');
-      message.text('These emails are the same.');
+      message1.text('These emails are the same.');
       break;
     case 'email updated':
       heading.text('Success');
-      message.text('Your email has been successfully updated.');
+      message1.text('Your email has been successfully updated.');
       break;
     case 'password updated':
       heading.text('Success');
-      message.text('Your password has been successfully updated.');
+      message1.text('Your password has been successfully updated.');
       break;
     case 'email incorrect':
       heading.text('Error');
-      message.text('Current email is incorrect.');
+      message1.text('Current email is incorrect.');
       break;
     case 'password incorrect':
       heading.text('Error');
-      message.text('Current password is incorrect.');
+      message1.text('Current password is incorrect.');
       break;
     default:
       break;
