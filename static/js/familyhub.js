@@ -135,22 +135,20 @@ if (document.querySelector('#login-form')) {
 
 if (document.querySelector('#edit-account-form')) {
 
-  const editAccountForm = document.querySelector('#edit-account-form');
+  const form = document.querySelector('#editEmail');
 
-  editAccountForm.addEventListener('submit', (e) => {
+  form.addEventListener('submit', (e) => {
     // prevents default behaviour of submit button to refresh page
     e.preventDefault();
 
-    const oldEmail = document.querySelector('#oldEmailInput').value;
-    const newEmail = document.querySelector('#newEmailInput').value;
-    const oldPassword = document.querySelector('#oldPasswordInput').value;
-    const newPassword = document.querySelector('#newPasswordInput').value;
+    const oldInput = document.querySelector('#emailOld').value;
+    const newInput = document.querySelector('#emailNew').value;
+    const whichForm = '#editEmail';
 
     const data = {
-      oldEmail: oldEmail,
-      newEmail: newEmail,
-      oldPassword: oldPassword,
-      newPassword: newPassword
+      whichForm: whichForm,
+      oldInput: oldInput,
+      newInput: newInput
     }
     console.log(data)
     showLoading();
@@ -165,20 +163,15 @@ if (document.querySelector('#edit-account-form')) {
       .then(data => {
         console.log(data);
         hideLoading();
-        if (!data.emailUpdated && !data.passwordUpdated) {
-          alert('You cannot send an empty form');
-        } else if (data.emailUpdated && data.passwordUpdated) {
-          alert('your email and password have been successfully updated');
-        } else if (data.emailUpdated) {
-          alert('your email has been successfully updated');
-        } else if (data.passwordUpdated) {
-          alert('your password has been successfully updated');
-        } else if (data.changeEmail && data.changePassword) {
-          alert('incorrect current email and password');
-        } else if (data.changeEmail) {
-          alert('incorrect current email');
-        } else if (data.changePassword) {
-          alert('incorrect current password');
+
+        if (whichForm == '#editEmail' && data.updated) {
+          alert('email successfully updated')
+        } else if (whichForm == '#editEmail' && !data.updated) {
+          alert('old email incorrect')
+        } else if (whichForm == '#editPass' && data.updated) {
+          alert('password successfully updated')
+        } else if (whichForm == '#editPass' && !data.updated) {
+          alert('old password incorrect')
         }
       })
       .catch(err => console.log(err));
@@ -327,20 +320,8 @@ function openDeleteWarningModal() {
 });
 
 
-['#monStart',
-  '#monEnd',
-  '#tueStart',
-  '#tueEnd',
-  '#wedStart',
-  '#wedEnd',
-  '#thuStart',
-  '#thuEnd',
-  '#friStart',
-  '#friEnd',
-  '#satStart',
-  '#satEnd',
-  '#sunStart',
-  '#sunEnd',
+['#monStart', '#monEnd', '#tueStart', '#tueEnd', '#wedStart', '#wedEnd', '#thuStart',
+  '#thuEnd', '#friStart', '#friEnd', '#satStart', '#satEnd', '#sunStart', '#sunEnd',
 ].forEach(timepick => {
   $(timepick).timepicker({
     autoclose: true,
@@ -421,7 +402,7 @@ $('input.compare-js').change(function() {
 })
 
 /**
- * Returns true if both fileds to be compared have been filled in
+ * Returns true if both fields to be compared have been filled in
  * @param {string} day 
  */
 
@@ -543,28 +524,21 @@ $(".collapse-link").click(function() {
 inputClasses = [".email-input-js", ".password-input-js"]
 $(inputClasses).each(function(i) {
   $(inputClasses[i]).change(function() {
-    if (noValues(inputClasses[i])) {
-      $(inputClasses[i]).each(function() {
-        $(this).removeAttr('required');
-      })
-      $('#editAccountBtn').attr('disabled');
-    }
-  
+    
     if (countTwo(inputClasses[i])) {
       input =  $(inputClasses[i]);
       values = []
       input.each(function() {
-        $(this).attr('required','required');
         let val = $(this).val();
         values.push(val);
       })
   
       if (values[0] === values[1] && inputClasses[i] === ".email-input-js") {
         alertModal("emails must not match");
-        $('#newEmailInput').val('');
+        $('#emailNew').val('');
       } else if (values[0] === values[1] && inputClasses[i] === ".password-input-js") {
         alertModal("passwords must not match");
-        $('#newPasswordInput').val('');
+        $('#passNew').val('');
       }
     }
   })

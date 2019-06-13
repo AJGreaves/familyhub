@@ -236,26 +236,21 @@ def settings_page():
 
         print(post_request)
 
-        changeEmail = True if post_request['newEmail'] else False
-        changePassword = True if post_request['newPassword'] else False
-        emailUpdated = False
-        passwordUpdated = False
+        updated = False
 
-        if changeEmail:
-            if user['email'] == post_request['oldEmail']:
-                db.users.find_one_and_update({"_id": ObjectId(user["_id"])}, {"$set": {"email": post_request["newEmail"]}})
-                emailUpdated = True
-        if changePassword:
-            if check_password_hash(user['password'], post_request['oldPassword']):
-                post_request['newPassword'] = generate_password_hash(post_request['newPassword'])
-                db.users.find_one_and_update({"_id": ObjectId(user["_id"])}, {"$set": {"password": post_request["newPassword"]}})
-                passwordUpdated = True
+        if post_request['whichForm'] == '#editEmail':
+            if user['email'] == post_request['oldInput']:
+                db.users.find_one_and_update({"_id": ObjectId(user["_id"])}, {"$set": {"email": post_request["newInput"]}})
+                updated = True
+        
+        if post_request['whichForm'] == '#editPass':
+            if check_password_hash(user['password'], post_request['oldInput']):
+                post_request['newInput'] = generate_password_hash(post_request['newInput'])
+                db.users.find_one_and_update({"_id": ObjectId(user["_id"])}, {"$set": {"password": post_request["newInput"]}})
+                updated = True
 
         response = {
-            "changeEmail": changeEmail,
-            "changePassword": changePassword,
-            "emailUpdated": emailUpdated,
-            "passwordUpdated": passwordUpdated
+            "updated": updated
         }
         return json.dumps(response)
 
