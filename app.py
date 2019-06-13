@@ -338,13 +338,13 @@ def new_event_page(username):
                             'facebook': post_request.get('facebook') if post_request.get('facebook') else None,
                             'twitter': post_request.get('twitter') if post_request.get('twitter') else None,
                             'instagram': post_request.get('instagram') if post_request.get('instagram') else None},
-                'description': post_request.get('description')}
-        print(obj)
+                'description': post_request.get('description'),
+                'published': False}
+
         newEvent_id = db.events.insert_one(obj).inserted_id
-        print(newEvent_id)
-
-
-        # return redirect(url_for('preview_event_page'))
+        eventData = db.events.find_one({"_id": newEvent_id})
+        
+        return redirect(url_for('preview_event_page', username=session['user'], title=eventData['title'], eventData=eventData, new=True))
 
     return render_template("pages/editor.html", 
                             title="Add New Event", 
@@ -357,18 +357,20 @@ def new_event_page(username):
 # =========================================================================== #
 
 # preview event page
-@app.route('/editor/<username>/preview-event')
-def preview_event_page(username):
+@app.route('/editor/preview-event/<username>/<title>')
+def preview_event_page(username, title, eventData, new):
     
     loggedIn = True if 'user' in session else False
 
     if not loggedIn:
         return redirect(url_for('permission_denied'))
-    else:
-        user = db.users.find_one({"username": session['user']})
+    
 
+    title = "Preview | " + eventData['title']
     return render_template("pages/eventlisting.html", 
-                            title="Preview", 
+                            title=title,
+                            eventData=eventData, 
+                            new=new,
                             preview=True,
                             loggedIn=loggedIn,
                             keywords=Keywords.generic())
