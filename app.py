@@ -342,9 +342,7 @@ def new_event_page(username):
                 'published': False}
 
         newEvent_id = db.events.insert_one(obj).inserted_id
-        eventData = db.events.find_one({"_id": newEvent_id})
-        
-        return redirect(url_for('preview_event_page', username=session['user'], title=eventData['title'], eventData=eventData, new=True))
+        return redirect(url_for('preview_event_page', username=session['user'], title=post_request['title'], event_id=newEvent_id, new=True))
 
     return render_template("pages/editor.html", 
                             title="Add New Event", 
@@ -358,15 +356,18 @@ def new_event_page(username):
 
 # preview event page
 @app.route('/editor/preview-event/<username>/<title>')
-def preview_event_page(username, title, eventData, new):
+def preview_event_page(username, title):
     
     loggedIn = True if 'user' in session else False
 
     if not loggedIn:
         return redirect(url_for('permission_denied'))
-    
 
-    title = "Preview | " + eventData['title']
+    event_id = request.args.get('event_id')
+    new = request.args.get('new')
+    eventData = db.events.find_one({"_id": event_id})
+
+    title = "Preview | " + title
     return render_template("pages/eventlisting.html", 
                             title=title,
                             eventData=eventData, 
