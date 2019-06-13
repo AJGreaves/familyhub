@@ -245,13 +245,12 @@ def settings_page():
 
         if changeEmail:
             if user['email'] == post_request['oldEmail']:
-                db.users.find_one_and_update({"_id": user["_id"]}, {"$": {"email", post_request["newEmail"]}})
+                db.users.find_one_and_update({"_id": ObjectId(user["_id"])}, {"$set": {"email": post_request["newEmail"]}})
                 emailUpdated = True
-
         if changePassword:
             if check_password_hash(user['password'], post_request['oldPassword']):
                 post_request['newPassword'] = generate_password_hash(post_request['newPassword'])
-                db.users.find_one_and_update({"_id": user["_id"]}, {"$": {"password", post_request["newPassword"]}})
+                db.users.find_one_and_update({"_id": ObjectId(user["_id"])}, {"$set": {"password": post_request["newPassword"]}})
                 passwordUpdated = True
 
         response = {
@@ -260,6 +259,7 @@ def settings_page():
             "emailUpdated": emailUpdated,
             "passwordUpdated": passwordUpdated
         }
+        print(response)
         return json.dumps(response)
 
     return render_template("pages/settings.html", 

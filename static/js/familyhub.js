@@ -163,14 +163,19 @@ if (document.querySelector('#edit-account-form')) {
       })
       .then(res => res.json())
       .then(data => {
+        console.log(data);
         hideLoading();
-        if (data.emailUpdated) {
+        if (data.emailUpdated && data.passwordUpdated) {
+          alert('your email and password have been successfully updated');
+        } else if (data.emailUpdated) {
           alert('your email has been successfully updated');
         } else if (data.passwordUpdated) {
           alert('your password has been successfully updated');
-        } else if (data.changeEmail == false) {
+        } else if (data.changeEmail && data.changePassword) {
+          alert('incorrect current email and password');
+        } else if (data.changeEmail) {
           alert('incorrect current email');
-        } else if (data.changePassword == false) {
+        } else if (data.changePassword) {
           alert('incorrect current password');
         }
       })
