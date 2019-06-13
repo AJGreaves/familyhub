@@ -220,7 +220,7 @@ def event_listing_page():
 # =========================================================================== #
 
 # Settings page
-@app.route('/settings', methods=['GET', 'POST'])
+@app.route('/settings/<username>', methods=['GET', 'POST'])
 def settings_page():
     loggedIn = True if 'user' in session else False
 
@@ -263,16 +263,19 @@ def settings_page():
 # =========================================================================== #
 
 # Account page - all listings for this account
-@app.route('/account')
-def my_account_page():
+@app.route('/account/<username>')
+def my_account_page(username):
     loggedIn = True if 'user' in session else False
 
     if not loggedIn:
         return redirect(url_for('permission_denied'))
+    else:
+        user = db.users.find_one({"username": session['user']}) 
 
     return render_template("pages/account.html", 
                             title="My Account", 
                             loggedIn=loggedIn,
+                            user=user,
                             keywords=Keywords.generic())
 
 
@@ -289,8 +292,8 @@ def my_account_page():
 # all boolean values converted as needed to be store correctly in the database,
 # and finally inserts that data into the database.
 
-@app.route('/add-new-event', methods=['GET', 'POST'])
-def new_event_page():
+@app.route('/editor/<username>/add-new-event', methods=['GET', 'POST'])
+def new_event_page(username):
 
     loggedIn = True if 'user' in session else False
 
@@ -348,13 +351,15 @@ def new_event_page():
 # =========================================================================== #
 
 # Edit existing event page
-@app.route('/edit-event')
+@app.route('/editor/<username>/edit-event')
 def edit_event_page():
     
     loggedIn = True if 'user' in session else False
 
     if not loggedIn:
         return redirect(url_for('permission_denied'))
+    else:
+        user = db.users.find_one({"username": session['user']})
 
     return render_template("pages/editor.html", 
                             title="Edit Event", 
@@ -379,7 +384,7 @@ def edit_event_page():
 # and finally inserts that data into the database.
 
 @app.route('/editor/<username>/new-activity', methods=['GET', 'POST'])
-def new_activity_page(username):
+def new_activity_page():
     
     loggedIn = True if 'user' in session else False
 
@@ -397,7 +402,7 @@ def new_activity_page(username):
         start = datetime.strptime(start, '%Y-%m-%d')
 
         end = post_request['end'].split('/')
-        end = f"{end[2]}-{end[0]}-{end[1]}"
+        end = f"{end[2]}-{end[1]}-{end[0]}"
         end = datetime.strptime(end, '%Y-%m-%d')
 
         openTimes = ['monStart','monEnd', 'tueStart', 'tueEnd', 
@@ -472,7 +477,7 @@ def new_activity_page(username):
 # =========================================================================== #
 
 # Edit existing activity page
-@app.route('/edit-activity')
+@app.route('/editor/<username>/edit-activity')
 def edit_activity_page():
     
     loggedIn = True if 'user' in session else False

@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-12">
                     <h1>My account</h1>
-                    <a href="{{url_for('settings_page')}}" aria-label="Account settings">
+                    <a href="{{url_for('settings_page', username=session['user'])}}" aria-label="Account settings">
                         <i class="fas fa-cog float-right heading-btn"></i>
                     </a>
                     <hr>
@@ -39,7 +39,7 @@
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                     </div>
-                    <a href="{{url_for('edit_activity_page')}}" class="btn btn-readmore">Edit</a>
+                    <a href="{{url_for('edit_activity_page', username=session['user'])}}" class="btn btn-readmore">Edit</a>
                     <a href="#" class="btn btn-delete">Delete</a>
                     <p class="expired">Expired. Add new dates to activate</p>
                 </div>
@@ -50,7 +50,7 @@
                 <div class="col-12">
                     <hr>
                     <h2>My Events</h2>
-                    <a href="{{url_for('new_event_page')}}" class="heading-btn btn btn-create float-right">Add New Event</a>
+                    <a href="{{url_for('new_event_page', username=session['user'])}}" class="heading-btn btn btn-create float-right">Add New Event</a>
                     <hr>
                 </div>
             </div>
@@ -72,7 +72,7 @@
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                     </div>
-                    <a href="{{url_for('edit_event_page')}}" class="btn btn-readmore">Edit</a>
+                    <a href="{{ url_for('edit_event_page', username=session['user']) }}" class="btn btn-readmore">Edit</a>
                     <a href="#" id="delete-button" class="btn btn-delete">Delete</a>
                     <p class="expired">Expired. Add new dates to activate</p>
                 </div>
