@@ -214,7 +214,7 @@ function alertModal(message, date1, date2) {
       break;
     case 'start end times wrong':
       heading.text('Error');
-      message.text('You selected an earlier finish time than the start time!');
+      message.text('You selected an earlier finish time than the start time.');
       break;
     case 'dates match':
       heading.text('Error');
@@ -235,19 +235,19 @@ function alertModal(message, date1, date2) {
       break;
     case 'email updated':
       heading.text('Success');
-      message.text('Your email has been successfully updated');
+      message.text('Your email has been successfully updated.');
       break;
     case 'password updated':
       heading.text('Success');
-      message.text('Your password has been successfully updated');
+      message.text('Your password has been successfully updated.');
       break;
     case 'email incorrect':
       heading.text('Error');
-      message.text('Current email is incorrect');
+      message.text('Current email is incorrect.');
       break;
     case 'password incorrect':
         heading.text('Error');
-        message.text('Current password is incorrect');
+        message.text('Current password is incorrect.');
         break;
     default:
       break;
