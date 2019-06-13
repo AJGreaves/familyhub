@@ -238,12 +238,12 @@ def settings_page():
 
         updated = False
 
-        if post_request['whichForm'] == '#editEmail':
+        if post_request['whichForm'] == '#emailEdit':
             if user['email'] == post_request['oldInput']:
                 db.users.find_one_and_update({"_id": ObjectId(user["_id"])}, {"$set": {"email": post_request["newInput"]}})
                 updated = True
         
-        if post_request['whichForm'] == '#editPass':
+        if post_request['whichForm'] == '#passEdit':
             if check_password_hash(user['password'], post_request['oldInput']):
                 post_request['newInput'] = generate_password_hash(post_request['newInput'])
                 db.users.find_one_and_update({"_id": ObjectId(user["_id"])}, {"$set": {"password": post_request["newInput"]}})

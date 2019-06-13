@@ -135,15 +135,26 @@ if (document.querySelector('#login-form')) {
 
 if (document.querySelector('#edit-account-form')) {
 
-  const form = document.querySelector('#editEmail');
+  const emailEdit = document.querySelector('#emailEdit');
+  const passEdit = document.querySelector('#passEdit');
 
-  form.addEventListener('submit', (e) => {
-    // prevents default behaviour of submit button to refresh page
+  emailEdit.addEventListener('submit', (e) => {
     e.preventDefault();
+    checkAndUpdate('#emailEdit');
+  });
+  passEdit.addEventListener('submit', (e) => {
+    e.preventDefault();
+    checkAndUpdate('#passEdit');
+  });
+}
 
-    const oldInput = document.querySelector('#emailOld').value;
-    const newInput = document.querySelector('#emailNew').value;
-    const whichForm = '#editEmail';
+function checkAndUpdate(item) {
+
+    key = item.slice(1,5);
+
+    const oldInput = document.querySelector('#'+ key + 'Old').value;
+    const newInput = document.querySelector('#'+ key + 'New').value;
+    const whichForm = item;
 
     const data = {
       whichForm: whichForm,
@@ -164,19 +175,18 @@ if (document.querySelector('#edit-account-form')) {
         console.log(data);
         hideLoading();
 
-        if (whichForm == '#editEmail' && data.updated) {
+        if (item == '#emailEdit' && data.updated) {
           alert('email successfully updated')
-        } else if (whichForm == '#editEmail' && !data.updated) {
+        } else if (item == '#emailEdit' && !data.updated) {
           alert('old email incorrect')
-        } else if (whichForm == '#editPass' && data.updated) {
+        } else if (item == '#passEdit' && data.updated) {
           alert('password successfully updated')
-        } else if (whichForm == '#editPass' && !data.updated) {
+        } else if (item == '#passEdit' && !data.updated) {
           alert('old password incorrect')
         }
       })
       .catch(err => console.log(err));
 
-  });
 }
 
 /**
@@ -225,7 +235,7 @@ function alertModal(message, date1, date2) {
   $('#alertModal').toggleClass('active');
 }
 
-$('#alertModalClose').click(function(e) {
+$('#alertModalClose').click(function (e) {
   e.preventDefault();
   alertModal();
 })
@@ -359,7 +369,7 @@ $('#isFree').click(function () {
 
 /* to activate fields to input start / end times for days only when that day is clicked */
 
-$(".click-days-js").click(function () { 
+$(".click-days-js").click(function () {
   let day = this.id;
   activateTimes($('#' + day + 'Start'), $('#' + day + 'End'), $('.' + day + '-times'));
 });
@@ -369,13 +379,13 @@ function activateTimes($start, $end, $times) {
   if ($start.attr('required')) {
     $start.attr('disabled', '').removeAttr('required').val('');
     $end.attr('disabled', '').removeAttr('required').val('');
-    $times.each(function(){
+    $times.each(function () {
       $(this).removeClass('active');
     })
   } else {
     $start.attr('required', '').removeAttr('disabled');
     $end.attr('required', '').removeAttr('disabled');
-    $times.each(function(){
+    $times.each(function () {
       $(this).addClass('active');
     })
   }
@@ -386,8 +396,8 @@ function activateTimes($start, $end, $times) {
  * compare date input and time input values
  * and return alert modals for incorrect input
  */
-$('input.compare-js').change(function() {
-  
+$('input.compare-js').change(function () {
+
   let dayId = this.id;
   let day = dayId.substring(0, 3);
 
@@ -410,10 +420,10 @@ function countTwo(key) {
   let count = 0;
   let selector = $(key);
 
-  selector.each(function(){
-    if ($(this).val().length > 0 ) {
+  selector.each(function () {
+    if ($(this).val().length > 0) {
       count += 1;
-    } 
+    }
   });
 
   if (count == 2) {
@@ -431,12 +441,12 @@ function countTwo(key) {
  */
 
 function compareTimes(day) {
-  
+
   let times = [];
-  input =  $('.compare-' + day + '-js');
+  input = $('.compare-' + day + '-js');
   dayId = $('#' + day + 'End');
 
-  input.each(function() {
+  input.each(function () {
     let time = $(this).val();
     times.push(time);
   })
@@ -450,8 +460,8 @@ function compareTimes(day) {
   } else if ((first[0] > second[0]) || ((first[0] === second[0]) && (first[1] > second[1]))) {
     alertModal("start end times wrong");
     dayId.val('');
-  } 
-  
+  }
+
 }
 
 /**
@@ -462,9 +472,9 @@ function compareTimes(day) {
 
 function compareDates() {
   let dates = [];
-  input =  $('.compare-date-js');
+  input = $('.compare-date-js');
 
-  input.each(function() {
+  input.each(function () {
     let date = $(this).val();
     dates.push(date);
   })
@@ -475,9 +485,9 @@ function compareDates() {
   if (first[0] === second[0] && first[1] === second[1] && first[2] === second[2]) {
     alertModal('dates match');
     $('#end').val('');
-  } else if (first[2] > second[2] 
-          || first[2] === second[2] && first[1] > second[1]
-          || first[2] === second[2] && first[1] === second[1] && first[0] > second[0]) {
+  } else if (first[2] > second[2] ||
+    first[2] === second[2] && first[1] > second[1] ||
+    first[2] === second[2] && first[1] === second[1] && first[0] > second[0]) {
     alertModal('start end dates wrong', dates[0], dates[1]);
     $('#end').val('');
   }
@@ -488,11 +498,11 @@ function compareDates() {
  * age range and indoor/outdoor in add/edit forms
  */
 
-let selectors = ['#timesInput :', '.in-out-js:', '.age-range-js:', '.categories :' ];
-$(selectors).each(function(i) {
+let selectors = ['#timesInput :', '.in-out-js:', '.age-range-js:', '.categories :'];
+$(selectors).each(function (i) {
   let checkboxGroup = $(selectors[i] + 'checkbox[required]');
-  checkboxGroup.change(function(){
-    if(checkboxGroup.is(':checked')) {
+  checkboxGroup.change(function () {
+    if (checkboxGroup.is(':checked')) {
       checkboxGroup.removeAttr('required');
     } else {
       checkboxGroup.attr('required', 'required');
@@ -509,7 +519,7 @@ $('.submit-js').click(function () {
   }
 })
 
-$(".collapse-link").click(function() {
+$(".collapse-link").click(function () {
   $(this).children('i').toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
 })
 
@@ -522,17 +532,17 @@ $(".collapse-link").click(function() {
  */
 
 inputClasses = [".email-input-js", ".password-input-js"]
-$(inputClasses).each(function(i) {
-  $(inputClasses[i]).change(function() {
-    
+$(inputClasses).each(function (i) {
+  $(inputClasses[i]).change(function () {
+
     if (countTwo(inputClasses[i])) {
-      input =  $(inputClasses[i]);
+      input = $(inputClasses[i]);
       values = []
-      input.each(function() {
+      input.each(function () {
         let val = $(this).val();
         values.push(val);
       })
-  
+
       if (values[0] === values[1] && inputClasses[i] === ".email-input-js") {
         alertModal("emails must not match");
         $('#emailNew').val('');
@@ -548,10 +558,10 @@ function noValues(key) {
   let count = 0;
   let selector = $(key);
 
-  selector.each(function(){
-    if ($(this).val().length > 0 ) {
+  selector.each(function () {
+    if ($(this).val().length > 0) {
       count += 1;
-    } 
+    }
   });
 
   if (count === 0) {
@@ -560,4 +570,3 @@ function noValues(key) {
     return false;
   }
 }
-

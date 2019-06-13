@@ -13,7 +13,7 @@
             </div>
             <div id="edit-account-form" class="row justify-content-center">
                 <div class="col-10 col-sm-8 col-md-5 col-xl-4 card familyhub-card p-4 m-2">
-                    <form id="editEmail" method="POST">
+                    <form id="emailEdit" method="POST">
                         <h3>Change email</h3>
                         <div class="form-group">
                             <label for="emailOld">Current email</label>
@@ -32,14 +32,14 @@
                 </div>
                     
                 <div class="col-10 col-sm-8 col-md-5 col-xl-4 card familyhub-card p-4 m-2">
-                    <form id="editPassword" action="POST">
+                    <form id="passEdit" action="POST">
                         <h3>Change password</h3>
                         <div class="form-group">
                             <label for="passOld">Current password</label>
-                            <input name="passOld" type="password" class="form-control pass-input-js"
+                            <input name="passOld" type="password" class="form-control password-input-js"
                                 autocomplete="new-password" id="passOld" placeholder="Current password" required>
                             <label for="passNew">New password</label>
-                            <input name="passNew" type="password" class="form-control pass-input-js"
+                            <input name="passNew" type="password" class="form-control password-input-js"
                                 autocomplete="new-password" id="passNew" placeholder="New password" required>
                         </div>
                         <button id="passEditBtn" type="submit" class="btn btn-search">Update password</button>
