@@ -4,12 +4,12 @@
 
 button:disabled {
     background-color: #926b65;
-    border: #926b65;
+    border: 1px solid  #926b65;
 }
 
 button:disabled:hover {
     background-color: #746d6c;
-    border: #746d6c;
+    border: 1px solid #746d6c;
 }
 
 .btn {
@@ -34,7 +34,7 @@ button:disabled:hover {
 .btn-search {
     color: #fff;
     background-color: $terracotta;
-    border: $terracotta;
+    border: 1px solid $terracotta;
     -webkit-transition: all 0.3s ease-in-out 0.3s;
     transition: all 0.3s ease-in-out 0.3s;
 }
@@ -47,7 +47,7 @@ button:disabled:hover {
 
 .btn-search:hover {
     background-color: $terracotta-hover;
-    border: $terracotta-hover;
+    border: 1px solid $terracotta-hover;
     color: #fff;
 }
 

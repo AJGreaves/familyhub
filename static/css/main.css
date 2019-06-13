@@ -54,12 +54,12 @@ footer h4 {
 ------------------------------ */
 button:disabled {
   background-color: #926b65;
-  border: #926b65;
+  border: 1px solid  #926b65;
 }
 
 button:disabled:hover {
   background-color: #746d6c;
-  border: #746d6c;
+  border: 1px solid #746d6c;
 }
 
 .btn {
@@ -84,7 +84,7 @@ button:disabled:hover {
 .btn-search {
   color: #fff;
   background-color: #ed6a5a;
-  border: #ed6a5a;
+  border: 1px solid #ed6a5a;
   -webkit-transition: all 0.3s ease-in-out 0.3s;
   transition: all 0.3s ease-in-out 0.3s;
 }
@@ -97,7 +97,7 @@ button:disabled:hover {
 
 .btn-search:hover {
   background-color: #e7422e;
-  border: #e7422e;
+  border: 1px solid #e7422e;
   color: #fff;
 }
 
