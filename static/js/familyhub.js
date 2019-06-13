@@ -176,13 +176,13 @@ function checkAndUpdate(item) {
         hideLoading();
 
         if (item == '#emailEdit' && data.updated) {
-          alert('email successfully updated')
+          alertModal('email updated')
         } else if (item == '#emailEdit' && !data.updated) {
-          alert('old email incorrect')
+          alertModal('email incorrect')
         } else if (item == '#passEdit' && data.updated) {
-          alert('password successfully updated')
+          alertModal('password updated')
         } else if (item == '#passEdit' && !data.updated) {
-          alert('old password incorrect')
+          alertModal('password incorrect')
         }
       })
       .catch(err => console.log(err));
@@ -195,40 +195,60 @@ function checkAndUpdate(item) {
  * @param {string} message 
  */
 function alertModal(message, date1, date2) {
+  const heading = $('#alertHeading');
+  const message = $('#alertMessage');
+  const message2 = $('#alertMessageLine2');
+
   switch (message) {
     case 'no user match':
-      $('#alertHeading').text('Sorry');
-      $('#alertMessage').text('No account with this username or email address.\n Please try again.');
+      heading.text('Sorry');
+      message.text('No account with this username or email address.\n Please try again.');
       break;
     case 'no password match':
-      $('#alertHeading').text('Incorrect password');
-      $('#alertMessage').text('Please try again.');
+      heading.text('Incorrect password');
+      message.text('Please try again.');
       break;
     case 'times match':
-      $('#alertHeading').text('Error');
-      $('#alertMessage').text('Your start and finish times cannot be the same.');
+      heading.text('Error');
+      message.text('Your start and finish times cannot be the same.');
       break;
     case 'start end times wrong':
-      $('#alertHeading').text('Error');
-      $('#alertMessage').text('You selected an earlier finish time than the start time!');
+      heading.text('Error');
+      message.text('You selected an earlier finish time than the start time!');
       break;
     case 'dates match':
-      $('#alertHeading').text('Error');
-      $('#alertMessage').text('Your start and finish dates cannot be the same.');
+      heading.text('Error');
+      message.text('Your start and finish dates cannot be the same.');
       break;
     case 'start end dates wrong':
-      $('#alertHeading').text('Error');
-      $('#alertMessage').text('You input a finish date ' + date2);
-      $('#alertMessageLine2').text('that is before your start date ' + date1);
+      heading.text('Error');
+      message.text('You input a finish date ' + date2);
+      message2.text('that is before your start date ' + date1);
       break;
     case 'passwords must not match':
-      $('#alertHeading').text('Error');
-      $('#alertMessage').text('These passwords are the same.');
+      heading.text('Error');
+      message.text('These passwords are the same.');
       break;
     case 'emails must not match':
-      $('#alertHeading').text('Error');
-      $('#alertMessage').text('These emails are the same.');
+      heading.text('Error');
+      message.text('These emails are the same.');
       break;
+    case 'email updated':
+      heading.text('Success');
+      message.text('Your email has been successfully updated');
+      break;
+    case 'password updated':
+      heading.text('Success');
+      message.text('Your password has been successfully updated');
+      break;
+    case 'email incorrect':
+      heading.text('Error');
+      message.text('Current email is incorrect');
+      break;
+    case 'password incorrect':
+        heading.text('Error');
+        message.text('Current password is incorrect');
+        break;
     default:
       break;
   }
