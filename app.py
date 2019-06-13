@@ -240,8 +240,6 @@ def settings_page():
         changePassword = True if post_request['newPassword'] else False
         emailUpdated = False
         passwordUpdated = False
-        print(changeEmail)
-
 
         if changeEmail:
             if user['email'] == post_request['oldEmail']:
@@ -259,7 +257,6 @@ def settings_page():
             "emailUpdated": emailUpdated,
             "passwordUpdated": passwordUpdated
         }
-        print(response)
         return json.dumps(response)
 
     return render_template("pages/settings.html", 

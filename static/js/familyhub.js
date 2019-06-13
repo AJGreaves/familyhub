@@ -165,7 +165,9 @@ if (document.querySelector('#edit-account-form')) {
       .then(data => {
         console.log(data);
         hideLoading();
-        if (data.emailUpdated && data.passwordUpdated) {
+        if (!data.emailUpdated && !data.passwordUpdated) {
+          alert('You cannot send an empty form');
+        } else if (data.emailUpdated && data.passwordUpdated) {
           alert('your email and password have been successfully updated');
         } else if (data.emailUpdated) {
           alert('your email has been successfully updated');
@@ -564,14 +566,9 @@ $(inputClasses).each(function(i) {
         alertModal("passwords must not match");
         $('#newPasswordInput').val('');
       }
-  
-    $('#editAccountBtn').removeAttr('disabled');
-    } else {
-      $('#editAccountBtn').attr('disabled','disabled');
     }
   })
 })
-
 
 function noValues(key) {
   let count = 0;
@@ -589,3 +586,4 @@ function noValues(key) {
     return false;
   }
 }
+
