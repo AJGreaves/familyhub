@@ -12,47 +12,37 @@
                 </div>
             </div>
             <div id="edit-account-form" class="row justify-content-center">
-                <div class="col-10 col-sm-8 col-md-6 col-xl-4 card familyhub-card p-4">
-                    <h3>Account Settings</h3>
-                    <hr>
-                    <form id="edit-email" method="POST">
-                        <div class="mb-4">
-                            <a data-toggle="collapse" href="#emailCollapse" class="collapse-link" aria-expanded="false"
-                                aria-controls="emailCollapse"><i class="fas fa-chevron-down"></i> Change email </a>
-                        </div>
-                        <div id="emailCollapse" class="collapse">
-                            <div class="form-group">
-                                <label for="emailOld">Current email</label>
-                                <input name="emailOld" type="email" class="form-control email-input-js" id="emailOld"
-                                    aria-describedby="emailHelp" placeholder="Current email" required>
-                                <label for="emailNew">New email</label>
-                                <input name="emailNew" type="email" class="form-control email-input-js" id="emailNew"
-                                    aria-describedby="emailHelp" placeholder="New email" required>
-                                </label>
-                                <button id="emailEditBtn" type="submit" class="btn btn-search">Update email</button>
-                            </div>
+                <div class="col-10 col-sm-8 col-md-5 col-xl-4 card familyhub-card p-4 m-2">
+                    <form id="editEmail" method="POST">
+                        <h3>Change email</h3>
+                        <div class="form-group">
+                            <label for="emailOld">Current email</label>
+                            <input name="emailOld" type="email" class="form-control email-input-js" id="emailOld"
+                                aria-describedby="emailHelp" placeholder="Current email" required>
+                            <label for="emailNew">New email</label>
+                            <input name="emailNew" type="email" class="form-control email-input-js" id="emailNew"
+                                aria-describedby="emailHelp" placeholder="New email" required>
+                            </label>
+                            <button id="emailEditBtn" type="submit" class="btn btn-search">Update email</button>
                         </div>
                     </form>
-
-                    <form id="edit-password" action="POST">
-                        <div class="mb-4">
-                            <a data-toggle="collapse" href="#passwordCollapse" class="collapse-link"
-                                aria-expanded="false" aria-controls="passwordCollapse"><i
-                                    class="fas fa-chevron-down"></i> Change password</a>
+                </div>
+                <div class="col-12 d-md-none">
+                    <hr>
+                </div>
+                    
+                <div class="col-10 col-sm-8 col-md-5 col-xl-4 card familyhub-card p-4 m-2">
+                    <form id="editPassword" action="POST">
+                        <h3>Change password</h3>
+                        <div class="form-group">
+                            <label for="passOld">Current password</label>
+                            <input name="passOld" type="password" class="form-control pass-input-js"
+                                autocomplete="new-password" id="passOld" placeholder="Current password" required>
+                            <label for="passNew">New password</label>
+                            <input name="passNew" type="password" class="form-control pass-input-js"
+                                autocomplete="new-password" id="passNew" placeholder="New password" required>
                         </div>
-
-                        <div id="passwordCollapse" class="collapse">
-                            <div class="form-group">
-                                <label for="passOld">Current password</label>
-                                <input name="passOld" type="password" class="form-control pass-input-js"
-                                    autocomplete="new-password" id="passOld" placeholder="Current password" required>
-                                <label for="passNew">New password</label>
-                                <input name="passNew" type="password" class="form-control pass-input-js"
-                                    autocomplete="new-password" id="passNew" placeholder="New password" required>
-                            </div>
-                            <button id="passEditBtn" type="submit" class="btn btn-search">Update password</button>
-                        </div>
-
+                        <button id="passEditBtn" type="submit" class="btn btn-search">Update password</button>
                     </form>
                 </div>
             </div>

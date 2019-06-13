@@ -24,23 +24,16 @@ a.fh-link:hover {
 #account-settings-wrapper h3,
 #add-edit-activity-wrapper h3,
 #add-edit-event-wrapper h3,
-#contact-wrapper h3 {
+#contact-wrapper h3,
+#account-settings-wrapper h3 {
     font-size: 1.2rem;
     color: $mid-blue;
     margin-bottom: 1.2rem;
     text-transform: capitalize;
 }
 
-#account-settings-wrapper h3 {
-    color: $terracotta;
-}
-
 #login-wrapper h3 {
     text-transform: none;
-}
-
-#account-settings-wrapper h3 {
-    margin-bottom: 0.5rem;
 }
 
 #create-account-wrapper label,
