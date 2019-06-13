@@ -348,6 +348,26 @@ def new_event_page(username):
                             loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
+
+# =========================================================================== #
+
+# preview event page
+@app.route('/editor/<username>/preview-event')
+def preview_event_page():
+    
+    loggedIn = True if 'user' in session else False
+
+    if not loggedIn:
+        return redirect(url_for('permission_denied'))
+    else:
+        user = db.users.find_one({"username": session['user']})
+
+    return render_template("pages/eventlisting.html", 
+                            title="Preview", 
+                            preview=True,
+                            loggedIn=loggedIn,
+                            keywords=Keywords.generic())
+
 # =========================================================================== #
 
 # Edit existing event page

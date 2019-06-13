@@ -2,6 +2,28 @@
     Listing pages
 ------------------------------ */
 
+#preview-bar {
+    width: 100%;
+    background-color: #ed6b5abb;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 0.5rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+#preview-bar h1 {
+    margin: 0;
+    font-family: $capitalized-heading;
+    font-size: 2rem;
+    color: #fff;
+}
+
+#preview-bar p {
+    margin: 0;
+}
+
+
 .listing-img {
     width: 100%;
     margin-bottom: 2rem;
