@@ -264,17 +264,24 @@ $('#alertModalClose').click(function (e) {
  * Function takes username for this user passed from the 
  * database and constructs a welcome message with it, then
  * activates the modal so it can be seen.
+ * 
+ * BUG FIX: this function also uses the username variable to construct the nessasary 
+ * urls for the login page modal. As the modal exists on the page before the user is
+ * logged in. the usual session user variable could not be used to create these links 
  * @param {string} username 
  */
 
 function openLoggedInModal(username) {
-  name = capFirst(username);
+  let name = capFirst(username);
+  $("#accountUrl").attr("href", `/editor/account/${username}`)
+  $("#newEventUrl").attr("href", `/editor/${username}/add-new-event`)
+  $("#newActivityUrl").attr("href", `/editor/${username}/add-new-activity`)
   $('#welcomeMessage').text('Welcome ' + name + '.');
   $('#loggedInModal').addClass('active');
 }
 
 /**
- * Funciton takes a string and capitalizes the first letter.
+ * Function takes a string and capitalizes the first letter.
  * Code credit: https://paulund.co.uk/how-to-capitalize-the-first-letter-of-a-string-in-javascript
  * @param {string} string 
  */

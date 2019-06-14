@@ -162,7 +162,7 @@ def login_page():
         response = {
             "userMatch": True if user else False,
             "passwordCorrect": passwordCorrect,
-            "username": username,
+            "username": username
         }
 
         print(username)
@@ -418,7 +418,7 @@ def edit_event_page():
 # all boolean values converted as needed to be store correctly in the database,
 # and finally inserts that data into the database.
 
-@app.route('/editor/<username>/new-activity', methods=['GET', 'POST'])
+@app.route('/editor/<username>/add-new-activity', methods=['GET', 'POST'])
 def new_activity_page(username):
     
     loggedIn = True if 'user' in session else False
