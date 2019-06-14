@@ -370,13 +370,13 @@ def preview_event_page(username, title):
 
     print(eventData)
 
-    date = eventData['date'].strftime("%d/%m/%Y")
-    print(date)
+    dateOfEvent = eventData['date'].strftime("%d/%m/%Y")
 
     title = "Preview | " + title
     return render_template("pages/eventlisting.html", 
                             title=title,
                             eventData=eventData, 
+                            dateOfEvent=dateOfEvent,
                             new=new,
                             preview=True,
                             loggedIn=loggedIn,
