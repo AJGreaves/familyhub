@@ -6,6 +6,5 @@ __pycache__
 #files
 sample.txt
 .flaskenv
-*.map
-static/css/main.css.map 
-static/css/main.min.css.map
+main.css.map
+main.min.css.map
