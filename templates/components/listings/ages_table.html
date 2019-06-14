@@ -10,7 +10,7 @@
                 Under 4
             </td>
             <td>
-                <i class="fas fa-times icon-sm"></i>
+                <i class="fas {% if event.ageRange.under4 %}fa-check{% else %}fa-times{% endif %} icon-sm"></i>
             </td>
         </tr>
         <tr>
@@ -18,7 +18,7 @@
                 4 - 6 yr
             </td>
             <td>
-                <i class="fa fa-check icon-sm"></i>
+                <i class="fas {% if event.ageRange.age4to6 %}fa-check{% else %}fa-times{% endif %} icon-sm"></i>
             </td>
         </tr>
         <tr>
@@ -26,7 +26,7 @@
                 6 - 8 yr
             </td>
             <td>
-                <i class="fa fa-check icon-sm"></i>
+                <i class="fas {% if event.ageRange.age6to8 %}fa-check{% else %}fa-times{% endif %} icon-sm"></i>
             </td>
         </tr>
         <tr>
@@ -34,7 +34,7 @@
                 8 - 10 yr
             </td>
             <td>
-                <i class="fa fa-check icon-sm"></i>
+                <i class="fas {% if event.ageRange.age8to10 %}fa-check{% else %}fa-times{% endif %} icon-sm"></i>
             </td>
         </tr>
         <tr>
@@ -42,7 +42,7 @@
                 10 - 12 yr
             </td>
             <td>
-                <i class="fas fa-times icon-sm"></i>
+                <i class="fas {% if event.ageRange.age10to12 %}fa-check{% else %}fa-times{% endif %} icon-sm"></i>
             </td>
         </tr>
         <tr>
@@ -50,7 +50,7 @@
                 12 yr +
             </td>
             <td>
-                <i class="fas fa-times icon-sm"></i>
+                <i class="fas {% if event.ageRange.age12up %}fa-check{% else %}fa-times{% endif %} icon-sm"></i>
             </td>
         </tr>
     </tbody>

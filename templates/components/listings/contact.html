@@ -8,16 +8,16 @@
                     <i class="fas fa-map-marker-alt icon"></i>
                 </td>
                 <td>
-                    Bartholomeus Ruloffstraat 9, 1071 WJ Amsterdam
-                    </th>
+                    {{ event.address.addressLine1 }} {{ event.address.postcode }} {{ event.address.town }}
+                </th>
             </tr>
             <tr>
                 <td>
                     <i class="fas fa-globe-europe icon"></i>
                     </th>
                 <td>
-                    <a class="fh-link" href="#" aria-label="This activity website link">
-                        www.dummywebsite.nl
+                    <a class="fh-link" target="_blank" href="https://{{ event.contact.url }}" aria-label="Visit the website for this event {{ event.contact.url }}">
+                        {{ event.contact.url }}
                     </a>
                 </td>
             </tr>
@@ -26,8 +26,8 @@
                     <i class="fas fa-at icon"></i>
                     </th>
                 <td>
-                    <a class="fh-link" href="#" aria-label="Email this activity">
-                        dummy@emailaddress.com
+                    <a class="fh-link" href="mailto:{{ event.contact.email }}" aria-label="Email the organisers of this event">
+                        {{ event.contact.email }}
                     </a>
                 </td>
             </tr>
