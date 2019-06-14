@@ -105,30 +105,51 @@ And also in the Chrome Developer Tools device simulators on all options and orie
 ```
 
 2. **pylinter on vscode causing errors**
-    - Trying to import one py file into another was throwing confusing errors, running only once and then refusing to work again.
-    - Fix: installed pylint-flask and the pylinter started working correctly again.
+- Trying to import one py file into another was throwing confusing errors, running only once and then refusing to work again.
+- Fix: installed pylint-flask and the pylinter started working correctly again.
 
 3. **Connection issues with vscode to MongoDB**
-    - Despite my connection string to mongodb working perfectly on cloud9, and other students vscode machines. If I tried to connect to it from my machine I got the following error: 
-`pymongo.errors.ConfigurationError: The DNS response does not contain an answer to the question: _mongodb._tcp.<clustername>-qtxun.mongodb.net. IN SRV`
+- Despite my connection string to mongodb working perfectly on cloud9, and other students vscode machines. If I tried to connect to it from my machine I got the following error: 
+```
+pymongo.errors.ConfigurationError: The DNS response does not contain an answer to the question: _mongodb._tcp.<clustername>-qtxun.mongodb.net. IN SRV
+```
 
-    - multiple attempts to fix this involved: 
-        - checking my mongodb password was correct (it was)
-        - logging my MONGO_URI connection string to the terminal to check it was coming through from the enviroment variable (it was)
-        - giving the connection string to another student to try on his machine (it worked fine!)
-        - Checking that I had installed dnspython in both my .venv and also globally
-    - FIX: After a lengthy call with MongoDB customer service, the solution was to change the connection string from an SRV to `mongodb://<username>:<password>@<clustername>-shard-00-00-qtxun.mongodb.net:27017,<clustername>-shard-00-01-qtxun.mongodb.net:27017,<clustername>-shard-00-02-qtxun.mongodb.net:27017/test?ssl=true&replicaSet=<clustername>-shard-0&authSource=admin&retryWrites=true&w=majority` which allowed me to connect. 
+- multiple attempts to fix this involved: 
+- checking my mongodb password was correct (it was)
+- logging my MONGO_URI connection string to the terminal to check it was coming through from the enviroment variable (it was)
+- giving the connection string to another student to try on his machine (it worked fine!)
+- Checking that I had installed dnspython in both my .venv and also globally
+- FIX: After a lengthy call with MongoDB customer service, the solution was to change the connection string from an SRV to the following which allowed me to connect. 
+```
+mongodb://<username>:<password>@<clustername>-shard-00-00-qtxun.mongodb.net:27017,<clustername>-shard-00-01-qtxun.mongodb.net:27017,<clustername>-shard-00-02-qtxun.mongodb.net:27017/test?ssl=true&replicaSet=<clustername>-shard-0&authSource=admin&retryWrites=true&w=majority
+``` 
 
-    - The explanation for why this happend from MongoDB customer service was as follows: 
 
-    _The issue you encountered has to do with how your python driver or network is resolving the DNS records in relation to the SRV string._
+- The explanation for why this happend from MongoDB customer service was as follows: 
 
-    _The root cause could be due to an older python version that is installed, a network environment restriction or an old pymongo version._
+_The issue you encountered has to do with how your python driver or network is resolving the DNS records in relation to the SRV string._
+
+_The root cause could be due to an older python version that is installed, a network environment restriction or an old pymongo version._
 
 4. **Go back button js would not work**
-    - On my custom "permission denied" page, the "Go Back" button was designed to return the user to whichever page they were previously on. 
-    - I did my best to avoid inline scripts, but all solutions tried did not work. 
-    - Fix: Used an line script on the button in html.
+- On my custom "permission denied" page, the "Go Back" button was designed to return the user to whichever page they were previously on. 
+- Fix: Used an line script on the button in html.
+
+5. **Session variable not building url as expected**
+- For my logged in users I used a session variable to store their username and used this to construct urls for parts of the site they could only access when logged in.
+- However I hit a problem when trying to provide the users with links to their account pages on login. 
+- The reason for this was although the `session['name']` variable was assigned on login, the user was not then immediately taken to a new page, so the session variable had not existed to create the links in the modal on the same page, that loaded once login was complete. 
+- To get around this problem I used javascript to construct the needed urls once login was complete, as the confirm login modal was launched. Using a variable returned during the fetch function. 
+```javascript
+function openLoggedInModal(username) {
+  let name = capFirst(username);
+  $("#accountUrl").attr("href", `/editor/account/${username}`)
+  $("#newEventUrl").attr("href", `/editor/${username}/add-new-event`)
+  $("#newActivityUrl").attr("href", `/editor/${username}/add-new-activity`)
+  $('#welcomeMessage').text('Welcome ' + name + '.');
+  $('#loggedInModal').addClass('active');
+}
+  ```
 
 #### Unsolved bugs
 
