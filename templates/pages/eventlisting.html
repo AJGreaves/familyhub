@@ -1,7 +1,6 @@
 {% extends 'layout/base.html' %} {% block content %}
-
 {{ eventData }}
-{{ new }}
+
 <main>
     <!-- Section: activity listing -->
     <section>
@@ -16,7 +15,7 @@
         <div id="event-listing-wrapper" class="container">
             <div class="row">
                 <div class="col-12">
-                    <h1>Dummy event title here</h1>
+                    <h1>{{ eventData.title }}</h1>
                     <hr>
                 </div>
                 <!-- event image -->
