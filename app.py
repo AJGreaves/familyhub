@@ -366,12 +366,11 @@ def preview_event_page(username, title):
 
     event_id = request.args.get('event_id')
     new = request.args.get('new')
-    eventData = db.events.find_one({"_id": event_id})
+    eventData = db.events.find_one({"_id": ObjectId(event_id)})
 
     print(eventData)
 
-    dateTime = eventData['date']
-    date = dateTime[0:9]
+    date = eventData['date'].strftime("%d/%m/%Y")
     print(date)
 
     title = "Preview | " + title
