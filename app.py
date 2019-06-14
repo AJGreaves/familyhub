@@ -161,7 +161,8 @@ def login_page():
         response = {
             "userMatch": True if user else False,
             "passwordCorrect": passwordCorrect,
-            "username": username
+            "username": username,
+            "session":  session
         }
         return json.dumps(response)
 
@@ -234,8 +235,6 @@ def settings_page():
     if request.method == 'POST':
 
         post_request = request.get_json()
-
-        print(post_request)
 
         updated = False
 
@@ -366,6 +365,12 @@ def preview_event_page(username, title):
     event_id = request.args.get('event_id')
     new = request.args.get('new')
     eventData = db.events.find_one({"_id": event_id})
+
+    print(eventData)
+
+    dateTime = eventData['date']
+    date = dateTime[0:9]
+    print(date)
 
     title = "Preview | " + title
     return render_template("pages/eventlisting.html", 
