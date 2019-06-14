@@ -1,5 +1,6 @@
 {% extends 'layout/base.html' %} {% block content %}
-{{ eventData }}
+{{ event }}
+
 
 <main>
     <!-- Section: activity listing -->
@@ -15,13 +16,13 @@
         <div id="event-listing-wrapper" class="container">
             <div class="row">
                 <div class="col-12">
-                    <h1>{{ eventData.title }}</h1>
+                    <h1>{{ event.title }}</h1>
                     <hr>
                 </div>
                 <!-- event image -->
                 <div class="col-12 col-lg-6">
                     <div class="event-listing-image">
-                        <img class="listing-img" src="https://i.ibb.co/T2K54dt/tulips.jpg"></img>
+                        <img class="listing-img" src="{{ event.imgUrl }}" alt="{{event.title}}"></img>
                     </div>
                 </div>
                 <div class="col-12 col-lg-6">
@@ -33,10 +34,10 @@
 
                             <!-- date -->
                             <h3><i class="far fa-calendar-alt icon"></i>Date</h3>
-                            <p class="mb-4">Jul 23 2019</p>
+                            <p class="mb-4">{{ date }}</p>
 
-                            <!-- opening times table -->
-                            <h3><i class="fas fa-calendar-week icon"></i>Open times</h3>
+                            <!-- opening times table \ commented out to add at a later date -->
+                            <!-- <h3><i class="fas fa-calendar-week icon"></i>Open times</h3>
                             <table class="table table-sm mb-4">
                                 <thead>
                                     <tr>
@@ -50,11 +51,15 @@
                                         <td>18:00</td>
                                     </tr>
                                 </tbody>
-                            </table>
+                            </table> -->
 
                             <!-- price info -->
                             <h3>Price:</h3>
-                            <p class="mb-4">From <span id="event-price-from">€5</span> per person</p>
+                            {% if event.price.isFree == False %}
+                            <p class="mb-4">From €{{ event.price.from }} per person</p>
+                            {% else %}
+                            <p class="mb-4">Free!</p>
+                            {% endif %}
 
                         </div>
                         <div class="col-6">
