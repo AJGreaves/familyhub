@@ -2,7 +2,6 @@ import os, json
 from flask import Flask, redirect, render_template, request, url_for, jsonify, session
 from config import Config
 from pymongo import MongoClient
-from pymongo.collection import ReturnDocument
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 from familyhubapp.keys import Keywords
@@ -139,7 +138,9 @@ def login_page():
 
     loggedIn = True if 'user' in session else False
 
-    if loggedIn:
+    print(loggedIn)
+
+    if loggedIn == True:
         user_in_db = db.users.find_one({"username": session['user']})
         if user_in_db:
             return redirect(url_for('my_account_page', user=user_in_db['username']))
@@ -150,7 +151,7 @@ def login_page():
         user = db.users.find_one({ '$or': [ { 'username': post_request['loginInput'] }, { 'email': post_request['loginInput'] } ]})
 
         passwordCorrect = False
-        username = ' '
+        username = ''
 
         if user: 
             if check_password_hash(user['password'], post_request['password']):
@@ -162,8 +163,9 @@ def login_page():
             "userMatch": True if user else False,
             "passwordCorrect": passwordCorrect,
             "username": username,
-            "session":  session
         }
+
+        print(username)
         return json.dumps(response)
 
     return render_template("pages/login.html", 
