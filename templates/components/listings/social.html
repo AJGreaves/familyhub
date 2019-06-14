@@ -2,21 +2,29 @@
 
 <h3>Social</h3>
 <ul>
+    {% if event.contact.facebook %}
     <li>
-        <a href="#" target="_blank" aria-label="Find this business on Facebook" rel="noopener">
+        <a href="https://{{ event.contact.facebook }}" target="_blank" aria-label="Find this event on Facebook" rel="noopener">
             <i class="fab fa-facebook social-icon-shadow"></i>
         </a>
     </li>
+    {% endif %}
+    
+    {% if event.contact.twitter %}
     <li>
-        <a href="#" target="_blank" aria-label="Find this business on Twitter" rel="noopener">
+        <a href="https://{{ event.contact.twitter }}" target="_blank" aria-label="Find this event on Twitter" rel="noopener">
             <i class="fab fa-twitter social-icon-shadow"></i>
         </a>
     </li>
+    {% endif %}
+
+    {% if event.contact.instagram %}
     <li>
-        <a href="#" target="_blank" aria-label="Find this business on Instagram" rel="noopener">
+        <a href="https://{{ event.contact.instagram }}" target="_blank" aria-label="Find this event on Instagram" rel="noopener">
             <i class="fab fa-instagram social-icon-shadow"></i>
         </a>
     </li>
+    {% endif %}
 </ul>
 
 {% endblock %}
