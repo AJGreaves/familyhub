@@ -165,7 +165,6 @@ def login_page():
             "username": username
         }
 
-        print(username)
         return json.dumps(response)
 
     return render_template("pages/login.html", 
@@ -212,11 +211,33 @@ def activity_listing_page():
 # =========================================================================== #
 
 # Event listing page - see if possible to update this to different routes based on each event title
-@app.route('/event-listing')
-def event_listing_page():
+@app.route('/event-listing/<title>')
+def event_listing_page(title):
     loggedIn = True if 'user' in session else False
+
+    event_id = request.args.get('event_id')
+    newEvent = request.args.get('newEvent')
+
+    event = db.events.find_one({"_id": ObjectId(event_id)})
+    date = event['date'].strftime("%d %b %Y")
+
+    rawDescrip = event['description']
+    description = (rawDescrip).split('\r\n')
+    
+    index = 0
+    descrpDict = []
+    for parag in description:
+        if parag != '':  
+            key = str(index)
+            descrpDict.append({key:parag})
+            index = index + 1
+    
     return render_template("pages/eventlisting.html", 
-                            title="Event Listing",
+                            title=title,
+                            event=event, 
+                            date=date,
+                            description=descrpDict,
+                            newEvent=newEvent,
                             loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
@@ -356,7 +377,7 @@ def new_event_page(username):
 # =========================================================================== #
 
 # preview event page
-@app.route('/editor/preview-event/<username>/<title>')
+@app.route('/editor/preview-event/<username>/<title>', methods=['GET', 'POST'])
 def preview_event_page(username, title):
     
     loggedIn = True if 'user' in session else False
@@ -371,7 +392,6 @@ def preview_event_page(username, title):
 
     rawDescrip = event['description']
     description = (rawDescrip).split('\r\n')
-    print(description)
     
     index = 0
     descrpDict = []
@@ -381,15 +401,18 @@ def preview_event_page(username, title):
             descrpDict.append({key:parag})
             index = index + 1
 
-    print(descrpDict)
+    if request.method == 'POST':
+        db.events.find_one_and_update({"_id": ObjectId(event_id)}, {"$set": {"published": True}})
+        return redirect(url_for('event_listing_page', event_id=event_id, title=title, newEvent=True ))
+    
 
     title = "Preview | " + title
     return render_template("pages/eventlisting.html", 
                             title=title,
                             event=event, 
                             date=date,
-                            description=descrpDict,
                             new=new,
+                            description=descrpDict,
                             preview=True,
                             loggedIn=loggedIn,
                             keywords=Keywords.generic())
@@ -398,7 +421,7 @@ def preview_event_page(username, title):
 
 # Edit existing event page
 @app.route('/editor/<username>/edit-event')
-def edit_event_page():
+def edit_event_page(username):
     
     loggedIn = True if 'user' in session else False
 
@@ -406,6 +429,7 @@ def edit_event_page():
         return redirect(url_for('permission_denied'))
     else:
         user = db.users.find_one({"username": session['user']})
+        event_id = request.args.get('event_id')
 
     return render_template("pages/editor.html", 
                             title="Edit Event", 
