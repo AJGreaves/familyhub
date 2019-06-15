@@ -439,21 +439,25 @@ def preview_event_page(username, title):
 # =========================================================================== #
 
 # Edit existing event page
-@app.route('/editor/<username>/edit-event')
-def edit_event_page(username):
+@app.route('/editor/edit-event/<username>/<title>')
+def edit_event_page(username, title):
     
     loggedIn = True if 'user' in session else False
 
     if not loggedIn:
         return redirect(url_for('permission_denied'))
     else:
-        user = db.users.find_one({"username": session['user']})
         event_id = request.args.get('event_id')
+        event = db.events.find_one({"_id": ObjectId(event_id)})
+    
+    headTitle = 'Edit | ' + title
 
     return render_template("pages/editor.html", 
-                            title="Edit Event", 
+                            title=headTitle, 
                             editor="edit",
                             type="event",
+                            event_id=event_id,
+                            event=event,
                             loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
