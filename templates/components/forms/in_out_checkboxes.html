@@ -1,13 +1,15 @@
 {% block in_out_checkboxes %}
 
         <div class="form-check">
-            <input class="form-check-input in-out-js" name="indoor"  type="checkbox" id="indoor" required>
+            <input class="form-check-input in-out-js" name="indoor"  type="checkbox" id="indoor"
+            {% if editor == 'edit' and type == 'event' and event.indoor %}checked{% endif %} required>
             <label class="form-check-label" for="indoor">
                 Indoor
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input in-out-js" name="outdoor" type="checkbox" id="outdoor" required>
+            <input class="form-check-input in-out-js" name="outdoor" type="checkbox" id="outdoor"
+            {% if editor == 'edit' and type == 'event' and event.outdoor %}checked{% endif %} required>
             <label class="form-check-label" for="outdoor">
                 Outdoor
             </label>
