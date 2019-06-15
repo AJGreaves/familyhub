@@ -2,23 +2,32 @@
 
 <div id="social-share-icons" class="col-12 col-md-6">
     <h3>Share</h3>
+    {% if preview == True %}
+    <div>
+        <i class="fab fa-facebook social-icon-shadow no-share"></i>
+        <i class="fab fa-twitter social-icon-shadow no-share"></i>
+        <i class="far fa-paper-plane social-icon-shadow no-share"></i>
+    </div>
+
+    {% else %}
     <ul>
         <li>
-            <a href="#" target="_blank" aria-label="Share this page on Facebook" rel="noopener">
+            <a id="sharePageFb" href="#" target="_blank" aria-label="Share this page on Facebook" rel="noopener">
                 <i class="fab fa-facebook social-icon-shadow"></i>
             </a>
         </li>
         <li>
-            <a href="#" target="_blank" aria-label="Share this page on Twitter" rel="noopener">
+            <a id="sharePageTwitter" href="#" target="_blank" aria-label="Share this page on Twitter" rel="noopener">
                 <i class="fab fa-twitter social-icon-shadow"></i>
             </a>
         </li>
         <li>
-            <a href="#" target="_blank" aria-label="Share this page on Instagram" rel="noopener">
-                <i class="fab fa-instagram social-icon-shadow"></i>
+            <a id="sharePageEmail" href="#" target="_blank" aria-label="Email this page to someone" rel="noopener">
+                <i class="far fa-paper-plane social-icon-shadow"></i>
             </a>
         </li>
     </ul>
+    {% endif %}
 </div>
 
 {% endblock %}

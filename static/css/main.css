@@ -258,7 +258,8 @@ footer .social-icon-shadow {
   margin-left: 0.5rem;
 }
 
-.fab {
+.fab,
+.far {
   color: #ffffff;
   transition: all 0.2s ease-in-out 0.2s;
   -moz-transition: all 0.2s ease-in-out 0.2s;
@@ -266,7 +267,8 @@ footer .social-icon-shadow {
 }
 
 /* UX feature, social icons grow and change colour when hovered over */
-.fab:hover {
+.fab:hover,
+.far:hover {
   -webkit-transform: scale(1.4);
   transform: scale(1.4);
 }
@@ -284,6 +286,10 @@ footer .social-icon-shadow {
 .fa-twitter:hover,
 #listing-business-social-links .fa-twitter:hover {
   color: #38A1F3;
+}
+
+.no-share {
+  margin-right: 0.5rem;
 }
 
 /* creates custom calendar icon for event listing cards
@@ -334,7 +340,8 @@ each listing is for */
 }
 
 #listing-business-social-links .fab,
-#social-share-icons .fab {
+#social-share-icons .fab,
+#social-share-icons .far {
   color: #000034;
   font-size: 2rem;
 }
