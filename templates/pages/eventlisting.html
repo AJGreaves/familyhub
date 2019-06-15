@@ -1,7 +1,3 @@
-{% extends 'layout/base.html' %} {% block content %}
-{{ event }}
-
-
 <main>
     <!-- Section: activity listing -->
     <section>
@@ -84,7 +80,11 @@
                 <!-- listing description -->
                 <div class="col-12">
                     <h3>More info</h3>
-                    <p>{{ description }}</p>
+                    {% for parapgraph in description %}
+                        {% for key, value in parapgraph.items() %}
+                            <p>{{ value }}</p>
+                        {% endfor %}
+                    {% endfor %}
                 </div>
 
                 <!-- share this listing page on social media -->

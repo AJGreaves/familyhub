@@ -371,14 +371,24 @@ def preview_event_page(username, title):
 
     rawDescrip = event['description']
     description = (rawDescrip).split('\r\n')
-    descripJson = jsonify(description)
+    print(description)
+    
+    index = 0
+    descrpDict = []
+    for parag in description:
+        if parag != '':  
+            key = str(index)
+            descrpDict.append({key:parag})
+            index = index + 1
+
+    print(descrpDict)
 
     title = "Preview | " + title
     return render_template("pages/eventlisting.html", 
                             title=title,
                             event=event, 
                             date=date,
-                            description=descripJson,
+                            description=descrpDict,
                             new=new,
                             preview=True,
                             loggedIn=loggedIn,
