@@ -103,7 +103,7 @@
                 {% if preview == True %}
                 <!-- edit and publish buttons only available when user is previewing their new event -->
                 <div class="col-12 col-md-6 text-center text-md-left">
-                    <a href="" class="heading-btn btn btn-create">Edit</a>
+                    <a href="{{ url_for('edit_event_page', username=session['user'], title=event['title'], event_id=event['_id'])}}" class="heading-btn btn btn-create">Edit</a>
                     <form method="POST" id="publish">
                         <button id="publishEvent" type="submit" class="heading-btn btn btn-search ml-2">Publish</button>
                     </form>
