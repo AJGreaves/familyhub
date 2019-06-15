@@ -632,4 +632,6 @@ $(".no-share").click(function() {
   alertModal('no share');
 })
 
-
+$('#closeNotice').click(function() {
+  $('.hide').addClass('hidden')
+})

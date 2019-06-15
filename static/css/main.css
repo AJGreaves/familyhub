@@ -778,14 +778,26 @@ html {
 /* ------------------------------
     Listing pages
 ------------------------------ */
-#preview-bar {
+#preview-bar,
+#publish-success {
   width: 100%;
-  background-color: #ed6b5abb;
-  color: #fff;
   text-align: center;
   padding-bottom: 0.5rem;
   padding-right: 1rem;
   padding-left: 1rem;
+}
+
+#preview-bar {
+  background-color: #ed6b5abb;
+  color: #fff;
+}
+
+#publish-success {
+  background-color: #9bc1bc;
+  color: #000034;
+  padding-top: 1rem;
+  -webkit-transition: all 0.3s ease-in-out 0.3s;
+  transition: all 0.3s ease-in-out 0.3s;
 }
 
 #preview-bar h1 {
@@ -797,6 +809,15 @@ html {
 
 #preview-bar p {
   margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+#closeNotice {
+  float: right;
+  margin-top: -3rem;
 }
 
 .listing-img {
