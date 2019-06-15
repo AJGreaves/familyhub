@@ -249,6 +249,11 @@ function alertModal(message, date1, date2) {
       heading.text('Error');
       message1.text('Current password is incorrect.');
       break;
+    case 'no share':
+      heading.text('Sorry');
+      message1.text("You can't share this page in preview mode.");
+      message2.text('Once you have published it, the share links will work');
+      break;
     default:
       break;
   }
@@ -608,3 +613,19 @@ function noValues(key) {
     return false;
   }
 }
+
+if (document.querySelector('#social-share-icons')) {
+  addShareButtonLinks();
+}
+
+function addShareButtonLinks(){
+  let link = window.location.href
+
+  $('#sharePageFb').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=' + link);
+  $('#sharePageTwitter').attr('href', 'https://twitter.com/home?status=' + link);
+  $('#sharePageEmail').attr('href', 'mailto:?&subject=&body=' + link);
+}
+
+$(".no-share").click(function() {
+  alertModal('no share');
+})
