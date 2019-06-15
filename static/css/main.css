@@ -162,7 +162,8 @@ button:disabled:hover {
   color: #fff;
 }
 
-.search-input-field {
+.search-input-field,
+#publish {
   display: inline;
 }
 
