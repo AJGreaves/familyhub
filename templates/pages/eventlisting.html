@@ -4,13 +4,15 @@
     <!-- Section: activity listing -->
     <section>
         {% if preview == True %}
+        <!-- preview bar shows when user has created a new event and have not yet chosen to publish it -->
         <div id="preview-bar">
             <h1>Preview</h1>
             <p>This is a preview of how your activity listing will look on Family Hub. It is not published yet.</p>
             <strong>Click "Publish" button to confirm.</strong>
         </div>
         {% endif %}
-        {% if newEvent %}
+        {% if newEvent %}'
+        <!-- publish sucess bar shows when user has just published their new event -->
         <div id="publish-success" class="hide">
             <p class="hide">Your new event has been published!</p>
             <i id="closeNotice" class="fas fa-times text-white fa-2x hide"></i>
@@ -99,6 +101,7 @@
                 {% include 'components/listings/share.html' %}
                 
                 {% if preview == True %}
+                <!-- edit and publish buttons only available when user is previewing their new event -->
                 <div class="col-12 col-md-6 text-center text-md-left">
                     <a href="" class="heading-btn btn btn-create">Edit</a>
                     <form method="POST" id="publish">
@@ -106,6 +109,7 @@
                     </form>
                 </div>                
                 {% else %}
+                <!-- link back to events page only available when not in preview mode -->
                 <div class="col-12 col-md-6 text-center text-md-left">
                     <a href="{{url_for('events_page')}}" class="heading-btn btn btn-search">Search more events</a>
                 </div>
