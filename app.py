@@ -368,23 +368,17 @@ def preview_event_page(username, title):
     new = request.args.get('new')
     event = db.events.find_one({"_id": ObjectId(event_id)})
     date = event['date'].strftime("%d %b %Y")
-    rawDescrip = event['description']
 
-    description = (rawDescrip).split('\r\n\r\n')
-    description = []
-    for paragraph in descrip:
-        p = "{} <br><br>".format(paragraph)
-        description.append(p)
-    
-    descripWithHtml = ''
-    for i in description:
-        descripWithHtml = descripWithHtml + i
+    rawDescrip = event['description']
+    description = (rawDescrip).split('\r\n')
+    descripJson = jsonify(description)
 
     title = "Preview | " + title
     return render_template("pages/eventlisting.html", 
                             title=title,
                             event=event, 
                             date=date,
+                            description=descripJson,
                             new=new,
                             preview=True,
                             loggedIn=loggedIn,
