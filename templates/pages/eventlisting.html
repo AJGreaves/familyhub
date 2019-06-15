@@ -1,17 +1,17 @@
 {% extends 'layout/base.html' %} {% block content %}
 
 <main>
-    <!-- Section: activity listing -->
+    <!-- Section: event listing -->
     <section>
         {% if preview == True %}
         <!-- preview bar shows when user has created a new event and have not yet chosen to publish it -->
         <div id="preview-bar">
             <h1>Preview</h1>
-            <p>This is a preview of how your activity listing will look on Family Hub. It is not published yet.</p>
+            <p>This is a preview of how your event listing will look on Family Hub. It is not published yet.</p>
             <strong>Click "Publish" button to confirm.</strong>
         </div>
         {% endif %}
-        {% if newEvent %}'
+        {% if newEvent %}
         <!-- publish sucess bar shows when user has just published their new event -->
         <div id="publish-success" class="hide">
             <p class="hide">Your new event has been published!</p>

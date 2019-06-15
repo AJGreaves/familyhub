@@ -405,7 +405,6 @@ def preview_event_page(username, title):
         return redirect(url_for('permission_denied'))
 
     event_id = request.args.get('event_id')
-    new = request.args.get('new')
     event = db.events.find_one({"_id": ObjectId(event_id)})
     date = event['date'].strftime("%d %b %Y")
 
@@ -420,26 +419,27 @@ def preview_event_page(username, title):
             descrpDict.append({key:parag})
             index = index + 1
 
+    published = event['published']
+    preview = False if published else True
+
     if request.method == 'POST':
         db.events.find_one_and_update({"_id": ObjectId(event_id)}, {"$set": {"published": True}})
         return redirect(url_for('event_listing_page', event_id=event_id, title=title, newEvent=True ))
-    
 
     title = "Preview | " + title
     return render_template("pages/eventlisting.html", 
                             title=title,
                             event=event, 
                             date=date,
-                            new=new,
                             description=descrpDict,
-                            preview=True,
+                            preview=preview,
                             loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
 # =========================================================================== #
 
 # Edit existing event page
-@app.route('/editor/edit-event/<username>/<title>')
+@app.route('/editor/edit-event/<username>/<title>', methods=['GET', 'POST'])
 def edit_event_page(username, title):
     
     loggedIn = True if 'user' in session else False
@@ -449,9 +449,59 @@ def edit_event_page(username, title):
     else:
         event_id = request.args.get('event_id')
         event = db.events.find_one({"_id": ObjectId(event_id)})
-        date = event['date'].strftime("%d/%m/%Y")
+        date_for_value = event['date'].strftime("%d/%m/%Y")
     
     headTitle = 'Edit | ' + title
+
+    if request.method == 'POST':
+
+        post_request = request.form.to_dict()
+
+        published = event['published']
+        preview = False if published else True
+
+        # credit for date processing code to fellow student Seán Murphy 
+        date_for_db = post_request['date'].split('/')
+        date_for_db = f"{date_for_db[2]}-{date_for_db[1]}-{date_for_db[0]}"
+        date_for_db = datetime.strptime(date_for_db, '%Y-%m-%d')
+
+        if post_request.get('from'):
+            price_string = post_request.get('from')
+            price_int = int(price_string)
+
+        obj = {'username': post_request.get('username'), 
+                'title': post_request.get('title'),
+                'imgUrl': post_request.get('imgUrl'),
+                'date': date_for_db, 
+                'address': {'addressLine1': post_request.get('addressLine1'),
+                            'postcode': post_request.get('postcode'),
+                            'town': post_request.get('town')},
+                'ageRange': {'under4': True if post_request.get('under4') else False,
+                            'age4to6': True if post_request.get('age4to6') else False,
+                            'age6to8': True if post_request.get('age6to8') else False,
+                            'age8to10': True if post_request.get('age8to10') else False,
+                            'age10to12': True if post_request.get('age10to12') else False,
+                            'age12up': True if post_request.get('age12up') else False},
+                'price': {'from': price_int if post_request.get('from') else None,
+                            'isFree': True if post_request.get('isFree') else False},
+                'indoor': True if post_request.get('indoor') else False,
+                'outdoor': True if post_request.get('outdoor') else False,
+                'contact': {'url': post_request.get('url'),
+                            'email': post_request.get('email'),
+                            'facebook': post_request.get('facebook') if post_request.get('facebook') else None,
+                            'twitter': post_request.get('twitter') if post_request.get('twitter') else None,
+                            'instagram': post_request.get('instagram') if post_request.get('instagram') else None},
+                'description': post_request.get('description'),
+                'published': event['published']}
+
+        db.events.find_one_and_update({"_id": ObjectId(event_id)}, {"$set": obj})
+
+        return redirect(url_for('preview_event_page', 
+                                username=session['user'], 
+                                title=post_request['title'],
+                                preview=preview, 
+                                event_id=event_id,
+                                keywords=Keywords.generic()))
 
     return render_template("pages/editor.html", 
                             title=headTitle, 
@@ -459,7 +509,7 @@ def edit_event_page(username, title):
                             type="event",
                             event_id=event_id,
                             event=event,
-                            date=date,
+                            date=date_for_value,
                             loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
