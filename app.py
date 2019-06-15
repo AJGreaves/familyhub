@@ -449,6 +449,7 @@ def edit_event_page(username, title):
     else:
         event_id = request.args.get('event_id')
         event = db.events.find_one({"_id": ObjectId(event_id)})
+        date = event['date'].strftime("%d/%m/%Y")
     
     headTitle = 'Edit | ' + title
 
@@ -458,6 +459,7 @@ def edit_event_page(username, title):
                             type="event",
                             event_id=event_id,
                             event=event,
+                            date=date,
                             loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
