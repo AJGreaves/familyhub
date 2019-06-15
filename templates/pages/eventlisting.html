@@ -10,12 +10,12 @@
             <strong>Click "Publish" button to confirm.</strong>
         </div>
         {% endif %}
-
+        {% if newEvent %}
         <div id="publish-success" class="hide">
             <p class="hide">Your new event has been published!</p>
             <i id="closeNotice" class="fas fa-times text-white fa-2x hide"></i>
         </div>
-
+        {% endif %}
 
         <div id="event-listing-wrapper" class="container">
             <div class="row">
