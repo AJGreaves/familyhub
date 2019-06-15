@@ -4,7 +4,10 @@
     <div class="form-row">
         <div class="form-group col-12 col-md-9">
             <label for="accountId">Event Title *</label>
-            <input id="accountId" name="title" class="form-control" type="text" maxlength="50" placeholder="Your event title" required>
+            <input id="accountId" name="title" class="form-control" 
+            type="text" maxlength="50" placeholder="Your event title"
+            value="{% if editor == 'edit' and type == 'event' %}{{event.title}}{% endif %}"
+            required>
         </div>
         <div class="form-group col-12 col-md-3">
             <label for="date">Event Date</label>
