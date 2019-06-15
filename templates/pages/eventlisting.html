@@ -94,8 +94,10 @@
                 
                 {% if preview == True %}
                 <div class="col-12 col-md-6 text-center text-md-left">
-                    <a href="#" class="heading-btn btn btn-create">Edit</a>
-                    <a href="#" class="heading-btn btn btn-search ml-2">Publish</a>
+                    <a href="" class="heading-btn btn btn-create">Edit</a>
+                    <form method="POST" id="publish">
+                        <button id="publishEvent" type="submit" class="heading-btn btn btn-search ml-2">Publish</button>
+                    </form>
                 </div>                
                 {% else %}
                 <div class="col-12 col-md-6 text-center text-md-left">
