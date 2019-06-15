@@ -88,7 +88,6 @@ def new_account_page():
         if user_in_db:
             return redirect(url_for('my_account_page', user=user_in_db['username']))
 
-
     if request.method == 'POST':
         post_request = request.get_json()
 
@@ -210,7 +209,12 @@ def activity_listing_page():
 
 # =========================================================================== #
 
-# Event listing page - see if possible to update this to different routes based on each event title
+# Event listing page
+# Constructs url using <title> passed to it. Takes the event_id also passed to it and pulls
+# the relevant event from the database. Then the date and description are formatted
+# in a way that will display correctly in the browser. All the data is then passed to the 
+# template as it renders to display the event listing in the browser. 
+
 @app.route('/event-listing/<title>')
 def event_listing_page(title):
     loggedIn = True if 'user' in session else False
@@ -245,6 +249,12 @@ def event_listing_page(title):
 # =========================================================================== #
 
 # Settings page
+
+# collects the input from the settings page which requests a change to the users email or password. 
+# compares the input sent. To check that the old email address provided matches the one in the database
+# before updating it. Same for the password change. response is sent back to JS to control what alerts/messages
+# are returned to the user, in case they enter an incorrect password or email. 
+
 @app.route('/settings/<username>', methods=['GET', 'POST'])
 def settings_page():
     loggedIn = True if 'user' in session else False
@@ -313,7 +323,9 @@ def my_account_page(username):
 # Processes number string into int for storing correctly.
 # creates new object with username from post_request dict, username from databas and
 # all boolean values converted as needed to be store correctly in the database,
-# and finally inserts that data into the database.
+# and finally inserts that data into the database with published: False, which
+# will be updated to True when the user clicks "publish" on the next page so that it
+# can be seen in search results on the site. 
 
 @app.route('/editor/<username>/add-new-event', methods=['GET', 'POST'])
 def new_event_page(username):
@@ -377,6 +389,13 @@ def new_event_page(username):
 # =========================================================================== #
 
 # preview event page
+
+# Provides a preview of a newly created listing before the user to choose either to edit further or
+# publish. Using the event_id the data is pulled from the database, date and discription formatted and then 
+# passed to the flask to be rendered.
+# If user chooses to publish this event the the 'Published' value in the database is set to True. 
+# making the listing available to view and search on the site. 
+
 @app.route('/editor/preview-event/<username>/<title>', methods=['GET', 'POST'])
 def preview_event_page(username, title):
     
