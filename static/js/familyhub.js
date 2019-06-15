@@ -161,7 +161,6 @@ function checkAndUpdate(item) {
       oldInput: oldInput,
       newInput: newInput
     }
-    console.log(data)
     showLoading();
     fetch('/settings', {
         method: 'POST',
@@ -172,7 +171,6 @@ function checkAndUpdate(item) {
       })
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         hideLoading();
 
         if (item == '#emailEdit' && data.updated) {
@@ -253,6 +251,10 @@ function alertModal(message, date1, date2) {
       heading.text('Sorry');
       message1.text("You can't share this page in preview mode.");
       message2.text('Once you have published it, the share links will work');
+      break;
+    case 'event published':
+      heading.text('Published!');
+      message1.text("Your event has been published to Family Hub");
       break;
     default:
       break;
@@ -629,3 +631,5 @@ function addShareButtonLinks(){
 $(".no-share").click(function() {
   alertModal('no share');
 })
+
+
