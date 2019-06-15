@@ -4,7 +4,7 @@
     <div class="form-row">
         <div class="form-group col-12 col-md-9">
             <label for="accountId">Event Title *</label>
-            <input id="accountId" name="title" class="form-control" type="text" placeholder="Your event title" required>
+            <input id="accountId" name="title" class="form-control" type="text" maxlength="50" placeholder="Your event title" required>
         </div>
         <div class="form-group col-12 col-md-3">
             <label for="date">Event Date</label>
@@ -77,7 +77,7 @@
         <p>Please upload the photo for your listing to a free image hosting site (we recommend <a
                 href="https://imgbb.com/" target="_blank" aria-label="ImgBB">ImgBB</a>) and paste the direct url for it
             here</p>
-        <input id="imgUrl" name="imgUrl" class="form-control" type="text" placeholder="https://..." required>
+        <input id="imgUrl" name="imgUrl" class="form-control" type="text"  maxlength="100" placeholder="https://..." required>
         <small>Please include full url including https:// </small>
     </div>
 </div>
@@ -87,7 +87,7 @@
 <div class="col-12">
     <div class="form-group">
         <h3>Event description</h3>
-        <textarea class="form-control" name="description" id="description" rows="11"
+        <textarea  maxlength="2000" class="form-control" name="description" id="description" rows="11"
             placeholder="The first sentence of this description will also appear with your event listing in Family Hub search."
             required></textarea>
 
