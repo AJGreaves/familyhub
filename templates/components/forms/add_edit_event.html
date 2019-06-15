@@ -11,7 +11,7 @@
         </div>
         <div class="form-group col-12 col-md-3">
             <label for="date">Event Date</label>
-            <input id="date" name="date" class="no-click input-group date datepicker-wider" data-date-format="dd-mm-yyyy" required>
+            <input id="date" name="date" class="no-click input-group date datepicker-wider" data-date-format="dd-mm-yyyy" value="" required>
             <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
         </div>
     </div>
@@ -82,7 +82,8 @@
         <p>Please upload the photo for your listing to a free image hosting site (we recommend <a
                 href="https://imgbb.com/" target="_blank" aria-label="ImgBB">ImgBB</a>) and paste the direct url for it
             here</p>
-        <input id="imgUrl" name="imgUrl" class="form-control" type="text"  maxlength="100" placeholder="https://..." required>
+        <input id="imgUrl" name="imgUrl" class="form-control" type="text"  maxlength="100" 
+        {% if editor == 'edit' and type == 'event' %}value="{{ event.imgUrl }}"{% endif %} placeholder="https://..." required>
         <small>Please include full url including https:// </small>
     </div>
 </div>
@@ -93,8 +94,9 @@
     <div class="form-group">
         <h3>Event description</h3>
         <textarea  maxlength="2000" class="form-control" name="description" id="description" rows="11"
-            placeholder="The first sentence of this description will also appear with your event listing in Family Hub search."
-            required></textarea>
+        {% if editor == 'edit' and type == 'event' %}value="{{ event.description }}"{% endif %}
+        placeholder="The first sentence of this description will also appear with your event listing in Family Hub search."
+        required></textarea>
 
     </div>
 </div>
