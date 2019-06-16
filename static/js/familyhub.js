@@ -135,34 +135,35 @@ if (document.querySelector('#login-form')) {
 
 if (document.querySelector('#edit-account-form')) {
 
-  const emailEdit = document.querySelector('#emailEdit');
-  const passEdit = document.querySelector('#passEdit');
-
-  emailEdit.addEventListener('submit', (e) => {
+  const selector = document.querySelector('#edit-account-form');
+  selector.addEventListener('submit', (e) => {
     e.preventDefault();
-    checkAndUpdate('#emailEdit');
-  });
-  passEdit.addEventListener('submit', (e) => {
-    e.preventDefault();
-    checkAndUpdate('#passEdit');
+    let formId = e.target.id
+    console.log(formId);
+    checkAndUpdate(formId);
   });
 }
 
 function checkAndUpdate(item) {
 
-    key = item.slice(1,5);
+    key = item.slice(0,5);
+    console.log(key);
 
     const oldInput = document.querySelector('#'+ key + 'Old').value;
     const newInput = document.querySelector('#'+ key + 'New').value;
-    const whichForm = item;
+    const whichForm = key;
 
     const data = {
       whichForm: whichForm,
       oldInput: oldInput,
       newInput: newInput
     }
+
+    let sessionUser = '<%= Session["user"] %>';
+    fetchUrl = '/settings/' + sessionUser
+
     showLoading();
-    fetch('/settings', {
+    fetch(fetchUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -173,13 +174,13 @@ function checkAndUpdate(item) {
       .then(data => {
         hideLoading();
 
-        if (item == '#emailEdit' && data.updated) {
+        if (key == 'email' && data.updated) {
           alertModal('email updated')
-        } else if (item == '#emailEdit' && !data.updated) {
+        } else if (key == 'email' && !data.updated) {
           alertModal('email incorrect')
-        } else if (item == '#passEdit' && data.updated) {
+        } else if (key == 'pass' && data.updated) {
           alertModal('password updated')
-        } else if (item == '#passEdit' && !data.updated) {
+        } else if (key == 'pass' && !data.updated) {
           alertModal('password incorrect')
         }
       })
