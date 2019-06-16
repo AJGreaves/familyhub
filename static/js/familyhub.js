@@ -479,6 +479,29 @@ function countTwo(key) {
 }
 
 /**
+ * Returns true if both start and end fields for a specific
+ * day of the week have been filled in
+ * @param {string} day 
+ */
+
+function countTimes(day) {
+  let count = 0;
+  let selector = $('.compare-'+ day +'-js');
+
+  selector.each(function(){
+    if ($(this).val().length > 0 ) {
+      count += 1;
+    } 
+  });
+
+  if (count == 2) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+/**
  * Function uses day value string to construct array of the two times input and compares 
  * them to see if the user selected end time the same as or before the start time. 
  * If incorrect input the end time is deleted so user cannot submit form with incorrect data
