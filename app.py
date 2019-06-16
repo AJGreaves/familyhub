@@ -256,7 +256,7 @@ def event_listing_page(title):
 # are returned to the user, in case they enter an incorrect password or email. 
 
 @app.route('/settings/<username>', methods=['GET', 'POST'])
-def settings_page():
+def settings_page(username):
     loggedIn = True if 'user' in session else False
 
     if not loggedIn:
