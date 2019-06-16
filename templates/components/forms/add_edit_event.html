@@ -82,7 +82,7 @@
         <p>Please upload the photo for your listing to a free image hosting site (we recommend <a
                 href="https://imgbb.com/" target="_blank" aria-label="ImgBB">ImgBB</a>) and paste the direct url for it
             here</p>
-        <input id="imgUrl" name="imgUrl" class="form-control" type="text"  maxlength="100" 
+        <input id="imgUrl" name="imgUrl" class="form-control" type="url"  maxlength="100" 
         {% if editor == 'edit' and type == 'event' %}value="{{ event.imgUrl }}"{% endif %} placeholder="https://..." required>
         <small>Please include full url including https:// </small>
     </div>
