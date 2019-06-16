@@ -376,7 +376,11 @@ def new_event_page(username):
                 'published': False}
 
         newEvent_id = db.events.insert_one(obj).inserted_id
-        return redirect(url_for('preview_event_page', username=session['user'], title=post_request['title'], event_id=newEvent_id, new=True))
+        return redirect(url_for('preview_event_page', 
+                                username=session['user'], 
+                                title=post_request['title'], 
+                                event_id=newEvent_id, 
+                                new=True))
 
     return render_template("pages/editor.html", 
                             title="Add New Event", 
@@ -391,7 +395,7 @@ def new_event_page(username):
 # preview event page
 
 # Provides a preview of a newly created listing before the user to choose either to edit further or
-# publish. Using the event_id the data is pulled from the database, date and discription formatted and then 
+# publish. Using the event_id the data is pulled from the database, date and description formatted and then 
 # passed to the flask to be rendered.
 # If user chooses to publish this event the the 'Published' value in the database is set to True. 
 # making the listing available to view and search on the site. 
@@ -551,9 +555,9 @@ def new_activity_page(username):
         end = datetime.strptime(end, '%Y-%m-%d')
 
         openTimes = ['monStart','monEnd', 'tueStart', 'tueEnd', 
-                'wedStart', 'wedEnd', 'thuStart', 'thuEnd',
-                'friStart', 'friEnd', 'satStart', 'satEnd',
-                'sunStart', 'sunEnd']
+                    'wedStart', 'wedEnd', 'thuStart', 'thuEnd',
+                    'friStart', 'friEnd', 'satStart', 'satEnd',
+                    'sunStart', 'sunEnd']
 
         openTimesDict = { }
 
@@ -607,9 +611,15 @@ def new_activity_page(username):
                             'facebook': post_request.get('facebook') if post_request.get('facebook') else None,
                             'twitter': post_request.get('twitter') if post_request.get('twitter') else None,
                             'instagram': post_request.get('instagram') if post_request.get('instagram') else None},
-                'description': post_request.get('description')}
+                'description': post_request.get('description'),
+                'published': False}
 
-        db.activities.insert_one(obj)
+        newActivity_id = db.activities.insert_one(obj).inserted_id
+        return redirect(url_for('preview_activity_page', 
+                                username=session['user'], 
+                                title=post_request['title'], 
+                                activity_id=newActivity_id, 
+                                new=True))
 
     return render_template("pages/editor.html", 
                             title="Add New Activity", 
@@ -621,9 +631,9 @@ def new_activity_page(username):
 
 # =========================================================================== #
 
-# preview event page
-@app.route('/editor/<username>/preview-activity')
-def preview_activity_page():
+# preview activity page
+@app.route('/editor/preview-activity/<username>/<title>', methods=['GET', 'POST'])
+def preview_activity_page(username, title):
     
     loggedIn = True if 'user' in session else False
 
@@ -632,9 +642,35 @@ def preview_activity_page():
     else:
         user = db.users.find_one({"username": session['user']})
 
+    activity_id = request.args.get('activity_id')
+    activity = db.activities.find_one({"_id": ObjectId(activity_id)})
+    startDate = activity.dates['start'].strftime("%d %b %Y")
+
+    rawDescrip = activity['description']
+    description = (rawDescrip).split('\r\n')
+
+    index = 0
+    descrpDict = []
+    for parag in description:
+        if parag != '':  
+            key = str(index)
+            descrpDict.append({key:parag})
+            index = index + 1
+
+    published = activity['published']
+    preview = False if published else True
+
+    if request.method == 'POST':
+        db.activities.find_one_and_update({"_id": ObjectId(activity_id)}, {"$set": {"published": True}})
+        return redirect(url_for('activity_listing_page', activity_id=activity_id, title=title, newActivity=True ))
+
     return render_template("pages/activitylisting.html", 
-                            title="Preview", 
-                            preview=True,
+                            title=title, 
+                            activity=activity,
+                            startDate=startDate,
+                            #endDate=endDate,
+                            #openTimes=openTimes,
+                            preview=preview,
                             loggedIn=loggedIn,
                             keywords=Keywords.generic())
 
