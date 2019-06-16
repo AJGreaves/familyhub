@@ -4,18 +4,18 @@
 <label for="town">Town / City</label>
 <select id="town" name="town" class="form-control" required>
     <option value="" disabled>Select</option>
-    <option value="Aalsmeer" {% if event.address.town == 'Aalsmeer' %}selected{% endif %}>Aalsmeer</option>
-    <option value="Badhoevedorp" {% if event.address.town == 'Badhoevedorp' %}selected{% endif %}>Badhoevedorp</option>
-    <option value="Bloemendaal" {% if event.address.town == 'Bloemendaal' %}selected{% endif %}>Bloemendaal</option>
-    <option value="Cruquius" {% if event.address.town == 'Cruquius' %}selected{% endif %}>Cruquius</option>
-    <option value="Haarlem" {% if event.address.town == 'Haarlem' %}selected{% endif %}>Haarlem</option>
-    <option value="Heemstede" {% if event.address.town == 'Heemstede' %}selected{% endif %}>Heemstede</option>
-    <option value="Hillegom" {% if event.address.town == 'Hillegom' %}selected{% endif %}>Hillegom</option>
-    <option value="Hoofddorp" {% if event.address.town == 'Hoofddorp' %}selected{% endif %}>Hoofddorp</option>
-    <option value="Lisse" {% if event.address.town == 'Lisse' %}selected{% endif %}>Lisse</option>
-    <option value="Nieuw-Vennep" {% if event.address.town == 'Nieuw-Vennep' %}selected{% endif %}>Nieuw-Vennep</option>
-    <option value="Santpoort-Noord" {% if event.address.town == 'Santpoort-Noord' %}selected{% endif %}>Santpoort-Noord</option>
-    <option value="Uithorn" {% if event.address.town == 'Uithorn' %}selected{% endif %}>Uithorn</option>
-    <option value="Zandvoort" {% if event.address.town == 'Zandvoort' %}selected{% endif %}>Zandvoort </option>
+    <option value="Aalsmeer" {% if editor == 'edit' and type == 'event' and event.address.town == 'Aalsmeer' %}selected{% endif %}>Aalsmeer</option>
+    <option value="Badhoevedorp" {% if editor == 'edit' and type == 'event' and event.address.town == 'Badhoevedorp' %}selected{% endif %}>Badhoevedorp</option>
+    <option value="Bloemendaal" {% if editor == 'edit' and type == 'event' and event.address.town == 'Bloemendaal' %}selected{% endif %}>Bloemendaal</option>
+    <option value="Cruquius" {% if editor == 'edit' and type == 'event' and event.address.town == 'Cruquius' %}selected{% endif %}>Cruquius</option>
+    <option value="Haarlem" {% if editor == 'edit' and type == 'event' and event.address.town == 'Haarlem' %}selected{% endif %}>Haarlem</option>
+    <option value="Heemstede" {% if editor == 'edit' and type == 'event' and event.address.town == 'Heemstede' %}selected{% endif %}>Heemstede</option>
+    <option value="Hillegom" {% if editor == 'edit' and type == 'event' and event.address.town == 'Hillegom' %}selected{% endif %}>Hillegom</option>
+    <option value="Hoofddorp" {% if editor == 'edit' and type == 'event' and event.address.town == 'Hoofddorp' %}selected{% endif %}>Hoofddorp</option>
+    <option value="Lisse" {% if editor == 'edit' and type == 'event' and event.address.town == 'Lisse' %}selected{% endif %}>Lisse</option>
+    <option value="Nieuw-Vennep" {% if editor == 'edit' and type == 'event' and event.address.town == 'Nieuw-Vennep' %}selected{% endif %}>Nieuw-Vennep</option>
+    <option value="Santpoort-Noord" {% if editor == 'edit' and type == 'event' and event.address.town == 'Santpoort-Noord' %}selected{% endif %}>Santpoort-Noord</option>
+    <option value="Uithorn" {% if editor == 'edit' and type == 'event' and event.address.town == 'Uithorn' %}selected{% endif %}>Uithorn</option>
+    <option value="Zandvoort" {% if editor == 'edit' and type == 'event' and event.address.town == 'Zandvoort' %}selected{% endif %}>Zandvoort </option>
 </select>
 {% endblock %}
