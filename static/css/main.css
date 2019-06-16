@@ -867,7 +867,7 @@ ul {
 #listing-business-social-links li,
 #social-share-icons li,
 #social-share-icons h3 {
-  display: inline;
+  display: inline-block;
   margin-right: 0.5rem;
 }
 
