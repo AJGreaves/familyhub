@@ -1,42 +1,42 @@
 {% block age_range %}
 <div class="form-check">
     <input class="form-check-input age-range-js" name="under4" type="checkbox" id="under4"
-    {% if editor == 'edit' and type == 'event' and event.ageRange.under4 %}checked{% endif %} required>
+    {% if editor == 'edit' and type == 'event' and event.ageRange.under4 %}checked{% elif editor == 'new' %}required{% endif %}>
     <label class="form-check-label" for="under4">
         Under 4 yrs
     </label>
 </div>
 <div class="form-check">
     <input class="form-check-input age-range-js" name="age4to6" type="checkbox" id="age4to6"
-    {% if editor == 'edit' and type == 'event' and event.ageRange.age4to6 %}checked{% endif %} required>
+    {% if editor == 'edit' and type == 'event' and event.ageRange.age4to6 %}checked{% elif editor == 'new' %}required{% endif %}>
     <label class="form-check-label" for="age4to6">
         4 - 6 yrs
     </label>
 </div>
 <div class="form-check">
     <input class="form-check-input age-range-js" name="age6to8" type="checkbox" id="age6to8"
-    {% if editor == 'edit' and type == 'event' and event.ageRange.age6to8 %}checked{% endif %} required>
+    {% if editor == 'edit' and type == 'event' and event.ageRange.age6to8 %}checked{% elif editor == 'new' %}required{% endif %}>
     <label class="form-check-label" for="age6to8">
         6 - 8 yrs
     </label>
 </div>
 <div class="form-check">
     <input class="form-check-input age-range-js" name="age8to10" type="checkbox" id="age8to10"
-    {% if editor == 'edit' and type == 'event' and event.ageRange.age8to10 %}checked{% endif %} required>
+    {% if editor == 'edit' and type == 'event' and event.ageRange.age8to10 %}checked{% elif editor == 'new' %}required{% endif %}>
     <label class="form-check-label" for="age8to10">
         8 - 10 yrs
     </label>
 </div>
 <div class="form-check">
     <input class="form-check-input age-range-js" name="age10to12" type="checkbox" id="age10to12"
-    {% if editor == 'edit' and type == 'event' and event.ageRange.age10to12 %}checked{% endif %} required>
+    {% if editor == 'edit' and type == 'event' and event.ageRange.age10to12 %}checked{% elif editor == 'new' %}required{% endif %}>
     <label class="form-check-label" for="age10to12">
         10 - 12 yrs
     </label>
 </div>
 <div class="form-check">
     <input class="form-check-input age-range-js" name="age12up" type="checkbox" id="age12up"
-    {% if editor == 'edit' and type == 'event' and event.ageRange.age12up %}checked{% endif %} required>
+    {% if editor == 'edit' and type == 'event' and event.ageRange.age12up %}checked{% elif editor == 'new' %}required{% endif %}>
     <label class="form-check-label" for="age12up">
         12 yrs +
     </label>

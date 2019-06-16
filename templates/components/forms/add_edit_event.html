@@ -27,7 +27,8 @@
             <h3>Price Range</h3>
             <label for="from">Price (per person) from:</label>
             <input name="from" id="from" type="number" min="1" class="form-control"
-            {% if editor == 'edit' and type == 'event' %}value="{{event.price.from}}"{% endif %} required>
+            {% if editor == 'edit' and type == 'event' %}value="{{event.price.from}}"{% endif %} 
+            {% if editor == 'edit' and type == 'event' and event.price.isFree %}disabled{% else %}required{% endif %}>
             <small>Please round to nearest euro</small>
             <div class="custom-control custom-switch pt-4">
                 <input type="checkbox" class="custom-control-input" name="isFree" id="isFree"

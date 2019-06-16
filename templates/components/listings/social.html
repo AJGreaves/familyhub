@@ -4,7 +4,7 @@
 <ul>
     {% if event.contact.facebook %}
     <li>
-        <a href="https://{{ event.contact.facebook }}" target="_blank" aria-label="Find this event on Facebook" rel="noopener">
+        <a href="{{ event.contact.facebook }}" target="_blank" aria-label="Find this event on Facebook" rel="noopener">
             <i class="fab fa-facebook social-icon-shadow"></i>
         </a>
     </li>
@@ -12,7 +12,7 @@
     
     {% if event.contact.twitter %}
     <li>
-        <a href="https://{{ event.contact.twitter }}" target="_blank" aria-label="Find this event on Twitter" rel="noopener">
+        <a href="{{ event.contact.twitter }}" target="_blank" aria-label="Find this event on Twitter" rel="noopener">
             <i class="fab fa-twitter social-icon-shadow"></i>
         </a>
     </li>
@@ -20,7 +20,7 @@
 
     {% if event.contact.instagram %}
     <li>
-        <a href="https://{{ event.contact.instagram }}" target="_blank" aria-label="Find this event on Instagram" rel="noopener">
+        <a href="{{ event.contact.instagram }}" target="_blank" aria-label="Find this event on Instagram" rel="noopener">
             <i class="fab fa-instagram social-icon-shadow"></i>
         </a>
     </li>
