@@ -14,7 +14,7 @@
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}" type="text/css">
-    <title>{{title}} | Family Hub</title>
+    <title>{{headTitle}} | Family Hub</title>
 </head>
 
 <body>
@@ -52,8 +52,17 @@
     <!-- Gijgo scripts for datepickers and timepickers scripts -->
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"></script>
 
-    <!-- Project scripts -->
-    <script src="{{url_for('static', filename='js/familyhub.js')}}"></script>
+    <!-- Project scripts, which loaded dependant on active page -->
+    <script src="{{url_for('static', filename='js/common.js')}}"></script>
+    {% if active == 'form' or active == 'newAccount' or active == 'login' or active == 'contact' %}
+    <script src="{{url_for('static', filename='js/forms.js')}}"></script>
+    {% elif active == 'home' %}
+    <script src="{{url_for('static', filename='js/index.js')}}"></script>
+    {% elif active == 'activities' or active == 'events' %}
+    <script src="{{url_for('static', filename='js/filters.js')}}"></script>
+    {% elif active == 'listing' %}
+    <script src="{{url_for('static', filename='js/listings.js')}}"></script>
+    {% endif %}
 
 </body>
 
