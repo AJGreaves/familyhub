@@ -73,14 +73,15 @@ def contact_page():
 
 # new account page
 
-# Takes data collected with fetch in JS, checks if user already exists in the database.
-# if they are redirect them to account page
-# if they are not then it encrypts the password before sending complete object to mongodb.
-# It then returns to JS if the user already existed or not so JS can provide feedback to the user based on that condition.
-# page also renders the newaccount page to be viewed
-
 @app.route('/newaccount', methods=['GET', 'POST'])
 def new_account_page():
+    """
+    Takes data collected with fetch in JS, checks if user already exists in the database.
+    if they are redirect them to account page
+    if they are not then it encrypts the password before sending complete object to mongodb.
+    It then returns to JS if the user already existed or not so JS can provide feedback to the user based on that condition.
+    page also renders the newaccount page to be viewed
+    """
     loggedIn = True if 'user' in session else False
 
     if loggedIn:
@@ -127,14 +128,14 @@ def new_account_page():
 
 # login page
 
-# Takes data collected with fetch in JS, checks if user exists in the database
-# If the user is in the database it then compares the password provided with the hashed one from the database
-# If the password is correct the value of passwordCorrect is set to True
-# All this data is then returned to JS to respond accordingly to the browser
-
 @app.route('/login', methods=['GET', 'POST'])
 def login_page():
-
+    """
+    Takes data collected with fetch in JS, checks if user exists in the database
+    If the user is in the database it then compares the password provided with the hashed one from the database
+    If the password is correct the value of passwordCorrect is set to True
+    All this data is then returned to JS to respond accordingly to the browser
+    """
     loggedIn = True if 'user' in session else False
 
     print(loggedIn)
@@ -197,7 +198,7 @@ def search_page():
 
 # =========================================================================== #
 
-# Activity listing page - see if possible to update this to different routes based on each activity title
+# Activity listing page 
 @app.route('/activity-listing')
 def activity_listing_page():
     loggedIn = True if 'user' in session else False
@@ -210,13 +211,15 @@ def activity_listing_page():
 # =========================================================================== #
 
 # Event listing page
-# Constructs url using <title> passed to it. Takes the event_id also passed to it and pulls
-# the relevant event from the database. Then the date and description are formatted
-# in a way that will display correctly in the browser. All the data is then passed to the 
-# template as it renders to display the event listing in the browser. 
 
 @app.route('/event-listing/<title>')
 def event_listing_page(title):
+    """
+    Constructs url using <title> passed to it. Takes the event_id also passed to it and pulls
+    the relevant event from the database. Then the date and description are formatted
+    in a way that will display correctly in the browser. All the data is then passed to the 
+    template as it renders to display the event listing in the browser. 
+    """
     loggedIn = True if 'user' in session else False
 
     event_id = request.args.get('event_id')
@@ -250,13 +253,15 @@ def event_listing_page(title):
 
 # Settings page
 
-# collects the input from the settings page which requests a change to the users email or password. 
-# compares the input sent. To check that the old email address provided matches the one in the database
-# before updating it. Same for the password change. response is sent back to JS to control what alerts/messages
-# are returned to the user, in case they enter an incorrect password or email. 
-
 @app.route('/settings/<username>', methods=['GET', 'POST'])
 def settings_page(username):
+    
+    """
+    Collects the input from the settings page which requests a change to the users email or password. 
+    compares the input sent. To check that the old email address provided matches the one in the database
+    before updating it. Same for the password change. response is sent back to JS to control what alerts/messages
+    are returned to the user, in case they enter an incorrect password or email. 
+    """
     loggedIn = True if 'user' in session else False
 
     if not loggedIn:
@@ -266,17 +271,16 @@ def settings_page(username):
         user = db.users.find_one({"username": session['user']})
 
     if request.method == 'POST':
-
         post_request = request.get_json()
 
         updated = False
 
-        if post_request['whichForm'] == '#emailEdit':
+        if post_request['whichForm'] == 'email':
             if user['email'] == post_request['oldInput']:
                 db.users.find_one_and_update({"_id": ObjectId(user["_id"])}, {"$set": {"email": post_request["newInput"]}})
                 updated = True
         
-        if post_request['whichForm'] == '#passEdit':
+        if post_request['whichForm'] == 'pass':
             if check_password_hash(user['password'], post_request['oldInput']):
                 post_request['newInput'] = generate_password_hash(post_request['newInput'])
                 db.users.find_one_and_update({"_id": ObjectId(user["_id"])}, {"$set": {"password": post_request["newInput"]}})
@@ -316,20 +320,20 @@ def my_account_page(username):
 
 # Add new event page
 
-# Checks if user is logged in, if not redirects to permission denied page.
-# Gets user data from the database using the session username.
-# Converts data from form into dict, so can be processed before sending to database.
-# Processes date information to turn it into format needed to store date in mongodb.
-# Processes number string into int for storing correctly.
-# creates new object with username from post_request dict, username from databas and
-# all boolean values converted as needed to be store correctly in the database,
-# and finally inserts that data into the database with published: False, which
-# will be updated to True when the user clicks "publish" on the next page so that it
-# can be seen in search results on the site. 
-
 @app.route('/editor/<username>/add-new-event', methods=['GET', 'POST'])
 def new_event_page(username):
-
+    """
+    Checks if user is logged in, if not redirects to permission denied page.
+    Gets user data from the database using the session username.
+    Converts data from form into dict, so can be processed before sending to database.
+    Processes date information to turn it into format needed to store date in mongodb.
+    Processes number string into int for storing correctly.
+    creates new object with username from post_request dict, username from databas and
+    all boolean values converted as needed to be store correctly in the database,
+    and finally inserts that data into the database with published: False, which
+    will be updated to True when the user clicks "publish" on the next page so that it
+    can be seen in search results on the site. 
+    """
     loggedIn = True if 'user' in session else False
 
     if not loggedIn:
@@ -394,14 +398,15 @@ def new_event_page(username):
 
 # preview event page
 
-# Provides a preview of a newly created listing before the user to choose either to edit further or
-# publish. Using the event_id the data is pulled from the database, date and description formatted and then 
-# passed to the flask to be rendered.
-# If user chooses to publish this event the the 'Published' value in the database is set to True. 
-# making the listing available to view and search on the site. 
-
 @app.route('/editor/preview-event/<username>/<title>', methods=['GET', 'POST'])
 def preview_event_page(username, title):
+    """
+    Provides a preview of a newly created listing before the user to choose either to edit further or
+    publish. Using the event_id the data is pulled from the database, date and description formatted and then 
+    passed to the flask to be rendered.
+    If user chooses to publish this event the the 'Published' value in the database is set to True. 
+    making the listing available to view and search on the site. 
+    """
     
     loggedIn = True if 'user' in session else False
 
@@ -521,20 +526,19 @@ def edit_event_page(username, title):
 # =========================================================================== #
 
 # Add new activity page
-
-# Checks if user is logged in, if not redirects to permission denied page.
-# Gets user data from the database using the session username.
-# Converts data from form into dict, so can be processed before sending to database.
-# Processes date information to turn it into format needed to store date in mongodb.
-# Processes times by first looping through all the possible times, turning them into the correct format for
-# mongo and then adding them to a new dict to use to construct the final object to send to mongo.
-# creates new object with username from post_request dict, username from database and
-# all boolean values converted as needed to be store correctly in the database,
-# and finally inserts that data into the database.
-
 @app.route('/editor/<username>/add-new-activity', methods=['GET', 'POST'])
 def new_activity_page(username):
-    
+    """
+    Checks if user is logged in, if not redirects to permission denied page.
+    Gets user data from the database using the session username.
+    Converts data from form into dict, so can be processed before sending to database.
+    Processes date information to turn it into format needed to store date in mongodb.
+    Processes times by first looping through all the possible times, turning them into the correct format for
+    mongo and then adding them to a new dict to use to construct the final object to send to mongo.
+    creates new object with username from post_request dict, username from database and
+    all boolean values converted as needed to be store correctly in the database,
+    and finally inserts that data into the database.
+    """
     loggedIn = True if 'user' in session else False
 
     if not loggedIn:
