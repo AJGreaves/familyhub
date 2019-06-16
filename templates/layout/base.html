@@ -54,7 +54,10 @@
 
     <!-- Project scripts, which loaded dependant on active page -->
     <script src="{{url_for('static', filename='js/common.js')}}"></script>
-    {% if active == 'form' or active == 'newAccount' or active == 'login' or active == 'contact' %}
+    {% if active == 'form' %}
+    <script src="{{url_for('static', filename='js/forms.js')}}"></script>
+    <script src="{{url_for('static', filename='js/date-time-pickers.js')}}"></script>
+    {% elif active == 'newAccount' or active == 'login' or active == 'contact' %}
     <script src="{{url_for('static', filename='js/forms.js')}}"></script>
     {% elif active == 'home' %}
     <script src="{{url_for('static', filename='js/index.js')}}"></script>
