@@ -119,15 +119,13 @@ if (document.querySelector('#edit-account-form')) {
     selector.addEventListener('submit', (e) => {
         e.preventDefault();
         let formId = e.target.id
-        console.log(formId);
         checkAndUpdate(formId);
     });
 }
 
 function checkAndUpdate(item) {
 
-    key = item.slice(0, 5);
-    console.log(key);
+    key = item.slice(0, 4);
 
     const oldInput = document.querySelector('#' + key + 'Old').value;
     const newInput = document.querySelector('#' + key + 'New').value;
@@ -173,13 +171,13 @@ function checkAndUpdate(item) {
  */
 
 $('#isFree').click(function () {
-    let $from = $('#from');
+    let from = $('#from');
 
-    if ($from.attr('required')) {
-        $from.attr('disabled', '').removeAttr('required');
-        $from.val('');
+    if (from.attr('required')) {
+        from.attr('disabled', '').removeAttr('required');
+        from.val('');
     } else {
-        $from.attr('required', '').removeAttr('disabled');
+        from.attr('required', '').removeAttr('disabled');
     }
 })
 
@@ -341,21 +339,12 @@ let selectors = ['#timesInput :', '.in-out-js:', '.age-range-js:', '.categories 
 $(selectors).each(function (i) {
     let checkboxGroup = $(selectors[i] + 'checkbox[required]');
     checkboxGroup.change(function () {
-        if (checkboxGroup.is(':checked')) {
+        if (checkboxGroup.is(':checked') || checkboxGroup.hasAttribute('checked')) {
             checkboxGroup.removeAttr('required');
         } else {
             checkboxGroup.attr('required', 'required');
         }
     });
-})
-
-$('.submit-js').click(function () {
-    let $from = $('#from');
-
-    if (!$from.attr('required')) {
-        $from.attr('required', '').removeAttr('disabled');
-        $from.val('0');
-    }
 })
 
 /**
