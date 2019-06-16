@@ -24,11 +24,12 @@ db = client.familyHub
 def home_page():
     loggedIn = True if 'user' in session else False
 
-    return render_template("pages/index.html", 
-                            title="Home", 
-                            active="home",
-                            loggedIn=loggedIn,
-                            keywords=Keywords.home())
+    return render_template(
+        "pages/index.html", 
+        headTitle="Home", 
+        active="home",
+        loggedIn=loggedIn,
+        keywords=Keywords.home())
 
 
 # =========================================================================== #
@@ -37,11 +38,12 @@ def home_page():
 @app.route('/activities')
 def activities_page():
     loggedIn = True if 'user' in session else False
-    return render_template("pages/activities.html", 
-                            title="Activities", 
-                            active="activities",
-                            loggedIn=loggedIn,
-                            keywords=Keywords.activities())
+    return render_template(
+        "pages/activities.html", 
+        headTitle="Activities", 
+        active="activities",
+        loggedIn=loggedIn,
+        keywords=Keywords.activities())
 
 
 # =========================================================================== #
@@ -50,11 +52,12 @@ def activities_page():
 @app.route('/events')
 def events_page():
     loggedIn = True if 'user' in session else False
-    return render_template("pages/events.html",
-                            title="Events", 
-                            active="events",
-                            loggedIn=loggedIn,
-                            keywords=Keywords.events())
+    return render_template(
+        "pages/events.html",
+        headTitle="Events", 
+        active="events",
+        loggedIn=loggedIn,
+        keywords=Keywords.events())
 
 
 # =========================================================================== #
@@ -63,11 +66,12 @@ def events_page():
 @app.route('/contact')
 def contact_page():
     loggedIn = True if 'user' in session else False
-    return render_template("pages/contact.html", 
-                            title="Contact", 
-                            active="contact",
-                            loggedIn=loggedIn,
-                            keywords=Keywords.generic())
+    return render_template(
+        "pages/contact.html", 
+        headTitle="Contact", 
+        active="contact",
+        loggedIn=loggedIn,
+        keywords=Keywords.generic())
 
 # =========================================================================== #
 
@@ -117,11 +121,12 @@ def new_account_page():
         
         return json.dumps(response)
 
-    return render_template('pages/newaccount.html', 
-                            title="Create Account", 
-                            active="newAccount",
-                            loggedIn=loggedIn,
-                            keywords=Keywords.generic())
+    return render_template(
+        'pages/newaccount.html', 
+        headTitle="Create Account", 
+        active="newAccount",
+        loggedIn=loggedIn,
+        keywords=Keywords.generic())
 
 
 # =========================================================================== #
@@ -167,11 +172,12 @@ def login_page():
 
         return json.dumps(response)
 
-    return render_template("pages/login.html", 
-                            title="Log In", 
-                            active="login",
-                            loggedIn=loggedIn,
-                            keywords=Keywords.generic())
+    return render_template(
+        "pages/login.html", 
+        headTitle="Log In", 
+        active="login",
+        loggedIn=loggedIn,
+        keywords=Keywords.generic())
 
 
 # =========================================================================== #
@@ -190,10 +196,12 @@ def logout():
 @app.route('/search')
 def search_page():
     loggedIn = True if 'user' in session else False
-    return render_template("pages/search.html", 
-                            title="Search",
-                            loggedIn=loggedIn,
-                            keywords=Keywords.generic())
+    return render_template(
+        "pages/search.html", 
+        headTitle="Search",
+        active="search",
+        loggedIn=loggedIn,
+        keywords=Keywords.generic())
 
 
 # =========================================================================== #
@@ -202,10 +210,12 @@ def search_page():
 @app.route('/activity-listing')
 def activity_listing_page():
     loggedIn = True if 'user' in session else False
-    return render_template("pages/activitylisting.html", 
-                            title="Activity Listing",
-                            loggedIn=loggedIn,
-                            keywords=Keywords.generic())
+    return render_template(
+        "pages/activitylisting.html", 
+        headTitle="Activity Listing",
+        active="listing",
+        loggedIn=loggedIn,
+        keywords=Keywords.generic())
 
 
 # =========================================================================== #
@@ -239,14 +249,17 @@ def event_listing_page(title):
             descrpDict.append({key:parag})
             index = index + 1
     
-    return render_template("pages/eventlisting.html", 
-                            title=title,
-                            event=event, 
-                            date=date,
-                            description=descrpDict,
-                            newEvent=newEvent,
-                            loggedIn=loggedIn,
-                            keywords=Keywords.generic())
+    return render_template(
+        "pages/eventlisting.html", 
+        headTitle=title,
+        title=title,
+        event=event, 
+        date=date,
+        description=descrpDict,
+        newEvent=newEvent,
+        loggedIn=loggedIn,
+        active="listing",
+        keywords=Keywords.generic())
 
 
 # =========================================================================== #
@@ -291,10 +304,12 @@ def settings_page(username):
         }
         return json.dumps(response)
 
-    return render_template("pages/settings.html", 
-                            title="Account Settings", 
-                            loggedIn=loggedIn,
-                            keywords=Keywords.generic())
+    return render_template(
+        "pages/settings.html", 
+        headTitle="Account Settings", 
+        loggedIn=loggedIn,
+        active="form",
+        keywords=Keywords.generic())
 
 
 # =========================================================================== #
@@ -309,11 +324,13 @@ def my_account_page(username):
     else:
         user = db.users.find_one({"username": session['user']}) 
 
-    return render_template("pages/account.html", 
-                            title="My Account", 
-                            loggedIn=loggedIn,
-                            user=user,
-                            keywords=Keywords.generic())
+    return render_template(
+        "pages/account.html", 
+        headTitle="My Account", 
+        loggedIn=loggedIn,
+        user=user,
+        active="account",
+        keywords=Keywords.generic())
 
 
 # =========================================================================== #
@@ -380,18 +397,23 @@ def new_event_page(username):
                 'published': False}
 
         newEvent_id = db.events.insert_one(obj).inserted_id
-        return redirect(url_for('preview_event_page', 
-                                username=session['user'], 
-                                title=post_request['title'], 
-                                event_id=newEvent_id, 
-                                new=True))
+        return redirect(url_for(
+            'preview_event_page', 
+            username=session['user'], 
+            title=post_request['title'],
+            headTitle="Preview Event",
+            event_id=newEvent_id, 
+            active="listing",
+            new=True))
 
-    return render_template("pages/editor.html", 
-                            title="Add New Event", 
-                            editor="new",
-                            type="event",
-                            loggedIn=loggedIn,
-                            keywords=Keywords.generic())
+    return render_template(
+        "pages/editor.html", 
+        headTitle="Add New Event", 
+        editor="new",
+        type="event",
+        active="form",
+        loggedIn=loggedIn,
+        keywords=Keywords.generic())
 
 
 # =========================================================================== #
@@ -435,15 +457,18 @@ def preview_event_page(username, title):
         db.events.find_one_and_update({"_id": ObjectId(event_id)}, {"$set": {"published": True}})
         return redirect(url_for('event_listing_page', event_id=event_id, title=title, newEvent=True ))
 
-    title = "Preview | " + title
-    return render_template("pages/eventlisting.html", 
-                            title=title,
-                            event=event, 
-                            date=date,
-                            description=descrpDict,
-                            preview=preview,
-                            loggedIn=loggedIn,
-                            keywords=Keywords.generic())
+    headTitle = "Preview | " + title
+    return render_template(
+        "pages/eventlisting.html", 
+        headTitle=headTitle,
+        title=title,
+        event=event, 
+        date=date,
+        description=descrpDict,
+        preview=preview,
+        loggedIn=loggedIn,
+        active="listing",
+        keywords=Keywords.generic())
 
 # =========================================================================== #
 
@@ -505,22 +530,28 @@ def edit_event_page(username, title):
 
         db.events.find_one_and_update({"_id": ObjectId(event_id)}, {"$set": obj})
 
-        return redirect(url_for('preview_event_page', 
-                                username=session['user'], 
-                                title=post_request['title'],
-                                preview=preview, 
-                                event_id=event_id,
-                                keywords=Keywords.generic()))
+        return redirect(url_for(
+            'preview_event_page', 
+            username=session['user'], 
+            title=post_request['title'],
+            headTitle="Preview Event",
+            active="listing",
+            preview=preview, 
+            event_id=event_id,
+            keywords=Keywords.generic()))
 
-    return render_template("pages/editor.html", 
-                            title=headTitle, 
-                            editor="edit",
-                            type="event",
-                            event_id=event_id,
-                            event=event,
-                            date=date_for_value,
-                            loggedIn=loggedIn,
-                            keywords=Keywords.generic())
+    return render_template(
+        "pages/editor.html", 
+        headTitle=headTitle, 
+        title=title,
+        editor="edit",
+        type="event",
+        event_id=event_id,
+        event=event,
+        date=date_for_value,
+        active="form",
+        loggedIn=loggedIn,
+        keywords=Keywords.generic())
 
 
 # =========================================================================== #
@@ -619,18 +650,23 @@ def new_activity_page(username):
                 'published': False}
 
         newActivity_id = db.activities.insert_one(obj).inserted_id
-        return redirect(url_for('preview_activity_page', 
-                                username=session['user'], 
-                                title=post_request['title'], 
-                                activity_id=newActivity_id, 
-                                new=True))
+        return redirect(url_for(
+            'preview_activity_page', 
+            username=session['user'], 
+            title=post_request['title'], 
+            headTitle="Preview Activity",
+            activity_id=newActivity_id, 
+            active="listing",
+            new=True))
 
-    return render_template("pages/editor.html", 
-                            title="Add New Activity", 
-                            editor="new",
-                            type="activity",
-                            loggedIn=loggedIn,
-                            keywords=Keywords.generic())
+    return render_template(
+        "pages/editor.html", 
+        headTitle="Add New Activity", 
+        editor="new",
+        type="activity",
+        active="form",
+        loggedIn=loggedIn,
+        keywords=Keywords.generic())
 
 
 # =========================================================================== #
@@ -668,15 +704,18 @@ def preview_activity_page(username, title):
         db.activities.find_one_and_update({"_id": ObjectId(activity_id)}, {"$set": {"published": True}})
         return redirect(url_for('activity_listing_page', activity_id=activity_id, title=title, newActivity=True ))
 
-    return render_template("pages/activitylisting.html", 
-                            title=title, 
-                            activity=activity,
-                            startDate=startDate,
-                            #endDate=endDate,
-                            #openTimes=openTimes,
-                            preview=preview,
-                            loggedIn=loggedIn,
-                            keywords=Keywords.generic())
+    return render_template(
+        "pages/activitylisting.html", 
+        headTitle="Preview Activity",
+        title=title, 
+        activity=activity,
+        startDate=startDate,
+        #endDate=endDate,
+        #openTimes=openTimes,
+        preview=preview,
+        loggedIn=loggedIn,
+        active="listing",
+        keywords=Keywords.generic())
 
 # =========================================================================== #
 
@@ -689,12 +728,14 @@ def edit_activity_page():
     if not loggedIn:
         return redirect(url_for('permission_denied'))
 
-    return render_template("pages/editor.html", 
-                            title="Edit Activity", 
-                            editor="edit",
-                            type="activity",
-                            loggedIn=loggedIn,
-                            keywords=Keywords.generic())
+    return render_template(
+        "pages/editor.html", 
+        headTitle="Edit Activity", 
+        editor="edit",
+        type="activity",
+        active="form",
+        loggedIn=loggedIn,
+        keywords=Keywords.generic())
 
 
 # =========================================================================== #
