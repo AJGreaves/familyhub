@@ -39,19 +39,12 @@ function topFunction() {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
-$('#search-btn').click(function () {
-    openSearch();
-});
-
-$('#search-modal-submit-button').click(function () {
-    openSearch();
-});
-
 // when user clicks on search icon the search modal adds the active class, 
 // adding css to opacity: 1; 
-function openSearch() {
+
+$('.open-close-search-js').click(function () {
     $("#search-modal").toggleClass('active');
-}
+});
 
 // animate changes in icons to reflect collapsed / opened elements on the page
 $(".collapse-link").click(function () {
@@ -170,7 +163,7 @@ function openDeleteWarningModal() {
 
 function openLoggedInModal(username) {
     let name = capFirst(username);
-    $("#accountUrl").attr("href", `/editor/account/${username}`)
+    $("#accountUrl").attr("href", `/account/${username}`)
     $("#newEventUrl").attr("href", `/editor/${username}/add-new-event`)
     $("#newActivityUrl").attr("href", `/editor/${username}/add-new-activity`)
     $('#welcomeMessage').text('Welcome ' + name + '.');
