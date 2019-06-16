@@ -143,8 +143,6 @@ def login_page():
     """
     loggedIn = True if 'user' in session else False
 
-    print(loggedIn)
-
     if loggedIn == True:
         user_in_db = db.users.find_one({"username": session['user']})
         if user_in_db:
@@ -288,7 +286,7 @@ def settings_page(username):
 
         updated = False
 
-        if post_request['whichForm'] == 'email':
+        if post_request['whichForm'] == 'emai':
             if user['email'] == post_request['oldInput']:
                 db.users.find_one_and_update({"_id": ObjectId(user["_id"])}, {"$set": {"email": post_request["newInput"]}})
                 updated = True
