@@ -512,7 +512,6 @@ def preview_event_page(username, title):
 # Edit existing event page
 @app.route('/editor/edit-event/<username>/<title>', methods=['GET', 'POST'])
 def edit_event_page(username, title):
-    
     loggedIn = True if 'user' in session else False
 
     if not loggedIn:
@@ -573,6 +572,7 @@ def edit_event_page(username, title):
             title=post_request['title'],
             headTitle="Preview Event",
             active="listing",
+            published=published,
             preview=preview, 
             event_id=event_id,
             keywords=Keywords.generic()))
@@ -773,23 +773,50 @@ def preview_activity_page(username, title):
 # =========================================================================== #
 
 # Edit existing activity page
-@app.route('/editor/<username>/edit-activity')
-def edit_activity_page():
-    
+@app.route('/editor/edit-activity/<username>/<title>', methods=['GET', 'POST'])
+def edit_activity_page(username, title):
     loggedIn = True if 'user' in session else False
 
     if not loggedIn:
         return redirect(url_for('permission_denied'))
+    else:
+        activity_id = request.args.get('activity_id')
+        activity = db.activities.find_one({"_id": ObjectId(activity_id)})
+
+        startDate = activity["dates"]['start'].strftime("%d/%m/%Y")
+        endDate = activity["dates"]['end'].strftime("%d/%m/%Y")
+        openTimes_db = activity['times']
+        """ 
+        loops through open/close times and converts datetimes for display in browser
+        leaves other values as None to make it easier to print out on screen
+        """
+        openTimes = []
+        for key, time in openTimes_db.items():
+            if time != None:
+                fTime = time.strftime("%H:%M")
+                openTimes.append({key:fTime})
+            else:
+                openTimes.append({key:time})
+
+        published = activity['published']
+        preview = False if published else True
+    
+    headTitle = 'Edit | ' + title
     
     # newActivity = False if published else True
 
     return render_template(
         "pages/editor.html", 
-        headTitle="Edit Activity", 
+        headTitle=headTitle, 
+        title=title,
         editor="edit",
         type="activity",
+        activity_id=activity_id,
+        activity=activity,
+        startDate=startDate,
+        endDate=endDate,
         active="form",
-        # newActivity=newActivity,
+        openTimes=openTimes,
         loggedIn=loggedIn,
         keywords=Keywords.generic())
 
