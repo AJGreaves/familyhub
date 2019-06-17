@@ -204,12 +204,52 @@ def search_page():
 # =========================================================================== #
 
 # Activity listing page 
-@app.route('/activity-listing')
-def activity_listing_page():
+@app.route('/activity-listing/<title>')
+def activity_listing_page(title):
     loggedIn = True if 'user' in session else False
+
+    activity_id = request.args.get('activity_id')
+    newActivity = request.args.get('newActivity')
+
+    activity = db.activities.find_one({"_id": ObjectId(activity_id)})
+    startDate = activity["dates"]['start'].strftime("%d %b %Y")
+    endDate = activity["dates"]['end'].strftime("%d %b %Y")
+    openTimes_db = activity['times']
+
+    """ 
+    loops through open/close times and converts datetimes for display in browser
+    leaves other values as None to make it easier to print out on screen
+    """
+    openTimes = []
+    for key, time in openTimes_db.items():
+        if time != None:
+            fTime = time.strftime("%H:%M")
+            openTimes.append({key:fTime})
+        else:
+            openTimes.append({key:time})
+
+    rawDescrip = activity['description']
+    description = (rawDescrip).split('\r\n')
+
+    index = 0
+    descrpDict = []
+    for parag in description:
+        if parag != '':  
+            key = str(index)
+            descrpDict.append({key:parag})
+            index = index + 1
+
+    published = activity['published']
+    preview = False if published else True
+
+
     return render_template(
         "pages/activitylisting.html", 
         headTitle="Activity Listing",
+        title=title,
+        activity=activity,
+        preview=preview,
+        newActivity=newActivity,
         active="listing",
         loggedIn=loggedIn,
         keywords=Keywords.generic())
@@ -652,6 +692,7 @@ def new_activity_page(username):
             username=session['user'], 
             title=post_request['title'], 
             headTitle="Preview Activity",
+            preview=True,
             activity_id=newActivity_id, 
             active="listing",
             new=True))
@@ -685,15 +726,17 @@ def preview_activity_page(username, title):
     endDate = activity["dates"]['end'].strftime("%d %b %Y")
     openTimes_db = activity['times']
     
+    """ 
+    loops through open/close times and converts datetimes for display in browser
+    leaves other values as None to make it easier to print out on screen
+    """
     openTimes = []
-    
     for key, time in openTimes_db.items():
         if time != None:
             fTime = time.strftime("%H:%M")
             openTimes.append({key:fTime})
         else:
             openTimes.append({key:time})
-    print(openTimes)
 
     rawDescrip = activity['description']
     description = (rawDescrip).split('\r\n')
