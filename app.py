@@ -681,7 +681,17 @@ def preview_activity_page(username, title):
 
     activity_id = request.args.get('activity_id')
     activity = db.activities.find_one({"_id": ObjectId(activity_id)})
-    startDate = activity.dates['start'].strftime("%d %b %Y")
+    startDate = activity["dates"]['start'].strftime("%d %b %Y")
+    endDate = activity["dates"]['end'].strftime("%d %b %Y")
+    openTimes_db = activity['times']
+    
+    openTimes = []
+    
+    for key, time in openTimes_db.items():
+        if time != None:
+            fTime = time.strftime("%H:%M")
+            openTimes.append({key:fTime})
+    print(openTimes)
 
     rawDescrip = activity['description']
     description = (rawDescrip).split('\r\n')
@@ -707,7 +717,8 @@ def preview_activity_page(username, title):
         title=title, 
         activity=activity,
         startDate=startDate,
-        #endDate=endDate,
+        endDate=endDate,
+        description=descrpDict,
         #openTimes=openTimes,
         preview=preview,
         loggedIn=loggedIn,
@@ -724,6 +735,8 @@ def edit_activity_page():
 
     if not loggedIn:
         return redirect(url_for('permission_denied'))
+    
+    # newActivity = False if published else True
 
     return render_template(
         "pages/editor.html", 
@@ -731,6 +744,7 @@ def edit_activity_page():
         editor="edit",
         type="activity",
         active="form",
+        newActivity=newActivity,
         loggedIn=loggedIn,
         keywords=Keywords.generic())
 
@@ -753,7 +767,4 @@ def permission_denied():
 # =========================================================================== #
 
 if __name__ == '__main__':
-    """ For developement """
     app.run(host=os.getenv('IP'), port=os.getenv('PORT'), debug=True)
-    """ for heroku? """
-    # app.run(host=os.getenv('IP', '0,0,0,0'), port=os.getenv('PORT', '5000'), debug=False)
