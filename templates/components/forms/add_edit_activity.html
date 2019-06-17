@@ -288,7 +288,8 @@ openTimes
         <p>Please upload the photo for your listing to a free image hosting site
             (we recommend <a href="https://imgbb.com/" target="_blank" aria-label="ImgBB">ImgBB</a>) and paste the
             direct url for it here</p>
-        <input id="imgUrl" name="imgUrl" class="form-control" type="url" placeholder="https://..." required>
+        <input id="imgUrl" name="imgUrl" class="form-control" type="url" maxlength="100"
+        {% if editor == 'edit' and type == 'activity' %}value="{{ activity.imgUrl }}"{% endif %} placeholder="https://..." required>
     </div>
 </div>
 <div class="col-12">
@@ -299,7 +300,7 @@ openTimes
         <h3>Activity description</h3>
         <textarea class="form-control" id="description" rows="11" name="description"
             placeholder="The first sentence of this description will also appear with your activity listing in Family Hub search."
-            required></textarea>
+            required>{% if editor == 'edit' and type == 'activity' %}{{ activity.description }}{% endif %}</textarea>
     </div>
 </div>
 <div class="col-12">
