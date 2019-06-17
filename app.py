@@ -754,7 +754,7 @@ def permission_denied():
 # =========================================================================== #
 
 if __name__ == '__main__':
+    """ For developement """
+    # app.run(host=os.getenv('IP'), port=os.getenv('PORT'), debug=True)
+    """ for heroku """
     app.run(host=os.getenv('IP', '0,0,0,0'), port=os.getenv('PORT', '5000'), debug=False)
-            # (host=os.getenv('IP'), 
-            # port=os.getenv('PORT'), 
-            # debug=True)
