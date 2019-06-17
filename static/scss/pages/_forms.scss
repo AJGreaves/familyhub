@@ -133,3 +133,15 @@ input.no-click {
 #edit-account-form input {
     margin-bottom: 1rem;
 }
+
+.category-list {
+    display: inline-block;
+    margin-right: 1rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+.category-list i {
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
+    color: $green;
+}
