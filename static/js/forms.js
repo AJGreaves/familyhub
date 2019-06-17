@@ -364,7 +364,7 @@ let selectors = ['#timesInput :', '.in-out-js:', '.age-range-js:', '.categories 
 $(selectors).each(function (i) {
     let checkboxGroup = $(selectors[i] + 'checkbox[required]');
     checkboxGroup.change(function () {
-        if (checkboxGroup.is(':checked') || checkboxGroup.hasAttribute('checked')) {
+        if (checkboxGroup.is(':checked')) {
             checkboxGroup.removeAttr('required');
         } else {
             checkboxGroup.attr('required', 'required');
