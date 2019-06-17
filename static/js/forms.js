@@ -55,6 +55,31 @@ $('#closeUserExistsModal').click(function () {
 })
 
 /**
+ * userExistsModal takes booleans sent from python on if the user or email
+ * already exists in the database. Responds with a modal message to give the
+ * user the appropriate feedback so they know what to do next.
+ * @param {bool} emailExists 
+ * @param {bool} userExists 
+ */
+
+function userExistsModal(emailExists, userExists) {
+    if (emailExists && userExists) {
+        $('#alertHeading').text('Hello again');
+        $('#alertMessage').text('This account is already registered to Family Hub');
+        $('#logInBtn').removeClass('d-none');
+    } else if (emailExists) {
+        $('#alertHeading').text('Hello again');
+        $('#alertMessage').text('This email is already registered to Family Hub');
+        $('#logInBtn').removeClass('d-none');
+    } else if (userExists) {
+        $('#alertHeading').text('Sorry');
+        $('#alertMessage').text('This username is already in use, please choose another');
+        $('#logInBtn').addClass('d-none');
+    }
+    $('#userExistsModal').toggleClass('active');
+}
+
+/**
  * Constructs welcome message for new account with their username included
  * @param {string} username 
  */

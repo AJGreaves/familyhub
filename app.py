@@ -14,7 +14,6 @@ app.config.from_object(Config)
 # MongoDB URI / Assign db
 client = MongoClient(Config.MONGO_URI)
 db = client.familyHub
-print(client)
 
 # =========================================================================== #
 
@@ -756,5 +755,5 @@ def permission_denied():
 if __name__ == '__main__':
     """ For developement """
     app.run(host=os.getenv('IP'), port=os.getenv('PORT'), debug=True)
-    """ for heroku """
+    """ for heroku? """
     # app.run(host=os.getenv('IP', '0,0,0,0'), port=os.getenv('PORT', '5000'), debug=False)
