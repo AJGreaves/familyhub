@@ -2,28 +2,54 @@
 
 <h3>Social</h3>
 <ul>
-    {% if event.contact.facebook %}
-    <li>
-        <a href="{{ event.contact.facebook }}" target="_blank" aria-label="Find this event on Facebook" rel="noopener">
-            <i class="fab fa-facebook social-icon-shadow"></i>
-        </a>
-    </li>
-    {% endif %}
-    
-    {% if event.contact.twitter %}
-    <li>
-        <a href="{{ event.contact.twitter }}" target="_blank" aria-label="Find this event on Twitter" rel="noopener">
-            <i class="fab fa-twitter social-icon-shadow"></i>
-        </a>
-    </li>
-    {% endif %}
+    {% if event %}
+        {% if event.contact.facebook %}
+        <li>
+            <a href="{{ event.contact.facebook }}" target="_blank" aria-label="Find this event on Facebook" rel="noopener">
+                <i class="fab fa-facebook social-icon-shadow"></i>
+            </a>
+        </li>
+        {% endif %}
+        
+        {% if event.contact.twitter %}
+        <li>
+            <a href="{{ event.contact.twitter }}" target="_blank" aria-label="Find this event on Twitter" rel="noopener">
+                <i class="fab fa-twitter social-icon-shadow"></i>
+            </a>
+        </li>
+        {% endif %}
 
-    {% if event.contact.instagram %}
-    <li>
-        <a href="{{ event.contact.instagram }}" target="_blank" aria-label="Find this event on Instagram" rel="noopener">
-            <i class="fab fa-instagram social-icon-shadow"></i>
-        </a>
-    </li>
+        {% if event.contact.instagram %}
+        <li>
+            <a href="{{ event.contact.instagram }}" target="_blank" aria-label="Find this event on Instagram" rel="noopener">
+                <i class="fab fa-instagram social-icon-shadow"></i>
+            </a>
+        </li>
+        {% endif %}
+    {% elif activity %}
+        {% if activity.contact.facebook %}
+        <li>
+            <a href="{{ activity.contact.facebook }}" target="_blank" aria-label="Find this activity on Facebook" rel="noopener">
+                <i class="fab fa-facebook social-icon-shadow"></i>
+            </a>
+        </li>
+        {% endif %}
+        
+        {% if activity.contact.twitter %}
+        <li>
+            <a href="{{ activity.contact.twitter }}" target="_blank" aria-label="Find this activity on Twitter" rel="noopener">
+                <i class="fab fa-twitter social-icon-shadow"></i>
+            </a>
+        </li>
+        {% endif %}
+
+        {% if activity.contact.instagram %}
+        <li>
+            <a href="{{ activity.contact.instagram }}" target="_blank" aria-label="Find this activity on Instagram" rel="noopener">
+                <i class="fab fa-instagram social-icon-shadow"></i>
+            </a>
+        </li>
+        {% endif %}
     {% endif %}
 </ul>
 
