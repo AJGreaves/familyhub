@@ -691,6 +691,8 @@ def preview_activity_page(username, title):
         if time != None:
             fTime = time.strftime("%H:%M")
             openTimes.append({key:fTime})
+        else:
+            openTimes.append({key:time})
     print(openTimes)
 
     rawDescrip = activity['description']
@@ -719,7 +721,7 @@ def preview_activity_page(username, title):
         startDate=startDate,
         endDate=endDate,
         description=descrpDict,
-        #openTimes=openTimes,
+        openTimes=openTimes,
         preview=preview,
         loggedIn=loggedIn,
         active="listing",
@@ -744,7 +746,7 @@ def edit_activity_page():
         editor="edit",
         type="activity",
         active="form",
-        newActivity=newActivity,
+        # newActivity=newActivity,
         loggedIn=loggedIn,
         keywords=Keywords.generic())
 

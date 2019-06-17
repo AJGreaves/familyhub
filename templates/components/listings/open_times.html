@@ -12,35 +12,115 @@
     <tbody>
         <tr>
             <th scope="row">Mon</th>
-            <td>15:15</td>
-            <td>18:00</td>
+            {% for time in openTimes %}
+                {% for key, value in time.items() %}
+                    {% if key == "monStart" and value != None %}
+                    <td>{{ value }}</td>
+                    {% endif %}
+                    {% if key == "monEnd" and value != None %}
+                    <td>{{ value }}</td>
+                    {% endif %}
+                    {% if key == "monStart" and value == None %}
+                    <td colspan="2">Closed</td>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
         </tr>
         <tr>
             <th scope="row">Tue</th>
-            <td>15:15</td>
-            <td>18:00</td>
+            {% for time in openTimes %}
+                {% for key, value in time.items() %}
+                    {% if key == "tueStart" and value != None %}
+                    <td>{{ value }}</td>
+                    {% endif %}
+                    {% if key == "tueEnd" and value != None %}
+                    <td>{{ value }}</td>
+                    {% endif %}
+                    {% if key == "tueStart" and value == None %}
+                    <td colspan="2">Closed</td>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
         </tr>
         <tr>
             <th scope="row">Wed</th>
-            <td colspan="2">Closed</td>
+            {% for time in openTimes %}
+                {% for key, value in time.items() %}
+                    {% if key == "wedStart" and value != None %}
+                    <td>{{ value }}</td>
+                    {% endif %}
+                    {% if key == "wedEnd" and value != None %}
+                    <td>{{ value }}</td>
+                    {% endif %}
+                    {% if key == "wedStart" and value == None %}
+                    <td colspan="2">Closed</td>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
         </tr>
         <tr>
             <th scope="row">Thu</th>
-            <td>15:15</td>
-            <td>18:00</td>
+            {% for time in openTimes %}
+                {% for key, value in time.items() %}
+                    {% if key == "thuStart" and value != None %}
+                    <td>{{ value }}</td>
+                    {% endif %}
+                    {% if key == "thuEnd" and value != None %}
+                    <td>{{ value }}</td>
+                    {% endif %}
+                    {% if key == "thuStart" and value == None %}
+                    <td colspan="2">Closed</td>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
         </tr>
         <tr>
             <th scope="row">Fri</th>
-            <td>15:15</td>
-            <td>18:00</td>
+            {% for time in openTimes %}
+                {% for key, value in time.items() %}
+                    {% if key == "friStart" and value != None %}
+                    <td>{{ value }}</td>
+                    {% endif %}
+                    {% if key == "friEnd" and value != None %}
+                    <td>{{ value }}</td>
+                    {% endif %}
+                    {% if key == "friStart" and value == None %}
+                    <td colspan="2">Closed</td>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
         </tr>
         <tr>
             <th scope="row">Sat</th>
-            <td colspan="2">Closed</td>
+            {% for time in openTimes %}
+                {% for key, value in time.items() %}
+                    {% if key == "satStart" and value != None %}
+                    <td>{{ value }}</td>
+                    {% endif %}
+                    {% if key == "satEnd" and value != None %}
+                    <td>{{ value }}</td>
+                    {% endif %}
+                    {% if key == "satStart" and value == None %}
+                    <td colspan="2">Closed</td>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
         </tr>
         <tr>
             <th scope="row">Sun</th>
-            <td colspan="2">Closed</td>
+            {% for time in openTimes %}
+                {% for key, value in time.items() %}
+                    {% if key == "sunStart" and value != None %}
+                    <td>{{ value }}</td>
+                    {% endif %}
+                    {% if key == "sunEnd" and value != None %}
+                    <td>{{ value }}</td>
+                    {% endif %}
+                    {% if key == "sunStart" and value == None %}
+                    <td colspan="2">Closed</td>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
         </tr>
     </tbody>
 </table>
