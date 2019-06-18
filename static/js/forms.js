@@ -214,17 +214,17 @@ $(".click-days-js").click(function () {
 });
 
 
-function activateTimes($start, $end, $times) {
-    if ($start.attr('required')) {
-        $start.attr('disabled', '').removeAttr('required').val('');
-        $end.attr('disabled', '').removeAttr('required').val('');
-        $times.each(function () {
+function activateTimes(start, end, times) {
+    if (start.attr('required')) {
+        start.attr('disabled', '').removeAttr('required').val('');
+        end.attr('disabled', '').removeAttr('required').val('');
+        times.each(function () {
             $(this).removeClass('active');
         })
     } else {
-        $start.attr('required', '').removeAttr('disabled');
-        $end.attr('required', '').removeAttr('disabled');
-        $times.each(function () {
+        start.attr('required', '').removeAttr('disabled');
+        end.attr('required', '').removeAttr('disabled');
+        times.each(function () {
             $(this).addClass('active');
         })
     }
@@ -402,3 +402,17 @@ $(inputClasses).each(function (i) {
         }
     })
 })
+
+/**
+ * Credit original code for this function from: https://dev.to/chromiumdev/sure-you-want-to-leavebrowser-beforeunload-event-4eg5
+ * Edited to the project needs. Prompts an alert if user tries to leave the page when a form has not been sent.
+ */
+
+const editorForm = document.getElementById('editorForm');
+let formChanged = false;
+editorForm.addEventListener('change', () => formChanged = true);
+window.addEventListener('beforeunload', (event) => {
+    if (formChanged) {
+        event.returnValue = 'Are you sure you want to leave this page? The data you have entered may not be saved!';
+    }
+});
