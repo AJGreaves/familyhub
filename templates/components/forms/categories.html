@@ -55,5 +55,13 @@
         Parks & playgrounds
         </label>
     </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="playgroups" name="playgroups"
+        {% if editor == 'edit' and type == 'activity' and activity.categories.playgroups %}checked
+        {% elif editor == 'new' %}required{% endif %}>
+        <label class="form-check-label" for="hillegom">
+        Playgroups
+        </label>
+    </div>
     <small>Select at least one</small>
 {% endblock %}
