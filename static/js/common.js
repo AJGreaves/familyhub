@@ -2,6 +2,11 @@
  * JS functions used on all/most pages
  ******************************************/
 
+document.addEventListener("DOMContentLoaded", function() {
+    hideLoading();
+    return;
+});
+
 // Show and hide spinner animation
 function showLoading() {
     document.getElementById("spinner-wrapper").style = "visibility: visible";
