@@ -32,6 +32,14 @@
         </label>
     </div>
     <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="dramaDance" name="dramaDance"
+        {% if editor == 'edit' and type == 'activity' and activity.categories.dramaDance %}checked
+        {% elif editor == 'new' %}required{% endif %}>
+        <label class="form-check-label" for="dramaDance">
+        Drama & Dance
+        </label>
+    </div>
+    <div class="form-check">
         <input class="form-check-input" type="checkbox" id="yogaMindfulness" name="yogaMindfulness"
         {% if editor == 'edit' and type == 'activity' and activity.categories.yogaMindfulness %}checked
         {% elif editor == 'new' %}required{% endif %}>

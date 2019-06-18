@@ -4,12 +4,12 @@
     <div class="form-group col-12 col-md-6">
         <h3>Contact info *</h3>
         <label for="email">Email address *</label>
-        <input id="email" name="email" class="form-control" type="email" maxlength="50" placeholder="Email"
+        <input id="email" name="email" class="form-control" type="email" maxlength="100" placeholder="Email"
         {% if editor == 'edit' and type == 'event' %}value="{{event.contact.email}}"
         {% elif editor == 'edit' and type == 'activity' %}value="{{activity.contact.email}}"
         {% endif %} required>
         <label for="url" class="mt-3">Website url *</label>
-        <input id="url" name="url" class="form-control" type="url" maxlength="50" placeholder="https://..."
+        <input id="url" name="url" class="form-control" type="url" maxlength="100" placeholder="https://..."
         {% if editor == 'edit' and type == 'event' %}value="{{event.contact.url}}"
         {% elif editor == 'edit' and type == 'activity' %}value="{{activity.contact.url}}"
         {% endif %} required>
@@ -17,17 +17,17 @@
     <div class="form-group col-12 col-md-6">
         <h3>Social links</h3>
         <label for="facebook">Facebook url</label>
-        <input id="facebook" name="facebook" class="form-control" type="url" maxlength="50" placeholder="https://..."
+        <input id="facebook" name="facebook" class="form-control" type="url" maxlength="100" placeholder="https://..."
         {% if editor == 'edit' and type == 'event' and event.contact.facebook %}value="{{event.contact.facebook}}"
         {% elif editor == 'edit' and type == 'activity' and activity.contact.facebook %}value="{{activity.contact.facebook}}"
         {% endif %}>
         <label for="twitter" class="mt-3">Twitter url</label>
-        <input id="twitter" name="twitter" class="form-control" type="url" maxlength="50" placeholder="https://..."
+        <input id="twitter" name="twitter" class="form-control" type="url" maxlength="100" placeholder="https://..."
         {% if editor == 'edit' and type == 'event' and event.contact.twitter %}value="{{event.contact.twitter}}"
         {% elif editor == 'edit' and type == 'activity' and activity.contact.twitter %}value="{{activity.contact.twitter}}"
         {% endif %}>
         <label for="instagram" class="mt-3">Instagram url</label>
-        <input id="instagram" name="instagram" class="form-control" type="url" maxlength="50" placeholder="https://..."
+        <input id="instagram" name="instagram" class="form-control" type="url" maxlength="100" placeholder="https://..."
         {% if editor == 'edit' and type == 'event' and event.contact.instagram %}value="{{event.contact.instagram}}"
         {% elif editor == 'edit' and type == 'activity' and activity.contact.instagram %}value="{{activity.contact.instagram}}"
         {% endif %}>
