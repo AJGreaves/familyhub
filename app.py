@@ -28,7 +28,8 @@ def home_page():
         headTitle="Home", 
         active="home",
         loggedIn=loggedIn,
-        keywords=Keywords.home())
+        keywords=Keywords.home()
+    )
 
 
 # =========================================================================== #
@@ -42,7 +43,8 @@ def activities_page():
         headTitle="Activities", 
         active="activities",
         loggedIn=loggedIn,
-        keywords=Keywords.activities())
+        keywords=Keywords.activities()
+    )
 
 
 # =========================================================================== #
@@ -56,7 +58,8 @@ def events_page():
         headTitle="Events", 
         active="events",
         loggedIn=loggedIn,
-        keywords=Keywords.events())
+        keywords=Keywords.events()
+    )
 
 
 # =========================================================================== #
@@ -70,7 +73,8 @@ def contact_page():
         headTitle="Contact", 
         active="contact",
         loggedIn=loggedIn,
-        keywords=Keywords.generic())
+        keywords=Keywords.generic()
+    )
 
 # =========================================================================== #
 
@@ -125,7 +129,8 @@ def new_account_page():
         headTitle="Create Account", 
         active="newAccount",
         loggedIn=loggedIn,
-        keywords=Keywords.generic())
+        keywords=Keywords.generic()
+    )
 
 
 # =========================================================================== #
@@ -174,7 +179,8 @@ def login_page():
         headTitle="Log In", 
         active="login",
         loggedIn=loggedIn,
-        keywords=Keywords.generic())
+        keywords=Keywords.generic()
+    )
 
 
 # =========================================================================== #
@@ -198,7 +204,8 @@ def search_page():
         headTitle="Search",
         active="search",
         loggedIn=loggedIn,
-        keywords=Keywords.generic())
+        keywords=Keywords.generic()
+    )
 
 
 # =========================================================================== #
@@ -252,7 +259,8 @@ def activity_listing_page(title):
         newActivity=newActivity,
         active="listing",
         loggedIn=loggedIn,
-        keywords=Keywords.generic())
+        keywords=Keywords.generic()
+    )
 
 
 # =========================================================================== #
@@ -296,7 +304,8 @@ def event_listing_page(title):
         newEvent=newEvent,
         loggedIn=loggedIn,
         active="listing",
-        keywords=Keywords.generic())
+        keywords=Keywords.generic()
+    )
 
 
 # =========================================================================== #
@@ -346,7 +355,8 @@ def settings_page(username):
         headTitle="Account Settings", 
         loggedIn=loggedIn,
         active="form",
-        keywords=Keywords.generic())
+        keywords=Keywords.generic()
+    )
 
 
 # =========================================================================== #
@@ -367,7 +377,8 @@ def my_account_page(username):
         loggedIn=loggedIn,
         user=user,
         active="account",
-        keywords=Keywords.generic())
+        keywords=Keywords.generic()
+    )
 
 
 # =========================================================================== #
@@ -408,32 +419,42 @@ def new_event_page(username):
             price_string = post_request.get('from')
             price_int = int(price_string)
 
-        obj = {'username': user['username'], 
-                'title': post_request.get('title'),
-                'imgUrl': post_request.get('imgUrl'),
-                'date': date, 
-                'address': {'addressLine1': post_request.get('addressLine1'),
-                            'postcode': post_request.get('postcode'),
-                            'town': post_request.get('town')},
-                'ageRange': {'under4': True if post_request.get('under4') else False,
-                            'age4to6': True if post_request.get('age4to6') else False,
-                            'age6to8': True if post_request.get('age6to8') else False,
-                            'age8to10': True if post_request.get('age8to10') else False,
-                            'age10to12': True if post_request.get('age10to12') else False,
-                            'age12up': True if post_request.get('age12up') else False},
-                'price': {'from': price_int if post_request.get('from') else None,
-                            'isFree': True if post_request.get('isFree') else False},
-                'indoor': True if post_request.get('indoor') else False,
-                'outdoor': True if post_request.get('outdoor') else False,
-                'contact': {'url': post_request.get('url'),
-                            'email': post_request.get('email'),
-                            'facebook': post_request.get('facebook') if post_request.get('facebook') else None,
-                            'twitter': post_request.get('twitter') if post_request.get('twitter') else None,
-                            'instagram': post_request.get('instagram') if post_request.get('instagram') else None},
-                'description': post_request.get('description'),
-                'published': False}
-
+        obj = {
+            'username': user['username'], 
+            'title': post_request.get('title'),
+            'imgUrl': post_request.get('imgUrl'),
+            'date': date, 
+            'address': {
+                'addressLine1': post_request.get('addressLine1'),
+                'postcode': post_request.get('postcode'),
+                'town': post_request.get('town')
+            },
+            'ageRange': {
+                'under4': True if post_request.get('under4') else False,
+                'age4to6': True if post_request.get('age4to6') else False,
+                'age6to8': True if post_request.get('age6to8') else False,
+                'age8to10': True if post_request.get('age8to10') else False,
+                'age10to12': True if post_request.get('age10to12') else False,
+                'age12up': True if post_request.get('age12up') else False
+            },
+            'price': {
+                'from': price_int if post_request.get('from') else None,
+                'isFree': True if post_request.get('isFree') else False
+            },
+            'indoor': True if post_request.get('indoor') else False,
+            'outdoor': True if post_request.get('outdoor') else False,
+            'contact': {
+                'url': post_request.get('url'),
+                'email': post_request.get('email'),
+                'facebook': post_request.get('facebook') if post_request.get('facebook') else None,
+                'twitter': post_request.get('twitter') if post_request.get('twitter') else None,
+                'instagram': post_request.get('instagram') if post_request.get('instagram') else None
+            },
+            'description': post_request.get('description'),
+            'published': False
+        }
         newEvent_id = db.events.insert_one(obj).inserted_id
+
         return redirect(url_for(
             'preview_event_page', 
             username=session['user'], 
@@ -490,11 +511,12 @@ def preview_event_page(username, title):
     published = event['published']
     preview = False if published else True
 
+    headTitle = "Preview | " + title
+
     if request.method == 'POST':
         db.events.find_one_and_update({"_id": ObjectId(event_id)}, {"$set": {"published": True}})
-        return redirect(url_for('event_listing_page', event_id=event_id, title=title, newEvent=True ))
+        return redirect(url_for('event_listing_page', event_id=event_id, title=title, newEvent=True))
 
-    headTitle = "Preview | " + title
     return render_template(
         "pages/eventlisting.html", 
         headTitle=headTitle,
@@ -543,30 +565,39 @@ def edit_event_page(username, title):
             price_string = post_request.get('from')
             price_int = int(price_string)
 
-        obj = {'username': post_request.get('username'), 
-                'title': post_request.get('title'),
-                'imgUrl': post_request.get('imgUrl'),
-                'date': date_for_db, 
-                'address': {'addressLine1': post_request.get('addressLine1'),
-                            'postcode': post_request.get('postcode'),
-                            'town': post_request.get('town')},
-                'ageRange': {'under4': True if post_request.get('under4') else False,
-                            'age4to6': True if post_request.get('age4to6') else False,
-                            'age6to8': True if post_request.get('age6to8') else False,
-                            'age8to10': True if post_request.get('age8to10') else False,
-                            'age10to12': True if post_request.get('age10to12') else False,
-                            'age12up': True if post_request.get('age12up') else False},
-                'price': {'from': price_int if post_request.get('from') else None,
-                            'isFree': True if post_request.get('isFree') else False},
-                'indoor': True if post_request.get('indoor') else False,
-                'outdoor': True if post_request.get('outdoor') else False,
-                'contact': {'url': post_request.get('url'),
-                            'email': post_request.get('email'),
-                            'facebook': post_request.get('facebook') if post_request.get('facebook') else None,
-                            'twitter': post_request.get('twitter') if post_request.get('twitter') else None,
-                            'instagram': post_request.get('instagram') if post_request.get('instagram') else None},
-                'description': post_request.get('description'),
-                'published': event['published']}
+        obj = {
+            'username': post_request.get('username'), 
+            'title': post_request.get('title'),
+            'imgUrl': post_request.get('imgUrl'),
+            'date': date_for_db, 
+            'address': {
+                'addressLine1': post_request.get('addressLine1'),
+                'postcode': post_request.get('postcode'),
+                'town': post_request.get('town')
+            },
+            'ageRange': {
+                'under4': True if post_request.get('under4') else False,
+                'age4to6': True if post_request.get('age4to6') else False,
+                'age6to8': True if post_request.get('age6to8') else False,
+                'age8to10': True if post_request.get('age8to10') else False,
+                'age10to12': True if post_request.get('age10to12') else False,
+                'age12up': True if post_request.get('age12up') else False
+            },
+            'price': {
+                'from': price_int if post_request.get('from') else None,
+                'isFree': True if post_request.get('isFree') else False
+                },
+            'indoor': True if post_request.get('indoor') else False,
+            'outdoor': True if post_request.get('outdoor') else False,
+            'contact': {
+                'url': post_request.get('url'),
+                'email': post_request.get('email'),
+                'facebook': post_request.get('facebook') if post_request.get('facebook') else None,
+                'twitter': post_request.get('twitter') if post_request.get('twitter') else None,
+                'instagram': post_request.get('instagram') if post_request.get('instagram') else None
+            },
+            'description': post_request.get('description'),
+            'published': event['published']}
 
         db.events.find_one_and_update({"_id": ObjectId(event_id)}, {"$set": obj})
         # ------ END section for database & preview ------ #
@@ -632,10 +663,12 @@ def new_activity_page(username):
         end = f"{end[2]}-{end[1]}-{end[0]}"
         end = datetime.strptime(end, '%Y-%m-%d')
 
-        openTimes = ['monStart','monEnd', 'tueStart', 'tueEnd', 
-                    'wedStart', 'wedEnd', 'thuStart', 'thuEnd',
-                    'friStart', 'friEnd', 'satStart', 'satEnd',
-                    'sunStart', 'sunEnd']
+        openTimes = [
+            'monStart','monEnd', 'tueStart', 'tueEnd', 
+            'wedStart', 'wedEnd', 'thuStart', 'thuEnd',
+            'friStart', 'friEnd', 'satStart', 'satEnd',
+            'sunStart', 'sunEnd'
+        ]
 
         openTimesDict = { }
 
@@ -647,72 +680,74 @@ def new_activity_page(username):
                 time = datetime.strptime(time, '%H:%M:%S')
                 openTimesDict[time_name] = time
 
-        obj = {'username': user['username'], 
-                'title': post_request.get('title'),
-                'imgUrl': post_request.get('imgUrl'),
-                'dates': { 
-                    'start': start, 
-                    'end': end 
-                },
-                'days' : {
-                    'mon': True if post_request.get('mon') else False,
-                    'tue': True if post_request.get('tue') else False,
-                    'wed': True if post_request.get('wed') else False,
-                    'thu': True if post_request.get('thu') else False,
-                    'fri': True if post_request.get('fri') else False,
-                    'sat': True if post_request.get('sat') else False,
-                    'sun': True if post_request.get('sun') else False
-                },
-                'times': {
-                    'monStart': openTimesDict.get('monStart') if openTimesDict.get('monStart') else None,
-                    'monEnd': openTimesDict.get('monEnd') if openTimesDict.get('monEnd') else None,
-                    'tueStart': openTimesDict.get('tueStart') if openTimesDict.get('tueStart') else None,
-                    'tueEnd': openTimesDict.get('tueEnd') if openTimesDict.get('tueEnd') else None,
-                    'wedStart': openTimesDict.get('wedStart') if openTimesDict.get('wedStart') else None,
-                    'wedEnd': openTimesDict.get('wedEnd') if openTimesDict.get('wedEnd') else None,
-                    'thuStart': openTimesDict.get('thuStart') if openTimesDict.get('thuStart') else None,
-                    'thuEnd': openTimesDict.get('thuEnd') if openTimesDict.get('thuEnd') else None,
-                    'friStart': openTimesDict.get('friStart') if openTimesDict.get('friStart') else None,
-                    'friEnd': openTimesDict.get('friEnd') if openTimesDict.get('friEnd') else None,
-                    'satStart': openTimesDict.get('satStart') if openTimesDict.get('satStart') else None,
-                    'satEnd': openTimesDict.get('satEnd') if openTimesDict.get('satEnd') else None,
-                    'sunStart': openTimesDict.get('sunStart') if openTimesDict.get('sunStart') else None,
-                    'sunEnd': openTimesDict.get('sunEnd') if openTimesDict.get('sunEnd') else None
-                },
-                'categories': {
-                    'sports': True if post_request.get('sports') else False,
-                    'creative': True if post_request.get('creative') else False,
-                    'scienceTech': True if post_request.get('scienceTech') else False,
-                    'cultureMusic': True if post_request.get('cultureMusic') else False,
-                    'yogaMindfulness': True if post_request.get('yogaMindfulness') else False,
-                    'museumsExhibitions': True if post_request.get('museumsExhibitions') else False,
-                    'parksPlaygrounds': True if post_request.get('parksPlaygrounds') else False, 
-                    'playgroups': True if post_request.get('playgroups') else False,                            
-                },
-                'address': {
-                    'addressLine1': post_request.get('addressLine1'),
-                    'postcode': post_request.get('postcode'),
-                    'town': post_request.get('town')
-                },
-                'ageRange': {
-                    'under4': True if post_request.get('under4') else False,
-                    'age4to6': True if post_request.get('age4to6') else False,
-                    'age6to8': True if post_request.get('age6to8') else False,
-                    'age8to10': True if post_request.get('age8to10') else False,
-                    'age10to12': True if post_request.get('age10to12') else False,
-                    'age12up': True if post_request.get('age12up') else False
-                },
-                'indoor': True if post_request.get('indoor') else False,
-                'outdoor': True if post_request.get('outdoor') else False,
-                'contact': {
-                    'url': post_request.get('url'),
-                    'email': post_request.get('email'),
-                    'facebook': post_request.get('facebook') if post_request.get('facebook') else None,
-                    'twitter': post_request.get('twitter') if post_request.get('twitter') else None,
-                    'instagram': post_request.get('instagram') if post_request.get('instagram') else None
-                },
-                'description': post_request.get('description'),
-                'published': False}
+        obj = {
+            'username': user['username'], 
+            'title': post_request.get('title'),
+            'imgUrl': post_request.get('imgUrl'),
+            'dates': { 
+                'start': start, 
+                'end': end 
+            },
+            'days' : {
+                'mon': True if post_request.get('mon') else False,
+                'tue': True if post_request.get('tue') else False,
+                'wed': True if post_request.get('wed') else False,
+                'thu': True if post_request.get('thu') else False,
+                'fri': True if post_request.get('fri') else False,
+                'sat': True if post_request.get('sat') else False,
+                'sun': True if post_request.get('sun') else False
+            },
+            'times': {
+                'monStart': openTimesDict.get('monStart') if openTimesDict.get('monStart') else None,
+                'monEnd': openTimesDict.get('monEnd') if openTimesDict.get('monEnd') else None,
+                'tueStart': openTimesDict.get('tueStart') if openTimesDict.get('tueStart') else None,
+                'tueEnd': openTimesDict.get('tueEnd') if openTimesDict.get('tueEnd') else None,
+                'wedStart': openTimesDict.get('wedStart') if openTimesDict.get('wedStart') else None,
+                'wedEnd': openTimesDict.get('wedEnd') if openTimesDict.get('wedEnd') else None,
+                'thuStart': openTimesDict.get('thuStart') if openTimesDict.get('thuStart') else None,
+                'thuEnd': openTimesDict.get('thuEnd') if openTimesDict.get('thuEnd') else None,
+                'friStart': openTimesDict.get('friStart') if openTimesDict.get('friStart') else None,
+                'friEnd': openTimesDict.get('friEnd') if openTimesDict.get('friEnd') else None,
+                'satStart': openTimesDict.get('satStart') if openTimesDict.get('satStart') else None,
+                'satEnd': openTimesDict.get('satEnd') if openTimesDict.get('satEnd') else None,
+                'sunStart': openTimesDict.get('sunStart') if openTimesDict.get('sunStart') else None,
+                'sunEnd': openTimesDict.get('sunEnd') if openTimesDict.get('sunEnd') else None
+            },
+            'categories': {
+                'sports': True if post_request.get('sports') else False,
+                'creative': True if post_request.get('creative') else False,
+                'scienceTech': True if post_request.get('scienceTech') else False,
+                'cultureMusic': True if post_request.get('cultureMusic') else False,
+                'yogaMindfulness': True if post_request.get('yogaMindfulness') else False,
+                'museumsExhibitions': True if post_request.get('museumsExhibitions') else False,
+                'parksPlaygrounds': True if post_request.get('parksPlaygrounds') else False, 
+                'playgroups': True if post_request.get('playgroups') else False,                            
+            },
+            'address': {
+                'addressLine1': post_request.get('addressLine1'),
+                'postcode': post_request.get('postcode'),
+                'town': post_request.get('town')
+            },
+            'ageRange': {
+                'under4': True if post_request.get('under4') else False,
+                'age4to6': True if post_request.get('age4to6') else False,
+                'age6to8': True if post_request.get('age6to8') else False,
+                'age8to10': True if post_request.get('age8to10') else False,
+                'age10to12': True if post_request.get('age10to12') else False,
+                'age12up': True if post_request.get('age12up') else False
+            },
+            'indoor': True if post_request.get('indoor') else False,
+            'outdoor': True if post_request.get('outdoor') else False,
+            'contact': {
+                'url': post_request.get('url'),
+                'email': post_request.get('email'),
+                'facebook': post_request.get('facebook') if post_request.get('facebook') else None,
+                'twitter': post_request.get('twitter') if post_request.get('twitter') else None,
+                'instagram': post_request.get('instagram') if post_request.get('instagram') else None
+            },
+            'description': post_request.get('description'),
+            'published': False
+        }
 
         newActivity_id = db.activities.insert_one(obj).inserted_id
         return redirect(url_for(
@@ -723,7 +758,8 @@ def new_activity_page(username):
             preview=True,
             activity_id=newActivity_id, 
             active="listing",
-            new=True))
+            new=True
+        ))
 
     return render_template(
         "pages/editor.html", 
@@ -732,7 +768,8 @@ def new_activity_page(username):
         type="activity",
         active="form",
         loggedIn=loggedIn,
-        keywords=Keywords.generic())
+        keywords=Keywords.generic()
+    )
 
 
 # =========================================================================== #
@@ -784,7 +821,8 @@ def preview_activity_page(username, title):
             'activity_listing_page', 
             activity_id=activity_id, 
             title=title, 
-            newActivity=True ))
+            newActivity=True 
+        ))
 
     return render_template(
         "pages/activitylisting.html", 
@@ -798,7 +836,8 @@ def preview_activity_page(username, title):
         preview=True,
         loggedIn=loggedIn,
         active="listing",
-        keywords=Keywords.generic())
+        keywords=Keywords.generic()
+    )
 
 # =========================================================================== #
 
@@ -847,12 +886,14 @@ def edit_activity_page(username, title):
             end = f"{end[2]}-{end[1]}-{end[0]}"
             end = datetime.strptime(end, '%Y-%m-%d')
 
-            openTimes = ['monStart','monEnd', 'tueStart', 'tueEnd', 
-                        'wedStart', 'wedEnd', 'thuStart', 'thuEnd',
-                        'friStart', 'friEnd', 'satStart', 'satEnd',
-                        'sunStart', 'sunEnd']
+            openTimes = [
+                'monStart','monEnd', 'tueStart', 'tueEnd', 
+                'wedStart', 'wedEnd', 'thuStart', 'thuEnd',
+                'friStart', 'friEnd', 'satStart', 'satEnd',
+                'sunStart', 'sunEnd'
+            ]            
 
-            openTimesDict = { }
+            openTimesDict = {}
 
             for time_name in openTimes:
                 if post_request.get(time_name):
@@ -862,72 +903,73 @@ def edit_activity_page(username, title):
                     time = datetime.strptime(time, '%H:%M:%S')
                     openTimesDict[time_name] = time
 
-            obj = {'username': session['user'], 
-                    'title': post_request.get('title'),
-                    'imgUrl': post_request.get('imgUrl'),
-                    'dates': { 
-                        'start': start, 
-                        'end': end 
-                    },
-                    'days' : {
-                        'mon': True if post_request.get('mon') else False,
-                        'tue': True if post_request.get('tue') else False,
-                        'wed': True if post_request.get('wed') else False,
-                        'thu': True if post_request.get('thu') else False,
-                        'fri': True if post_request.get('fri') else False,
-                        'sat': True if post_request.get('sat') else False,
-                        'sun': True if post_request.get('sun') else False
-                    },
-                    'times': {
-                        'monStart': openTimesDict.get('monStart') if openTimesDict.get('monStart') else None,
-                        'monEnd': openTimesDict.get('monEnd') if openTimesDict.get('monEnd') else None,
-                        'tueStart': openTimesDict.get('tueStart') if openTimesDict.get('tueStart') else None,
-                        'tueEnd': openTimesDict.get('tueEnd') if openTimesDict.get('tueEnd') else None,
-                        'wedStart': openTimesDict.get('wedStart') if openTimesDict.get('wedStart') else None,
-                        'wedEnd': openTimesDict.get('wedEnd') if openTimesDict.get('wedEnd') else None,
-                        'thuStart': openTimesDict.get('thuStart') if openTimesDict.get('thuStart') else None,
-                        'thuEnd': openTimesDict.get('thuEnd') if openTimesDict.get('thuEnd') else None,
-                        'friStart': openTimesDict.get('friStart') if openTimesDict.get('friStart') else None,
-                        'friEnd': openTimesDict.get('friEnd') if openTimesDict.get('friEnd') else None,
-                        'satStart': openTimesDict.get('satStart') if openTimesDict.get('satStart') else None,
-                        'satEnd': openTimesDict.get('satEnd') if openTimesDict.get('satEnd') else None,
-                        'sunStart': openTimesDict.get('sunStart') if openTimesDict.get('sunStart') else None,
-                        'sunEnd': openTimesDict.get('sunEnd') if openTimesDict.get('sunEnd') else None
-                    },
-                    'categories': {
-                        'sports': True if post_request.get('sports') else False,
-                        'creative': True if post_request.get('creative') else False,
-                        'scienceTech': True if post_request.get('scienceTech') else False,
-                        'cultureMusic': True if post_request.get('cultureMusic') else False,
-                        'yogaMindfulness': True if post_request.get('yogaMindfulness') else False,
-                        'museumsExhibitions': True if post_request.get('museumsExhibitions') else False,
-                        'parksPlaygrounds': True if post_request.get('parksPlaygrounds') else False,
-                        'playgroups': True if post_request.get('playgroups') else False,                                  
-                    },
-                    'address': {
-                        'addressLine1': post_request.get('addressLine1'),
-                        'postcode': post_request.get('postcode'),
-                        'town': post_request.get('town')
-                    },
-                    'ageRange': {
-                        'under4': True if post_request.get('under4') else False,
-                        'age4to6': True if post_request.get('age4to6') else False,
-                        'age6to8': True if post_request.get('age6to8') else False,
-                        'age8to10': True if post_request.get('age8to10') else False,
-                        'age10to12': True if post_request.get('age10to12') else False,
-                        'age12up': True if post_request.get('age12up') else False
-                    },
-                    'indoor': True if post_request.get('indoor') else False,
-                    'outdoor': True if post_request.get('outdoor') else False,
-                    'contact': {
-                        'url': post_request.get('url'),
-                        'email': post_request.get('email'),
-                        'facebook': post_request.get('facebook') if post_request.get('facebook') else None,
-                        'twitter': post_request.get('twitter') if post_request.get('twitter') else None,
-                        'instagram': post_request.get('instagram') if post_request.get('instagram') else None
-                    },
-                    'description': post_request.get('description'),
-                    'published': activity['published']}
+            obj = {
+                'username': session['user'], 
+                'title': post_request.get('title'),
+                'imgUrl': post_request.get('imgUrl'),
+                'dates': { 
+                    'start': start, 
+                    'end': end 
+                },
+                'days' : {
+                    'mon': True if post_request.get('mon') else False,
+                    'tue': True if post_request.get('tue') else False,
+                    'wed': True if post_request.get('wed') else False,
+                    'thu': True if post_request.get('thu') else False,
+                    'fri': True if post_request.get('fri') else False,
+                    'sat': True if post_request.get('sat') else False,
+                    'sun': True if post_request.get('sun') else False
+                },
+                'times': {
+                    'monStart': openTimesDict.get('monStart') if openTimesDict.get('monStart') else None,
+                    'monEnd': openTimesDict.get('monEnd') if openTimesDict.get('monEnd') else None,
+                    'tueStart': openTimesDict.get('tueStart') if openTimesDict.get('tueStart') else None,
+                    'tueEnd': openTimesDict.get('tueEnd') if openTimesDict.get('tueEnd') else None,
+                    'wedStart': openTimesDict.get('wedStart') if openTimesDict.get('wedStart') else None,
+                    'wedEnd': openTimesDict.get('wedEnd') if openTimesDict.get('wedEnd') else None,
+                    'thuStart': openTimesDict.get('thuStart') if openTimesDict.get('thuStart') else None,
+                    'thuEnd': openTimesDict.get('thuEnd') if openTimesDict.get('thuEnd') else None,
+                    'friStart': openTimesDict.get('friStart') if openTimesDict.get('friStart') else None,
+                    'friEnd': openTimesDict.get('friEnd') if openTimesDict.get('friEnd') else None,
+                    'satStart': openTimesDict.get('satStart') if openTimesDict.get('satStart') else None,
+                    'satEnd': openTimesDict.get('satEnd') if openTimesDict.get('satEnd') else None,
+                    'sunStart': openTimesDict.get('sunStart') if openTimesDict.get('sunStart') else None,
+                    'sunEnd': openTimesDict.get('sunEnd') if openTimesDict.get('sunEnd') else None
+                },
+                'categories': {
+                    'sports': True if post_request.get('sports') else False,
+                    'creative': True if post_request.get('creative') else False,
+                    'scienceTech': True if post_request.get('scienceTech') else False,
+                    'cultureMusic': True if post_request.get('cultureMusic') else False,
+                    'yogaMindfulness': True if post_request.get('yogaMindfulness') else False,
+                    'museumsExhibitions': True if post_request.get('museumsExhibitions') else False,
+                    'parksPlaygrounds': True if post_request.get('parksPlaygrounds') else False,
+                    'playgroups': True if post_request.get('playgroups') else False,                                  
+                },
+                'address': {
+                    'addressLine1': post_request.get('addressLine1'),
+                    'postcode': post_request.get('postcode'),
+                    'town': post_request.get('town')
+                },
+                'ageRange': {
+                    'under4': True if post_request.get('under4') else False,
+                    'age4to6': True if post_request.get('age4to6') else False,
+                    'age6to8': True if post_request.get('age6to8') else False,
+                    'age8to10': True if post_request.get('age8to10') else False,
+                    'age10to12': True if post_request.get('age10to12') else False,
+                    'age12up': True if post_request.get('age12up') else False
+                },
+                'indoor': True if post_request.get('indoor') else False,
+                'outdoor': True if post_request.get('outdoor') else False,
+                'contact': {
+                    'url': post_request.get('url'),
+                    'email': post_request.get('email'),
+                    'facebook': post_request.get('facebook') if post_request.get('facebook') else None,
+                    'twitter': post_request.get('twitter') if post_request.get('twitter') else None,
+                    'instagram': post_request.get('instagram') if post_request.get('instagram') else None
+                },
+                'description': post_request.get('description'),
+                'published': activity['published']}
 
             db.activities.find_one_and_update({"_id": ObjectId(activity_id)}, {"$set": obj})
             # ------ END section for database & preview ------ #
@@ -941,7 +983,8 @@ def edit_activity_page(username, title):
                 active="listing",
                 preview=True,
                 published=published,
-                activity_id=activity_id))
+                activity_id=activity_id
+            ))
 
     # for displaying forms when editing
     return render_template(
@@ -957,7 +1000,8 @@ def edit_activity_page(username, title):
         openTimes=openTimes_for_values,
         active="form",
         loggedIn=loggedIn,
-        keywords=Keywords.generic())
+        keywords=Keywords.generic()
+    )
 
 
 # =========================================================================== #
