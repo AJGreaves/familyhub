@@ -407,15 +407,16 @@ $(inputClasses).each(function (i) {
  * Credit original code for this function from: https://dev.to/chromiumdev/sure-you-want-to-leavebrowser-beforeunload-event-4eg5
  * Edited to the project needs. Prompts an alert if user tries to leave the page when a form has not been sent.
  */
-
-const editorForm = document.getElementById('editorForm');
-const submitBtn = document.getElementById('editorSubmitBtn');
-let formChanged = false;
-let submitClicked= false;
-editorForm.addEventListener('change', () => formChanged = true);
-submitBtn.addEventListener('click', () => submitClicked = true);
-window.addEventListener('beforeunload', (event) => {
-    if (formChanged && !submitClicked) {
-        event.returnValue = 'Are you sure you want to leave this page? The data you have entered may not be saved!';
-    }
-});
+if (document.querySelector('#editorForm')) {
+    const editorForm = document.getElementById('editorForm');
+    const submitBtn = document.getElementById('editorSubmitBtn');
+    let formChanged = false;
+    let submitClicked= false;
+    editorForm.addEventListener('change', () => formChanged = true);
+    submitBtn.addEventListener('click', () => submitClicked = true);
+    window.addEventListener('beforeunload', (event) => {
+        if (formChanged && !submitClicked) {
+            event.returnValue = 'Are you sure you want to leave this page? The data you have entered may not be saved!';
+        }
+    });
+}
