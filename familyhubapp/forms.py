@@ -41,6 +41,10 @@ def new_account_req(db, post_request):
     return response
 
 def login_req(db, post_request):
+    """
+    Finds existing user in the database based on their input, compares the data.
+    Returns appropriate response to be sent to JS to trigger modal message for the user. 
+    """
     user = db.users.find_one({ '$or': [ { 'username': post_request['loginInput'] }, { 'email': post_request['loginInput'] } ]})
     passwordCorrect = False
     username = ''
@@ -60,6 +64,12 @@ def login_req(db, post_request):
     return response
 
 def settings_update(db, user, post_request):
+    """
+    Collects the input from the settings page which requests a change to the users email or password. 
+    compares the input sent. To check that the old email address provided matches the one in the database
+    before updating it. Same for the password change. response is sent back to JS to control what alerts/messages
+    are returned to the user, in case they enter an incorrect password or email. 
+    """
     updated = False
 
     if post_request['whichForm'] == 'emai':

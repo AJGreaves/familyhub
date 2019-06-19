@@ -241,13 +241,6 @@ def event_listing_page(title):
 
 @app.route('/settings/<username>', methods=['GET', 'POST'])
 def settings_page(username):
-    
-    """
-    Collects the input from the settings page which requests a change to the users email or password. 
-    compares the input sent. To check that the old email address provided matches the one in the database
-    before updating it. Same for the password change. response is sent back to JS to control what alerts/messages
-    are returned to the user, in case they enter an incorrect password or email. 
-    """
     loggedIn = True if 'user' in session else False
 
     if not loggedIn:
