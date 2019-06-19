@@ -12,3 +12,19 @@ class Helpers:
     @staticmethod
     def getPost(post_request, name):
         return True if post_request.get(name) else False
+
+    """ 
+    loops through open/close times and converts datetimes for display in browser
+    leaves other values as None to make it easier to print out on screen
+    """
+    @staticmethod
+    def open_times(openTimes_db):
+        openTimes = []
+        for key, time in openTimes_db.items():
+            if time != None:
+                fTime = time.strftime("%H:%M")
+                openTimes.append({key:fTime})
+            else:
+                openTimes.append({key:time})
+
+        return openTimes
