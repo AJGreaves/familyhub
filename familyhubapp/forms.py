@@ -6,7 +6,7 @@ from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 from familyhubapp.keys import Keywords
 from datetime import datetime
-from familyhubapp.helpers import Helpers, getPost
+from familyhubapp.helpers import Helpers, getBool
 
 def new_account_req(db, post_request):
     """
@@ -114,24 +114,24 @@ def process_event_data(db, user, post_request, published):
         'imgUrl': post_request.get('imgUrl'),
         'date': date, 
         'address': {
-            'addressLine1': getPost(post_request, 'addressLine1'),
-            'postcode': getPost(post_request, 'postcode'),
-            'town': getPost(post_request, 'town'),
+            'addressLine1': getBool(post_request, 'addressLine1'),
+            'postcode': getBool(post_request, 'postcode'),
+            'town': getBool(post_request, 'town'),
         },
         'ageRange': {
-            'under4': getPost(post_request, 'under4'),
-            'age4to6': getPost(post_request, 'age4to6'),
-            'age6to8': getPost(post_request, 'age6to8'),
-            'age8to10': getPost(post_request, 'age8to10'),
-            'age10to12': getPost(post_request, 'age10to12'),
-            'age12up': getPost(post_request, 'age12up'),
+            'under4': getBool(post_request, 'under4'),
+            'age4to6': getBool(post_request, 'age4to6'),
+            'age6to8': getBool(post_request, 'age6to8'),
+            'age8to10': getBool(post_request, 'age8to10'),
+            'age10to12': getBool(post_request, 'age10to12'),
+            'age12up': getBool(post_request, 'age12up'),
         },
         'price': {
             'from': price_int if post_request.get('from') else None,
-            'isFree': getPost(post_request, 'isFree')
+            'isFree': getBool(post_request, 'isFree')
         },
-        'indoor': getPost(post_request, 'indoor'),
-        'outdoor': getPost(post_request, 'outdoor'),
+        'indoor': getBool(post_request, 'indoor'),
+        'outdoor': getBool(post_request, 'outdoor'),
         'contact': {
             'url': post_request.get('url'),
             'email': post_request.get('email'),
@@ -145,3 +145,102 @@ def process_event_data(db, user, post_request, published):
 
     return obj
 
+def process_activity_data(db, user, post_request, published):
+    """
+    Processes date information to turn it into format needed to store date in mongodb.
+    Processes times by first looping through all the possible times, turning them into the correct format for
+    mongo and then adding them to a new dict to use to construct the final object to send to mongo.
+    creates new object with username from post_request dict, username from database and
+    all boolean values converted as needed to be store correctly in the database,
+    """
+
+    start = Helpers.format_time(post_request['start'])
+    end = Helpers.format_time(post_request['end'])
+
+    openTimes = [
+        'monStart','monEnd', 'tueStart', 'tueEnd', 
+        'wedStart', 'wedEnd', 'thuStart', 'thuEnd',
+        'friStart', 'friEnd', 'satStart', 'satEnd',
+        'sunStart', 'sunEnd'
+    ]
+
+    openTimesDict = { }
+
+    for time_name in openTimes:
+        if post_request.get(time_name):
+            time = time_name
+            time = post_request[time].split(':')
+            time = f"{time[0]}:{time[1]}:00"
+            time = datetime.strptime(time, '%H:%M:%S')
+            openTimesDict[time_name] = time
+
+    obj = {
+        'username': user['username'], 
+        'title': post_request.get('title'),
+        'imgUrl': post_request.get('imgUrl'),
+        'dates': { 
+            'start': start, 
+            'end': end 
+        },
+        'days' : {
+            'mon': getBool(post_request, 'mon'),
+            'tue': getBool(post_request, 'tue'),
+            'wed': getBool(post_request, 'wed'),
+            'thu': getBool(post_request, 'thu'),
+            'fri': getBool(post_request, 'fri'),
+            'sat': getBool(post_request, 'sat'),
+            'sun': getBool(post_request, 'sun')
+        },
+        'times': {
+            'monStart': openTimesDict.get('monStart') if openTimesDict.get('monStart') else None,
+            'monEnd': openTimesDict.get('monEnd') if openTimesDict.get('monEnd') else None,
+            'tueStart': openTimesDict.get('tueStart') if openTimesDict.get('tueStart') else None,
+            'tueEnd': openTimesDict.get('tueEnd') if openTimesDict.get('tueEnd') else None,
+            'wedStart': openTimesDict.get('wedStart') if openTimesDict.get('wedStart') else None,
+            'wedEnd': openTimesDict.get('wedEnd') if openTimesDict.get('wedEnd') else None,
+            'thuStart': openTimesDict.get('thuStart') if openTimesDict.get('thuStart') else None,
+            'thuEnd': openTimesDict.get('thuEnd') if openTimesDict.get('thuEnd') else None,
+            'friStart': openTimesDict.get('friStart') if openTimesDict.get('friStart') else None,
+            'friEnd': openTimesDict.get('friEnd') if openTimesDict.get('friEnd') else None,
+            'satStart': openTimesDict.get('satStart') if openTimesDict.get('satStart') else None,
+            'satEnd': openTimesDict.get('satEnd') if openTimesDict.get('satEnd') else None,
+            'sunStart': openTimesDict.get('sunStart') if openTimesDict.get('sunStart') else None,
+            'sunEnd': openTimesDict.get('sunEnd') if openTimesDict.get('sunEnd') else None
+        },
+        'categories': {
+            'sports': getBool(post_request, 'sports'),
+            'creative': getBool(post_request, 'creative'),
+            'scienceTech': getBool(post_request, 'scienceTech'),
+            'cultureMusic': getBool(post_request, 'cultureMusic'),
+            'dramaDance': getBool(post_request, 'dramaDance'),
+            'yogaMindfulness': getBool(post_request, 'yogaMindfulness'),
+            'museumsExhibitions': getBool(post_request, 'museumsExhibitions'),
+            'parksPlaygrounds': getBool(post_request, 'parksPlaygrounds'),
+            'playgroups': getBool(post_request, 'playgroups'),
+        },
+        'address': {
+            'addressLine1': post_request.get('addressLine1'),
+            'postcode': post_request.get('postcode'),
+            'town': post_request.get('town')
+        },
+        'ageRange': {
+            'under4': getBool(post_request, 'under4'),
+            'age4to6': getBool(post_request, 'age4to6'),
+            'age6to8': getBool(post_request, 'age6to8'),
+            'age8to10': getBool(post_request, 'age8to10'),
+            'age10to12': getBool(post_request, 'age10to12'),
+            'age12up': getBool(post_request, 'age12up')
+        },
+        'indoor': getBool(post_request, 'indoor'),
+        'outdoor': getBool(post_request, 'outdoor'),
+        'contact': {
+            'url': post_request.get('url'),
+            'email': post_request.get('email'),
+            'facebook': post_request.get('facebook') if post_request.get('facebook') else None,
+            'twitter': post_request.get('twitter') if post_request.get('twitter') else None,
+            'instagram': post_request.get('instagram') if post_request.get('instagram') else None
+        },
+        'description': post_request.get('description'),
+        'published': False
+    }
+    return obj

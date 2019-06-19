@@ -7,7 +7,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from familyhubapp.keys import Keywords
 from datetime import datetime
 
-def getPost(post_request, name):
+def getBool(post_request, name):
     return True if post_request.get(name) else False
 
 class Helpers:
@@ -43,3 +43,10 @@ class Helpers:
                 index = index + 1
 
         return descrpDict
+
+    @staticmethod
+    def format_time(data):
+        time = data.split('/')
+        time = f"{time[2]}-{time[1]}-{time[0]}"
+        time = datetime.strptime(time, '%Y-%m-%d')
+        return time

@@ -5,8 +5,8 @@ from pymongo import MongoClient
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 from familyhubapp.keys import Keywords
-from familyhubapp.helpers import Helpers, getPost
-from familyhubapp.forms import new_account_req, login_req, settings_update, process_event_data
+from familyhubapp.helpers import Helpers
+from familyhubapp.forms import new_account_req, login_req, settings_update, process_event_data, process_activity_data
 from datetime import datetime
 
 # create instance of flask and assign it to "app"
@@ -173,6 +173,7 @@ def activity_listing_page(title):
     endDate = activity["dates"]['end'].strftime("%d %b %Y")
     openTimes_db = activity['times']
     rawDescrip = activity['description']
+
     openTimes = Helpers.open_times(openTimes_db)
     descrpDict = Helpers.format_description(rawDescrip)
 
@@ -432,14 +433,9 @@ def edit_event_page(username, title):
 def new_activity_page(username):
     """
     Checks if user is logged in, if not redirects to permission denied page.
-    Gets user data from the database using the session username.
-    Converts data from form into dict, so can be processed before sending to database.
-    Processes date information to turn it into format needed to store date in mongodb.
-    Processes times by first looping through all the possible times, turning them into the correct format for
-    mongo and then adding them to a new dict to use to construct the final object to send to mongo.
-    creates new object with username from post_request dict, username from database and
-    all boolean values converted as needed to be store correctly in the database,
-    and finally inserts that data into the database.
+    Gets user data from the database using the session username. Converts data from form 
+    into dict, then processes into format for database and finally inserts that 
+    data into the database.
     """
     loggedIn = True if 'user' in session else False
 
@@ -449,103 +445,9 @@ def new_activity_page(username):
         user = db.users.find_one({"username": session['user']})
 
     if request.method == 'POST':
-
         post_request = request.form.to_dict()
-
-        start = post_request['start'].split('/')
-        start = f"{start[2]}-{start[1]}-{start[0]}"
-        start = datetime.strptime(start, '%Y-%m-%d')
-
-        end = post_request['end'].split('/')
-        end = f"{end[2]}-{end[1]}-{end[0]}"
-        end = datetime.strptime(end, '%Y-%m-%d')
-
-        openTimes = [
-            'monStart','monEnd', 'tueStart', 'tueEnd', 
-            'wedStart', 'wedEnd', 'thuStart', 'thuEnd',
-            'friStart', 'friEnd', 'satStart', 'satEnd',
-            'sunStart', 'sunEnd'
-        ]
-
-        openTimesDict = { }
-
-        for time_name in openTimes:
-            if post_request.get(time_name):
-                time = time_name
-                time = post_request[time].split(':')
-                time = f"{time[0]}:{time[1]}:00"
-                time = datetime.strptime(time, '%H:%M:%S')
-                openTimesDict[time_name] = time
-
-        obj = {
-            'username': user['username'], 
-            'title': post_request.get('title'),
-            'imgUrl': post_request.get('imgUrl'),
-            'dates': { 
-                'start': start, 
-                'end': end 
-            },
-            'days' : {
-                'mon': True if post_request.get('mon') else False,
-                'tue': True if post_request.get('tue') else False,
-                'wed': True if post_request.get('wed') else False,
-                'thu': True if post_request.get('thu') else False,
-                'fri': True if post_request.get('fri') else False,
-                'sat': True if post_request.get('sat') else False,
-                'sun': True if post_request.get('sun') else False
-            },
-            'times': {
-                'monStart': openTimesDict.get('monStart') if openTimesDict.get('monStart') else None,
-                'monEnd': openTimesDict.get('monEnd') if openTimesDict.get('monEnd') else None,
-                'tueStart': openTimesDict.get('tueStart') if openTimesDict.get('tueStart') else None,
-                'tueEnd': openTimesDict.get('tueEnd') if openTimesDict.get('tueEnd') else None,
-                'wedStart': openTimesDict.get('wedStart') if openTimesDict.get('wedStart') else None,
-                'wedEnd': openTimesDict.get('wedEnd') if openTimesDict.get('wedEnd') else None,
-                'thuStart': openTimesDict.get('thuStart') if openTimesDict.get('thuStart') else None,
-                'thuEnd': openTimesDict.get('thuEnd') if openTimesDict.get('thuEnd') else None,
-                'friStart': openTimesDict.get('friStart') if openTimesDict.get('friStart') else None,
-                'friEnd': openTimesDict.get('friEnd') if openTimesDict.get('friEnd') else None,
-                'satStart': openTimesDict.get('satStart') if openTimesDict.get('satStart') else None,
-                'satEnd': openTimesDict.get('satEnd') if openTimesDict.get('satEnd') else None,
-                'sunStart': openTimesDict.get('sunStart') if openTimesDict.get('sunStart') else None,
-                'sunEnd': openTimesDict.get('sunEnd') if openTimesDict.get('sunEnd') else None
-            },
-            'categories': {
-                'sports': True if post_request.get('sports') else False,
-                'creative': True if post_request.get('creative') else False,
-                'scienceTech': True if post_request.get('scienceTech') else False,
-                'cultureMusic': True if post_request.get('cultureMusic') else False,
-                'dramaDance': True if post_request.get('dramaDance') else False,
-                'yogaMindfulness': True if post_request.get('yogaMindfulness') else False,
-                'museumsExhibitions': True if post_request.get('museumsExhibitions') else False,
-                'parksPlaygrounds': True if post_request.get('parksPlaygrounds') else False, 
-                'playgroups': True if post_request.get('playgroups') else False,                            
-            },
-            'address': {
-                'addressLine1': post_request.get('addressLine1'),
-                'postcode': post_request.get('postcode'),
-                'town': post_request.get('town')
-            },
-            'ageRange': {
-                'under4': True if post_request.get('under4') else False,
-                'age4to6': True if post_request.get('age4to6') else False,
-                'age6to8': True if post_request.get('age6to8') else False,
-                'age8to10': True if post_request.get('age8to10') else False,
-                'age10to12': True if post_request.get('age10to12') else False,
-                'age12up': True if post_request.get('age12up') else False
-            },
-            'indoor': True if post_request.get('indoor') else False,
-            'outdoor': True if post_request.get('outdoor') else False,
-            'contact': {
-                'url': post_request.get('url'),
-                'email': post_request.get('email'),
-                'facebook': post_request.get('facebook') if post_request.get('facebook') else None,
-                'twitter': post_request.get('twitter') if post_request.get('twitter') else None,
-                'instagram': post_request.get('instagram') if post_request.get('instagram') else None
-            },
-            'description': post_request.get('description'),
-            'published': False
-        }
+        published = False
+        obj = process_activity_data(db, user, post_request, published)
 
         newActivity_id = db.activities.insert_one(obj).inserted_id
         return redirect(url_for(
@@ -581,37 +483,19 @@ def preview_activity_page(username, title):
     if not loggedIn:
         return redirect(url_for('permission_denied'))
     else:
-        user = db.users.find_one({"username": session['user']})
+        activity_id = request.args.get('activity_id')
 
-    activity_id = request.args.get('activity_id')
-    activity = db.activities.find_one({"_id": ObjectId(activity_id)})
-    startDate = activity["dates"]['start'].strftime("%d %b %Y")
-    endDate = activity["dates"]['end'].strftime("%d %b %Y")
-    openTimes_db = activity['times']
-    
-    """ 
-    loops through open/close times and converts datetimes for display in browser
-    leaves other values as None to make it easier to print out on screen
-    """
-    openTimes = []
-    for key, time in openTimes_db.items():
-        if time != None:
-            fTime = time.strftime("%H:%M")
-            openTimes.append({key:fTime})
-        else:
-            openTimes.append({key:time})
-
+        activity = db.activities.find_one({"_id": ObjectId(activity_id)})
+        startDate = activity["dates"]['start'].strftime("%d %b %Y")
+        endDate = activity["dates"]['end'].strftime("%d %b %Y")
+        openTimes_db = activity['times']
         rawDescrip = activity['description']
-        description = (rawDescrip).split('\r\n')
 
-    index = 0
-    descrpDict = []
-    for parag in description:
-        if parag != '':  
-            key = str(index)
-            descrpDict.append({key:parag})
-            index = index + 1
+        openTimes = Helpers.open_times(openTimes_db)
+        descrpDict = Helpers.format_description(rawDescrip)
 
+    """ If user pushed "Publish" button on preview page, update published to True
+        then redirect to actual listing page on site """
     if request.method == 'POST':
         db.activities.find_one_and_update({"_id": ObjectId(activity_id)}, {"$set": {"published": True}})
         
