@@ -409,10 +409,13 @@ $(inputClasses).each(function (i) {
  */
 
 const editorForm = document.getElementById('editorForm');
+const submitBtn = document.getElementById('editorSubmitBtn');
 let formChanged = false;
+let submitClicked= false;
 editorForm.addEventListener('change', () => formChanged = true);
+submitBtn.addEventListener('click', () => submitClicked = true);
 window.addEventListener('beforeunload', (event) => {
-    if (formChanged) {
+    if (formChanged && !submitClicked) {
         event.returnValue = 'Are you sure you want to leave this page? The data you have entered may not be saved!';
     }
 });
