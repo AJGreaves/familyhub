@@ -178,23 +178,11 @@ def activity_listing_page(title):
     startDate = activity["dates"]['start'].strftime("%d %b %Y")
     endDate = activity["dates"]['end'].strftime("%d %b %Y")
     openTimes_db = activity['times']
-
-    """ 
-    loops through open/close times and converts datetimes for display in browser
-    leaves other values as None to make it easier to print out on screen
-    """
-    openTimes = Helpers.open_times(openTimes_db)
-
     rawDescrip = activity['description']
-    description = (rawDescrip).split('\r\n')
 
-    index = 0
-    descrpDict = []
-    for paragraph in description:
-        if paragraph != '':  
-            key = str(index)
-            descrpDict.append({key:paragraph})
-            index = index + 1
+    openTimes = Helpers.open_times(openTimes_db)
+    descrpDict = Helpers.format_description(rawDescrip)
+
 
     return render_template(
         "pages/activitylisting.html", 
