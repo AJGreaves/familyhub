@@ -143,9 +143,9 @@ if (document.querySelector('#edit-account-form')) {
     const selector = document.querySelector('#edit-account-form');
     selector.addEventListener('submit', (e) => {
         e.preventDefault();
-        let formId = e.target.id
+        let formId = e.target.id;
         checkAndUpdate(formId);
-    });
+    })
 }
 
 function checkAndUpdate(item) {
@@ -177,9 +177,9 @@ function checkAndUpdate(item) {
         .then(data => {
             hideLoading();
 
-            if (key == 'email' && data.updated) {
+            if (key == 'emai' && data.updated) {
                 alertModal('email updated')
-            } else if (key == 'email' && !data.updated) {
+            } else if (key == 'emai' && !data.updated) {
                 alertModal('email incorrect')
             } else if (key == 'pass' && data.updated) {
                 alertModal('password updated')

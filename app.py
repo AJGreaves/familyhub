@@ -6,7 +6,7 @@ from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 from familyhubapp.keys import Keywords
 from familyhubapp.helpers import Helpers
-from familyhubapp.forms import new_account_req, login_req
+from familyhubapp.forms import new_account_req, login_req, settings_update
 from datetime import datetime
 
 # create instance of flask and assign it to "app"
@@ -208,8 +208,7 @@ def activity_listing_page(title):
 def event_listing_page(title):
     """
     Constructs url using <title> passed to it. Takes the event_id also passed to it and pulls
-    the relevant event from the database. Then the date and description are formatted
-    in a way that will display correctly in the browser. All the data is then passed to the 
+    the relevant event from the database. All the data is then passed to the 
     template as it renders to display the event listing in the browser. 
     """
     loggedIn = True if 'user' in session else False
@@ -259,23 +258,7 @@ def settings_page(username):
 
     if request.method == 'POST':
         post_request = request.get_json()
-
-        updated = False
-
-        if post_request['whichForm'] == 'emai':
-            if user['email'] == post_request['oldInput']:
-                db.users.find_one_and_update({"_id": ObjectId(user["_id"])}, {"$set": {"email": post_request["newInput"]}})
-                updated = True
-        
-        if post_request['whichForm'] == 'pass':
-            if check_password_hash(user['password'], post_request['oldInput']):
-                post_request['newInput'] = generate_password_hash(post_request['newInput'])
-                db.users.find_one_and_update({"_id": ObjectId(user["_id"])}, {"$set": {"password": post_request["newInput"]}})
-                updated = True
-
-        response = {
-            "updated": updated
-        }
+        response = settings_update(db, user, post_request)
         return json.dumps(response)
 
     return render_template(
