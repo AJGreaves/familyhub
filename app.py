@@ -6,6 +6,7 @@ from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 from familyhubapp.keys import Keywords
 from familyhubapp.helpers import Helpers
+from familyhubapp.forms import new_account_req
 from datetime import datetime
 
 # create instance of flask and assign it to "app"
@@ -99,30 +100,9 @@ def new_account_page():
 
     if request.method == 'POST':
         post_request = request.get_json()
-
-        emailExists = True
-        userExists = True
-
-        user_email = db.users.find_one({"email": post_request['email']})
-        user_username = db.users.find_one({"username": post_request['username']})
-
-        if not user_email:
-            emailExists = False
-        elif not user_username:
-            userExists = False
-
-        if not user_username and not user_email:
-            userExists = False
-            emailExists = False
-            post_request['password'] = generate_password_hash(post_request['password'])
-            db.users.insert_one(post_request)
-
-        response = {
-            "emailExists": emailExists,
-            "userExists": userExists,
-            "username": post_request['username']
-        }
         
+        response = new_account_req(db, post_request)
+
         return json.dumps(response)
 
     return render_template(
