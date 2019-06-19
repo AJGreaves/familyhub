@@ -400,6 +400,7 @@ def new_activity_page(username):
         obj = process_activity_data(db, user, post_request, published)
 
         newActivity_id = db.activities.insert_one(obj).inserted_id
+        
         return redirect(url_for(
             'preview_activity_page', 
             username=session['user'], 
@@ -478,8 +479,9 @@ def edit_activity_page(username, title):
     else:
         activity_id = request.args.get('activity_id')
         activity = db.activities.find_one({"_id": ObjectId(activity_id)})
+        user = db.users.find_one({"username": session['user']})
 
-        # ------ START section data to display in edit fields ------ #
+        # data to display in edit fields
         startDate = activity["dates"]['start'].strftime("%d/%m/%Y")
         endDate = activity["dates"]['end'].strftime("%d/%m/%Y")
         openTimes_db = activity['times']
@@ -487,120 +489,14 @@ def edit_activity_page(username, title):
         loops through open/close times and converts datetimes for display in browser
         leaves other values as None to make it easier to print out on screen
         """
-        openTimes_for_values = []
-        for key, time in openTimes_db.items():
-            if time != None:
-                fTime = time.strftime("%H:%M")
-                openTimes_for_values.append({key:fTime})
-            else:
-                openTimes_for_values.append({key:time})
-
+        openTimes = Helpers.open_times(openTimes_db)
         published = activity['published']
-        preview = False if published else True
-    
         headTitle = 'Edit | ' + title
-        # ------ END section data to display in edit fields ------ #
 
-        # ------ START section sending to the database & preview ------ #
         if request.method == 'POST':
             post_request = request.form.to_dict()
-
-            start = post_request['start'].split('/')
-            start = f"{start[2]}-{start[1]}-{start[0]}"
-            start = datetime.strptime(start, '%Y-%m-%d')
-
-            end = post_request['end'].split('/')
-            end = f"{end[2]}-{end[1]}-{end[0]}"
-            end = datetime.strptime(end, '%Y-%m-%d')
-
-            openTimes = [
-                'monStart','monEnd', 'tueStart', 'tueEnd', 
-                'wedStart', 'wedEnd', 'thuStart', 'thuEnd',
-                'friStart', 'friEnd', 'satStart', 'satEnd',
-                'sunStart', 'sunEnd'
-            ]            
-
-            openTimesDict = {}
-
-            for time_name in openTimes:
-                if post_request.get(time_name):
-                    time = time_name
-                    time = post_request[time].split(':')
-                    time = f"{time[0]}:{time[1]}:00"
-                    time = datetime.strptime(time, '%H:%M:%S')
-                    openTimesDict[time_name] = time
-
-            obj = {
-                'username': session['user'], 
-                'title': post_request.get('title'),
-                'imgUrl': post_request.get('imgUrl'),
-                'dates': { 
-                    'start': start, 
-                    'end': end 
-                },
-                'days' : {
-                    'mon': True if post_request.get('mon') else False,
-                    'tue': True if post_request.get('tue') else False,
-                    'wed': True if post_request.get('wed') else False,
-                    'thu': True if post_request.get('thu') else False,
-                    'fri': True if post_request.get('fri') else False,
-                    'sat': True if post_request.get('sat') else False,
-                    'sun': True if post_request.get('sun') else False
-                },
-                'times': {
-                    'monStart': openTimesDict.get('monStart') if openTimesDict.get('monStart') else None,
-                    'monEnd': openTimesDict.get('monEnd') if openTimesDict.get('monEnd') else None,
-                    'tueStart': openTimesDict.get('tueStart') if openTimesDict.get('tueStart') else None,
-                    'tueEnd': openTimesDict.get('tueEnd') if openTimesDict.get('tueEnd') else None,
-                    'wedStart': openTimesDict.get('wedStart') if openTimesDict.get('wedStart') else None,
-                    'wedEnd': openTimesDict.get('wedEnd') if openTimesDict.get('wedEnd') else None,
-                    'thuStart': openTimesDict.get('thuStart') if openTimesDict.get('thuStart') else None,
-                    'thuEnd': openTimesDict.get('thuEnd') if openTimesDict.get('thuEnd') else None,
-                    'friStart': openTimesDict.get('friStart') if openTimesDict.get('friStart') else None,
-                    'friEnd': openTimesDict.get('friEnd') if openTimesDict.get('friEnd') else None,
-                    'satStart': openTimesDict.get('satStart') if openTimesDict.get('satStart') else None,
-                    'satEnd': openTimesDict.get('satEnd') if openTimesDict.get('satEnd') else None,
-                    'sunStart': openTimesDict.get('sunStart') if openTimesDict.get('sunStart') else None,
-                    'sunEnd': openTimesDict.get('sunEnd') if openTimesDict.get('sunEnd') else None
-                },
-                'categories': {
-                    'sports': True if post_request.get('sports') else False,
-                    'creative': True if post_request.get('creative') else False,
-                    'scienceTech': True if post_request.get('scienceTech') else False,
-                    'cultureMusic': True if post_request.get('cultureMusic') else False,
-                    'dramaDance': True if post_request.get('dramaDance') else False,
-                    'yogaMindfulness': True if post_request.get('yogaMindfulness') else False,
-                    'museumsExhibitions': True if post_request.get('museumsExhibitions') else False,
-                    'parksPlaygrounds': True if post_request.get('parksPlaygrounds') else False,
-                    'playgroups': True if post_request.get('playgroups') else False,                                  
-                },
-                'address': {
-                    'addressLine1': post_request.get('addressLine1'),
-                    'postcode': post_request.get('postcode'),
-                    'town': post_request.get('town')
-                },
-                'ageRange': {
-                    'under4': True if post_request.get('under4') else False,
-                    'age4to6': True if post_request.get('age4to6') else False,
-                    'age6to8': True if post_request.get('age6to8') else False,
-                    'age8to10': True if post_request.get('age8to10') else False,
-                    'age10to12': True if post_request.get('age10to12') else False,
-                    'age12up': True if post_request.get('age12up') else False
-                },
-                'indoor': True if post_request.get('indoor') else False,
-                'outdoor': True if post_request.get('outdoor') else False,
-                'contact': {
-                    'url': post_request.get('url'),
-                    'email': post_request.get('email'),
-                    'facebook': post_request.get('facebook') if post_request.get('facebook') else None,
-                    'twitter': post_request.get('twitter') if post_request.get('twitter') else None,
-                    'instagram': post_request.get('instagram') if post_request.get('instagram') else None
-                },
-                'description': post_request.get('description'),
-                'published': activity['published']}
-
+            obj = process_activity_data(db, user, post_request, published)
             db.activities.find_one_and_update({"_id": ObjectId(activity_id)}, {"$set": obj})
-            # ------ END section for database & preview ------ #
 
             # for loading preview page
             return redirect(url_for(
@@ -625,7 +521,7 @@ def edit_activity_page(username, title):
         activity=activity,
         startDate=startDate,
         endDate=endDate,
-        openTimes=openTimes_for_values,
+        openTimes=openTimes,
         active="form",
         loggedIn=loggedIn,
         keywords=Keywords.generic()
