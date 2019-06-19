@@ -17,8 +17,6 @@ app.config.from_object(Config)
 client = MongoClient(Config.MONGO_URI)
 db = client.familyHub
 
-# =========================================================================== #
-
 # Home page
 @app.route('/')
 @app.route('/index')
@@ -33,9 +31,6 @@ def home_page():
         keywords=Keywords.home()
     )
 
-
-# =========================================================================== #
-
 # Activities page
 @app.route('/activities')
 def activities_page():
@@ -47,9 +42,6 @@ def activities_page():
         loggedIn=loggedIn,
         keywords=Keywords.activities()
     )
-
-
-# =========================================================================== #
 
 # Events page
 @app.route('/events')
@@ -63,9 +55,6 @@ def events_page():
         keywords=Keywords.events()
     )
 
-
-# =========================================================================== #
-
 # Contact page
 @app.route('/contact')
 def contact_page():
@@ -78,10 +67,7 @@ def contact_page():
         keywords=Keywords.generic()
     )
 
-# =========================================================================== #
-
 # new account page
-
 @app.route('/newaccount', methods=['GET', 'POST'])
 def new_account_page():
     """ Checks if user is already logged in, if they are redirects them to their account page """
@@ -105,11 +91,7 @@ def new_account_page():
         keywords=Keywords.generic()
     )
 
-
-# =========================================================================== #
-
 # login page
-
 @app.route('/login', methods=['GET', 'POST'])
 def login_page():
     loggedIn = True if 'user' in session else False
@@ -132,18 +114,12 @@ def login_page():
         keywords=Keywords.generic()
     )
 
-
-# =========================================================================== #
-
 # log out page
 @app.route('/logout')
 def logout():
     # Clear the session
     session.clear()
     return redirect(url_for('home_page'))
-
-
-# =========================================================================== #
 
 # Search page
 @app.route('/search')
@@ -156,9 +132,6 @@ def search_page():
         loggedIn=loggedIn,
         keywords=Keywords.generic()
     )
-
-
-# =========================================================================== #
 
 # Activity listing page 
 @app.route('/activity-listing/<title>')
@@ -193,9 +166,6 @@ def activity_listing_page(title):
         keywords=Keywords.generic()
     )
 
-
-# =========================================================================== #
-
 # Event listing page
 
 @app.route('/event-listing/<title>')
@@ -228,11 +198,7 @@ def event_listing_page(title):
         keywords=Keywords.generic()
     )
 
-
-# =========================================================================== #
-
 # Settings page
-
 @app.route('/settings/<username>', methods=['GET', 'POST'])
 def settings_page(username):
     loggedIn = True if 'user' in session else False
@@ -256,9 +222,6 @@ def settings_page(username):
         keywords=Keywords.generic()
     )
 
-
-# =========================================================================== #
-
 # Account page - all listings for this account
 @app.route('/account/<username>')
 def my_account_page(username):
@@ -278,11 +241,7 @@ def my_account_page(username):
         keywords=Keywords.generic()
     )
 
-
-# =========================================================================== #
-
 # Add new event page
-
 @app.route('/editor/<username>/add-new-event', methods=['GET', 'POST'])
 def new_event_page(username):
     """
@@ -322,11 +281,7 @@ def new_event_page(username):
         loggedIn=loggedIn,
         keywords=Keywords.generic())
 
-
-# =========================================================================== #
-
 # preview event page
-
 @app.route('/editor/preview-event/<username>/<title>', methods=['GET', 'POST'])
 def preview_event_page(username, title):
     """
@@ -373,8 +328,6 @@ def preview_event_page(username, title):
         loggedIn=loggedIn,
         active="listing",
         keywords=Keywords.generic())
-
-# =========================================================================== #
 
 # Edit existing event page
 @app.route('/editor/edit-event/<username>/<title>', methods=['GET', 'POST'])
@@ -425,9 +378,6 @@ def edit_event_page(username, title):
         loggedIn=loggedIn,
         keywords=Keywords.generic())
 
-
-# =========================================================================== #
-
 # Add new activity page
 @app.route('/editor/<username>/add-new-activity', methods=['GET', 'POST'])
 def new_activity_page(username):
@@ -470,9 +420,6 @@ def new_activity_page(username):
         loggedIn=loggedIn,
         keywords=Keywords.generic()
     )
-
-
-# =========================================================================== #
 
 # preview activity page
 @app.route('/editor/preview-activity/<username>/<title>', methods=['GET', 'POST'])
@@ -520,8 +467,6 @@ def preview_activity_page(username, title):
         active="listing",
         keywords=Keywords.generic()
     )
-
-# =========================================================================== #
 
 # Edit existing activity page
 @app.route('/editor/edit-activity/<username>/<title>', methods=['GET', 'POST'])
@@ -686,23 +631,15 @@ def edit_activity_page(username, title):
         keywords=Keywords.generic()
     )
 
-
-# =========================================================================== #
-
 # 404 error page
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('pages/404.html'), 404
 
-
-# =========================================================================== #
-
 # No permission page
 @app.route('/permission-denied')
 def permission_denied():
     return render_template("pages/permission.html")
-
-# =========================================================================== #
 
 if __name__ == '__main__':
     app.run(host=os.getenv('IP'), port=os.getenv('PORT'), debug=True)
