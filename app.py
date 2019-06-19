@@ -5,6 +5,7 @@ from pymongo import MongoClient
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 from familyhubapp.keys import Keywords
+from familyhubapp.helpers import Helpers
 from datetime import datetime
 
 # create instance of flask and assign it to "app"
@@ -430,7 +431,7 @@ def new_event_page(username):
                 'town': post_request.get('town')
             },
             'ageRange': {
-                'under4': True if post_request.get('under4') else False,
+                'under4': Helpers.getPost(post_request, 'under4'),
                 'age4to6': True if post_request.get('age4to6') else False,
                 'age6to8': True if post_request.get('age6to8') else False,
                 'age8to10': True if post_request.get('age8to10') else False,
