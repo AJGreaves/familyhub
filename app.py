@@ -179,7 +179,6 @@ def activity_listing_page(title):
     endDate = activity["dates"]['end'].strftime("%d %b %Y")
     openTimes_db = activity['times']
     rawDescrip = activity['description']
-
     openTimes = Helpers.open_times(openTimes_db)
     descrpDict = Helpers.format_description(rawDescrip)
 
@@ -220,17 +219,8 @@ def event_listing_page(title):
 
     event = db.events.find_one({"_id": ObjectId(event_id)})
     date = event['date'].strftime("%d %b %Y")
-
     rawDescrip = event['description']
-    description = (rawDescrip).split('\r\n')
-    
-    index = 0
-    descrpDict = []
-    for parag in description:
-        if parag != '':  
-            key = str(index)
-            descrpDict.append({key:parag})
-            index = index + 1
+    descrpDict = Helpers.format_description(rawDescrip)
     
     return render_template(
         "pages/eventlisting.html", 
