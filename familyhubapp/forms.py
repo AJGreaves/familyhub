@@ -6,6 +6,7 @@ from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 from familyhubapp.keys import Keywords
 from datetime import datetime
+from familyhubapp.helpers import Helpers, getPost
 
 def new_account_req(db, post_request):
     """
@@ -88,3 +89,59 @@ def settings_update(db, user, post_request):
     }
 
     return response
+
+def process_event_data(db, user, post_request, published):
+    """
+    Processed dict post_request so that it is correct to insert into the database.
+    Processes date information to turn it into format needed to store date in mongodb.
+    Processes number string into int for storing correctly.
+    creates new object with username from post_request dict, username from database and
+    all boolean values converted as needed to be store correctly in the database, returns 
+    obj to be inserted into the database.
+    """
+    # credit for date processing code to fellow student Seán Murphy 
+    date = post_request['date'].split('/')
+    date = f"{date[2]}-{date[1]}-{date[0]}"
+    date = datetime.strptime(date, '%Y-%m-%d')
+
+    if post_request.get('from'):
+        price_string = post_request.get('from')
+        price_int = int(price_string)
+
+    obj = {
+        'username': user['username'], 
+        'title': post_request.get('title'),
+        'imgUrl': post_request.get('imgUrl'),
+        'date': date, 
+        'address': {
+            'addressLine1': getPost(post_request, 'addressLine1'),
+            'postcode': getPost(post_request, 'postcode'),
+            'town': getPost(post_request, 'town'),
+        },
+        'ageRange': {
+            'under4': getPost(post_request, 'under4'),
+            'age4to6': getPost(post_request, 'age4to6'),
+            'age6to8': getPost(post_request, 'age6to8'),
+            'age8to10': getPost(post_request, 'age8to10'),
+            'age10to12': getPost(post_request, 'age10to12'),
+            'age12up': getPost(post_request, 'age12up'),
+        },
+        'price': {
+            'from': price_int if post_request.get('from') else None,
+            'isFree': getPost(post_request, 'isFree')
+        },
+        'indoor': getPost(post_request, 'indoor'),
+        'outdoor': getPost(post_request, 'outdoor'),
+        'contact': {
+            'url': post_request.get('url'),
+            'email': post_request.get('email'),
+            'facebook': post_request.get('facebook') if post_request.get('facebook') else None,
+            'twitter': post_request.get('twitter') if post_request.get('twitter') else None,
+            'instagram': post_request.get('instagram') if post_request.get('instagram') else None
+        },
+        'description': post_request.get('description'),
+        'published': published
+    }
+
+    return obj
+

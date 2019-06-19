@@ -7,12 +7,10 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from familyhubapp.keys import Keywords
 from datetime import datetime
 
+def getPost(post_request, name):
+    return True if post_request.get(name) else False
+
 class Helpers:
-
-    @staticmethod
-    def getPost(post_request, name):
-        return True if post_request.get(name) else False
-
     """ 
     loops through open/close times and converts datetimes for display in browser
     leaves other values as None to make it easier to print out on screen

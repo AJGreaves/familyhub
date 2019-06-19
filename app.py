@@ -5,8 +5,8 @@ from pymongo import MongoClient
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 from familyhubapp.keys import Keywords
-from familyhubapp.helpers import Helpers
-from familyhubapp.forms import new_account_req, login_req, settings_update
+from familyhubapp.helpers import Helpers, getPost
+from familyhubapp.forms import new_account_req, login_req, settings_update, process_event_data
 from datetime import datetime
 
 # create instance of flask and assign it to "app"
@@ -112,12 +112,6 @@ def new_account_page():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login_page():
-    """
-    Takes data collected with fetch in JS, checks if user exists in the database
-    If the user is in the database it then compares the password provided with the hashed one from the database
-    If the password is correct the value of passwordCorrect is set to True
-    All this data is then returned to JS to respond accordingly to the browser
-    """
     loggedIn = True if 'user' in session else False
 
     if loggedIn == True:
@@ -181,7 +175,6 @@ def activity_listing_page(title):
     rawDescrip = activity['description']
     openTimes = Helpers.open_times(openTimes_db)
     descrpDict = Helpers.format_description(rawDescrip)
-
 
     return render_template(
         "pages/activitylisting.html", 
@@ -293,15 +286,9 @@ def my_account_page(username):
 def new_event_page(username):
     """
     Checks if user is logged in, if not redirects to permission denied page.
-    Gets user data from the database using the session username.
-    Converts data from form into dict, so can be processed before sending to database.
-    Processes date information to turn it into format needed to store date in mongodb.
-    Processes number string into int for storing correctly.
-    creates new object with username from post_request dict, username from databas and
-    all boolean values converted as needed to be store correctly in the database,
-    and finally inserts that data into the database with published: False, which
-    will be updated to True when the user clicks "publish" on the next page so that it
-    can be seen in search results on the site. 
+    Gets user data from the database using the session username. Converts data from form into dict, 
+    and sends this to be processed using the process_event_data function, which returns
+    the formatted obj. Then obj is inserted into the database.
     """
     loggedIn = True if 'user' in session else False
 
@@ -311,52 +298,9 @@ def new_event_page(username):
         user = db.users.find_one({"username": session['user']})
 
     if request.method == 'POST':
-
         post_request = request.form.to_dict()
-
-        # credit for date processing code to fellow student Seán Murphy 
-        date = post_request['date'].split('/')
-        date = f"{date[2]}-{date[1]}-{date[0]}"
-        date = datetime.strptime(date, '%Y-%m-%d')
-
-        if post_request.get('from'):
-            price_string = post_request.get('from')
-            price_int = int(price_string)
-
-        obj = {
-            'username': user['username'], 
-            'title': post_request.get('title'),
-            'imgUrl': post_request.get('imgUrl'),
-            'date': date, 
-            'address': {
-                'addressLine1': post_request.get('addressLine1'),
-                'postcode': post_request.get('postcode'),
-                'town': post_request.get('town')
-            },
-            'ageRange': {
-                'under4': Helpers.getPost(post_request, 'under4'),
-                'age4to6': True if post_request.get('age4to6') else False,
-                'age6to8': True if post_request.get('age6to8') else False,
-                'age8to10': True if post_request.get('age8to10') else False,
-                'age10to12': True if post_request.get('age10to12') else False,
-                'age12up': True if post_request.get('age12up') else False
-            },
-            'price': {
-                'from': price_int if post_request.get('from') else None,
-                'isFree': True if post_request.get('isFree') else False
-            },
-            'indoor': True if post_request.get('indoor') else False,
-            'outdoor': True if post_request.get('outdoor') else False,
-            'contact': {
-                'url': post_request.get('url'),
-                'email': post_request.get('email'),
-                'facebook': post_request.get('facebook') if post_request.get('facebook') else None,
-                'twitter': post_request.get('twitter') if post_request.get('twitter') else None,
-                'instagram': post_request.get('instagram') if post_request.get('instagram') else None
-            },
-            'description': post_request.get('description'),
-            'published': False
-        }
+        published = False
+        obj = process_event_data(db, user, post_request, published)
         newEvent_id = db.events.insert_one(obj).inserted_id
 
         return redirect(url_for(
@@ -402,16 +346,8 @@ def preview_event_page(username, title):
     date = event['date'].strftime("%d %b %Y")
 
     rawDescrip = event['description']
-    description = (rawDescrip).split('\r\n')
+    descrpDict = Helpers.format_description(rawDescrip)
     
-    index = 0
-    descrpDict = []
-    for parag in description:
-        if parag != '':  
-            key = str(index)
-            descrpDict.append({key:parag})
-            index = index + 1
-
     published = event['published']
     preview = False if published else True
 
@@ -419,7 +355,11 @@ def preview_event_page(username, title):
 
     if request.method == 'POST':
         db.events.find_one_and_update({"_id": ObjectId(event_id)}, {"$set": {"published": True}})
-        return redirect(url_for('event_listing_page', event_id=event_id, title=title, newEvent=True))
+        return redirect(url_for(
+            'event_listing_page', 
+            event_id=event_id, 
+            title=title, 
+            newEvent=True))
 
     return render_template(
         "pages/eventlisting.html", 
