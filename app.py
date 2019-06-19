@@ -385,66 +385,19 @@ def edit_event_page(username, title):
     else:
         event_id = request.args.get('event_id')
         event = db.events.find_one({"_id": ObjectId(event_id)})
+        user = db.users.find_one({'username': session['user']})
 
-    # ------ START section data to display in edit fields ------ #
-        date_for_value = event['date'].strftime("%d/%m/%Y")
-
+        # data to display in edit fields
+        date = event['date'].strftime("%d/%m/%Y")
         published = event['published']
         preview = False if published else True
-    
         headTitle = 'Edit | ' + title
-    # ------ END section data to display in edit fields ------ #
 
-    # ------ START section sending to the database & preview ------ #
+    # send data to database when user hits preview
     if request.method == 'POST':
-
         post_request = request.form.to_dict()
-
-        # credit for date processing code to fellow student Seán Murphy 
-        date_for_db = post_request['date'].split('/')
-        date_for_db = f"{date_for_db[2]}-{date_for_db[1]}-{date_for_db[0]}"
-        date_for_db = datetime.strptime(date_for_db, '%Y-%m-%d')
-
-        if post_request.get('from'):
-            price_string = post_request.get('from')
-            price_int = int(price_string)
-
-        obj = {
-            'username': post_request.get('username'), 
-            'title': post_request.get('title'),
-            'imgUrl': post_request.get('imgUrl'),
-            'date': date_for_db, 
-            'address': {
-                'addressLine1': post_request.get('addressLine1'),
-                'postcode': post_request.get('postcode'),
-                'town': post_request.get('town')
-            },
-            'ageRange': {
-                'under4': True if post_request.get('under4') else False,
-                'age4to6': True if post_request.get('age4to6') else False,
-                'age6to8': True if post_request.get('age6to8') else False,
-                'age8to10': True if post_request.get('age8to10') else False,
-                'age10to12': True if post_request.get('age10to12') else False,
-                'age12up': True if post_request.get('age12up') else False
-            },
-            'price': {
-                'from': price_int if post_request.get('from') else None,
-                'isFree': True if post_request.get('isFree') else False
-                },
-            'indoor': True if post_request.get('indoor') else False,
-            'outdoor': True if post_request.get('outdoor') else False,
-            'contact': {
-                'url': post_request.get('url'),
-                'email': post_request.get('email'),
-                'facebook': post_request.get('facebook') if post_request.get('facebook') else None,
-                'twitter': post_request.get('twitter') if post_request.get('twitter') else None,
-                'instagram': post_request.get('instagram') if post_request.get('instagram') else None
-            },
-            'description': post_request.get('description'),
-            'published': event['published']}
-
+        obj = process_event_data(db, user, post_request, published)
         db.events.find_one_and_update({"_id": ObjectId(event_id)}, {"$set": obj})
-        # ------ END section for database & preview ------ #
 
         # for loading preview page
         return redirect(url_for(
@@ -466,7 +419,7 @@ def edit_event_page(username, title):
         type="event",
         event_id=event_id,
         event=event,
-        date=date_for_value,
+        date=date,
         active="form",
         loggedIn=loggedIn,
         keywords=Keywords.generic())
