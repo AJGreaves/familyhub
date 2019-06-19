@@ -6,7 +6,7 @@ from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 from familyhubapp.keys import Keywords
 from familyhubapp.helpers import Helpers
-from familyhubapp.forms import new_account_req
+from familyhubapp.forms import new_account_req, login_req
 from datetime import datetime
 
 # create instance of flask and assign it to "app"
@@ -84,13 +84,7 @@ def contact_page():
 
 @app.route('/newaccount', methods=['GET', 'POST'])
 def new_account_page():
-    """
-    Takes data collected with fetch in JS, checks if user already exists in the database.
-    if they are redirect them to account page
-    if they are not then it encrypts the password before sending complete object to mongodb.
-    It then returns to JS if the user already existed or not so JS can provide feedback to the user based on that condition.
-    page also renders the newaccount page to be viewed
-    """
+    """ Checks if user is already logged in, if they are redirects them to their account page """
     loggedIn = True if 'user' in session else False
 
     if loggedIn:
@@ -100,9 +94,7 @@ def new_account_page():
 
     if request.method == 'POST':
         post_request = request.get_json()
-        
         response = new_account_req(db, post_request)
-
         return json.dumps(response)
 
     return render_template(
@@ -135,24 +127,7 @@ def login_page():
 
     if request.method == 'POST':
         post_request = request.get_json()
-        
-        user = db.users.find_one({ '$or': [ { 'username': post_request['loginInput'] }, { 'email': post_request['loginInput'] } ]})
-
-        passwordCorrect = False
-        username = ''
-
-        if user: 
-            if check_password_hash(user['password'], post_request['password']):
-                session['user'] = user['username']
-                passwordCorrect = True    
-                username = user['username']    
-
-        response = {
-            "userMatch": True if user else False,
-            "passwordCorrect": passwordCorrect,
-            "username": username
-        }
-
+        response = login_req(db, post_request)
         return json.dumps(response)
 
     return render_template(
@@ -208,13 +183,7 @@ def activity_listing_page(title):
     loops through open/close times and converts datetimes for display in browser
     leaves other values as None to make it easier to print out on screen
     """
-    openTimes = []
-    for key, time in openTimes_db.items():
-        if time != None:
-            fTime = time.strftime("%H:%M")
-            openTimes.append({key:fTime})
-        else:
-            openTimes.append({key:time})
+    openTimes = Helpers.open_times(openTimes_db)
 
     rawDescrip = activity['description']
     description = (rawDescrip).split('\r\n')

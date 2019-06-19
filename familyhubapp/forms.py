@@ -8,6 +8,13 @@ from familyhubapp.keys import Keywords
 from datetime import datetime
 
 def new_account_req(db, post_request):
+    """
+    Takes post_request data collected with fetch in JS, checks if user already 
+    exists in the database. if they are send message back to js to give feedback to the user.
+    if they are not then it encrypts the password before sending complete object to mongodb.
+    It then returns to JS if the user already existed or not so JS can provide feedback to the user based on that condition.
+    page also renders the newaccount page to be viewed
+    """
     emailExists = True
     userExists = True
 
@@ -32,3 +39,24 @@ def new_account_req(db, post_request):
     }
 
     return response
+
+def login_req(db, post_request):
+    user = db.users.find_one({ '$or': [ { 'username': post_request['loginInput'] }, { 'email': post_request['loginInput'] } ]})
+    passwordCorrect = False
+    username = ''
+
+    if user: 
+        if check_password_hash(user['password'], post_request['password']):
+            session['user'] = user['username']
+            passwordCorrect = True    
+            username = user['username']    
+
+    response = {
+        "userMatch": True if user else False,
+        "passwordCorrect": passwordCorrect,
+        "username": username
+    }
+
+    return response
+
+    
