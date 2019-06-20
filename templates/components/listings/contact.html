@@ -1,32 +1,12 @@
 {% block contact %}
 
-    <h3>Contact</h3>
-    {% if event %}
-    <p>{{ event.address.addressLine1 }}<br>
-    {{ event.address.postcode }}  {{ event.address.town }}</p>
-    
-    {% elif activity %}
+    <h3>Contact</h3>    
     <p>{{ activity.address.addressLine1 }}<br>
     {{ activity.address.postcode }}  {{ activity.address.town }}</p>
+    <a class="fh-link" target="_blank" href="{{ activity.contact.url }}" 
+    aria-label="Visit the website for this activity {{ activity.contact.url }}">{{ activity.contact.url }}</a>
+    <a class="fh-link" href="mailto:{{ activity.contact.email }}" 
+    aria-label="Email the organisers of this activity">{{ activity.contact.email }}</a>
     {% endif %}
-    {% if event %}
-    <a class="fh-link" target="_blank" href="{{ event.contact.url }}" aria-label="Visit the website for this event {{ event.contact.url }}">
-        {{ event.contact.url }}
-    </a>
-    {% elif activity %}
-    <a class="fh-link" target="_blank" href="{{ activity.contact.url }}" aria-label="Visit the website for this activity {{ activity.contact.url }}">
-        {{ activity.contact.url }}
-    </a>
-    {% endif %}
-    {% if event %}
-    <a class="fh-link" href="mailto:{{ event.contact.email }}" aria-label="Email the organisers of this event">
-        {{ event.contact.email }}
-    </a>
-    {% elif activity %}
-    <a class="fh-link" href="mailto:{{ activity.contact.email }}" aria-label="Email the organisers of this activity">
-        {{ activity.contact.email }}
-    </a>
-    {% endif %}
-
 
 {% endblock %}
