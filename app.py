@@ -6,7 +6,7 @@ from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 from familyhubapp.keys import Keywords
 from familyhubapp.helpers import Helpers
-from familyhubapp.forms import new_account_req, login_req, settings_update, process_event_data, process_activity_data
+from familyhubapp.forms import new_account_req, login_req, settings_update, process_activity_data
 from datetime import datetime
 
 # create instance of flask and assign it to "app"
@@ -41,18 +41,6 @@ def activities_page():
         active="activities",
         loggedIn=loggedIn,
         keywords=Keywords.activities()
-    )
-
-# Events page
-@app.route('/events')
-def events_page():
-    loggedIn = True if 'user' in session else False
-    return render_template(
-        "pages/events.html",
-        headTitle="Events", 
-        active="events",
-        loggedIn=loggedIn,
-        keywords=Keywords.events()
     )
 
 # Contact page
@@ -166,38 +154,6 @@ def activity_listing_page(title):
         keywords=Keywords.generic()
     )
 
-# Event listing page
-
-@app.route('/event-listing/<title>')
-def event_listing_page(title):
-    """
-    Constructs url using <title> passed to it. Takes the event_id also passed to it and pulls
-    the relevant event from the database. All the data is then passed to the 
-    template as it renders to display the event listing in the browser. 
-    """
-    loggedIn = True if 'user' in session else False
-
-    event_id = request.args.get('event_id')
-    newEvent = request.args.get('newEvent')
-
-    event = db.events.find_one({"_id": ObjectId(event_id)})
-    date = event['date'].strftime("%d %b %Y")
-    rawDescrip = event['description']
-    descrpDict = Helpers.format_description(rawDescrip)
-    
-    return render_template(
-        "pages/eventlisting.html", 
-        headTitle=title,
-        title=title,
-        event=event, 
-        date=date,
-        description=descrpDict,
-        newEvent=newEvent,
-        loggedIn=loggedIn,
-        active="listing",
-        keywords=Keywords.generic()
-    )
-
 # Settings page
 @app.route('/settings/<username>', methods=['GET', 'POST'])
 def settings_page(username):
@@ -240,143 +196,6 @@ def my_account_page(username):
         active="account",
         keywords=Keywords.generic()
     )
-
-# Add new event page
-@app.route('/editor/<username>/add-new-event', methods=['GET', 'POST'])
-def new_event_page(username):
-    """
-    Checks if user is logged in, if not redirects to permission denied page.
-    Gets user data from the database using the session username. Converts data from form into dict, 
-    and sends this to be processed using the process_event_data function, which returns
-    the formatted obj. Then obj is inserted into the database.
-    """
-    loggedIn = True if 'user' in session else False
-
-    if not loggedIn:
-        return redirect(url_for('permission_denied'))
-    else: 
-        user = db.users.find_one({"username": session['user']})
-
-    if request.method == 'POST':
-        post_request = request.form.to_dict()
-        published = False
-        obj = process_event_data(db, user, post_request, published)
-        newEvent_id = db.events.insert_one(obj).inserted_id
-
-        return redirect(url_for(
-            'preview_event_page', 
-            username=session['user'], 
-            title=post_request['title'],
-            headTitle="Preview Event",
-            event_id=newEvent_id, 
-            active="listing",
-            new=True))
-
-    return render_template(
-        "pages/editor.html", 
-        headTitle="Add New Event", 
-        editor="new",
-        type="event",
-        active="form",
-        loggedIn=loggedIn,
-        keywords=Keywords.generic())
-
-# preview event page
-@app.route('/editor/preview-event/<username>/<title>', methods=['GET', 'POST'])
-def preview_event_page(username, title):
-    """
-    Provides a preview of a newly created listing before the user to choose either to edit further or
-    publish. Using the event_id the data is pulled from the database, date and description formatted and then 
-    passed to the flask to be rendered.
-    If user chooses to publish this event the the 'Published' value in the database is set to True. 
-    making the listing available to view and search on the site. 
-    """
-    
-    loggedIn = True if 'user' in session else False
-
-    if not loggedIn:
-        return redirect(url_for('permission_denied'))
-
-    event_id = request.args.get('event_id')
-    event = db.events.find_one({"_id": ObjectId(event_id)})
-    date = event['date'].strftime("%d %b %Y")
-
-    rawDescrip = event['description']
-    descrpDict = Helpers.format_description(rawDescrip)
-    
-    published = event['published']
-    preview = False if published else True
-
-    headTitle = "Preview | " + title
-
-    if request.method == 'POST':
-        db.events.find_one_and_update({"_id": ObjectId(event_id)}, {"$set": {"published": True}})
-        return redirect(url_for(
-            'event_listing_page', 
-            event_id=event_id, 
-            title=title, 
-            newEvent=True))
-
-    return render_template(
-        "pages/eventlisting.html", 
-        headTitle=headTitle,
-        title=title,
-        event=event, 
-        date=date,
-        description=descrpDict,
-        preview=preview,
-        loggedIn=loggedIn,
-        active="listing",
-        keywords=Keywords.generic())
-
-# Edit existing event page
-@app.route('/editor/edit-event/<username>/<title>', methods=['GET', 'POST'])
-def edit_event_page(username, title):
-    loggedIn = True if 'user' in session else False
-
-    if not loggedIn:
-        return redirect(url_for('permission_denied'))
-    else:
-        event_id = request.args.get('event_id')
-        event = db.events.find_one({"_id": ObjectId(event_id)})
-        user = db.users.find_one({'username': session['user']})
-
-        # data to display in edit fields
-        date = event['date'].strftime("%d/%m/%Y")
-        published = event['published']
-        preview = False if published else True
-        headTitle = 'Edit | ' + title
-
-    # send data to database when user hits preview
-    if request.method == 'POST':
-        post_request = request.form.to_dict()
-        obj = process_event_data(db, user, post_request, published)
-        db.events.find_one_and_update({"_id": ObjectId(event_id)}, {"$set": obj})
-
-        # for loading preview page
-        return redirect(url_for(
-            'preview_event_page', 
-            username=session['user'], 
-            title=post_request['title'],
-            headTitle="Preview Event",
-            active="listing",
-            published=published,
-            preview=preview, 
-            event_id=event_id))
-
-    # for displaying forms when editing
-    return render_template(
-        "pages/editor.html", 
-        headTitle=headTitle, 
-        title=title,
-        editor="edit",
-        type="event",
-        event_id=event_id,
-        event=event,
-        date=date,
-        active="form",
-        loggedIn=loggedIn,
-        keywords=Keywords.generic())
 
 # Add new activity page
 @app.route('/editor/<username>/add-new-activity', methods=['GET', 'POST'])
