@@ -198,7 +198,7 @@ def my_account_page(username):
     )
 
 # Add new activity page
-@app.route('/editor/<username>/add-new-activity', methods=['GET', 'POST'])
+@app.route('/editor/<username>/add-new', methods=['GET', 'POST'])
 def new_activity_page(username):
     """
     Checks if user is logged in, if not redirects to permission denied page.
