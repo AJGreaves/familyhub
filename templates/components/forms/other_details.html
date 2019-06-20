@@ -1,0 +1,49 @@
+{% block other_details %}
+
+<div class="form-group">
+    <div class="form-check">
+        <input class="form-check-input in-out-js" name="free" type="checkbox" id="free"
+            {% if editor == 'edit' and activity.free %}checked {% endif %}>
+        <label class="form-check-label" for="free">
+            Free entrance
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input in-out-js" name="bringFood" type="checkbox" id="bringFood"
+            {% if editor == 'edit' and activity.bringFood %}checked {% endif %}>
+        <label class="form-check-label" for="bringFood">
+            Bringing own food permitted
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input in-out-js" name="catering" type="checkbox" id="catering"
+            {% if editor == 'edit' and activity.catering %}checked {% endif %}>
+        <label class="form-check-label" for="catering">
+            Catering available
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input in-out-js" name="goodWeather" type="checkbox" id="goodWeather"
+            {% if editor == 'edit' and activity.goodWeather %}checked {% endif %}>
+        <label class="form-check-label" for="goodWeather">
+            Suitable for good weather
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input in-out-js" name="badWeather" type="checkbox" id="badWeather"
+            {% if editor == 'edit' and activity.badWeather %}checked {% endif %}>
+        <label class="form-check-label" for="badWeather">
+            Suitable for bad weather
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input in-out-js" name="groups" type="checkbox" id="groups"
+            {% if editor == 'edit' and activity.groups %}checked {% endif %}>
+        <label class="form-check-label" for="groups">
+            Suitable for groups
+        </label>
+    </div>
+    <small>Select all that apply</small>
+</div>
+
+{% endblock %}
