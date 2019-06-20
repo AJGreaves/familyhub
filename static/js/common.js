@@ -126,10 +126,6 @@ function alertModal(message, date1, date2) {
             message1.text("You can't share this page in preview mode.");
             message2.text('Once you have published it, the share links will work');
             break;
-        case 'event published':
-            heading.text('Published!');
-            message1.text("Your event has been published to Family Hub");
-            break;
         default:
             break;
     }
@@ -169,7 +165,6 @@ function openDeleteWarningModal() {
 function openLoggedInModal(username) {
     let name = capFirst(username);
     $("#accountUrl").attr("href", `/account/${username}`)
-    $("#newEventUrl").attr("href", `/editor/${username}/add-new-event`)
     $("#newActivityUrl").attr("href", `/editor/${username}/add-new-activity`)
     $('#welcomeMessage').text('Welcome ' + name + '.');
     $('#loggedInModal').addClass('active');

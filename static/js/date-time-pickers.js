@@ -6,8 +6,8 @@
 
 // datepicker function code written by fellow student Sean Murphy, 
 // who gave it to me to demonstrate how to get it working
-['#eventFilterDatepickerSm',
-    '#eventFilterDatepickerLg',
+['#activityFilterDatepickerSm',
+    '#activityFilterDatepickerLg',
     '#start',
     '#end',
     '#date'
