@@ -3,7 +3,7 @@
     <div class="form-row">
         <div class="form-group col-12">
             <h3>Title</h3>
-            <input id="title" name="title" class="form-control full-width" type="text" placeholder="Your activity title"
+            <input id="title" name="title" class="form-control full-width" type="text" placeholder="Title for your listing on Family Hub"
                 value="{% if editor == 'edit' %}{{activity.title}}{% endif %}" required>
         </div>
     </div>
@@ -263,13 +263,13 @@
 
     <div class="form-row">
         <!-- Categories -->
-        <div class="form-group categories col-12 col-md-4">
+        <div class="form-group categories col-12 col-md-4 px-2">
             <h3>Categories *</h3>
 
             {% include 'components/forms/categories.html' %}
 
         </div>
-        <div class="form-group col-12 col-md-4">
+        <div class="form-group col-12 col-md-4 px-2">
             <h3>Age range *</h3>
             {% include 'components/forms/age_range.html' %}
 
@@ -277,7 +277,7 @@
             <h3 class="mt-3">indoor / outdoor *</h3>
             {% include 'components/forms/in_out_checkboxes.html' %}
         </div>
-        <div class="form-group col-12 col-md-4">
+        <div class="form-group col-12 col-md-4 px-2">
             <h3>Other details</h3>
             {% include 'components/forms/other_details.html' %}
 
@@ -306,7 +306,7 @@
     <div class="form-group">
         <h3>Description</h3>
         <textarea class="form-control" id="description" rows="11" name="description"
-            placeholder="The first sentence of this description will also appear with your activity listing in Family Hub search."
+            placeholder="The first sentence of this description will also appear with your listing in Family Hub search."
             required>{% if editor == 'edit' %}{{ activity.description }}{% endif %}</textarea>
     </div>
 </div>
