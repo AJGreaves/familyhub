@@ -99,8 +99,9 @@ def process_activity_data(db, user, post_request, published):
     all boolean values converted as needed to be store correctly in the database,
     """
 
-    start = Helpers.format_time(post_request['start'])
-    end = Helpers.format_time(post_request['end'])
+    start = Helpers.format_time(post_request['start']) if getBool(post_request, 'start') else None
+    end = Helpers.format_time(post_request['end']) if getBool(post_request, 'start') else None
+
 
     openTimes = [
         'monStart','monEnd', 'tueStart', 'tueEnd', 
@@ -125,7 +126,8 @@ def process_activity_data(db, user, post_request, published):
         'imgUrl': post_request.get('imgUrl'),
         'dates': { 
             'start': start, 
-            'end': end 
+            'end': end,
+            'ongoing': getBool(post_request, 'ongoing'),
         },
         'days' : {
             'mon': getBool(post_request, 'mon'),
@@ -154,6 +156,7 @@ def process_activity_data(db, user, post_request, published):
         },
         'categories': {
             'sports': getBool(post_request, 'sports'),
+            'swimming': getBool(post_request, 'swimming'),
             'creative': getBool(post_request, 'creative'),
             'scienceTech': getBool(post_request, 'scienceTech'),
             'cultureMusic': getBool(post_request, 'cultureMusic'),
@@ -162,6 +165,18 @@ def process_activity_data(db, user, post_request, published):
             'museumsExhibitions': getBool(post_request, 'museumsExhibitions'),
             'parksPlaygrounds': getBool(post_request, 'parksPlaygrounds'),
             'playgroups': getBool(post_request, 'playgroups'),
+            'nature': getBool(post_request, 'nature'),
+            'animals': getBool(post_request, 'animals'),
+            'clubs': getBool(post_request, 'clubs'),
+            'parties': getBool(post_request, 'parties'),
+        },
+        'otherDetails': {
+            'free': getBool(post_request, 'free'),
+            'bringFood': getBool(post_request, 'bringFood'),
+            'catering': getBool(post_request, 'catering'),
+            'goodWeather': getBool(post_request, 'goodWeather'),
+            'badWeather': getBool(post_request, 'badWeather'),
+            'groups': getBool(post_request, 'groups'),
         },
         'address': {
             'addressLine1': post_request.get('addressLine1'),

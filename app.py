@@ -252,8 +252,12 @@ def preview_activity_page(username, title):
         activity_id = request.args.get('activity_id')
 
         activity = db.activities.find_one({"_id": ObjectId(activity_id)})
-        startDate = activity["dates"]['start'].strftime("%d %b %Y")
-        endDate = activity["dates"]['end'].strftime("%d %b %Y")
+        startDate = None
+        endDate = None
+        if activity["dates"]['start']:
+            startDate = activity["dates"]['start'].strftime("%d %b %Y")
+            endDate = activity["dates"]['end'].strftime("%d %b %Y")
+
         openTimes_db = activity['times']
         rawDescrip = activity['description']
 
@@ -274,7 +278,7 @@ def preview_activity_page(username, title):
 
     return render_template(
         "pages/activitylisting.html", 
-        headTitle="Preview Activity",
+        headTitle="Preview",
         title=title, 
         activity=activity,
         startDate=startDate,
