@@ -279,13 +279,13 @@ footer .social-icon-shadow {
   color: #fbad50;
 }
 
-.fa-facebook:hover,
-#listing-business-social-links .fa-facebook:hover {
+.fa-facebook-square:hover,
+#listing-business-social-links .fa-facebook-square:hover {
   color: #3b5998;
 }
 
-.fa-twitter:hover,
-#listing-business-social-links .fa-twitter:hover {
+.fa-twitter-square:hover,
+#listing-business-social-links .fa-twitter-square:hover {
   color: #38A1F3;
 }
 
