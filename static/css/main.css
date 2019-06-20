@@ -293,43 +293,6 @@ footer .social-icon-shadow {
   margin-right: 0.5rem;
 }
 
-/* creates custom calendar icon for event listing cards
-and positions it floating over the bottom right edge
-of the listing image */
-.custom-calendar-icon {
-  width: 47px;
-  text-align: center;
-  font-family: "Patrick Hand SC", cursive;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  margin-top: -30px;
-  margin-left: 80%;
-  border-radius: 5px;
-}
-
-.display-month {
-  height: 17px;
-  background-color: #e7422e;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 12px;
-  border-radius: 5px 5px 0 0;
-}
-
-.display-day {
-  height: 30px;
-  background-color: #fff;
-  color: #e7422e;
-  font-size: 20px;
-  border-radius: 0 0 5px 5px;
-}
-
-/* adjust height of card body under custom calendar icon 
-so that it is inline with activity cards that have no calendar icon */
-.custom-calendar-icon ~ .card-body {
-  padding-top: 3.5px;
-}
-
 /* check and cross icons for clearly showing what ages groups 
 each listing is for */
 .fa-times {
@@ -513,8 +476,8 @@ Credit: https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed
 }
 
 /* Forces user to use datepicker and removes ability to type input into date field */
-#eventFilterDatepickerSm,
-#eventFilterDatepickerLg {
+#activityFilterDatepickerSm,
+#activityFilterDatepickerLg {
   pointer-events: none;
 }
 
@@ -642,11 +605,6 @@ footer hr {
 .hero-activities {
   background-image: url("https://i.ibb.co/9VkHCkq/pumpkin.jpg");
   background-position: center 20%;
-}
-
-.hero-events {
-  background-image: url("https://i.ibb.co/Z2mFv47/festival.jpg");
-  background-position: center 90%;
 }
 
 #backgroundImgWrapper {
@@ -837,8 +795,7 @@ ul {
   padding: 0;
 }
 
-#activity-listing-wrapper h3,
-#event-listing-wrapper h3 {
+#activity-listing-wrapper h3 {
   font-family: "News Cycle", sans-serif;
   font-size: 1.1rem;
   color: #ed6a5a;
@@ -908,7 +865,6 @@ a.fh-link:hover {
 #login-wrapper h3,
 #account-settings-wrapper h3,
 #add-edit-activity-wrapper h3,
-#add-edit-event-wrapper h3,
 #contact-wrapper h3,
 #account-settings-wrapper h3 {
   font-size: 1.2rem;
@@ -992,7 +948,6 @@ input.no-click {
 
 /* widen width of fields in desired places */
 #contactMessage,
-#add-edit-event-wrapper textarea,
 #add-edit-activity-wrapper textarea,
 #activity_description,
 #accountId,
@@ -1002,10 +957,6 @@ input.no-click {
 #account-settings-wrapper input,
 .full-width {
   max-width: 100%;
-}
-
-#add-edit-event-wrapper .form-check.radio {
-  display: block;
 }
 
 /* customizes bootstrap on-off switches to project brand colour */

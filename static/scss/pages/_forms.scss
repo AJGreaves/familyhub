@@ -23,7 +23,6 @@ a.fh-link:hover {
 #login-wrapper h3,
 #account-settings-wrapper h3,
 #add-edit-activity-wrapper h3,
-#add-edit-event-wrapper h3,
 #contact-wrapper h3,
 #account-settings-wrapper h3 {
     font-size: 1.2rem;
@@ -108,7 +107,6 @@ input.no-click {
 
 /* widen width of fields in desired places */
 #contactMessage,
-#add-edit-event-wrapper textarea,
 #add-edit-activity-wrapper textarea,
 #activity_description,
 #accountId,
@@ -118,10 +116,6 @@ input.no-click {
 #account-settings-wrapper input,
 .full-width {
     max-width: 100%;
-}
-
-#add-edit-event-wrapper .form-check.radio {
-    display: block;
 }
 
 /* customizes bootstrap on-off switches to project brand colour */
