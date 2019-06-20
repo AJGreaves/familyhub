@@ -2,14 +2,26 @@
 <div class="col-12">
     <div class="form-row">
         <div class="form-group col-12">
-            <label for="title">Title *</label>
+            <h3>Title</h3>
             <input id="title" name="title" class="form-control full-width" type="text" placeholder="Your activity title"
                 value="{% if editor == 'edit' %}{{activity.title}}{% endif %}" required>
         </div>
     </div>
+    <hr>
+    {% include 'components/forms/get_location.html' %}
 </div>
 <div class="col-12">
     <hr>
+</div>
+<div class="col-12">
+    {% include 'components/forms/get_contact_info.html' %}
+</div>
+
+<div class="col-12">
+    <hr>
+</div>
+<div class="col-12">
+    <h3>Dates & Times</h3>
 </div>
 <div id="activityForm" class="col-12">
     <div class="form-row">
@@ -216,7 +228,7 @@
         <div class="form-group col-12 col-md-6 pl-md-3">
             <div class="form-row">
                 <div class="form-group col-6 col-md-12 col-lg-6">
-                    <label>Start Date: *</label>
+                    <label>Start Date:</label>
                     <input id="start" name="start"
                         class="no-click input-group compare-js compare-date-js date datepicker-wider"
                         data-date-format="dd-mm-yyyy" value="{% if editor == 'edit' %}{{startDate}}{% endif %}"
@@ -224,7 +236,7 @@
                     <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                 </div>
                 <div class="form-group col-6 col-md-12 col-lg-6">
-                    <label>End Date: *</label>
+                    <label>End Date:</label>
                     <input id="end" name="end"
                         class="no-click input-group compare-js compare-date-js date datepicker-wider"
                         data-date-format="dd-mm-yyyy" value="{% if editor == 'edit' %}{{endDate}}{% endif %}" required>
@@ -238,18 +250,6 @@
                         <label class="custom-control-label" for="ongoing">Ongoing (no start or end date)</label>
                     </div>
                 </div>
-                <div class="form-group col-12 mt-5">
-                    <h3>Price Range</h3>
-                    <label for="from">Price (per person) from:</label>
-                    <input name="from" id="from" type="number" min="1" class="form-control"
-                        {% if editor == 'edit' %}value="{{activity.price.from}}" {% endif %}
-                        {% if editor == 'edit' and activity.price.isFree %}disabled{% else %}required{% endif %}>
-                    <div id="isFreeSwitch" class="custom-control custom-switch pt-3">
-                        <input type="checkbox" class="custom-control-input" name="isFree" id="isFree"
-                            {% if editor == 'edit' and activity.price.isFree %}checked{% endif %}>
-                        <label class="custom-control-label" for="isFree">Free</label>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -260,27 +260,16 @@
 </div>
 
 <div class="col-12">
-    <h3>Location</h3>
-    <div class="form-row">
-        <div class="form-group col-12 col-md-6">
-            {% include 'components/forms/get_address.html' %}
-        </div>
-        <div class="form-group col-12 col-md-6">
-            {% include 'components/forms/location_dropdown.html' %}
-        </div>
-    </div>
-
-    <hr>
 
     <div class="form-row">
         <!-- Categories -->
-        <div class="form-group categories col-12 col-md-6">
+        <div class="form-group categories col-12 col-md-4">
             <h3>Categories *</h3>
 
             {% include 'components/forms/categories.html' %}
 
         </div>
-        <div class="form-group col-12 col-md-6">
+        <div class="form-group col-12 col-md-4">
             <h3>Age range *</h3>
             {% include 'components/forms/age_range.html' %}
 
@@ -288,15 +277,12 @@
             <h3 class="mt-3">indoor / outdoor *</h3>
             {% include 'components/forms/in_out_checkboxes.html' %}
         </div>
+        <div class="form-group col-12 col-md-4">
+            <h3>Other details</h3>
+            {% include 'components/forms/other_details.html' %}
+
+        </div>
     </div>
-</div>
-
-<div class="col-12">
-    <hr>
-</div>
-
-<div class="col-12">
-    {% include 'components/forms/get_contact_info.html' %}
 </div>
 
 <div class="col-12">
@@ -305,10 +291,10 @@
 
 <div class="col-12">
     <div class="form-group">
-        <h3>Image for listing</h3>
+        <h3>Image for listing *</h3>
         <p>Please upload the photo for your listing to a free image hosting site
             (we recommend <a href="https://imgbb.com/" target="_blank" aria-label="ImgBB">ImgBB</a>) and paste the
-            direct url for it here</p>
+            direct url for it here.</p>
         <input id="imgUrl" name="imgUrl" class="form-control" type="url" maxlength="200"
             {% if editor == 'edit' %}value="{{ activity.imgUrl }}" {% endif %} placeholder="https://..." required>
     </div>
