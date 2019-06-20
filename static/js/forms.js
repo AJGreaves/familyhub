@@ -206,6 +206,20 @@ $('#isFree').click(function () {
     }
 })
 
+$('#ongoing').click(function () {
+    console.log("clicked!");
+
+    if ($('#start').attr('required')) {
+        $('#start').attr('disabled', '').removeAttr('required');
+        $('#end').attr('disabled', '').removeAttr('required');
+        $('#start').val('');
+        $('#end').val('');
+    } else {
+        $('#start').attr('required', '').removeAttr('disabled');
+        $('#end').attr('required', '').removeAttr('disabled');
+    }
+})
+
 /* to activate fields to input start / end times for days only when that day is clicked */
 
 $(".click-days-js").click(function () {
