@@ -1,15 +1,23 @@
 {% block categories %}
     <div class="form-check">
         <input class="form-check-input" type="checkbox"  id="sports" name="sports" 
-        {% if editor == 'edit' and type == 'activity' and activity.categories.sports %}checked
+        {% if editor == 'edit' and activity.categories.sports %}checked
         {% elif editor == 'new' %}required{% endif %}>
         <label class="form-check-label" for="sports">
         Sports
         </label>
     </div>
     <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="swimming" name="swimming"
+        {% if editor == 'edit' and activity.categories.swimming %}checked
+        {% elif editor == 'new' %}required{% endif %}>
+        <label class="form-check-label" for="swimming">
+        Swimming
+        </label>
+    </div>
+    <div class="form-check">
         <input class="form-check-input" type="checkbox" id="creative" name="creative"
-        {% if editor == 'edit' and type == 'activity' and activity.categories.creative %}checked
+        {% if editor == 'edit' and activity.categories.creative %}checked
         {% elif editor == 'new' %}required{% endif %}>
         <label class="form-check-label" for="creative">
         Creative
@@ -17,7 +25,7 @@
     </div>
     <div class="form-check">
         <input class="form-check-input" type="checkbox" id="scienceTech" name="scienceTech"
-        {% if editor == 'edit' and type == 'activity' and activity.categories.scienceTech %}checked
+        {% if editor == 'edit' and activity.categories.scienceTech %}checked
         {% elif editor == 'new' %}required{% endif %}>
         <label class="form-check-label" for="scienceTech">
         Science & Tech
@@ -25,7 +33,7 @@
     </div>
     <div class="form-check">
         <input class="form-check-input" type="checkbox" id="cultureMusic" name="cultureMusic"
-        {% if editor == 'edit' and type == 'activity' and activity.categories.cultureMusic %}checked
+        {% if editor == 'edit' and activity.categories.cultureMusic %}checked
         {% elif editor == 'new' %}required{% endif %}>
         <label class="form-check-label" for="cultureMusic">
         Cultural & Music
@@ -33,7 +41,7 @@
     </div>
     <div class="form-check">
         <input class="form-check-input" type="checkbox" id="dramaDance" name="dramaDance"
-        {% if editor == 'edit' and type == 'activity' and activity.categories.dramaDance %}checked
+        {% if editor == 'edit' and activity.categories.dramaDance %}checked
         {% elif editor == 'new' %}required{% endif %}>
         <label class="form-check-label" for="dramaDance">
         Drama & Dance
@@ -41,7 +49,7 @@
     </div>
     <div class="form-check">
         <input class="form-check-input" type="checkbox" id="yogaMindfulness" name="yogaMindfulness"
-        {% if editor == 'edit' and type == 'activity' and activity.categories.yogaMindfulness %}checked
+        {% if editor == 'edit' and activity.categories.yogaMindfulness %}checked
         {% elif editor == 'new' %}required{% endif %}>
         <label class="form-check-label" for="yogaMindfulness">
         Yoga & Mindfulnes
@@ -49,7 +57,7 @@
     </div>
     <div class="form-check">
         <input class="form-check-input" type="checkbox" id="museumsExhibitions" name="museumsExhibitions"
-        {% if editor == 'edit' and type == 'activity' and activity.categories.museumsExhibitions %}checked
+        {% if editor == 'edit' and activity.categories.museumsExhibitions %}checked
         {% elif editor == 'new' %}required{% endif %}>
         <label class="form-check-label" for="nature">
         Museums & Exhibitions
@@ -57,7 +65,7 @@
     </div>
     <div class="form-check">
         <input class="form-check-input" type="checkbox" id="parksPlaygrounds" name="parksPlaygrounds"
-        {% if editor == 'edit' and type == 'activity' and activity.categories.parksPlaygrounds %}checked
+        {% if editor == 'edit' and activity.categories.parksPlaygrounds %}checked
         {% elif editor == 'new' %}required{% endif %}>
         <label class="form-check-label" for="hillegom">
         Parks & playgrounds
@@ -65,10 +73,42 @@
     </div>
     <div class="form-check">
         <input class="form-check-input" type="checkbox" id="playgroups" name="playgroups"
-        {% if editor == 'edit' and type == 'activity' and activity.categories.playgroups %}checked
+        {% if editor == 'edit' and activity.categories.playgroups %}checked
         {% elif editor == 'new' %}required{% endif %}>
         <label class="form-check-label" for="hillegom">
         Playgroups
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="nature" name="nature"
+        {% if editor == 'edit' and activity.categories.nature %}checked
+        {% elif editor == 'new' %}required{% endif %}>
+        <label class="form-check-label" for="hillegom">
+        Nature
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="animals" name="animals"
+        {% if editor == 'edit' and activity.categories.animals %}checked
+        {% elif editor == 'new' %}required{% endif %}>
+        <label class="form-check-label" for="animals">
+        Animals
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="clubs" name="clubs"
+        {% if editor == 'edit' and activity.categories.clubs %}checked
+        {% elif editor == 'new' %}required{% endif %}>
+        <label class="form-check-label" for="clubs">
+        Clubs
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="parties" name="parties"
+        {% if editor == 'edit' and activity.categories.parties %}checked
+        {% elif editor == 'new' %}required{% endif %}>
+        <label class="form-check-label" for="parties">
+        Kids Parties
         </label>
     </div>
     <small>Select at least one</small>
