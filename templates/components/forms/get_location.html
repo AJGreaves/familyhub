@@ -1,0 +1,56 @@
+{% block location_dropdown %}
+
+<div class="form-row">
+    <div class="form-group mb-0 col-12">
+        <h3>Location</h3>
+    </div>
+    <div class="form-group col-12 col-md-4">
+        <label for="addressLine1">Address line 1 *</label>
+        <input id="addressLine1" name="addressLine1" class="form-control" type="text" maxlength="50"
+            {% if editor == 'edit' %}value="{{activity.address.addressLine1}}" {% endif %}
+            placeholder="Street name and number" required>
+    </div>
+    <div class="form-group col-12 col-md-4">
+        <label for="postcode">Postcode *</label>
+        <input id="postcode" name="postcode" class="form-control" type="text" maxlength="7"
+            {% if editor == 'edit' %}value="{{activity.address.postcode}}" {% endif %} placeholder="Postcode" required>
+    </div>
+    <div class="form-group col-12 col-md-4">
+        <!-- dropdown needed for creating/editing listings -->
+        <label for="town">Town / City</label>
+        <select id="town" name="town" class="form-control" required>
+            <option value="" disabled>Select</option>
+            <option value="Aalsmeer" {% if editor == 'edit' and activity.address.town == 'Aalsmeer' %}selected
+                {% endif %}>Aalsmeer</option>
+            <option value="Badhoevedorp" {% if editor == 'edit' and activity.address.town == 'Badhoevedorp' %}selected
+                {% endif %}>
+                Badhoevedorp</option>
+            <option value="Bloemendaal" {% if editor == 'edit' and activity.address.town == 'Bloemendaal' %}selected
+                {% endif %}>Bloemendaal</option>
+            <option value="Cruquius" {% if editor == 'edit' and activity.address.town == 'Cruquius' %}selected
+                {% endif %}>Cruquius</option>
+            <option value="Haarlem" {% if editor == 'edit' and activity.address.town == 'Haarlem' %}selected
+                {% endif %}>Haarlem</option>
+            <option value="Heemstede" {% if editor == 'edit' and activity.address.town == 'Heemstede' %}selected
+                {% endif %}>Heemstede</option>
+            <option value="Hillegom" {% if editor == 'edit' and activity.address.town == 'Hillegom' %}selected
+                {% endif %}>Hillegom</option>
+            <option value="Hoofddorp" {% if editor == 'edit' and activity.address.town == 'Hoofddorp' %}selected
+                {% endif %}>Hoofddorp</option>
+            <option value="Lisse" {% if editor == 'edit' and activity.address.town == 'Lisse' %}selected {% endif %}>
+                Lisse</option>
+            <option value="Nieuw-Vennep" {% if editor == 'edit' and activity.address.town == 'Nieuw-Vennep' %}selected
+                {% endif %}>
+                Nieuw-Vennep</option>
+            <option value="Santpoort-Noord"
+                {% if editor == 'edit' and activity.address.town == 'Santpoort-Noord' %}selected {% endif %}>
+                Santpoort-Noord</option>
+            <option value="Uithorn" {% if editor == 'edit' and activity.address.town == 'Uithorn' %}selected
+                {% endif %}>Uithorn</option>
+            <option value="Zandvoort" {% if editor == 'edit' and activity.address.town == 'Zandvoort' %}selected
+                {% endif %}>Zandvoort</option>
+        </select>
+    </div>
+
+</div>
+{% endblock %}
