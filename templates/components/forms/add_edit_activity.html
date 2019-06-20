@@ -2,11 +2,9 @@
 <div class="col-12">
     <div class="form-row">
         <div class="form-group col-12">
-            <label for="title">Activity Title *</label>
-            <input id="title" name="title" class="form-control full-width" 
-            type="text" placeholder="Your activity title"
-            value="{% if editor == 'edit' and type == 'activity' %}{{activity.title}}{% endif %}"
-            required>
+            <label for="title">Title *</label>
+            <input id="title" name="title" class="form-control full-width" type="text" placeholder="Your activity title"
+                value="{% if editor == 'edit' %}{{activity.title}}{% endif %}" required>
         </div>
     </div>
 </div>
@@ -20,19 +18,29 @@
             <div class="form-row">
                 <div class="form-group col-6 col-md-12 col-lg-6">
                     <label>Start Date: *</label>
-                    <input id="start" name="start" class="no-click input-group compare-js compare-date-js date datepicker-wider"
-                        data-date-format="dd-mm-yyyy" value="{% if editor == 'edit' and type == 'activity' %}{{startDate}}{% endif %}" required>
+                    <input id="start" name="start"
+                        class="no-click input-group compare-js compare-date-js date datepicker-wider"
+                        data-date-format="dd-mm-yyyy"
+                        value="{% if editor == 'edit' %}{{startDate}}{% endif %}" required>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                 </div>
                 <div class="form-group col-6 col-md-12 col-lg-6">
                     <label>End Date: *</label>
-                    <input id="end" name="end" class="no-click input-group compare-js compare-date-js date datepicker-wider"
-                        data-date-format="dd-mm-yyyy" value="{% if editor == 'edit' and type == 'activity' %}{{endDate}}{% endif %}" required>
+                    <input id="end" name="end"
+                        class="no-click input-group compare-js compare-date-js date datepicker-wider"
+                        data-date-format="dd-mm-yyyy"
+                        value="{% if editor == 'edit' %}{{endDate}}{% endif %}" required>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                 </div>
-
+                <div class="form-group col-12">
+                    <div id="noDatesSwitch" class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input click-dates-js" name="ongoing" id="ongoing"
+                            {% if editor == 'edit' and activity.days.ongoing %}checked{%  elif editor == 'new' %}
+                            required{% endif %}>
+                        <label class="custom-control-label" for="ongoing">Ongoing (no start or end date)</label>
+                    </div>
+                </div>
             </div>
-
         </div>
         <div id="timesInput" class="form-group col-12 col-md-6">
 
@@ -41,26 +49,25 @@
                 <div class="form-group weekday-switch-row-top col-2">
                     <div class="custom-control custom-switch">
                         <input type="checkbox" class="custom-control-input click-days-js" name="mon" id="mon"
-                        {% if editor == 'edit' and type == 'activity' and activity.days.mon %}checked{%  elif editor == 'new' %} required{% endif %}>
+                            {% if editor == 'edit' and activity.days.mon %}checked{%  elif editor == 'new' %}
+                            required{% endif %}>
                         <label class="custom-control-label" for="mon">Mon</label>
                     </div>
                 </div>
                 <div class="form-group col-5 mon-times">
                     <label>Start time </label>
                     <input id="monStart" class="no-click compare-js compare-mon-js input-group date" name="monStart"
-                    {% for time in openTimes %}{% for key, value in time.items() %}
-                        {% if key == 'monStart' and value != None %} value="{{ value }}" 
-                        {% elif key == 'monStart' and value == None %} disabled{% endif %}
-                    {% endfor %}{% endfor %}>
+                        {% for time in openTimes %}{% for key, value in time.items() %}
+                        {% if key == 'monStart' and value != None %} value="{{ value }}"
+                        {% elif key == 'monStart' and value == None %} disabled{% endif %} {% endfor %}{% endfor %}>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                 </div>
                 <div class="form-group col-5 mon-times">
                     <label>End Time </label>
                     <input id="monEnd" class="no-click compare-js compare-mon-js input-group date" name="monEnd"
-                    {% for time in openTimes %}{% for key, value in time.items() %}
-                        {% if key == 'monEnd' and value != None %} value="{{ value }}" 
-                        {% elif key == 'monEnd' and value == None %} disabled{% endif %}
-                    {% endfor %}{% endfor %}>
+                        {% for time in openTimes %}{% for key, value in time.items() %}
+                        {% if key == 'monEnd' and value != None %} value="{{ value }}"
+                        {% elif key == 'monEnd' and value == None %} disabled{% endif %} {% endfor %}{% endfor %}>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                 </div>
             </div>
@@ -70,24 +77,23 @@
                 <div class="form-group weekday-switch-row col-2">
                     <div class="custom-control custom-switch">
                         <input type="checkbox" class="custom-control-input click-days-js" name="tue" id="tue"
-                        {% if editor == 'edit' and type == 'activity' and activity.days.tue %}checked{%  elif editor == 'new' %} required{% endif %}>
+                            {% if editor == 'edit' and activity.days.tue %}checked{%  elif editor == 'new' %}
+                            required{% endif %}>
                         <label class="custom-control-label" for="tue">Tue</label>
                     </div>
                 </div>
                 <div class="form-group col-5 tue-times">
-                    <input id="tueStart" class="no-click compare-js compare-tue-js compare input-group date" name="tueStart"
-                    {% for time in openTimes %}{% for key, value in time.items() %}
-                        {% if key == 'tueStart' and value != None %} value="{{ value }}" 
-                        {% elif key == 'tueStart' and value == None %} disabled{% endif %}
-                    {% endfor %}{% endfor %}>
+                    <input id="tueStart" class="no-click compare-js compare-tue-js compare input-group date"
+                        name="tueStart" {% for time in openTimes %}{% for key, value in time.items() %}
+                        {% if key == 'tueStart' and value != None %} value="{{ value }}"
+                        {% elif key == 'tueStart' and value == None %} disabled{% endif %} {% endfor %}{% endfor %}>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                 </div>
                 <div class="form-group col-5 tue-times">
                     <input id="tueEnd" class="no-click compare-js compare-tue-js compare input-group date" name="tueEnd"
-                    {% for time in openTimes %}{% for key, value in time.items() %}
-                        {% if key == 'tueEnd' and value != None %} value="{{ value }}" 
-                        {% elif key == 'tueEnd' and value == None %} disabled{% endif %}
-                    {% endfor %}{% endfor %}>
+                        {% for time in openTimes %}{% for key, value in time.items() %}
+                        {% if key == 'tueEnd' and value != None %} value="{{ value }}"
+                        {% elif key == 'tueEnd' and value == None %} disabled{% endif %} {% endfor %}{% endfor %}>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                 </div>
             </div>
@@ -97,24 +103,23 @@
                 <div class="form-group weekday-switch-row col-2">
                     <div class="custom-control custom-switch">
                         <input type="checkbox" class="custom-control-input click-days-js" name="wed" id="wed"
-                        {% if editor == 'edit' and type == 'activity' and activity.days.wed %}checked{%  elif editor == 'new' %} required{% endif %}>
+                            {% if editor == 'edit' and activity.days.wed %}checked{%  elif editor == 'new' %}
+                            required{% endif %}>
                         <label class="custom-control-label" for="wed">Wed</label>
                     </div>
                 </div>
                 <div class="form-group col-5 wed-times">
                     <input id="wedStart" class="no-click compare-js compare-wed-js input-group date" name="wedStart"
-                    {% for time in openTimes %}{% for key, value in time.items() %}
-                        {% if key == 'wedStart' and value != None %} value="{{ value }}" 
-                        {% elif key == 'wedStart' and value == None %} disabled{% endif %}
-                    {% endfor %}{% endfor %}>
+                        {% for time in openTimes %}{% for key, value in time.items() %}
+                        {% if key == 'wedStart' and value != None %} value="{{ value }}"
+                        {% elif key == 'wedStart' and value == None %} disabled{% endif %} {% endfor %}{% endfor %}>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                 </div>
                 <div class="form-group col-5 wed-times">
                     <input id="wedEnd" class="no-click compare-js compare-wed-js input-group date" name="wedEnd"
-                    {% for time in openTimes %}{% for key, value in time.items() %}
-                        {% if key == 'wedEnd' and value != None %} value="{{ value }}" 
-                        {% elif key == 'wedEnd' and value == None %} disabled{% endif %}
-                    {% endfor %}{% endfor %}>
+                        {% for time in openTimes %}{% for key, value in time.items() %}
+                        {% if key == 'wedEnd' and value != None %} value="{{ value }}"
+                        {% elif key == 'wedEnd' and value == None %} disabled{% endif %} {% endfor %}{% endfor %}>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                 </div>
             </div>
@@ -124,24 +129,23 @@
                 <div class="form-group weekday-switch-row col-2">
                     <div class="custom-control custom-switch">
                         <input type="checkbox" class="custom-control-input click-days-js" name="thu" id="thu"
-                        {% if editor == 'edit' and type == 'activity' and activity.days.thu %}checked{%  elif editor == 'new' %} required{% endif %}>
+                            {% if editor == 'edit' and activity.days.thu %}checked{%  elif editor == 'new' %}
+                            required{% endif %}>
                         <label class="custom-control-label" for="thu">Thu</label>
                     </div>
                 </div>
                 <div class="form-group col-5 thu-times">
                     <input id="thuStart" class="no-click compare-js compare-thu-js input-group date" name="thuStart"
-                    {% for time in openTimes %}{% for key, value in time.items() %}
-                        {% if key == 'thuStart' and value != None %} value="{{ value }}" 
-                        {% elif key == 'thuStart' and value == None %} disabled{% endif %}
-                    {% endfor %}{% endfor %}>
+                        {% for time in openTimes %}{% for key, value in time.items() %}
+                        {% if key == 'thuStart' and value != None %} value="{{ value }}"
+                        {% elif key == 'thuStart' and value == None %} disabled{% endif %} {% endfor %}{% endfor %}>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                 </div>
                 <div class="form-group col-5 thu-times">
                     <input id="thuEnd" class="no-click compare-js compare-thu-js input-group date" name="thuEnd"
-                    {% for time in openTimes %}{% for key, value in time.items() %}
-                        {% if key == 'thuEnd' and value != None %} value="{{ value }}" 
-                        {% elif key == 'thuEnd' and value == None %} disabled{% endif %}
-                    {% endfor %}{% endfor %}>
+                        {% for time in openTimes %}{% for key, value in time.items() %}
+                        {% if key == 'thuEnd' and value != None %} value="{{ value }}"
+                        {% elif key == 'thuEnd' and value == None %} disabled{% endif %} {% endfor %}{% endfor %}>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                 </div>
             </div>
@@ -151,24 +155,23 @@
                 <div class="form-group weekday-switch-row col-2">
                     <div class="custom-control custom-switch">
                         <input type="checkbox" class="custom-control-input click-days-js" name="fri" id="fri"
-                        {% if editor == 'edit' and type == 'activity' and activity.days.fri %}checked{%  elif editor == 'new' %} required{% endif %}>
+                            {% if editor == 'edit' and activity.days.fri %}checked{%  elif editor == 'new' %}
+                            required{% endif %}>
                         <label class="custom-control-label" for="fri">Fri</label>
                     </div>
                 </div>
                 <div class="form-group col-5 fri-times">
                     <input id="friStart" class="no-click compare-js compare-fri-js input-group date" name="friStart"
-                    {% for time in openTimes %}{% for key, value in time.items() %}
-                        {% if key == 'friStart' and value != None %} value="{{ value }}" 
-                        {% elif key == 'friStart' and value == None %} disabled{% endif %}
-                    {% endfor %}{% endfor %}>
+                        {% for time in openTimes %}{% for key, value in time.items() %}
+                        {% if key == 'friStart' and value != None %} value="{{ value }}"
+                        {% elif key == 'friStart' and value == None %} disabled{% endif %} {% endfor %}{% endfor %}>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                 </div>
                 <div class="form-group col-5 fri-times">
                     <input id="friEnd" class="no-click compare-js compare-fri-js input-group date" name="friEnd"
-                    {% for time in openTimes %}{% for key, value in time.items() %}
-                        {% if key == 'friEnd' and value != None %} value="{{ value }}" 
-                        {% elif key == 'friEnd' and value == None %} disabled{% endif %}
-                    {% endfor %}{% endfor %}>
+                        {% for time in openTimes %}{% for key, value in time.items() %}
+                        {% if key == 'friEnd' and value != None %} value="{{ value }}"
+                        {% elif key == 'friEnd' and value == None %} disabled{% endif %} {% endfor %}{% endfor %}>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                 </div>
             </div>
@@ -178,24 +181,23 @@
                 <div class="form-group weekday-switch-row col-2">
                     <div class="custom-control custom-switch">
                         <input type="checkbox" class="custom-control-input click-days-js" name="sat" id="sat"
-                        {% if editor == 'edit' and type == 'activity' and activity.days.sat %}checked{%  elif editor == 'new' %} required{% endif %}>
+                            {% if editor == 'edit' and activity.days.sat %}checked{%  elif editor == 'new' %}
+                            required{% endif %}>
                         <label class="custom-control-label" for="sat">Sat</label>
                     </div>
                 </div>
                 <div class="form-group col-5 sat-times">
                     <input id="satStart" class="no-click compare-js compare-sat-js input-group date" name="satStart"
-                    {% for time in openTimes %}{% for key, value in time.items() %}
-                        {% if key == 'satStart' and value != None %} value="{{ value }}" 
-                        {% elif key == 'satStart' and value == None %} disabled{% endif %}
-                    {% endfor %}{% endfor %}>
+                        {% for time in openTimes %}{% for key, value in time.items() %}
+                        {% if key == 'satStart' and value != None %} value="{{ value }}"
+                        {% elif key == 'satStart' and value == None %} disabled{% endif %} {% endfor %}{% endfor %}>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                 </div>
                 <div class="form-group col-5 sat-times">
                     <input id="satEnd" class="no-click compare-js compare-sat-js input-group date" name="satEnd"
-                    {% for time in openTimes %}{% for key, value in time.items() %}
-                        {% if key == 'satEnd' and value != None %} value="{{ value }}" 
-                        {% elif key == 'satEnd' and value == None %} disabled{% endif %}
-                    {% endfor %}{% endfor %}>
+                        {% for time in openTimes %}{% for key, value in time.items() %}
+                        {% if key == 'satEnd' and value != None %} value="{{ value }}"
+                        {% elif key == 'satEnd' and value == None %} disabled{% endif %} {% endfor %}{% endfor %}>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                 </div>
             </div>
@@ -205,24 +207,23 @@
                 <div class="form-group weekday-switch-row col-2">
                     <div class="custom-control custom-switch">
                         <input type="checkbox" class="custom-control-input click-days-js" name="sun" id="sun"
-                        {% if editor == 'edit' and type == 'activity' and activity.days.sun %}checked{%  elif editor == 'new' %} required{% endif %}>
+                            {% if editor == 'edit' and activity.days.sun %}checked{%  elif editor == 'new' %}
+                            required{% endif %}>
                         <label class="custom-control-label" for="sun">Sun</label>
                     </div>
                 </div>
                 <div class="form-group col-5 sun-times">
                     <input id="sunStart" class="no-click compare-js compare-sun-js input-group date" name="sunStart"
-                    {% for time in openTimes %}{% for key, value in time.items() %}
-                        {% if key == 'sunStart' and value != None %} value="{{ value }}" 
-                        {% elif key == 'sunStart' and value == None %} disabled{% endif %}
-                    {% endfor %}{% endfor %}>
+                        {% for time in openTimes %}{% for key, value in time.items() %}
+                        {% if key == 'sunStart' and value != None %} value="{{ value }}"
+                        {% elif key == 'sunStart' and value == None %} disabled{% endif %} {% endfor %}{% endfor %}>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                 </div>
                 <div class="form-group col-5 sun-times">
                     <input id="sunEnd" class="no-click compare-js compare-sun-js input-group date" name="sunEnd"
-                    {% for time in openTimes %}{% for key, value in time.items() %}
-                        {% if key == 'sunEnd' and value != None %} value="{{ value }}" 
-                        {% elif key == 'sunEnd' and value == None %} disabled{% endif %}
-                    {% endfor %}{% endfor %}>
+                        {% for time in openTimes %}{% for key, value in time.items() %}
+                        {% if key == 'sunEnd' and value != None %} value="{{ value }}"
+                        {% elif key == 'sunEnd' and value == None %} disabled{% endif %} {% endfor %}{% endfor %}>
                     <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                 </div>
             </div>
@@ -235,7 +236,7 @@
 </div>
 
 <div class="col-12">
-    <h3>Activity location</h3>
+    <h3>Location</h3>
     <div class="form-row">
         <div class="form-group col-12 col-md-6">
             {% include 'components/forms/get_address.html' %}
@@ -280,12 +281,13 @@
 
 <div class="col-12">
     <div class="form-group">
-        <h3>Activity image upload</h3>
+        <h3>Image for listing</h3>
         <p>Please upload the photo for your listing to a free image hosting site
             (we recommend <a href="https://imgbb.com/" target="_blank" aria-label="ImgBB">ImgBB</a>) and paste the
             direct url for it here</p>
         <input id="imgUrl" name="imgUrl" class="form-control" type="url" maxlength="200"
-        {% if editor == 'edit' and type == 'activity' %}value="{{ activity.imgUrl }}"{% endif %} placeholder="https://..." required>
+            {% if editor == 'edit' %}value="{{ activity.imgUrl }}" {% endif %}
+            placeholder="https://..." required>
     </div>
 </div>
 <div class="col-12">
@@ -293,10 +295,10 @@
 </div>
 <div class="col-12">
     <div class="form-group">
-        <h3>Activity description</h3>
+        <h3>Description</h3>
         <textarea class="form-control" id="description" rows="11" name="description"
             placeholder="The first sentence of this description will also appear with your activity listing in Family Hub search."
-            required>{% if editor == 'edit' and type == 'activity' %}{{ activity.description }}{% endif %}</textarea>
+            required>{% if editor == 'edit' %}{{ activity.description }}{% endif %}</textarea>
     </div>
 </div>
 <div class="col-12">
