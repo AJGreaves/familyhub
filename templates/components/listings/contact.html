@@ -1,11 +1,22 @@
 {% block contact %}
 
-    <h3><i class="fas fa-map-marker-alt icon"></i>Contact</h3>    
-    <p>{{ activity.address.addressLine1 }}<br>
-    {{ activity.address.postcode }}  {{ activity.address.town }}</p>
-    <a class="fh-link" target="_blank" href="{{ activity.contact.url }}" 
-    aria-label="Visit the website for this activity {{ activity.contact.url }}">{{ activity.contact.url }}</a>
-    <a class="fh-link" href="mailto:{{ activity.contact.email }}" 
-    aria-label="Email the organisers of this activity">{{ activity.contact.email }}</a>
+<h3><i class="fas fa-map-marker-alt icon"></i>Contact</h3>
+<p>{{ activity.address.addressLine1 }}<br>
+    {{ activity.address.postcode }} {{ activity.address.town }}</p>
+<div>
+    <a class="btn btn-search" target="_blank" href="{{ activity.contact.url }}"
+        aria-label="Visit the website for this listing {{ activity.contact.url }}">Visit website</a>
+</div>
+<div>
+    {% if activity.contact.phone %}
+    <a class="btn btn-readmore" href="tel:{{ activity.contact.phone }}"
+        aria-label="Call the organisers of this listing">Tel: {{ activity.contact.phone }}</a>
+    {% endif %}
+</div>
+<div>
+    <a class="btn btn-create" href="mailto:{{ activity.contact.email }}"
+        aria-label="Email the organisers of this listing">Email organisers</a>
+</div>
+
 
 {% endblock %}

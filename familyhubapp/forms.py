@@ -194,6 +194,7 @@ def process_activity_data(db, user, post_request, published):
         'indoor': getBool(post_request, 'indoor'),
         'outdoor': getBool(post_request, 'outdoor'),
         'contact': {
+            'phone': post_request.get('phone'),
             'url': post_request.get('url'),
             'email': post_request.get('email'),
             'facebook': post_request.get('facebook') if post_request.get('facebook') else None,

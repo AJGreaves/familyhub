@@ -3,7 +3,10 @@
 <div class="form-row">
     <div class="form-group col-12 col-md-6 pr-md-3">
         <h3>Contact info</h3>
-        <label for="email">Email address *</label>
+        <label for="phone">Phone number</label>
+        <input id="phone" name="phone" class="form-control" type="tel" pattern="[0-9]{10}" maxlength="100" placeholder="Phone number"
+        {% if editor == 'edit' %}value="{{activity.contact.phone}}" {% endif %}>
+        <label for="email" class="mt-3">Email address *</label>
         <input id="email" name="email" class="form-control" type="email" maxlength="100" placeholder="Email"
         {% if editor == 'edit' %}value="{{activity.contact.email}}" {% endif %} required>
         <label for="url" class="mt-3">Website url *</label>
