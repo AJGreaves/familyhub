@@ -2,18 +2,14 @@
 
         <div class="form-check">
             <input class="form-check-input in-out-js" name="indoor"  type="checkbox" id="indoor"
-            {% if editor == 'edit' and type == 'event' and event.indoor %}checked
-            {% elif editor == 'edit' and type == 'activity' and activity.indoor %}checked
-            {% elif editor == 'new' %}required{% endif %}>
+            {% if editor == 'edit' and activity.indoor %}checked {% elif editor == 'new' %}required {% endif %}>
             <label class="form-check-label" for="indoor">
                 Indoor
             </label>
         </div>
         <div class="form-check">
             <input class="form-check-input in-out-js" name="outdoor" type="checkbox" id="outdoor"
-            {% if editor == 'edit' and type == 'event' and event.outdoor %}checked
-            {% elif editor == 'edit' and type == 'activity' and activity.outdoor %}checked
-            {% elif editor == 'new' %}required{% endif %}>
+            {% if editor == 'edit' and activity.outdoor %}checked {% elif editor == 'new' %}required {% endif %}>
             <label class="form-check-label" for="outdoor">
                 Outdoor
             </label>
