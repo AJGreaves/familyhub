@@ -470,11 +470,6 @@ Credit: https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed
   color: #000034;
 }
 
-/* to stop datepicker stretching too far out */
-.gj-datepicker {
-  max-width: 215px;
-}
-
 /* Forces user to use datepicker and removes ability to type input into date field */
 #activityFilterDatepickerSm,
 #activityFilterDatepickerLg {

@@ -31,11 +31,6 @@
     color: $dark-blue;
 }
 
-/* to stop datepicker stretching too far out */
-.gj-datepicker {
-    max-width: 215px;
-}
-
 /* Forces user to use datepicker and removes ability to type input into date field */
 #activityFilterDatepickerSm,
 #activityFilterDatepickerLg {
