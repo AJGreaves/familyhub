@@ -1,7 +1,7 @@
 {% extends 'layout/base.html' %} {% block content %}
 
     <main>
-        <!-- Section: editor for activities and events -->
+        <!-- Section: editor for activities -->
         <section>
 
             <div id="add-edit-activity-wrapper" class="container">
@@ -11,19 +11,12 @@
                             <h1>
                                 {% if editor == 'new' %}Add New 
                                 {% elif editor == 'edit' %}Edit
-                                {% endif %}
-                                {% if type == 'activity' %} Activity 
-                                {% elif type == 'event' %} Event 
-                                {% endif %}
+                                {% endif %} Activity 
                             </h1>
                             <hr>
                         </div>
                         
-                        {% if type == 'activity' %}
                         {% include 'components/forms/add_edit_activity.html' %}
-                        {% elif type == 'event' %}
-                        {% include 'components/forms/add_edit_event.html' %}
-                        {% endif %}
                         
                         <!-- margins line button edge up with filed above it -->
                         <button id="editorSubmitBtn" class="btn btn-search ml-4 submit-js" type="submit">Preview</button>
