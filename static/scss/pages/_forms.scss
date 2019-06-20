@@ -108,23 +108,6 @@ input.no-click {
     margin-bottom: 0;
 }
 
-.form-control {
-    max-width: 350px;
-}
-
-/* widen width of fields in desired places */
-#contactMessage,
-#add-edit-activity-wrapper textarea,
-#activity_description,
-#accountId,
-#imgUrl,
-#searchInput,
-#login-wrapper input,
-#account-settings-wrapper input,
-.full-width {
-    max-width: 100%;
-}
-
 /* customizes bootstrap on-off switches to project brand colour */
 .custom-control-input:checked ~ .custom-control-label::before{
     border-color: $mid-blue;
