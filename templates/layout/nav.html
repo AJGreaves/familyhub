@@ -26,11 +26,6 @@
                     Activities {% if active == 'activities' %}<span class="sr-only">(current)</span>{% endif %}
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link {% if active == 'events' %}active{% endif %}" href="{{url_for('events_page')}}">
-                    Events {% if active == 'events' %}<span class="sr-only">(current)</span>{% endif %}
-                </a>
-            </li>
 
             <!-- create account and log in navigation items only visible when not logged in -->
             {% if loggedIn != True %}
@@ -54,7 +49,6 @@
                 </a>
                 <div class="dropdown-menu bg-platinum" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{{url_for('my_account_page', username=session['user'])}}">My Listings</a>
-                    <a class="dropdown-item" href="{{url_for('new_event_page', username=session['user'])}}">Add New Event</a>
                     <a class="dropdown-item" href="{{url_for('new_activity_page', username=session['user'])}}">Add New Activity</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="{{url_for('settings_page', username=session['user'])}}">Settings</a>

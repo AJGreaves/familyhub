@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Family events and activities for kids in Haarlemmermeer and Haarlem, in English">
+    <meta name="description" content="Family activities and events for kids in Haarlemmermeer and Haarlem, in English">
     <meta name="keywords" content="{{ keywords }}">
     <meta name="author" content="Anna Greaves">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon" />
@@ -61,7 +61,7 @@
     <script src="{{url_for('static', filename='js/forms.js')}}"></script>
     {% elif active == 'home' %}
     <script src="{{url_for('static', filename='js/index.js')}}"></script>
-    {% elif active == 'activities' or active == 'events' %}
+    {% elif active == 'activities' %}
     <script src="{{url_for('static', filename='js/filters.js')}}"></script>
     {% elif active == 'listing' %}
     <script src="{{url_for('static', filename='js/listings.js')}}"></script>
