@@ -303,9 +303,13 @@ def edit_activity_page(username, title):
         activity = db.activities.find_one({"_id": ObjectId(activity_id)})
         user = db.users.find_one({"username": session['user']})
 
+        startDate = None
+        endDate = None
+
         # data to display in edit fields
-        startDate = activity["dates"]['start'].strftime("%d/%m/%Y")
-        endDate = activity["dates"]['end'].strftime("%d/%m/%Y")
+        if activity["dates"]['start']:
+            startDate = activity["dates"]['start'].strftime("%d/%m/%Y")
+            endDate = activity["dates"]['end'].strftime("%d/%m/%Y")
         openTimes_db = activity['times']
         """ 
         loops through open/close times and converts datetimes for display in browser
