@@ -2,7 +2,7 @@
 
 <main>
     <!-- Section: activity listing -->
-    <section>
+    <section id="activity-listing-wrapper">
         {% if preview == True %}
         <!-- preview bar shows when user has created a new activity and have not yet chosen to publish it -->
         <div id="preview-bar">
@@ -18,7 +18,7 @@
             <i id="closeNotice" class="fas fa-times text-white fa-2x hide"></i>
         </div>
         {% endif %}
-        <div id="activity-listing-wrapper" class="container">
+        <div class="container">
             <div class="row">
                 <div class="col-12">
                     <h1>{{ activity.title }}</h1>
@@ -79,7 +79,9 @@
 
                         <!-- social -->
                         <div id="listing-business-social-links" class="col-12 col-md-6">
+                        {% if activity.contact.facebook or activity.contact.instagram or activity.contact.twitter  %}
                             {% include 'components/listings/social.html' %}
+                        {% endif %}
                         </div>
                     </div>
                 </div>
@@ -87,6 +89,7 @@
                 <div class="col-12">
                     <h3 class="mt-3"><i class="far fa-chart-bar icon"></i>Category</h3>
                     {% if activity.categories.sports %}<span class="category-list"><i class="fas fa-running"></i> Sports</span>{% endif %}
+                    {% if activity.categories.swimming %}<span class="category-list"><i class="fas fa-swimmer"></i> Swimming</span>{% endif %}
                     {% if activity.categories.creative %}<span class="category-list"><i class="fas fa-palette"></i> Creative</span>{% endif %}
                     {% if activity.categories.scienceTech %}<span class="category-list"><i class="fas fa-atom"></i> Science & Tech</span>{% endif %}
                     {% if activity.categories.cultureMusic %}<span class="category-list"><i class="fas fa-guitar"></i> Cultural & Music</span>{% endif %}
@@ -95,10 +98,24 @@
                     {% if activity.categories.museumsExhibitions %}<span class="category-list"><i class="fas fa-ticket-alt"></i> Museums & Exhibitions</span>{% endif %}
                     {% if activity.categories.parksPlaygrounds %}<span class="category-list"><i class="fas fa-tree"></i> Parks & playgrounds</span>{% endif %}
                     {% if activity.categories.playgroups %}<span class="category-list"><i class="fas fa-cubes"></i> Playgroups</span>{% endif %}
+                    {% if activity.categories.nature %}<span class="category-list"><i class="fas fa-leaf"></i> Nature</span>{% endif %}
+                    {% if activity.categories.animals %}<span class="category-list"><i class="fas fa-paw"></i> Animals</span>{% endif %}
+                    {% if activity.categories.clubs %}<span class="category-list"><i class="fas fa-medal"></i> Clubs</span>{% endif %}
+                    {% if activity.categories.parties %}<span class="category-list"><i class="fas fa-birthday-cake"></i> Parties</span>{% endif %}
+                </div>
+                <div class="col-12">
+                    <h3><i class="fas fa-info icon"></i>More info</h3>
+                    {% if activity.otherDetails.free %}<span class="category-list"><i class="fas fa-euro-sign"></i> Free entry</span>{% endif %}
+                    {% if activity.otherDetails.bringFood %}<span class="category-list"><i class="fas fa-bread-slice"></i> Bringing own food permitted</span>{% endif %}
+                    {% if activity.otherDetails.catering %}<span class="category-list"><i class="fas fa-utensils"></i> Catering available</span>{% endif %}
+                    {% if activity.otherDetails.goodWeather %}<span class="category-list"><i class="far fa-sun"></i> Suitable for good weather</span>{% endif %}
+                    {% if activity.otherDetails.badWeather %}<span class="category-list"><i class="fas fa-cloud-showers-heavy"></i> Suitable for bad weather</span>{% endif %}
+                    {% if activity.otherDetails.groups %}<span class="category-list"><i class="fas fa-users"></i> Suitable for groups</span>{% endif %}
+                    
                 </div>
                 <!-- listing description -->
                 <div class="col-12">
-                    <h3><i class="fas fa-info icon"></i>More info</h3>
+                    <h3><i class="fas fa-align-left icon"></i>Description</h3>
                     {% for paragraph in description %}
                         {% for key, value in paragraph.items() %}
                             <p>{{ value }}</p>

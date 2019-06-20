@@ -268,25 +268,25 @@ footer .social-icon-shadow {
 }
 
 /* UX feature, social icons grow and change colour when hovered over */
-.fab:hover,
-.far:hover {
-  -webkit-transform: scale(1.4);
-  transform: scale(1.4);
-}
-
 .fa-instagram:hover,
 #listing-business-social-links .fa-instagram:hover {
   color: #fbad50;
+  -webkit-transform: scale(1.4);
+  transform: scale(1.4);
 }
 
 .fa-facebook-square:hover,
 #listing-business-social-links .fa-facebook-square:hover {
   color: #3b5998;
+  -webkit-transform: scale(1.4);
+  transform: scale(1.4);
 }
 
 .fa-twitter-square:hover,
 #listing-business-social-links .fa-twitter-square:hover {
   color: #38A1F3;
+  -webkit-transform: scale(1.4);
+  transform: scale(1.4);
 }
 
 .no-share {
@@ -795,6 +795,11 @@ ul {
   font-size: 1.1rem;
   color: #ed6a5a;
   text-transform: uppercase;
+}
+
+#social-share-icons i.fa-thumbs-up {
+  font-size: 1.1rem;
+  color: #ed6a5a;
 }
 
 #listing-details p {
