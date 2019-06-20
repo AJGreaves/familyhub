@@ -122,7 +122,7 @@ def search_page():
     )
 
 # Activity listing page 
-@app.route('/activity-listing/<title>')
+@app.route('/listing/<title>')
 def activity_listing_page(title):
     loggedIn = True if 'user' in session else False
 
@@ -130,8 +130,13 @@ def activity_listing_page(title):
     newActivity = request.args.get('newActivity')
 
     activity = db.activities.find_one({"_id": ObjectId(activity_id)})
-    startDate = activity["dates"]['start'].strftime("%d %b %Y")
-    endDate = activity["dates"]['end'].strftime("%d %b %Y")
+    
+    startDate = None
+    endDate = None
+    if activity["dates"]['start']:
+        startDate = activity["dates"]['start'].strftime("%d %b %Y")
+        endDate = activity["dates"]['end'].strftime("%d %b %Y")
+
     openTimes_db = activity['times']
     rawDescrip = activity['description']
 
