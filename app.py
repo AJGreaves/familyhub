@@ -235,7 +235,6 @@ def new_activity_page(username):
         "pages/editor.html", 
         headTitle="Add New Activity", 
         editor="new",
-        type="activity",
         active="form",
         loggedIn=loggedIn,
         keywords=Keywords.generic()
@@ -334,8 +333,7 @@ def edit_activity_page(username, title):
         "pages/editor.html", 
         headTitle=headTitle, 
         title=title,
-        editor="edit",
-        type="activity",
+        editor="edit",        
         activity_id=activity_id,
         activity=activity,
         startDate=startDate,
