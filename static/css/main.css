@@ -923,6 +923,12 @@ a.fh-link:hover {
   width: 70px;
 }
 
+/* overrides css above for switch for ongoing activities */
+#noDatesSwitch.custom-switch {
+  float: left;
+  width: auto;
+}
+
 .add-listing-image {
   width: 100%;
   border: 1px solid lightgrey;
@@ -980,10 +986,6 @@ input.no-click {
   margin-right: 0.5rem;
   font-size: 1.5rem;
   color: #94b659;
-}
-
-#activity-filters-md .form-check {
-  margin-left: 1.2rem;
 }
 
 /* ------------------------------

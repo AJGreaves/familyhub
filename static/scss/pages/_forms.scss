@@ -82,6 +82,12 @@ a.fh-link:hover {
     width: 70px;
 }
 
+/* overrides css above for switch for ongoing activities */
+#noDatesSwitch.custom-switch {
+    float: left;
+    width: auto;
+}
+
 .add-listing-image {
     width: 100%;
     border: 1px solid lightgrey;
