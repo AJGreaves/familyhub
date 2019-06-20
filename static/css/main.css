@@ -982,6 +982,10 @@ input.no-click {
   color: #94b659;
 }
 
+#activity-filters-md .form-check {
+  margin-left: 1.2rem;
+}
+
 /* ------------------------------
     Media Queries
 ------------------------------ */
