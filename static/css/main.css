@@ -924,7 +924,8 @@ a.fh-link:hover {
 }
 
 /* overrides css above for switch for ongoing activities */
-#noDatesSwitch.custom-switch {
+#noDatesSwitch.custom-switch,
+#isFreeSwitch.custom-switch {
   float: left;
   width: auto;
 }
