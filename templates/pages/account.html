@@ -45,39 +45,6 @@
                 </div>
             </div>
 
-            <!-- Section: My Events -->
-            <div class="row">
-                <div class="col-12">
-                    <hr>
-                    <h2>My Events</h2>
-                    <a href="{{url_for('new_event_page', username=session['user'])}}" class="heading-btn btn btn-create float-right">Add New Event</a>
-                    <hr>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-6 col-lg-4">
-                    {% include 'components/cards/account_event.html' %}
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-
-                    <!-- work out how to program in .inactive and <p> for expired into partials card -->
-                    <div class="card familyhub-card inactive">
-                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
-                        <div class="custom-calendar-icon">
-                            <div class="display-month">JAN</div>
-                            <div class="display-day">5</div>
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Card title</h4>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                    <a href="#" class="btn btn-readmore">Edit</a>
-                    <a href="#" id="delete-button" class="btn btn-delete">Delete</a>
-                    <p class="expired">Expired. Add new dates to activate</p>
-                </div>
-            </div>
-
         </div>
 
 
