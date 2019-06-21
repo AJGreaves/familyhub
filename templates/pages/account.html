@@ -2,6 +2,13 @@
 
     <!-- Section: My account -->
     <main class="content">
+            {% if deleted == True %}
+            <!-- publish success bar shows when user has just published their new activity -->
+            <div id="publish-success" class="hide">
+                <p class="hide">Your listing has been successfully deleted!</p>
+                <i id="closeNotice" class="fas fa-times text-white fa-2x hide"></i>
+            </div>
+            {% endif %}
 
         <div id="my-account-wrapper" class="container">
             <div class="row">
