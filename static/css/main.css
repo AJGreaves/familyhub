@@ -488,14 +488,14 @@ Credit: https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed
   margin-bottom: 1rem;
   /* CREDIT: Code for box shadow taken from https://codepen.io/sdthornton/pen/wBZdXq */
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .familyhub-card:hover {
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .familyhub-card-header {
@@ -529,6 +529,22 @@ p.expired {
   font-size: 0.75rem;
   display: inline-block;
   margin-left: 0.25rem;
+}
+
+/* sets fixed height for card images, images set to cover 
+so they will all be the same dimensions even when original 
+images provided are different ones. Background image url applied
+inline as easiest way to import images with Jinja
+BUG FIX: !important necessary to override styles activated with
+the inline background style for the background image  */
+.card-img-wrapper {
+  min-height: 150px;
+}
+
+.card-picture {
+  background-size: cover !important;
+  background-position: center center !important;
+  height: 100%;
 }
 
 /* ------------------------------
@@ -990,6 +1006,9 @@ input.no-click {
     /* keeps search bar and search button in one line */
     margin-top: 0;
   }
+  .card-img-wrapper {
+    min-height: 180px;
+  }
 }
 
 /* medium size screens and up */
@@ -1034,6 +1053,9 @@ input.no-click {
     right: 0;
     width: auto;
   }
+  .card-img-wrapper {
+    min-height: 170px;
+  }
 }
 
 /* large screens and up */
@@ -1041,6 +1063,15 @@ input.no-click {
   #backgroundImgPermission {
     background-image: url("https://i.ibb.co/RYfs1R8/rock-on.jpg");
     background-position: 90% 90%;
+  }
+  .card-img-wrapper {
+    min-height: 200px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .card-img-wrapper {
+    min-height: 225px;
   }
 }
 /*# sourceMappingURL=main.css.map */

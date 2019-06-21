@@ -13,6 +13,9 @@
         /* keeps search bar and search button in one line */
         margin-top: 0;
     }
+    .card-img-wrapper {
+        min-height: 180px;
+    }
 }
 
 /* medium size screens and up */
@@ -60,6 +63,9 @@
         right: 0;
         width: auto;
     }
+    .card-img-wrapper {
+        min-height: 170px;
+    }
 }
 
 /* large screens and up */
@@ -68,5 +74,14 @@
     #backgroundImgPermission {
         background-image: url('https://i.ibb.co/RYfs1R8/rock-on.jpg');
         background-position: 90% 90%;
+    }
+    .card-img-wrapper {
+        min-height: 200px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .card-img-wrapper {
+        min-height: 225px;
     }
 }
