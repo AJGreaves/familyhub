@@ -1048,6 +1048,9 @@ input.no-click {
   .card-title-wrapper {
     height: 40px;
   }
+  .card-text-wrapper {
+    height: 85px;
+  }
 }
 
 /* medium size screens and up */
