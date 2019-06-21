@@ -133,13 +133,16 @@ function alertModal(message, date1, date2) {
     return;
 }
 
-$('#alertModalClose').click(function (e) {
-    e.preventDefault();
+$('#alertModalClose').click(function (event) {
+    event.preventDefault();
     alertModal();
     return;
 })
 
-$('#delete-button').click(function () {
+$('.delete-button').click(function () {
+    let activity_id = this.id;
+    let href = '/deletelisting?activity_id=' + activity_id 
+    $('#confirm-delete').attr('href', href);
     openDeleteWarningModal();
 });
 
