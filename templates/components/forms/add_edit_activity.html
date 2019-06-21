@@ -3,7 +3,7 @@
     <div class="form-row">
         <div class="form-group col-12">
             <h3>Title</h3>
-            <input id="title" name="title" class="form-control full-width" type="text" placeholder="Title for your listing on Family Hub"
+            <input id="title" name="title" class="form-control full-width" type="text" maxlength="50" placeholder="Title for your listing on Family Hub"
                 value="{% if editor == 'edit' %}{{activity.title}}{% endif %}" required>
         </div>
     </div>
@@ -281,7 +281,7 @@
         <div class="form-group col-12 col-md-4 px-2">
             <h3>Other details</h3>
             {% include 'components/forms/other_details.html' %}
-
+            
         </div>
     </div>
 </div>

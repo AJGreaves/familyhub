@@ -23,12 +23,12 @@
                 </div>
             </div>
             <div class="row">
+                {% for activity in activities %}
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     {% include 'components/cards/account_activity.html' %}
                 </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                    {% include 'components/cards/account_activity.html' %}
-                </div>
+                {% endfor %}
+                
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     
                     <!-- work out how to program in .inactive and <p> for expired into partials card -->

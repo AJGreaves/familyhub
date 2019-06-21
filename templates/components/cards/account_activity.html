@@ -5,19 +5,19 @@
 <div class="card familyhub-card">
     <div class="card-img-wrapper">
         <!-- Inline style used here to import link with jinja -->
-        <div class="card-picture" title="Card image cap" style="background-image: url(https://www.signupgenius.com/cms/images/home/84072225_600x400.jpg)"></div>
+        <div class="card-picture" title="Card image cap" style="background-image: url({{activity.imgUrl}})"></div>
     </div>
     <div class="card-body">
         <div class="card-title-wrapper">
-            <h4 class="card-title">Tester title for an activity that is quite long</h4>
+            <h4 class="card-title">{{activity.title}}</h4>
         </div>
         <div class="card-text-wrapper">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content and...</p>
+            <p class="card-text">{{activity.shortDescription}}...</p>
         </div>
     </div>
 </div>
 <!-- buttons outside cards so inactive opacity setting does not effect them -->
-<a href="#" class="btn btn-readmore">Edit</a>
+<a href="{{ url_for('edit_activity_page', username=session['user'], title=activity['title'], activity_id=activity['_id']) }}" class="btn btn-readmore">Edit</a>
 <a href="#" id="delete-button" class="btn btn-delete">Delete</a>
 
 {% endblock %}
