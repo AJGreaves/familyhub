@@ -359,6 +359,26 @@ def edit_activity_page(username, title):
         keywords=Keywords.generic()
     )
 
+@app.route('/deletelisting', methods=['GET', 'POST'])
+def delete_listing():
+    loggedIn = True if 'user' in session else False
+
+    if not loggedIn:
+        return redirect(url_for('permission_denied'))
+    else:
+        activity_id = request.args.get('activity_id')
+        user = db.users.find_one({"username": session['user']})
+        db.activities.delete_one({"_id": ObjectId(activity_id)})
+        activities = db.activities.find({"username": user['username']}) 
+    
+    return redirect(url_for(
+        "my_account_page", 
+        username=session['user'],
+        activities=activities,
+        loggedIn=loggedIn,
+        deleted=True
+    ))
+
 # 404 error page
 @app.errorhandler(404)
 def page_not_found(e):
