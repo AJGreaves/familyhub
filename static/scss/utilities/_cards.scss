@@ -61,6 +61,8 @@ the inline background style for the background image  */
     position: relative;
 }
 .card-picture {
+    /* background image property provided by inline style through jinja
+    check the two files in components/cards directory for these inline style */
     background-size: cover!important;
     background-position: center!important;
     height: 100%;
