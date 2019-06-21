@@ -191,13 +191,15 @@ def my_account_page(username):
     if not loggedIn:
         return redirect(url_for('permission_denied'))
     else:
-        user = db.users.find_one({"username": session['user']}) 
+        user = db.activities.find_one({"username": session['user']})
+
+    activities = db.activities.find({"username": user['username']})
 
     return render_template(
         "pages/account.html", 
         headTitle="My Account", 
+        activities=activities,
         loggedIn=loggedIn,
-        user=user,
         active="account",
         keywords=Keywords.generic()
     )

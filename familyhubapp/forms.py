@@ -101,6 +101,10 @@ def process_activity_data(db, user, post_request, published):
 
     start = Helpers.format_time(post_request['start']) if getBool(post_request, 'start') else None
     end = Helpers.format_time(post_request['end']) if getBool(post_request, 'start') else None
+    description = post_request.get('description')
+    print(description)
+    shortDescription = description[0:100]
+    print(shortDescription)
 
 
     openTimes = [
@@ -119,6 +123,7 @@ def process_activity_data(db, user, post_request, published):
             time = f"{time[0]}:{time[1]}:00"
             time = datetime.strptime(time, '%H:%M:%S')
             openTimesDict[time_name] = time
+
 
     obj = {
         'username': user['username'], 
@@ -202,6 +207,7 @@ def process_activity_data(db, user, post_request, published):
             'instagram': post_request.get('instagram') if post_request.get('instagram') else None
         },
         'description': post_request.get('description'),
+        'shortDescription': shortDescription,
         'published': False
     }
     return obj
