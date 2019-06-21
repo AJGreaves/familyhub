@@ -538,13 +538,25 @@ inline as easiest way to import images with Jinja
 BUG FIX: !important necessary to override styles activated with
 the inline background style for the background image  */
 .card-img-wrapper {
-  min-height: 150px;
+  height: 250px;
+  position: relative;
 }
 
 .card-picture {
-  background-size: cover !important;
-  background-position: center center !important;
+  /* tester image */
+  background-image: url("https://www.signupgenius.com/cms/images/home/84072225_600x400.jpg");
+  background-size: cover;
+  background-position: center;
   height: 100%;
+}
+
+.card-title {
+  font-size: 1rem;
+  color: #5ca4a9;
+}
+
+.card-text {
+  font-size: 0.85rem;
 }
 
 /* ------------------------------
@@ -710,10 +722,34 @@ shadow added to give depth and contrast with the image for readability */
 /* ------------------------------
     Footer
 ------------------------------ */
+/* CREDIT: code to fix footer to bottom of page even when there is not
+enough content to push it down taken from https://css-tricks.com/couple-takes-sticky-footer/ */
+html, body {
+  height: 100%;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.content {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
 footer {
   background-color: #346861;
   color: white;
   margin-top: 3rem;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 footer p,
@@ -1007,7 +1043,10 @@ input.no-click {
     margin-top: 0;
   }
   .card-img-wrapper {
-    min-height: 180px;
+    height: 180px;
+  }
+  .card-title-wrapper {
+    height: 40px;
   }
 }
 
@@ -1054,7 +1093,7 @@ input.no-click {
     width: auto;
   }
   .card-img-wrapper {
-    min-height: 170px;
+    height: 170px;
   }
 }
 
@@ -1071,7 +1110,7 @@ input.no-click {
 
 @media screen and (min-width: 1200px) {
   .card-img-wrapper {
-    min-height: 225px;
+    height: 225px;
   }
 }
 /*# sourceMappingURL=main.css.map */

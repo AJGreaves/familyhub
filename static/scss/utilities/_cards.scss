@@ -57,10 +57,22 @@ BUG FIX: !important necessary to override styles activated with
 the inline background style for the background image  */
 
 .card-img-wrapper {
-    min-height: 150px;
+    height: 250px;
+    position: relative;
 }
 .card-picture {
-    background-size: cover!important;
-    background-position: center center!important;
+    /* tester image */
+    background-image: url("https://www.signupgenius.com/cms/images/home/84072225_600x400.jpg");
+    background-size: cover;
+    background-position: center;
     height: 100%;
+}
+
+.card-title {
+    font-size: 1rem;
+    color: $mid-blue;
+}
+
+.card-text {
+    font-size: 0.85rem;
 }

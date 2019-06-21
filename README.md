@@ -209,6 +209,7 @@ Further reading and troubleshooting on cloning a repository from GitHub [here](h
 - Code for adding the correct prefixes to css was created using [AutoPrefixer](https://autoprefixer.github.io/).
 - Hex to RGBA colour converter: http://hex2rgba.devoth.com/
 - function to capitalize first letter of username: https://paulund.co.uk/how-to-capitalize-the-first-letter-of-a-string-in-javascript
+- code to make sticky footer: https://css-tricks.com/couple-takes-sticky-footer/
 
 ### Acknowledgements
 
