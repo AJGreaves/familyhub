@@ -32,68 +32,12 @@ the navbar?
 
             <div class="container-fluid">
 
-                <!-- Small screens carousel wrapper, only visible on small screens 
-                and down. This was the best solution for varying the number of cards 
-                per carousel row depending on screen width -->
+                <!-- CREDIT: Template code for multi-card carousel using bootstrap classes taken from https://mdbootstrap.com/docs/jquery/javascript/carousel/ 
+                Combined d-none and d-block classes on the columns to control how many of the cards we can see on each screen size. Doing this means 
+                I do not need to make multiple carousels for the same page. I chose to use bootstrap col class with no numbers on for
+                ease and flexibility here -->
 
-                <div id="recommended-sm-carousel" class="carousel slide carousel-multi-item d-block d-lg-none"
-                    data-ride="carousel">
-
-                    <!--Slides-->
-                    <div class="carousel-inner" role="listbox">
-
-                        <!--First slide-->
-                        <div class="carousel-item active">
-                            <div class="row justify-content-center">
-                                <div class="col-10">
-
-                                    {% include 'components/cards/carousel_card_sm.html' %}
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row justify-content-center">
-                                <div class="col-10">
-
-                                    {% include 'components/cards/carousel_card_sm.html' %}
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row justify-content-center">
-                                <div class="col-10">
-
-                                    {% include 'components/cards/carousel_card_sm.html' %}
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <a class="carousel-control-prev" href="#recommended-sm-carousel" role="button"
-                            data-slide="prev">
-                            <i class="carousel-chevron fas fa-chevron-left fa-4x"></i>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#recommended-sm-carousel" role="button"
-                            data-slide="next">
-                            <i class="carousel-chevron fas fa-chevron-right fa-4x"></i>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                    <!--/.Slides-->
-
-                </div>
-                <!--/.Carousel Wrapper-->
-
-                <!-- CREDIT: Template code for multi-card carousel using bootstrap classes taken from https://mdbootstrap.com/docs/jquery/javascript/carousel/ -->
-
-                <!-- Large screens carousel wrapper, only visible on large screens 
-                and up this was the best solution for varying the number of cards 
-                per carousel row depending on screen width -->
-                <div id="recommended-lg-carousel" class="carousel slide carousel-multi-item  d-none d-lg-block"
-                    data-ride="carousel">
+                <div id="recommended-carousel" class="carousel slide carousel-multi-item" data-ride="carousel">
 
                     <!--Slides-->
                     <div class="carousel-inner" role="listbox">
@@ -103,26 +47,26 @@ the navbar?
                             <div class="row justify-content-center">
                                 <div class="col-10">
                                     <div class="row">
-                                        <div class="col mx-1">
+                                        <div class="col mx-2 mx-sm-5 mx-md-1">
 
-                                            {% include 'components/cards/carousel_card_lg.html' %}
-
-                                        </div>
-
-                                        <div class="col mx-1">
-
-                                            {% include 'components/cards/carousel_card_lg.html' %}
+                                            {% include 'components/cards/carousel_card.html' %}
 
                                         </div>
 
-                                        <div class="col mx-1">
+                                        <div class="col mx-1 d-none d-md-block">
 
-                                            {% include 'components/cards/carousel_card_lg.html' %}
+                                            {% include 'components/cards/carousel_card.html' %}
 
                                         </div>
-                                        <div class="col mx-1">
 
-                                            {% include 'components/cards/carousel_card_lg.html' %}
+                                        <div class="col mx-1 d-none d-lg-block">
+
+                                            {% include 'components/cards/carousel_card.html' %}
+
+                                        </div>
+                                        <div class="col mx-1 d-none d-xl-block">
+
+                                            {% include 'components/cards/carousel_card.html' %}
 
                                         </div>
                                     </div>
@@ -136,26 +80,26 @@ the navbar?
                             <div class="row justify-content-center">
                                 <div class="col-10">
                                     <div class="row">
-                                        <div class="col mx-1">
+                                        <div class="col mx-2 mx-sm-5 mx-md-1">
 
-                                            {% include 'components/cards/carousel_card_lg.html' %}
-
-                                        </div>
-
-                                        <div class="col mx-1">
-
-                                            {% include 'components/cards/carousel_card_lg.html' %}
+                                            {% include 'components/cards/carousel_card.html' %}
 
                                         </div>
 
-                                        <div class="col mx-1">
+                                        <div class="col mx-1 d-none d-md-block">
 
-                                            {% include 'components/cards/carousel_card_lg.html' %}
+                                            {% include 'components/cards/carousel_card.html' %}
 
                                         </div>
-                                        <div class="col mx-1">
 
-                                            {% include 'components/cards/carousel_card_lg.html' %}
+                                        <div class="col mx-1 d-none d-lg-block">
+
+                                            {% include 'components/cards/carousel_card.html' %}
+
+                                        </div>
+                                        <div class="col mx-1 d-none d-xl-block">
+
+                                            {% include 'components/cards/carousel_card.html' %}
 
                                         </div>
                                     </div>
@@ -169,26 +113,26 @@ the navbar?
                             <div class="row justify-content-center">
                                 <div class="col-10">
                                     <div class="row">
-                                        <div class="col mx-1">
+                                        <div class="col mx-2 mx-sm-5 mx-md-1">
 
-                                            {% include 'components/cards/carousel_card_lg.html' %}
-
-                                        </div>
-
-                                        <div class="col mx-1">
-
-                                            {% include 'components/cards/carousel_card_lg.html' %}
+                                            {% include 'components/cards/carousel_card.html' %}
 
                                         </div>
 
-                                        <div class="col mx-1">
+                                        <div class="col mx-1 d-none d-md-block">
 
-                                            {% include 'components/cards/carousel_card_lg.html' %}
+                                            {% include 'components/cards/carousel_card.html' %}
 
                                         </div>
-                                        <div class="col mx-1">
 
-                                            {% include 'components/cards/carousel_card_lg.html' %}
+                                        <div class="col mx-1 d-none d-lg-block">
+
+                                            {% include 'components/cards/carousel_card.html' %}
+
+                                        </div>
+                                        <div class="col mx-1 d-none d-xl-block">
+
+                                            {% include 'components/cards/carousel_card.html' %}
 
                                         </div>
                                     </div>
@@ -196,13 +140,11 @@ the navbar?
                             </div>
                         </div>
                         <!--/.Third slide-->
-                        <a class="carousel-control-prev" href="#recommended-lg-carousel" role="button"
-                            data-slide="prev">
+                        <a class="carousel-control-prev" href="#recommended-carousel" role="button" data-slide="prev">
                             <i class="carousel-chevron fas fa-chevron-left fa-4x"></i>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="carousel-control-next" href="#recommended-lg-carousel" role="button"
-                            data-slide="next">
+                        <a class="carousel-control-next" href="#recommended-carousel" role="button" data-slide="next">
                             <i class="carousel-chevron fas fa-chevron-right fa-4x"></i>
                             <span class="sr-only">Next</span>
                         </a>
