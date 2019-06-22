@@ -272,7 +272,7 @@
                                         <input id="start" name="start"
                                             class="no-click input-group compare-js compare-date-js date datepicker-wider"
                                             data-date-format="dd-mm-yyyy"
-                                            {% if editor == 'edit' and startDate != None %}value="{{startDate}}"
+                                            {% if editor == 'edit' and startDate != None %}value="{{startDate}}" required
                                             {% elif editor == 'edit' and startDate == None %} disabled {% else %}
                                             required{% endif %}>
                                         <span class="input-group-addon"><i
@@ -283,7 +283,7 @@
                                         <input id="end" name="end"
                                             class="no-click input-group compare-js compare-date-js date datepicker-wider"
                                             data-date-format="dd-mm-yyyy"
-                                            {% if editor == 'edit' and endDate != None %}value="{{endDate}}"
+                                            {% if editor == 'edit' and endDate != None %}value="{{endDate}}" required
                                             {% elif editor == 'edit' and endDate == None %} disabled {% else %}
                                             required{% endif %}>
                                         <span class="input-group-addon"><i
