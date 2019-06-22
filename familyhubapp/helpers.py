@@ -37,10 +37,9 @@ class Helpers:
         index = 0
         descrpDict = []
         for paragraph in description:
-            if paragraph != '':  
-                key = str(index)
-                descrpDict.append({key:paragraph})
-                index = index + 1
+            key = str(index)
+            descrpDict.append({key:paragraph})
+            index = index + 1
 
         return descrpDict
 
