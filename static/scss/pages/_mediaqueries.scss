@@ -22,6 +22,15 @@
     .card-text-wrapper {
         height: 85px;
     }
+    #recommended-sm-carousel .card-img-wrapper {
+        height: 300px;
+    }
+    #recommended-sm-carousel .card-title-wrapper {
+        height: auto;
+    }
+    #recommended-sm-carousel .card-text-wrapper {
+        height: auto;
+    }
 }
 
 /* medium size screens and up */
@@ -83,6 +92,9 @@
     }
     .card-img-wrapper {
         min-height: 200px;
+    }
+    #recommended-sm-carousel .card-img-wrapper {
+        height:180px;
     }
 }
 
