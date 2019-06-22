@@ -57,6 +57,11 @@ BUG FIX: !important necessary to override styles activated with
 the inline background style for the background image  */
 
 .card-img-wrapper {
+    height: 225px;
+    position: relative;
+}
+
+.card-img-wrapper.account-card {
     height: 250px;
     position: relative;
 }
@@ -77,6 +82,3 @@ the inline background style for the background image  */
     font-size: 0.85rem;
 }
 
-#recommended-sm-carousel .card-img-wrapper {
-    height: 250px;
-}

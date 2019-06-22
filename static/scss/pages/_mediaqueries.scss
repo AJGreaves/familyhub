@@ -13,7 +13,7 @@
         /* keeps search bar and search button in one line */
         margin-top: 0;
     }
-    .card-img-wrapper {
+    .card-img-wrapper.account-card {
         height: 180px;
     }
     .card-title-wrapper {
@@ -21,15 +21,6 @@
     }
     .card-text-wrapper {
         height: 85px;
-    }
-    #recommended-sm-carousel .card-img-wrapper {
-        height: 300px;
-    }
-    #recommended-sm-carousel .card-title-wrapper {
-        height: auto;
-    }
-    #recommended-sm-carousel .card-text-wrapper {
-        height: auto;
     }
 }
 
@@ -78,7 +69,7 @@
         right: 0;
         width: auto;
     }
-    .card-img-wrapper {
+    .card-img-wrapper.account-card {
         height: 170px;
     }
 }
@@ -90,16 +81,13 @@
         background-image: url('https://i.ibb.co/RYfs1R8/rock-on.jpg');
         background-position: 90% 90%;
     }
-    .card-img-wrapper {
+    .card-img-wrapper.account-card {
         min-height: 200px;
-    }
-    #recommended-sm-carousel .card-img-wrapper {
-        height:180px;
     }
 }
 
 @media screen and (min-width: 1200px) {
-    .card-img-wrapper {
+    .card-img-wrapper.account-card {
         height: 225px;
     }
 }
