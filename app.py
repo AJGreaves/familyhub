@@ -23,10 +23,13 @@ db = client.familyHub
 def home_page():
     loggedIn = True if 'user' in session else False
 
+    activities = db.activities.find({}).sort([('_id',-1)]).limit(12)
+
     return render_template(
         "pages/index.html", 
         headTitle="Home", 
         active="home",
+        activities=activities,
         loggedIn=loggedIn,
         keywords=Keywords.home()
     )
