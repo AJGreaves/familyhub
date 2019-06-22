@@ -2,10 +2,11 @@
  * JS functions used on all/most pages
  ******************************************/
 
-// document.addEventListener("DOMContentLoaded", function() {
-//     hideLoading();
-//     return;
-// });
+document.addEventListener("DOMContentLoaded", function() {
+    hideLoading();
+    $('.no-fouc').removeClass('no-fouc');
+    return;
+});
 
 // Show and hide spinner animation
 function showLoading() {

@@ -345,7 +345,6 @@ each listing is for */
   /* CREDIT: Code for box shadow taken from https://codepen.io/sdthornton/pen/wBZdXq */
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  visibility: hidden;
 }
 
 #spinner {
@@ -562,6 +561,10 @@ the inline background style for the background image  */
 /* ------------------------------
     All pages
 ------------------------------ */
+.no-fouc {
+  display: none;
+}
+
 #nav-logo {
   width: 30px;
   height: 30px;
