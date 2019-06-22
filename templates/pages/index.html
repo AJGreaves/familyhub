@@ -36,7 +36,8 @@ the navbar?
                 and down. This was the best solution for varying the number of cards 
                 per carousel row depending on screen width -->
 
-                <div id="recommended-sm-carousel" class="carousel slide carousel-multi-item d-block d-md-none" data-ride="carousel">
+                <div id="recommended-sm-carousel" class="carousel slide carousel-multi-item d-block d-lg-none"
+                    data-ride="carousel">
 
                     <!--Slides-->
                     <div class="carousel-inner" role="listbox">
@@ -45,8 +46,8 @@ the navbar?
                         <div class="carousel-item active">
                             <div class="row justify-content-center">
                                 <div class="col-10">
-                                
-                                    {% include 'components/cards/activity.html' %}
+
+                                    {% include 'components/cards/carousel_card_sm.html' %}
 
                                 </div>
                             </div>
@@ -55,26 +56,28 @@ the navbar?
                             <div class="row justify-content-center">
                                 <div class="col-10">
 
-                                    {% include 'components/cards/activity.html' %}
+                                    {% include 'components/cards/carousel_card_sm.html' %}
 
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="row justify-content-center">
-                                <div class="col-10">                                    
+                                <div class="col-10">
 
-                                    {% include 'components/cards/activity.html' %}
-                                    
+                                    {% include 'components/cards/carousel_card_sm.html' %}
+
                                 </div>
                             </div>
                         </div>
 
-                        <a class="carousel-control-prev" href="#recommended-sm-carousel" role="button" data-slide="prev">
+                        <a class="carousel-control-prev" href="#recommended-sm-carousel" role="button"
+                            data-slide="prev">
                             <i class="carousel-chevron fas fa-chevron-left fa-4x"></i>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="carousel-control-next" href="#recommended-sm-carousel" role="button" data-slide="next">
+                        <a class="carousel-control-next" href="#recommended-sm-carousel" role="button"
+                            data-slide="next">
                             <i class="carousel-chevron fas fa-chevron-right fa-4x"></i>
                             <span class="sr-only">Next</span>
                         </a>
@@ -86,106 +89,11 @@ the navbar?
 
                 <!-- CREDIT: Template code for multi-card carousel using bootstrap classes taken from https://mdbootstrap.com/docs/jquery/javascript/carousel/ -->
 
-                <!-- Medium screens carousel wrapper, only visible on medium screens 
-                this was the best solution for varying the number of cards 
-                per carousel row depending on screen width -->
-
-                <div id="recommended-md-carousel" class="carousel slide carousel-multi-item d-none d-md-block d-lg-none" data-ride="carousel">
-
-                    <!--Slides-->
-                    <div class="carousel-inner" role="listbox">
-
-                        <!--First slide-->
-                        <div class="carousel-item active">
-                            <div class="row justify-content-center">
-                                <div class="col-md-4">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-
-                                <div class="col-md-4">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <!--/.First slide-->
-
-                        <!--Second slide-->
-                        <div class="carousel-item">
-                            <div class="row justify-content-center">
-                                <div class="col-md-4">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-
-                                <div class="col-md-4">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-
-                            </div>
-                        </div>
-                        <!--/.Second slide-->
-
-                        <!--Third slide-->
-                        <div class="carousel-item">
-                            <div class="row justify-content-center">
-                                <div class="col-md-4">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-
-                                <div class="col-md-4">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-
-                            </div>
-                        </div>
-                        <!--/.Third slide-->
-
-                        <!--Fourth slide-->
-                        <div class="carousel-item">
-                            <div class="row justify-content-center">
-                                <div class="col-md-4">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-
-                                <div class="col-md-4">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-                            </div>
-                            <!--/.Fourth slide-->
-                        </div>
-                        <a class="carousel-control-prev" href="#recommended-md-carousel" role="button" data-slide="prev">
-                            <i class="carousel-chevron fas fa-chevron-left fa-4x"></i>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#recommended-md-carousel" role="button" data-slide="next">
-                            <i class="carousel-chevron fas fa-chevron-right fa-4x"></i>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                    <!--/.Slides-->
-
-                </div>
-                <!--/.Carousel Wrapper-->
-
                 <!-- Large screens carousel wrapper, only visible on large screens 
                 and up this was the best solution for varying the number of cards 
                 per carousel row depending on screen width -->
-                <div id="recommended-lg-carousel" class="carousel slide carousel-multi-item  d-none d-lg-block" data-ride="carousel">
+                <div id="recommended-lg-carousel" class="carousel slide carousel-multi-item  d-none d-lg-block"
+                    data-ride="carousel">
 
                     <!--Slides-->
                     <div class="carousel-inner" role="listbox">
@@ -193,22 +101,31 @@ the navbar?
                         <!--First slide-->
                         <div class="carousel-item active">
                             <div class="row justify-content-center">
-                                <div class="col-lg-3">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
+                                <div class="col-10">
+                                    <div class="row">
+                                        <div class="col mx-1">
 
-                                <div class="col-lg-3">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
+                                            {% include 'components/cards/carousel_card_lg.html' %}
 
-                                <div class="col-lg-3">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
+                                        </div>
+
+                                        <div class="col mx-1">
+
+                                            {% include 'components/cards/carousel_card_lg.html' %}
+
+                                        </div>
+
+                                        <div class="col mx-1">
+
+                                            {% include 'components/cards/carousel_card_lg.html' %}
+
+                                        </div>
+                                        <div class="col mx-1">
+
+                                            {% include 'components/cards/carousel_card_lg.html' %}
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -217,22 +134,31 @@ the navbar?
                         <!--Second slide-->
                         <div class="carousel-item">
                             <div class="row justify-content-center">
-                                <div class="col-lg-3">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
+                                <div class="col-10">
+                                    <div class="row">
+                                        <div class="col mx-1">
 
-                                <div class="col-lg-3">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
+                                            {% include 'components/cards/carousel_card_lg.html' %}
 
-                                <div class="col-lg-3">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
+                                        </div>
+
+                                        <div class="col mx-1">
+
+                                            {% include 'components/cards/carousel_card_lg.html' %}
+
+                                        </div>
+
+                                        <div class="col mx-1">
+
+                                            {% include 'components/cards/carousel_card_lg.html' %}
+
+                                        </div>
+                                        <div class="col mx-1">
+
+                                            {% include 'components/cards/carousel_card_lg.html' %}
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -241,31 +167,42 @@ the navbar?
                         <!--Third slide-->
                         <div class="carousel-item">
                             <div class="row justify-content-center">
-                                <div class="col-lg-3">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
+                                <div class="col-10">
+                                    <div class="row">
+                                        <div class="col mx-1">
 
-                                <div class="col-lg-3">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
+                                            {% include 'components/cards/carousel_card_lg.html' %}
 
-                                <div class="col-lg-3">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
+                                        </div>
+
+                                        <div class="col mx-1">
+
+                                            {% include 'components/cards/carousel_card_lg.html' %}
+
+                                        </div>
+
+                                        <div class="col mx-1">
+
+                                            {% include 'components/cards/carousel_card_lg.html' %}
+
+                                        </div>
+                                        <div class="col mx-1">
+
+                                            {% include 'components/cards/carousel_card_lg.html' %}
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <!--/.Third slide-->
-                        <a class="carousel-control-prev" href="#recommended-lg-carousel" role="button" data-slide="prev">
+                        <a class="carousel-control-prev" href="#recommended-lg-carousel" role="button"
+                            data-slide="prev">
                             <i class="carousel-chevron fas fa-chevron-left fa-4x"></i>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="carousel-control-next" href="#recommended-lg-carousel" role="button" data-slide="next">
+                        <a class="carousel-control-next" href="#recommended-lg-carousel" role="button"
+                            data-slide="next">
                             <i class="carousel-chevron fas fa-chevron-right fa-4x"></i>
                             <span class="sr-only">Next</span>
                         </a>
@@ -279,313 +216,6 @@ the navbar?
 
         </section>
 
-        <!-- Section header: Activities -->
-        <section>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-6">
-                        <h1>Activities</h1>
-                    </div>
-                    <div class="col-6">
-                        <a href="{{url_for('activities_page')}}" class="heading-btn btn btn-search float-right">Search activities</a>
-                    </div>
-                </div>
-                <hr>
-            </div>
-
-            <!-- Activities carousel -->
-            <div class="container-fluid">
-
-                <!-- Small screens carousel wrapper, only visible on small screens 
-                and down. This was the best solution for varying the number of cards 
-                per carousel row depending on screen width -->
-
-                <div id="activities-sm-carousel" class="carousel slide carousel-multi-item d-block d-md-none" data-ride="carousel">
-
-                    <!--Slides-->
-                    <div class="carousel-inner" role="listbox">
-
-                        <!--First slide-->
-                        <div class="carousel-item active">
-                            <div class="row justify-content-center">
-                                <div class="col-10">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row justify-content-center">
-                                <div class="col-10">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row justify-content-center">
-                                <div class="col-10">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row justify-content-center">
-                                <div class="col-10">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row justify-content-center">
-                                <div class="col-10">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row justify-content-center">
-                                <div class="col-10">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row justify-content-center">
-                                <div class="col-10">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row justify-content-center">
-                                <div class="col-10">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-                            </div>
-
-                        </div>
-                        <a class="carousel-control-prev" href="#activities-sm-carousel" role="button" data-slide="prev">
-                            <i class="carousel-chevron fas fa-chevron-left fa-4x"></i>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#activities-sm-carousel" role="button" data-slide="next">
-                            <i class="carousel-chevron fas fa-chevron-right fa-4x"></i>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                    <!--/.Slides-->
-
-                </div>
-                <!--/.Carousel Wrapper-->
-
-                <!-- CREDIT: Template code for multi-card carousel using bootstrap classes taken from https://mdbootstrap.com/docs/jquery/javascript/carousel/ -->
-
-                <!-- Medium screens carousel wrapper, only visible on medium screens 
-                this was the best solution for varying the number of cards 
-                per carousel row depending on screen width -->
-
-                <div id="activities-md-carousel" class="carousel slide carousel-multi-item d-none d-md-block d-lg-none" data-ride="carousel">
-
-                    <!--Slides-->
-                    <div class="carousel-inner" role="listbox">
-
-                        <!--First slide-->
-                        <div class="carousel-item active">
-                            <div class="row justify-content-center">
-                                <div class="col-md-4">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-
-                                <div class="col-md-4">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-
-                            </div>
-                        </div>
-                        <!--/.First slide-->
-
-                        <!--Second slide-->
-                        <div class="carousel-item">
-                            <div class="row justify-content-center">
-                                <div class="col-md-4">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-
-                                <div class="col-md-4">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-
-                            </div>
-                        </div>
-                        <!--/.Second slide-->
-
-                        <!--Third slide-->
-                        <div class="carousel-item">
-                            <div class="row justify-content-center">
-                                <div class="col-md-4">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-
-                                <div class="col-md-4">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <!--/.Third slide-->
-
-                        <!--Fourth slide-->
-                        <div class="carousel-item">
-                            <div class="row justify-content-center">
-                                <div class="col-md-4">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-
-                                <div class="col-md-4">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-                            </div>
-                            <!--/.Fourth slide-->
-                        </div>
-                        <a class="carousel-control-prev" href="#activities-md-carousel" role="button" data-slide="prev">
-                            <i class="carousel-chevron fas fa-chevron-left fa-4x"></i>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#activities-md-carousel" role="button" data-slide="next">
-                            <i class="carousel-chevron fas fa-chevron-right fa-4x"></i>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                    <!--/.Slides-->
-
-                </div>
-                <!--/.Carousel Wrapper-->
-
-                <!-- Large screens carousel wrapper, only visible on large screens 
-                and up this was the best solution for varying the number of cards 
-                per carousel row depending on screen width -->
-                <div id="activities-lg-carousel" class="carousel slide carousel-multi-item  d-none d-lg-block" data-ride="carousel">
-
-                    <!--Slides-->
-                    <div class="carousel-inner" role="listbox">
-
-                        <!--First slide-->
-                        <div class="carousel-item active">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-3">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-
-                                <div class="col-lg-3">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-
-                                <div class="col-lg-3">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <!--/.First slide-->
-
-                        <!--Second slide-->
-                        <div class="carousel-item">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-3">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-
-                                <div class="col-lg-3">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-
-                                <div class="col-lg-3">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <!--/.Second slide-->
-
-                        <!--Third slide-->
-                        <div class="carousel-item">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-3">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-
-                                <div class="col-lg-3">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-
-                                <div class="col-lg-3">
-                                    
-                                        {% include 'components/cards/activity.html' %}
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <!--/.Third slide-->
-                        <a class="carousel-control-prev" href="#activities-lg-carousel" role="button" data-slide="prev">
-                            <i class="carousel-chevron fas fa-chevron-left fa-4x"></i>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#activities-lg-carousel" role="button" data-slide="next">
-                            <i class="carousel-chevron fas fa-chevron-right fa-4x"></i>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                    <!--/.Slides-->
-
-                </div>
-                <!--/.Carousel Wrapper-->
-
-            </div>
-        </section>
     </main>
 </div>
 {% endblock %}
