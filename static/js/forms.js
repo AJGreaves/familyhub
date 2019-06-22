@@ -434,3 +434,13 @@ if (document.querySelector('#editorForm')) {
         }
     });
 }
+
+$('input#inputDELETE').change(function () {
+    let val = $('#inputDELETE').val();
+    if ( val === "DELETE") {
+        $('#confirm-delete').removeClass('no-click');
+    } else {
+        $('#confirm-delete').addClass('no-click');
+    }
+    return;
+})
