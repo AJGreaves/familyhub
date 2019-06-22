@@ -561,6 +561,14 @@ the inline background style for the background image  */
   font-size: 0.85rem;
 }
 
+.card-title-wrapper {
+  height: 40px;
+}
+
+.card-text-wrapper {
+  height: 65px;
+}
+
 /* ------------------------------
     All pages
 ------------------------------ */
@@ -1055,7 +1063,7 @@ input.no-click {
     height: 40px;
   }
   .card-text-wrapper {
-    height: 85px;
+    height: 70px;
   }
 }
 
@@ -1114,6 +1122,9 @@ input.no-click {
   }
   .card-img-wrapper.account-card {
     min-height: 200px;
+  }
+  .card-text-wrapper {
+    height: 95px;
   }
 }
 
