@@ -12,8 +12,8 @@
         </div>
         <div class="card-text-wrapper">
             <p class="card-text">{{activity.shortDescription}}...</p>
-            <a href="#">Read More <i class="fas fa-arrow-circle-right"></i></a>
         </div>
+        <a class="readmore-link" href="{{ url_for('activity_listing_page', title=activity['title'], activity_id=activity['_id'])}}">Read More <i class="fas fa-arrow-circle-right"></i></a>
     </div>
 </div>
 {% endblock %}
