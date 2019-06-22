@@ -1,5 +1,5 @@
 {% extends 'layout/base.html' %} {% block content %}
-    <div class="content">
+<div class="content no-fouc">
 
     <!-- Hero image -->
     <div class="container-fluid">
@@ -8,9 +8,9 @@
             </div>
         </div>
     </div>
-    
+
     <main>
-        
+
         <!-- Section: activities -->
         <section>
 
@@ -35,13 +35,13 @@
                                 <hr>
                             </div>
                             <div class="col-12 col-sm-6 col-lg-4">
-                                    {% include 'components/cards/activity.html' %}
+                                {% include 'components/cards/activity.html' %}
                             </div>
                             <div class="col-12 col-sm-6 col-lg-4">
-                                    {% include 'components/cards/activity.html' %}
+                                {% include 'components/cards/activity.html' %}
                             </div>
                             <div class="col-12 col-sm-6 col-lg-4">
-                                    {% include 'components/cards/activity.html' %}
+                                {% include 'components/cards/activity.html' %}
                             </div>
 
                         </div>
@@ -61,5 +61,5 @@
 
     </main>
 </div>
-    
+
 {% endblock %}
