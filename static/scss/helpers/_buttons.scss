@@ -95,6 +95,10 @@ button:disabled:hover {
             box-shadow: 0 0 0 .2rem rgba(220, 53, 69,.25);
 }
 
+.btn-delete.no-click {
+    background-color: #72585a;
+}
+
 .icon-circle {
     height: 48px;
     width: 48px;

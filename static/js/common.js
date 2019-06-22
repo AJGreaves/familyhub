@@ -146,14 +146,17 @@ $('.delete-button').click(function () {
     let href = '/deletelisting?activity_id=' + activity_id 
     $('#confirm-delete').attr('href', href);
     openDeleteWarningModal();
+    return;
 });
 
 $('#delete-modal-submit-button').click(function () {
     openDeleteWarningModal();
+    return;
 });
 
 function openDeleteWarningModal() {
     $('#delete-warning-modal').toggleClass('active');
+    return;
 }
 
 /**
