@@ -2,6 +2,7 @@
  * JS functions used on all/most pages
  ******************************************/
 
+// Shows spinner and hides page content until everything is loaded
 document.addEventListener("DOMContentLoaded", function() {
     hideLoading();
     $('.no-fouc').removeClass('no-fouc');
