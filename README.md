@@ -193,7 +193,7 @@ Further reading and troubleshooting on cloning a repository from GitHub [here](h
 
 ### Media
 #### Animations
-- Spinner https://dribbble.com/shots/5578478-Working-on-a-loading-animation-for-our-new-mobile-app
+- Spinner https://icons8.com/preloaders/en/circular
 - Hide and seek bot for 404 page: https://dribbble.com/shots/3480375-Stealth-Bot
 
 #### Images
