@@ -150,6 +150,24 @@ function openLoggedInModal(username) {
   $('#loggedInModal').addClass('active');
 }
   ```
+  
+6. **Carousel on home page not moving**
+- The reason for this bug was that I was looping through my activities to create my carousel, so every one of the slides had the class `.active` on them. When in order for the carousel to move this class has to be removed and applied using the bootstrap javascript. 
+- To get around this I wrote a function to remove all but the first `.active` class from my elements with `.carousel-item` on them.
+```javascript
+document.addEventListener("DOMContentLoaded", function() {
+    let slides = $('.carousel-item').not(':first');
+    slides.each(function() {
+        $(this).removeClass('active');
+    })
+});
+
+```
+
+
+7. **2nd carousel on home page refusing to display**
+- This bug took hours to track down as I originally blamed it on a cursor problem with mongoDB. Of course now I am writing my bug report with the one right above it I realise now how obvious it was!! The function above also removed the "active" class from all the slides on the second carousel. 
+- To fix this I adjusted my javascript function to be more specific to removing all but the first `.active` class from **each** one. 
 
 #### Unsolved bugs
 
