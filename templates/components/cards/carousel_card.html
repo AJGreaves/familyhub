@@ -2,8 +2,8 @@
 <div class="card familyhub-card">
     <div class="card-img-wrapper">
         <!-- Inline style used here to import link with jinja -->
-        <div class="card-picture" title="{{activity.title}}"
-            style="background-image: url({{activity.imgUrl}})">
+        <div class="card-picture" title="{{activity.title}}" style="background-image: url({{activity.imgUrl}})">
+            <div class="location-text">{{activity.address.town}}</div>
         </div>
     </div>
     <div class="card-body">

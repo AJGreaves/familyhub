@@ -569,6 +569,19 @@ the inline background style for the background image  */
   height: 65px;
 }
 
+.location-text {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: white;
+  font-family: "Patrick Hand SC", cursive;
+  background-color: #000034;
+  padding: 0 10px;
+  margin: 5px;
+  font-size: 1.25rem;
+  opacity: 0.8;
+}
+
 /* ------------------------------
     All pages
 ------------------------------ */
