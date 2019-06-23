@@ -23,7 +23,11 @@ db = client.familyHub
 def home_page():
     loggedIn = True if 'user' in session else False
 
-    activities = db.activities.find({}).sort([('_id',-1)]).limit(12)
+    count = db.activities.find({}).count()
+    remove = count % 4
+    limit = count - remove
+
+    activities = db.activities.find({}).sort([('_id',-1)]).limit(limit)
 
     return render_template(
         "pages/index.html", 
