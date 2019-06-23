@@ -207,7 +207,6 @@ $('#isFree').click(function () {
 })
 
 $('#ongoing').click(function () {
-    console.log("clicked!");
 
     if ($('#start').attr('required')) {
         $('#start').attr('disabled', '').removeAttr('required');

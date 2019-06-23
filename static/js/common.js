@@ -173,7 +173,7 @@ function openDeleteWarningModal() {
 function openLoggedInModal(username) {
     let name = capFirst(username);
     $("#accountUrl").attr("href", `/account/${username}`)
-    $("#newActivityUrl").attr("href", `/editor/${username}/add-new-activity`)
+    $("#newActivityUrl").attr("href", `/editor/${username}/add-new`)
     $('#welcomeMessage').text('Welcome ' + name + '.');
     $('#loggedInModal').addClass('active');
 }
