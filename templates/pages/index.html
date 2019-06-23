@@ -5,6 +5,7 @@ NOTE FOR SELF: RESTRUCTURE THIS PAGE TO HIGHLIGHT DIFFERENT CATEGORIES?
 Maybe create pages just for clubs, sports or other popular categories, and add them to 
 the navbar?
 -->
+
 <div class="content no-fouc">
     <!-- Hero image -->
     <div class="container-fluid">
@@ -53,19 +54,19 @@ the navbar?
                                         <div class="col mx-2 mx-sm-5 mx-md-1">
                                             {% include 'components/cards/carousel_card.html' %}
                                         </div>
-                        {% endif %}
-                        {% if loop.index % 4 == 2 %}
+                                        {% endif %}
+                                        {% if loop.index % 4 == 2 %}
                                         <div class="col mx-1 d-none d-md-block">
                                             {% include 'components/cards/carousel_card.html' %}
                                         </div>
-                        
-                        {% endif %}
-                        {% if loop.index % 4 == 3 %}
+
+                                        {% endif %}
+                                        {% if loop.index % 4 == 3 %}
                                         <div class="col mx-1 d-none d-lg-block">
                                             {% include 'components/cards/carousel_card.html' %}
                                         </div>
-                        {% endif %}
-                        {% if loop.index % 4 == 0 %}
+                                        {% endif %}
+                                        {% if loop.index % 4 == 0 %}
                                         <div class="col mx-1 d-none d-xl-block">
                                             {% include 'components/cards/carousel_card.html' %}
 
@@ -93,6 +94,82 @@ the navbar?
                 <!--/.Carousel Wrapper-->
 
             </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1>Sports</h1>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+
+                    <!-- CREDIT: Original template code for multi-card carousel using bootstrap classes taken from 
+                    https://mdbootstrap.com/docs/jquery/javascript/carousel/ and edited heavily for project needs.
+                    Combined d-none and d-block classes on the columns to control how many of the cards we can see on each screen size. Doing this means 
+                    I do not need to make multiple carousels for the same page. I chose to use bootstrap col class with no numbers on for
+                    ease and flexibility here -->
+    
+                    <div id="sports-carousel" class="carousel slide carousel-multi-item" data-ride="carousel">
+    
+                        <!--Slides-->
+                        <div class="carousel-inner" role="listbox">
+    
+                            <!--carousel slide-->
+                            {% for activity in sports %}
+                            {% if loop.index % 4 == 1 %}
+                            <div class="carousel-item active">
+                                <div class="row justify-content-center">
+                                    <div class="col-10">
+                                        <div class="row">
+                                            <div class="col mx-2 mx-sm-5 mx-md-1">
+                                                {% include 'components/cards/carousel_card.html' %}
+                                            </div>
+                                            {% endif %}
+                                            {% if loop.index % 4 == 2 %}
+                                            <div class="col mx-1 d-none d-md-block">
+                                                {% include 'components/cards/carousel_card.html' %}
+                                            </div>
+    
+                                            {% endif %}
+                                            {% if loop.index % 4 == 3 %}
+                                            <div class="col mx-1 d-none d-lg-block">
+                                                {% include 'components/cards/carousel_card.html' %}
+                                            </div>
+                                            {% endif %}
+                                            {% if loop.index % 4 == 0 %}
+                                            <div class="col mx-1 d-none d-xl-block">
+                                                {% include 'components/cards/carousel_card.html' %}
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                            <!--/.slide-->
+    
+                            <a class="carousel-control-prev" href="#recommended-carousel" role="button" data-slide="prev">
+                                <i class="carousel-chevron fas fa-chevron-left fa-4x"></i>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#recommended-carousel" role="button" data-slide="next">
+                                <i class="carousel-chevron fas fa-chevron-right fa-4x"></i>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                        <!--/.Slides-->
+    
+                    </div>
+                    <!--/.Carousel Wrapper-->
+    
+                </div>
+
+
+
 
         </section>
 

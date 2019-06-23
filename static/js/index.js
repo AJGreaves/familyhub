@@ -9,8 +9,12 @@
 jQuery.fn.carousel.Constructor.TRANSITION_DURATION = 2000;
 
 document.addEventListener("DOMContentLoaded", function() {
-    let slides = $('.carousel-item').not(':first');
-    slides.each(function() {
+    let recSlides = $('#recommended-carousel .carousel-item').not(':first');
+    recSlides.each(function() {
+        $(this).removeClass('active');
+    })
+    let sportSlides = $('#sports-carousel .carousel-item').not(':first');
+    sportSlides.each(function() {
         $(this).removeClass('active');
     })
 });

@@ -23,16 +23,16 @@ db = client.familyHub
 def home_page():
     loggedIn = True if 'user' in session else False
 
-    # count = db.activities.find({}).count()
-    # remove = count % 4
-    # limit = count - remove
-
+    sports = db.activities.aggregate([{"$match": {"published": True, "categories.sports": True}} , {'$sample': {'size': 12}}])
+    sports = list(sports) 
     recommended = db.activities.aggregate([{"$match": {"published": True, "recommended": True}}, {'$sample': {'size': 12}}])
+    recommended = list(recommended) 
 
     return render_template(
         "pages/index.html", 
         headTitle="Home", 
         active="home",
+        sports=sports,
         recommended=recommended,
         loggedIn=loggedIn,
         keywords=Keywords.home()
