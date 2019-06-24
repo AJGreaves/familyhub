@@ -22,6 +22,12 @@
     .card-text-wrapper {
         height: 70px;
     }
+    #holiday-feature-box {
+        border-radius: 15px;
+    }
+    .toptip-img {
+        border-radius: 15px 15px 0 0;
+    }
 }
 
 /* medium size screens and up */
@@ -71,6 +77,12 @@
     }
     .card-img-wrapper.account-card {
         height: 170px;
+    }
+    .toptip-image-wrapper {
+        height : auto;
+    }
+    .toptip-img {
+        border-radius: 15px 0 0 15px;
     }
 }
 

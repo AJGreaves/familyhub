@@ -71,6 +71,7 @@ the inline background style for the background image  */
     background-size: cover!important;
     background-position: center!important;
     height: 100%;
+    border-radius: 0.25rem 0.25rem 0 0;
 }
 
 .card-title {
@@ -101,4 +102,36 @@ the inline background style for the background image  */
     margin: 5px;
     font-size: 1.25rem;
     opacity: 0.8;
+}
+
+
+#holiday-feature-box {
+    background-color: $mid-blue;
+}
+
+.holiday-carousel-header {
+    color: $green-hover;
+    font-family: $capitalized-heading;
+    font-size: 2rem;
+}
+
+#holiday-feature-box h4 {
+    color: #fff;
+    font-family: $heading;
+    font-size: 1.5rem;
+}
+
+#holiday-feature-box p {
+    color: #fff;
+}
+
+.toptip-image-wrapper {
+    position: relative;
+    height : 300px;
+}
+
+.toptip-img {
+    height: 100%;
+    background-size: cover!important;
+    background-position: center !important;
 }

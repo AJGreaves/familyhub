@@ -550,6 +550,7 @@ the inline background style for the background image  */
   background-size: cover !important;
   background-position: center !important;
   height: 100%;
+  border-radius: 0.25rem 0.25rem 0 0;
 }
 
 .card-title {
@@ -580,6 +581,37 @@ the inline background style for the background image  */
   margin: 5px;
   font-size: 1.25rem;
   opacity: 0.8;
+}
+
+#holiday-feature-box {
+  background-color: #5ca4a9;
+}
+
+.holiday-carousel-header {
+  color: #687d44;
+  font-family: "Patrick Hand SC", cursive;
+  font-size: 2rem;
+}
+
+#holiday-feature-box h4 {
+  color: #fff;
+  font-family: "Delius", cursive;
+  font-size: 1.5rem;
+}
+
+#holiday-feature-box p {
+  color: #fff;
+}
+
+.toptip-image-wrapper {
+  position: relative;
+  height: 300px;
+}
+
+.toptip-img {
+  height: 100%;
+  background-size: cover !important;
+  background-position: center !important;
 }
 
 /* ------------------------------
@@ -1078,6 +1110,12 @@ input.no-click {
   .card-text-wrapper {
     height: 70px;
   }
+  #holiday-feature-box {
+    border-radius: 15px;
+  }
+  .toptip-img {
+    border-radius: 15px 15px 0 0;
+  }
 }
 
 /* medium size screens and up */
@@ -1124,6 +1162,12 @@ input.no-click {
   }
   .card-img-wrapper.account-card {
     height: 170px;
+  }
+  .toptip-image-wrapper {
+    height: auto;
+  }
+  .toptip-img {
+    border-radius: 15px 0 0 15px;
   }
 }
 
