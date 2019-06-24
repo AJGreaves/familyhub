@@ -64,16 +64,10 @@ def api_activities():
 def activities_page():
     loggedIn = True if 'user' in session else False
 
-    activities = db.activities.find()
-    if request.method == 'GET':
-        
-        return json.dumps(activities)
-
     return render_template(
         "pages/activities.html", 
         headTitle="Activities", 
         active="activities",
-        activities=activities,
         loggedIn=loggedIn,
         keywords=Keywords.activities()
     )
