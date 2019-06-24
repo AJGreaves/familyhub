@@ -109,16 +109,10 @@ the inline background style for the background image  */
     background-color: $mid-blue;
 }
 
-.holiday-carousel-header {
-    color: $green-hover;
+#holiday-feature-box h4 {
+    color: $blond;
     font-family: $capitalized-heading;
     font-size: 2rem;
-}
-
-#holiday-feature-box h4 {
-    color: #fff;
-    font-family: $heading;
-    font-size: 1.5rem;
 }
 
 #holiday-feature-box p {
