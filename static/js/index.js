@@ -17,4 +17,8 @@ document.addEventListener("DOMContentLoaded", function() {
     sportSlides.each(function() {
         $(this).removeClass('active');
     })
+    let holidaySlides = $('#holiday-carousel .carousel-item').not(':first');
+    holidaySlides.each(function() {
+        $(this).removeClass('active');
+    })
 });
