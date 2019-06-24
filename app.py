@@ -27,6 +27,15 @@ def home_page():
     sports = list(sports) 
     recommended = db.activities.aggregate([{"$match": {"published": True, "recommended": True}}, {'$sample': {'size': 12}}])
     recommended = list(recommended) 
+    summer = db.activities.aggregate([{"$match": {"published": True, "holidays.summer": True}}, {'$sample': {'size': 12}}])
+    summer = list(summer) 
+    # specific id for linneushof biggest kids park in Benelux
+    topTip = db.activities.find_one({"_id": ObjectId('5d0f619e5d80f9fbbe7449f2')})
+    rawDescrip = topTip['description']
+    topTopDescrp = Helpers.format_description(rawDescrip)
+    topTopDescrp = topTopDescrp[0:4]
+    print(topTopDescrp)
+
 
     return render_template(
         "pages/index.html", 
@@ -34,6 +43,9 @@ def home_page():
         active="home",
         sports=sports,
         recommended=recommended,
+        summer=summer,
+        topTip=topTip,
+        topTopDescrp=topTopDescrp,
         loggedIn=loggedIn,
         keywords=Keywords.home()
     )
