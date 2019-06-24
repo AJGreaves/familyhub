@@ -29,6 +29,7 @@ def home_page():
     recommended = list(recommended) 
     summer = db.activities.aggregate([{"$match": {"published": True, "holidays.summer": True}}, {'$sample': {'size': 12}}])
     summer = list(summer) 
+
     # specific id for linneushof biggest kids park in Benelux
     topTip = db.activities.find_one({"_id": ObjectId('5d0f619e5d80f9fbbe7449f2')})
     rawDescrip = topTip['description']
@@ -54,10 +55,14 @@ def home_page():
 @app.route('/activities')
 def activities_page():
     loggedIn = True if 'user' in session else False
+
+    activities = db.activities.find()
+
     return render_template(
         "pages/activities.html", 
         headTitle="Activities", 
         active="activities",
+        activities=activities,
         loggedIn=loggedIn,
         keywords=Keywords.activities()
     )

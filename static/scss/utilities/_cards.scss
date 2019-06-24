@@ -149,3 +149,12 @@ the inline background style for the background image  */
 .toptip-content a:hover {
     color: $blond;
 }
+
+#activity-results .col-12.col-sm-6.col-lg-4 {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+#activity-results .card-body {
+    padding: 0.5rem;
+}
