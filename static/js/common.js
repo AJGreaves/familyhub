@@ -90,10 +90,6 @@ function alertModal(message, date1, date2) {
             heading.text('Error');
             message1.text('You selected an earlier finish time than the start time.');
             break;
-        case 'dates match':
-            heading.text('Error');
-            message1.text('Your start and finish dates cannot be the same.');
-            break;
         case 'start end dates wrong':
             heading.text('Error');
             message1.text('You input a finish date ' + date2);

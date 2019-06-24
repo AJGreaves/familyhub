@@ -357,10 +357,7 @@ function compareDates() {
     first = dates[0].split('/').map(Number);
     second = dates[1].split('/').map(Number);
 
-    if (first[0] === second[0] && first[1] === second[1] && first[2] === second[2]) {
-        alertModal('dates match');
-        $('#end').val('');
-    } else if (first[2] > second[2] ||
+    if (first[2] > second[2] ||
         first[2] === second[2] && first[1] > second[1] ||
         first[2] === second[2] && first[1] === second[1] && first[0] > second[0]) {
         alertModal('start end dates wrong', dates[0], dates[1]);
