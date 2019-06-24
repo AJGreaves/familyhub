@@ -99,10 +99,19 @@
     .card-text-wrapper {
         height: 95px;
     }
+    #activity-results .card-text-wrapper {
+        height: auto;
+    }
 }
 
 @media screen and (min-width: 1200px) {
     .card-img-wrapper.account-card {
         height: 225px;
+    }
+    .card-text-wrapper {
+        height: 80px;
+    }
+    .card-text-wrapper p {
+        font-size: 0.85rem
     }
 }

@@ -126,6 +126,25 @@
                     </div>
                 </div>
 
+                <!-- Other details -->
+                <div class="card">
+                    <div class="familyhub-card-header" id="activity-filter-other">
+                        <h2 class="filter-heading">
+                            <button class="btn btn-link filter-heading-button collapsed" type="button"
+                                data-toggle="collapse" data-target="#collapseOther" aria-expanded="false"
+                                aria-controls="collapseOther">
+                                Other details
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseOther" class="collapse filter-options"
+                        aria-labelledby="activity filter by other details" data-parent="#activity-filters-accordion">
+                        <div class="card-body">
+                            <!-- Other details Options -->
+                            {% include 'components/forms/other_details.html' %}
+                        </div>
+                    </div>
+                </div>
                 <a href="#" class="btn btn-search mt-4">Clear filters</a>
             </div>
         </form>
