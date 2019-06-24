@@ -122,9 +122,9 @@ the navbar?
                             {{ value }}<br>
                             {% endfor %}
                             {% endfor %}</br>
-                            <a class="btn btn-search float-md-right"
+                            <a class="float-md-right"
                                 href="{{ url_for('activity_listing_page', title=topTip['title'], activity_id=topTip['_id'])}}">Read
-                                More</a>
+                                More <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -284,9 +284,8 @@ the navbar?
         <div class="row no-gutters">
             <div class="col-12">
                 <form class="form-inline justify-content-center">
-                        <input type="text" id="searchBar" placeholder="What are you searching for?" class="form-control mx-sm-3">
-                        <button type="submit" class="btn btn-search my-1">Submit</button>
-
+                    <input type="text" id="searchBar" placeholder="What are you searching for?" class="form-control mx-sm-3" required>
+                    <button type="submit" class="btn btn-search my-1">Submit</button>
                 </form>
             </div>
         </div>
