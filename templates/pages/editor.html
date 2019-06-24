@@ -89,8 +89,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group col-5 tue-times">
-                                        <input id="tueStart"
-                                            class="compare-js compare-tue-js compare input-group date"
+                                        <input id="tueStart" class="compare-js compare-tue-js compare input-group date"
                                             name="tueStart" {% if editor == 'edit' %}
                                             {% for time in openTimes %}{% for key, value in time.items() %}
                                             {% if key == 'tueStart' and value != None %} value="{{ value }}"
@@ -99,8 +98,7 @@
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span>
                                     </div>
                                     <div class="form-group col-5 tue-times">
-                                        <input id="tueEnd"
-                                            class="compare-js compare-tue-js compare input-group date"
+                                        <input id="tueEnd" class="compare-js compare-tue-js compare input-group date"
                                             name="tueEnd" {% if editor == 'edit' %}
                                             {% for time in openTimes %}{% for key, value in time.items() %}
                                             {% if key == 'tueEnd' and value != None %} value="{{ value }}"
@@ -272,9 +270,9 @@
                                         <input id="start" name="start"
                                             class="input-group compare-js compare-date-js date datepicker-wider"
                                             data-date-format="dd-mm-yyyy"
-                                            {% if editor == 'edit' and startDate != None %}value="{{startDate}}" required
-                                            {% elif editor == 'edit' and startDate == None %} disabled {% else %}
-                                            required{% endif %}>
+                                            {% if editor == 'edit' and startDate != None %}value="{{startDate}}"
+                                            required {% elif editor == 'edit' and startDate == None %} disabled
+                                            {% else %} required{% endif %}>
                                         <span class="input-group-addon"><i
                                                 class="glyphicon glyphicon-calendar"></i></span>
                                     </div>
@@ -298,8 +296,43 @@
                                             <small>(no start/end date)</small>
                                         </div>
                                     </div>
+
+                                    <div class="form-group school-holidays col-12 px-2">
+                                        <h3>Are you open during the school holidays?</h3>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="spring" name="spring"
+                                                {% if editor == 'edit' and activity.holidays and activity.holidays.spring %}checked{% endif %}>
+                                            <label class="form-check-label" for="spring">
+                                                Spring vacation
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="summer" name="summer"
+                                                {% if editor == 'edit' and activity.holidays and activity.holidays.summer %}checked{% endif %}>
+                                            <label class="form-check-label" for="summer">
+                                                Summer vacation
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="autumn" name="autumn"
+                                                {% if editor == 'edit' and activity.holidays and activity.holidays.autumn %}checked{% endif %}>
+                                            <label class="form-check-label" for="autumn">
+                                                Autumn vacation
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="christmas" name="christmas"
+                                                {% if editor == 'edit' and activity.holidays and activity.holidays.christmas %}checked{% endif %}>
+                                            <label class="form-check-label" for="christmas">
+                                                Christmas vacation
+                                            </label>
+                                        </div>
+                                        <small>Select any that apply</small>
+                                    </div>
+
                                 </div>
                             </div>
+                            <!-- holiday opening times -->
                         </div>
                     </div>
 
@@ -367,7 +400,8 @@
                     <!-- margins line button edge up with filed above it -->
                     <button id="editorSubmitBtn" class="btn btn-search ml-4 submit-js" type="submit">Preview</button>
                     {% if editor == 'edit' %}
-                    <button id="{{activity['_id']}}" type="button" class="btn btn-delete delete-button ml-3">Delete</button>
+                    <button id="{{activity['_id']}}" type="button"
+                        class="btn btn-delete delete-button ml-3">Delete</button>
                     {% endif %}
                 </form>
             </div>

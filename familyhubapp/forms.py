@@ -157,6 +157,12 @@ def process_activity_data(db, user, post_request, published):
             'sunStart': openTimesDict.get('sunStart') if openTimesDict.get('sunStart') else None,
             'sunEnd': openTimesDict.get('sunEnd') if openTimesDict.get('sunEnd') else None
         },
+        'holidays' : {
+            'spring': getBool(post_request, 'spring'),
+            'summer': getBool(post_request, 'summer'),
+            'autumn': getBool(post_request, 'autumn'),
+            'christmas': getBool(post_request, 'christmas'),
+        },
         'categories': {
             'sports': getBool(post_request, 'sports'),
             'swimming': getBool(post_request, 'swimming'),
