@@ -106,75 +106,162 @@ the navbar?
 
             <div class="container-fluid">
 
-                    <!-- CREDIT: Original template code for multi-card carousel using bootstrap classes taken from 
+                <!-- CREDIT: Original template code for multi-card carousel using bootstrap classes taken from 
                     https://mdbootstrap.com/docs/jquery/javascript/carousel/ and edited heavily for project needs.
                     Combined d-none and d-block classes on the columns to control how many of the cards we can see on each screen size. Doing this means 
                     I do not need to make multiple carousels for the same page. I chose to use bootstrap col class with no numbers on for
                     ease and flexibility here -->
-    
-                    <div id="sports-carousel" class="carousel slide carousel-multi-item" data-ride="carousel">
-    
-                        <!--Slides-->
-                        <div class="carousel-inner" role="listbox">
-    
-                            <!--carousel slide-->
-                            {% for activity in sports %}
-                            {% if loop.index % 4 == 1 %}
-                            <div class="carousel-item active">
-                                <div class="row justify-content-center">
-                                    <div class="col-10">
-                                        <div class="row">
-                                            <div class="col mx-2 mx-sm-5 mx-md-1">
-                                                {% include 'components/cards/carousel_card.html' %}
-                                            </div>
-                                            {% endif %}
-                                            {% if loop.index % 4 == 2 %}
-                                            <div class="col mx-1 d-none d-md-block">
-                                                {% include 'components/cards/carousel_card.html' %}
-                                            </div>
-    
-                                            {% endif %}
-                                            {% if loop.index % 4 == 3 %}
-                                            <div class="col mx-1 d-none d-lg-block">
-                                                {% include 'components/cards/carousel_card.html' %}
-                                            </div>
-                                            {% endif %}
-                                            {% if loop.index % 4 == 0 %}
-                                            <div class="col mx-1 d-none d-xl-block">
-                                                {% include 'components/cards/carousel_card.html' %}
-    
-                                            </div>
+
+                <div id="sports-carousel" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+                    <!--Slides-->
+                    <div class="carousel-inner" role="listbox">
+
+                        <!--carousel slide-->
+                        {% for activity in sports %}
+                        {% if loop.index % 4 == 1 %}
+                        <div class="carousel-item active">
+                            <div class="row justify-content-center">
+                                <div class="col-10">
+                                    <div class="row">
+                                        <div class="col mx-2 mx-sm-5 mx-md-1">
+                                            {% include 'components/cards/carousel_card.html' %}
+                                        </div>
+                                        {% endif %}
+                                        {% if loop.index % 4 == 2 %}
+                                        <div class="col mx-1 d-none d-md-block">
+                                            {% include 'components/cards/carousel_card.html' %}
+                                        </div>
+
+                                        {% endif %}
+                                        {% if loop.index % 4 == 3 %}
+                                        <div class="col mx-1 d-none d-lg-block">
+                                            {% include 'components/cards/carousel_card.html' %}
+                                        </div>
+                                        {% endif %}
+                                        {% if loop.index % 4 == 0 %}
+                                        <div class="col mx-1 d-none d-xl-block">
+                                            {% include 'components/cards/carousel_card.html' %}
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            {% endif %}
-                            {% endfor %}
-                            <!--/.slide-->
-    
-                            <a class="carousel-control-prev" href="#sports-carousel" role="button" data-slide="prev">
-                                <i class="carousel-chevron fas fa-chevron-left fa-4x"></i>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#sports-carousel" role="button" data-slide="next">
-                                <i class="carousel-chevron fas fa-chevron-right fa-4x"></i>
-                                <span class="sr-only">Next</span>
-                            </a>
                         </div>
-                        <!--/.Slides-->
-    
+                        {% endif %}
+                        {% endfor %}
+                        <!--/.slide-->
+
+                        <a class="carousel-control-prev" href="#sports-carousel" role="button" data-slide="prev">
+                            <i class="carousel-chevron fas fa-chevron-left fa-4x"></i>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#sports-carousel" role="button" data-slide="next">
+                            <i class="carousel-chevron fas fa-chevron-right fa-4x"></i>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
-                    <!--/.Carousel Wrapper-->
-    
+                    <!--/.Slides-->
+
                 </div>
-                <div class="container">
+                <!--/.Carousel Wrapper-->
+
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1>Top tip for summer</h1>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div id="holiday-feature-box" class="container px-0 pb-0 familyhub-card">
+                <div class="row no-gutters">
+                    <div class="toptip-image-wrapper card-picture col-12 col-md-5">
+                        <div class="toptip-img" title="{{topTip.title}}"
+                            style="background-image: url({{topTip.imgUrl}})">
+                            <div class="location-text">{{topTip.address.town}}</div>
+                        </div>
+                    </div>
+                    <div class="toptip-content col-12 col-md-7 p-4">
+                        <h4>{{topTip.title}}</h4>
+                        <p class="mb-0">{% for paragraph in topTopDescrp %}
+                            {% for key, value in paragraph.items() %}
+                            {{ value }}<br>
+                            {% endfor %}
+                            {% endfor %}</br>
+                            <a class="btn btn-search"
+                                href="{{ url_for('activity_listing_page', title=topTip['title'], activity_id=topTip['_id'])}}">Read
+                                More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h1>Clubs</h1>
+                            <h1>More things to do this summer</h1>
                             <hr>
                         </div>
                     </div>
                 </div>
+
+            <div class="container-fluid mt-5">
+
+                <div id="holiday-carousel" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+                    <!--Slides-->
+                    <div class="carousel-inner" role="listbox">
+
+                        <!--carousel slide-->
+                        {% for activity in summer %}
+                        {% if loop.index % 4 == 1 %}
+                        <div class="carousel-item active">
+                            <div class="row justify-content-center">
+                                <div class="col-10">
+                                    <div class="row">
+                                        <div class="col mx-2 mx-sm-5 mx-md-1">
+                                            {% include 'components/cards/carousel_card.html' %}
+                                        </div>
+                                        {% endif %}
+                                        {% if loop.index % 4 == 2 %}
+                                        <div class="col mx-1 d-none d-md-block">
+                                            {% include 'components/cards/carousel_card.html' %}
+                                        </div>
+
+                                        {% endif %}
+                                        {% if loop.index % 4 == 3 %}
+                                        <div class="col mx-1 d-none d-lg-block">
+                                            {% include 'components/cards/carousel_card.html' %}
+                                        </div>
+                                        {% endif %}
+                                        {% if loop.index % 4 == 0 %}
+                                        <div class="col mx-1 d-none d-xl-block">
+                                            {% include 'components/cards/carousel_card.html' %}
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                        <!--/.slide-->
+
+                        <a class="carousel-control-prev" href="#holiday-carousel" role="button" data-slide="prev">
+                            <i class="carousel-chevron fas fa-chevron-left fa-4x"></i>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#holiday-carousel" role="button" data-slide="next">
+                            <i class="carousel-chevron fas fa-chevron-right fa-4x"></i>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                    <!--/.Slides-->
+
+                </div>
+                <!--/.Carousel Wrapper-->
+
+            </div>
 
 
 
