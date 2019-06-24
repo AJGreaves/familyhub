@@ -3,6 +3,7 @@ from flask import Flask, redirect, render_template, request, url_for, jsonify, s
 from config import Config
 from pymongo import MongoClient
 from bson.objectid import ObjectId
+from bson.json_util import dumps
 from werkzeug.security import generate_password_hash, check_password_hash
 from familyhubapp.keys import Keywords
 from familyhubapp.helpers import Helpers
@@ -51,12 +52,22 @@ def home_page():
         keywords=Keywords.home()
     )
 
+# to fetch activities api
+@app.route('/api/activities')
+def api_activities():
+
+    activities = dumps(db.activities.find())
+    return activities
+
 # Activities page
 @app.route('/activities')
 def activities_page():
     loggedIn = True if 'user' in session else False
 
     activities = db.activities.find()
+    if request.method == 'GET':
+        
+        return json.dumps(activities)
 
     return render_template(
         "pages/activities.html", 
