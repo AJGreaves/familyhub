@@ -171,6 +171,18 @@ shadow added to give depth and contrast with the image for readability */
 }
 
 /* ------------------------------
+    Search bars
+------------------------------ */
+
+#searchByFooter {
+    background-color: $platinum;
+}
+
+#searchBar {
+    width: 66%;
+}
+
+/* ------------------------------
     Footer
 ------------------------------ */
 
@@ -200,7 +212,6 @@ body {
 footer {
     background-color: $mid-blue-hover;
     color: white;
-    margin-top: 3rem;
     -ms-flex-negative: 0;
         flex-shrink: 0;
 }

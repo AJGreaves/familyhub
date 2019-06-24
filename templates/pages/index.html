@@ -132,7 +132,8 @@ the navbar?
                 <div class="row">
                     <div class="col-sm-12">
                         <h1 class="float-left carousel-sub-heading">More things to do this summer</h1>
-                        <a class="btn btn-search heading-btn float-right d-none d-md-block" href="{{ url_for('activities_page')}}">Search
+                        <a class="btn btn-search heading-btn float-right d-none d-md-block"
+                            href="{{ url_for('activities_page')}}">Search
                             more</a>
                     </div>
                     <div class="col-12">
@@ -203,8 +204,8 @@ the navbar?
                 <div class="row">
                     <div class="col-sm-12">
                         <h1 class="float-left">Sports</h1>
-                        <a class="btn btn-search heading-btn float-right"
-                            href="{{ url_for('activities_page')}}">Search more</a>
+                        <a class="btn btn-search heading-btn float-right" href="{{ url_for('activities_page')}}">Search
+                            more</a>
                     </div>
                     <div class="col-12">
                         <hr>
@@ -279,5 +280,16 @@ the navbar?
         </section>
 
     </main>
+    <div id="searchByFooter" class="container-fluid py-2">
+        <div class="row no-gutters">
+            <div class="col-12">
+                <form class="form-inline justify-content-center">
+                        <input type="text" id="searchBar" placeholder="What are you searching for?" class="form-control mx-sm-3">
+                        <button type="submit" class="btn btn-search my-1">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

@@ -773,6 +773,17 @@ shadow added to give depth and contrast with the image for readability */
 }
 
 /* ------------------------------
+    Search bars
+------------------------------ */
+#searchByFooter {
+  background-color: #e6ebe0;
+}
+
+#searchBar {
+  width: 66%;
+}
+
+/* ------------------------------
     Footer
 ------------------------------ */
 /* CREDIT: code to fix footer to bottom of page even when there is not
@@ -800,7 +811,6 @@ body {
 footer {
   background-color: #346861;
   color: white;
-  margin-top: 3rem;
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
