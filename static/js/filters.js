@@ -77,3 +77,5 @@ function cardTemplate(searchResult) {
     `
     return card;
 }
+
+$('#searchResults').html(searchResultsString);
