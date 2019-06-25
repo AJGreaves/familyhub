@@ -124,6 +124,10 @@ function alertModal(message, date1, date2) {
             message1.text("You can't share this page in preview mode.");
             message2.text('Once you have published it, the share links will work');
             break;
+        case 'error':
+            heading.text('Error');
+            message1.text('Something went wrong. Please try again.');
+            break;
         default:
             break;
     }
