@@ -106,6 +106,10 @@ $(document).ready(function () {
         }
     })
 
+    /**
+     * Clears all checked filters on search page
+     */
+
     $('.clear-filters').click(function() {
         inputs = $('input')
         inputs.each(function() {
@@ -113,4 +117,10 @@ $(document).ready(function () {
         })
     })
 
+    $('.haarlem').click(function() {
+        let haarlem = fullDataArray.filter(function(activity) {
+            return activity.address.town == "Haarlem";
+        })
+        console.log(haarlem)
+    })
 });
