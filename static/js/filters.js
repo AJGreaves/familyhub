@@ -91,7 +91,7 @@ $(document).ready(function () {
 
     /**
      * Loads more cards from data as the user scrolls. 
-     * Code for this function taken from the following youtube video: 
+     * Code for this function taken from the following youtube
      * https://www.youtube.com/watch?v=76IANst0jwc
      */
     $(window).scroll(function () {
