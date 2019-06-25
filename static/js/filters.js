@@ -101,8 +101,16 @@ $(document).ready(function () {
                 getDisplayArray(fullDataArray);
                 setTimeout(function () {
                     working = false;
-                }, 4000)
+                }, 1000)
             }
         }
     })
+
+    $('.clear-filters').click(function() {
+        inputs = $('input')
+        inputs.each(function() {
+            $(this).prop('checked', false);
+        })
+    })
+
 });
