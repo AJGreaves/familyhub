@@ -117,10 +117,18 @@ $(document).ready(function () {
         })
     })
 
-    $('.haarlem').click(function() {
-        let haarlem = fullDataArray.filter(function(activity) {
-            return activity.address.town == "Haarlem";
+    $('input').click(function() {
+        let clicked = this.id;
+        console.log(clicked)
+        let result = fullDataArray.filter(function(activity) {
+            return activity.address.town == clicked;
         })
-        console.log(haarlem)
+        console.log(result)
     })
+    // $('.haarlem').click(function() {
+    //     let haarlem = fullDataArray.filter(function(activity) {
+    //         return activity.address.town == "Haarlem";
+    //     })
+    //     console.log(haarlem)
+    // })
 });
