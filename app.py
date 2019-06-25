@@ -36,7 +36,6 @@ def home_page():
     rawDescrip = topTip['description']
     topTopDescrp = Helpers.format_description(rawDescrip)
     topTopDescrp = topTopDescrp[0:4]
-    print(topTopDescrp)
 
 
     return render_template(
