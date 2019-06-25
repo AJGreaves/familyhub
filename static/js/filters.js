@@ -8,8 +8,7 @@ $(document).ready(function () {
     fetch('/api/activities')
         .then(res => res.json())
         .then(data => {
-            console.log(data);
-            getDisplayArray(data);
+            getFullData(data);
         })
         .then(hideLoading())
         .catch(err => {
@@ -18,14 +17,25 @@ $(document).ready(function () {
             console.log(err);
         });
 
+    let fullDataArray = []
+    function getFullData(data) {
+        for (i = 0; i < data.length; i++) {
+            fullDataArray.push(data[i]);
+        }
+        getDisplayArray(fullDataArray);
+    }
+
+    let start = 0;
+    let working = false;
+    let searchResults = [];
     /**
      * Gets first 12 results from the data
      */
     function getDisplayArray(data) {
-        let searchResults = []
-        for (i = 0; i < 12; i++) {
+        for (i = start; i < start + 6; i++) {
             searchResults.push(data[i]);
         }
+        start += 6
         buildSearchResultsString(searchResults);
         return;
     }
@@ -78,4 +88,21 @@ $(document).ready(function () {
         `
         return card;
     }
+
+    /**
+     * Loads more cards from data as the user scrolls. 
+     * Code for this function taken from the following youtube video: 
+     * https://www.youtube.com/watch?v=76IANst0jwc
+     */
+    $(window).scroll(function () {
+        if ($(this).scrollTop() + 1 >= $('body').height() - $(window).height()) {
+            if (working == false) {
+                working = true;
+                getDisplayArray(fullDataArray);
+                setTimeout(function () {
+                    working = false;
+                }, 4000)
+            }
+        }
+    })
 });
