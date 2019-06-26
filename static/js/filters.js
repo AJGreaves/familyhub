@@ -118,6 +118,16 @@ $(document).ready(function () {
         })
     })
 
+    function getCheckedIds(input) {
+        ids = [];
+        input.each(function () {
+            if ($(this).prop("checked") == true) {
+                ids.push(this.id);
+            }
+        })
+        return ids;
+    }
+
     $("input").change(function () {
         let locationInput = $('.location-checkboxes-js input');
         let categoriesInput = $('.categories-checkboxes-js input');
@@ -136,7 +146,8 @@ $(document).ready(function () {
         let locationResults = getLocationResults(locationIds);
         let categoryResults = getCategoryResults(categoryIds);
         let ageResults = getAgeResults(ageIds);
-        console.log(ageResults);
+        let dayResults = getDayResults(dayIds);
+        console.log(dayResults);
     });
 
     /**
@@ -231,14 +242,36 @@ $(document).ready(function () {
         return results;
     }
 
-    function getCheckedIds(input) {
-        ids = [];
-        input.each(function () {
-            if ($(this).prop("checked") == true) {
-                ids.push(this.id);
+    function getDayResults(dayIds) {
+        results = [];
+        for (i = 0; i < dayIds.length; i++) {
+            switch (dayIds[i]) {
+                case 'mon':
+                    results.push(fullDataArray.filter(activity => activity.days.mon));
+                    break;
+                case 'tue':
+                    results.push(fullDataArray.filter(activity => activity.days.tue));
+                    break;
+                case 'wed':
+                    results.push(fullDataArray.filter(activity => activity.days.wed));
+                    break;
+                case 'thu':
+                    results.push(fullDataArray.filter(activity => activity.days.thu));
+                    break;
+                case 'fri':
+                    results.push(fullDataArray.filter(activity => activity.days.fri));
+                    break;
+                case 'sat':
+                    results.push(fullDataArray.filter(activity => activity.days.sat));
+                    break;
+                case 'sun':
+                    results.push(fullDataArray.filter(activity => activity.days.sun));
+                    break;
+                default:
+                    break;
             }
-        })
-        return ids;
+        }
+        return results;
     }
 
 });
