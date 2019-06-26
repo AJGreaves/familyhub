@@ -121,14 +121,12 @@ $(document).ready(function () {
     /**
      * works for location checkboxes in filters
      */
-    // $('input').click(function () {
-    //     let clicked = this.id;
-    //     console.log(clicked)
-    //     let result = fullDataArray.filter(function (activity) {
-    //         return activity.address.town == clicked;
-    //     })
-    //     console.log(result)
-    // })
+    function getResults(locationIds){
+        let result = fullDataArray.filter(function (activity) {
+            return locationIds.includes (activity.address.town);
+        })
+        console.log(result)
+    }
 
     $("input").change(function () {
         let locationInput = $('.location-checkboxes-js input');
@@ -145,6 +143,7 @@ $(document).ready(function () {
         inoutIds = getCheckedIds(inoutInput);
         otherIds = getCheckedIds(otherInput);
 
+        getResults(locationIds);
 
     });
 
