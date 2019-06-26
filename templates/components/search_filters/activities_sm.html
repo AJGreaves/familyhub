@@ -55,7 +55,7 @@
                         aria-labelledby="activity filter by category" data-parent="#activity-filters-accordion">
 
                         <!-- Category Options -->
-                        <div class="card-body">
+                        <div class="card-body categories-checkboxes-js">
                             {% include 'components/forms/categories.html' %}
                         </div>
 
@@ -77,7 +77,7 @@
                         aria-labelledby="activity filter by age range" data-parent="#activity-filters-accordion">
 
                         <!-- Age Range Options -->
-                        <div class="card-body">
+                        <div class="card-body ages-checkboxes-js">
                             {% include 'components/forms/age_range.html' %}
                         </div>
 
@@ -120,8 +120,8 @@
                         data-parent="#activity-filters-accordion">
 
                         <!-- In / Out Options -->
-                        <div class="card-body">
-                            {% include 'components/forms/in_out_radio.html' %}
+                        <div class="card-body inout-checkboxes-js">
+                            {% include 'components/forms/in_out_checkboxes.html' %}
                         </div>
                     </div>
                 </div>
@@ -139,7 +139,7 @@
                     </div>
                     <div id="collapseOther" class="collapse filter-options"
                         aria-labelledby="activity filter by other details" data-parent="#activity-filters-accordion">
-                        <div class="card-body">
+                        <div class="card-body other-checkboxes-js">
                             <!-- Other details Options -->
                             {% include 'components/forms/other_details.html' %}
                         </div>

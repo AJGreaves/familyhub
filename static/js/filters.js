@@ -121,29 +121,41 @@ $(document).ready(function () {
     /**
      * works for location checkboxes in filters
      */
-    $('input').click(function () {
-        let clicked = this.id;
-        console.log(clicked)
-        let result = fullDataArray.filter(function (activity) {
-            return activity.address.town == clicked;
-        })
-        console.log(result)
-    })
+    // $('input').click(function () {
+    //     let clicked = this.id;
+    //     console.log(clicked)
+    //     let result = fullDataArray.filter(function (activity) {
+    //         return activity.address.town == clicked;
+    //     })
+    //     console.log(result)
+    // })
 
     $("input").change(function () {
         let locationInput = $('.location-checkboxes-js input');
-        locationIds = getCheckedLocations(locationInput);
-        console.log(locationIds);
+        let categoriesInput = $('.categories-checkboxes-js input');
+        let agesInput = $('.ages-checkboxes-js input');
+        let daysInput = $('.days-checkboxes-js input');
+        let inoutInput = $('.inout-checkboxes-js input');
+        let otherInput = $('.other-checkboxes-js input');
+        
+        locationIds = getCheckedIds(locationInput);
+        categoryIds = getCheckedIds(categoriesInput);
+        ageIds = getCheckedIds(agesInput);
+        dayIds = getCheckedIds(daysInput);
+        inoutIds = getCheckedIds(inoutInput);
+        otherIds = getCheckedIds(otherInput);
+
+
     });
 
 });
 
-function getCheckedLocations(locationInput) {
-    locationIds = [];
-    locationInput.each(function () {
+function getCheckedIds(input) {
+    ids = [];
+    input.each(function () {
         if ($(this).prop("checked") == true) {
-            locationIds.push(this.id);
+            ids.push(this.id);
         }
     })
-    return locationIds;
+    return ids;
 }
