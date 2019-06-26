@@ -118,6 +118,27 @@ $(document).ready(function () {
         })
     })
 
+    $("input").change(function () {
+        let locationInput = $('.location-checkboxes-js input');
+        let categoriesInput = $('.categories-checkboxes-js input');
+        let agesInput = $('.ages-checkboxes-js input');
+        let daysInput = $('.days-checkboxes-js input');
+        let inoutInput = $('.inout-checkboxes-js input');
+        let otherInput = $('.other-checkboxes-js input');
+
+        let locationIds = getCheckedIds(locationInput);
+        let categoryIds = getCheckedIds(categoriesInput);
+        let ageIds = getCheckedIds(agesInput);
+        let dayIds = getCheckedIds(daysInput);
+        let inoutIds = getCheckedIds(inoutInput);
+        let otherIds = getCheckedIds(otherInput);
+
+        let locationResults = getLocationResults(locationIds);
+        let categoryResults = getCategoryResults(categoryIds);
+        let ageResults = getAgeResults(ageIds);
+        console.log(ageResults);
+    });
+
     /**
      * works for location checkboxes in filters
      */
@@ -128,7 +149,7 @@ $(document).ready(function () {
         return result;
     }
 
-    function getcategoryResults(categoryIds) {
+    function getCategoryResults(categoryIds) {
         results = [];
         for (i = 0; i < categoryIds.length; i++) {
             switch (categoryIds[i]) {
@@ -181,35 +202,44 @@ $(document).ready(function () {
         return results;
     }
 
-    $("input").change(function () {
-        let locationInput = $('.location-checkboxes-js input');
-        let categoriesInput = $('.categories-checkboxes-js input');
-        let agesInput = $('.ages-checkboxes-js input');
-        let daysInput = $('.days-checkboxes-js input');
-        let inoutInput = $('.inout-checkboxes-js input');
-        let otherInput = $('.other-checkboxes-js input');
+    function getAgeResults(ageIds) {
+        results = [];
+        for (i = 0; i < ageIds.length; i++) {
+            switch (ageIds[i]) {
+                case 'under4':
+                    results.push(fullDataArray.filter(activity => activity.ageRange.under4));
+                    break;
+                case 'age4to6':
+                    results.push(fullDataArray.filter(activity => activity.ageRange.age4to6));
+                    break;
+                case 'age6to8':
+                    results.push(fullDataArray.filter(activity => activity.ageRange.age6to8));
+                    break;
+                case 'age8to10':
+                    results.push(fullDataArray.filter(activity => activity.ageRange.age8to10));
+                    break;
+                case 'age10to12':
+                    results.push(fullDataArray.filter(activity => activity.ageRange.age10to12));
+                    break;
+                case 'age12up':
+                    results.push(fullDataArray.filter(activity => activity.ageRange.age12up));
+                    break;
+                default:
+                    break;
+            }
+        }
+        return results;
+    }
 
-        locationIds = getCheckedIds(locationInput);
-        categoryIds = getCheckedIds(categoriesInput);
-        ageIds = getCheckedIds(agesInput);
-        dayIds = getCheckedIds(daysInput);
-        inoutIds = getCheckedIds(inoutInput);
-        otherIds = getCheckedIds(otherInput);
-
-        locationResults = getLocationResults(locationIds);
-        categoryResults = getcategoryResults(categoryIds);
-        console.log(categoryResults);
-
-    });
+    function getCheckedIds(input) {
+        ids = [];
+        input.each(function () {
+            if ($(this).prop("checked") == true) {
+                ids.push(this.id);
+            }
+        })
+        return ids;
+    }
 
 });
 
-function getCheckedIds(input) {
-    ids = [];
-    input.each(function () {
-        if ($(this).prop("checked") == true) {
-            ids.push(this.id);
-        }
-    })
-    return ids;
-}
