@@ -18,6 +18,7 @@ $(document).ready(function () {
         });
 
     let fullDataArray = []
+
     function getFullData(data) {
         for (i = 0; i < data.length; i++) {
             fullDataArray.push(data[i]);
@@ -110,25 +111,39 @@ $(document).ready(function () {
      * Clears all checked filters on search page
      */
 
-    $('.clear-filters').click(function() {
+    $('.clear-filters').click(function () {
         inputs = $('input')
-        inputs.each(function() {
+        inputs.each(function () {
             $(this).prop('checked', false);
         })
     })
 
-    $('input').click(function() {
+    /**
+     * works for location checkboxes in filters
+     */
+    $('input').click(function () {
         let clicked = this.id;
         console.log(clicked)
-        let result = fullDataArray.filter(function(activity) {
+        let result = fullDataArray.filter(function (activity) {
             return activity.address.town == clicked;
         })
         console.log(result)
     })
-    // $('.haarlem').click(function() {
-    //     let haarlem = fullDataArray.filter(function(activity) {
-    //         return activity.address.town == "Haarlem";
-    //     })
-    //     console.log(haarlem)
-    // })
+
+    $("input").change(function () {
+        let locationInput = $('.location-checkboxes-js input');
+        locationIds = getCheckedLocations(locationInput);
+        console.log(locationIds);
+    });
+
 });
+
+function getCheckedLocations(locationInput) {
+    locationIds = [];
+    locationInput.each(function () {
+        if ($(this).prop("checked") == true) {
+            locationIds.push(this.id);
+        }
+    })
+    return locationIds;
+}
