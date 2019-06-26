@@ -5,7 +5,9 @@
 // Shows spinner and hides page content until everything is loaded
 document.addEventListener("DOMContentLoaded", function() {
     hideLoading();
-    $('.no-fouc').removeClass('no-fouc');
+    setTimeout(function () {
+        $('.no-fouc').removeClass('no-fouc');
+    }, 2000);
     return;
 });
 
@@ -16,7 +18,9 @@ function showLoading() {
 }
 
 function hideLoading() {
-    document.getElementById("spinner-wrapper").style = "visibility: hidden";
+    setTimeout(function () {
+        document.getElementById("spinner-wrapper").style = "visibility: hidden";
+    }, 2000);
     return;
 }
 
