@@ -133,88 +133,46 @@ $(document).ready(function () {
         for (i = 0; i < categoryIds.length; i++) {
             switch (categoryIds[i]) {
                 case 'sports':
-                    let sports = fullDataArray.filter(function (activity) {
-                        return activity.categories.sports
-                    });
-                    results.push(sports);
+                    results.push(fullDataArray.filter(activity => activity.categories.sports));
                     break;
                 case 'swimming':
-                    let swimming = fullDataArray.filter(function (activity) {
-                        return activity.categories.swimming
-                    });
-                    results.push(swimming);
+                    results.push(fullDataArray.filter(activity => activity.categories.swimming));
                     break;
                 case 'creative':
-                    let creative = fullDataArray.filter(function (activity) {
-                        return activity.categories.creative
-                    });
-                    results.push(creative);
+                    results.push(fullDataArray.filter(activity => activity.categories.creative));
                     break;
                 case 'scienceTech':
-                    let scienceTech = fullDataArray.filter(function (activity) {
-                        return activity.categories.scienceTech
-                    });
-                    results.push(scienceTech);
+                    results.push(fullDataArray.filter(activity => activity.categories.scienceTech));
                     break;
                 case 'cultureMusic':
-                    let cultureMusic = fullDataArray.filter(function (activity) {
-                        return activity.categories.cultureMusic
-                    });
-                    results.push(cultureMusic);
+                    results.push(fullDataArray.filter(activity => activity.categories.cultureMusic));
                     break;
                 case 'dramaDance':
-                    let dramaDance = fullDataArray.filter(function (activity) {
-                        return activity.categories.dramaDance
-                    });
-                    results.push(dramaDance);
+                    results.push(fullDataArray.filter(activity => activity.categories.dramaDance));
                     break;
                 case 'yogaMindfulness':
-                    let yogaMindfulness = fullDataArray.filter(function (activity) {
-                        return activity.categories.yogaMindfulness
-                    });
-                    results.push(yogaMindfulness);
+                    results.push(fullDataArray.filter(activity => activity.categories.yogaMindfulness));
                     break;
                 case 'museumsExhibitions':
-                    let museumsExhibitions = fullDataArray.filter(function (activity) {
-                        return activity.categories.museumsExhibitions
-                    });
-                    results.push(museumsExhibitions);
+                    results.push(fullDataArray.filter(activity => activity.categories.museumsExhibitions));
                     break;
                 case 'parksPlaygrounds':
-                    let parksPlaygrounds = fullDataArray.filter(function (activity) {
-                        return activity.categories.parksPlaygrounds
-                    });
-                    results.push(parksPlaygrounds);
+                    results.push(fullDataArray.filter(activity => activity.categories.parksPlaygrounds));
                     break;
                 case 'playgroups':
-                    let playgroups = fullDataArray.filter(function (activity) {
-                        return activity.categories.playgroups
-                    });
-                    results.push(playgroups);
+                    results.push(fullDataArray.filter(activity => activity.categories.playgroups));
                     break;
                 case 'nature':
-                    let nature = fullDataArray.filter(function (activity) {
-                        return activity.categories.nature
-                    });
-                    results.push(nature);
+                    results.push(fullDataArray.filter(activity => activity.categories.nature));
                     break;
                 case 'animals':
-                    let animals = fullDataArray.filter(function (activity) {
-                        return activity.categories.animals
-                    });
-                    results.push(animals);
+                    results.push(fullDataArray.filter(activity => activity.categories.animals));
                     break;
                 case 'clubs':
-                    let clubs = fullDataArray.filter(function (activity) {
-                        return activity.categories.clubs
-                    });
-                    results.push(clubs);
+                    results.push(fullDataArray.filter(activity => activity.categories.clubs));
                     break;
                 case 'parties':
-                    let parties = fullDataArray.filter(function (activity) {
-                        return activity.categories.parties
-                    });
-                    results.push(parties);
+                    results.push(fullDataArray.filter(activity => activity.categories.parties));
                     break;
                 default:
                     break;
