@@ -121,11 +121,106 @@ $(document).ready(function () {
     /**
      * works for location checkboxes in filters
      */
-    function getResults(locationIds){
+    function getLocationResults(locationIds) {
         let result = fullDataArray.filter(function (activity) {
-            return locationIds.includes (activity.address.town);
+            return locationIds.includes(activity.address.town);
         })
-        console.log(result)
+        return result;
+    }
+
+    function getcategoryResults(categoryIds) {
+        results = [];
+        for (i = 0; i < categoryIds.length; i++) {
+            switch (categoryIds[i]) {
+                case 'sports':
+                    let sports = fullDataArray.filter(function (activity) {
+                        return activity.categories.sports
+                    });
+                    results.push(sports);
+                    break;
+                case 'swimming':
+                    let swimming = fullDataArray.filter(function (activity) {
+                        return activity.categories.swimming
+                    });
+                    results.push(swimming);
+                    break;
+                case 'creative':
+                    let creative = fullDataArray.filter(function (activity) {
+                        return activity.categories.creative
+                    });
+                    results.push(creative);
+                    break;
+                case 'scienceTech':
+                    let scienceTech = fullDataArray.filter(function (activity) {
+                        return activity.categories.scienceTech
+                    });
+                    results.push(scienceTech);
+                    break;
+                case 'cultureMusic':
+                    let cultureMusic = fullDataArray.filter(function (activity) {
+                        return activity.categories.cultureMusic
+                    });
+                    results.push(cultureMusic);
+                    break;
+                case 'dramaDance':
+                    let dramaDance = fullDataArray.filter(function (activity) {
+                        return activity.categories.dramaDance
+                    });
+                    results.push(dramaDance);
+                    break;
+                case 'yogaMindfulness':
+                    let yogaMindfulness = fullDataArray.filter(function (activity) {
+                        return activity.categories.yogaMindfulness
+                    });
+                    results.push(yogaMindfulness);
+                    break;
+                case 'museumsExhibitions':
+                    let museumsExhibitions = fullDataArray.filter(function (activity) {
+                        return activity.categories.museumsExhibitions
+                    });
+                    results.push(museumsExhibitions);
+                    break;
+                case 'parksPlaygrounds':
+                    let parksPlaygrounds = fullDataArray.filter(function (activity) {
+                        return activity.categories.parksPlaygrounds
+                    });
+                    results.push(parksPlaygrounds);
+                    break;
+                case 'playgroups':
+                    let playgroups = fullDataArray.filter(function (activity) {
+                        return activity.categories.playgroups
+                    });
+                    results.push(playgroups);
+                    break;
+                case 'nature':
+                    let nature = fullDataArray.filter(function (activity) {
+                        return activity.categories.nature
+                    });
+                    results.push(nature);
+                    break;
+                case 'animals':
+                    let animals = fullDataArray.filter(function (activity) {
+                        return activity.categories.animals
+                    });
+                    results.push(animals);
+                    break;
+                case 'clubs':
+                    let clubs = fullDataArray.filter(function (activity) {
+                        return activity.categories.clubs
+                    });
+                    results.push(clubs);
+                    break;
+                case 'parties':
+                    let parties = fullDataArray.filter(function (activity) {
+                        return activity.categories.parties
+                    });
+                    results.push(parties);
+                    break;
+                default:
+                    break;
+            }
+        }
+        return results;
     }
 
     $("input").change(function () {
@@ -135,7 +230,7 @@ $(document).ready(function () {
         let daysInput = $('.days-checkboxes-js input');
         let inoutInput = $('.inout-checkboxes-js input');
         let otherInput = $('.other-checkboxes-js input');
-        
+
         locationIds = getCheckedIds(locationInput);
         categoryIds = getCheckedIds(categoriesInput);
         ageIds = getCheckedIds(agesInput);
@@ -143,7 +238,9 @@ $(document).ready(function () {
         inoutIds = getCheckedIds(inoutInput);
         otherIds = getCheckedIds(otherInput);
 
-        getResults(locationIds);
+        locationResults = getLocationResults(locationIds);
+        categoryResults = getcategoryResults(categoryIds);
+        console.log(categoryResults);
 
     });
 
