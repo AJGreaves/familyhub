@@ -152,6 +152,7 @@ $(document).ready(function () {
                 console.log(data);
             })
             .catch(err => {
+                hideLoading();
                 alertModal('error');
                 console.log(err);
             });

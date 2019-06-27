@@ -68,22 +68,25 @@ def activities_page():
         locationIds = post_request['locationIds']
 
         db_request = []
+        results = []
         
         if len(locationIds) != 0:
             for location in locationIds:
                 db_request.append({'address.town': location})
-            print(db_request)
+
+            if len(db_request) == 1:
+                results = db.activities.find( db_request[0] )
+            elif len(db_request) > 1:
+                results = db.activities.find({ '$or': db_request })
+            else:
+                results = db.activities.find()
+
+            results_bson = dumps(results)
 
         response = {
-            "results": "bob"
+            "results": results_bson,
         }
         return json.dumps(response)
-
-        # build_request = []
-        # for location in locationIds:
-        #     build_request.append(location)
-        
-        # results = db.activities.find({ '$or': [ { 'username': post_request['loginInput'] }, { 'email': post_request['loginInput'] } ]})
 
     return render_template(
         "pages/activities.html", 
