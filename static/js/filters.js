@@ -128,6 +128,10 @@ $(document).ready(function () {
         return ids;
     }
 
+    const allTowns = ["Aalsmeer", "Badhoevedorp", "Bloemendaal", "Cruquius", 
+    "Haarlem", "Heemstede", "Hillegom", "Hoofddorp", "Lisse", "Nieuw-Vennep", 
+    "Santpoort-Noord", "Uithorn", "Zandvoort"]
+
     $("input").change(function () {
         let locationInput = $('.location-checkboxes-js input');
         let categoriesInput = $('.categories-checkboxes-js input');
@@ -144,135 +148,26 @@ $(document).ready(function () {
         let otherIds = getCheckedIds(otherInput);
 
         let locationResults = getLocationResults(locationIds);
-        let categoryResults = getCategoryResults(categoryIds);
-        let ageResults = getAgeResults(ageIds);
-        let dayResults = getDayResults(dayIds);
-        console.log(dayResults);
+
+        console.log(locationResults);
+        // filterResults(locationResults)
+
     });
 
     /**
      * works for location checkboxes in filters
      */
     function getLocationResults(locationIds) {
-        let result = fullDataArray.filter(function (activity) {
-            return locationIds.includes(activity.address.town);
-        })
+
+        if (locationIds.length == 0) {
+            locationIds = allTowns;
+        }
+        let result = fullDataArray.filter(activity => locationIds.includes(activity.address.town))
         return result;
     }
 
-    function getCategoryResults(categoryIds) {
-        results = [];
-        for (i = 0; i < categoryIds.length; i++) {
-            switch (categoryIds[i]) {
-                case 'sports':
-                    results.push(fullDataArray.filter(activity => activity.categories.sports));
-                    break;
-                case 'swimming':
-                    results.push(fullDataArray.filter(activity => activity.categories.swimming));
-                    break;
-                case 'creative':
-                    results.push(fullDataArray.filter(activity => activity.categories.creative));
-                    break;
-                case 'scienceTech':
-                    results.push(fullDataArray.filter(activity => activity.categories.scienceTech));
-                    break;
-                case 'cultureMusic':
-                    results.push(fullDataArray.filter(activity => activity.categories.cultureMusic));
-                    break;
-                case 'dramaDance':
-                    results.push(fullDataArray.filter(activity => activity.categories.dramaDance));
-                    break;
-                case 'yogaMindfulness':
-                    results.push(fullDataArray.filter(activity => activity.categories.yogaMindfulness));
-                    break;
-                case 'museumsExhibitions':
-                    results.push(fullDataArray.filter(activity => activity.categories.museumsExhibitions));
-                    break;
-                case 'parksPlaygrounds':
-                    results.push(fullDataArray.filter(activity => activity.categories.parksPlaygrounds));
-                    break;
-                case 'playgroups':
-                    results.push(fullDataArray.filter(activity => activity.categories.playgroups));
-                    break;
-                case 'nature':
-                    results.push(fullDataArray.filter(activity => activity.categories.nature));
-                    break;
-                case 'animals':
-                    results.push(fullDataArray.filter(activity => activity.categories.animals));
-                    break;
-                case 'clubs':
-                    results.push(fullDataArray.filter(activity => activity.categories.clubs));
-                    break;
-                case 'parties':
-                    results.push(fullDataArray.filter(activity => activity.categories.parties));
-                    break;
-                default:
-                    break;
-            }
-        }
-        return results;
-    }
+    // function filterResults(locationResults) {
 
-    function getAgeResults(ageIds) {
-        results = [];
-        for (i = 0; i < ageIds.length; i++) {
-            switch (ageIds[i]) {
-                case 'under4':
-                    results.push(fullDataArray.filter(activity => activity.ageRange.under4));
-                    break;
-                case 'age4to6':
-                    results.push(fullDataArray.filter(activity => activity.ageRange.age4to6));
-                    break;
-                case 'age6to8':
-                    results.push(fullDataArray.filter(activity => activity.ageRange.age6to8));
-                    break;
-                case 'age8to10':
-                    results.push(fullDataArray.filter(activity => activity.ageRange.age8to10));
-                    break;
-                case 'age10to12':
-                    results.push(fullDataArray.filter(activity => activity.ageRange.age10to12));
-                    break;
-                case 'age12up':
-                    results.push(fullDataArray.filter(activity => activity.ageRange.age12up));
-                    break;
-                default:
-                    break;
-            }
-        }
-        return results;
-    }
-
-    function getDayResults(dayIds) {
-        results = [];
-        for (i = 0; i < dayIds.length; i++) {
-            switch (dayIds[i]) {
-                case 'mon':
-                    results.push(fullDataArray.filter(activity => activity.days.mon));
-                    break;
-                case 'tue':
-                    results.push(fullDataArray.filter(activity => activity.days.tue));
-                    break;
-                case 'wed':
-                    results.push(fullDataArray.filter(activity => activity.days.wed));
-                    break;
-                case 'thu':
-                    results.push(fullDataArray.filter(activity => activity.days.thu));
-                    break;
-                case 'fri':
-                    results.push(fullDataArray.filter(activity => activity.days.fri));
-                    break;
-                case 'sat':
-                    results.push(fullDataArray.filter(activity => activity.days.sat));
-                    break;
-                case 'sun':
-                    results.push(fullDataArray.filter(activity => activity.days.sun));
-                    break;
-                default:
-                    break;
-            }
-        }
-        return results;
-    }
-
+    // }
 });
 
