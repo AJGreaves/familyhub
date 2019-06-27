@@ -68,7 +68,7 @@ def activities_page():
         locationIds = post_request['locationIds']
 
         db_request = []
-        results = []
+        results = db.activities.find()
         
         if len(locationIds) != 0:
             for location in locationIds:
@@ -78,15 +78,8 @@ def activities_page():
                 results = db.activities.find( db_request[0] )
             elif len(db_request) > 1:
                 results = db.activities.find({ '$or': db_request })
-            else:
-                results = db.activities.find()
 
-            results_bson = dumps(results)
-
-        response = {
-            "results": results_bson,
-        }
-        return json.dumps(response)
+        return dumps(results)
 
     return render_template(
         "pages/activities.html", 
