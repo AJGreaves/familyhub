@@ -128,52 +128,35 @@ $(document).ready(function () {
         return ids;
     }
 
-    const allTowns = ["Aalsmeer", "Badhoevedorp", "Bloemendaal", "Cruquius", 
-    "Haarlem", "Heemstede", "Hillegom", "Hoofddorp", "Lisse", "Nieuw-Vennep", 
-    "Santpoort-Noord", "Uithorn", "Zandvoort"]
-
     $("input").change(function () {
         let locationInput = $('.location-checkboxes-js input');
-        let categoriesInput = $('.categories-checkboxes-js input');
-        let agesInput = $('.ages-checkboxes-js input');
-        let daysInput = $('.days-checkboxes-js input');
-        let inoutInput = $('.inout-checkboxes-js input');
-        let otherInput = $('.other-checkboxes-js input');
-
         let locationIds = getCheckedIds(locationInput);
-        let categoryIds = getCheckedIds(categoriesInput);
-        let ageIds = getCheckedIds(agesInput);
-        let dayIds = getCheckedIds(daysInput);
-        let inoutIds = getCheckedIds(inoutInput);
-        let otherIds = getCheckedIds(otherInput);
 
-        let results = filterResults(locationIds);
+        const data = {
+            locationIds: locationIds,
+        }
 
-        console.log(results);
-        // filterResults(locationResults)
+        showLoading();
 
+        fetch('/activities', {
+                method: 'POST',
+                cors: '*same-origin',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(res => res.json())
+            .then(data => {
+                hideLoading();
+                console.log(data);
+            })
+            .catch(err => {
+                alertModal('error');
+                console.log(err);
+            });
     });
 
-    /**
-     * works for location checkboxes in filters
-     */
-    function filterResults(locationIds) {
-
-        if (locationIds.length == 0) {
-            locationIds = allTowns;
-        }
-        let results = fullDataArray
-            .filter(activity => locationIds.includes(activity.address.town))
-            .map(activity => {
-
-                console.log(obj);
-                return obj;
-            })
-            .filter(function(activity) {
-                const published = { published: activity.published }
-            })
-        return results;
-    }
 
 });
 
