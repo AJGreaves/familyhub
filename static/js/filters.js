@@ -147,9 +147,9 @@ $(document).ready(function () {
         let inoutIds = getCheckedIds(inoutInput);
         let otherIds = getCheckedIds(otherInput);
 
-        let locationResults = getLocationResults(locationIds);
+        let results = filterResults(locationIds);
 
-        console.log(locationResults);
+        console.log(results);
         // filterResults(locationResults)
 
     });
@@ -157,13 +157,76 @@ $(document).ready(function () {
     /**
      * works for location checkboxes in filters
      */
-    function getLocationResults(locationIds) {
+    function filterResults(locationIds) {
 
         if (locationIds.length == 0) {
             locationIds = allTowns;
         }
-        let result = fullDataArray.filter(activity => locationIds.includes(activity.address.town))
-        return result;
+        let results = fullDataArray
+            .filter(activity => locationIds.includes(activity.address.town))
+            .map(activity => {
+                const obj = { 
+                    _id: activity._id,
+                    title: activity.title, 
+                    imgUrl: activity.imgUrl,
+                    dates: {
+                        start: activity.dates.start,
+                        end: activity.dates.end,
+                        ongoing: activity.dates.ongoing,
+                    },
+                    days: {
+                        mon: activity.days.mon,
+                        tue: activity.days.tue,
+                        wed: activity.days.wed,
+                        thu: activity.days.thu,
+                        fri: activity.days.fri,
+                        sat: activity.days.sat,
+                        sun: activity.days.sun,
+                    },
+                    categories: {
+                        sports: activity.categories.sports,
+                        swimming: activity.categories.swimming,
+                        creative: activity.categories.creative,
+                        scienceTech: activity.categories.scienceTech,
+                        cultureMusic: activity.categories.cultureMusic,
+                        dramaDance: activity.categories.dramaDance,
+                        yogaMindfulness: activity.categories.yogaMindfulness,
+                        museumsExhibitions: activity.categories.museumsExhibitions,
+                        parksPlaygrounds: activity.categories.parksPlaygrounds,
+                        playgroups: activity.categories.playgroups,
+                        nature: activity.categories.nature,
+                        animals: activity.categories.animals,
+                        clubs: activity.categories.clubs,
+                        parties: activity.categories.parties,
+                    },
+                    otherDetails: {
+                        free: activity.otherDetails.free,
+                        bringFood: activity.otherDetails.bringFood,
+                        catering: activity.otherDetails.catering,
+                        goodWeather: activity.otherDetails.goodWeather,
+                        badWeather: activity.otherDetails.badWeather,
+                        groups: activity.otherDetails.groups,
+                    },
+                    address: {
+                        town: activity.address.town
+                    },
+                    ageRange: {
+                        under4: activity.ageRange.under4,
+                        age4to6: activity.ageRange.age4to6,
+                        age6to8: activity.ageRange.age6to8,
+                        age8to10: activity.ageRange.age8to10,
+                        age10to12: activity.ageRange.age10to12,
+                        age12up: activity.ageRange.age12up,
+                    },
+                    indoor: activity.indoor,
+                    outdoor: activity.outdoor,
+                    shortDescription: activity.shortDescription,
+                    published: activity.published,
+                }
+                console.log(obj);
+                return obj;
+            })
+        return results;
     }
 
     // function filterResults(locationResults) {
