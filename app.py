@@ -59,9 +59,31 @@ def api_activities():
     return activities
 
 # Activities page
-@app.route('/activities')
+@app.route('/activities', methods=['GET', 'POST'])
 def activities_page():
     loggedIn = True if 'user' in session else False
+
+    if request.method == 'POST':
+        post_request = request.get_json()
+        locationIds = post_request['locationIds']
+
+        db_request = []
+        
+        if len(locationIds) != 0:
+            for location in locationIds:
+                db_request.append({'address.town': location})
+            print(db_request)
+
+        response = {
+            "results": "bob"
+        }
+        return json.dumps(response)
+
+        # build_request = []
+        # for location in locationIds:
+        #     build_request.append(location)
+        
+        # results = db.activities.find({ '$or': [ { 'username': post_request['loginInput'] }, { 'email': post_request['loginInput'] } ]})
 
     return render_template(
         "pages/activities.html", 
