@@ -35,7 +35,7 @@
                         aria-labelledby="activity filter by location" data-parent="#activity-filters-accordion">
 
                         <!-- Location Options -->
-                        {% include 'components/forms/location_checkboxes.html' %}
+                        {% include 'components/forms/location_dropdown.html' %}
 
                     </div>
                 </div>
@@ -56,9 +56,52 @@
 
                         <!-- Category Options -->
                         <div class="card-body categories-checkboxes-js">
-                            {% include 'components/forms/categories.html' %}
+                            {% include 'components/search_filters/categories_filter.html' %}
                         </div>
 
+                    </div>
+                </div>
+
+                <!-- Days -->
+                <div class="card">
+                    <div class="familyhub-card-header" id="activity-filter-days">
+                        <h2 class="filter-heading">
+                            <button class="btn btn-link filter-heading-button collapsed" type="button"
+                                data-toggle="collapse" data-target="#collapseDays" aria-expanded="false"
+                                aria-controls="collapseDays">
+                                Days of the week
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseDays" class="collapse filter-options"
+                        aria-labelledby="activity filter by days of the week" data-parent="#activity-filters-accordion">
+
+                        <!-- Days Options -->
+                        <div class="card-body days-filter-js">
+                            {% include 'components/search_filters/daysofweek_filter.html' %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- In / Out -->
+                <div class="card">
+                    <div class="familyhub-card-header" id="activity-filter-in-out">
+                        <h2 class="filter-heading">
+                            <button class="btn btn-link filter-heading-button collapsed" type="button"
+                                data-toggle="collapse" data-target="#collapseInOut" aria-expanded="false"
+                                aria-controls="collapseInOut">
+                                Indoor or Outdoor
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseInOut" class="collapse filter-options"
+                        aria-labelledby="activity filter by indoors or outdoors"
+                        data-parent="#activity-filters-accordion">
+
+                        <!-- In / Out Options -->
+                        <div class="card-body inout-checkboxes-js">
+                            {% include 'components/search_filters/in_out_filter.html' %}
+                        </div>
                     </div>
                 </div>
 
@@ -84,47 +127,6 @@
                     </div>
                 </div>
 
-                <!-- Days -->
-                <div class="card">
-                    <div class="familyhub-card-header" id="activity-filter-days">
-                        <h2 class="filter-heading">
-                            <button class="btn btn-link filter-heading-button collapsed" type="button"
-                                data-toggle="collapse" data-target="#collapseDays" aria-expanded="false"
-                                aria-controls="collapseDays">
-                                Days of the week
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseDays" class="collapse filter-options"
-                        aria-labelledby="activity filter by days of the week" data-parent="#activity-filters-accordion">
-
-                        <!-- Days Options -->
-                        {% include 'components/forms/days.html' %}
-
-                    </div>
-                </div>
-
-                <!-- In / Out -->
-                <div class="card">
-                    <div class="familyhub-card-header" id="activity-filter-in-out">
-                        <h2 class="filter-heading">
-                            <button class="btn btn-link filter-heading-button collapsed" type="button"
-                                data-toggle="collapse" data-target="#collapseInOut" aria-expanded="false"
-                                aria-controls="collapseInOut">
-                                Indoor or Outdoor
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseInOut" class="collapse filter-options"
-                        aria-labelledby="activity filter by indoors or outdoors"
-                        data-parent="#activity-filters-accordion">
-
-                        <!-- In / Out Options -->
-                        <div class="card-body inout-checkboxes-js">
-                            {% include 'components/forms/in_out_checkboxes.html' %}
-                        </div>
-                    </div>
-                </div>
 
                 <!-- Other details -->
                 <div class="card">

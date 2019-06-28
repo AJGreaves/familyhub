@@ -14,7 +14,7 @@
         </div>
 
         <div class="filter-options">
-            {% include 'components/forms/location_checkboxes.html' %}
+            {% include 'components/forms/location_dropdown.html' %}
         </div>
     </div>
 
@@ -26,8 +26,36 @@
             </h2>
         </div>
         <div class="filter-options">
-            <div class="card-body categories-checkboxes-js">
-                {% include 'components/forms/categories.html' %}
+            <div class="card-body categories-dropdown-js">
+                {% include 'components/search_filters/categories_filter.html' %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Days Options -->
+    <div class="card">
+        <div class="familyhub-card-header-no-button">
+            <h2 class="filter-heading">
+                Days of the Week
+            </h2>
+        </div>
+        <div class="filter-options">
+            <div class="card-body days-dropdown-js">
+                {% include 'components/search_filters/daysofweek_filter.html' %}
+            </div>
+        </div>
+    </div>
+
+    <!-- In / Out Options -->
+    <div class="card">
+        <div class="familyhub-card-header-no-button">
+            <h2 class="filter-heading">
+                Indoor or Outdoor
+            </h2>
+        </div>
+        <div class="filter-options">
+            <div class="card-body inout-checkboxes-js">
+                {% include 'components/search_filters/in_out_filter.html' %}
             </div>
         </div>
     </div>
@@ -42,32 +70,6 @@
         <div class="filter-options">
             <div class="card-body ages-checkboxes-js">
                 {% include 'components/forms/age_range.html' %}
-            </div>
-        </div>
-    </div>
-
-    <!-- Days Options -->
-    <div class="card">
-        <div class="familyhub-card-header-no-button">
-            <h2 class="filter-heading">
-                Days of the Week
-            </h2>
-        </div>
-        <div class="filter-options">
-            {% include 'components/forms/days.html' %}
-        </div>
-    </div>
-
-    <!-- In / Out Options -->
-    <div class="card">
-        <div class="familyhub-card-header-no-button">
-            <h2 class="filter-heading">
-                Indoor or Outdoor
-            </h2>
-        </div>
-        <div class="filter-options">
-            <div class="card-body inout-checkboxes-js">
-                    {% include 'components/forms/in_out_checkboxes.html' %}
             </div>
         </div>
     </div>

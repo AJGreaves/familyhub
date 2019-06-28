@@ -129,7 +129,7 @@ $(document).ready(function () {
     }
 
     $("input").change(function () {
-        let locationInput = $('.location-checkboxes-js input');
+        let locationInput = $('.location-dropdown-js input');
         let locationIds = getCheckedIds(locationInput);
 
         const data = {
@@ -157,7 +157,6 @@ $(document).ready(function () {
                 console.log(err);
             });
     });
-
 
 });
 
