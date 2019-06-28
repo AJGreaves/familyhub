@@ -128,34 +128,35 @@ $(document).ready(function () {
         return ids;
     }
 
-    $("input").change(function () {
-        let locationInput = $('.location-dropdown-js input');
-        let locationIds = getCheckedIds(locationInput);
+    $("select").change(function () {
+        
+        let location = $("#townSelect-md").val();
+        console.log(location);
 
-        const data = {
-            locationIds: locationIds,
-        }
+    //     const data = {
+    //         locationIds: locationIds,
+    //     }
 
-        showLoading();
+    //     showLoading();
 
-        fetch('/activities', {
-                method: 'POST',
-                cors: '*same-origin',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data)
-            })
-            .then(res => res.json())
-            .then(data => {
-                hideLoading();
-                console.log(data);
-            })
-            .catch(err => {
-                hideLoading();
-                alertModal('error');
-                console.log(err);
-            });
+    //     fetch('/activities', {
+    //             method: 'POST',
+    //             cors: '*same-origin',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify(data)
+    //         })
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             hideLoading();
+    //             console.log(data);
+    //         })
+    //         .catch(err => {
+    //             hideLoading();
+    //             alertModal('error');
+    //             console.log(err);
+    //         });
     });
 
 });
