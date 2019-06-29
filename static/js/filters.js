@@ -164,7 +164,7 @@ $(document).ready(function () {
     https://www.w3schools.com/howto/howto_js_sidenav.asp 
     and edited to fit project needs as a pull out filters bar */
 
-    $('#closeFiltersBtn').click(function () {
+    $('.closeFiltersBtn').click(function () {
         closeFilters();
     })
 
@@ -173,9 +173,11 @@ $(document).ready(function () {
     })
 
     function openFilters() {
-        $('#filter-nav').css('width', '250px');
+        $('#filter-nav').css('left', '0');
+        $('main').css('opacity', '0.35', 'pointer-events', 'none');
     }
     function closeFilters() {
-        $('#filter-nav').css('width', '0');
+        $('#filter-nav').css('left', '-275px');
+        $('main').css('opacity', '1', 'pointer-events', 'auto');
     }
 });
