@@ -68,12 +68,17 @@ def activities_page():
         location = post_request['location']
         category = post_request['category']
         days = post_request['days']
+        inOut = post_request['inOut']
 
         categorySelector = 'categories.' + category
-        daysSelector = ''
 
         results = db.activities.find()
         db_request = []
+
+        if inOut != 'either' and inOut != 'both':
+            db_request.append({inOut: True})
+        elif inOut == 'both':
+            db_request.append({'$and': [{'indoor': True}, {'outdoor': True}]})
         
         if days != 'any' and days != 'weekend' and days != 'weekdays':
             daysSelector = 'days.' + days
