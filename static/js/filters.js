@@ -131,12 +131,16 @@ $(document).ready(function () {
     $("select").change(function () {
 
         let location = $("#townSelect").val();
+        let category = $("#categorySelect").val();
+        let days = $("#daysFilter").val();
         console.log(location);
+        console.log(category);
+        console.log(days);
 
             const data = {
                 location: location,
-                // category: category,
-                // days: days,
+                category: category,
+                days: days,
                 // inOut: inOut,
                 // ageRange: ageRange,
                 // other: other,

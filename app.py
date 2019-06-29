@@ -66,11 +66,35 @@ def activities_page():
     if request.method == 'POST':
         post_request = request.get_json()
         location = post_request['location']
+        category = post_request['category']
+        days = post_request['days']
 
-        db_request = []
+        categorySelector = 'categories.' + category
+        daysSelector = ''
+
         results = db.activities.find()
+        db_request = []
         
-        db_request.append({'address.town': location})
+        if days != 'any' and days != 'weekend' and days != 'weekdays':
+            daysSelector = 'days.' + days
+            db_request.append({daysSelector: True})
+        elif days == 'weekend':
+            db_request.append({'$or':[{'days.sat': True}, {'days.sun': True}]})
+        elif days == 'weekdays':
+            db_request.append({'$or': [
+                {'days.mon': True}, 
+                {'days.tue': True},
+                {'days.wed': True},
+                {'days.thu': True},
+                {'days.fri': True}
+            ]})
+
+        if location != 'all':
+            db_request.append({'address.town': location})
+        if category != 'all':
+            db_request.append({categorySelector: True})
+
+        print(db_request)
 
         if len(db_request) == 1:
             results = db.activities.find( db_request[0] )
