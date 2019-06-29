@@ -23,17 +23,19 @@ db = client.familyHub
 def search(search_text):
     loggedIn = True if 'user' in session else False
     results = search_bar_results(db, search_text)
+    numResults = len(results)
     
     return redirect(url_for(
         "activities_page", 
         loggedIn=loggedIn, 
+        numResults=numResults,
         results=results, 
         search_text=search_text))
 
 
 # Home page
-@app.route('/')
-@app.route('/index')
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/index', methods=['GET', 'POST'])
 def home_page():
     loggedIn = True if 'user' in session else False
 
@@ -49,6 +51,10 @@ def home_page():
     rawDescrip = topTip['description']
     topTopDescrp = Helpers.format_description(rawDescrip)
     topTopDescrp = topTopDescrp[0:4]
+
+    if request.method == 'POST':
+        post_request = request.form.to_dict()
+        print(post_request)
 
 
     return render_template(
