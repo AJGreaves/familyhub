@@ -99,6 +99,10 @@ $(document).ready(function () {
      */
 
     function cardTemplate(searchResult) {
+        console.log(searchResult._id);
+        let id_string = searchResult._id.$oid;
+        let href = "/listing/" + searchResult.title + '?activity_id=' + id_string;
+
         const card = `
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <div class="card familyhub-card">
@@ -115,7 +119,7 @@ $(document).ready(function () {
                     <div class="card-text-wrapper">
                         <p class="card-text">${searchResult.shortDescription}...</p>
                     </div>
-                    <a class="readmore-link" href="{{ url_for('activity_listing_page', title=${searchResult.title}, activity_id=${searchResult._id})}}">Read More <i class="fas fa-arrow-circle-right"></i></a>
+                    <a class="readmore-link" href="${href}">Read More <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
         </div>
