@@ -28,17 +28,16 @@
     {% include 'layout/footer.html' %}
 
     <!-- Floating search and go to top buttons -->
-    {% include 'components/misc/floating_btns.html' %}
-
-    <!-- Search modal -->
-    {% include 'components/modals/search_modal.html' %}
+    <button id="to-top-btn" class="floating-btn" title="Go to top">
+        <i class="fas fa-chevron-circle-up fa-3x" aria-hidden="true"></i>
+    </button>
 
     <!-- Delete warning modal -->
     {% include 'components/modals/delete_warning_modal.html' %}
 
     <!-- Alert modal -->
     {% include 'components/modals/alert.html' %}
-    
+
     <!-- Spinner -->
     <div id="spinner-wrapper">
         <div id="spinner" Title="loading"></div>

@@ -27,14 +27,12 @@ window.onscroll = function () {
     scrollFunction();
 };
 
-// makes floating buttons for search and go to top visible once user starts scrolling.
+// makes floating button for go to top visible once user starts scrolling.
 function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         $("#to-top-btn").addClass('active');
-        $("#search-btn").addClass('active');
     } else {
         $("#to-top-btn").removeClass('active');
-        $("#search-btn").removeClass('active');
     }
 }
 
@@ -47,13 +45,6 @@ function topFunction() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
-
-// when user clicks on search icon the search modal adds the active class, 
-// adding css to opacity: 1; 
-
-$('.open-close-search-js').click(function () {
-    $("#search-modal").toggleClass('active');
-});
 
 // animate changes in icons to reflect collapsed / opened elements on the page
 $(".collapse-link").click(function () {

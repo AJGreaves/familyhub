@@ -174,12 +174,5 @@ $(document).ready(function () {
         $('#filter-nav, main, footer, nav').removeClass('filters-open');
     }
 
-    /**
-     * fetches new set of results only if there is none fed in from search page
-     * So if the user is coming to the activities page without running a text search.
-     */
-    let searchResultsJs = $('.search-results-js');
-    if (searchResultsJs.length == 0) {
-        fetchResults();
-    }
+    fetchResults();
 });

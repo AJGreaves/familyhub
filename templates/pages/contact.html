@@ -1,47 +1,62 @@
 {% extends 'layout/base.html' %} {% block content %}
-    <main class="content no-fouc">
-        <!-- Section: Contact Family Hub -->
-        <section>
+<main class="content no-fouc">
+    <!-- Section: Contact Family Hub -->
+    <section>
 
-            <div id="contact-wrapper" class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h1>Contact</h1>
-                        <hr>
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-11 col-md-7">
-                        <form id="contact-form">
-                            <h3>Get in touch</h3>
-                            <div class="form-group">
-                                <label for="contactName">Name</label>
-                                <input type="text" class="form-control" id="contactName" aria-describedby="enter name" placeholder="Name (required)" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="contactEmail">Email address</label>
-                                <input type="email" class="form-control" id="contactEmail" aria-describedby="enter email" placeholder="Email (required)" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="contactSubject">Subject</label>
-                                <input type="text" class="form-control" id="contactSubject" placeholder="Subject (required)" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="contactMessage">Message</label>
-                                <textarea type="text" class="form-control" id="contactMessage" rows="10" placeholder="Message (required)" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-search">Send</button>
-                        </form>
-                    </div>
-                    <!-- this block hidden on mobile, as it was displaying right above the same info in the footer -->
-                    <div class="col-md-5 d-none d-md-block">
-                        {% include 'components/misc/fh_address.html' %}
-                    </div>
+        <div id="contact-wrapper" class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Contact</h1>
+                    <hr>
                 </div>
             </div>
+            <div class="row justify-content-center">
+                <div class="col-11 col-md-7">
+                    <form id="contact-form">
+                        <h3>Get in touch</h3>
+                        <div class="form-group">
+                            <label for="contactName">Name</label>
+                            <input type="text" class="form-control" id="contactName" aria-describedby="enter name"
+                                placeholder="Name (required)" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Email address</label>
+                            <input type="email" class="form-control" id="contactEmail" aria-describedby="enter email"
+                                placeholder="Email (required)" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactSubject">Subject</label>
+                            <input type="text" class="form-control" id="contactSubject" placeholder="Subject (required)"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Message</label>
+                            <textarea type="text" class="form-control" id="contactMessage" rows="10"
+                                placeholder="Message (required)" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-search">Send</button>
+                    </form>
+                </div>
+                <!-- this block hidden on mobile, as it was displaying right above the same info in the footer -->
+                <div class="col-md-5 d-none d-md-block">
+                    {% include 'components/misc/fh_address.html' %}
+                </div>
+            </div>
+        </div>
 
-        </section>
+    </section>
 
-    </main>
-    
+</main>
+<div id="searchByFooter" class="container-fluid py-2 mt-5 no-fouc">
+    <div class="row no-gutters">
+        <div class="col-12">
+            <form class="form-inline justify-content-center" method=POST>
+                <input type="text" class="searchBar form-control" placeholder="What are you searching for?"
+                    id="searchText" name="searchText" required>
+                <button type="submit" class="btn btn-search my-1 searchBarBtn">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

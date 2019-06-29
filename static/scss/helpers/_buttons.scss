@@ -51,12 +51,6 @@ button:disabled:hover {
     color: #fff;
 }
 
-#search-modal-close-button,
-#search-modal-submit-button {
-    margin-top: 1rem;
-    text-align: center;
-}
-
 .btn-create {
     background-color: $green;
     border: 1px solid $green;
@@ -107,15 +101,6 @@ button:disabled:hover {
     position: relative;
 }
 
-.fa-search {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    color: #fff;
-}
-
 .search-input-field,
 #publish {
     display: inline;
@@ -153,32 +138,11 @@ and edited slightly to fit project needs */
     transition: all 0.5s ease-in-out 0.2s;
 }
 
-/* positions search icon above to top button */
-
-#search-btn {
-    position: fixed;
-    bottom: 75px;
-    right: 5px;
-    z-index: 99;
-    border: none;
-    outline: none;
-    color: $dark-blue;
-    background-color: transparent;
-    /* button hidden and inactive until user starts to scroll, 
-    then js adds active class to it */
-    opacity: 0;
-    pointer-events: none;
-    -webkit-transition: all 0.5s ease-in-out 0.2s;
-    transition: all 0.5s ease-in-out 0.2s;
-}
-
-#search-btn.active,
 #to-top-btn.active {
     pointer-events: auto;
     opacity: 0.5;
 }
 
-#search-btn.active:hover,
 #to-top-btn.active:hover {
     opacity: 1;
 }

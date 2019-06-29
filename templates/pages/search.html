@@ -19,12 +19,10 @@
                         <hr>
                     </div>
                     <div class="col-sm-12">
-                        <form class="text-center">
-                            <input id="searchInput" class="form-control mx-auto search-input-field" type="search"
-                                placeholder="What are you looking for?" aria-label="Search">
-                            <button id="search-page-search-button" class="btn btn-search" type="submit">
-                                Search
-                            </button>
+                        <form class="form-inline justify-content-center" method=POST>
+                            <input type="text" class="searchBar form-control" placeholder="What are you searching for?"
+                                id="searchText" name="searchText" required>
+                            <button type="submit" class="btn btn-search my-1 searchBarBtn">Submit</button>
                         </form>
                         <hr>
                     </div>
@@ -51,8 +49,9 @@
                                 <div class="card-text-wrapper">
                                     <p class="card-text">{{result.shortDescription}}...</p>
                                 </div>
-                                <a class="readmore-link" href="{{ url_for('activity_listing_page', title=result['title'], activity_id=result['_id'])}}">Read More <i
-                                        class="fas fa-arrow-circle-right"></i></a>
+                                <a class="readmore-link"
+                                    href="{{ url_for('activity_listing_page', title=result['title'], activity_id=result['_id'])}}">Read
+                                    More <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -62,15 +61,18 @@
                         <p>No matching results for your search</p>
                     </div>
                     {% endif %}
-                    
+
                 </div>
                 <div class="row">
+                    {% if numResults != 0 %}
                     <div class="col-12">
                         <h2 id="search-results">End of results</h2>
                         <hr>
                     </div>
+                    {% endif %}
                     <div class="col-12 text-center">
-                        <a href="{{url_for('activities_page')}}" class="btn btn-search mr-1 mr-md-3">Search activities
+                        <a href="{{url_for('activities_page')}}" class="btn btn-search mb-5 mr-1 mr-md-3">Search
+                            activities
                             with filters</a>
                     </div>
                 </div>
