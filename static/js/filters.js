@@ -99,7 +99,6 @@ $(document).ready(function () {
      */
 
     function cardTemplate(searchResult) {
-        console.log(searchResult._id);
         let id_string = searchResult._id.$oid;
         let href = "/listing/" + searchResult.title + '?activity_id=' + id_string;
 
@@ -128,14 +127,20 @@ $(document).ready(function () {
     }
 
     /**
-     * Clears all checked filters on search page
+     * Clears all checked filters and selected options on search page,
+     * then reloads all results from the database.
      */
 
     $('.clear-filters').click(function () {
-        inputs = $('input')
+        inputs = $('input');
+        options = $('option');
+        options.each(function () {
+            $(this).prop('selected', false);
+        })
         inputs.each(function () {
             $(this).prop('checked', false);
         })
+        fetchResults();
     })
 
     function getCheckedIds(input) {
