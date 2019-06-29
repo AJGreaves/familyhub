@@ -133,9 +133,20 @@ def activities_page():
     )
 
 # Contact page
-@app.route('/contact')
+@app.route('/contact', methods=['GET', 'POST'])
 def contact_page():
     loggedIn = True if 'user' in session else False
+
+    if request.method == 'POST':
+        post_request = request.form.to_dict()
+        if post_request.get('searchText'):
+            search_text = post_request.get('searchText')
+
+            return redirect(url_for(
+                "search_page", 
+                loggedIn=loggedIn, 
+                search_text=search_text))
+
     return render_template(
         "pages/contact.html", 
         headTitle="Contact", 
@@ -199,7 +210,7 @@ def logout():
     return redirect(url_for('home_page'))
 
 # Search page
-@app.route('/search/<search_text>')
+@app.route('/search/<search_text>', methods=['GET', 'POST'])
 def search_page(search_text):
     loggedIn = True if 'user' in session else False
 
@@ -208,6 +219,15 @@ def search_page(search_text):
     for result in results:
         print(result)
     numResults = len(results)
+
+    if request.method == 'POST':
+        post_request = request.form.to_dict()
+        search_text = post_request.get('searchText')
+
+        return redirect(url_for(
+            "search_page", 
+            loggedIn=loggedIn, 
+            search_text=search_text))
 
     return render_template(
         "pages/search.html", 
@@ -220,7 +240,7 @@ def search_page(search_text):
     )
 
 # Activity listing page 
-@app.route('/listing/<title>')
+@app.route('/listing/<title>', methods=['GET', 'POST'])
 def activity_listing_page(title):
     loggedIn = True if 'user' in session else False
 
@@ -240,6 +260,15 @@ def activity_listing_page(title):
 
     openTimes = Helpers.open_times(openTimes_db)
     descrpDict = Helpers.format_description(rawDescrip)
+
+    if request.method == 'POST':
+        post_request = request.form.to_dict()
+        search_text = post_request.get('searchText')
+
+        return redirect(url_for(
+            "search_page", 
+            loggedIn=loggedIn, 
+            search_text=search_text))
 
     return render_template(
         "pages/activitylisting.html", 
