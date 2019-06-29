@@ -1,44 +1,64 @@
 $(document).ready(function () {
 
     /**
-     * Get data from api to display in activities page
+     * Fetches results to display when select or input filed is changed
      */
 
-    showLoading();
-    fetch('/api/activities')
-        .then(res => res.json())
-        .then(data => {
-            getFullData(data);
-        })
-        .then(hideLoading())
-        .catch(err => {
-            hideLoading();
-            alertModal('error');
-            console.log(err);
-        });
+    $("select, input").change(function () {
+        fetchResults();
+    });
 
-    let fullDataArray = []
+    function fetchResults() {
+
+        let location = $("#townSelect").val();
+        let category = $("#categorySelect").val();
+        let days = $("#daysFilter").val();
+        let inOut = $("#inOutFilter").val();
+
+        let ageRangeCheckboxes = $('.age-range-js');
+        let ageRangeIds = getCheckedIds(ageRangeCheckboxes);
+        let otherDetailsCheckboxes = $('.in-out-js');
+        let otherIds = getCheckedIds(otherDetailsCheckboxes);
+
+        const data = {
+            location: location,
+            category: category,
+            days: days,
+            inOut: inOut,
+            ageRangeIds: ageRangeIds,
+            otherIds: otherIds,
+        }
+
+        showLoading();
+
+        fetch('/activities', {
+                method: 'POST',
+                cors: '*same-origin',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(res => res.json())
+            .then(data => {
+                hideLoading();
+                searchResults = [];
+                getFullData(data)
+            })
+            .catch(err => {
+                hideLoading();
+                alertModal('error');
+                console.log(err);
+            });
+    }
+
+    let searchResults = []
 
     function getFullData(data) {
         for (i = 0; i < data.length; i++) {
-            fullDataArray.push(data[i]);
-        }
-        getDisplayArray(fullDataArray);
-    }
-
-    let start = 0;
-    let working = false;
-    let searchResults = [];
-    /**
-     * Gets first 12 results from the data
-     */
-    function getDisplayArray(data) {
-        for (i = start; i < start + 8; i++) {
             searchResults.push(data[i]);
         }
-        start += 6
         buildSearchResultsString(searchResults);
-        return;
     }
 
     /**
@@ -91,23 +111,6 @@ $(document).ready(function () {
     }
 
     /**
-     * Loads more cards from data as the user scrolls. 
-     * Code for this function taken from the following youtube
-     * https://www.youtube.com/watch?v=76IANst0jwc
-     */
-    $(window).scroll(function () {
-        if ($(this).scrollTop() + 1 >= $('body').height() - $(window).height()) {
-            if (working == false) {
-                working = true;
-                getDisplayArray(fullDataArray);
-                setTimeout(function () {
-                    working = false;
-                }, 1000)
-            }
-        }
-    })
-
-    /**
      * Clears all checked filters on search page
      */
 
@@ -128,55 +131,6 @@ $(document).ready(function () {
         return ids;
     }
 
-    $("select, input").change(function () {
-
-        let location = $("#townSelect").val();
-        let category = $("#categorySelect").val();
-        let days = $("#daysFilter").val();
-        let inOut = $("#inOutFilter").val();
-        console.log(location);
-        console.log(category);
-        console.log(days);
-        console.log(inOut);
-
-        let ageRangeCheckboxes = $('.age-range-js');
-        let ageRangeIds = getCheckedIds(ageRangeCheckboxes);
-        let otherDetailsCheckboxes = $('.in-out-js');
-        let otherIds = getCheckedIds(otherDetailsCheckboxes);
-        console.log(ageRangeIds)
-        console.log(otherIds)
-
-        const data = {
-            location: location,
-            category: category,
-            days: days,
-            inOut: inOut,
-            ageRangeIds: ageRangeIds,
-            otherIds: otherIds,
-        }
-
-        showLoading();
-
-        fetch('/activities', {
-                method: 'POST',
-                cors: '*same-origin',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data)
-            })
-            .then(res => res.json())
-            .then(data => {
-                hideLoading();
-                console.log(data);
-            })
-            .catch(err => {
-                hideLoading();
-                alertModal('error');
-                console.log(err);
-            });
-    });
-
 
     /* Code credit: For animated side-nav taken from 
     https://www.w3schools.com/howto/howto_js_sidenav.asp 
@@ -194,8 +148,11 @@ $(document).ready(function () {
         $('#filter-nav').css('left', '0');
         $('main, footer, nav').css('opacity', '0.35', 'pointer-events', 'none');
     }
+
     function closeFilters() {
         $('#filter-nav').css('left', '-275px');
         $('main, footer, nav').css('opacity', '1', 'pointer-events', 'auto');
     }
+
+    fetchResults();
 });
