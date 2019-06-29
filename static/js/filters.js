@@ -141,7 +141,10 @@ $(document).ready(function () {
 
         let ageRangeCheckboxes = $('.age-range-js');
         let ageRangeIds = getCheckedIds(ageRangeCheckboxes);
+        let otherDetailsCheckboxes = $('.in-out-js');
+        let otherIds = getCheckedIds(otherDetailsCheckboxes);
         console.log(ageRangeIds)
+        console.log(otherIds)
 
         const data = {
             location: location,
@@ -149,7 +152,7 @@ $(document).ready(function () {
             days: days,
             inOut: inOut,
             ageRangeIds: ageRangeIds,
-            // other: other,
+            otherIds: otherIds,
         }
 
         showLoading();

@@ -119,7 +119,44 @@
 
                 <!-- Days Options -->
                 <label class="pt-2">Other details</label>
-                {% include 'components/forms/other_details.html' %}
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input in-out-js" name="free" type="checkbox" id="free">
+                        <label class="form-check-label" for="free">
+                            Free entrance
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input in-out-js" name="bringFood" type="checkbox" id="bringFood">
+                        <label class="form-check-label" for="bringFood">
+                            Bringing own food permitted
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input in-out-js" name="catering" type="checkbox" id="catering">
+                        <label class="form-check-label" for="catering">
+                            Catering available
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input in-out-js" name="goodWeather" type="checkbox" id="goodWeather">
+                        <label class="form-check-label" for="goodWeather">
+                            Suitable for good weather
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input in-out-js" name="badWeather" type="checkbox" id="badWeather">
+                        <label class="form-check-label" for="badWeather">
+                            Suitable for bad weather
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input in-out-js" name="groups" type="checkbox" id="groups">
+                        <label class="form-check-label" for="groups">
+                            Suitable for groups
+                        </label>
+                    </div>
+                </div>
                 <button type="button" class="btn btn-create clear-filters mb-3 mr-2 closeFiltersBtn">Close</button>
                 <button type="button" class="btn btn-search clear-filters mb-3">Clear filters</button>
             </form>

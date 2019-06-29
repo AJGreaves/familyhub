@@ -70,11 +70,17 @@ def activities_page():
         days = post_request['days']
         inOut = post_request['inOut']
         ageRangeIds = post_request['ageRangeIds']
+        otherIds = post_request['otherIds']
 
         categorySelector = 'categories.' + category
 
         results = db.activities.find()
         db_request = []
+
+        if len(otherIds) >= 1:
+            for otherId in otherIds:
+                otherSelector = 'otherDetails.' + otherId
+                db_request.append({otherSelector: True})
 
         if len(ageRangeIds) >= 1:
             for ageRange in ageRangeIds:
