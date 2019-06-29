@@ -130,33 +130,38 @@ $(document).ready(function () {
 
     $("select").change(function () {
 
-        let location = $("#townSelect-md").val();
+        let location = $("#townSelect").val();
         console.log(location);
 
-        //     const data = {
-        //         locationIds: locationIds,
-        //     }
+            const data = {
+                location: location,
+                // category: category,
+                // days: days,
+                // inOut: inOut,
+                // ageRange: ageRange,
+                // other: other,
+            }
 
-        //     showLoading();
+            showLoading();
 
-        //     fetch('/activities', {
-        //             method: 'POST',
-        //             cors: '*same-origin',
-        //             headers: {
-        //                 'Content-Type': 'application/json',
-        //             },
-        //             body: JSON.stringify(data)
-        //         })
-        //         .then(res => res.json())
-        //         .then(data => {
-        //             hideLoading();
-        //             console.log(data);
-        //         })
-        //         .catch(err => {
-        //             hideLoading();
-        //             alertModal('error');
-        //             console.log(err);
-        //         });
+            fetch('/activities', {
+                    method: 'POST',
+                    cors: '*same-origin',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    hideLoading();
+                    console.log(data);
+                })
+                .catch(err => {
+                    hideLoading();
+                    alertModal('error');
+                    console.log(err);
+                });
     });
 
 

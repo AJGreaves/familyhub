@@ -65,19 +65,17 @@ def activities_page():
 
     if request.method == 'POST':
         post_request = request.get_json()
-        locationIds = post_request['locationIds']
+        location = post_request['location']
 
         db_request = []
         results = db.activities.find()
         
-        if len(locationIds) != 0:
-            for location in locationIds:
-                db_request.append({'address.town': location})
+        db_request.append({'address.town': location})
 
-            if len(db_request) == 1:
-                results = db.activities.find( db_request[0] )
-            elif len(db_request) > 1:
-                results = db.activities.find({ '$or': db_request })
+        if len(db_request) == 1:
+            results = db.activities.find( db_request[0] )
+        elif len(db_request) > 1:
+            results = db.activities.find({ '$and': db_request })
 
         return dumps(results)
 
