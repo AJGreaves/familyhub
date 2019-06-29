@@ -7,7 +7,7 @@ from bson.json_util import dumps
 from werkzeug.security import generate_password_hash, check_password_hash
 from familyhubapp.keys import Keywords
 from familyhubapp.helpers import Helpers
-from familyhubapp.forms import new_account_req, login_req, settings_update, process_activity_data
+from familyhubapp.forms import new_account_req, login_req, settings_update, process_activity_data, search_bar_results
 from datetime import datetime
 
 # create instance of flask and assign it to "app"
@@ -17,6 +17,19 @@ app.config.from_object(Config)
 # MongoDB URI / Assign db
 client = MongoClient(Config.MONGO_URI)
 db = client.familyHub
+
+# Search Results
+@app.route('/search/<search_text>')
+def search(search_text):
+    loggedIn = True if 'user' in session else False
+    results = search_bar_results(db, search_text)
+    
+    return redirect(url_for(
+        "activities_page", 
+        loggedIn=loggedIn, 
+        results=results, 
+        search_text=search_text))
+
 
 # Home page
 @app.route('/')
@@ -50,13 +63,6 @@ def home_page():
         loggedIn=loggedIn,
         keywords=Keywords.home()
     )
-
-# to fetch activities api
-@app.route('/api/activities')
-def api_activities():
-
-    activities = dumps(db.activities.find())
-    return activities
 
 # Activities page
 @app.route('/activities', methods=['GET', 'POST'])
