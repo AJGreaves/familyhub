@@ -43,16 +43,19 @@ https://www.w3schools.com/howto/howto_js_sidenav.asp
 and edited to fit project needs as a pull out filters bar */
 #filter-nav {
     height: 100%;
-    width: 0;
+    width: 275px;
     position: fixed;
     z-index: 1;
-    top: 56px;
-    left: 0;
+    top: 0;
+    left: -275px;
     background-color: $mid-blue-hover;
     overflow-x: hidden;
-    padding-top: 60px;
     -webkit-transition: 0.5s;
     transition: 0.5s;
+}
+
+#filter-frame {
+    padding: 40px 20px 0 20px;
 }
 
 #filter-nav #closeFiltersBtn {
@@ -62,4 +65,13 @@ and edited to fit project needs as a pull out filters bar */
     font-size: 36px;
     margin-left: 50px;
     color: #fff;
+}
+
+#filter-nav label {
+    color: #fff;
+}
+
+#filter-nav select {
+    margin-bottom: 5px;
+    width: 100%
 }
