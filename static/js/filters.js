@@ -128,44 +128,50 @@ $(document).ready(function () {
         return ids;
     }
 
-    $("select").change(function () {
+    $("select, input").change(function () {
 
         let location = $("#townSelect").val();
         let category = $("#categorySelect").val();
         let days = $("#daysFilter").val();
+        let inOut = $("#inOutFilter").val();
         console.log(location);
         console.log(category);
         console.log(days);
+        console.log(inOut);
 
-            const data = {
-                location: location,
-                category: category,
-                days: days,
-                // inOut: inOut,
-                // ageRange: ageRange,
-                // other: other,
-            }
+        let ageRangeCheckboxes = $('.age-range-js');
+        let ageRangeIds = getCheckedIds(ageRangeCheckboxes);
+        console.log(ageRangeIds)
 
-            showLoading();
+        const data = {
+            location: location,
+            category: category,
+            days: days,
+            inOut: inOut,
+            ageRangeIds: ageRangeIds,
+            // other: other,
+        }
 
-            fetch('/activities', {
-                    method: 'POST',
-                    cors: '*same-origin',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data)
-                })
-                .then(res => res.json())
-                .then(data => {
-                    hideLoading();
-                    console.log(data);
-                })
-                .catch(err => {
-                    hideLoading();
-                    alertModal('error');
-                    console.log(err);
-                });
+        showLoading();
+
+        fetch('/activities', {
+                method: 'POST',
+                cors: '*same-origin',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(res => res.json())
+            .then(data => {
+                hideLoading();
+                console.log(data);
+            })
+            .catch(err => {
+                hideLoading();
+                alertModal('error');
+                console.log(err);
+            });
     });
 
 
