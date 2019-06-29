@@ -478,6 +478,32 @@ Credit: https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed
   pointer-events: none;
 }
 
+/* Code credit: For animated side-nav taken from 
+https://www.w3schools.com/howto/howto_js_sidenav.asp 
+and edited to fit project needs as a pull out filters bar */
+#filter-nav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 56px;
+  left: 0;
+  background-color: #346861;
+  overflow-x: hidden;
+  padding-top: 60px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#filter-nav #closeFiltersBtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  color: #fff;
+}
+
 /* ------------------------------
     Cards
 ------------------------------ */
