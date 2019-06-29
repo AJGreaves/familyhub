@@ -33,7 +33,7 @@ $(document).ready(function () {
      * Gets first 12 results from the data
      */
     function getDisplayArray(data) {
-        for (i = start; i < start + 6; i++) {
+        for (i = start; i < start + 8; i++) {
             searchResults.push(data[i]);
         }
         start += 6
@@ -67,7 +67,7 @@ $(document).ready(function () {
 
     function cardTemplate(searchResult) {
         const card = `
-        <div class="col-12 col-sm-6 col-lg-4">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <div class="card familyhub-card">
                 <div class="card-img-wrapper">
                     <!-- Inline style used here for ease of placing background image with JS -->
