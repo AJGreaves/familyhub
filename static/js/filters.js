@@ -103,7 +103,7 @@ $(document).ready(function () {
         let href = "/listing/" + searchResult.title + '?activity_id=' + id_string;
 
         const card = `
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
             <div class="card familyhub-card">
                 <div class="card-img-wrapper">
                     <!-- Inline style used here for ease of placing background image with JS -->

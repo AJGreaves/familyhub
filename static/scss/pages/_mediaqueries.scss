@@ -32,6 +32,10 @@
 
 /* medium size screens and up */
 @media screen and (min-width: 768px) {
+    .navbar-brand.activities-pg {
+        margin-left: 280px;
+    }
+
     h1 {
         font-size: 2.5rem;
     }
@@ -84,6 +88,13 @@
     .toptip-img {
         border-radius: 15px 0 0 15px;
     }
+    #filter-nav {
+        left: 0;
+    }
+    .filters-shrink {
+        margin-left: 275px;
+    }
+    
 }
 
 /* large screens and up */

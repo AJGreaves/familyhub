@@ -3,7 +3,7 @@
 
     <div id="filter-nav">
         <div id="filter-frame">
-            <a href="javascript:void(0)" id="closeFiltersBtn" class="closeFiltersBtn">&times;</a>
+            <a href="javascript:void(0)" id="closeFiltersBtn" class="closeFiltersBtn d-md-none">&times;</a>
             <form id="activity-filters">
 
                 <!-- Location Options -->
@@ -157,13 +157,13 @@
                         </label>
                     </div>
                 </div>
-                <button type="button" class="btn btn-create mb-3 mr-2 closeFiltersBtn">Close</button>
+                <button type="button" class="btn btn-create mb-3 mr-2 closeFiltersBtn d-md-none">Close</button>
                 <button type="button" class="btn btn-search clear-filters mb-3">Clear filters</button>
             </form>
         </div>
     </div>
 
-    <main>
+    <main class="filters-shrink">
 
         <!-- Section: activities -->
         <section>
@@ -181,7 +181,7 @@
                             <div class="col-sm-12">
                                 <h2 id="num-of-results" class="float-left">X results</h2>
                                 <button id="openFiltersBtn"
-                                    class="btn btn-create heading-btn float-right filters-btn">Open filters</button>
+                                    class="btn btn-create heading-btn float-right filters-btn d-md-none">Open filters</button>
                             </div>
                             <div class="col-12">
                                 <hr>
@@ -189,7 +189,7 @@
                         </div>
 
                         <!-- hook for javascript to display search results -->
-                        <div id="searchResults" class="row">
+                        <div id="searchResults" class="row mx-3 mx-sm-1">
 
                         </div>
 
