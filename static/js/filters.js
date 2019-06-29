@@ -174,10 +174,10 @@ $(document).ready(function () {
 
     function openFilters() {
         $('#filter-nav').css('left', '0');
-        $('main').css('opacity', '0.35', 'pointer-events', 'none');
+        $('main, footer, nav').css('opacity', '0.35', 'pointer-events', 'none');
     }
     function closeFilters() {
         $('#filter-nav').css('left', '-275px');
-        $('main').css('opacity', '1', 'pointer-events', 'auto');
+        $('main, footer, nav').css('opacity', '1', 'pointer-events', 'auto');
     }
 });

@@ -75,3 +75,10 @@ and edited to fit project needs as a pull out filters bar */
     margin-bottom: 5px;
     width: 100%
 }
+
+main,
+footer,
+nav {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
