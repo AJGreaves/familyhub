@@ -174,11 +174,12 @@ shadow added to give depth and contrast with the image for readability */
     Search bars
 ------------------------------ */
 
-#searchByFooter {
+#searchByFooter,
+#searchActivities {
     background-color: $platinum;
 }
 
-#searchBar {
+.searchBar.form-control {
     width: 66%;
 }
 

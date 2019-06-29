@@ -1,10 +1,22 @@
 {% block footer %}
 
+<div id="searchByFooter" class="container-fluid py-2 mt-5 no-fouc">
+    <div class="row no-gutters">
+        <div class="col-12">
+            <form class="form-inline justify-content-center">
+                <input type="text" class="searchBar form-control" placeholder="What are you searching for?" class="form-control mx-sm-3"
+                    required>
+                <button type="submit" class="btn btn-search my-1 searchBarBtn">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
 <footer class="no-fouc {% if active == 'activities' %} filters-shrink {% endif %}">
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-4">
-                    {% include 'components/misc/fh_address.html' %}
+                {% include 'components/misc/fh_address.html' %}
             </div>
             <div class="col-12 col-md-5">
                 <h3>About</h3>
@@ -15,10 +27,12 @@
                         </div>
                     </div>
                     <div class="col-lg-8">
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                            tincidunt ut laoreet dolore magna aliquam erat volutpat.
                         </p>
                         <p>
-                            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat.
+                            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel
+                            illum dolore eu feugiat.
                         </p>
                     </div>
                 </div>
@@ -38,13 +52,16 @@
             </div>
             <div class="col-12 col-md-3 text-center social-icons-footer">
                 <h4>Stay Connected</h4>
-                <a class="ic-fb social-icon-shadow" href="https://www.facebook.com/" target="_blank" aria-label="Find us on Facebook" rel="noopener">
+                <a class="ic-fb social-icon-shadow" href="https://www.facebook.com/" target="_blank"
+                    aria-label="Find us on Facebook" rel="noopener">
                     <i class="fab fa-facebook fa-2x"></i>
                 </a>
-                <a class="ic-ins social-icon-shadow" href="https://www.instagram.com/" target="_blank" aria-label="Find us on Instagram" rel="noopener">
+                <a class="ic-ins social-icon-shadow" href="https://www.instagram.com/" target="_blank"
+                    aria-label="Find us on Instagram" rel="noopener">
                     <i class="fab fa-instagram fa-2x"></i>
                 </a>
-                <a class="ic-twi social-icon-shadow" href="https://www.twitter.com/" target="_blank" aria-label="Find us on Twitter" rel="noopener">
+                <a class="ic-twi social-icon-shadow" href="https://www.twitter.com/" target="_blank"
+                    aria-label="Find us on Twitter" rel="noopener">
                     <i class="fab fa-twitter fa-2x"></i>
                 </a>
             </div>
