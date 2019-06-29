@@ -179,10 +179,7 @@
                     <div id="activity-results" class="col-12">
                         <div class="row">
                             <div class="col-sm-12">
-                                <h4 id="num-of-results" class="float-left py-3">
-                                    {% if numResults %}
-                                    {{numResults}}
-                                    {% endif %} results</h4>
+                                <h4 id="num-of-results" class="float-left py-3"></h4>
                                 <button id="openFiltersBtn"
                                     class="btn btn-create heading-btn float-right filters-btn d-md-none">Open
                                     filters</button>
@@ -190,38 +187,7 @@
                         </div>
 
                         <!-- hook for javascript to display search results -->
-                        <div id="searchResults" class="row mx-3 mx-sm-1">
-                            {% if numResults %}
-                                {% if numResults == 0 %}
-                                <div class="col-12">
-                                    <p>No results matching your search.</p>
-                                </div>
-                                {% endif %}
-                            {% endif %}
-                            {% if results %}
-                                {% for activity in results %}
-                                <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-                                        <div class="card familyhub-card search-results-js">
-                                            <div class="card-img-wrapper">
-                                                <!-- Inline style used here for ease of placing background image with JS -->
-                                                <div class="card-picture" title="{{activity.title}}" style="background-image: url({{activity.imgUrl}})">
-                                                    <div class="location-text">{{activity.address.town}}</div>
-                                                </div>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="card-title-wrapper">
-                                                    <h4 class="card-title">{{activity.title}}</h4>
-                                                </div>
-                                                <div class="card-text-wrapper">
-                                                    <p class="card-text">{{activity.shortDescription}}...</p>
-                                                </div>
-                                                <a class="readmore-link" href="{{ url_for('activity_listing_page', title=activity['title'], activity_id=activity['_id'])}}">Read More <i class="fas fa-arrow-circle-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                {% endfor %}
-                            {% endif %}
-                        </div>
+                        <div id="searchResults" class="row mx-3 mx-sm-1"></div>
 
                         <div class="row">
                             <div class="col-12">

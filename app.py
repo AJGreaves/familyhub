@@ -18,21 +18,6 @@ app.config.from_object(Config)
 client = MongoClient(Config.MONGO_URI)
 db = client.familyHub
 
-# Search Results
-@app.route('/search/<search_text>')
-def search(search_text):
-    loggedIn = True if 'user' in session else False
-    results = search_bar_results(db, search_text)
-    numResults = len(results)
-    
-    return redirect(url_for(
-        "activities_page", 
-        loggedIn=loggedIn, 
-        numResults=numResults,
-        results=results, 
-        search_text=search_text))
-
-
 # Home page
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
@@ -54,8 +39,13 @@ def home_page():
 
     if request.method == 'POST':
         post_request = request.form.to_dict()
-        print(post_request)
+        if post_request.get('searchText'):
+            search_text = post_request.get('searchText')
 
+            return redirect(url_for(
+                "search_page", 
+                loggedIn=loggedIn, 
+                search_text=search_text))
 
     return render_template(
         "pages/index.html", 
@@ -209,13 +199,22 @@ def logout():
     return redirect(url_for('home_page'))
 
 # Search page
-@app.route('/search')
-def search_page():
+@app.route('/search/<search_text>')
+def search_page(search_text):
     loggedIn = True if 'user' in session else False
+
+    results = search_bar_results(db, search_text)
+    results = list(results) 
+    for result in results:
+        print(result)
+    numResults = len(results)
+
     return render_template(
         "pages/search.html", 
         headTitle="Search",
         active="search",
+        results=results,
+        numResults=numResults,
         loggedIn=loggedIn,
         keywords=Keywords.generic()
     )

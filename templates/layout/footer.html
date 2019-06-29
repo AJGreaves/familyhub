@@ -1,5 +1,5 @@
 {% block footer %}
-
+{% if active != 'activities' %}
 <div id="searchByFooter" class="container-fluid py-2 mt-5 no-fouc">
     <div class="row no-gutters">
         <div class="col-12">
@@ -11,6 +11,7 @@
         </div>
     </div>
 </div>
+{% endif %}
 
 <footer class="no-fouc {% if active == 'activities' %} filters-shrink {% endif %}">
     <div class="container">
