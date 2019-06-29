@@ -1,6 +1,15 @@
 {% extends 'layout/base.html' %} {% block content %}
 <div class="content no-fouc">
 
+    <div id="filter-nav">
+        <a href="javascript:void(0)" class="closebtn filters-btn">&times;</a>
+        <!-- content for filters here -->
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+
     <main>
 
         <!-- Section: activities -->
@@ -17,7 +26,10 @@
                     <div id="activity-results" class="col-12">
                         <div class="row">
                             <div class="col-sm-12">
-                                <h2 id="num-of-results">X results</h2>
+                                <h2 id="num-of-results" class="float-left">X results</h2>
+                                <button class="btn btn-create heading-btn float-right filters-btn">Open filters</button>
+                            </div>
+                            <div class="col-12">
                                 <hr>
                             </div>
                         </div>
