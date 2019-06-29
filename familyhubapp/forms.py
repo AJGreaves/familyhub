@@ -217,4 +217,13 @@ def process_activity_data(db, user, post_request, published):
     return obj
 
 def search_bar_results(db, search_text):
-    return db.activities.find({'description':{'$regex':'.*' + search_text + '.*'}})
+    
+    words = search_text.split(" ")
+    print(words)
+    request = []
+    for word in words:
+        request.append({'$regex': '*' + word + '*'})
+    
+    print(request)
+
+    return db.activities.find({'$or': [{'description':request}, {'title':request}]})
