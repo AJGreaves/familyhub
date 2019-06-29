@@ -78,7 +78,7 @@ def activities_page():
 
         categorySelector = 'categories.' + category
 
-        results = db.activities.find()
+        results = db.activities.find().sort("_id", -1)
         db_request = []
 
         if len(otherIds) >= 1:
@@ -116,9 +116,9 @@ def activities_page():
             db_request.append({categorySelector: True})
 
         if len(db_request) == 1:
-            results = db.activities.find( db_request[0] )
+            results = db.activities.find( db_request[0] ).sort("_id", -1)
         elif len(db_request) > 1:
-            results = db.activities.find({ '$and': db_request })
+            results = db.activities.find({ '$and': db_request }).sort("_id", -1)
 
         return dumps(results)
 
