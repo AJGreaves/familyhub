@@ -129,35 +129,53 @@ $(document).ready(function () {
     }
 
     $("select").change(function () {
-        
+
         let location = $("#townSelect-md").val();
         console.log(location);
 
-    //     const data = {
-    //         locationIds: locationIds,
-    //     }
+        //     const data = {
+        //         locationIds: locationIds,
+        //     }
 
-    //     showLoading();
+        //     showLoading();
 
-    //     fetch('/activities', {
-    //             method: 'POST',
-    //             cors: '*same-origin',
-    //             headers: {
-    //                 'Content-Type': 'application/json',
-    //             },
-    //             body: JSON.stringify(data)
-    //         })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             hideLoading();
-    //             console.log(data);
-    //         })
-    //         .catch(err => {
-    //             hideLoading();
-    //             alertModal('error');
-    //             console.log(err);
-    //         });
+        //     fetch('/activities', {
+        //             method: 'POST',
+        //             cors: '*same-origin',
+        //             headers: {
+        //                 'Content-Type': 'application/json',
+        //             },
+        //             body: JSON.stringify(data)
+        //         })
+        //         .then(res => res.json())
+        //         .then(data => {
+        //             hideLoading();
+        //             console.log(data);
+        //         })
+        //         .catch(err => {
+        //             hideLoading();
+        //             alertModal('error');
+        //             console.log(err);
+        //         });
     });
 
-});
 
+    /* Code credit: For animated side-nav taken from 
+    https://www.w3schools.com/howto/howto_js_sidenav.asp 
+    and edited to fit project needs as a pull out filters bar */
+
+    $('#closeFiltersBtn').click(function () {
+        closeFilters();
+    })
+
+    $('#openFiltersBtn').click(function () {
+        openFilters();
+    })
+
+    function openFilters() {
+        $('#filter-nav').css('width', '250px');
+    }
+    function closeFilters() {
+        $('#filter-nav').css('width', '0');
+    }
+});
