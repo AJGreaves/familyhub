@@ -49,4 +49,3 @@ class Helpers:
         time = f"{time[2]}-{time[1]}-{time[0]}"
         time = datetime.strptime(time, '%Y-%m-%d')
         return time
-

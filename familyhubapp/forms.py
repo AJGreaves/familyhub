@@ -215,3 +215,6 @@ def process_activity_data(db, user, post_request, published):
         'published': False
     }
     return obj
+
+def search_bar_results(db, search_text):
+    return db.activities.find({"$text": {"$search": search_text}})
