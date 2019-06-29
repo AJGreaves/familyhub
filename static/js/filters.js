@@ -156,13 +156,11 @@ $(document).ready(function () {
     })
 
     function openFilters() {
-        $('#filter-nav').css('left', '0');
-        $('main, footer, nav').css('opacity', '0.35', 'pointer-events', 'none');
+        $('#filter-nav, main, footer, nav').addClass('filters-open');
     }
 
     function closeFilters() {
-        $('#filter-nav').css('left', '-275px');
-        $('main, footer, nav').css('opacity', '1', 'pointer-events', 'auto');
+        $('#filter-nav, main, footer, nav').removeClass('filters-open');
     }
 
     fetchResults();

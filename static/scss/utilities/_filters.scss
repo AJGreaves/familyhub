@@ -50,8 +50,26 @@ and edited to fit project needs as a pull out filters bar */
     left: -275px;
     background-color: $mid-blue-hover;
     overflow-x: hidden;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+}
+
+#filter-nav.filters-open {
+    left: 0;
+}
+
+main,
+footer,
+nav {
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+}
+
+main.filters-open, 
+footer.filters-open, 
+nav.filters-open {
+    opacity: 0.35;
+    pointer-events: none;
 }
 
 #filter-frame {
@@ -74,11 +92,4 @@ and edited to fit project needs as a pull out filters bar */
 #filter-nav select {
     margin-bottom: 5px;
     width: 100%
-}
-
-main,
-footer,
-nav {
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
 }
