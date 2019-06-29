@@ -48,7 +48,7 @@ $(document).ready(function () {
             .then(data => {
                 hideLoading();
                 searchResults = [];
-                getFullData(data)
+                getFullData(data);
             })
             .catch(err => {
                 hideLoading();
@@ -66,9 +66,11 @@ $(document).ready(function () {
      */
 
     function getFullData(data) {
-        for (i = 0; i < data.length; i++) {
+        numResults = data.length;
+        for (i = 0; i < numResults; i++) {
             searchResults.push(data[i]);
         }
+        $('#num-of-results').text( numResults + ' results' );
         buildSearchResultsString(searchResults);
     }
 
