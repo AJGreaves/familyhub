@@ -61,6 +61,10 @@ def api_activities():
 # Activities page
 @app.route('/activities', methods=['GET', 'POST'])
 def activities_page():
+    """
+    Receives user input into filters, processes this to return the results from
+    MongoDB back to the browser to be displayed.
+    """
     loggedIn = True if 'user' in session else False
 
     if request.method == 'POST':
@@ -110,8 +114,6 @@ def activities_page():
             db_request.append({'address.town': location})
         if category != 'all':
             db_request.append({categorySelector: True})
-
-        print(db_request)
 
         if len(db_request) == 1:
             results = db.activities.find( db_request[0] )

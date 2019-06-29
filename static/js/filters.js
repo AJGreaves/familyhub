@@ -8,6 +8,11 @@ $(document).ready(function () {
         fetchResults();
     });
 
+    /**
+     * Function collects user input into search filters, and sends this to 
+     * back end to be processed. When the filtered results are returned it 
+     * starts the process to display the data in the browser.
+     */
     function fetchResults() {
 
         let location = $("#townSelect").val();
@@ -53,6 +58,12 @@ $(document).ready(function () {
     }
 
     let searchResults = []
+
+    /**
+     * Takes search results data from fetch and pushes it into an array
+     * that an be accessed outside of the fetch function.
+     * @param {array} data 
+     */
 
     function getFullData(data) {
         for (i = 0; i < data.length; i++) {
