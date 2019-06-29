@@ -32,7 +32,9 @@
 
 /* medium size screens and up */
 @media screen and (min-width: 768px) {
-    .navbar-brand.activities-pg {
+    /* possible to see logo when activities filter on activties page */
+    .navbar-brand.activities-pg,
+    .navbar-collapse.activities-pg {
         margin-left: 280px;
     }
 
@@ -100,6 +102,10 @@
 /* large screens and up */
 
 @media screen and (min-width: 992px) {
+    /* positions nav list to the new margin next to filters bar */
+    .navbar-collapse.activities-pg {
+        margin-left: auto;
+    }
     #backgroundImgPermission {
         background-image: url('https://i.ibb.co/RYfs1R8/rock-on.jpg');
         background-position: 90% 90%;
