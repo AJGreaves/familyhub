@@ -130,7 +130,7 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
     - Implementation of email authentication of user account before registration complete
 2. **Full text search**
     - Attempted this for several days but was unable to get it to work. Rather than dragging out time on this feature when this project is already very large, I made the decision to remove the relevant code to return to at a future date when my understanding is more advanced. 
-    - When returning to this feature, the text search related code I was working on was removed at `commit 9a1cdae69d`
+    - When returning to this feature, the text search related code I was working on  is in the branch `textSearchFix`.
 
 ## Technologies Used
 
