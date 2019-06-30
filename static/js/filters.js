@@ -5,6 +5,7 @@ $(document).ready(function () {
      */
     let pages = [];
     let searchResults = [];
+    let paginationActivePage = 1;
 
     /**
      * Fetches results to display when select or input filed is changed
@@ -92,10 +93,14 @@ $(document).ready(function () {
             const paginationString = buildPagination(numOfPages);
             $('#pagination-js').html(paginationString);
 
+            $('.page-item#pg-1').addClass('active');
+            paginationActivePage = 1;
             /* adds onclick event for pagination once html for it has been inserted */
             $('.page-js').click(function() {
-                id = this.id;
-                displayPages(id);
+                let this_id = this.id;
+                $('.page-js').parent().removeClass('active');
+                $(this).parent().addClass('active');
+                displayPages(this_id, numOfPages);
             })
 
             let page1 = Object.values(pages[0]);
@@ -112,10 +117,23 @@ $(document).ready(function () {
         }
     }
 
-    function displayPages(page) {
-        let pg = parseInt(page) - 1;
-        console.log(pg);
-        let result = Object.values(pages[pg]);
+    function displayPages(page, numOfPages) {
+        console.log(page);
+        let pg_index = '';
+        if (page != "prev" && page != "next") {
+            pg_index = parseInt(page) - 1;
+            paginationActivePage = pg_index + 1;
+        } else if (page == "prev" && paginationActivePage != 1) {
+            paginationActivePage--;
+            pg_index = paginationActivePage - 1;
+        } else if (page == "next" && paginationActivePage != numOfPages) {
+            paginationActivePage++;
+            pg_index = paginationActivePage - 1;
+        } else {
+            return;
+        }
+
+        let result = Object.values(pages[pg_index]);
         result = result[0];
         buildSearchResultsString(result);
     }
@@ -129,7 +147,7 @@ $(document).ready(function () {
         let paginationSubString = '';
         for (let i = 0; i < num; i++) {
             let paginate = `
-            <li class="page-item"><span id="${i + 1}" class="page-link page-js">${i + 1}</span></li>
+            <li id="pg-${i + 1}" class="page-item"><a id="${i + 1}" class="page-link page-js" href="#">${i + 1}</a></li>
             `;
             paginationSubString += paginate;
         }
@@ -137,16 +155,16 @@ $(document).ready(function () {
         const paginationString = `
         <nav aria-label="Pagination">
             <ul class="pagination justify-content-center">
-                <li class="page-item">
-                    <span id="prev" class="page-link page-js" aria-label="Previous">
+                <li id="pg-prev" class="page-item">
+                    <a id="prev" class="page-link page-js" aria-label="Previous" href="#">
                         <span aria-hidden="true">&laquo;</span>
-                    </span>
+                    </a>
                 </li>
                 ${paginationSubString}
-                <li class="page-item">
-                    <span id="next" class="page-link page-js" aria-label="Next">
+                <li id="pg-next" class="page-item">
+                    <a id="next" class="page-link page-js" aria-label="Next" href="#">
                         <span aria-hidden="true">&raquo;</span>
-                    </span>
+                    </a>
                 </li>
             </ul>
         </nav>
