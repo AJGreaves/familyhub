@@ -126,9 +126,16 @@ $(document).ready(function () {
         } else if (page == "prev" && paginationActivePage != 1) {
             paginationActivePage--;
             pg_index = paginationActivePage - 1;
+            $('.page-js').parent().removeClass('active');
+            let pgSelector = '.page-item#pg-'+ paginationActivePage;
+            $(pgSelector).addClass('active');
+            
         } else if (page == "next" && paginationActivePage != numOfPages) {
             paginationActivePage++;
             pg_index = paginationActivePage - 1;
+            $('.page-js').parent().removeClass('active');
+            let pgSelector = '.page-item#pg-'+ paginationActivePage;
+            $(pgSelector).addClass('active');
         } else {
             return;
         }
