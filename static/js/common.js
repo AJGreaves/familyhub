@@ -185,3 +185,14 @@ function openLoggedInModal(username) {
 function capFirst(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+$('input#inputDELETE').change(function () {
+    let val = $('#inputDELETE').val();
+    console.log(val);
+    if (val == "DELETE") {
+        $('#confirm-delete').removeClass('no-click');
+    } else {
+        $('#confirm-delete').addClass('no-click');
+    }
+    return;
+})
