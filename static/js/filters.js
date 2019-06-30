@@ -77,16 +77,22 @@ $(document).ready(function () {
         if (numOfPages > 1) {
             const paginationString = buildPagination(numOfPages);
             $('#pagination').html(paginationString);
+            let page1 = Object.values(pages[0]);
+            page1 = page1[0];
+            buildSearchResultsString(page1);
         } 
-
-        buildSearchResultsString(searchResults);
     }
+
+    /**
+     * Builds html string for number of pages needed in pagination.
+     * @param {int} num | number of pages needed
+     */
 
     function buildPagination(num) {
         let paginationSubString = ''
         for (i = 0; i < num; i++) {
             let paginate = `
-            <li class="page-item"><a class="page-link" href="#">${i + 1}</a></li>
+            <li class="page-item"><a id="page${i + 1}" class="page-link" href="javascript:void(0)">${i + 1}</a></li>
             `
             paginationSubString += paginate;
         }
@@ -95,13 +101,13 @@ $(document).ready(function () {
         <nav aria-label="Pagination">
             <ul class="pagination justify-content-center">
                 <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
+                    <a id="prev" class="page-link" href="javascript:void(0)" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
                 ${paginationSubString}
                 <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
+                    <a id="next" class="page-link" href="javascript:void(0)" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
                 </li>
