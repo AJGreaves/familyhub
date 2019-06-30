@@ -71,23 +71,29 @@ $(document).ready(function () {
             searchResults.push(data[i]);
         }
         $('#num-of-results').text( numResults + ' results' );
-        pages(data, 12);
+        pages = pages(data, 12);
         buildSearchResultsString(searchResults);
     }
 
+    /**
+     * Function takes an array and a number, breaks up the array of search results and returns
+     * an array of objects to be used for pages in pagination.
+     * @param {array} arr 
+     * @param {int} n 
+     */
     function pages(arr, n){
         let a = arr;
-        let chunked = [];
+        let pages = [];
         i = 1;
         do {
             let chunk = a.splice(0, n);
             let pageNum = 'page'+ i.toString();
             let obj = { [pageNum] : chunk };
-            chunked.push(obj);
+            pages.push(obj);
             i++;
         }
         while (a.length > 0);
-        console.log(chunked);
+        return pages;
     }
 
     /**
