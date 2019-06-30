@@ -77,10 +77,19 @@ $(document).ready(function () {
         if (numOfPages > 1) {
             const paginationString = buildPagination(numOfPages);
             $('#pagination').html(paginationString);
+
             let page1 = Object.values(pages[0]);
             page1 = page1[0];
             buildSearchResultsString(page1);
-        } 
+            return;
+        } else {
+            $('#pagination').html('');
+
+            let single_page = Object.values(pages[0]);
+            single_page = single_page[0];
+            buildSearchResultsString(single_page);
+            return;
+        }
     }
 
     /**
