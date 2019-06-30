@@ -71,7 +71,23 @@ $(document).ready(function () {
             searchResults.push(data[i]);
         }
         $('#num-of-results').text( numResults + ' results' );
+        pages(data, 12);
         buildSearchResultsString(searchResults);
+    }
+
+    function pages(arr, n){
+        let a = arr;
+        let chunked = [];
+        i = 1;
+        do {
+            let chunk = a.splice(0, n);
+            let pageNum = 'page'+ i.toString();
+            let obj = { [pageNum] : chunk };
+            chunked.push(obj);
+            i++;
+        }
+        while (a.length > 0);
+        console.log(chunked);
     }
 
     /**
