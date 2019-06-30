@@ -14,6 +14,15 @@
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}" type="text/css">
+    {% if active == 'contact' %}
+    <!-- scripts for EmailJs to work with sending email contact form -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_CQSk7h9Wyuw2xLhYG0hBX");
+        })();
+    </script>
+    {% endif %}
     <title>{{headTitle}} | Family Hub</title>
 </head>
 
@@ -65,7 +74,10 @@
     {% elif active == 'listing' %}
     <script src="{{url_for('static', filename='js/listings.js')}}"></script>
     {% endif %}
-
+    {% if active == 'contact' %}
+    <!-- script for email -->
+    <script src="{{url_for('static', filename='js/sendemail.js')}}"></script>
+    {% endif %}
 </body>
 
 </html>
