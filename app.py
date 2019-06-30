@@ -215,10 +215,11 @@ def search_page(search_text):
     loggedIn = True if 'user' in session else False
 
     results = search_bar_results(db, search_text)
-    results = list(results) 
+    results = list(results)
+    numResults = 0
     for result in results:
+        numResults = numResults + 1
         print(result)
-    numResults = len(results)
 
     if request.method == 'POST':
         post_request = request.form.to_dict()
