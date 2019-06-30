@@ -70,9 +70,45 @@ $(document).ready(function () {
         for (i = 0; i < numResults; i++) {
             searchResults.push(data[i]);
         }
-        $('#num-of-results').text( numResults + ' results' );
-        pages = pages(data, 12);
+        $('#num-of-results').text(numResults + ' results');
+        let pages = pages_fcn(data, 12);
+        let numOfPages = pages.length;
+
+        if (numOfPages > 1) {
+            const paginationString = buildPagination(numOfPages);
+            $('#pagination').html(paginationString);
+        } 
+
         buildSearchResultsString(searchResults);
+    }
+
+    function buildPagination(num) {
+        let paginationSubString = ''
+        for (i = 0; i < num; i++) {
+            let paginate = `
+            <li class="page-item"><a class="page-link" href="#">${i + 1}</a></li>
+            `
+            paginationSubString += paginate;
+        }
+
+        const paginationString = `
+        <nav aria-label="Pagination">
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                ${paginationSubString}
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        `
+        return paginationString;
     }
 
     /**
@@ -81,19 +117,21 @@ $(document).ready(function () {
      * @param {array} arr 
      * @param {int} n 
      */
-    function pages(arr, n){
+    function pages_fcn(arr, n) {
         let a = arr;
-        let pages = [];
+        let pages_arr = [];
         i = 1;
         do {
             let chunk = a.splice(0, n);
-            let pageNum = 'page'+ i.toString();
-            let obj = { [pageNum] : chunk };
-            pages.push(obj);
+            let pageNum = 'page' + i.toString();
+            let obj = {
+                [pageNum]: chunk
+            };
+            pages_arr.push(obj);
             i++;
         }
         while (a.length > 0);
-        return pages;
+        return pages_arr;
     }
 
     /**
