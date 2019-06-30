@@ -7,7 +7,7 @@ from bson.json_util import dumps
 from werkzeug.security import generate_password_hash, check_password_hash
 from familyhubapp.keys import Keywords
 from familyhubapp.helpers import Helpers
-from familyhubapp.forms import new_account_req, login_req, settings_update, process_activity_data, search_bar_results
+from familyhubapp.forms import new_account_req, login_req, settings_update, process_activity_data
 from datetime import datetime
 
 # create instance of flask and assign it to "app"
@@ -36,16 +36,6 @@ def home_page():
     rawDescrip = topTip['description']
     topTopDescrp = Helpers.format_description(rawDescrip)
     topTopDescrp = topTopDescrp[0:4]
-
-    if request.method == 'POST':
-        post_request = request.form.to_dict()
-        if post_request.get('searchText'):
-            search_text = post_request.get('searchText')
-
-            return redirect(url_for(
-                "search_page", 
-                loggedIn=loggedIn, 
-                search_text=search_text))
 
     return render_template(
         "pages/index.html", 
@@ -137,16 +127,6 @@ def activities_page():
 def contact_page():
     loggedIn = True if 'user' in session else False
 
-    if request.method == 'POST':
-        post_request = request.form.to_dict()
-        if post_request.get('searchText'):
-            search_text = post_request.get('searchText')
-
-            return redirect(url_for(
-                "search_page", 
-                loggedIn=loggedIn, 
-                search_text=search_text))
-
     return render_template(
         "pages/contact.html", 
         headTitle="Contact", 
@@ -209,37 +189,6 @@ def logout():
     session.clear()
     return redirect(url_for('home_page'))
 
-# Search page
-@app.route('/search/<search_text>', methods=['GET', 'POST'])
-def search_page(search_text):
-    loggedIn = True if 'user' in session else False
-
-    results = search_bar_results(db, search_text)
-    results = list(results)
-    numResults = 0
-    for result in results:
-        numResults = numResults + 1
-        print(result)
-
-    if request.method == 'POST':
-        post_request = request.form.to_dict()
-        search_text = post_request.get('searchText')
-
-        return redirect(url_for(
-            "search_page", 
-            loggedIn=loggedIn, 
-            search_text=search_text))
-
-    return render_template(
-        "pages/search.html", 
-        headTitle="Search",
-        active="search",
-        results=results,
-        numResults=numResults,
-        loggedIn=loggedIn,
-        keywords=Keywords.generic()
-    )
-
 # Activity listing page 
 @app.route('/listing/<title>', methods=['GET', 'POST'])
 def activity_listing_page(title):
@@ -261,15 +210,6 @@ def activity_listing_page(title):
 
     openTimes = Helpers.open_times(openTimes_db)
     descrpDict = Helpers.format_description(rawDescrip)
-
-    if request.method == 'POST':
-        post_request = request.form.to_dict()
-        search_text = post_request.get('searchText')
-
-        return redirect(url_for(
-            "search_page", 
-            loggedIn=loggedIn, 
-            search_text=search_text))
 
     return render_template(
         "pages/activitylisting.html", 

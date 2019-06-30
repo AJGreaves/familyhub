@@ -1,7 +1,7 @@
 import os, json
 from flask import Flask, redirect, render_template, request, url_for, jsonify, session
 from config import Config
-from pymongo import MongoClient, TEXT
+from pymongo import MongoClient
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 from familyhubapp.keys import Keywords
@@ -215,16 +215,3 @@ def process_activity_data(db, user, post_request, published):
         'published': False
     }
     return obj
-
-def search_bar_results(db, search_text):
-
-    db.activities.create_index(search_text, TEXT)
-
-    return db.activities.find(
-        {
-            '$text': 
-            {
-                '$search': search_text,
-            }
-        }
-    )
