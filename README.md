@@ -130,7 +130,18 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
     - Implementation of email authentication of user account before registration complete
 2. **Full text search**
     - Attempted this for several days but was unable to get it to work. Rather than dragging out time on this feature when this project is already very large, I made the decision to remove the relevant code to return to at a future date when my understanding is more advanced. 
-    - When returning to this feature, the text search related code I was working on  is in the branch `textSearchFix`.
+    - When returning to this feature, the text search related code I was working on  is in the branch `textSearchFix`. 
+    - [Research this link](https://docs.mongodb.com/manual/core/index-text/#wildcard-text-indexes)
+3. Wire up contact form
+4. Admin account 
+- Can edit/delete any listing from database
+- Can add/remove "recommended" field on any listing from database
+5. Expired listings not visible on the site 
+- Data filtered by date and only show entries on todays date and later
+6. Expired listings still visible in users account page so they can be edited and updated with new dates.
+7. Filter by date on activities page
+8. Sections on users account page - Published, Saved and Expired.
+9. Slug friendly URLs
 
 ## Technologies Used
 
