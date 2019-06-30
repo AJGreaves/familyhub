@@ -3,7 +3,7 @@
  ******************************************/
 
 // Shows spinner and hides page content until everything is loaded
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     setTimeout(function () {
         hideLoading();
         $('.no-fouc').removeClass('no-fouc');
@@ -121,6 +121,11 @@ function alertModal(message, date1, date2) {
             heading.text('Error');
             message1.text('Something went wrong. Please try again.');
             break;
+        case 'error':
+            heading.text('email sent');
+            message1.text('Your email has been sent successfully!');
+            message2.text('We will be in touch within 48 hours');
+            break;
         default:
             break;
     }
@@ -136,7 +141,7 @@ $('#alertModalClose').click(function (event) {
 
 $('.delete-button').click(function () {
     let activity_id = this.id;
-    let href = '/deletelisting?activity_id=' + activity_id 
+    let href = '/deletelisting?activity_id=' + activity_id
     $('#confirm-delete').attr('href', href);
     openDeleteWarningModal();
     return;
