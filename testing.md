@@ -169,6 +169,11 @@ document.addEventListener("DOMContentLoaded", function() {
 - This bug took hours to track down as I originally blamed it on a cursor problem with mongoDB. Of course now I am writing my bug report with the one right above it I realise now how obvious it was!! The function above also removed the "active" class from all the slides on the second carousel. 
 - To fix this I adjusted my javascript function to be more specific to removing all but the first `.active` class from **each** one. 
 
+8. **Pagination on click events not firing**
+- A simple jQuery on-click event on my pagination links refused to fire. 
+- The reason for this was that the html for pagination was inserted into the page using JavaScript after page was loaded. Which in turn meant that the event listeners were not being added to the newly inserted elements. 
+- Bug was fixed by adding the onclick event in the callback right after the html for the pagination was inserted into the page. 
+
 #### Unsolved bugs
 
 1. 

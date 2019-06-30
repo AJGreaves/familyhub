@@ -95,7 +95,10 @@ $(document).ready(function () {
 
             $('.page-item#pg-1').addClass('active');
             paginationActivePage = 1;
-            /* adds onclick event for pagination once html for it has been inserted */
+
+            /* BUG FIX: Clicking on pagination links did not work because onclick event
+            needed to be initialized in the callback once the html for pagination was
+            inserted. Adding this onclick even here solved it. */
             $('.page-js').click(function() {
                 let this_id = this.id;
                 $('.page-js').parent().removeClass('active');
@@ -117,12 +120,24 @@ $(document).ready(function () {
         }
     }
 
+    /**
+     * Function takes an id for which pagination selection was clicked by the user, 
+     * parses this into an int and then uses this to select the array of results to 
+     * display from the pages array. 
+     * This function also operates the prev and next buttons on the pagination, taking 
+     * the value of the active page to create the index with which to get and display
+     * the results on the page. 
+     * @param {str} page | Collected id from pagination selection clicked
+     * @param {int} numOfPages | Total number of pages available in pagination
+     */
+
     function displayPages(page, numOfPages) {
         console.log(page);
         let pg_index = '';
         if (page != "prev" && page != "next") {
             pg_index = parseInt(page) - 1;
             paginationActivePage = pg_index + 1;
+
         } else if (page == "prev" && paginationActivePage != 1) {
             paginationActivePage--;
             pg_index = paginationActivePage - 1;
@@ -136,6 +151,7 @@ $(document).ready(function () {
             $('.page-js').parent().removeClass('active');
             let pgSelector = '.page-item#pg-'+ paginationActivePage;
             $(pgSelector).addClass('active');
+
         } else {
             return;
         }
