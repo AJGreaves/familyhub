@@ -1,6 +1,12 @@
 $(document).ready(function () {
 
     /**
+     * Variables
+     */
+    let pages = [];
+    let searchResults = [];
+
+    /**
      * Fetches results to display when select or input filed is changed
      */
 
@@ -32,7 +38,7 @@ $(document).ready(function () {
             inOut: inOut,
             ageRangeIds: ageRangeIds,
             otherIds: otherIds,
-        }
+        };
 
         showLoading();
 
@@ -57,8 +63,6 @@ $(document).ready(function () {
             });
     }
 
-    let searchResults = []
-
     /**
      * Takes search results data from fetch and pushes it into an array
      * that an be accessed outside of the fetch function.
@@ -66,24 +70,34 @@ $(document).ready(function () {
      */
 
     function getFullData(data) {
-        numResults = data.length;
-        for (i = 0; i < numResults; i++) {
+        let numResults = data.length;
+        for (let i = 0; i < numResults; i++) {
             searchResults.push(data[i]);
         }
         $('#num-of-results').text(numResults + ' results');
-        let pages = pages_fcn(data, 12);
+        displayResults(data);
+    }
+
+    /**
+     * Function takes data sent from python, breaks results into groups of 12
+     * for pagination. Prints out html pagination icons if needed, or removes them if not. 
+     * prints out first page (or all results if 12 or less) to the screen.
+     * @param {arr} data 
+     */
+    function displayResults(data) {
+        pages = pages_fcn(data, 12);
         let numOfPages = pages.length;
 
         if (numOfPages > 1) {
             const paginationString = buildPagination(numOfPages);
-            $('#pagination').html(paginationString);
+            $('#pagination-js').html(paginationString);
 
             let page1 = Object.values(pages[0]);
             page1 = page1[0];
             buildSearchResultsString(page1);
             return;
         } else {
-            $('#pagination').html('');
+            $('#pagination-js').html('');
 
             let single_page = Object.values(pages[0]);
             single_page = single_page[0];
@@ -98,11 +112,11 @@ $(document).ready(function () {
      */
 
     function buildPagination(num) {
-        let paginationSubString = ''
-        for (i = 0; i < num; i++) {
+        let paginationSubString = '';
+        for (let i = 0; i < num; i++) {
             let paginate = `
-            <li class="page-item"><a id="page${i + 1}" class="page-link" href="javascript:void(0)">${i + 1}</a></li>
-            `
+            <li class="page-item"><span id="page${i + 1}" class="page-link page-js">${i + 1}</span></li>
+            `;
             paginationSubString += paginate;
         }
 
@@ -110,19 +124,19 @@ $(document).ready(function () {
         <nav aria-label="Pagination">
             <ul class="pagination justify-content-center">
                 <li class="page-item">
-                    <a id="prev" class="page-link" href="javascript:void(0)" aria-label="Previous">
+                    <span id="prev" class="page-link page-js" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
-                    </a>
+                    </span>
                 </li>
                 ${paginationSubString}
                 <li class="page-item">
-                    <a id="next" class="page-link" href="javascript:void(0)" aria-label="Next">
+                    <span id="next" class="page-link page-js" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
-                    </a>
+                    </span>
                 </li>
             </ul>
         </nav>
-        `
+        `;
         return paginationString;
     }
 
@@ -135,7 +149,7 @@ $(document).ready(function () {
     function pages_fcn(arr, n) {
         let a = arr;
         let pages_arr = [];
-        i = 1;
+        let i = 1;
         do {
             let chunk = a.splice(0, n);
             let pageNum = 'page' + i.toString();
@@ -156,9 +170,9 @@ $(document).ready(function () {
      */
 
     function buildSearchResultsString(searchResults) {
-        let searchResultsString = ''
-        for (i = 0; i < searchResults.length; i++) {
-            card = cardTemplate(searchResults[i]);
+        let searchResultsString = '';
+        for (let i = 0; i < searchResults.length; i++) {
+            let card = cardTemplate(searchResults[i]);
             searchResultsString += card;
         }
         /**
@@ -197,7 +211,7 @@ $(document).ready(function () {
                 </div>
             </div>
         </div>
-        `
+        `;
         return card;
     }
 
@@ -207,24 +221,24 @@ $(document).ready(function () {
      */
 
     $('.clear-filters').click(function () {
-        inputs = $('input');
-        options = $('option');
+        let inputs = $('input');
+        let options = $('option');
         options.each(function () {
             $(this).prop('selected', false);
-        })
+        });
         inputs.each(function () {
             $(this).prop('checked', false);
-        })
+        });
         fetchResults();
-    })
+    });
 
     function getCheckedIds(input) {
-        ids = [];
+        let ids = [];
         input.each(function () {
             if ($(this).prop("checked") == true) {
                 ids.push(this.id);
             }
-        })
+        });
         return ids;
     }
 
@@ -235,11 +249,11 @@ $(document).ready(function () {
 
     $('.closeFiltersBtn').click(function () {
         closeFilters();
-    })
+    });
 
     $('#openFiltersBtn').click(function () {
         openFilters();
-    })
+    });
 
     function openFilters() {
         $('#filter-nav, main, footer, nav').addClass('filters-open');
@@ -250,4 +264,8 @@ $(document).ready(function () {
     }
 
     fetchResults();
+    $('.page-js').click(function() {
+        console.log('clicked!');
+    })
+
 });
