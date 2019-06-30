@@ -92,6 +92,12 @@ $(document).ready(function () {
             const paginationString = buildPagination(numOfPages);
             $('#pagination-js').html(paginationString);
 
+            /* adds onclick event for pagination once html for it has been inserted */
+            $('.page-js').click(function() {
+                id = this.id;
+                displayPages(id);
+            })
+
             let page1 = Object.values(pages[0]);
             page1 = page1[0];
             buildSearchResultsString(page1);
@@ -106,6 +112,14 @@ $(document).ready(function () {
         }
     }
 
+    function displayPages(page) {
+        let pg = parseInt(page) - 1;
+        console.log(pg);
+        let result = Object.values(pages[pg]);
+        result = result[0];
+        buildSearchResultsString(result);
+    }
+
     /**
      * Builds html string for number of pages needed in pagination.
      * @param {int} num | number of pages needed
@@ -115,7 +129,7 @@ $(document).ready(function () {
         let paginationSubString = '';
         for (let i = 0; i < num; i++) {
             let paginate = `
-            <li class="page-item"><span id="page${i + 1}" class="page-link page-js">${i + 1}</span></li>
+            <li class="page-item"><span id="${i + 1}" class="page-link page-js">${i + 1}</span></li>
             `;
             paginationSubString += paginate;
         }
@@ -264,8 +278,5 @@ $(document).ready(function () {
     }
 
     fetchResults();
-    $('.page-js').click(function() {
-        console.log('clicked!');
-    })
 
 });
