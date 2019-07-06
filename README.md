@@ -224,7 +224,6 @@ Further reading and troubleshooting on cloning a repository from GitHub [here](h
 - Hex to RGBA colour converter: http://hex2rgba.devoth.com/
 - function to capitalize first letter of username: https://paulund.co.uk/how-to-capitalize-the-first-letter-of-a-string-in-javascript
 - code to make sticky footer: https://css-tricks.com/couple-takes-sticky-footer/
-- code to create infinite scroll on search page: https://www.youtube.com/watch?v=76IANst0jwc
 - Code for animated side-nav taken from https://www.w3schools.com/howto/howto_js_sidenav.asp
 
 ### Acknowledgements
