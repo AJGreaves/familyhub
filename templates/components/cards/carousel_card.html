@@ -1,5 +1,5 @@
 {% block carousel_card %}
-<div class="card familyhub-card carousel-card-js">
+<a class="card familyhub-card carousel-card-js" href="{{ url_for('activity_listing_page', title=activity['title'], activity_id=activity['_id'])}}">
     <div class="card-img-wrapper">
         <!-- Inline style used here to import link with jinja -->
         <div class="card-picture" title="{{activity.title}}" style="background-image: url({{activity.imgUrl}})">
@@ -13,7 +13,7 @@
         <div class="card-text-wrapper">
             <p class="card-text">{{activity.shortDescription}}...</p>
         </div>
-        <a class="readmore-link" href="{{ url_for('activity_listing_page', title=activity['title'], activity_id=activity['_id'])}}">Read More <i class="fas fa-arrow-circle-right"></i></a>
+        <div class="readmore-link">Read More <i class="fas fa-arrow-circle-right"></i></div>
     </div>
-</div>
+</a>
 {% endblock %}
