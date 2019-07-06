@@ -204,6 +204,9 @@ Further reading and troubleshooting on cloning a repository from GitHub [here](h
 ### Content
 
 - text in this project was written by...
+- privacy policy https://www.cleverbox.co.uk/example-privacy-policy/
+- cookies policy https://www.cleverbox.co.uk/cookies/
+
 
 ### Media
 #### Animations
