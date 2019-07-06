@@ -285,16 +285,21 @@ each listing is for */
 }
 
 /* settings icon for account settings page */
-.fa-cog {
+.account-cog {
   font-size: 2.5rem;
   color: slategrey;
   -webkit-transition: all 0.2s ease-in-out 0.2s;
   transition: all 0.2s ease-in-out 0.2s;
 }
 
-.fa-cog:hover {
+.account-cog:hover {
   font-size: 2.5rem;
   color: #000034;
+}
+
+.menu-icon {
+  width: 18px;
+  opacity: 0.6 !important;
 }
 
 /* ------------------------------

@@ -18,12 +18,12 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <a class="nav-link {% if active == 'home' %}active{% endif %}" href="{{url_for('home_page')}}">
-                    Home {% if active == 'home' %}<span class="sr-only">(current)</span>{% endif %}
+                    <i class="fas fa-home menu-icon"></i> Home {% if active == 'home' %}<span class="sr-only">(current)</span>{% endif %}
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link {% if active == 'activities' %}active{% endif %}" href="{{url_for('activities_page')}}">
-                    Activities {% if active == 'activities' %}<span class="sr-only">(current)</span>{% endif %}
+                    <i class="fas fa-search menu-icon"></i> Activities {% if active == 'activities' %}<span class="sr-only">(current)</span>{% endif %}
                 </a>
             </li>
 
@@ -31,19 +31,19 @@
             {% if loggedIn != True %}
             <li class="nav-item">
                 <a class="nav-link {% if active == 'newAccount' %}active{% endif %}" href="{{url_for('new_account_page')}}">
-                    Create Account {% if active == 'newAccount' %}<span class="sr-only">(current)</span>{% endif %}
+                    <i class="fas fa-user menu-icon"></i> Create Account {% if active == 'newAccount' %}<span class="sr-only">(current)</span>{% endif %}
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link {% if active == 'login' %}active{% endif %}" href="{{url_for('login_page')}}">
-                    Log In {% if active == 'login' %}<span class="sr-only">(current)</span>{% endif %}
+                    <i class="fas fa-sign-in-alt menu-icon"></i> Log In {% if active == 'login' %}<span class="sr-only">(current)</span>{% endif %}
                 </a>
             </li>
             {% endif %}
 
             <li class="nav-item">
                 <a class="nav-link {% if active == 'contact' %}contact{% endif %}" href="{{url_for('contact_page')}}">
-                    Contact {% if active == 'contact' %}<span class="sr-only">(current)</span>{% endif %}
+                    <i class="far fa-comment menu-icon"></i> Contact {% if active == 'contact' %}<span class="sr-only">(current)</span>{% endif %}
                 </a>
             </li>
 
@@ -51,13 +51,17 @@
             {% if loggedIn == True %}
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    My Account
+                    <i class="fas fa-user menu-icon"></i> My Account
                 </a>
                 <div class="dropdown-menu bg-platinum" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{url_for('my_account_page', username=session['user'])}}">My Listings</a>
-                    <a class="dropdown-item" href="{{url_for('new_activity_page', username=session['user'])}}">Add New</a>
-                    <a class="dropdown-item" href="{{url_for('settings_page', username=session['user'])}}">Settings</a>
-                    <a class="dropdown-item" href="{{url_for('logout')}}">Log out</a>
+                    <a class="dropdown-item" href="{{url_for('my_account_page', username=session['user'])}}">
+                        <i class="fas fa-list menu-icon"></i> My Listings</a>
+                    <a class="dropdown-item" href="{{url_for('new_activity_page', username=session['user'])}}">
+                        <i class="far fa-plus-square menu-icon"></i> Add New</a>
+                    <a class="dropdown-item" href="{{url_for('settings_page', username=session['user'])}}">
+                        <i class="fas fa-cog menu-icon"></i> Settings</a>
+                    <a class="dropdown-item" href="{{url_for('logout')}}">
+                        <i class="fas fa-sign-out-alt menu-icon"></i> Log out</a>
                 </div>
             </li>
             {% endif %}   
