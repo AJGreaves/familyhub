@@ -174,6 +174,16 @@ document.addEventListener("DOMContentLoaded", function() {
 - The reason for this was that the html for pagination was inserted into the page using JavaScript after page was loaded. Which in turn meant that the event listeners were not being added to the newly inserted elements. 
 - Bug was fixed by adding the onclick event in the callback right after the html for the pagination was inserted into the page. 
 
+9. **Input URLs with http: in them threw errors in the browser**
+- While I could keep all the links I put into my site to https:, I could not stop users from adding http: links to their listings. This caused the browser to throw errors. 
+- Fix: To get around this I wrote a simple function to remove all http: and https: from links given, so that the links on my site always begin with the // part of the url, allowing the browser to fill in the correct https requirement. And applied this function to all urls provided by the user. 
+```python
+    def remove_http(url):
+        url = url.replace("https:", "")
+        url = url.replace("http:", "")
+        return url
+```
+
 #### Unsolved bugs
 
 1. 
