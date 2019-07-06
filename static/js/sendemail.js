@@ -21,6 +21,8 @@ $(document).ready(function () {
             data: JSON.stringify(data),
             contentType: 'application/json'
         }).done(function () {
+            $('input').val('');
+            $('textarea').val('');
             alertModal('email sent');
         }).fail(function (error) {
             console.log('Oops... ' + JSON.stringify(error));

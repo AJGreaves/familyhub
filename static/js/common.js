@@ -121,8 +121,8 @@ function alertModal(message, date1, date2) {
             heading.text('Error');
             message1.text('Something went wrong. Please try again.');
             break;
-        case 'error':
-            heading.text('email sent');
+        case 'email sent':
+            heading.text('Email sent!');
             message1.text('Your email has been sent successfully!');
             message2.text('We will be in touch within 48 hours');
             break;
