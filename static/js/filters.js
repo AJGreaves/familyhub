@@ -248,8 +248,8 @@ $(document).ready(function () {
         let href = "/listing/" + slug + '?activity_id=' + id_string;
 
         const card = `
-        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="card familyhub-card">
+        <a class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <a class="card familyhub-card" href="${href}">
                 <div class="card-img-wrapper">
                     <!-- Inline style used here for ease of placing background image with JS -->
                     <div class="card-picture" title="${searchResult.title}" style="background-image: url(${searchResult.imgUrl})">
@@ -263,10 +263,10 @@ $(document).ready(function () {
                     <div class="card-text-wrapper">
                         <p class="card-text">${searchResult.shortDescription}...</p>
                     </div>
-                    <a class="readmore-link" href="${href}">Read More <i class="fas fa-arrow-circle-right"></i></a>
+                    <div class="readmore-link">Read More <i class="fas fa-arrow-circle-right"></i></div>
                 </div>
-            </div>
-        </div>
+            </a>
+        </a>
         `;
         return card;
     }
