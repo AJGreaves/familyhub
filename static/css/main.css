@@ -674,6 +674,14 @@ the inline background style for the background image  */
   height: 30px;
 }
 
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: rgba(0, 0, 0, 0.9);
+}
+
 .dropdown-menu {
   color: rgba(0, 0, 0, 0.7);
 }
