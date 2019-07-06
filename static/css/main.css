@@ -584,6 +584,7 @@ the inline background style for the background image  */
 
 .card-text {
   font-size: 0.85rem;
+  color: #000034;
 }
 
 .card-title-wrapper {
