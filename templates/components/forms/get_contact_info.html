@@ -4,25 +4,25 @@
     <div class="form-group col-12 col-md-6 pr-md-3">
         <h3>Contact info</h3>
         <label for="phone">Phone number</label>
-        <input id="phone" name="phone" class="form-control" type="tel" pattern="[0-9]{10}" maxlength="100" placeholder="Phone number"
+        <input id="phone" name="phone" class="form-control" type="tel" pattern="[0-9]{10}" maxlength="100" placeholder="Phone number" aria-label="Input phone number (optional)"
         {% if editor == 'edit' %}value="{{activity.contact.phone}}" {% endif %}>
         <label for="email" class="mt-3">Email address *</label>
-        <input id="email" name="email" class="form-control" type="email" maxlength="100" placeholder="Email"
+        <input id="email" name="email" class="form-control" type="email" maxlength="100" placeholder="Email" aria-label="Input email address (required)"
         {% if editor == 'edit' %}value="{{activity.contact.email}}" {% endif %} required>
         <label for="url" class="mt-3">Website url *</label>
-        <input id="url" name="url" class="form-control" type="url" maxlength="100" placeholder="https://..."
+        <input id="url" name="url" class="form-control" type="url" maxlength="100" placeholder="https://..." aria-label="Input website link including https (required)"
         {% if editor == 'edit' %}value="{{activity.contact.url}}" {% endif %} required>
     </div>
     <div class="form-group col-12 col-md-6 pl-md-3">
         <h3>Social links</h3>
         <label for="facebook">Facebook url</label>
-        <input id="facebook" name="facebook" class="form-control" type="url" maxlength="100" placeholder="https://..."
+        <input id="facebook" name="facebook" class="form-control" type="url" maxlength="100" placeholder="https://..." aria-label="Input facebook link including https (optional)"
         {% if editor == 'edit' and activity.contact.facebook %}value="{{activity.contact.facebook}}" {% endif %}>
         <label for="twitter" class="mt-3">Twitter url</label>
-        <input id="twitter" name="twitter" class="form-control" type="url" maxlength="100" placeholder="https://..."
+        <input id="twitter" name="twitter" class="form-control" type="url" maxlength="100" placeholder="https://..." aria-label="Input twitter link including https (optional)"
         {% if editor == 'edit' and activity.contact.twitter %}value="{{activity.contact.twitter}}" {% endif %}>
         <label for="instagram" class="mt-3">Instagram url</label>
-        <input id="instagram" name="instagram" class="form-control" type="url" maxlength="100" placeholder="https://..."
+        <input id="instagram" name="instagram" class="form-control" type="url" maxlength="100" placeholder="https://..." aria-label="Input instagram link including https (optional)"
         {% if editor == 'edit' and activity.contact.instagram %}value="{{activity.contact.instagram}}" {% endif %}>
     </div>
 </div>

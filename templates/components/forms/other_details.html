@@ -2,42 +2,42 @@
 
 <div class="form-group">
     <div class="form-check">
-        <input class="form-check-input in-out-js" name="free" type="checkbox" id="free"
+        <input class="form-check-input in-out-js" name="free" type="checkbox" id="free" aria-label="Free entrance"
             {% if editor == 'edit' and activity.otherDetails and activity.otherDetails.free %}checked {% endif %}>
         <label class="form-check-label" for="free">
             Free entrance
         </label>
     </div>
     <div class="form-check">
-        <input class="form-check-input in-out-js" name="bringFood" type="checkbox" id="bringFood"
+        <input class="form-check-input in-out-js" name="bringFood" type="checkbox" id="bringFood" aria-label="Bringing own food permitted"
             {% if editor == 'edit' and activity.otherDetails and activity.otherDetails.bringFood %}checked {% endif %}>
         <label class="form-check-label" for="bringFood">
             Bringing own food permitted
         </label>
     </div>
     <div class="form-check">
-        <input class="form-check-input in-out-js" name="catering" type="checkbox" id="catering"
+        <input class="form-check-input in-out-js" name="catering" type="checkbox" id="catering" aria-label="Catering available"
             {% if editor == 'edit' and activity.otherDetails and activity.otherDetails.catering %}checked {% endif %}>
         <label class="form-check-label" for="catering">
             Catering available
         </label>
     </div>
     <div class="form-check">
-        <input class="form-check-input in-out-js" name="goodWeather" type="checkbox" id="goodWeather"
+        <input class="form-check-input in-out-js" name="goodWeather" type="checkbox" id="goodWeather" aria-label="Suitable for good weather"
             {% if editor == 'edit' and activity.otherDetails and activity.otherDetails.goodWeather %}checked {% endif %}>
         <label class="form-check-label" for="goodWeather">
             Suitable for good weather
         </label>
     </div>
     <div class="form-check">
-        <input class="form-check-input in-out-js" name="badWeather" type="checkbox" id="badWeather"
+        <input class="form-check-input in-out-js" name="badWeather" type="checkbox" id="badWeather" aria-label="Suitable for bad weather"
             {% if editor == 'edit' and activity.otherDetails and activity.otherDetails.badWeather %}checked {% endif %}>
         <label class="form-check-label" for="badWeather">
             Suitable for bad weather
         </label>
     </div>
     <div class="form-check">
-        <input class="form-check-input in-out-js" name="groups" type="checkbox" id="groups"
+        <input class="form-check-input in-out-js" name="groups" type="checkbox" id="groups" aria-label="Suitable for groups"
             {% if editor == 'edit' and activity.otherDetails and activity.otherDetails.groups %}checked {% endif %}>
         <label class="form-check-label" for="groups">
             Suitable for groups
