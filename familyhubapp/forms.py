@@ -103,7 +103,14 @@ def process_activity_data(db, user, post_request, published):
     end = Helpers.format_time(post_request['end']) if getBool(post_request, 'start') else None
     description = post_request.get('description')
     shortDescription = description[0:100]
-
+    imgUrl = Helpers.remove_http(post_request.get('imgUrl'))
+    url = Helpers.remove_http(post_request.get('url'))
+    if post_request.get('facebook'):
+        facebook = Helpers.remove_http(post_request.get('facebook'))
+    if post_request.get('instagram'):
+        instagram = Helpers.remove_http(post_request.get('instagram'))
+    if post_request.get('twitter'):
+        twitter = Helpers.remove_http(post_request.get('twitter'))
 
     openTimes = [
         'monStart','monEnd', 'tueStart', 'tueEnd', 
@@ -126,7 +133,7 @@ def process_activity_data(db, user, post_request, published):
     obj = {
         'username': user['username'], 
         'title': post_request.get('title'),
-        'imgUrl': post_request.get('imgUrl'),
+        'imgUrl': imgUrl,
         'dates': { 
             'start': start, 
             'end': end,
@@ -204,11 +211,11 @@ def process_activity_data(db, user, post_request, published):
         'outdoor': getBool(post_request, 'outdoor'),
         'contact': {
             'phone': post_request.get('phone'),
-            'url': post_request.get('url'),
+            'url': url,
             'email': post_request.get('email'),
-            'facebook': post_request.get('facebook') if post_request.get('facebook') else None,
-            'twitter': post_request.get('twitter') if post_request.get('twitter') else None,
-            'instagram': post_request.get('instagram') if post_request.get('instagram') else None
+            'facebook': facebook if post_request.get('facebook') else None,
+            'twitter': twitter if post_request.get('twitter') else None,
+            'instagram': instagram if post_request.get('instagram') else None
         },
         'description': post_request.get('description'),
         'shortDescription': shortDescription,
