@@ -29,7 +29,7 @@
             <div class="col-12 {% if active == 'activities' %}col-md-6 col-lg-3 {% else %} col-md-3 {% endif %}">
                 <h3>Popular links</h3>
                 <a href="{{url_for('activities_page')}}">Search activities</a>
-                <a href="#">Privacy Policy</a>
+                <a href="{{url_for('privacy')}}">Privacy Policy</a>
                 <a href="{{url_for('new_account_page')}}">Create an account</a>
                 <a href="{{url_for('login_page')}}">Log in</a>
             </div>
