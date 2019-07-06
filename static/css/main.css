@@ -49,6 +49,14 @@ footer h4 {
   font-weight: 700;
 }
 
+#privacy-policy a {
+  color: #5ca4a9;
+}
+
+#privacy-policy a:hover {
+  color: #346861;
+}
+
 /* ------------------------------
     Buttons
 ------------------------------ */

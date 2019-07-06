@@ -480,6 +480,17 @@ def delete_listing():
         deleted=True
     ))
 
+@app.route('/privacy-policy')
+def privacy():
+    loggedIn = True if 'user' in session else False
+
+    return render_template(
+    "pages/privacy.html", 
+    headTitle="Privacy Policy", 
+    loggedIn=loggedIn,
+    keywords=Keywords.generic()
+)
+
 # 404 error page
 @app.errorhandler(404)
 def page_not_found(e):

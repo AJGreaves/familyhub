@@ -44,3 +44,11 @@ footer h4 {
 .bold {
     font-weight: 700;
 }
+
+#privacy-policy a {
+    color: $mid-blue;
+}
+
+#privacy-policy a:hover {
+    color: $mid-blue-hover;
+}
