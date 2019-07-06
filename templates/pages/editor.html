@@ -26,13 +26,90 @@
                             </div>
                         </div>
                         <hr>
-                        {% include 'components/forms/get_location.html' %}
+                        <div class="form-row">
+                            <div class="form-group mb-0 col-12">
+                                <h3>Location</h3>
+                            </div>
+                            <div class="form-group col-12 col-md-4">
+                                <label for="addressLine1">Address line 1 *</label>
+                                <input id="addressLine1" name="addressLine1" class="form-control" type="text" maxlength="50" aria-label="input street name and number (required)"
+                                    {% if editor == 'edit' %}value="{{activity.address.addressLine1}}" {% endif %}
+                                    placeholder="Street name and number" required>
+                            </div>
+                            <div class="form-group col-12 col-md-4">
+                                <label for="postcode">Postcode *</label>
+                                <input id="postcode" name="postcode" class="form-control" type="text" maxlength="7" aria-label="input postcode (required)"
+                                    {% if editor == 'edit' %}value="{{activity.address.postcode}}" {% endif %} placeholder="Postcode" required>
+                            </div>
+                            <div class="form-group col-12 col-md-4">
+                                <!-- dropdown needed for creating/editing listings -->
+                                <label for="town">Town / City</label>
+                                <select id="town" name="town" class="form-control" required>
+                                    <option value="" disabled>Select</option>
+                                    <option value="Aalsmeer" aria-label="Aalsmeer" {% if editor == 'edit' and activity.address.town == 'Aalsmeer' %}selected
+                                        {% endif %}>Aalsmeer</option>
+                                    <option value="Badhoevedorp" aria-label="Badhoevedorp" {% if editor == 'edit' and activity.address.town == 'Badhoevedorp' %}selected
+                                        {% endif %}>
+                                        Badhoevedorp</option>
+                                    <option value="Bloemendaal" aria-label="Bloemendaal" {% if editor == 'edit' and activity.address.town == 'Bloemendaal' %}selected
+                                        {% endif %}>Bloemendaal</option>
+                                    <option value="Cruquius" aria-label="Cruquius" {% if editor == 'edit' and activity.address.town == 'Cruquius' %}selected
+                                        {% endif %}>Cruquius</option>
+                                    <option value="Haarlem" aria-label="Haarlem" {% if editor == 'edit' and activity.address.town == 'Haarlem' %}selected
+                                        {% endif %}>Haarlem</option>
+                                    <option value="Heemstede" aria-label="Heemstede" {% if editor == 'edit' and activity.address.town == 'Heemstede' %}selected
+                                        {% endif %}>Heemstede</option>
+                                    <option value="Hillegom" aria-label="Hillegom" {% if editor == 'edit' and activity.address.town == 'Hillegom' %}selected
+                                        {% endif %}>Hillegom</option>
+                                    <option value="Hoofddorp" aria-label="Hoofddorp" {% if editor == 'edit' and activity.address.town == 'Hoofddorp' %}selected
+                                        {% endif %}>Hoofddorp</option>
+                                    <option value="Lisse" aria-label="Lisse" {% if editor == 'edit' and activity.address.town == 'Lisse' %}selected {% endif %}>
+                                        Lisse</option>
+                                    <option value="Nieuw-Vennep" aria-label="Nieuw-Vennep" {% if editor == 'edit' and activity.address.town == 'Nieuw-Vennep' %}selected
+                                        {% endif %}>
+                                        Nieuw-Vennep</option>
+                                    <option value="Santpoort-Noord" aria-label="Santpoort-Noord" 
+                                        {% if editor == 'edit' and activity.address.town == 'Santpoort-Noord' %}selected {% endif %}>
+                                        Santpoort-Noord</option>
+                                    <option value="Uithorn" aria-label="Uithorn" {% if editor == 'edit' and activity.address.town == 'Uithorn' %}selected
+                                        {% endif %}>Uithorn</option>
+                                    <option value="Zandvoort" aria-label="Zandvoort" {% if editor == 'edit' and activity.address.town == 'Zandvoort' %}selected
+                                        {% endif %}>Zandvoort</option>
+                                </select>
+                            </div>
+                        
+                        </div>
                     </div>
                     <div class="col-12">
                         <hr>
                     </div>
                     <div class="col-12">
-                        {% include 'components/forms/get_contact_info.html' %}
+                        <div class="form-row">
+                            <div class="form-group col-12 col-md-6 pr-md-3">
+                                <h3>Contact info</h3>
+                                <label for="phone">Phone number</label>
+                                <input id="phone" name="phone" class="form-control" type="tel" pattern="[0-9]{10}" maxlength="100" placeholder="Phone number" aria-label="Input phone number (optional)"
+                                {% if editor == 'edit' %}value="{{activity.contact.phone}}" {% endif %}>
+                                <label for="email" class="mt-3">Email address *</label>
+                                <input id="email" name="email" class="form-control" type="email" maxlength="100" placeholder="Email" aria-label="Input email address (required)"
+                                {% if editor == 'edit' %}value="{{activity.contact.email}}" {% endif %} required>
+                                <label for="url" class="mt-3">Website url *</label>
+                                <input id="url" name="url" class="form-control" type="url" maxlength="100" placeholder="https://..." aria-label="Input website link including https (required)"
+                                {% if editor == 'edit' %}value="{{url}}" {% endif %} required>
+                            </div>
+                            <div class="form-group col-12 col-md-6 pl-md-3">
+                                <h3>Social links</h3>
+                                <label for="facebook">Facebook url</label>
+                                <input id="facebook" name="facebook" class="form-control" type="url" maxlength="100" placeholder="https://..." aria-label="Input facebook link including https (optional)"
+                                {% if editor == 'edit' and facebook %}value="{{facebook}}" {% endif %}>
+                                <label for="twitter" class="mt-3">Twitter url</label>
+                                <input id="twitter" name="twitter" class="form-control" type="url" maxlength="100" placeholder="https://..." aria-label="Input twitter link including https (optional)"
+                                {% if editor == 'edit' and twitter %}value="{{twitter}}" {% endif %}>
+                                <label for="instagram" class="mt-3">Instagram url</label>
+                                <input id="instagram" name="instagram" class="form-control" type="url" maxlength="100" placeholder="https://..." aria-label="Input instagram link including https (optional)"
+                                {% if editor == 'edit' and instagram %}value="{{instagram}}" {% endif %}>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="col-12">
@@ -347,7 +424,110 @@
                             <div class="form-group categories col-12 col-md-4 px-2">
                                 <h3>Categories *</h3>
 
-                                {% include 'components/forms/categories.html' %}
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox"  id="sports" name="sports" aria-label="sports"
+                                    {% if editor == 'edit' and activity.categories.sports %}checked
+                                    {% elif editor == 'new' %}required{% endif %}>
+                                    <label class="form-check-label" for="sports">
+                                    Sports
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="swimming" name="swimming" aria-label="swimming"
+                                    {% if editor == 'edit' and activity.categories.swimming %}checked
+                                    {% elif editor == 'new' %}required{% endif %}>
+                                    <label class="form-check-label" for="swimming">
+                                    Swimming
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="creative" name="creative" aria-label="creative"
+                                    {% if editor == 'edit' and activity.categories.creative %}checked
+                                    {% elif editor == 'new' %}required{% endif %}>
+                                    <label class="form-check-label" for="creative">
+                                    Creative
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="scienceTech" name="scienceTech" aria-label="Science & Tech"
+                                    {% if editor == 'edit' and activity.categories.scienceTech %}checked
+                                    {% elif editor == 'new' %}required{% endif %}>
+                                    <label class="form-check-label" for="scienceTech">
+                                    Science & Tech
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="cultureMusic" name="cultureMusic" aria-label="Cultural & Music"
+                                    {% if editor == 'edit' and activity.categories.cultureMusic %}checked
+                                    {% elif editor == 'new' %}required{% endif %}>
+                                    <label class="form-check-label" for="cultureMusic">
+                                    Cultural & Music
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="dramaDance" name="dramaDance" aria-label="Drama & Dance"
+                                    {% if editor == 'edit' and activity.categories.dramaDance %}checked
+                                    {% elif editor == 'new' %}required{% endif %}>
+                                    <label class="form-check-label" for="dramaDance">
+                                    Drama & Dance
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="yogaMindfulness" name="yogaMindfulness" aria-label="Yoga & Mindfulnes"
+                                    {% if editor == 'edit' and activity.categories.yogaMindfulness %}checked
+                                    {% elif editor == 'new' %}required{% endif %}>
+                                    <label class="form-check-label" for="yogaMindfulness">
+                                    Yoga & Mindfulnes
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="museumsExhibitions" name="museumsExhibitions" aria-label="Museums & Exhibitions"
+                                    {% if editor == 'edit' and activity.categories.museumsExhibitions %}checked
+                                    {% elif editor == 'new' %}required{% endif %}>
+                                    <label class="form-check-label" for="nature">
+                                    Museums & Exhibitions
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="parksPlaygrounds" name="parksPlaygrounds" aria-label="Parks & playgrounds"
+                                    {% if editor == 'edit' and activity.categories.parksPlaygrounds %}checked
+                                    {% elif editor == 'new' %}required{% endif %}>
+                                    <label class="form-check-label" for="hillegom">
+                                    Parks & playgrounds
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="nature" name="nature" aria-label="Nature"
+                                    {% if editor == 'edit' and activity.categories.nature %}checked
+                                    {% elif editor == 'new' %}required{% endif %}>
+                                    <label class="form-check-label" for="hillegom">
+                                    Nature
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="animals" name="animals" aria-label="Animals"
+                                    {% if editor == 'edit' and activity.categories.animals %}checked
+                                    {% elif editor == 'new' %}required{% endif %}>
+                                    <label class="form-check-label" for="animals">
+                                    Animals
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="clubs" name="clubs" aria-label="Clubs"
+                                    {% if editor == 'edit' and activity.categories.clubs %}checked
+                                    {% elif editor == 'new' %}required{% endif %}>
+                                    <label class="form-check-label" for="clubs">
+                                    Clubs
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="parties" name="parties" aria-label="Kids Parties"
+                                    {% if editor == 'edit' and activity.categories.parties %}checked
+                                    {% elif editor == 'new' %}required{% endif %}>
+                                    <label class="form-check-label" for="parties">
+                                    Kids Parties
+                                    </label>
+                                </div>
                                 <small>Select at least one</small>
                             </div>
                             <div class="form-group col-12 col-md-4 px-2">
@@ -380,7 +560,7 @@
                                 and paste the
                                 direct url for it here.</p>
                             <input id="imgUrl" name="imgUrl" class="form-control" type="url" maxlength="200"
-                                {% if editor == 'edit' %}value="{{ activity.imgUrl }}" {% endif %}
+                                {% if editor == 'edit' %}value="{{ imgUrl }}" {% endif %}
                                 placeholder="https://..." required>
                         </div>
                     </div>
