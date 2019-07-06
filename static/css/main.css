@@ -332,13 +332,16 @@ Credit: https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed
   transition: transform 2s ease, -webkit-transform 2s ease;
 }
 
-.carousel-chevron {
-  color: #9b997a;
+.carousel-indicators {
+  position: relative;
 }
 
-.carousel-control-prev,
-.carousel-control-next {
-  width: 10%;
+.carousel-indicators li {
+  background-color: #5ca4a9;
+}
+
+.carousel-indicators li.active {
+  background-color: #346861;
 }
 
 /* ------------------------------
@@ -1185,10 +1188,6 @@ input.no-click {
   }
   h2 {
     font-size: 2.2rem;
-  }
-  .fa-chevron-right,
-  .fa-chevron-left {
-    font-size: 4rem;
   }
   /* creates more space around carousel controls */
   .carousel-control-prev,

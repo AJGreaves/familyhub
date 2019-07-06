@@ -9,15 +9,18 @@ Credit: https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed
     -webkit-transition: -webkit-transform 2s ease;
     transition: transform 2s ease;
     transition: transform 2s ease, -webkit-transform 2s ease;
-    }
-
-.carousel-chevron {
-    color: $platinum-dark;
 }
 
-.carousel-control-prev,
-.carousel-control-next {
-    width: 10%;
+.carousel-indicators {
+    position: relative;
+}
+
+.carousel-indicators li {
+    background-color: $mid-blue;
+}
+
+.carousel-indicators li.active {
+    background-color: $mid-blue-hover;
 }
 
 /* ------------------------------
