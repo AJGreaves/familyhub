@@ -99,7 +99,7 @@ $(document).ready(function () {
             /* BUG FIX: Clicking on pagination links did not work because onclick event
             needed to be initialized in the callback once the html for pagination was
             inserted. Adding this onclick even here solved it. */
-            $('.page-js').click(function() {
+            $('.page-js').click(function () {
                 let this_id = this.id;
                 $('.page-js').parent().removeClass('active');
                 $(this).parent().addClass('active');
@@ -142,14 +142,14 @@ $(document).ready(function () {
             paginationActivePage--;
             pg_index = paginationActivePage - 1;
             $('.page-js').parent().removeClass('active');
-            let pgSelector = '.page-item#pg-'+ paginationActivePage;
+            let pgSelector = '.page-item#pg-' + paginationActivePage;
             $(pgSelector).addClass('active');
-            
+
         } else if (page == "next" && paginationActivePage != numOfPages) {
             paginationActivePage++;
             pg_index = paginationActivePage - 1;
             $('.page-js').parent().removeClass('active');
-            let pgSelector = '.page-item#pg-'+ paginationActivePage;
+            let pgSelector = '.page-item#pg-' + paginationActivePage;
             $(pgSelector).addClass('active');
 
         } else {
@@ -244,7 +244,8 @@ $(document).ready(function () {
 
     function cardTemplate(searchResult) {
         let id_string = searchResult._id.$oid;
-        let href = "/listing/" + searchResult.title + '?activity_id=' + id_string;
+        let slug = slugify(searchResult.title);
+        let href = "/listing/" + slug + '?activity_id=' + id_string;
 
         const card = `
         <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
@@ -320,4 +321,24 @@ $(document).ready(function () {
 
     fetchResults();
 
+
+    /**
+     * Function credit from: https://medium.com/@mhagemann/the-ultimate-way-to-slugify-a-url-string-in-javascript-b8e4a0d849e1
+     * @param {string} string 
+     */
+
+    function slugify(string) {
+        const a = 'àáäâãåăæąçćčđèéėëêęǵḧìíïîįłḿǹńňñòóöôœøṕŕřßśšșťțùúüûǘůűūųẃẍÿýźžż·/_,:;'
+        const b = 'aaaaaaaaacccdeeeeeeghiiiiilmnnnnooooooprrssssttuuuuuuuuuwxyyzzz------'
+        const p = new RegExp(a.split('').join('|'), 'g')
+
+        return string.toString().toLowerCase()
+            .replace(/\s+/g, '-') // Replace spaces with -
+            .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
+            .replace(/&/g, '-and-') // Replace & with 'and'
+            .replace(/[^\w\-]+/g, '') // Remove all non-word characters
+            .replace(/\-\-+/g, '-') // Replace multiple - with single -
+            .replace(/^-+/, '') // Trim - from start of text
+            .replace(/-+$/, '') // Trim - from end of text
+    }
 });

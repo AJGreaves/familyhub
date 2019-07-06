@@ -225,7 +225,8 @@ Further reading and troubleshooting on cloning a repository from GitHub [here](h
 - function to capitalize first letter of username: https://paulund.co.uk/how-to-capitalize-the-first-letter-of-a-string-in-javascript
 - code to make sticky footer: https://css-tricks.com/couple-takes-sticky-footer/
 - Code for animated side-nav taken from https://www.w3schools.com/howto/howto_js_sidenav.asp
-- Code to generate slug-friendly-urls: http://flask.pocoo.org/snippets/5/
+- Code to generate slug-friendly-urls in python: http://flask.pocoo.org/snippets/5/
+- Code to generate slug-friendly-urls in javascript: https://medium.com/@mhagemann/the-ultimate-way-to-slugify-a-url-string-in-javascript-b8e4a0d849e1
 
 ### Acknowledgements
 

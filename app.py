@@ -307,13 +307,14 @@ def new_activity_page(username):
         post_request = request.form.to_dict()
         published = False
         obj = process_activity_data(db, user, post_request, published)
+        title = slugify(post_request['title'])
 
         newActivity_id = db.activities.insert_one(obj).inserted_id
         
         return redirect(url_for(
             'preview_activity_page', 
             username=session['user'], 
-            title=post_request['title'], 
+            title=title, 
             headTitle="Preview Activity",
             preview=True,
             activity_id=newActivity_id, 
@@ -392,6 +393,7 @@ def edit_activity_page(username, title):
         activity_id = request.args.get('activity_id')
         activity = db.activities.find_one({"_id": ObjectId(activity_id)})
         user = db.users.find_one({"username": session['user']})
+        title = slugify(activity['title'])
 
         startDate = None
         endDate = None
@@ -429,7 +431,7 @@ def edit_activity_page(username, title):
             return redirect(url_for(
                 'preview_activity_page', 
                 username=session['user'], 
-                title=post_request['title'], 
+                title=title, 
                 headTitle="Preview Activity",
                 active="listing",
                 preview=True,
