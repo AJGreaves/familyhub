@@ -18,9 +18,9 @@
 </div>
 <div class="text-center">
     <!-- buttons outside cards so inactive opacity setting does not effect them -->
-    <a href="{{ url_for('activity_listing_page', title=activity['title'], activity_id=activity['_id'])}}"
+    <a href="{{ url_for('activity_listing_page', title=activity['title']|slugify, activity_id=activity['_id'])}}"
         class="btn btn-readmore">View</a>
-    <a href="{{ url_for('edit_activity_page', username=session['user'], title=activity['title'], activity_id=activity['_id']) }}"
+    <a href="{{ url_for('edit_activity_page', username=session['user'], title=activity['title']|slugify, activity_id=activity['_id']) }}"
         class="btn btn-create">Edit</a>
     <button id="{{activity['_id']}}" class="btn btn-delete delete-button">Delete</button>
 </div>

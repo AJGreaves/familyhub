@@ -1,5 +1,5 @@
 {% block carousel_card %}
-<a class="card familyhub-card mx-4 mx-md-2 carousel-card-js" href="{{ url_for('activity_listing_page', activity_id=activity['_id'], title=activity['title'])}}">
+<a class="card familyhub-card mx-4 mx-md-2 carousel-card-js" href="{{ url_for('activity_listing_page', activity_id=activity['_id'], title=activity['title']|slugify)}}">
     <div class="card-img-wrapper">
         <!-- Inline style used here to import link with jinja -->
         <div class="card-picture" title="{{activity.title}}" style="background-image: url({{activity.imgUrl}})">
