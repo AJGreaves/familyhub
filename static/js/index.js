@@ -9,16 +9,7 @@
 jQuery.fn.carousel.Constructor.TRANSITION_DURATION = 2000;
 
 document.addEventListener("DOMContentLoaded", function() {
-    let recSlides = $('#recommended-carousel .carousel-item').not(':first');
-    recSlides.each(function() {
-        $(this).removeClass('active');
-    })
-    let sportSlides = $('#sports-carousel .carousel-item').not(':first');
-    sportSlides.each(function() {
-        $(this).removeClass('active');
-    })
-    let holidaySlides = $('#holiday-carousel .carousel-item').not(':first');
-    holidaySlides.each(function() {
-        $(this).removeClass('active');
-    })
+    $('#recommended-carousel .carousel-item:first').addClass('active');
+    $('#sports-carousel .carousel-item:first').addClass('active');
+    $('#holiday-carousel .carousel-item:first').addClass('active');
 });
