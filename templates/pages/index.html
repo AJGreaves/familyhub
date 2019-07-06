@@ -112,7 +112,7 @@
                             {% endfor %}
                             {% endfor %}</br>
                             <a class="float-md-right"
-                                href="{{ url_for('activity_listing_page', title=topTip['title'], activity_id=topTip['_id'])}}">Read
+                                href="{{ url_for('activity_listing_page', title=topTip['title']|slugify, activity_id=topTip['_id'])}}">Read
                                 More <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
