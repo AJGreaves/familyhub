@@ -1,4 +1,4 @@
-import os, json
+import os, json, re
 from flask import Flask, redirect, render_template, request, url_for, jsonify, session
 from config import Config
 from pymongo import MongoClient
@@ -17,6 +17,20 @@ app.config.from_object(Config)
 # MongoDB URI / Assign db
 client = MongoClient(Config.MONGO_URI)
 db = client.familyHub
+
+@app.template_filter()
+def slugify(text, delim=b'-'):
+    """Generates an ASCII-only slug. Credit for this function to http://flask.pocoo.org/snippets/5/"""
+    _punct_re = re.compile(r'[\t !"#$%&\'()*\-/<=>?@\[\\\]^_`{|},.]+')
+    result = []
+    for word in _punct_re.split(text.lower()):
+        word = word.encode()
+        if word:
+            result.append(word)
+    print(result)
+    string_url = delim.join(result)
+    print(string_url)
+    return str(string_url, 'utf-8')
 
 # Home page
 @app.route('/', methods=['GET', 'POST'])

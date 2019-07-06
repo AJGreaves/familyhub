@@ -225,6 +225,7 @@ Further reading and troubleshooting on cloning a repository from GitHub [here](h
 - function to capitalize first letter of username: https://paulund.co.uk/how-to-capitalize-the-first-letter-of-a-string-in-javascript
 - code to make sticky footer: https://css-tricks.com/couple-takes-sticky-footer/
 - Code for animated side-nav taken from https://www.w3schools.com/howto/howto_js_sidenav.asp
+- Code to generate slug-friendly-urls: http://flask.pocoo.org/snippets/5/
 
 ### Acknowledgements
 
@@ -233,11 +234,3 @@ Special thanks to:
 
 #### Disclaimer
 The content of this website is educational purposes only.
-
-### A note to my fellow Code Institute students
-
-I am happy that you have come to look at my readme as an example of how to write a good one for your second Milestone project. You are welcome to learn how to structure and format your own readme from mine.
-
-However, it is not ok to copy and paste large portions of it into your own project. Please remember to write your own readme yourself, rather than copying mine or someone elses.
-
-Many thanks! Anna
