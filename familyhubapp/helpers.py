@@ -55,3 +55,8 @@ class Helpers:
         url = url.replace("https:", "")
         url = url.replace("http:", "")
         return url
+
+    @staticmethod
+    def add_https(url):
+        url = "https:" + url
+        return url

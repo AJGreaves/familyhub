@@ -381,11 +381,22 @@ def edit_activity_page(username, title):
 
         startDate = None
         endDate = None
+        facebook = ""
+        instagram = ""
+        twitter = ""
 
         # data to display in edit fields
+        imgUrl = Helpers.add_https(activity["imgUrl"])
+        url = Helpers.add_https(activity["contact"]["url"])
         if activity["dates"]['start']:
             startDate = activity["dates"]['start'].strftime("%d/%m/%Y")
             endDate = activity["dates"]['end'].strftime("%d/%m/%Y")
+        if activity["contact"]["facebook"]:
+            facebook = Helpers.add_https(activity["contact"]["facebook"])
+        if activity["contact"]["twitter"]:
+            twitter = Helpers.add_https(activity["contact"]["twitter"])
+        if activity["contact"]["instagram"]:
+            instagram = Helpers.add_https(activity["contact"]["instagram"])
         openTimes_db = activity['times']
         """ 
         loops through open/close times and converts datetimes for display in browser
@@ -417,6 +428,11 @@ def edit_activity_page(username, title):
         "pages/editor.html", 
         headTitle=headTitle, 
         title=title,
+        imgUrl=imgUrl,
+        url=url,
+        facebook=facebook,
+        twitter=twitter,
+        instagram=instagram,
         editor="edit",        
         activity_id=activity_id,
         activity=activity,
