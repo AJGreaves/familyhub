@@ -248,7 +248,7 @@ $(document).ready(function () {
         let href = "/listing/" + slug + '?activity_id=' + id_string;
 
         const card = `
-        <a class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
             <a class="card familyhub-card" href="${href}">
                 <div class="card-img-wrapper">
                     <!-- Inline style used here for ease of placing background image with JS -->
@@ -266,7 +266,7 @@ $(document).ready(function () {
                     <div class="readmore-link">Read More <i class="fas fa-arrow-circle-right"></i></div>
                 </div>
             </a>
-        </a>
+        </div>
         `;
         return card;
     }
