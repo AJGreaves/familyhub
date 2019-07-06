@@ -1,6 +1,6 @@
 {% block age_range %}
 <div class="form-check">
-    <input class="form-check-input age-range-js" name="under4" type="checkbox" id="under4"
+    <input class="form-check-input age-range-js" name="under4" type="checkbox" id="under4" aria-label="age under 4 years" 
     {% if editor == 'edit' and activity.ageRange.under4 %}checked
     {% elif editor == 'new' %}required{% endif %}>
     <label class="form-check-label" for="under4">
@@ -8,7 +8,7 @@
     </label>
 </div>
 <div class="form-check">
-    <input class="form-check-input age-range-js" name="age4to6" type="checkbox" id="age4to6"
+    <input class="form-check-input age-range-js" name="age4to6" type="checkbox" id="age4to6" aria-label="age 4 to 6 years"
     {% if editor == 'edit' and activity.ageRange.age4to6 %}checked
     {% elif editor == 'new' %}required{% endif %}>
     <label class="form-check-label" for="age4to6">
@@ -16,7 +16,7 @@
     </label>
 </div>
 <div class="form-check">
-    <input class="form-check-input age-range-js" name="age6to8" type="checkbox" id="age6to8"
+    <input class="form-check-input age-range-js" name="age6to8" type="checkbox" id="age6to8" aria-label="age 6 to 8 years"
     {% if editor == 'edit' and activity.ageRange.age6to8 %}checked
     {% elif editor == 'new' %}required{% endif %}>
     <label class="form-check-label" for="age6to8">
@@ -24,7 +24,7 @@
     </label>
 </div>
 <div class="form-check">
-    <input class="form-check-input age-range-js" name="age8to10" type="checkbox" id="age8to10"
+    <input class="form-check-input age-range-js" name="age8to10" type="checkbox" id="age8to10" aria-label="age 8 to 10 years"
     {% if editor == 'edit' and activity.ageRange.age8to10 %}checked
     {% elif editor == 'new' %}required{% endif %}>
     <label class="form-check-label" for="age8to10">
@@ -32,7 +32,7 @@
     </label>
 </div>
 <div class="form-check">
-    <input class="form-check-input age-range-js" name="age10to12" type="checkbox" id="age10to12"
+    <input class="form-check-input age-range-js" name="age10to12" type="checkbox" id="age10to12" aria-label="age 10 to 12 years"
     {% if editor == 'edit' and activity.ageRange.age10to12 %}checked
     {% elif editor == 'new' %}required{% endif %}>
     <label class="form-check-label" for="age10to12">
@@ -40,7 +40,7 @@
     </label>
 </div>
 <div class="form-check">
-    <input class="form-check-input age-range-js" name="age12up" type="checkbox" id="age12up"
+    <input class="form-check-input age-range-js" name="age12up" type="checkbox" id="age12up" aria-label="age 12 years and up"
     {% if editor == 'edit' and activity.ageRange.age12up %}checked
     {% elif editor == 'new' %}required{% endif %}>
     <label class="form-check-label" for="age12up">
