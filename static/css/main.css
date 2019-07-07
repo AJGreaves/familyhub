@@ -678,10 +678,6 @@ the inline background style for the background image  */
 /* ------------------------------
     All pages
 ------------------------------ */
-.no-fouc {
-  display: none;
-}
-
 #nav-logo {
   width: 30px;
   height: 30px;
@@ -864,31 +860,9 @@ shadow added to give depth and contrast with the image for readability */
 ------------------------------ */
 /* CREDIT: code to fix footer to bottom of page even when there is not
 enough content to push it down taken from https://css-tricks.com/couple-takes-sticky-footer/ */
-html, body {
-  height: 100%;
-}
-
-body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.content {
-  -webkit-box-flex: 1;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
 footer {
   background-color: #346861;
   color: white;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
 }
 
 footer p,
