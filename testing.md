@@ -2,7 +2,7 @@
 
 [Main README.md file](README.md)
 
-[View website on Heroku](#)
+[View website on Heroku](https://family-hub-nl.herokuapp.com/)
 
 ## Table of Contents
 
@@ -182,6 +182,23 @@ document.addEventListener("DOMContentLoaded", function() {
         url = url.replace("https:", "")
         url = url.replace("http:", "")
         return url
+```
+
+10. **Navbar display in Safari and Samsung Internet browsers**
+- Bug discovered by fellow students with these browsers on their phones. Navbar was displaying squashed, the dropdown menu was underneeth the content and did not push the content down when opened as it did on other browsers.
+
+![](https://i.ibb.co/DWcpBpK/Clipboard01.jpg)
+
+- Several hours of debugging led to a solution by changing the navbar position property to absolute, and adding margin above the rest of my content to push it down under the navbar. 
+- With this fix the content is not being pushed down when the navbar icon is clicked, I may add some javascript to change this later. 
+```css
+.navbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
 ```
 
 #### Unsolved bugs
