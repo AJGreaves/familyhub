@@ -1,6 +1,6 @@
 {% block navbar %}
 
-<div class="navbar {% if active == 'activities' %} navbar-expand-lg {% else %} navbar-expand-md {% endif %} navbar-light bg-platinum no-fouc">
+<nav class="navbar {% if active == 'activities' %} navbar-expand-lg {% else %} navbar-expand-md {% endif %} navbar-light bg-platinum no-fouc">
     <a class="navbar-brand {% if active == 'activities' %} activities-pg {% endif %}" href="{{url_for('home_page')}}">
         <img id="nav-logo" src="{{url_for('static', filename='img/logo_transparent.png')}}" class="d-inline-block align-top" alt="Family Hub Logo">
     Family Hub
@@ -67,6 +67,6 @@
             {% endif %}   
         </ul>
     </div>
-</div>
+</nav>
 
 {% endblock %}
