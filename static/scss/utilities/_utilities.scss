@@ -32,7 +32,8 @@ Credit: https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed
 #newUserConfirmModal,
 #userExistsModal,
 #loggedInModal,
-#alertModal {
+#alertModal,
+#emailActivityModal {
     height: 100vh;
     position: fixed;
     z-index: 100;
@@ -53,7 +54,8 @@ Credit: https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed
 #newUserConfirmModal.active,
 #userExistsModal.active,
 #loggedInModal.active,
-#alertModal.active {
+#alertModal.active,
+#emailActivityModal.active {
     pointer-events: auto;
     opacity: 1;
 }
