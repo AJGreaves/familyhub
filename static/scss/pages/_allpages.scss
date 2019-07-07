@@ -2,9 +2,13 @@
     All pages
 ------------------------------ */
 
-// .no-fouc {
-//     display: none;
-// }
+.no-fouc {
+    display: none;
+}
+
+nav {
+    z-index: 5;
+}
 
 #nav-logo {
     width: 30px;
@@ -176,19 +180,6 @@ shadow added to give depth and contrast with the image for readability */
 #my-account-wrapper h1 {
     /* Needed to make buttons in same column display correctly */
     display: inline-block;
-}
-
-/* ------------------------------
-    Search bars
------------------------------- */
-
-#searchByFooter,
-#searchActivities {
-    background-color: $platinum;
-}
-
-.searchBar.form-control {
-    width: 66%;
 }
 
 /* ------------------------------

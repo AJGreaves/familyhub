@@ -678,6 +678,14 @@ the inline background style for the background image  */
 /* ------------------------------
     All pages
 ------------------------------ */
+.no-fouc {
+  display: none;
+}
+
+nav {
+  z-index: 5;
+}
+
 #nav-logo {
   width: 30px;
   height: 30px;
@@ -841,18 +849,6 @@ shadow added to give depth and contrast with the image for readability */
 #my-account-wrapper h1 {
   /* Needed to make buttons in same column display correctly */
   display: inline-block;
-}
-
-/* ------------------------------
-    Search bars
------------------------------- */
-#searchByFooter,
-#searchActivities {
-  background-color: #e6ebe0;
-}
-
-.searchBar.form-control {
-  width: 66%;
 }
 
 /* ------------------------------
