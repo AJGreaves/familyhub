@@ -466,7 +466,7 @@ and edited to fit project needs as a pull out filters bar */
   height: 100%;
   width: 275px;
   position: fixed;
-  z-index: 1;
+  z-index: 1031;
   top: 0;
   left: -275px;
   background-color: #346861;
@@ -682,6 +682,14 @@ the inline background style for the background image  */
   display: none;
 }
 
+.navbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
 #nav-logo {
   width: 30px;
   height: 30px;
@@ -867,6 +875,7 @@ body {
 }
 
 .content {
+  margin-top: 3rem;
   -webkit-box-flex: 1;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
