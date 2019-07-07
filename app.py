@@ -27,9 +27,7 @@ def slugify(text, delim=b'-'):
         word = word.encode()
         if word:
             result.append(word)
-    print(result)
     string_url = delim.join(result)
-    print(string_url)
     return str(string_url, 'utf-8')
 
 # Home page

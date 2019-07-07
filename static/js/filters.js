@@ -132,7 +132,6 @@ $(document).ready(function () {
      */
 
     function displayPages(page, numOfPages) {
-        console.log(page);
         let pg_index = '';
         if (page != "prev" && page != "next") {
             pg_index = parseInt(page) - 1;
