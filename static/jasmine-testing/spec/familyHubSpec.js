@@ -190,8 +190,8 @@ describe('pages_fcn function', function() {
             { page3: [ 'E', 'F'] },
             { page4: [ 'G', 'H'] },
             { page5: [ 'I', 'J'] },
-        ])
-    })
+        ]);
+    });
 
     it('should return the input array split into chunks objects of 3', function() {
         let arr = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
@@ -202,8 +202,8 @@ describe('pages_fcn function', function() {
             { page2: [ 'D', 'E', 'F' ] },
             { page3: [ 'G', 'H', 'I' ] },
             { page4: [ 'J' ] },
-        ])
-    })
+        ]);
+    });
 
     it('should return the input array split into chunks objects of 7', function() {
         let arr = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
@@ -212,8 +212,8 @@ describe('pages_fcn function', function() {
         expect(result).toEqual([
             { page1: [ 'A', 'B', 'C', 'D', 'E', 'F', 'G' ] }, 
             { page2: [ 'H', 'I', 'J' ] }
-        ])
-    })
+        ]);
+    });
 })
 
 describe('getCheckedIds function', function() {
@@ -227,8 +227,8 @@ describe('getCheckedIds function', function() {
         `);
         let checkboxes = $('.mock-checkbox-js');
         let result = getCheckedIds(checkboxes);
-        expect(result).toEqual([])
-    })
+        expect(result).toEqual([]);
+    });
     it('should return array with ids A, C and E', function() {
         setFixtures(`
         <input class="mock-checkbox-js" name="A" type="checkbox" id="A" checked>
@@ -239,8 +239,8 @@ describe('getCheckedIds function', function() {
         `);
         let checkboxes = $('.mock-checkbox-js');
         let result = getCheckedIds(checkboxes);
-        expect(result).toEqual(['A', 'C', 'E'])
-    })
+        expect(result).toEqual(['A', 'C', 'E']);
+    });
 })
 
 describe('getFullData function', function() {
@@ -249,7 +249,7 @@ describe('getFullData function', function() {
         <h3 id="num-of-results"></h3>
         `);
         spyOn(window, "displayResults").and.callFake(function() { return; });
-    })
+    });
     it('Should add text "3 results" to element with #num-of-results', function() {
         const data = [
             {"username": "Anna",
@@ -264,6 +264,15 @@ describe('getFullData function', function() {
         ];
         getFullData(data);
         expect($('#num-of-results').text()).toEqual('3 results');
+    });
+    it('Should call displayResults function with data argument', function() {
+        const data = [
+            {"username": "Anna",
+            "title": "Activity A"
+            }
+        ];
+        getFullData(data);
+        expect(window.displayResults).toHaveBeenCalledWith(data);
     })
 })
 
