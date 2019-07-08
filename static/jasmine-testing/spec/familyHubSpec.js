@@ -45,3 +45,31 @@ describe('alertModal function', function() {
         expect($('#alertModal')).toHaveClass('active');
     })
 })
+
+describe('openLoggedInModal function', function() {
+    beforeEach(() => {
+        setFixtures(`
+        <div id="loggedInModal">
+            <h2 id="welcomeMessage"></h2>
+            <a id="accountUrl" href="#">My listings</a>
+            <a id="newActivityUrl" href="#">Add new activity</a>
+        </div>
+        `);
+    }); 
+    it('should add welcome message that includes username', function() {
+        openLoggedInModal('Arthur Dent');
+        expect($('#welcomeMessage').text()).toEqual('Welcome Arthur Dent.')
+    });
+    it('should create account page href url that includes username', function() {
+        openLoggedInModal('Zaphod Beeblebrox');
+        expect($("#accountUrl").attr('href')).toEqual('/account/zaphod-beeblebrox');
+    });
+    it('should create editor page href url that includes username', function() {
+        openLoggedInModal('Slartibartfast');
+        expect($("#newActivityUrl").attr('href')).toEqual('/editor/slartibartfast/add-new');
+    });
+    it('should add .active class to #loggedInModal', function() {
+        openLoggedInModal('');
+        expect($('#loggedInModal')).toHaveClass('active');
+    })
+})
