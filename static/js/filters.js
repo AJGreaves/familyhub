@@ -1,5 +1,9 @@
+/**
+ * Bug Fix: To run Jasmine testing comment out 
+ * the document ready function as leaving it in causes errors. 
+ **/
 
-$( document ).ready(function() {
+// $( document ).ready(function() {
     /**
      * Variables
      */
@@ -63,6 +67,16 @@ $( document ).ready(function() {
                 alertModal('error');
                 console.log(err);
             });
+    }
+
+    function getCheckedIds(input) {
+        let ids = [];
+        input.each(function () {
+            if ($(this).prop("checked") == true) {
+                ids.push(this.id);
+            }
+        });
+        return ids;
     }
 
     /**
@@ -289,16 +303,6 @@ $( document ).ready(function() {
         fetchResults();
     });
 
-    function getCheckedIds(input) {
-        let ids = [];
-        input.each(function () {
-            if ($(this).prop("checked") == true) {
-                ids.push(this.id);
-            }
-        });
-        return ids;
-    }
-
     $('.closeFiltersBtn').click(function () {
         closeFilters();
         return;
@@ -321,4 +325,4 @@ $( document ).ready(function() {
 
     fetchResults();
 
-});
+// });
