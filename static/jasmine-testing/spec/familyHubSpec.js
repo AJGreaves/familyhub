@@ -217,6 +217,7 @@ describe('pages_fcn function', function() {
 })
 
 describe('getCheckedIds function', function() {
+
     it('should return an empty array', function() {
         setFixtures(`
         <input class="mock-checkbox-js" name="A" type="checkbox" id="A">
@@ -229,6 +230,7 @@ describe('getCheckedIds function', function() {
         let result = getCheckedIds(checkboxes);
         expect(result).toEqual([]);
     });
+
     it('should return array with ids A, C and E', function() {
         setFixtures(`
         <input class="mock-checkbox-js" name="A" type="checkbox" id="A" checked>
@@ -244,12 +246,14 @@ describe('getCheckedIds function', function() {
 })
 
 describe('getFullData function', function() {
+
     beforeEach(function() {
         setFixtures(`
         <h3 id="num-of-results"></h3>
         `);
         spyOn(window, "displayResults").and.callFake(function() { return; });
     });
+
     it('Should add text "3 results" to element with #num-of-results', function() {
         const data = [
             {"username": "Anna",
@@ -265,6 +269,7 @@ describe('getFullData function', function() {
         getFullData(data);
         expect($('#num-of-results').text()).toEqual('3 results');
     });
+
     it('Should call displayResults function with data argument', function() {
         const data = [
             {"username": "Anna",
@@ -273,6 +278,44 @@ describe('getFullData function', function() {
         ];
         getFullData(data);
         expect(window.displayResults).toHaveBeenCalledWith(data);
-    })
-})
+    });
 
+});
+
+describe('displayResults function', function() {
+
+    beforeEach(function() {
+        spyOn(window, "buildPagination").and.callFake(function() { return `<div>html content</div>`; });
+        spyOn(window, "displayPages").and.callFake(function() { return; });
+        spyOn(window, "buildSearchResultsString").and.callFake(function() { return; });
+    });
+    
+    it('should call pages_fcn function with data argument and number 12', function() {
+        spyOn(window, "pages_fcn").and.callFake(function() { return [{page1: ['A', 'B', 'C']}]; });
+        let data = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
+        displayResults(data)
+        expect(window.pages_fcn).toHaveBeenCalledWith(data, 12);
+    });
+
+    it('should not call buildPagination function with numOfPages when data length is <= 12', function() {
+        spyOn(window, "pages_fcn").and.callFake(function() { return [{page1: ['A', 'B', 'C']}]; });
+        let data = ['A', 'B', 'C'];
+        displayResults(data)
+        expect(window.buildPagination).not.toHaveBeenCalled();
+    });
+
+    it('should call buildPagination function when numOfPages is more than 1', function() {
+        spyOn(window, "pages_fcn").and.callFake(function() { return [{page1: ['A', 'B', 'C']}, {page2: ['D', 'E', 'F']}]; });
+        let data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+        displayResults(data)
+        expect(window.buildPagination).toHaveBeenCalled();
+    });
+
+    it('should call buildSearchResultsString', function() {
+        spyOn(window, "pages_fcn").and.callFake(function() { return [{page1: ['A', 'B', 'C']}]; });
+        let data = ['A', 'B', 'C'];
+        displayResults(data)
+        expect(window.buildSearchResultsString).toHaveBeenCalled();
+    });
+    
+})
