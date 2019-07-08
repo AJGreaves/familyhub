@@ -13,12 +13,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Show and hide spinner animation
 function showLoading() {
-    document.getElementById("spinner-wrapper").style = "visibility: visible;";
+    $("#spinner-wrapper").css("visibility", "visible");
     return;
 }
 
 function hideLoading() {
-    document.getElementById("spinner-wrapper").style = "visibility: hidden;";
+    $("#spinner-wrapper").css("visibility", "hidden");
     return;
 }
 
