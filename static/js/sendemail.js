@@ -28,6 +28,7 @@ $(document).ready(function () {
                 alertModal('email sent');
             }).fail(function (error) {
                 console.log('Oops... ' + JSON.stringify(error));
+                alertModal('error');
             });
         })
 
@@ -60,6 +61,7 @@ $(document).ready(function () {
                 alertModal('business email sent');
             }).fail(function (error) {
                 console.log('Oops... ' + JSON.stringify(error));
+                alertModal('error');
             });
         })
 
