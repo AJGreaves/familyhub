@@ -1,5 +1,5 @@
-$(document).ready(function () {
 
+$( document ).ready(function() {
     /**
      * Variables
      */
@@ -13,6 +13,7 @@ $(document).ready(function () {
 
     $("select, input").change(function () {
         fetchResults();
+        return;
     });
 
     /**
@@ -77,6 +78,7 @@ $(document).ready(function () {
         }
         $('#num-of-results').text(numResults + ' results');
         displayResults(data);
+        return;
     }
 
     /**
@@ -104,7 +106,7 @@ $(document).ready(function () {
                 $('.page-js').parent().removeClass('active');
                 $(this).parent().addClass('active');
                 displayPages(this_id, numOfPages);
-            })
+            });
 
             let page1 = Object.values(pages[0]);
             page1 = page1[0];
@@ -297,25 +299,24 @@ $(document).ready(function () {
         return ids;
     }
 
-
-    /* Code credit: For animated side-nav taken from 
-    https://www.w3schools.com/howto/howto_js_sidenav.asp 
-    and edited to fit project needs as a pull out filters bar */
-
     $('.closeFiltersBtn').click(function () {
         closeFilters();
+        return;
     });
 
     $('#openFiltersBtn').click(function () {
         openFilters();
+        return;
     });
 
     function openFilters() {
         $('#filter-nav, main, footer, nav').addClass('filters-open');
+        return;
     }
 
     function closeFilters() {
         $('#filter-nav, main, footer, nav').removeClass('filters-open');
+        return;
     }
 
     fetchResults();

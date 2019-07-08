@@ -26,7 +26,7 @@ $(document).ready(function () {
                 email: email,
                 password: password,
                 username: username,
-            }
+            };
 
             showLoading();
 
@@ -42,7 +42,7 @@ $(document).ready(function () {
                 .then(data => {
                     hideLoading();
                     if (data.emailExists || data.userExists) {
-                        userExistsModal(data.emailExists, data.userExists)
+                        userExistsModal(data.emailExists, data.userExists);
                     } else {
                         confirmAccountModal(username);
                     }
@@ -54,7 +54,7 @@ $(document).ready(function () {
     $('#closeUserExistsModal').click(function () {
         $('#userExistsModal').toggleClass('active');
         return;
-    })
+    });
 
     /**
      * userExistsModal takes booleans sent from python on if the user or email
@@ -87,7 +87,7 @@ $(document).ready(function () {
      */
 
     function confirmAccountModal(username) {
-        $('#alertHeading').text('Welcome to Family Hub ' + username + '!')
+        $('#alertHeading').text('Welcome to Family Hub ' + username + '!');
         $('#newUserConfirmModal').addClass('active');
         return;
     }
@@ -112,7 +112,7 @@ $(document).ready(function () {
             const data = {
                 loginInput: loginInput,
                 password: password
-            }
+            };
             showLoading();
             fetch('/login', {
                     method: 'POST',
@@ -147,12 +147,12 @@ $(document).ready(function () {
             e.preventDefault();
             let formId = e.target.id;
             checkAndUpdate(formId);
-        })
+        });
     }
 
     function checkAndUpdate(item) {
 
-        key = item.slice(0, 4);
+        let key = item.slice(0, 4);
 
         const oldInput = document.querySelector('#' + key + 'Old').value;
         const newInput = document.querySelector('#' + key + 'New').value;
@@ -162,10 +162,10 @@ $(document).ready(function () {
             whichForm: whichForm,
             oldInput: oldInput,
             newInput: newInput
-        }
+        };
 
         let sessionUser = '<%= Session["user"] %>';
-        fetchUrl = '/settings/' + sessionUser
+        let fetchUrl = '/settings/' + sessionUser;
 
         showLoading();
         fetch(fetchUrl, {
@@ -180,13 +180,13 @@ $(document).ready(function () {
                 hideLoading();
 
                 if (key == 'emai' && data.updated) {
-                    alertModal('email updated')
+                    alertModal('email updated');
                 } else if (key == 'emai' && !data.updated) {
-                    alertModal('email incorrect')
+                    alertModal('email incorrect');
                 } else if (key == 'pass' && data.updated) {
-                    alertModal('password updated')
+                    alertModal('password updated');
                 } else if (key == 'pass' && !data.updated) {
-                    alertModal('password incorrect')
+                    alertModal('password incorrect');
                 }
             })
             .catch(err => console.log(err));
@@ -206,7 +206,7 @@ $(document).ready(function () {
         } else {
             from.attr('required', '').removeAttr('disabled');
         }
-    })
+    });
 
     $('#ongoing').click(function () {
 
@@ -219,7 +219,7 @@ $(document).ready(function () {
             $('#start').attr('required', '').removeAttr('disabled');
             $('#end').attr('required', '').removeAttr('disabled');
         }
-    })
+    });
 
     /* to activate fields to input start / end times for days only when that day is clicked */
 
@@ -235,13 +235,13 @@ $(document).ready(function () {
             end.attr('disabled', '').removeAttr('required').val('');
             times.each(function () {
                 $(this).removeClass('active');
-            })
+            });
         } else {
             start.attr('required', '').removeAttr('disabled');
             end.attr('required', '').removeAttr('disabled');
             times.each(function () {
                 $(this).addClass('active');
-            })
+            });
         }
     }
 
@@ -262,7 +262,7 @@ $(document).ready(function () {
         } else if (countTimes(day)) {
             compareTimes(day);
         }
-    })
+    });
 
 
     /**
@@ -320,16 +320,16 @@ $(document).ready(function () {
     function compareTimes(day) {
 
         let times = [];
-        input = $('.compare-' + day + '-js');
-        dayId = $('#' + day + 'End');
+        let input = $('.compare-' + day + '-js');
+        let dayId = $('#' + day + 'End');
 
         input.each(function () {
             let time = $(this).val();
             times.push(time);
-        })
+        });
 
-        first = times[0].split(':').map(Number);
-        second = times[1].split(':').map(Number);
+        let first = times[0].split(':').map(Number);
+        let second = times[1].split(':').map(Number);
 
         if ((first[0] === second[0]) && (first[1] === second[1])) {
             alertModal("times match");
@@ -354,7 +354,7 @@ $(document).ready(function () {
         input.each(function () {
             let date = $(this).val();
             dates.push(date);
-        })
+        });
 
         first = dates[0].split('/').map(Number);
         second = dates[1].split('/').map(Number);
@@ -382,7 +382,7 @@ $(document).ready(function () {
                 checkboxGroup.attr('required', 'required');
             }
         });
-    })
+    });
 
     /**
      * function for settings page where users can change their email address and/or password in the database
@@ -392,17 +392,17 @@ $(document).ready(function () {
      * of fields if both are emptied. 
      */
 
-    inputClasses = [".email-input-js", ".password-input-js"]
+    inputClasses = [".email-input-js", ".password-input-js"];
     $(inputClasses).each(function (i) {
         $(inputClasses[i]).change(function () {
 
             if (countTwo(inputClasses[i])) {
                 input = $(inputClasses[i]);
-                values = []
+                values = [];
                 input.each(function () {
                     let val = $(this).val();
                     values.push(val);
-                })
+                });
 
                 if (values[0] === values[1] && inputClasses[i] === ".email-input-js") {
                     alertModal("emails must not match");
@@ -412,8 +412,8 @@ $(document).ready(function () {
                     $('#passNew').val('');
                 }
             }
-        })
-    })
+        });
+    });;
 
     /**
      * Credit original code for this function from: https://dev.to/chromiumdev/sure-you-want-to-leavebrowser-beforeunload-event-4eg5
@@ -433,4 +433,4 @@ $(document).ready(function () {
         });
     }
 
-})
+});

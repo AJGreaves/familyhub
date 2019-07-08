@@ -49,7 +49,7 @@ function topFunction() {
 // animate changes in icons to reflect collapsed / opened elements on the page
 $(".collapse-link").click(function () {
     $(this).children('i').toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
-})
+});
 
 /*----------------------------------------
  * JS Modals
@@ -141,11 +141,11 @@ $('#alertModalClose').click(function (event) {
     event.preventDefault();
     alertModal();
     return;
-})
+});
 
 $('.delete-button').click(function () {
     let activity_id = this.id;
-    let href = '/deletelisting?activity_id=' + activity_id
+    let href = '/deletelisting?activity_id=' + activity_id;
     $('#confirm-delete').attr('href', href);
     openDeleteWarningModal();
     return;
@@ -175,9 +175,9 @@ function openDeleteWarningModal() {
 
 function openLoggedInModal(username) {
     let name = capFirst(username);
-    let slug = slugify(username)
-    $("#accountUrl").attr("href", `/account/${slug}`)
-    $("#newActivityUrl").attr("href", `/editor/${slug}/add-new`)
+    let slug = slugify(username);
+    $("#accountUrl").attr("href", `/account/${slug}`);
+    $("#newActivityUrl").attr("href", `/editor/${slug}/add-new`);
     $('#welcomeMessage').text('Welcome ' + name + '.');
     $('#loggedInModal').addClass('active');
 }
@@ -200,7 +200,7 @@ $('input#inputDELETE').change(function () {
         $('#confirm-delete').addClass('no-click');
     }
     return;
-})
+});
 
 /**
  * Function credit from: https://medium.com/@mhagemann/the-ultimate-way-to-slugify-a-url-string-in-javascript-b8e4a0d849e1
@@ -208,9 +208,9 @@ $('input#inputDELETE').change(function () {
  */
 
 function slugify(string) {
-    const a = 'àáäâãåăæąçćčđèéėëêęǵḧìíïîįłḿǹńňñòóöôœøṕŕřßśšșťțùúüûǘůűūųẃẍÿýźžż·/_,:;'
-    const b = 'aaaaaaaaacccdeeeeeeghiiiiilmnnnnooooooprrssssttuuuuuuuuuwxyyzzz------'
-    const p = new RegExp(a.split('').join('|'), 'g')
+    const a = 'àáäâãåăæąçćčđèéėëêęǵḧìíïîįłḿǹńňñòóöôœøṕŕřßśšșťțùúüûǘůűūųẃẍÿýźžż·/_,:;';
+    const b = 'aaaaaaaaacccdeeeeeeghiiiiilmnnnnooooooprrssssttuuuuuuuuuwxyyzzz------';
+    const p = new RegExp(a.split('').join('|'), 'g');
 
     return string.toString().toLowerCase()
         .replace(/\s+/g, '-') // Replace spaces with -
@@ -219,5 +219,5 @@ function slugify(string) {
         .replace(/[^\w\-]+/g, '') // Remove all non-word characters
         .replace(/\-\-+/g, '-') // Replace multiple - with single -
         .replace(/^-+/, '') // Trim - from start of text
-        .replace(/-+$/, '') // Trim - from end of text
+        .replace(/-+$/, ''); // Trim - from end of text
 }
