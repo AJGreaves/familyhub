@@ -104,3 +104,39 @@ describe('slugify function', function() {
         expect(result).toEqual('my-other-slug');
     });
 })
+
+
+describe('capFirst function', function() {
+    it('Should return string with first letter capitalised', function() {
+        result = capFirst('bob');
+        expect(result).toEqual('Bob');
+    })
+})
+
+describe('showLoading function', function() {
+    beforeEach(() => {
+        setFixtures(`
+        <div id="spinner-wrapper"style="visibility: hidden;">
+            <div id="spinner" Title="loading"></div>
+        </div>
+        `);
+    });
+    it('should set style to visibility: visible on #spinner-wrapper', function() {
+        showLoading();
+        expect($("#spinner-wrapper").attr('style')).toEqual('visibility: visible;');
+    })
+})
+
+describe('hideLoading function', function() {
+    beforeEach(() => {
+        setFixtures(`
+        <div id="spinner-wrapper" style="visibility: visible;">
+            <div id="spinner" Title="loading"></div>
+        </div>
+        `);
+    });
+    it('should set style to visibility: hidden on #spinner-wrapper', function() {
+        hideLoading();
+        expect($("#spinner-wrapper").attr('style')).toEqual('visibility: hidden;');
+    })
+})
