@@ -73,3 +73,34 @@ describe('openLoggedInModal function', function() {
         expect($('#loggedInModal')).toHaveClass('active');
     })
 })
+
+describe('slugify function', function() {
+    it('should return string with all capitals changed to lowercase', function() {
+        result = slugify('CAPITALS');
+        expect(result).toEqual('capitals');
+    });
+    it('should return string with mix of capitals and lowercase changed to all lowercase', function() {
+        result = slugify('MyStrinG');
+        expect(result).toEqual('mystring');
+    });
+    it('should return string where any spaces have been replaced with -', function() {
+        result = slugify('string with spaces in');
+        expect(result).toEqual('string-with-spaces-in');
+    });
+    it('should remove all non-word characters', function() {
+        result = slugify('Lots%of$special*Charatersęǵḧ');
+        expect(result).toEqual('lotsofspecialcharatersegh');
+    });
+    it('should replace & with "and"', function() {
+        result = slugify('bacon & eggs');
+        expect(result).toEqual('bacon-and-eggs');
+    });
+    it('should trim - from start of text', function() {
+        result = slugify('-my slug');
+        expect(result).toEqual('my-slug');
+    });
+    it('should trim - from end of text', function() {
+        result = slugify('my other slug-');
+        expect(result).toEqual('my-other-slug');
+    });
+})
