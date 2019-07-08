@@ -13,12 +13,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Show and hide spinner animation
 function showLoading() {
-    document.getElementById("spinner-wrapper").style = "visibility: visible";
+    document.getElementById("spinner-wrapper").style = "visibility: visible;";
     return;
 }
 
 function hideLoading() {
-    document.getElementById("spinner-wrapper").style = "visibility: hidden";
+    document.getElementById("spinner-wrapper").style = "visibility: hidden;";
     return;
 }
 
@@ -194,7 +194,6 @@ function capFirst(string) {
 
 $('input#inputDELETE').change(function () {
     let val = $('#inputDELETE').val();
-    console.log(val);
     if (val == "DELETE") {
         $('#confirm-delete').removeClass('no-click');
     } else {
