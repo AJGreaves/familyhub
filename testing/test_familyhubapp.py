@@ -1,5 +1,6 @@
-import os, unittest
-from app import app
+import os, unittest, sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import app
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 
@@ -16,3 +17,14 @@ client = MongoClient('localhost', 27017)
 db = client.familyHub
 activities = db.activities
 users = db.users
+
+class TestRoutes(unittest.TestCase):
+    def setUp(self):
+
+        self.client = app.test_client()
+
+    def test_routes(self):
+
+        response = self.client.get('/')
+        data = response.data.decode('utf-8')
+        assert response.status_code == 200
