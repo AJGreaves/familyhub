@@ -175,8 +175,9 @@ function openDeleteWarningModal() {
 
 function openLoggedInModal(username) {
     let name = capFirst(username);
-    $("#accountUrl").attr("href", `/account/${username}`)
-    $("#newActivityUrl").attr("href", `/editor/${username}/add-new`)
+    let slug = slugify(username)
+    $("#accountUrl").attr("href", `/account/${slug}`)
+    $("#newActivityUrl").attr("href", `/editor/${slug}/add-new`)
     $('#welcomeMessage').text('Welcome ' + name + '.');
     $('#loggedInModal').addClass('active');
 }
@@ -201,3 +202,23 @@ $('input#inputDELETE').change(function () {
     }
     return;
 })
+
+/**
+ * Function credit from: https://medium.com/@mhagemann/the-ultimate-way-to-slugify-a-url-string-in-javascript-b8e4a0d849e1
+ * @param {string} string 
+ */
+
+function slugify(string) {
+    const a = 'àáäâãåăæąçćčđèéėëêęǵḧìíïîįłḿǹńňñòóöôœøṕŕřßśšșťțùúüûǘůűūųẃẍÿýźžż·/_,:;'
+    const b = 'aaaaaaaaacccdeeeeeeghiiiiilmnnnnooooooprrssssttuuuuuuuuuwxyyzzz------'
+    const p = new RegExp(a.split('').join('|'), 'g')
+
+    return string.toString().toLowerCase()
+        .replace(/\s+/g, '-') // Replace spaces with -
+        .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
+        .replace(/&/g, '-and-') // Replace & with 'and'
+        .replace(/[^\w\-]+/g, '') // Remove all non-word characters
+        .replace(/\-\-+/g, '-') // Replace multiple - with single -
+        .replace(/^-+/, '') // Trim - from start of text
+        .replace(/-+$/, '') // Trim - from end of text
+}
