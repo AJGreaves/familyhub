@@ -126,6 +126,10 @@ function alertModal(message, date1, date2) {
             message1.text('Your email has been sent successfully!');
             message2.text('We will be in touch within 48 hours');
             break;
+        case 'business email sent':
+            heading.text('Email sent!');
+            message1.text('Your email has been sent successfully!');
+            break;
         default:
             break;
     }
