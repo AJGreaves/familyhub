@@ -1,36 +1,42 @@
 {% block email_activity_modal %}
 
-<div id="emailActivityModal" class="container-fluid no-fouc">
-    <div class="row justify-content-center">
-        <div class="col-10 col-md-8 col-lg-6 modal-content-box text-center">
-            <h2 class="text-left">Email this activity</h2>
-            <hr>
-            <form id="email-activity-form" method="POST">
-                <h3>Send this activity an email</h3>
-                <div class="form-group">
-                    <label for="emailActivityTo">To:</label>
-                    <input value="{{ activity.contact.email }}" type="email" class="form-control" id="emailActivityTo" name="emailActivityTo" aria-label="to email" disabled>
-                </div>
-                <div class="form-group">
-                    <label for="emailActivityFromName">From:</label>
-                    <input type="text" class="form-control" id="emailActivityFromName" name="emailActivityFromName" aria-label="Please input your name (required)" 
-                    placeholder="Please input your name" required>
-                </div>
-                <div class="form-group">
-                    <label for="emailActivityFromEmail">Your email</label>
-                    <input type="email" class="form-control" id="emailActivityFromEmail" name="emailActivityFromEmail" aria-label="Please input your email (required)" 
-                    placeholder="Please input your email" required>
-                </div>
-                <div class="form-group">
-                    <label for="emailActivityMessage">Your message</label>
-                    <textarea type="text" class="form-control" rows="10" id="emailActivityMessage" name="emailActivityMessage" aria-label="Please write your message here (required)" 
-                    placeholder="Please write your message here" required></textarea>
-                </div>
-                <button type="submit"></button>
-            </form>
-            <button id="closeemailActivityModal" class="btn btn-search m-3 mb-5" type="submit">
-                Close
-            </button>
+<div class="modal fade no-fouc" id="emailActivityModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Email the organisers of this activity</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="email-activity-form" method="POST">
+                    <div class="form-group">
+                        <label for="emailActivityTo">To:</label>
+                        <input value="{{ activity.contact.email }}" type="email" class="form-control"
+                            id="emailActivityTo" name="emailActivityTo" aria-label="to email" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailActivityFromName">From:</label>
+                        <input type="text" class="form-control" id="emailActivityFromName" name="emailActivityFromName"
+                            aria-label="Please input your name (required)" placeholder="Please input your name"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailActivityFromEmail">Your email</label>
+                        <input type="email" class="form-control" id="emailActivityFromEmail"
+                            name="emailActivityFromEmail" aria-label="Please input your email (required)"
+                            placeholder="Please input your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailActivityMessage">Your message</label>
+                        <textarea type="text" class="form-control" rows="10" id="emailActivityMessage"
+                            name="emailActivityMessage" aria-label="Please write your message here (required)"
+                            placeholder="Please write your message here" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-create">Send email</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>

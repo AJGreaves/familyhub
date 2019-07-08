@@ -42,6 +42,10 @@
     <!-- Alert modal -->
     {% include 'components/modals/alert.html' %}
 
+    <!-- Contact business modal -->
+    {% if activity %}
+    {% include 'components/modals/email_activity.html' %}
+    {% endif %}
     <!-- Spinner -->
     <div id="spinner-wrapper">
         <div id="spinner" Title="loading"></div>
@@ -69,7 +73,7 @@
     {% elif active == 'listing' %}
     <script src="{{url_for('static', filename='js/listings.js')}}"></script>
     {% endif %}
-    {% if active == 'contact' %}
+    {% if active == 'contact' or active == 'listing' %}
     <!-- script for email -->
     <script src="{{url_for('static', filename='js/sendemail.js')}}"></script>
     {% endif %}

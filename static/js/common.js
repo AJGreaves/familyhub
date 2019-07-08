@@ -157,6 +157,7 @@ function openDeleteWarningModal() {
     return;
 }
 
+
 /**
  * Function takes username for this user passed from the 
  * database and constructs a welcome message with it, then

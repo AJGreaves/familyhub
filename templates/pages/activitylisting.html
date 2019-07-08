@@ -153,7 +153,7 @@
                         aria-label="Call the organisers of this listing">Tel: {{ activity.contact.phone }}</a>
                     {% endif %}
                     <div class="btn btn-create" id="emailOrganisers"
-                        aria-label="Email the organisers of this listing">Email organisers</div>
+                        aria-label="Email the organisers of this listing"  data-toggle="modal" data-target="#emailActivityModal">Email organisers</div>
                 </div>
 
                 <!-- share this listing page on social media -->
@@ -181,7 +181,5 @@
         </div>
 
     </section>
-
 </main>
-
 {% endblock %}

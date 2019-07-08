@@ -367,8 +367,8 @@ Credit: https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed
 #loggedInModal,
 #alertModal {
   height: 100vh;
-  position: fixed;
   z-index: 100;
+  position: fixed;
   bottom: 0;
   right: 0;
   opacity: 0;
@@ -403,6 +403,10 @@ Credit: https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed
   /* Credit: code for box shadow taken from https://codepen.io/sdthornton/pen/wBZdXq */
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+#emailActivityModal .modal-content-box {
+  margin-top: 60px;
 }
 
 #delete-warning-modal h3,
