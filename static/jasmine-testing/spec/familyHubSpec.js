@@ -242,3 +242,28 @@ describe('getCheckedIds function', function() {
         expect(result).toEqual(['A', 'C', 'E'])
     })
 })
+
+describe('getFullData function', function() {
+    beforeEach(function() {
+        setFixtures(`
+        <h3 id="num-of-results"></h3>
+        `);
+        spyOn(window, "displayResults").and.callFake(function() { return; });
+    })
+    it('Should add text "3 results" to element with #num-of-results', function() {
+        const data = [
+            {"username": "Anna",
+            "title": "Activity A"
+            },
+            {"username": "Anna",
+            "title": "Activity B"
+            },
+            {"username": "Anna",
+            "title": "Activity C"
+            },
+        ];
+        getFullData(data);
+        expect($('#num-of-results').text()).toEqual('3 results');
+    })
+})
+

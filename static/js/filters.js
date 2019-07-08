@@ -80,7 +80,7 @@
     }
 
     /**
-     * Takes search results data from fetch and pushes it into an array
+     * Takes search results data as json from fetch and pushes it into an array
      * that an be accessed outside of the fetch function.
      * @param {array} data 
      */
