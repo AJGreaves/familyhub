@@ -35,6 +35,14 @@
     margin: 0;
 }
 
+#listing-contact-links a{
+    color: $mid-blue;
+}
+
+#listing-contact-links a:hover{
+    color: $mid-blue-hover;
+}
+
 .hidden {
     display: none;
 }

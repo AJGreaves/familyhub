@@ -961,6 +961,14 @@ html {
   margin: 0;
 }
 
+#listing-contact-links a {
+  color: #5ca4a9;
+}
+
+#listing-contact-links a:hover {
+  color: #346861;
+}
+
 .hidden {
   display: none;
 }
