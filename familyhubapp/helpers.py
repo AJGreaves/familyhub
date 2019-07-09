@@ -42,6 +42,10 @@ class Helpers:
 
     @staticmethod
     def format_time(data):
+        """ 
+        takes time input from post_request and formats
+        it into datetime to store in mongodb 
+        """
         time = data.split('/')
         time = f"{time[2]}-{time[1]}-{time[0]}"
         time = datetime.strptime(time, '%Y-%m-%d')

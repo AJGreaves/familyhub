@@ -67,4 +67,13 @@ def test_format_description():
 
 test_format_description()
 
+def test_format_time():
+    data = '17/07/2019'
+    expected_time = '2019-07-17 00:00:00'
+    time = Helpers.format_time(data)
+    time_str = str(time)
+    assert time_str == expected_time, 'format_time() should return datetime formatted string'
+
+test_format_time()
+
 print("All tests passed")
