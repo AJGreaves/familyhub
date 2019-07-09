@@ -6,21 +6,6 @@ from pymongo import MongoClient
 from bson.objectid import ObjectId
 from datetime import datetime
 
-# config
-app.config['DEBUG'] = False
-app.config['SECRET_KEY'] = 'SECRET_KEY_SK'
-app.config["WTF_CSRF_ENABLED"] = False
-app.config['TESTING'] = True
-
-# configure mongo
-client = MongoClient('localhost', 27017)
-
-# database / collections
-db = client.familyHub
-activities = db.activities
-users = db.users
-
-
 def testSlugify():
     capitals = slugify('CAPITALS')
     MyStrinG = slugify('MyStrinG')
@@ -69,9 +54,4 @@ def test_open_times():
 
 test_open_times()
 
-
 print("All tests passed")
-
-# Run tests
-if __name__ == '__main__':
-    unittest.main()
