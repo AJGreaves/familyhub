@@ -76,4 +76,17 @@ def test_format_time():
 
 test_format_time()
 
+def test_remove_http():
+    expected_result = '//www.google.com/'
+
+    url_input1 = 'https://www.google.com/'
+    result1 = Helpers.remove_http(url_input1)
+    assert result1 == expected_result, 'remove_http() should return url with https: removed'
+
+    url_input2 = 'http://www.google.com/'
+    result2 = Helpers.remove_http(url_input2)
+    assert result1 == expected_result, 'remove_http() should return url with http: removed'
+
+test_remove_http()
+
 print("All tests passed")
