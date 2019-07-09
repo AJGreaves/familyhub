@@ -73,8 +73,9 @@ class Helpers:
 
         address_split = address.replace(' ', '+')
         postcode_split = postcode.replace(' ', '+')
+        town_split = town.replace(' ', '+')
 
-        url = 'https://www.google.com/maps/search/?api=1&query=' + address_split + '+' + postcode_split + '+' + town
+        url = 'https://www.google.com/maps/search/?api=1&query=' + address_split + '+' + postcode_split + '+' + town_split
         return url
         
 
