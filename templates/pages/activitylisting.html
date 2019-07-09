@@ -13,8 +13,8 @@
         {% endif %}
         {% if newActivity %}
         <!-- publish success bar shows when user has just published their new activity -->
-        <div id="publish-success" class="hide">
-            <p class="hide">Your new listing has been published!</p>
+        <div id="publish-success" class="hide mt-2">
+            <p class="hide">Your listing has been published!</p>
             <i id="closeNotice" class="fas fa-times text-white fa-2x hide"></i>
         </div>
         {% endif %}
@@ -74,9 +74,11 @@
 
                         <!-- contact -->
                         <div id="listing-contact-links" class="col-12 col-md-6">
-                            <h3><i class="fas fa-map-marker-alt icon"></i>Address</h3>
-                            <p>{{ activity.address.addressLine1 }}<br>
-                                {{ activity.address.postcode }} {{ activity.address.town }}</p>
+                            <a href="{{ map_url }}" target="_blank" rel="noopener" aria-label="click to go to this address in google maps">
+                                <h3><i class="fas fa-map-marker-alt icon"></i>Address</h3>
+                                <p>{{ activity.address.addressLine1 }}<br>
+                                    {{ activity.address.postcode }} {{ activity.address.town }}</p>
+                            </a>
                         </div>
 
                         <!-- social -->
