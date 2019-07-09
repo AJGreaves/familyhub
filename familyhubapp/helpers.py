@@ -24,7 +24,6 @@ class Helpers:
                 openTimes.append({key:fTime})
             else:
                 openTimes.append({key:time})
-
         return openTimes
 
     """
