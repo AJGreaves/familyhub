@@ -248,6 +248,8 @@ def activity_listing_page(title):
     openTimes = Helpers.open_times(openTimes_db)
     descrpDict = Helpers.format_description(rawDescrip)
 
+    map_url = Helpers.map_url(activity)
+
     return render_template(
         "pages/activitylisting.html", 
         headTitle=title,
@@ -257,6 +259,7 @@ def activity_listing_page(title):
         endDate=endDate,
         description=descrpDict,
         openTimes=openTimes,
+        map_url=map_url,
         preview=False,
         newActivity=newActivity,
         active="listing",
