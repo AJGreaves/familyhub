@@ -18,6 +18,8 @@ app.config.from_object(Config)
 client = MongoClient(Config.MONGO_URI)
 db = client.familyHub
 
+
+# custom filter to use in python and jinja
 @app.template_filter()
 def slugify(text, delim=b'-'):
     """Generates an ASCII-only slug. Credit for this function to http://flask.pocoo.org/snippets/5/"""
