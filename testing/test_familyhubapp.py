@@ -1,6 +1,6 @@
 import os, unittest, sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-import app
+from app import app
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 
@@ -28,3 +28,9 @@ class TestRoutes(unittest.TestCase):
         response = self.client.get('/')
         data = response.data.decode('utf-8')
         assert response.status_code == 200
+        assert 'Europes largest playground De Linnaeushof' in data
+
+# Run tests
+
+if __name__ == '__main__':
+    unittest.main()
