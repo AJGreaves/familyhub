@@ -32,14 +32,12 @@ class Helpers:
     @staticmethod
     def format_description(rawDescrip):
         description = (rawDescrip).split('\r\n')
-
         index = 0
         descrpDict = []
         for paragraph in description:
             key = str(index)
             descrpDict.append({key:paragraph})
             index = index + 1
-
         return descrpDict
 
     @staticmethod

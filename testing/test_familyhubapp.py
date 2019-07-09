@@ -33,7 +33,6 @@ def test_open_times():
         'sunStart': datetime(1900, 1, 1, 10, 0), 
         'sunEnd': datetime(1900, 1, 1, 16, 30)
     }
-    openTimes = Helpers.open_times(openTimes_db)
     expectedResult = [
         {'monStart': None}, 
         {'monEnd': None}, 
@@ -50,8 +49,22 @@ def test_open_times():
         {'sunStart': '10:00'}, 
         {'sunEnd': '16:30'}
     ]
+    openTimes = Helpers.open_times(openTimes_db)
     assert openTimes == expectedResult, "open_times() should return array of objects with datetime objects converted into times to display"
 
 test_open_times()
+
+def test_format_description():
+    rawDescrip1 = 'Line 1\r\nLine 2\r\nLine 3'
+    expected_result1 = [{'0': 'Line 1'}, {'1': 'Line 2'}, {'2': 'Line 3'}]
+    result1 = Helpers.format_description(rawDescrip1)
+    assert result1 == expected_result1, "format_description() should return array of objects separated into paragraphs"
+
+    rawDescrip2 = 'Line 1\r\n\r\nLine 2\r\n\r\nLine 3'
+    expected_result2 = [{'0': 'Line 1'}, {'1': ''}, {'2': 'Line 2'}, {'3': ''}, {'4': 'Line 3'}]
+    result2 = Helpers.format_description(rawDescrip2)
+    assert result2 == expected_result2, "format_description() should empty paragraphs for double line breaks"
+
+test_format_description()
 
 print("All tests passed")
