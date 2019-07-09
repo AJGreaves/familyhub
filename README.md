@@ -1,17 +1,9 @@
-<h1 align="center">
-  <a href="#" target="_blank"><img src="#" alt="FamilyHub Logo"/></a>
-</h1>
-<h2 align="center">
-<a href="#" target="_blank"><img src="#" alt="Family events and activities for kids in Haaelemmmermeer" ></a>
-</h2>
+# ![Family Hub logo](https://i.ibb.co/Pm36prG/fh-logo-readme.png)
 
-<div align="center"> 
+
+## ![Family events and activities for kids in Haarlemmermeer](https://i.ibb.co/Pj9RZW5/tagline.png)
 
 Intro to page
-
-[View the FamilyHub Page!](https://)
-
-</div>
 
 ## Table of Contents
 1. [**UX**](#ux)
