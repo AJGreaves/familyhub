@@ -66,6 +66,7 @@ class Helpers:
 
     @staticmethod
     def map_url(activity):
+        """ creates url for google maps from the address provided """
         address = activity["address"]["addressLine1"]
         postcode = activity["address"]["postcode"]
         town = activity["address"]["town"]
@@ -74,7 +75,6 @@ class Helpers:
         postcode_split = postcode.replace(' ', '+')
 
         url = 'https://www.google.com/maps/search/?api=1&query=' + address_split + '+' + postcode_split + '+' + town
-        print(url)
         return url
         
 
