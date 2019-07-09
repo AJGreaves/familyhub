@@ -53,11 +53,13 @@ class Helpers:
 
     @staticmethod
     def remove_http(url):
+        """ removes https: and http: from all urls passed to the database """
         url = url.replace("https:", "")
         url = url.replace("http:", "")
         return url
 
     @staticmethod
     def add_https(url):
+        """ adds https: to all urls so they are uniform (no http:) """
         url = "https:" + url
         return url
