@@ -63,3 +63,19 @@ class Helpers:
         """ adds https: to all urls so they are uniform (no http:) """
         url = "https:" + url
         return url
+
+    @staticmethod
+    def map_url(activity):
+        address = activity["address"]["addressLine1"]
+        postcode = activity["address"]["postcode"]
+        town = activity["address"]["town"]
+
+        address_split = address.replace(' ', '+')
+        postcode_split = postcode.replace(' ', '+')
+
+        url = 'https://www.google.com/maps/search/?api=1&query=' + address_split + '+' + postcode_split + '+' + town
+        print(url)
+        return url
+        
+
+        
