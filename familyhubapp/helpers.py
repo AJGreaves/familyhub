@@ -26,11 +26,9 @@ class Helpers:
                 openTimes.append({key:time})
         return openTimes
 
-    """
-    formats description for display in listing pages
-    """
     @staticmethod
     def format_description(rawDescrip):
+        """ formats description for display in listing pages """
         description = (rawDescrip).split('\r\n')
         index = 0
         descrpDict = []
