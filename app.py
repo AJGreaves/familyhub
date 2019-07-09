@@ -18,7 +18,6 @@ app.config.from_object(Config)
 client = MongoClient(Config.MONGO_URI)
 db = client.familyHub
 
-
 # custom filter to use in python and jinja
 @app.template_filter()
 def slugify(text, delim=b'-'):
@@ -36,6 +35,12 @@ def slugify(text, delim=b'-'):
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
 def home_page():
+    """
+    Creates 3 lists of 12 database entries from featured, sports and 
+    summer categoes to display in the 3 carousels on the index page.
+    Pulls entry for linneushof from database to display in the TopTip feature box on index page.
+    Converts description for toptip feature into shortend version that will print out correctly.
+    """
     loggedIn = True if 'user' in session else False
 
     sports = db.activities.aggregate([{"$match": {"published": True, "categories.sports": True}} , {'$sample': {'size': 12}}])
@@ -152,7 +157,12 @@ def contact_page():
 # new account page
 @app.route('/newaccount', methods=['GET', 'POST'])
 def new_account_page():
-    """ Checks if user is already logged in, if they are redirects them to their account page """
+    """ 
+    Checks if user is already logged in, if they are redirects them to their account page.
+    If user in not already logged in takes data they added, compares it to check that the 
+    user does not already exist in the database, and then returns a response to javascript 
+    based on the checks done.
+    """
     loggedIn = True if 'user' in session else False
 
     if loggedIn:
@@ -176,6 +186,13 @@ def new_account_page():
 # login page
 @app.route('/login', methods=['GET', 'POST'])
 def login_page():
+    """ 
+    Checks if user is already logged in, if they are redirects them to their account page.
+    If user in not already logged in takes data they added to log in, compares it to check 
+    the users entries of username/email and password match those in the database, if there
+    is a match the user is logged in to the site. Then returns a response to javascript 
+    based on the checks done so that JS can provide feedback to the user.
+    """
     loggedIn = True if 'user' in session else False
 
     if loggedIn == True:
@@ -199,13 +216,19 @@ def login_page():
 # log out page
 @app.route('/logout')
 def logout():
-    # Clear the session
+    """ clears the session of the user which logs them out """
     session.clear()
     return redirect(url_for('home_page'))
 
 # Activity listing page 
 @app.route('/listing/<title>', methods=['GET', 'POST'])
 def activity_listing_page(title):
+    """
+    Checks if user is logged in, to display correct navbar configuration.
+    gets activity id passed to route with url and pulls that entry from the database
+    for display. 
+    Processes the data from the database for display and renders it on the page.
+    """
     loggedIn = True if 'user' in session else False
 
     activity_id = request.args.get('activity_id')
@@ -244,6 +267,12 @@ def activity_listing_page(title):
 # Settings page
 @app.route('/settings/<username>', methods=['GET', 'POST'])
 def settings_page(username):
+    """
+    Checks if user is logged in, if they are not redirects them to the 'permission denied' page. 
+    When user makes post request from settings page the data is sent to the settings_update
+    function which checks the data input is correct, updates the database if it passes and returns
+    a response to JS for feedback to the user.
+    """
     loggedIn = True if 'user' in session else False
 
     if not loggedIn:
@@ -268,6 +297,10 @@ def settings_page(username):
 # Account page - all listings for this account
 @app.route('/account/<username>')
 def my_account_page(username):
+    """
+    Checks if user is logged in, if they are not redirects them to the 'permission denied' page. 
+    Pulls all users activities from the database to display in their account page.
+    """
     loggedIn = True if 'user' in session else False
 
     if not loggedIn:
@@ -276,7 +309,6 @@ def my_account_page(username):
         user = db.users.find_one({"username": session['user']})
         activities = db.activities.find({"username": user['username']}).sort("_id", -1)
         activities = list(activities)
-
 
     return render_template(
         "pages/account.html", 
@@ -334,7 +366,11 @@ def new_activity_page(username):
 # preview activity page
 @app.route('/editor/preview-activity/<username>/<title>', methods=['GET', 'POST'])
 def preview_activity_page(username, title):
-    
+    """
+    Checks if user has permission to be on this page, if not redirects the to permission denied page.
+    Takes entry from the database using the activity_id and builds the preview page from the data.
+    If user clicks "publish" button adds the entry again with published set to True.
+    """ 
     loggedIn = True if 'user' in session else False
 
     if not loggedIn:
@@ -355,8 +391,10 @@ def preview_activity_page(username, title):
         openTimes = Helpers.open_times(openTimes_db)
         descrpDict = Helpers.format_description(rawDescrip)
 
-    """ If user pushed "Publish" button on preview page, update published to True
-        then redirect to actual listing page on site """
+    """ 
+    If user pushed "Publish" button on preview page, update published to True
+    then redirect to actual listing page on site 
+    """
     if request.method == 'POST':
         db.activities.find_one_and_update({"_id": ObjectId(activity_id)}, {"$set": {"published": True}})
         
@@ -382,9 +420,13 @@ def preview_activity_page(username, title):
         keywords=Keywords.generic()
     )
 
-# Edit existing activity page
+# edit existing activity page
 @app.route('/editor/edit-activity/<username>/<title>', methods=['GET', 'POST'])
 def edit_activity_page(username, title):
+    """
+    Pulls activity data from database using the id, displays it in the values of the input fields 
+    in the edit page. Renders editor page with converted data. 
+    """
     loggedIn = True if 'user' in session else False
 
     if not loggedIn:
@@ -460,8 +502,15 @@ def edit_activity_page(username, title):
         keywords=Keywords.generic()
     )
 
+# delete listing page
 @app.route('/deletelisting', methods=['GET', 'POST'])
 def delete_listing():
+    """ 
+    Checks if user has permission to be on the page, redirects if not. 
+    Takes activity_id sent with url and deletes this listing from the database. 
+    Then redirects the user back to their my_account_page
+    """
+
     loggedIn = True if 'user' in session else False
 
     if not loggedIn:
@@ -480,6 +529,7 @@ def delete_listing():
         deleted=True
     ))
 
+# privacy policy page
 @app.route('/privacy-policy')
 def privacy():
     loggedIn = True if 'user' in session else False
