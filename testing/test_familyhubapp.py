@@ -89,4 +89,13 @@ def test_remove_http():
 
 test_remove_http()
 
+def test_add_https():
+    expected_result = 'https://www.google.com/'
+
+    url_input = '//www.google.com/'
+    result = Helpers.add_https(url_input)
+    assert result == expected_result, 'add_https() should return url with https: added to beginning'
+
+test_add_https()
+
 print("All tests passed")
