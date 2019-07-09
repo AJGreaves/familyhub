@@ -98,4 +98,10 @@ def test_add_https():
 
 test_add_https()
 
+def test_map_url():
+    activity = [{'addressLine1': 'VANZANTENHAL IJweg 1415', 'postcode': '2152 NB', 'town': 'Nieuw-Vennep'}]
+    expected_result = 'https://www.google.com/maps/search/?api=1&query=VANZANTENHAL+IJweg+1415+2152+NB+Nieuw-Vennep'
+    result = Helpers.map_url(activity)
+    assert result == expected_result, 'map_url() should return expected string url for google maps'
+
 print("All tests passed")
