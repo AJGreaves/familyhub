@@ -1,4 +1,4 @@
-import os, unittest, sys
+import os, sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from app import app, slugify
 from familyhubapp.helpers import Helpers
@@ -85,7 +85,7 @@ def test_remove_http():
 
     url_input2 = 'http://www.google.com/'
     result2 = Helpers.remove_http(url_input2)
-    assert result1 == expected_result, 'remove_http() should return url with http: removed'
+    assert result2 == expected_result, 'remove_http() should return url with http: removed'
 
 test_remove_http()
 

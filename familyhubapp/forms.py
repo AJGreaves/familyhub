@@ -129,7 +129,6 @@ def process_activity_data(db, user, post_request, published):
             time = datetime.strptime(time, '%H:%M:%S')
             openTimesDict[time_name] = time
 
-
     obj = {
         'username': user['username'], 
         'title': post_request.get('title'),
