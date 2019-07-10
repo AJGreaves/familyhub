@@ -63,26 +63,33 @@ The central target audience for Family hub are:
 - Live in or around the Haarlemmermeer area of The Netherlands.
 
 User goals are:
-- As a new user on the site, I expect to easily find what I am looking for, I want the layout of the site to make sense so I am not confused or put off using it. 
-- As a user, I expect the information I am presented with to be laid out in a way that is easy for me to navigate and digest, so that I find what I need quickly and efficiently.
-- As a user, I want to be able to search through small amounts of information to find what I need, and then be able to easily click to get more detailed information when I need it.
-- As a parent, I want to filter the events and activities to find the entires that are best for the age(s) of my child(ren).
-- As a user who does not want to travel far for the activity I am looking for, I want to search for activities in my town.
-- As a user I want the site to provide easy access to the contact information, phone number, email, website, social media links, and a google map link for an activity or event I am interested in attending. 
-- As a user on a budget, I want to be able to filter results by free entry. I also want to know at which events I am allowed to bring my own food to.
-- As a user searching for things to do on a rainy day, I want to be able to filter results for ones suitable for poor weather.
-- As a parent planning a birthday party, I am looking for ideas on places to hold it. I want to be able to filter results by those that run birthday parties. 
-- As a parent looking for something to do on a certain day of the week, I want to be able to filter results for which days of the week they are open.
-- As a user accessing this site from a mobile phone or tablet, I want the site to have been designed responsively so that it is still easy to navigate and use on my smaller devices. 
-- As a parent searching for ideas for things for my child(ren) to do, I want to be able to filter activities by categories they are interested in. 
-- As a regular user of the Family Hub website, I expect to be able to connect to their social media channels, to keep up to date with new entires on the site. 
-- As a user of Family Hub, I expect to be able to easily get in contact via a contact form.
+- Have somewhere to search for events in my local area, that offers its listings in English as my Dutch is not strong enough to understand the sites in Dutch.
+- Get out of the house in this new country I have moved to, find things to do with my kids. 
+- Have the confidence to start exploring the events in my new home, because I have been better informed in a language I understand.
+
+A few of the possible goals users might have: 
+- Find an after school activity for my child to enjoy.
+- Find swimming lessons for my 5yo son. 
+- Find something to do with my kids this weekend. 
+- Find out about upcoming events I might be interested in attending.
+- Find family friendly music festivals to attend this summer.
+- Find things to fill the kids summer holidays up with.
+- Find summer camps to occupy my kids in the holidays while I work.
+- Find all the events in my town.
+- Find art lessons for my daughter. 
+- Find dance lessons for my son.
+- Find technology themed courses for my child. 
+- Get new ideas on where to celebrate my child's birthday party this year.
+- Find my local sports centres for kids activities. 
+- Find out if there is a kids pony club near me. 
+- Find activities for my pre-school child. 
+- Find free family events in my local area.
 
 FamilyHub is a great way to meet these user needs because:
 - There are no other websites offering event and activity information in English outside of the city of Amsterdam. 
 - As a part of the community I want to serve, I understand the needs and wants of the users of my website well. 
 - The design of this site fits the conventions of similar sites, and lays out the information in a user friendly and accessible way.
-
+- The Family Hub activities page allows users to search by location, category, age range, days of the week open, indoor or outdoor as well as a few other possible options.
 
 ----
 
@@ -94,16 +101,18 @@ The target businesses to use Family Hub to advertise:
 - Want to reach a wider audience to attend their events / activities. 
 - Are welcoming to international families. 
 
-- As a business user of Family Hub, I want
-
-FamilyHub is a great way to meet these user needs because:
-- I come from a background of running my own business and events, so I understand the needs of the businesses that would advertise on this site 
+Business user goals are:
+- A well thought-out, well designed, user-friendly platform that will benefit my business to advertise on.
+- Value for money (at the moment the website is a student project, but eventual planning is to monetise this site, so it is worth adding this important goal here now.)
+- A user interface that is user friendly for me to input my data easily and efficiently. 
 
 ----
 
 #### Family Hub Goals
 
-- list items here
+- Provide an effective, easy to use site for English speaking international families to search and filter through entries to find the listings that suit their needs.
+- To learn and practice frontend and backend programming together for the first time. To combine the use of HTML, CSS, Bootstrap and JavaScript with Python, MongoDB, Flask and Jinja.
+- While this is currently a student project, the future goal of Family Hub to monetise the website to charge businesses for advertising their events and activities on it. This will come later once the site has a few more features to offer those who use it (see [Features Left to Implement](#features-left-to-implement)).
 
 ----
 
@@ -111,15 +120,35 @@ FamilyHub is a great way to meet these user needs because:
 
 #### Visitor Stories
 
-As a visitor to FamilyHub I want:
-1. list items here
+As a visitor to FamilyHub I expect/want/need:
+
+1. To easily find what I am looking for, I want the layout of the site to make sense so I am not confused or put off using it. 
+2. The information I am presented with to be laid out in a way that is easy for me to navigate and digest, so that I find what I need quickly and efficiently.
+3. To be able to search through small amounts of information to find what I need, and then be able to easily click to get more detailed information when I need it.
+4. To filter the events and activities to find the entires that are best for the age(s) of my child(ren).
+5. As a user who does not want to travel far for the activity I am looking for, I want to search for activities in my town.
+6. The site to provide easy access to the contact information, phone number, email, website, social media links, and a google map link for an activity or event I am interested in attending. 
+7. As a user on a budget, I want to be able to filter results by free entry. I also want to know at which events I am allowed to bring my own food to.
+8. As a user searching for things to do on a rainy day, I want to be able to filter results for ones suitable for poor weather.
+9. As a parent planning a birthday party, I am looking for ideas on places to hold it. I want to be able to filter results by those that run birthday parties. 
+10. As a parent looking for something to do on a certain day of the week, I want to be able to filter results for which days of the week they are open.
+11. As a user accessing this site from a mobile phone or tablet, I want the site to have been designed responsively so that it is still easy to navigate and use on my smaller devices. 
+12. As a parent searching for ideas for things for my child(ren) to do, I want to be able to filter activities by categories they are interested in. 
+13. As a regular user of the Family Hub website, I expect to be able to connect to their social media channels, to keep up to date with new entires on the site. 
+14. As a user of Family Hub, I expect to be able to easily get in contact via a contact form.
+15. As a user I expect feedback from the website I am using when I interact with it, I expect loading spinners when pages are taking a while to load, I expect pop ups and modals to inform me when my forms have been completed and sent correctly.
 
 ----
 
 #### Business Stories
 
 As a Business advertising on FamilyHub I want:
-1. list items here
+1. As a business considering advertising with Family Hub, I want to see that the information other businesses have put on the site are being displayed in an attractive and useful way for the user. 
+2. I want to see that various methods of contacting my business are available to users using Family Hub. 
+3. I expect to be able to log in to access my existing entries, and for my data to only be editable with my account.
+4. I expect to create, edit and delete entries in my account.
+5. I want a user interface that is simple and easy to use, that is laid out in a logical way with clear indications where necessary about the type and format of the data I need to provide. 
+6. I want forms for inputting my data to make the process easy, that there is no wasting my time or making the process difficult or slow. 
 
 ----
 
