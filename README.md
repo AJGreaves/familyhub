@@ -78,9 +78,11 @@ User goals are:
 - As a regular user of the Family Hub website, I expect to be able to connect to their social media channels, to keep up to date with new entires on the site. 
 - As a user of Family Hub, I expect to be able to easily get in contact via a contact form.
 
-
 FamilyHub is a great way to meet these user needs because:
-- list items here
+- There are no other websites offering event and activity information in English outside of the city of Amsterdam. 
+- As a part of the community I want to serve, I understand the needs and wants of the users of my website well. 
+- The design of this site fits the conventions of similar sites, and lays out the information in a user friendly and accessible way.
+
 
 ----
 
@@ -91,6 +93,11 @@ The target businesses to use Family Hub to advertise:
 - Are located in the Haarlemmermeer area.
 - Want to reach a wider audience to attend their events / activities. 
 - Are welcoming to international families. 
+
+- As a business user of Family Hub, I want
+
+FamilyHub is a great way to meet these user needs because:
+- I come from a background of running my own business and events, so I understand the needs of the businesses that would advertise on this site 
 
 ----
 
