@@ -1,15 +1,17 @@
-<div style="text-align:center">
+<div align="center">
     <img src="https://i.ibb.co/Pm36prG/fh-logo-readme.png" href="http://family-hub-nl.herokuapp.com" target="_blank" rel="noopener" alt="Family Hub Logo" aria-label="Family Hub Logo" />
     <img src="https://i.ibb.co/Pj9RZW5/tagline.png" href="http://family-hub-nl.herokuapp.com" target="_blank" rel="noopener" alt="Family events and activities for kids in Haarlemmermeer" aria-label="Family events and activities for kids in Haarlemmermeer" />
 </div> 
 
+<div align="center">
+    <img src="https://i.ibb.co/CBw04v7/home.jpg" href="http://family-hub-nl.herokuapp.com" target="_blank" rel="noopener" alt="Image of how home page looks on all screen sizes" aria-label="Image of how home page looks on all screen sizes" />
+</div>
+
+## Introduction
+
 [Family Hub](http://family-hub-nl.herokuapp.com) was created by Anna Greaves, to serve the large English speaking international community of families living in the Haarlemmermeer area of The Netherlands. 
 
 As a British mother of two, who moved to The Netherlands in 2003, I know what a difference it makes to newcomers to a country to be able to get out and connected to the community around. The Family Hub goal is to inform and connect English speaking families to the events and activities available in their local area.
-
-<div style="text-align:center">
-    <img src="https://i.ibb.co/CBw04v7/home.jpg" href="http://family-hub-nl.herokuapp.com" target="_blank" rel="noopener" alt="Image of how home page looks on all screen sizes" aria-label="Image of how home page looks on all screen sizes" />
-</div>
 
 ## Table of Contents
 1. [UX](#ux)
