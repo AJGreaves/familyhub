@@ -1,49 +1,84 @@
-# ![Family Hub logo](https://i.ibb.co/Pm36prG/fh-logo-readme.png)
+<div style="text-align:center">
+    <img src="https://i.ibb.co/Pm36prG/fh-logo-readme.png" href="http://family-hub-nl.herokuapp.com" target="_blank" rel="noopener" alt="Family Hub Logo" aria-label="Family Hub Logo" />
+    <img src="https://i.ibb.co/Pj9RZW5/tagline.png" href="http://family-hub-nl.herokuapp.com" target="_blank" rel="noopener" alt="Family events and activities for kids in Haarlemmermeer" aria-label="Family events and activities for kids in Haarlemmermeer" />
+</div>
 
 
-## ![Family events and activities for kids in Haarlemmermeer](https://i.ibb.co/Pj9RZW5/tagline.png)
 
-Intro to page
+[Family Hub](http://family-hub-nl.herokuapp.com) was created by Anna Greaves, to serve the large English speaking international community of families living in the Haarlemmermeer area of The Netherlands. 
+
+As a British mother of two, who moved to The Netherlands in 2003, I know what a difference it makes to newcomers to a country to be able to get out and connected to the community around. The Family Hub goal is to inform and connect English speaking families to the events and activities available in their local area.
+
+<div style="text-align:center">
+    <img src="https://i.ibb.co/3YZZsCX/desktop-gif.gif" href="http://family-hub-nl.herokuapp.com" target="_blank" rel="noopener" alt="Family Hub demo gif" aria-label="Family Hub demo gif" />
+</div>
 
 ## Table of Contents
-1. [**UX**](#ux)
-    - [**Project Goals**](#project-goals)
-    - [**Player goals**](#player-goals)
-    - [**Parental goals**](#parental-goals)
-    - [**Developer and Business Goals**](#developer-and-Business-Goals)
-    - [**User Stories**](#user-stories)
-    - [**Design choices**](#design-choices)
-    - [**Wireframes**](#wireframes)
+1. [UX](#ux)
+    - [Goals](#goals)
+        - [Visitor Goals](#visitor-goals)
+        - [Business Goals](#business-goals)
+        - [Family Hub Goals](#family-hub-goals)
+    - [User Stories](#user-stories)
+        - [Visitor Stories](#visitor-stories)
+        - [Business Stories](#business-stories)
+    - [Design Choices](#design-choices)
+    - [Wireframes](#wireframes)
 
-2. [**Features**](#features)
-    - [**Existing Features**](#existing-features)
-    - [**Features Left to Implement**](#features-left-to-implement)
+2. [Features](#features)
+    - [Existing Features](#existing-features)
+    - [Features Left to Implement](#features-left-to-implement)
 
-3. [**Technologies used**](#technologies-used)
+3. [Information Architecture](#information-architecture)
 
-4. [**Testing**](#testing)
+4. [Technologies Used](#technologies-used)
 
-5. [**Deployment**](#deployment)
-    - [**How to run this project locally**](#how-to-run-this-project-locally)
+5. [Testing](#testing)
 
-6. [**Credits**](#credits)
-    - [**Content**](#content)
-    - [**Media**](#media)
-    - [**Code**](#code)
-    - [**Acknowledgements**](#acknowledgements)
+6. [Deployment](#deployment)
+    - [Heroku Deployment](#heroku-deployment)
+    - [How to run this project locally](#how-to-run-this-project-locally)
 
-7. [**Disclaimer**](#disclaimer)
+7. [Credits](#credits)
+    - [Content](#content)
+    - [Media](#media)
+    - [Code](#code)
+    - [Acknowledgements](#acknowledgements)
+
+8. [Contact](#contact)
+
+9. [Disclaimer](#disclaimer)
+
+----
 
 ## UX
+----
 
-### Project Goals
+### Goals
 
-#### User goals
+#### Visitor Goals
 
-The central target audience for this page is...
+The central target audience for Family hub are:
+- Families with children aged 14 and under.
+- English speaking.
+- Moved to The Netherlands less than 3 years ago.
+- Live in or around the Haarlemmermeer area of The Netherlands.
 
 User goals are:
-- list items here
+- As a new user on the site, I expect to easily find what I am looking for, I want the layout of the site to make sense so I am not confused or put off using it. 
+- As a user, I expect the information I am presented with to be laid out in a way that is easy for me to navigate and digest, so that I find what I need quickly and efficiently.
+- As a user, I want to be able to search through small amounts of information to find what I need, and then be able to easily click to get more detailed information when I need it.
+- As a parent, I want to filter the events and activities to find the entires that are best for the age(s) of my child(ren).
+- As a user who does not want to travel far for the activity I am looking for, I want to search for activities in my town.
+- As a user I want the site to provide easy access to the contact information, phone number, email, website, social media links, and a google map link for an activity or event I am interested in attending. 
+- As a user on a budget, I want to be able to filter results by free entry. I also want to know at which events I am allowed to bring my own food to.
+- As a user searching for things to do on a rainy day, I want to be able to filter results for ones suitable for poor weather.
+- As a parent planning a birthday party, I am looking for ideas on places to hold it. I want to be able to filter results by those that run birthday parties. 
+- As a parent looking for something to do on a certain day of the week, I want to be able to filter results for which days of the week they are open.
+- As a user accessing this site from a mobile phone or tablet, I want the site to have been designed responsively so that it is still easy to navigate and use on my smaller devices. 
+- As a parent searching for ideas for things for my child(ren) to do, I want to be able to filter activities by categories they are interested in. 
+- As a regular user of the Family Hub website, I expect to be able to connect to their social media channels, to keep up to date with new entires on the site. 
+- As a user of Family Hub, I expect to be able to easily get in contact via a contact form.
 
 Parents of pre-school children have a large amount of say about what games their children are exposed to, 
 therefore parental needs must also be at the forefront of any project designed for children in this age group. 
@@ -51,38 +86,63 @@ therefore parental needs must also be at the forefront of any project designed f
 FamilyHub is a great way to meet these user needs because:
 - list items here
 
-#### Developer and Business Goals
+----
+
+#### Business Goals
+
+The target businesses to use Family Hub to advertise:
+- Provide family events or activities for kids.
+- Are located in the Haarlemmermeer area.
+- Want to reach a wider audience to attend their events / activities. 
+- Are welcoming to international families. 
+
+----
+
+#### Family Hub Goals
 
 - list items here
 
-#### User Stories
+----
+
+### User Stories
+
+#### Visitor Stories
 
 As a visitor to FamilyHub I want:
 1. list items here
+
+----
+
+#### Business Stories
+
+As a Business advertising on FamilyHub I want:
+1. list items here
+
+----
 
 ### Design Choices
 
 The overall feel of this site is ... The following design choices were made with this in mind:
 
-**Fonts**
+Fonts
 
-- The primary font **x** was chosen because...
-- The secondary font **Y** was chosen for...
-- The tertiroy font **Z** was chosen for...
+- The primary font x was chosen because...
+- The secondary font Y was chosen for...
+- The tertiroy font Z was chosen for...
 
-**Icons**
+Icons
 
 - list items here
 
-**Colours**
+Colours
 
 - list colours and reasons here
 
-**Styling**
+Styling
 
 - list items here
 
-**Backgrounds**
+Backgrounds
 
 - list items here
 
@@ -106,7 +166,7 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
  
 ### Existing Features
 
-1. **Password hash**
+1. Password hash
     - list details of feature here  
 2. search filters
 3. account page
@@ -118,9 +178,9 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
 
 ### Features Left to Implement
 
-1. **Email authentication**
+1. Email authentication
     - Implementation of email authentication of user account before registration complete
-2. **Full text search**
+2. Full text search
     - Attempted this for several days but was unable to get it to work. Rather than dragging out time on this feature when this project is already very large, I made the decision to remove the relevant code to return to at a future date when my understanding is more advanced. 
     - When returning to this feature, the text search related code I was working on  is in the branch `textSearchFix`. 
     - [Research this link](https://docs.mongodb.com/manual/core/index-text/#wildcard-text-indexes)
@@ -135,33 +195,42 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
 8. Sections on users account page - Published, Saved and Expired.
 9. Slug friendly URLs
 
+## Information Architecture
+
+### data storage types
+
+### data structure
+
+### search filters & implementation
+
+
 ## Technologies Used
 
 - This project uses HTML, CSS and JavaScript programming languages.
 - [JQuery](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation.
+    - The project uses JQuery to simplify DOM manipulation.
 - [Cloud9](https://c9.io) 
-    - Developer used **Cloud9** for their IDE while building the website.
+    - Developer used Cloud9 for their IDE while building the website.
 - [Bootstrap](https://www.bootstrapcdn.com/)
-    - The project uses **Bootstrap** to simplify the structure of the website and make the website responsive easily.
+    - The project uses Bootstrap to simplify the structure of the website and make the website responsive easily.
     - The project also uses Bootstrap to provide icons from [FontAwesome](https://www.bootstrapcdn.com/fontawesome/)
 - [Google Fonts](https://fonts.google.com/)
-    - The project uses **Google fonts** to style the website fonts.
+    - The project uses Google fonts to style the website fonts.
 - [Imgbb](https://imgbb.com)
-    - All external images for this project are stored on **Imgbb.com**.
+    - All external images for this project are stored on Imgbb.com.
 - [Jasmine](https://jasmine.github.io/)
-    - This project used **Jasmine** to automatically test all JavaScript and jQuery code.
+    - This project used Jasmine to automatically test all JavaScript and jQuery code.
 - [Jasmine-jQuery](https://github.com/velesin/jasmine-jquery)
-    - This project used **Jasmine-jQuery** CDN to make it possible to test jQuery code using Jasmine.
+    - This project used Jasmine-jQuery CDN to make it possible to test jQuery code using Jasmine.
 - [GitHub](https://github.com/)
-    - This project uses **GitHub** to store and share all project code remotely. 
+    - This project uses GitHub to store and share all project code remotely. 
     - The new GitHub Projects planner was utilised to plan and keep track of this project. This project plan can be viewed [here](https://github.com/AJGreaves/picflip/projects/1).
 - [Photoshop](www.adobe.com/Photoshop)
-    - This project used tools in **Photohshop** to edit, crop and save images as well as ulitising the colour picker to ensure color consistency over the entire project.
+    - This project used tools in Photohshop to edit, crop and save images as well as ulitising the colour picker to ensure color consistency over the entire project.
 - [Browserstack](https://www.browserstack.com/)
-    - The project used **Browserstack** to test functionality on all browsers and devices.
+    - The project used Browserstack to test functionality on all browsers and devices.
 - [AutoPrefixer](https://autoprefixer.github.io/)
-    - The project used **AutoPrefixer** to make sure all css prefixes were the most up to date versions. 
+    - The project used AutoPrefixer to make sure all css prefixes were the most up to date versions. 
 - https://gijgo.com/ date and time pickers
 - pylint-flask to fix pylint issues in vscode
 
@@ -204,6 +273,8 @@ Further reading and troubleshooting on cloning a repository from GitHub [here](h
 #### Animations
 - Spinner https://icons8.com/preloaders/en/circular
 - Hide and seek bot for 404 page: https://dribbble.com/shots/3480375-Stealth-Bot
+- gif editor for readme gifs: https://ezgif.com
+- image hosting: https://imgbb.com/
 
 #### Images
 - The FamilyHub logo was created using [Hatchful](https://hatchful.shopify.com).
