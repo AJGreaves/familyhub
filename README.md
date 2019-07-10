@@ -9,10 +9,6 @@
 
 As a British mother of two, who moved to The Netherlands in 2003, I know what a difference it makes to newcomers to a country to be able to get out and connected to the community around. The Family Hub goal is to inform and connect English speaking families to the events and activities available in their local area.
 
-<div style="text-align:center">
-    <img src="https://i.ibb.co/3YZZsCX/desktop-gif.gif" href="http://family-hub-nl.herokuapp.com" target="_blank" rel="noopener" alt="Family Hub demo gif" aria-label="Family Hub demo gif" />
-</div>
-
 ## Table of Contents
 1. [UX](#ux)
     - [Goals](#goals)
@@ -80,8 +76,6 @@ User goals are:
 - As a regular user of the Family Hub website, I expect to be able to connect to their social media channels, to keep up to date with new entires on the site. 
 - As a user of Family Hub, I expect to be able to easily get in contact via a contact form.
 
-Parents of pre-school children have a large amount of say about what games their children are exposed to, 
-therefore parental needs must also be at the forefront of any project designed for children in this age group. 
 
 FamilyHub is a great way to meet these user needs because:
 - list items here
