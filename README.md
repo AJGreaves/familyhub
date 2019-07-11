@@ -68,11 +68,11 @@ As a British mother of two, who moved to The Netherlands in 2003, I know what a 
 
 ----
 
-## UX
+# UX
 
-### Goals
+## Goals
 
-#### Visitor Goals
+### Visitor Goals
 
 The central target audience for Family hub are:
 - Families with children aged 14 and under.
@@ -116,7 +116,7 @@ FamilyHub is a great way to meet these user needs because:
 
 - The Family Hub activities page allows users to search by location, category, age range, days of the week open, indoor or outdoor as well as a few other possible options.
 
-#### Business Goals
+### Business Goals
 
 The target businesses to use Family Hub to advertise:
 - Provide family events or activities for kids.
@@ -144,7 +144,7 @@ FamilyHub is a great way to meet these user needs because:
 
 - The users needs on each page have been thought about and buttons provided for these paths through the site, to make navigating easy.
 
-#### Family Hub Goals
+### Family Hub Goals
 
 - Provide an effective, easy to use site for English speaking international families to search and filter through entries to find the listings that suit their needs.
 
@@ -154,9 +154,9 @@ FamilyHub is a great way to meet these user needs because:
 
 ----
 
-### User Stories
+## User Stories
 
-#### Visitor Stories
+### Visitor Stories
 
 As a visitor to FamilyHub I expect/want/need:
 
@@ -192,7 +192,7 @@ As a visitor to FamilyHub I expect/want/need:
 
 ----
 
-#### Business Stories
+### Business Stories
 
 As a Business advertising on FamilyHub I expect/want/need:
 1. To see that the information other businesses have put on the site are being displayed in an attractive and useful way for the user. 
@@ -209,11 +209,11 @@ As a Business advertising on FamilyHub I expect/want/need:
 
 ----
 
-### Design Choices
+## Design Choices
 
 The Family Hub website has an overall family friendly feel, with emphasis on providing complex information in a bite size, learnable format. The following design choices were made with this in mind:
 
-#### Fonts
+### Fonts
 
 - The primary font `News Cycle` was chosen for the main text of the site because it is easy to read and complements the fonts chosen for titles very well. A extra reason for picking this font is that it is still easy to read when printed small, and as this site provides a large amount of information, using a smaller font is occasionally necessary.
 
@@ -223,7 +223,7 @@ The Family Hub website has an overall family friendly feel, with emphasis on pro
 
 ---
 
-#### Icons
+### Icons
 
 ![Example listing page with icons](https://i.ibb.co/hXkxsM1/Clipboard01.jpg)
 
@@ -249,7 +249,7 @@ The Family Hub website has an overall family friendly feel, with emphasis on pro
 
 ---
 
-#### Colours
+### Colours
 <div align="center">
     <img src="https://i.ibb.co/d2qQzsP/colours.jpg" alt="Family Hub Brand Colours" aria-label="Family Hub Brand colours" />
 </div>
@@ -266,7 +266,7 @@ The Family Hub website has an overall family friendly feel, with emphasis on pro
 
 - The same darker green-blue is used for the filters bar on the activities page. Green-blue is a colour for outdoors, adventure and learning, so was a good choice for the feeling of this website. 
 
-#### Styling
+### Styling
 
 - A **loading spinner** was added to Family hub, to run while the page or data loads. The spinner chosen resembles a wind spinner toy. I picked it because it is colorful and fits well with the overall feel and demographic for the site.
 
@@ -283,7 +283,7 @@ The Family Hub website has an overall family friendly feel, with emphasis on pro
 
     - Css effects on buttons cause them to animate to a darker shade when hovered over, this same effect is also applied to all text links on the site. 
 
-### Wireframes
+## Wireframes
 
 These wireframes were created using [Balsamiq](https://balsamiq.com/) during the Scope Plane part of the design and planning process for this project. 
 
@@ -299,26 +299,24 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
 - [Create or Edit Activity page](https://ibb.co/Wv349RB)
 - [Create or Edit Event page](https://ibb.co/sqj60xb)
 
-#### Flowcharts 
+### Flowcharts 
 
 - [Account and login pages flowchart](https://i.ibb.co/x1wxDsZ/flowchart.jpg). 
 
-This flowchart was created to plan and explain the flow of behavior between the user, javascript, data and the modal messages the user sees based on their interactions.
+This flowchart was created using [draw.io](https://www.draw.io) to plan and explain the flow of behavior between the user, javascript, data and the modal messages the user sees based on their interactions.
 
 ---
 
-## Features
+# Features
  
-### Existing Features
+## Existing Features
 
----
-
-#### Elements on every page
+### Elements on every page
 - Navbar
 - Footer
 - To top button
 
-#### Home page
+### Home page
 
 <div align="center">
 <img src="https://i.ibb.co/CBw04v7/home.jpg" alt="Family Hub home page on all major screen sizes" >
@@ -326,7 +324,7 @@ This flowchart was created to plan and explain the flow of behavior between the 
 
 ---
 
-#### Activities page
+### Activities page
 
 <div align="center">
 <img src="https://i.ibb.co/yN750bS/activities.jpg" alt="Family Hub activities page on all major screen sizes" >
@@ -334,7 +332,7 @@ This flowchart was created to plan and explain the flow of behavior between the 
 
 ---
 
-#### Listing page
+### Listing page
 
 <div align="center">
 <img src="https://i.ibb.co/LpNYVZJ/listing.jpg" alt="Family Hub listing page on all major screen sizes" >
@@ -342,7 +340,7 @@ This flowchart was created to plan and explain the flow of behavior between the 
 
 ---
 
-#### Create account page
+### Create account page
 
 <div align="center">
 <img src="https://i.ibb.co/qkw56D6/createaccount.jpg" alt="Family Hub create account page on all major screen sizes" >
@@ -350,7 +348,7 @@ This flowchart was created to plan and explain the flow of behavior between the 
 
 ---
 
-#### log in page
+### log in page
 
 <div align="center">
 <img src="https://i.ibb.co/dpzR69j/login.jpg" alt="Family Hub log in page on all major screen sizes" >
@@ -358,7 +356,7 @@ This flowchart was created to plan and explain the flow of behavior between the 
 
 ---
 
-#### Account settings page
+### Account settings page
 
 <div align="center">
 <img src="https://i.ibb.co/f4bgHRp/settings.jpg" alt="Family Hub account settings page on all major screen sizes" >
@@ -366,7 +364,7 @@ This flowchart was created to plan and explain the flow of behavior between the 
 
 ---
 
-#### Account page
+### Account page
 
 <div align="center">
 <img src="https://i.ibb.co/2qfkKFx/account.jpg" alt="Family Hub account page on all major screen sizes" >
@@ -374,7 +372,7 @@ This flowchart was created to plan and explain the flow of behavior between the 
 
 ---
 
-#### Add new listing page
+### Add new listing page
 
 <div align="center">
 <img src="https://i.ibb.co/t2S8cyr/addnew.jpg" alt="Family Hub add new listing page on all major screen sizes" >
@@ -382,7 +380,7 @@ This flowchart was created to plan and explain the flow of behavior between the 
 
 ---
 
-#### Preview listing page
+### Preview listing page
 
 <div align="center">
 <img src="https://i.ibb.co/2MTLzKk/preview.jpg" alt="Family Hub preview listing page on all major screen sizes" >
@@ -390,7 +388,7 @@ This flowchart was created to plan and explain the flow of behavior between the 
 
 ---
 
-#### Edit listing page
+### Edit listing page
 
 <div align="center">
 <img src="https://i.ibb.co/MR6nKp7/edit.jpg" alt="Family Hub edit listing page on all major screen sizes" >
@@ -398,7 +396,7 @@ This flowchart was created to plan and explain the flow of behavior between the 
 
 ---
 
-#### Contact page
+### Contact page
 
 <div align="center">
 <img src="https://i.ibb.co/hFHp8x9/contact.jpg" alt="Family Hub contact page on all major screen sizes" >
@@ -406,7 +404,7 @@ This flowchart was created to plan and explain the flow of behavior between the 
 
 ---
 
-#### 404 page
+### 404 page
 
 <div align="center">
 <img src="https://i.ibb.co/4Kz1Mp7/404.jpg" alt="Family Hub 404 page on all major screen sizes" >
@@ -414,7 +412,7 @@ This flowchart was created to plan and explain the flow of behavior between the 
 
 ---
 
-#### Permission Denied page
+### Permission Denied page
 
 <div align="center">
 <img src="https://i.ibb.co/M6FkQhZ/denied.jpg" alt="Family Hub permission denied page on all major screen sizes" >
@@ -422,7 +420,7 @@ This flowchart was created to plan and explain the flow of behavior between the 
 
 ---
 
-### Features Left to Implement
+## Features Left to Implement
 
 1. Email authentication
     - Implementation of email authentication of user account before registration complete
@@ -441,7 +439,7 @@ This flowchart was created to plan and explain the flow of behavior between the 
 8. Sections on users account page - Published, Saved and Expired.
 9. Slug friendly URLs
 
-## Information Architecture
+# Information Architecture
 
 ### data storage types
 
@@ -450,7 +448,7 @@ This flowchart was created to plan and explain the flow of behavior between the 
 ### search filters & implementation
 
 
-## Technologies Used
+# Technologies Used
 
 - This project uses HTML, CSS and JavaScript programming languages.
 - [JQuery](https://jquery.com)
@@ -480,17 +478,19 @@ This flowchart was created to plan and explain the flow of behavior between the 
 - https://gijgo.com/ date and time pickers
 - pylint-flask to fix pylint issues in vscode
 
-## Testing 
+# Testing 
 
 Testing information can be found in separate [testing.md](testing.md) file
 
-## Deployment
+# Deployment
+
+## Heroku deployment
 
 This project was developed using the [Cloud9 IDE](https://c9.io), committed to git and pushed to GitHub and Heroku using the built in function within cloud9.
 
 - more deployment info here for heroku
 
-### How to run this project locally
+## How to run this project locally
 
 To clone this project from GitHub:
 1. Follow this link to the [FamilyHub GitHub repository](https://github.com/AJGreaves/familyhub).
@@ -506,28 +506,28 @@ git clone https://github.com/USERNAME/REPOSITORY
 
 Further reading and troubleshooting on cloning a repository from GitHub [here](https://help.github.com/en/articles/cloning-a-repository).
 
-## Credits
+# Credits
 
-### Content
+## Content
 
 - text in this project was written by...
 - privacy policy https://www.cleverbox.co.uk/example-privacy-policy/
 - cookies policy https://www.cleverbox.co.uk/cookies/
 
 
-### Media
-#### Animations
+## Media
+### Animations
 - Spinner https://icons8.com/preloaders/en/circular
 - Hide and seek bot for 404 page: https://dribbble.com/shots/3480375-Stealth-Bot
 - gif editor for readme gifs: https://ezgif.com
 - image hosting: https://imgbb.com/
 
-#### Images
+### Images
 - The FamilyHub logo was created using [Hatchful](https://hatchful.shopify.com).
 - The photographs for the hero images were sourced from [Pexels](https://www.pexels.com/)
 
 
-### Code
+## Code
 - Template code for multi-card carousel using bootstrap classes taken from [MDBootstrap](https://mdbootstrap.com/docs/jquery/javascript/carousel/) and heavily modified to suit the sites needs.
 - Text shadow generated using [CSS3 Text Shadow Generator](https://css3gen.com/text-shadow/)
 - Code for floating buttons taken from this [W3Schools post](https://www.w3schools.com/howto/howto_js_scroll_to_top.asp)
@@ -540,10 +540,12 @@ Further reading and troubleshooting on cloning a repository from GitHub [here](h
 - Code to generate slug-friendly-urls in python: http://flask.pocoo.org/snippets/5/
 - Code to generate slug-friendly-urls in javascript: https://medium.com/@mhagemann/the-ultimate-way-to-slugify-a-url-string-in-javascript-b8e4a0d849e1
 
-### Acknowledgements
+## Acknowledgements
 
 Special thanks to: 
 - list items here
 
-#### Disclaimer
+# Contact
+
+## Disclaimer
 The content of this website is educational purposes only.
