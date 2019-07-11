@@ -9,7 +9,7 @@
 
 ## Introduction
 
-[Family Hub](http://family-hub-nl.herokuapp.com) was created by Anna Greaves, to serve the large English speaking international community of families living in the Haarlemmermeer area of The Netherlands. 
+[Family Hub](http://family-hub-nl.herokuapp.com) was created by Anna Greaves, to serve the English speaking international community of families living in the Haarlemmermeer area of The Netherlands. 
 
 As a British mother of two, who moved to The Netherlands in 2003, I know what a difference it makes to newcomers to a country to be able to get out and connected to the community around. The Family Hub goal is to inform and connect English speaking families to the events and activities available in their local area.
 
@@ -24,6 +24,7 @@ As a British mother of two, who moved to The Netherlands in 2003, I know what a 
         - [Business Stories](#business-stories)
     - [Design Choices](#design-choices)
     - [Wireframes](#wireframes)
+    - [Flowcharts](#flowcharts)
 
 2. [Features](#features)
     - [Existing Features](#existing-features)
@@ -52,7 +53,6 @@ As a British mother of two, who moved to The Netherlands in 2003, I know what a 
 ----
 
 ## UX
-----
 
 ### Goals
 
@@ -93,8 +93,6 @@ FamilyHub is a great way to meet these user needs because:
 - The design of this site fits the conventions of similar sites, and lays out the information in a user friendly and accessible way.
 - The Family Hub activities page allows users to search by location, category, age range, days of the week open, indoor or outdoor as well as a few other possible options.
 
-----
-
 #### Business Goals
 
 The target businesses to use Family Hub to advertise:
@@ -105,10 +103,8 @@ The target businesses to use Family Hub to advertise:
 
 Business user goals are:
 - A well thought-out, well designed, user-friendly platform that will benefit my business to advertise on.
-- Value for money (at the moment the website is a student project, but eventual planning is to monetise this site, so it is worth adding this important goal here now.)
 - A user interface that is user friendly for me to input my data easily and efficiently. 
-
-----
+- Value for money (at the moment the website is a student project, but eventual planning is to monetise this site, so it is worth adding this important goal here now.)
 
 #### Family Hub Goals
 
@@ -195,6 +191,11 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
 - [My account](https://ibb.co/nr2s9cw)
 - [Create or Edit Activity page](https://ibb.co/Wv349RB)
 - [Create or Edit Event page](https://ibb.co/sqj60xb)
+
+#### Flowcharts 
+
+- This flowchart was created to plan and explain the flow of behavior between the user, javascript, data and the modal messages the user sees based on their interactions.
+- [Account and login pages flowchart](https://i.ibb.co/x1wxDsZ/flowchart.jpg)
 
 ## Features
  
