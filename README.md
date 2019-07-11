@@ -5,9 +5,10 @@
 
 ## Introduction
 
-<div align="center" style="margin-bottom: 1.5rem;">
+<div align="center">
     <img src="https://i.ibb.co/CBw04v7/home.jpg" href="http://family-hub-nl.herokuapp.com" target="_blank" rel="noopener" alt="Image of how home page looks on all screen sizes" aria-label="Image of how home page looks on all screen sizes" />
 </div>
+<br>
 
 [Family Hub](http://family-hub-nl.herokuapp.com) was created by Anna Greaves, to serve the English speaking international community of families living in the Haarlemmermeer area of The Netherlands. 
 
@@ -299,8 +300,52 @@ This flowchart was created using [draw.io](https://www.draw.io) to plan and expl
 
 ### Elements on every page
 - Navbar
+    - The navigation bar features the Family Hub logo in the top left corner.
+
+    - For visitors to the site who are not logged in, list items links are available for them to use.
+        1. Home
+        2. Activities
+        3. Create Account
+        4. Log in 
+        5. Contact
+
+    - For users who are logged in, the list items are as follows: 
+        1. Home
+        2. Activities
+        3. Contact
+        4. My account (this option is a dropdown menu)
+            - My listings
+            - Add new
+            - Settings
+            - Log out
+
+    - Python determines if the user is logged in or not by checking `if 'user' in session` and passes this data to Jinja to display the correct navbar for the user.
+
+    - The navbar is collapsed into a burger icon on small screens. On the activities page, where the activities filter takes up some of the width of the screen, the navbar is collapsed on medium screens as well, so that menu items did not start overlapping content. 
+
+    - The practical design choice was made not to fix the navbar to the top of the page as the user scrolls. This was because I wanted as much screen height as possible to display the website information on and I did not want to take up precious space with a fixed navbar. To get around the problem of having to scroll up a long way to reach the navigation, I added a scroll to top button and essential links in the footer as well.
+
 - Footer
-- To top button
+    - The footer features:
+        - Contact information for Family hub, including the address which is linked to google maps, an email address and Chamber of Commerce number (currently a fake number, but will be registered before launching this as a real site.)
+        - A profile photo of the website creator as well as a brief description of the purpose and mission for the site. 
+        - A list of useful links users might need when viewing the footer. 
+        - Copyright information.
+        - Links to social media locations (Which will eventually be linked up to the Family Hub social media platforms, once they exist).
+
+- Floating to top button:
+    - A floating button appears on the lower right of the screen when the user starts to scroll downwards. Clicking this moves the view back up to the top of the page. I added this feature because some pages can be quite long and the navbar is not fixed to the top of the page.
+    - Adding the class `.active` to the `#to-top-button` changes it's `opacity` from `0` to `0.5`, which gave me the ability to animate the change gently. The opacity is increased again to `1` on hover. 
+
+```javascript
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        $("#to-top-btn").addClass('active');
+    } else {
+        $("#to-top-btn").removeClass('active');
+    }
+}
+```
 
 ### Home page
 
