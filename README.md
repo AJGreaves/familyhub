@@ -207,6 +207,8 @@ The Family Hub website has an overall family friendly feel, with emphasis on pro
 
 #### Icons
 
+![Example listing page with icons](https://i.ibb.co/hXkxsM1/Clipboard01.jpg)
+
 - It is important to use icons on the Family Hub website for three main reasons:
 
     1. The site shares a lot of different information about each activity listed on it. Icons help the user to identify the parts of the information that is relevant to their needs much faster. 
@@ -219,9 +221,17 @@ The Family Hub website has an overall family friendly feel, with emphasis on pro
 
 - Icons are most used on the individual listing pages for each activity. And were also added to the navigation bar as well. 
 
-![Example listing page with icons](https://i.ibb.co/hXkxsM1/Clipboard01.jpg)
+- Social media icons for facebook, instagram and twitter are used in 3 places on the site. 
+
+    1. In the footer, to link to the social media outlets for Family Hub. these links do not yet exits, so currently the icons link to the main pages for each social media network.
+
+    2. On each listing page for any links provided by the organizers to their events and activities. 
+
+    3. At the bottom of each activity page with a link to share that page on each of the social media platforms. (does not include instagram, but does include an icon to email the page instead).
 
 #### Colours
+
+![Family Hub Brand Colours](https://i.ibb.co/4Z8xPnT/colours.jpg)
 
 - The colours chosen for this project were picked for their colorful feeling, which references to family well, while still choosing tones and shades that worked well together without overwhelming the eyes. 
 
@@ -235,11 +245,13 @@ The Family Hub website has an overall family friendly feel, with emphasis on pro
 
 - The same darker green-blue is used for the filters bar on the activities page. Green-blue is a colour for outdoors, adventure and learning, so was a good choice for the feeling of this website. 
 
-![Family Hub Brand Colours](https://i.ibb.co/4Z8xPnT/colours.jpg)
-
 #### Styling
 
-- list items here
+- Spinner 
+- buttons and readmore links
+- cards (town overlays)
+- tables
+- 
 
 #### Backgrounds
 
