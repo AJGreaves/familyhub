@@ -197,7 +197,7 @@ As a Business advertising on FamilyHub I want:
 
 The Family Hub website has an overall family friendly feel, with emphasis on providing complex information in a bite size, learnable format. The following design choices were made with this in mind:
 
-Fonts
+#### Fonts
 
 - The primary font `News Cycle` was chosen for the main text of the site because it is easy to read and complements the fonts chosen for titles very well. A extra reason for picking this font is that it is easy to read when printed small, and as this site provides a large amount of information, using a smaller font is occasionally necessary.
 
@@ -205,19 +205,43 @@ Fonts
 
 - The tertiary font `Patrick Hand SC` was chosen for its contrast with the two main fonts. Only used in a handful of places across the site, it brings a little extra flavour to the fonts while not overwhelming the user with too many. 
 
-Icons
+#### Icons
+
+- It is important to use icons on the Family Hub website for three main reasons:
+
+    1. The site shares a lot of different information about each activity listed on it. Icons help the user to identify the parts of the information that is relevant to their needs much faster. 
+
+    2. Icons break up the information visually, creating space for the user and not overwhelming them with too much info at once. 
+
+    3. The international community in The Netherlands is made up of people from many other countries, and often English is their 2nd or 3rd language. Providing information to them in a visual way as well as in English enhances these users ability to understand the site even when their English is not very strong (though likely stronger than their Dutch).
+
+- Each icon was chosen for it's clarity in quickly explaining the relavent meaning with an image. 
+
+- Icons are most used on the individual listing pages for each activity. And were also added to the navigation bar as well. 
+
+![Example listing page with icons](https://i.ibb.co/hXkxsM1/Clipboard01.jpg)
+
+#### Colours
+
+- The colours chosen for this project were picked for their colorful feeling, which references to family well, while still choosing tones and shades that worked well together without overwhelming the eyes. 
+
+- Colorful highlights that draw the eye to headings are provided by the terracotta colour, which is accented with the light blues in horizontal lines and links. 
+
+- A dark navy blue was chosen for the main text as it contrasts with the white background clearly. 
+
+- The navbar background colour is a classy platinum colour, light enough to provide contrast with the navy blue headings, while still setting itself apart from the white background in the main content.
+
+- In the footer a darker shade of greenish-blue provides the background, setting the footer apart from the rest of the content and making it dark enough that the text can be in white and still have enough contrast to be easily readable. 
+
+- The same darker green-blue is used for the filters bar on the activities page. Green-blue is a colour for outdoors, adventure and learning, so was a good choice for the feeling of this website. 
+
+![Family Hub Brand Colours](https://i.ibb.co/4Z8xPnT/colours.jpg)
+
+#### Styling
 
 - list items here
 
-Colours
-
-- list colours and reasons here
-
-Styling
-
-- list items here
-
-Backgrounds
+#### Backgrounds
 
 - list items here
 
