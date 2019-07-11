@@ -3,11 +3,9 @@
     <img src="https://i.ibb.co/Pj9RZW5/tagline.png" href="http://family-hub-nl.herokuapp.com" target="_blank" rel="noopener" alt="Family events and activities for kids in Haarlemmermeer" aria-label="Family events and activities for kids in Haarlemmermeer" />
 </div> 
 
----
-
 ## Introduction
 
-<div align="center">
+<div align="center" style="margin-bottom: 1.5rem;">
     <img src="https://i.ibb.co/CBw04v7/home.jpg" href="http://family-hub-nl.herokuapp.com" target="_blank" rel="noopener" alt="Image of how home page looks on all screen sizes" aria-label="Image of how home page looks on all screen sizes" />
 </div>
 
@@ -152,8 +150,6 @@ FamilyHub is a great way to meet these user needs because:
 
 - While this is currently a student project, the future goal of Family Hub to monetise the website to charge businesses for advertising their events and activities on it. This will come later once the site has a few more features to offer those who use it (see [Features Left to Implement](#features-left-to-implement)).
 
-----
-
 ## User Stories
 
 ### Visitor Stories
@@ -190,8 +186,6 @@ As a visitor to FamilyHub I expect/want/need:
 
 15. As a user I expect feedback from the website I am using when I interact with it, I expect loading spinners when pages are taking a while to load, I expect pop ups and modals to inform me when my forms have been completed and sent correctly.
 
-----
-
 ### Business Stories
 
 As a Business advertising on FamilyHub I expect/want/need:
@@ -207,8 +201,6 @@ As a Business advertising on FamilyHub I expect/want/need:
 
 6. Forms for inputting my data to make the process easy, that there is no wasting my time or making the process difficult or slow. 
 
-----
-
 ## Design Choices
 
 The Family Hub website has an overall family friendly feel, with emphasis on providing complex information in a bite size, learnable format. The following design choices were made with this in mind:
@@ -220,8 +212,6 @@ The Family Hub website has an overall family friendly feel, with emphasis on pro
 - The secondary font `Delius` was chosen for the main headings because it resembles simple clear handwriting that a parent or teacher might use when teaching a child. The font has a personal feel to it, and when combined with the colours chosen for this project, refers well to families. Being a cursive font it complements in the main sans-serif type font very well from a design perspective
 
 - The tertiary font `Patrick Hand SC` was chosen for its contrast with the two main fonts. Only used in a handful of places across the site, it brings a little extra flavour to the fonts while not overwhelming the user with too many. 
-
----
 
 ### Icons
 
@@ -246,8 +236,6 @@ The Family Hub website has an overall family friendly feel, with emphasis on pro
     2. On each listing page for any links provided by the organizers to their events and activities. 
 
     3. At the bottom of each activity page with a link to share that page on each of the social media platforms. (does not include instagram, but does include an icon to email the page instead).
-
----
 
 ### Colours
 <div align="center">
@@ -305,8 +293,6 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
 
 This flowchart was created using [draw.io](https://www.draw.io) to plan and explain the flow of behavior between the user, javascript, data and the modal messages the user sees based on their interactions.
 
----
-
 # Features
  
 ## Existing Features
@@ -322,15 +308,11 @@ This flowchart was created using [draw.io](https://www.draw.io) to plan and expl
 <img src="https://i.ibb.co/CBw04v7/home.jpg" alt="Family Hub home page on all major screen sizes" >
 </div>
 
----
-
 ### Activities page
 
 <div align="center">
 <img src="https://i.ibb.co/yN750bS/activities.jpg" alt="Family Hub activities page on all major screen sizes" >
 </div>
-
----
 
 ### Listing page
 
@@ -338,15 +320,11 @@ This flowchart was created using [draw.io](https://www.draw.io) to plan and expl
 <img src="https://i.ibb.co/LpNYVZJ/listing.jpg" alt="Family Hub listing page on all major screen sizes" >
 </div>
 
----
-
 ### Create account page
 
 <div align="center">
 <img src="https://i.ibb.co/qkw56D6/createaccount.jpg" alt="Family Hub create account page on all major screen sizes" >
 </div>
-
----
 
 ### log in page
 
@@ -354,15 +332,11 @@ This flowchart was created using [draw.io](https://www.draw.io) to plan and expl
 <img src="https://i.ibb.co/dpzR69j/login.jpg" alt="Family Hub log in page on all major screen sizes" >
 </div>
 
----
-
 ### Account settings page
 
 <div align="center">
 <img src="https://i.ibb.co/f4bgHRp/settings.jpg" alt="Family Hub account settings page on all major screen sizes" >
 </div>
-
----
 
 ### Account page
 
@@ -370,15 +344,11 @@ This flowchart was created using [draw.io](https://www.draw.io) to plan and expl
 <img src="https://i.ibb.co/2qfkKFx/account.jpg" alt="Family Hub account page on all major screen sizes" >
 </div>
 
----
-
 ### Add new listing page
 
 <div align="center">
 <img src="https://i.ibb.co/t2S8cyr/addnew.jpg" alt="Family Hub add new listing page on all major screen sizes" >
 </div>
-
----
 
 ### Preview listing page
 
@@ -386,15 +356,11 @@ This flowchart was created using [draw.io](https://www.draw.io) to plan and expl
 <img src="https://i.ibb.co/2MTLzKk/preview.jpg" alt="Family Hub preview listing page on all major screen sizes" >
 </div>
 
----
-
 ### Edit listing page
 
 <div align="center">
 <img src="https://i.ibb.co/MR6nKp7/edit.jpg" alt="Family Hub edit listing page on all major screen sizes" >
 </div>
-
----
 
 ### Contact page
 
@@ -402,23 +368,17 @@ This flowchart was created using [draw.io](https://www.draw.io) to plan and expl
 <img src="https://i.ibb.co/hFHp8x9/contact.jpg" alt="Family Hub contact page on all major screen sizes" >
 </div>
 
----
-
 ### 404 page
 
 <div align="center">
 <img src="https://i.ibb.co/4Kz1Mp7/404.jpg" alt="Family Hub 404 page on all major screen sizes" >
 </div>
 
----
-
 ### Permission Denied page
 
 <div align="center">
 <img src="https://i.ibb.co/M6FkQhZ/denied.jpg" alt="Family Hub permission denied page on all major screen sizes" >
 </div>
-
----
 
 ## Features Left to Implement
 
