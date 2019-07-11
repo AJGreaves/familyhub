@@ -251,7 +251,7 @@ The Family Hub website has an overall family friendly feel, with emphasis on pro
 
 #### Colours
 <div align="center">
-    <img src="https://i.ibb.co/4Z8xPnT/colours.jpg" alt="Family Hub Brand Colours" aria-label="Family Hub Logo" />
+    <img src="https://i.ibb.co/d2qQzsP/colours.jpg" alt="Family Hub Brand Colours" aria-label="Family Hub Brand colours" />
 </div>
 
 - The brand colours for this project were chosen because they are colorful, which references to family well, while still choosing tones and shades that worked well together without overwhelming the eyes. 
@@ -260,20 +260,28 @@ The Family Hub website has an overall family friendly feel, with emphasis on pro
 
 - A dark navy blue was chosen for the main text as it contrasts with the white background clearly. 
 
-- The navbar background colour is a classy platinum colour, light enough to provide contrast with the navy blue headings, while still setting itself apart from the white background in the main content.
+- The navbar background colour is a clean platinum colour, light enough to provide contrast with the navy blue headings, while still setting itself apart from the white background in the main content.
 
-- In the footer a darker shade of greenish-blue provides the background, setting the footer apart from the rest of the content and making it dark enough that the text can be in white and still have enough contrast to be easily readable. 
+- In the footer a darker shade of greenish-blue provides the background colour, setting the footer apart from the rest of the content and making it dark enough that the text can be in white and still have enough contrast to be easily readable. 
 
 - The same darker green-blue is used for the filters bar on the activities page. Green-blue is a colour for outdoors, adventure and learning, so was a good choice for the feeling of this website. 
 
 #### Styling
 
-- Spinner 
-- buttons and readmore links
-- cards (town overlays)
-- images (curved corners, shadows)
-- tables
+- A **loading spinner** was added to Family hub, to run while the page or data loads. The spinner chosen resembles a wind spinner toy. I picked it because it is colorful and fits well with the overall feel and demographic for the site.
+
+- All **buttons** on the site fit the same bootstrap button styling in size and shape, but I added my own brand colours to them so they fit in with the rest of the content. 
+
+- Bootstrap **cards** were utilized on Family Hub to display short information about each activity and event, with a link to each listing page on it. The cards were styled with **curved corners**, a theme repeated around the entire website in images, input boxes, buttons, pagination links etc. 
+
+- A bootstrap **table** has been utilized for displaying opening times on listing pages, the clean bootstrap styling was perfect for the design of this page.
+
+- Movement on the **carousels** has been slowed long enough for the user to be able to read more of the content before moving on again. If the user hovers over the carousel then the movement stops completely. 
+
 - hover effects
+    - Some subtle **shadows** have been added to listing cards, modals and smaller form boxes, to give them depth on the page. This shadow is made larger on hover, giving the user a positive user experience in highlighting the section of the site they are hovering over.
+    
+    - Css effects on buttons cause them to animate to a darker shade when hovered over, this same effect is also applied to all text links on the site. 
 
 ### Wireframes
 
