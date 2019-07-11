@@ -229,13 +229,13 @@ The Family Hub website has an overall family friendly feel, with emphasis on pro
 
 - It is important to use icons on the Family Hub website for three main reasons:
 
-    1. The site shares a lot of different information about each activity listed on it. Icons help the user to identify the parts of the information that is relevant to their needs much faster. 
+    1. The site provides a lot of different information about each activity. Icons help to break up this information in a way that helps the user to identify the parts of the information that is relevant to their needs. 
 
     2. Icons break up the information visually, creating space for the user and not overwhelming them with too much info at once. 
 
     3. The international community in The Netherlands is made up of people from many other countries, and often English is their 2nd or 3rd language. Providing information to them in a visual way as well as in English enhances these users ability to understand the site even when their English is not very strong (though likely stronger than their Dutch).
 
-- Each icon was chosen for it's clarity in quickly explaining the relavent meaning with an image. 
+- Each icon was chosen for it's clarity in quickly explaining the relevant meaning with an image. 
 
 - Icons are most used on the individual listing pages for each activity. And were also added to the navigation bar as well. 
 
@@ -280,7 +280,7 @@ The Family Hub website has an overall family friendly feel, with emphasis on pro
 
 - hover effects
     - Some subtle **shadows** have been added to listing cards, modals and smaller form boxes, to give them depth on the page. This shadow is made larger on hover, giving the user a positive user experience in highlighting the section of the site they are hovering over.
-    
+
     - Css effects on buttons cause them to animate to a darker shade when hovered over, this same effect is also applied to all text links on the site. 
 
 ### Wireframes
@@ -301,8 +301,9 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
 
 #### Flowcharts 
 
-- This flowchart was created to plan and explain the flow of behavior between the user, javascript, data and the modal messages the user sees based on their interactions.
-- [Account and login pages flowchart](https://i.ibb.co/x1wxDsZ/flowchart.jpg)
+- [Account and login pages flowchart](https://i.ibb.co/x1wxDsZ/flowchart.jpg). 
+
+This flowchart was created to plan and explain the flow of behavior between the user, javascript, data and the modal messages the user sees based on their interactions.
 
 ---
 
