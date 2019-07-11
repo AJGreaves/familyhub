@@ -106,6 +106,8 @@ Business user goals are:
 - A user interface that is user friendly for me to input my data easily and efficiently. 
 - Value for money (at the moment the website is a student project, but eventual planning is to monetise this site, so it is worth adding this important goal here now.)
 
+FamilyHub is a great way to meet these user needs because:
+
 #### Family Hub Goals
 
 - Provide an effective, easy to use site for English speaking international families to search and filter through entries to find the listings that suit their needs.
@@ -122,7 +124,7 @@ As a visitor to FamilyHub I expect/want/need:
 
 1. To easily find what I am looking for, I want the layout of the site to make sense so I am not confused or put off using it. 
 2. The information I am presented with to be laid out in a way that is easy for me to navigate and digest, so that I find what I need quickly and efficiently.
-3. To be able to search through small amounts of information to find what I need, and then be able to easily click to get more detailed information when I need it.
+3. The ability to search through small amounts of information to find what I need, and then be able to easily click to get more detailed information when I need it.
 4. To filter the events and activities to find the entires that are best for the age(s) of my child(ren).
 5. As a user who does not want to travel far for the activity I am looking for, I want to search for activities in my town.
 6. The site to provide easy access to the contact information, phone number, email, website, social media links, and a google map link for an activity or event I am interested in attending. 
