@@ -195,13 +195,15 @@ As a Business advertising on FamilyHub I want:
 
 ### Design Choices
 
-The overall feel of this site is ... The following design choices were made with this in mind:
+The Family Hub website has an overall family friendly feel, with emphasis on providing complex information in a bite size, learnable format. The following design choices were made with this in mind:
 
 Fonts
 
-- The primary font x was chosen because...
-- The secondary font Y was chosen for...
-- The tertiroy font Z was chosen for...
+- The primary font `News Cycle` was chosen for the main text of the site because it is easy to read and complements the fonts chosen for titles very well. A extra reason for picking this font is that it is easy to read when printed small, and as this site provides a large amount of information, using a smaller font is occasionally necessary.
+
+- The secondary font `Delius` was chosen for the main headings because it resembles simple clear handwriting that a parent or teacher might use when teaching a child. The font has a personal feel to it, and when combined with the colours chosen for this project, refers well to families. Being a cursive font it complements in the main sans-serif type font very well from a design perspective
+
+- The tertiary font `Patrick Hand SC` was chosen for its contrast with the two main fonts. Only used in a handful of places across the site, it brings a little extra flavour to the fonts while not overwhelming the user with too many. 
 
 Icons
 
