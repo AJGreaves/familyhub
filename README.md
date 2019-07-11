@@ -107,6 +107,11 @@ Business user goals are:
 - Value for money (at the moment the website is a student project, but eventual planning is to monetise this site, so it is worth adding this important goal here now.)
 
 FamilyHub is a great way to meet these user needs because:
+-  The user interface for inputting activity data has been carefully controlled to validate input and make sure what is provided fits the needs of the database structure. For example date pickers have been used to make sure input dates fit the correct format, and the user cannot click on anything but the date picker in order to add a date. Time pickers have also been used, and well as setting input field types to `email`, `number`, `url` etc makes sure the user is prompted when the data they provide is incorrect. 
+- The editor page is clearly structured and laid out in a simple and easy to understand way. 
+- The editor has a preview page in it so the user can see how their activity will look on the site before it has been published, and gives them the opportunity to go back and make changes if they wish. 
+- The account page for the business user shows all their existing listings and gives them the option to view, edit or delete them from this location. 
+- The users needs on each page have been thought about and buttons provided for these paths through the site, to make navigating easy.
 
 #### Family Hub Goals
 
