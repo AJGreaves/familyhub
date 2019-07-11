@@ -353,6 +353,29 @@ function scrollFunction() {
 <img src="https://i.ibb.co/CBw04v7/home.jpg" alt="Family Hub home page on all major screen sizes" >
 </div>
 
+**hero image**
+- The Family Hub home page features a colorful hero image of a child with paint on their hands. I chose this image because it is eye catching and striking, and it features a child doing an activity. The tagline for the website is laid over the image. This image was coded as a background-image in css and set to `background-size: cover;` so that it is responsive while never getting stretched or distorted. 
+
+**Event cards**
+
+- Each event card on the home page gives the user some brief and useful information about each of the listings displayed. The activity image, town name, title and 100 character string introduces the activity to the user. Every card is clickable to go to the main listing page for that activity, so that if the user wishes to learn more the information is only one click away. 
+
+**Carousels**
+
+- The home page features 3 carousels in total. Each carousel has a heading on the left and a "search more" button on the right that leads to the Activities page
+
+- **Recommended Carousel** features a random selection of 12 activities that have `{ "recommended": true }` in their data. At the moment this value has been set manually in MongoDB. However eventually this setting will be set using an Admin account accessible only by the website administrator. A place on the "recommended" carousel will be a paid for feature for businesses advertising on the site.
+
+- **Seasonal Carousel** features events and activities for upcoming school holidays, which is a particular pain point for most parents, and something that would draw them to search for things for their children to do. The results for this carousel are pulled from entries in the database that have `{ "holidays": { "summer": true } }` in them. This can easily be switched for one of the other seasons in the `holidays` object as the year goes by. 
+
+- At the moment of submitting this project for my course the summer school holidays have just begun, this part of the site would change depending on the year, so would feature activities and events for Autumn break, Christmas holidays, Easter vacation etc as the year goes on. 
+
+- **Sports Carousel**. Dutch culture is very sporty and the number of sports activities available for kids is vast, so a carousel offering some highlights from the choices in this category was also created for the home page. 
+
+**Top Tip Feature box**
+
+- A feature box, placed just below the first recommended carousel breaks up the rest of the content on the home page and offers a prime position on the home page for a top paying business to advertise their activity or event. 
+
 ### Activities page
 
 <div align="center">
