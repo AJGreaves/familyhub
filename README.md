@@ -3,11 +3,13 @@
     <img src="https://i.ibb.co/Pj9RZW5/tagline.png" href="http://family-hub-nl.herokuapp.com" target="_blank" rel="noopener" alt="Family events and activities for kids in Haarlemmermeer" aria-label="Family events and activities for kids in Haarlemmermeer" />
 </div> 
 
+---
+
+## Introduction
+
 <div align="center">
     <img src="https://i.ibb.co/CBw04v7/home.jpg" href="http://family-hub-nl.herokuapp.com" target="_blank" rel="noopener" alt="Image of how home page looks on all screen sizes" aria-label="Image of how home page looks on all screen sizes" />
 </div>
-
-## Introduction
 
 [Family Hub](http://family-hub-nl.herokuapp.com) was created by Anna Greaves, to serve the English speaking international community of families living in the Haarlemmermeer area of The Netherlands. 
 
@@ -237,7 +239,8 @@ The Family Hub website has an overall family friendly feel, with emphasis on pro
 <div align="center">
     <img src="https://i.ibb.co/4Z8xPnT/colours.jpg" alt="Family Hub Brand Colours" aria-label="Family Hub Logo" />
 </div>
-- The colours chosen for this project were picked for their colorful feeling, which references to family well, while still choosing tones and shades that worked well together without overwhelming the eyes. 
+
+- The brand colours for this project were chosen because they are colorful, which references to family well, while still choosing tones and shades that worked well together without overwhelming the eyes. 
 
 - Colorful highlights that draw the eye to headings are provided by the terracotta colour, which is accented with the light blues in horizontal lines and links. 
 
