@@ -148,13 +148,13 @@
                         {% endfor %}</br>
                 </div>
                 <div class="col-12 mb-4">
-                    <a class="btn btn-search" target="_blank" href="{{ activity.contact.url }}"
+                    <a class="btn btn-search m-1" target="_blank" href="{{ activity.contact.url }}"
                         aria-label="Visit the website for this listing {{ activity.contact.url }}" rel="noopener">Visit website</a>
                     {% if activity.contact.phone %}
-                    <a class="btn btn-readmore" href="tel:{{ activity.contact.phone }}"
+                    <a class="btn btn-readmore m-1" href="tel:{{ activity.contact.phone }}"
                         aria-label="Call the organisers of this listing">Tel: {{ activity.contact.phone }}</a>
                     {% endif %}
-                    <div class="btn btn-create" id="emailOrganisers"
+                    <div class="btn btn-create m-1" id="emailOrganisers"
                         aria-label="Email the organisers of this listing"  data-toggle="modal" data-target="#emailActivityModal">Email organisers</div>
                 </div>
 
