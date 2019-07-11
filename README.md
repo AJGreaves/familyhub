@@ -178,18 +178,18 @@ As a visitor to FamilyHub I expect/want/need:
 
 #### Business Stories
 
-As a Business advertising on FamilyHub I want:
-1. As a business considering advertising with Family Hub, I want to see that the information other businesses have put on the site are being displayed in an attractive and useful way for the user. 
+As a Business advertising on FamilyHub I expect/want/need:
+1. To see that the information other businesses have put on the site are being displayed in an attractive and useful way for the user. 
 
-2. I want to see that various methods of contacting my business are available to users using Family Hub. 
+2. To see that various methods of contacting my business are available to users using Family Hub. 
 
-3. I expect to be able to log in to access my existing entries, and for my data to only be editable with my account.
+3. To be able to log in to access my existing entries, and for my data to only be editable with my account.
 
-4. I expect to create, edit and delete entries in my account.
+4. To create, edit and delete entries in my account.
 
-5. I want a user interface that is simple and easy to use, that is laid out in a logical way with clear indications where necessary about the type and format of the data I need to provide. 
+5. A user interface that is simple and easy to use, that is laid out in a logical way with clear indications where necessary about the type and format of the data I need to provide. 
 
-6. I want forms for inputting my data to make the process easy, that there is no wasting my time or making the process difficult or slow. 
+6. Forms for inputting my data to make the process easy, that there is no wasting my time or making the process difficult or slow. 
 
 ----
 
@@ -199,11 +199,13 @@ The Family Hub website has an overall family friendly feel, with emphasis on pro
 
 #### Fonts
 
-- The primary font `News Cycle` was chosen for the main text of the site because it is easy to read and complements the fonts chosen for titles very well. A extra reason for picking this font is that it is easy to read when printed small, and as this site provides a large amount of information, using a smaller font is occasionally necessary.
+- The primary font `News Cycle` was chosen for the main text of the site because it is easy to read and complements the fonts chosen for titles very well. A extra reason for picking this font is that it is still easy to read when printed small, and as this site provides a large amount of information, using a smaller font is occasionally necessary.
 
 - The secondary font `Delius` was chosen for the main headings because it resembles simple clear handwriting that a parent or teacher might use when teaching a child. The font has a personal feel to it, and when combined with the colours chosen for this project, refers well to families. Being a cursive font it complements in the main sans-serif type font very well from a design perspective
 
 - The tertiary font `Patrick Hand SC` was chosen for its contrast with the two main fonts. Only used in a handful of places across the site, it brings a little extra flavour to the fonts while not overwhelming the user with too many. 
+
+---
 
 #### Icons
 
@@ -229,10 +231,12 @@ The Family Hub website has an overall family friendly feel, with emphasis on pro
 
     3. At the bottom of each activity page with a link to share that page on each of the social media platforms. (does not include instagram, but does include an icon to email the page instead).
 
+---
+
 #### Colours
-
-![Family Hub Brand Colours](https://i.ibb.co/4Z8xPnT/colours.jpg)
-
+<div align="center">
+    <img src="https://i.ibb.co/4Z8xPnT/colours.jpg" alt="Family Hub Brand Colours" aria-label="Family Hub Logo" />
+</div>
 - The colours chosen for this project were picked for their colorful feeling, which references to family well, while still choosing tones and shades that worked well together without overwhelming the eyes. 
 
 - Colorful highlights that draw the eye to headings are provided by the terracotta colour, which is accented with the light blues in horizontal lines and links. 
@@ -250,12 +254,9 @@ The Family Hub website has an overall family friendly feel, with emphasis on pro
 - Spinner 
 - buttons and readmore links
 - cards (town overlays)
+- images (curved corners, shadows)
 - tables
-- 
-
-#### Backgrounds
-
-- list items here
+- hover effects
 
 ### Wireframes
 
@@ -278,19 +279,122 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
 - This flowchart was created to plan and explain the flow of behavior between the user, javascript, data and the modal messages the user sees based on their interactions.
 - [Account and login pages flowchart](https://i.ibb.co/x1wxDsZ/flowchart.jpg)
 
+---
+
 ## Features
  
 ### Existing Features
 
-1. Password hash
-    - list details of feature here  
-2. search filters
-3. account page
-4. carousels
+---
+
+#### Elements on every page
+- Navbar
+- Footer
+- To top button
+
+#### Home page
 
 <div align="center">
-<img src="#" alt="feature 1 screenshot" >
+<img src="https://i.ibb.co/CBw04v7/home.jpg" alt="Family Hub home page on all major screen sizes" >
 </div>
+
+---
+
+#### Activities page
+
+<div align="center">
+<img src="https://i.ibb.co/yN750bS/activities.jpg" alt="Family Hub activities page on all major screen sizes" >
+</div>
+
+---
+
+#### Listing page
+
+<div align="center">
+<img src="https://i.ibb.co/LpNYVZJ/listing.jpg" alt="Family Hub listing page on all major screen sizes" >
+</div>
+
+---
+
+#### Create account page
+
+<div align="center">
+<img src="https://i.ibb.co/qkw56D6/createaccount.jpg" alt="Family Hub create account page on all major screen sizes" >
+</div>
+
+---
+
+#### log in page
+
+<div align="center">
+<img src="https://i.ibb.co/dpzR69j/login.jpg" alt="Family Hub log in page on all major screen sizes" >
+</div>
+
+---
+
+#### Account settings page
+
+<div align="center">
+<img src="https://i.ibb.co/f4bgHRp/settings.jpg" alt="Family Hub account settings page on all major screen sizes" >
+</div>
+
+---
+
+#### Account page
+
+<div align="center">
+<img src="https://i.ibb.co/2qfkKFx/account.jpg" alt="Family Hub account page on all major screen sizes" >
+</div>
+
+---
+
+#### Add new listing page
+
+<div align="center">
+<img src="https://i.ibb.co/t2S8cyr/addnew.jpg" alt="Family Hub add new listing page on all major screen sizes" >
+</div>
+
+---
+
+#### Preview listing page
+
+<div align="center">
+<img src="https://i.ibb.co/2MTLzKk/preview.jpg" alt="Family Hub preview listing page on all major screen sizes" >
+</div>
+
+---
+
+#### Edit listing page
+
+<div align="center">
+<img src="https://i.ibb.co/MR6nKp7/edit.jpg" alt="Family Hub edit listing page on all major screen sizes" >
+</div>
+
+---
+
+#### Contact page
+
+<div align="center">
+<img src="https://i.ibb.co/hFHp8x9/contact.jpg" alt="Family Hub contact page on all major screen sizes" >
+</div>
+
+---
+
+#### 404 page
+
+<div align="center">
+<img src="https://i.ibb.co/4Kz1Mp7/404.jpg" alt="Family Hub 404 page on all major screen sizes" >
+</div>
+
+---
+
+#### Permission Denied page
+
+<div align="center">
+<img src="https://i.ibb.co/M6FkQhZ/denied.jpg" alt="Family Hub permission denied page on all major screen sizes" >
+</div>
+
+---
 
 ### Features Left to Implement
 
