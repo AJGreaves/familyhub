@@ -360,6 +360,8 @@ function scrollFunction() {
 
 - Each event card on the home page gives the user some brief and useful information about each of the listings displayed. The activity image, town name, title and 100 character string introduces the activity to the user. Every card is clickable to go to the main listing page for that activity, so that if the user wishes to learn more the information is only one click away. 
 
+- The images on the cards are set to background-image using css, which ensures that no matter what dimensions the original image provided was, all card images have equal size, making for a much more attractive site and user experience.
+
 **Carousels**
 
 - The home page features 3 carousels in total. Each carousel has a heading on the left and a "search more" button on the right that leads to the Activities page
@@ -370,7 +372,7 @@ function scrollFunction() {
 
 - At the moment of submitting this project for my course the summer school holidays have just begun, this part of the site would change depending on the year, so would feature activities and events for Autumn break, Christmas holidays, Easter vacation etc as the year goes on. 
 
-- **Sports Carousel**. Dutch culture is very sporty and the number of sports activities available for kids is vast, so a carousel offering some highlights from the choices in this category was also created for the home page. 
+- **Sports Carousel**. Dutch culture is very sporty and the number of sports activities available for kids is vast, so a carousel offering some highlights from the choices in this category was also created for the home page. 12 random results from entries in the database with `{ "category": { "sports": true } }` are pulled for this carousel when the home page is loaded. 
 
 **Top Tip Feature box**
 
@@ -382,11 +384,64 @@ function scrollFunction() {
 <img src="https://i.ibb.co/yN750bS/activities.jpg" alt="Family Hub activities page on all major screen sizes" >
 </div>
 
+- For the average visitor to Family Hub the Activities page is the main purpose of the site. This is where the user can use the filters to find the activities that suit their needs. 
+
+**Activity Cards**
+- Actiivity cards are displayed in exactly the same format as the ones in the carousels on the home page. Providing the user with a short introduction to each activity, and a link to read more about the ones they are most interested in.
+
+**Filters**
+
+- At the moment the filters available are: 
+    - Location
+    - Category
+    - Days of the week
+    - Indoor or Outdoor
+    - Age range
+    - Other details
+- (see [Features Left to Implement](#features-left-to-implement) for filters to be included in future releases)
+
+- As soon as the user clicks on one of these options JavaScrip sends a fetch request to pull the relevant data and display it for the user, without having to reload the page. 
+
+- The user is also provided with a clear filters button if they wish to return to looking at all the available listings. 
+
+**Pagination**
+
+Pagination is included on the activities page when the number of results to display is over 12. Each page contains up to 12 listings. This was done to make loading times faster and a smoother experience for the user. 
+
 ### Listing page
 
 <div align="center">
 <img src="https://i.ibb.co/LpNYVZJ/listing.jpg" alt="Family Hub listing page on all major screen sizes" >
 </div>
+
+Each listing page for an entry in the database displays that information in clearly laid out and easy to digest way. Utilizing icons to make locating and assimilating information faster for the user.
+
+- The **image** for the listing, in the listing page the dimensions of this image are not altered, so that the business listing can have their entire picture on the website.
+- On large size screens and up the image takes up 50% width of it's container. On medium and small size screens it takes up 100% width and the other content is displayed below it. 
+
+- The **open times** for the activity are displayed in a table that is easy to read and understand.
+
+- The **dates** section is visible for activities and events that have a start and end date. If the business has selected "ongoing" when creating the entry then the dates section does not appear in the listing page.
+
+- The **ages** section of the listing page is a simple table with the age groups listed down on column and a row of green check marks and terracotta crosses to mark which ages the activity is for. This provides clear visual information for the user.  
+
+- On the listing page the **Address** has been linked to google maps so that the location of the event can be easily found with one click. 
+
+- The **social links** available for the activity page are Facebook, Instagram and Twitter. They appear on the listings page only when the business has provided links for the platform.
+
+- A list of **categories** that the activity applies to are provided above the description. Icons have been added to make assimilating this information faster for the user.
+
+- The **more info** section includes a list of other important aspects that user might need to know or filter their searches by. Such as "Free entrance" "Catering available" or "Suitable for bad weather". These items hare also displayed with relevant icons.
+
+- The activity **description** is displayed underneath all the other information, for the user who has already scanned all the relevant data and wants to know more. 
+
+- The **contact link buttons** from the business include a link to their website, a phone number (optional), and an email business button. 
+
+- The email business button opens a modal with an **email form** to send to the business directly from the Family Hub website. This feature was chosen to protect the businesses email addresses from being scraped from the website if they were set to `mailto:`. The email address is inserted from the data into the the contact html using JavaScript. The email form is sent using [EmailJS](http://www.emailjs.com/).
+
+- Each listing page contains **share this page icons** with links to share the url from the page on Facebook, Twitter or by sending an email. A popular feature on websites that want to maximize social media impact for their site. 
+
+- At the bottom of the listing pages there is a **search more activities button**, which takes the user (back) to the activities page.
 
 ### Create account page
 
