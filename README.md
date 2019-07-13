@@ -606,6 +606,11 @@ Each listing page for an entry in the database displays that information in clea
 
 - The Edit Listing Page is identical to the [Add New Page](#add-new-page), except that the heading on the page says "Edit" and data for the activity to be edited has been pulled from the database and each `<input>`, `<select>`, `<checkbox>` and `<textarea>` values have been populated with the correct data.
 
+### Contact Page
+
+- The Contact Page features an **email contact form**, which is wired up to my email address with [EmailJS](http://www.emailjs.com/). 
+- The contact page also features the contact information for Family Hub as displayed in the footer, with a link to google maps for the location. 
+
 ## Features Left to Implement
 
 1. Email authentication
