@@ -404,6 +404,14 @@ function scrollFunction() {
 
 - The user is also provided with a clear filters button if they wish to return to looking at all the available listings. 
 
+- On tablet and desktop size screens the filters navbar sits in a fixed position on the left side of the screen. 
+
+- To save space on mobile devices, the filters navbar can be slid out by pressing a **show filters** button.
+
+<div align="center">
+<img src="https://i.ibb.co/3YWBHpJ/ezgif-com-video-to-gif.gif" alt="Filters navbar on mobile gif" >
+</div>
+
 **Pagination**
 
 Pagination is included on the activities page when the number of results to display is over 12. Each page contains up to 12 listings. This was done to make loading times faster and a smoother experience for the user. 
@@ -497,7 +505,7 @@ Each listing page for an entry in the database displays that information in clea
 
 - The **delete** button activates a modal, asking the user to confirm that they want to delete this listing by typing "DELETE" into an input field. 
 
-    - Once the field value is equal to "DELETE" the **confirm delete** button on the modal can be clicked to remove the activity entry from the database. 
+    - Once the field value is equal to "DELETE" the **confirm delete button** on the modal becomes active to the user can click it to remove the activity entry from the database. 
 
     - This feature was included to prevent accidental deletion of a complex data entry. 
 
