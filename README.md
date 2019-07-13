@@ -471,17 +471,31 @@ Each listing page for an entry in the database displays that information in clea
 
 ### Account settings page
 
-<div align="center">
-<img src="https://i.ibb.co/f4bgHRp/settings.jpg" alt="Family Hub account settings page on all major screen sizes" >
-</div>
-
 - The account settings page includes two small forms for the user to update their email address or password. 
+
+- Each form requires the user to input their current email/password and then their new one. 
+
+- If the current data is not correct the user is informed of this via modal. 
 
 ### Account page
 
 <div align="center">
 <img src="https://i.ibb.co/2qfkKFx/account.jpg" alt="Family Hub account page on all major screen sizes" >
 </div>
+
+- The user account page displays a card for each of the listings in the database that they have created. 
+
+- Each card has three buttons underneath it: View, Edit and Delete.
+
+- The **view** button takes the user to the listing on Family Hub as visitors to the site see it.
+
+- The **edit** button takes the user to the [Edit Listing Page](#edit-listing-page) where they can update the data for this listing in the database. 
+
+- The **delete** button activates a modal, asking the user to confirm that they want to delete this listing by typing "DELETE" into an input field. 
+
+    - Once the field value is equal to "DELETE" the **confirm delete** button on the modal can be clicked to remove the activity entry from the database. 
+
+    - This feature was included to prevent accidental deletion of a complex data entry. 
 
 ### Add new listing page
 
