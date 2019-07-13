@@ -584,35 +584,27 @@ Each listing page for an entry in the database displays that information in clea
 
     - Limits are placed on the length of input accepted, in order to protect from buffer overflows (hacking attempts).
 
+    - At the bottom of the page the user is given a button to preview their data in the listing page, before it is published to the website. When this button is pushed the data is put into the database with the additional key value pair of `{"published": false}` applied to it. Then the preview page is loaded.
+
 ### Preview listing page
 
-<div align="center">
-<img src="https://i.ibb.co/2MTLzKk/preview.jpg" alt="Family Hub preview listing page on all major screen sizes" >
-</div>
+- The preview listing page is where the business user can preview their activity listing and see what it will look like on the Family Hub website. 
 
-### Edit listing page
+- The page is identical to the [Listing Page](#listing-page), except for three changes:
 
-<div align="center">
-<img src="https://i.ibb.co/MR6nKp7/edit.jpg" alt="Family Hub edit listing page on all major screen sizes" >
-</div>
+    - A preview bar along the top reminds the user that they are in preview mode, and need to click the publish button at the bottom of the page in order to make the listing live on the Family Hub website. 
 
-### Contact page
+    - At the bottom left of the page the "share this page" icons do not work, as we do not want the user to accidentally share the preview page. If these icons are clikced a modal pops up to inform the user of this and tell them they can share the page once the listing has been published. 
 
-<div align="center">
-<img src="https://i.ibb.co/hFHp8x9/contact.jpg" alt="Family Hub contact page on all major screen sizes" >
-</div>
+    - On the bottom right of the page, the "search more activities" button has been replaced with **Edit** and **Publish** buttons. 
 
-### 404 page
+        - The Edit button takes the user to the [Edit listing Page](#edit-listing-page).
 
-<div align="center">
-<img src="https://i.ibb.co/4Kz1Mp7/404.jpg" alt="Family Hub 404 page on all major screen sizes" >
-</div>
+        - The Publish button updates the listing with `{"published": false}` so that the data can now be displayed on the Family Hub home page and activities page.
 
-### Permission Denied page
+### Edit listing Page
 
-<div align="center">
-<img src="https://i.ibb.co/M6FkQhZ/denied.jpg" alt="Family Hub permission denied page on all major screen sizes" >
-</div>
+- The Edit Listing Page is identical to the [Add New Page](#add-new-page), except that the heading on the page says "Edit" and data for the activity to be edited has been pulled from the database and each `<input>`, `<select>`, `<checkbox>` and `<textarea>` values have been populated with the correct data.
 
 ## Features Left to Implement
 
