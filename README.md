@@ -613,17 +613,9 @@ Each listing page for an entry in the database displays that information in clea
 
 ### 404 Page
 
-<div align="center">
-<img src="https://i.ibb.co/4Kz1Mp7/404.jpg" alt="Family Hub 404 page on all major screen sizes" >
-</div>
-
-- The custom 404 Page contains a fun animation of a robot playing hide and seek, and two buttons to return the user back to the Family Hub home page or activities page. 
+- The custom 404 Page contains a fun animation of a robot playing hide and seek, and two buttons to return the user back to the Family Hub **home page** or **activities page**. 
 
 ### Permission Denied page
-
-<div align="center">
-<img src="https://i.ibb.co/M6FkQhZ/denied.jpg" alt="Family Hub permission denied page on all major screen sizes" >
-</div>
 
 - The custom permission denied page features a humorous surprise for the user who attempts to access pages you must be logged in to access, while being logged out. 
 - Two buttons on this page give the user a choice to either go to the **log in** page or **go back** one item in their browser history to whatever page they were on before this one.
@@ -631,21 +623,37 @@ Each listing page for an entry in the database displays that information in clea
 ## Features Left to Implement
 
 1. Email authentication
+
     - Implementation of email authentication of user account before registration is complete.
-2. Full text search
+
+2. On Create Account Page, add confirm password field or ability to see the password that was typed in, to avoid accidental typos.
+
+3. Full text search
+
     - Attempted this for several days but was unable to get it to work. Rather than dragging out time on this feature when this project is already very large, I made the decision to remove the relevant code to return to at a future date when my understanding is more advanced. 
+
     - When returning to this feature, the text search related code I was working on  is in the branch `textSearchFix`. 
+
     - [Research this link](https://docs.mongodb.com/manual/core/index-text/#wildcard-text-indexes)
-3. Wire up contact form
+
 4. Admin account 
-- Can edit/delete any listing from database
-- Can add/remove "recommended" field on any listing from database
-5. Expired listings not visible on the site 
-- Data filtered by date and only show entries on todays date and later
-6. Expired listings still visible in users account page so they can be edited and updated with new dates.
-7. Filter by date on activities page
-8. Sections on users account page - Published, Saved and Expired.
-9. Slug friendly URLs
+
+    - Give myself (or any other administrator of Family Hub) special permissions to access / change data in the database from a Family Hub interface, rather than having to access the data directly in MongoDB.
+
+    - Give admin the ability to view, edit and delete any listing from database.
+
+    - Give admin the ability to add/remove "recommended" field on any listing from database, so that only businesses that have paid for this feature will see it effected on the site.
+
+5. Expired listings not visible on the site.
+    - Add a filter to home page and activities page to not show any expired listings for events that have already taken place. 
+
+6. Sections on users account page - Published, Saved and Expired.
+
+    - Have separate sections on the users account page so they can see which of their activities/events are published, which are saved (but not published) and which have expired.
+
+7. Filter by date on activities page.
+
+    - So that the events closest to the current date are displayed first.
 
 # Information Architecture
 
