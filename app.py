@@ -89,8 +89,8 @@ def activities_page():
 
         categorySelector = 'categories.' + category
 
-        results = db.activities.find().sort("_id", -1)
-        db_request = []
+        results = db.activities.find({"published": True}).sort("_id", -1)
+        db_request = [{"published": True}]
 
         if len(otherIds) >= 1:
             for otherId in otherIds:
