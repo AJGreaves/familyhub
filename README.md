@@ -794,11 +794,10 @@ Suitable for groups | groups | checkbox | boolean
 
 # Technologies Used
 
-- This project uses HTML, CSS and JavaScript programming languages.
+- [Visual Studio Code](https://code.visualstudio.com/) 
+    - Visual Studio Code is the IDE used for developing this project. 
 - [JQuery](https://jquery.com)
     - The project uses JQuery to simplify DOM manipulation.
-- [Cloud9](https://c9.io) 
-    - Developer used Cloud9 for their IDE while building the website.
 - [Bootstrap](https://www.bootstrapcdn.com/)
     - The project uses Bootstrap to simplify the structure of the website and make the website responsive easily.
     - The project also uses Bootstrap to provide icons from [FontAwesome](https://www.bootstrapcdn.com/fontawesome/)
@@ -807,20 +806,28 @@ Suitable for groups | groups | checkbox | boolean
 - [Imgbb](https://imgbb.com)
     - All external images for this project are stored on Imgbb.com.
 - [Jasmine](https://jasmine.github.io/)
-    - This project used Jasmine to automatically test all JavaScript and jQuery code.
+    - This project used Jasmine to run automated tests all JavaScript and jQuery code.
 - [Jasmine-jQuery](https://github.com/velesin/jasmine-jquery)
     - This project used Jasmine-jQuery CDN to make it possible to test jQuery code using Jasmine.
+- [PyMongo](https://api.mongodb.com/python/current/)
+    - The PyMongo API is used to make communication between python and mongoDB possible.
+- [Flask](https://flask.palletsprojects.com/en/1.0.x/)
+    - Flask is used in this project to construct and render pages.
+- [Jinja](http://jinja.pocoo.org/docs/2.10/)
+    - Jinja is used simplify displaying data from the backend of this project smoothly and effectively in html.
 - [GitHub](https://github.com/)
     - This project uses GitHub to store and share all project code remotely. 
-    - The new GitHub Projects planner was utilised to plan and keep track of this project. This project plan can be viewed [here](https://github.com/AJGreaves/picflip/projects/1).
 - [Photoshop](www.adobe.com/Photoshop)
-    - This project used tools in Photohshop to edit, crop and save images as well as ulitising the colour picker to ensure color consistency over the entire project.
+    - This project used tools in Photoshop to edit, crop and save images as well as ulitizing the colour picker to ensure color consistency over the entire project.
 - [Browserstack](https://www.browserstack.com/)
     - The project used Browserstack to test functionality on all browsers and devices.
-- [AutoPrefixer](https://autoprefixer.github.io/)
-    - The project used AutoPrefixer to make sure all css prefixes were the most up to date versions. 
-- https://gijgo.com/ date and time pickers
-- pylint-flask to fix pylint issues in vscode
+- [Gijgo](https://gijgo.com/)
+    - Gijgo is used to provide bootstrap styled date and time pickers.
+- [Am I Responsive](http://ami.responsivedesign.is/)
+    - Was used to create the images in this readme file of each page displayed on different screen sizes.
+- [EZgif](https://ezgif.com/video-to-gif)
+    - EZgif provided gif editing software for the gif in this readme file. 
+- This project uses HTML, CSS, JavaScript and Python programming languages.
 
 # Testing 
 
@@ -830,9 +837,37 @@ Testing information can be found in separate [testing.md](testing.md) file
 
 ## Heroku deployment
 
-This project was developed using the [Cloud9 IDE](https://c9.io), committed to git and pushed to GitHub and Heroku using the built in function within cloud9.
+To deploy Family Hub to heroku, the following steps were taken:
 
-- more deployment info here for heroku
+1. Created a `requirements.txt` file using the terminal command `pip freeze > requirements.txt`.
+
+2. Created a `Procfile` with the terminal command `echo web: python app.py > Procfile`.
+
+3. `git add` and `git commit` the new requirements and Procfile and then `git push` the project to GitHub.
+
+3. Created a new app on the [Heroku website](https://dashboard.heroku.com/apps) by clicking the "New" button in my dashboard. Gave it a  name and set the region to Europe.
+
+4. From the heroku dashboard of my newly created applicaiton, clicked on "Deploy" > "Deployment method" and selected GitHub.
+
+5. Confirmed the linking of my heroku app to the correct GitHub repository.
+
+6. In the heroku dashboard for my application, clicked on "Settings" > "Reveal Config Vars".
+
+7. Set the following config vars:
+
+| Key | Value |
+ --- | ---
+DEBUG | FALSE
+IP | 0.0.0.0
+MONGO_URI | `mongodb+srv://<username>:<password>@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority`
+PORT | 5000
+SECRET_KEY | `<secret_key>`
+
+8. In the heroku dashboard, Clicked "Deploy"
+
+9. In the "Manual Deployment" section of this page, made sure the master branch was selected and then clicked "Deploy Branch"
+
+10. The site was now deployed.
 
 ## How to run this project locally
 
