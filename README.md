@@ -46,6 +46,11 @@ As a British mother of two, who moved to The Netherlands in 2003, I know what a 
     - [Features Left to Implement](#features-left-to-implement)
 
 3. [Information Architecture](#information-architecture)
+    - [Database choice](#database-choice)
+    - [Data Storage Types](#data-storage-types)
+    - [Collections Data Structure](#collections-data-structure)
+        - [Users Collection](#users-collection)
+        - [Activities Collection](#activities-collection)
 
 4. [Technologies Used](#technologies-used)
 
@@ -674,11 +679,11 @@ The types of data stored in MongoDB for this project are:
 - DateTime
 - Object
 
-### Data Structure
+### Collections Data Structure
 
 The Family Hub website relies on two database collections:
 
-#### Users
+#### Users Collection
 
 | Title | Key in db | form validation type | Data type |
 --- | --- | --- | --- 
@@ -687,7 +692,7 @@ Name | username | text, `maxlength="40"` | string
 Email Address | email | email, `maxlength="40"` | string
 Password | password | text, `maxlength="15"` | string
 
-#### Activities
+#### Activities Collection
 
 | Title | Key in db | form validation type | Data type |
 --- | --- | --- | --- 
