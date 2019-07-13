@@ -515,6 +515,75 @@ Each listing page for an entry in the database displays that information in clea
 <img src="https://i.ibb.co/t2S8cyr/addnew.jpg" alt="Family Hub add new listing page on all major screen sizes" >
 </div>
 
+- The **Add New Listing Page** is where the business owner users provides the data for the Family Hub activities database. 
+
+- The form is broken into sections, and laid out on a clean white background
+
+- The business user is asked to enter the following data for their activity:
+    - Title.
+    - Location.
+        - Street name and number.
+        - Postcode.
+        - Town/City (dropdown menu).
+    - Contact info.
+        - Phone number (optional).
+        - Email address.
+        - Website url.
+        - Facebook link (optional).
+        - Twitter link (optional).
+        - Instagram link (optional).
+    - Start date and End date (datepicker) **or** click switch to say the activity is ongoing.
+    - Which days of the week they are open.
+    - Opening and Closing times (time picker).
+    - Check-boxes to indicate if they are open during the school holidays (optional).
+        - Spring
+        - Summer
+        - Autumn
+        - Winter
+    - Categories check-boxes to indicate what categories the activity applies to.
+        - Sports
+        - Swimming
+        - Creative
+        - Science & Tech
+        - Cultural & Music
+        - Drama & Dance
+        - Yoga & Mindfulnes
+        - Museums & Exhibitions
+        - Parks & playgrounds
+        - Nature
+        - Animals
+        - Clubs
+        - Kids Parties 
+    - Age range check-boxes.
+        - Under 4 yrs
+        - 4 - 6 yrs
+        - 6 - 8 yrs
+        - 8 - 10 yrs
+        - 10 - 12 yrs
+        - 12 yrs + 
+    - Indoor and Outdoor check-boxes.
+    - Other details check-boxes.
+        - Free entrance
+        - Bringing own food permitted
+        - Catering available
+        - Suitable for good weather
+        - Suitable for bad weather
+        - Suitable for groups
+    - Image link to use with the listing.
+    - Description.
+
+- Validation of the `<input>` fields is handled in variety of ways.
+
+    - The input `type` attributes are set to `text`, `email`, `url` and `number` where appropriate. 
+
+    - A dropdown menu is provided so that the town inputs match others in the database, this avoids spelling mistakes and businesses from outside of the area tha Family Hub serves from entering their data into the site.
+
+    - Datepickers and Timepickers have been combined with `pointer-events: none` css on the actual input fields, to force the user to use the Date and Timepickers to input this data and give the program the information in the correct format.
+
+    - Check-boxes for much of the data to be stored as simply `true` or `false` in the database. 
+
+    - Limits are placed on the length of input accepted, in order to protect from buffer overflows (hacking attempts).
+
 ### Preview listing page
 
 <div align="center">
