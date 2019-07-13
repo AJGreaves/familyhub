@@ -655,14 +655,137 @@ Each listing page for an entry in the database displays that information in clea
 
     - So that the events closest to the current date are displayed first.
 
+This section will continue to grow as the site is deployed to it's own domain and implemented in the real word. New issues and needs will become apparent as the site is used.
+
 # Information Architecture
 
-### data storage types
+### Database choice
 
-### data structure
+A SQL database structure would have suited this project better, however this website is a student project and the current point that I am in the course is my only opportunity to use NoSQL as the final piece of coursework (the next one) required SQL. In order to get experience with using NoSQL this project utilizes the NoSQL database MongoDB. 
 
-### search filters & implementation
+To have easy access to relational data, inner objects were used inside the data structure so that they could be accessed and looped through where needed.
 
+### Data Storage Types
+
+The types of data stored in MongoDB for this project are:
+- ObjectId
+- String
+- Boolean
+- DateTime
+- Object
+
+### Data Structure
+
+The Family Hub website relies on two database collections:
+
+#### Users
+
+| Title | Key in db | form validation type | Data type |
+--- | --- | --- | --- 
+Account ID | _id | None | ObjectId 
+Name | username | text, `maxlength="40"` | string
+Email Address | email | email, `maxlength="40"` | string
+Password | password | text, `maxlength="15"` | string
+
+#### Activities
+
+| Title | Key in db | form validation type | Data type |
+--- | --- | --- | --- 
+Activity ID | _id | None | ObjectId 
+Username | username |text, `maxlength="40"` | string
+Title | title | text, `maxlength="50"` | string
+Activity image | imgUrl | url, `maxlength="200"` | string
+Indoor | indoor | checkbox | boolean
+Outdoor | outdoor | checkbox | boolean
+Description | description | textarea | string
+Short Description | shortDescription | automatically generated | string
+Published | published | User click "publish" button | boolean
+Recommended | recommended | checkbox (admin only) | boolean
+  |   |   |   
+ **Dates** | dates |  | **object** 
+ Start Date | start | datepicker | datetime
+ End Date | end | datepicker | datetime
+ Ongoing (no start/end) | ongoing | custom switch | boolean
+  |   |   | 
+**Days** | days |  | **object** 
+Monday | mon | custom switch | boolean
+Tuesday | tue | custom switch | boolean
+Wednesday | wed | custom switch | boolean
+Thursday | thu | custom switch | boolean
+Friday | fri | custom switch | boolean
+Saturday | sat | custom switch | boolean
+Sunday | sun | custom switch | boolean
+  |   |   | 
+**Open times** | times |  | **object** 
+Monday open time | monStart | timepicker | datetime
+Monday close time | monEnd | timepicker | datetime
+Tuesday open time | tueStart | timepicker | datetime
+Tuesday close time | tueEnd | timepicker | datetime
+Wednesday open time | wedStart | timepicker | datetime
+Wednesday close time | wedEnd | timepicker | datetime
+Thursday open time | thuStart | timepicker | datetime
+Thursday close time | thuEnd | timepicker | datetime
+Friday open time | friStart | timepicker | datetime
+Friday close time | friEnd | timepicker | datetime
+Saturday open time | satStart | timepicker | datetime
+Saturday close time | satEnd | timepicker | datetime
+Sunday open time | sunStart | timepicker | datetime
+Sunday close time | sunEnd | timepicker | datetime
+  |   |   | 
+**School holidays** | holidays | | **object**
+Spring vacation | spring | checkbox | boolean
+Summer vacation | summer | checkbox | boolean
+Autumn vacation | autumn | checkbox | boolean
+Christmas vacation | christmas | checkbox | boolean
+  |   |   | 
+**Categories** | categories | | **object**
+Sports | sports | checkbox | boolean
+Swimming | swimming | checkbox | boolean
+Creative | creative | checkbox | boolean
+Science & Tech | scienceTech | checkbox | boolean
+Culture & Music | cultureMusic | checkbox | boolean
+Drama & Dance | dramaDance | checkbox | boolean
+Yoga & Mindfulness | yogaMindfulness | checkbox | boolean
+Museums & Exhibitions | museumsExhibitions | checkbox | boolean
+Parks & Playgrounds | parksPlaygrounds | checkbox | boolean
+Playgrounds | playgrounds | checkbox | boolean
+Nature | nature | checkbox | boolean
+Animals | animals | checkbox | boolean
+Clubs | clubs | checkbox | boolean
+Parties | parties | checkbox | boolean
+  |   |   | 
+**Address** | address | | **object**
+Street name & number | addressLine1 | text, `maxlength="50"` | string
+Postcode | postcode | text, maxlength 7 chars | string
+Town/City | town | dropdown menu | string
+  |   |   | 
+**Age Range** | ageRange | | **object**
+Under 4 years | under4 | checkbox | boolean
+4 to 6 years | age4to6 | checkbox | boolean
+6 to 8 years | age6to8 | checkbox | boolean
+8 to 10 years | age6to10 | checkbox | boolean
+10 to 12 years | age10to12 | checkbox | boolean
+12 years and up | age12up | checkbox | boolean
+  |   |   | 
+**Contact** | contact | | **object**
+Phone number | phone | tel, `pattern="[0-9]{10}"`, `maxlength="100"` | string
+Website | url | url, `maxlength="100"` | string
+Email | email | email, `maxlength="100"` | string
+Facebook | facebook | url, `maxlength="100"` | string
+Twitter | twitter | url, `maxlength="100"` | string
+Instagram | instagram | url, `maxlength="100"` | string
+  |   |   | 
+**Other Details** | otherDetails | | **object**
+Free entrance  | free | checkbox | boolean
+Bringing own food permitted | bringFood | checkbox | boolean
+Catering available | catering | checkbox | boolean
+Suitable for good weather | goodWeather | checkbox | boolean
+Suitable for bad weather | badWeather | checkbox | boolean
+Suitable for groups | groups | checkbox | boolean
+
+- The users `username` is added to each activity database entry automatically to match the user who created it. This links the two database collections together.
+
+- The `shortDescription` in the database is generated using python, taking the first 100 characters from the description provided by the user. This short description is displayed on the activity cards on the home page and search results.
 
 # Technologies Used
 
