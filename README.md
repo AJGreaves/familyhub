@@ -347,7 +347,7 @@ function scrollFunction() {
 }
 ```
 
-### Home page
+### Home Page
 
 <div align="center">
 <img src="https://i.ibb.co/CBw04v7/home.jpg" alt="Family Hub home page on all major screen sizes" >
@@ -378,7 +378,7 @@ function scrollFunction() {
 
 - A feature box, placed just below the first recommended carousel breaks up the rest of the content on the home page and offers a prime position on the home page for a top paying business to advertise their activity or event. 
 
-### Activities page
+### Activities Page
 
 <div align="center">
 <img src="https://i.ibb.co/yN750bS/activities.jpg" alt="Family Hub activities page on all major screen sizes" >
@@ -408,7 +408,7 @@ function scrollFunction() {
 
 Pagination is included on the activities page when the number of results to display is over 12. Each page contains up to 12 listings. This was done to make loading times faster and a smoother experience for the user. 
 
-### Listing page
+### Listing Page
 
 <div align="center">
 <img src="https://i.ibb.co/LpNYVZJ/listing.jpg" alt="Family Hub listing page on all major screen sizes" >
@@ -443,23 +443,39 @@ Each listing page for an entry in the database displays that information in clea
 
 - At the bottom of the listing pages there is a **search more activities button**, which takes the user (back) to the activities page.
 
-### Create account page
+### Create Account Page
 
-<div align="center">
-<img src="https://i.ibb.co/qkw56D6/createaccount.jpg" alt="Family Hub create account page on all major screen sizes" >
-</div>
+- The create account page features a simple form, where the user can input an account name, email address and password. The form was kept deliberately simple so that signup has minimum barriers. 
 
-### log in page
+- Once the form is complete the data is sent to the backend using javascript `fetch()` and then a request is made to MongoDB to check if the user name or email address already exists in the the database.
 
-<div align="center">
-<img src="https://i.ibb.co/dpzR69j/login.jpg" alt="Family Hub log in page on all major screen sizes" >
-</div>
+- If it does then a response is returned to javascript so that a response can be given to the user via modal. 
+
+- If the user does not already exist in the database then the account is created, and a modal informing the user of successful creation of their account appears. In the modal a button link to the log in page is provided.
+
+- This [Account and login pages flowchart](https://i.ibb.co/x1wxDsZ/flowchart.jpg) fully explains the behavior of the forms, data checks and modal messages on this page and the [Log In Page](#log-in-page).
+
+- (see [Features Left to Implement](#features-left-to-implement) for additional features to be included on this page in future releases)
+
+### log In Page
+
+- The log in page also features a simple **form** where the user can enter either their username or their email address, and their password. 
+
+- This form also uses JavaScript `fetch()` to pass the input data from the user to Python. The reason for this use is that I wanted to provide the user with a modal once they were logged in, rather than reloading the page. 
+
+- If the user inputs incorrect data a **modal** responds with various messages depending on what was incorrect. 
+
+- When the user logs in with a correct email and password a **success modal** appears with links to their personal account page and editor page to add a new activity to the database.
+
+- This [Account and login pages flowchart](https://i.ibb.co/x1wxDsZ/flowchart.jpg) fully explains the behavior of the forms, data checks and modal messages on this page and the [Account Page](#account-page).
 
 ### Account settings page
 
 <div align="center">
 <img src="https://i.ibb.co/f4bgHRp/settings.jpg" alt="Family Hub account settings page on all major screen sizes" >
 </div>
+
+- The account settings page includes two small forms for the user to update their email address or password. 
 
 ### Account page
 
@@ -506,7 +522,7 @@ Each listing page for an entry in the database displays that information in clea
 ## Features Left to Implement
 
 1. Email authentication
-    - Implementation of email authentication of user account before registration complete
+    - Implementation of email authentication of user account before registration is complete.
 2. Full text search
     - Attempted this for several days but was unable to get it to work. Rather than dragging out time on this feature when this project is already very large, I made the decision to remove the relevant code to return to at a future date when my understanding is more advanced. 
     - When returning to this feature, the text search related code I was working on  is in the branch `textSearchFix`. 
