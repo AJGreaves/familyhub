@@ -483,6 +483,10 @@ Each listing page for an entry in the database displays that information in clea
 <img src="https://i.ibb.co/2qfkKFx/account.jpg" alt="Family Hub account page on all major screen sizes" >
 </div>
 
+- At the top right of the account page a cog icon for access to the [Account Settings Page](#account-settings-page) is displayed. The positioning of this is the convention for links to settings, which is why it was chosen for this page as well. 
+
+- Underneath the cog icon on the account page a clearly visible green **Add New button** has been added so that the user can easily access the [Edit Listing Page](#edit-listing-page).
+
 - The user account page displays a card for each of the listings in the database that they have created. 
 
 - Each card has three buttons underneath it: View, Edit and Delete.
