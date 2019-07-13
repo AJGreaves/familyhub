@@ -611,6 +611,23 @@ Each listing page for an entry in the database displays that information in clea
 - The Contact Page features an **email contact form**, which is wired up to my email address with [EmailJS](http://www.emailjs.com/). 
 - The contact page also features the contact information for Family Hub as displayed in the footer, with a link to google maps for the location. 
 
+### 404 Page
+
+<div align="center">
+<img src="https://i.ibb.co/4Kz1Mp7/404.jpg" alt="Family Hub 404 page on all major screen sizes" >
+</div>
+
+- The custom 404 Page contains a fun animation of a robot playing hide and seek, and two buttons to return the user back to the Family Hub home page or activities page. 
+
+### Permission Denied page
+
+<div align="center">
+<img src="https://i.ibb.co/M6FkQhZ/denied.jpg" alt="Family Hub permission denied page on all major screen sizes" >
+</div>
+
+- The custom permission denied page features a humorous surprise for the user who attempts to access pages you must be logged in to access, while being logged out. 
+- Two buttons on this page give the user a choice to either go to the **log in** page or **go back** one item in their browser history to whatever page they were on before this one.
+
 ## Features Left to Implement
 
 1. Email authentication
