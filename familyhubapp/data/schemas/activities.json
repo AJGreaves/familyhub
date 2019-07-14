@@ -1,0 +1,95 @@
+[{
+    "_id": {
+        "$oid": "<objectId>"
+    },
+    "username": "<string>",
+    "title": "<string>",
+    "imgUrl": "<string>",
+    "dates": {
+        "start": "<datetime>",
+        "end": "<datetime>",
+        "ongoing": "<boolean>"
+    },
+    "days": {
+        "mon": "<boolean>",
+        "tue": "<boolean>",
+        "wed": "<boolean>",
+        "thu": "<boolean>",
+        "fri": "<boolean>",
+        "sat": "<boolean>",
+        "sun": "<boolean>"
+    },
+    "times": {
+        "monStart": "<boolean>",
+        "monEnd": "<boolean>",
+        "tueStart": "<boolean>",
+        "tueEnd": "<boolean>",
+        "wedStart": "<boolean>",
+        "wedEnd": "<boolean>",
+        "thuStart": "<boolean>",
+        "thuEnd": "<boolean>",
+        "friStart": "<boolean>",
+        "friEnd": "<boolean>",
+        "satStart": "<boolean>",
+        "satEnd": "<boolean>",
+        "sunStart": "<boolean>",
+        "sunEnd": "<boolean>"
+    },
+    "categories": {
+        "sports": "<boolean>",
+        "swimming": "<boolean>",
+        "creative": "<boolean>",
+        "scienceTech": "<boolean>",
+        "cultureMusic": "<boolean>",
+        "dramaDance": "<boolean>",
+        "yogaMindfulness": "<boolean>",
+        "museumsExhibitions": "<boolean>",
+        "parksPlaygrounds": "<boolean>",
+        "playgroups": "<boolean>",
+        "nature": "<boolean>",
+        "animals": "<boolean>",
+        "clubs": "<boolean>",
+        "parties": "<boolean>"
+    },
+    "address": {
+        "addressLine1": "<string>",
+        "postcode": "<string>",
+        "town": "<string>"
+    },
+    "ageRange": {
+        "under4": "<boolean>",
+        "age4to6": "<boolean>",
+        "age6to8": "<boolean>",
+        "age8to10": "<boolean>",
+        "age10to12": "<boolean>",
+        "age12up": "<boolean>"
+    },
+    "indoor": "<boolean>",
+    "outdoor": "<boolean>",
+    "contact": {
+        "phone": "<string>",
+        "url": "<string>",
+        "email": "<string>",
+        "facebook": "<string>",
+        "twitter": "<string>",
+        "instagram": "<string>"
+    },
+    "description": "<string>",
+    "published": "<string>",
+    "shortDescription": "<string>",
+    "recommended": "<boolean>",
+    "otherDetails": {
+        "free": "<boolean>",
+        "bringFood": "<boolean>",
+        "catering": "<boolean>",
+        "goodWeather": "<boolean>",
+        "badWeather": "<boolean>",
+        "groups": "<boolean>"
+    },
+    "holidays": {
+        "spring": "<boolean>",
+        "summer": "<boolean>",
+        "autumn": "<boolean>",
+        "christmas": "<boolean>"
+    }
+}]

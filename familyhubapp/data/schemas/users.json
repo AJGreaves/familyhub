@@ -1,0 +1,8 @@
+[{
+    "_id": {
+        "$oid": "<objectId>"
+    },
+    "email": "<string>",
+    "password": "<hashed_password_string>",
+    "username": "<string>"
+}]
