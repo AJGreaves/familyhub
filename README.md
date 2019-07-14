@@ -920,35 +920,55 @@ python app.py
 
 ## Content
 
-- text in this project was written by...
-- privacy policy https://www.cleverbox.co.uk/example-privacy-policy/
-- cookies policy https://www.cleverbox.co.uk/cookies/
+- The text, images, links and other data in the database was sourced from various local websites including but not limited to
 
+    - [Amsterdam Mamas](http://amsterdam-mamas.nl/)
+    - [Kidsproof Haarlem](https://www.kidsproof.nl/Haarlem)
+    - [Go-Kids Haarlem](https://go-kids.nl/haarlem)
+    - [Uit in Haarlemmermeer](https://www.uitinhaarlemmermeer.nl/nl/agenda)
+    - [Pier-K](https://www.pier-k.nl)
+
+- The data from these other websites was translated into english using [Google Translate](https://translate.google.com/) and inserted into the database to populate it with real local activities and events.
+
+- Text for the Family Hub website privacy and cookies policy were heavily influenced by the [cleverbox privacy policy](https://www.cleverbox.co.uk/example-privacy-policy/) and [Cleverbox cookies policy](https://www.cleverbox.co.uk/cookies/)
+
+- All other text on Family Hub was written by me.
 
 ## Media
 ### Animations
-- Spinner https://icons8.com/preloaders/en/circular
-- Hide and seek bot for 404 page: https://dribbble.com/shots/3480375-Stealth-Bot
-- gif editor for readme gifs: https://ezgif.com
-- image hosting: https://imgbb.com/
+- Animated spinner was provided by [icons8](https://icons8.com/preloaders/en/circular)
+- Hide and seek bot for 404 page was provided by [dribbble.com](https://dribbble.com/shots/3480375-Stealth-Bot)
 
 ### Images
 - The FamilyHub logo was created using [Hatchful](https://hatchful.shopify.com).
+
 - The photographs for the hero images were sourced from [Pexels](https://www.pexels.com/)
 
+- Where possible the links to the images for the events were taken directly from the source images url in the activity listings I sourced the data from. 
+
+- On occasion when this did not work the image was copied to my local machine and then uploaded to my [imgBB](https://anna-gilhespy.imgbb.com/) account, where I took the link from instead.
 
 ## Code
+
 - Template code for multi-card carousel using bootstrap classes taken from [MDBootstrap](https://mdbootstrap.com/docs/jquery/javascript/carousel/) and heavily modified to suit the sites needs.
-- Text shadow generated using [CSS3 Text Shadow Generator](https://css3gen.com/text-shadow/)
-- Code for floating buttons taken from this [W3Schools post](https://www.w3schools.com/howto/howto_js_scroll_to_top.asp)
+
+- Code for floating buttons taken from this [W3Schools](https://www.w3schools.com/howto/howto_js_scroll_to_top.asp) post.
+
 - Box shadow codes were taken from [Material Design Box Shadows](https://codepen.io/sdthornton/pen/wBZdXq).
+
 - Code for adding the correct prefixes to css was created using [AutoPrefixer](https://autoprefixer.github.io/).
-- Hex to RGBA colour converter: http://hex2rgba.devoth.com/
-- function to capitalize first letter of username: https://paulund.co.uk/how-to-capitalize-the-first-letter-of-a-string-in-javascript
-- code to make sticky footer: https://css-tricks.com/couple-takes-sticky-footer/
-- Code for animated side-nav taken from https://www.w3schools.com/howto/howto_js_sidenav.asp
-- Code to generate slug-friendly-urls in python: http://flask.pocoo.org/snippets/5/
-- Code to generate slug-friendly-urls in javascript: https://medium.com/@mhagemann/the-ultimate-way-to-slugify-a-url-string-in-javascript-b8e4a0d849e1
+
+- [Hex2rgba](http://hex2rgba.devoth.com/) was used to convert hex colours to rgba when I needed transparent background colours without using opacity css.
+
+- code for function to capitalize first letter of username was taken from this [paulund.co.uk](https://paulund.co.uk/how-to-capitalize-the-first-letter-of-a-string-in-javascript) post.
+
+- Code to make sticky footer was taken from this [css-tricks.com](https://css-tricks.com/couple-takes-sticky-footer/) post.
+
+- Code for animated side-nav taken from this [w3schools.com](https://www.w3schools.com/howto/howto_js_sidenav.asp) post.
+
+- Code to generate slug-friendly-urls in python taken from this [Flask](http://flask.pocoo.org/snippets/5/) post
+
+- Code to generate slug-friendly-urls in javascript was taken from this [medium.com](https://medium.com/@mhagemann/the-ultimate-way-to-slugify-a-url-string-in-javascript-b8e4a0d849e1) post.
 
 ## Acknowledgements
 
