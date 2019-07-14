@@ -861,13 +861,13 @@ DEBUG | FALSE
 IP | 0.0.0.0
 MONGO_URI | `mongodb+srv://<username>:<password>@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority`
 PORT | 5000
-SECRET_KEY | `<secret_key>`
+SECRET_KEY | `<not_my_actual_secret_key>`
 
-8. In the heroku dashboard, Clicked "Deploy"
+8. In the heroku dashboard, clicked "Deploy".
 
-9. In the "Manual Deployment" section of this page, made sure the master branch was selected and then clicked "Deploy Branch"
+9. In the "Manual Deployment" section of this page, made sure the master branch was selected and then clicked "Deploy Branch".
 
-10. The site was now deployed.
+10. The site was successfully deployed.
 
 ## How to run this project locally
 
