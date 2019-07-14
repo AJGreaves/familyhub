@@ -26,6 +26,7 @@
 ### Validation services
 The following validation services and linter were used to check the validity of the website code.
 - [W3C Markup Validation]( https://validator.w3.org/) was used to validate HTML.
+    - On the pages that use [Gijgo](https://gijgo.com/) date and time pickers, the W3c validator throws many errors to do with the html code that is inserted by Gijo.js. I have double-checked that I am using the most up to date version of Gijgo. These errors are due to code I have not written myself, and that is added when the page is rendered via the Gijgo JavaScript file. 
 - [W3C CSS validation](https://jigsaw.w3.org/css-validator/) was used to validate CSS.
 - [JSHint](https://jshint.com/) was used to validate JavaScript.
 
@@ -116,16 +117,16 @@ And also in the Chrome Developer Tools device simulators on all options and orie
 - Fix: installed pylint-flask and the pylinter started working correctly again.
 
 3. **Connection issues with vscode to MongoDB**
-- Despite my connection string to mongodb working perfectly on cloud9, and other students vscode machines. If I tried to connect to it from my machine I got the following error: 
+- Despite my connection string to MongoDB working perfectly on cloud9, and other students vscode machines. If I tried to connect to it from my machine I got the following error: 
 ```
 pymongo.errors.ConfigurationError: The DNS response does not contain an answer to the question: _mongodb._tcp.<clustername>-qtxun.mongodb.net. IN SRV
 ```
 
 - multiple attempts to fix this involved: 
-- checking my mongodb password was correct (it was)
+- checking my MongoDB password was correct (it was)
 - logging my MONGO_URI connection string to the terminal to check it was coming through from the enviroment variable (it was)
 - giving the connection string to another student to try on his machine (it worked fine!)
-- Checking that I had installed dnspython in both my .venv and also globally
+- Checking that I had installed dnsPython in both my .venv and also globally
 - FIX: After a lengthy call with MongoDB customer service, the solution was to change the connection string from an SRV to the following which allowed me to connect. 
 ```
 mongodb://<username>:<password>@<clustername>-shard-00-00-qtxun.mongodb.net:27017,<clustername>-shard-00-01-qtxun.mongodb.net:27017,<clustername>-shard-00-02-qtxun.mongodb.net:27017/test?ssl=true&replicaSet=<clustername>-shard-0&authSource=admin&retryWrites=true&w=majority
@@ -134,9 +135,9 @@ mongodb://<username>:<password>@<clustername>-shard-00-00-qtxun.mongodb.net:2701
 
 - The explanation for why this happend from MongoDB customer service was as follows: 
 
-_The issue you encountered has to do with how your python driver or network is resolving the DNS records in relation to the SRV string._
+_The issue you encountered has to do with how your Python driver or network is resolving the DNS records in relation to the SRV string._
 
-_The root cause could be due to an older python version that is installed, a network environment restriction or an old pymongo version._
+_The root cause could be due to an older Python version that is installed, a network environment restriction or an old pymongo version._
 
 4. **Go back button js would not work**
 - On my custom "permission denied" page, the "Go Back" button was designed to return the user to whichever page they were previously on. 
@@ -146,8 +147,8 @@ _The root cause could be due to an older python version that is installed, a net
 - For my logged in users I used a session variable to store their username and used this to construct urls for parts of the site they could only access when logged in.
 - However I hit a problem when trying to provide the users with links to their account pages on login. 
 - The reason for this was although the `session['name']` variable was assigned on login, the user was not then immediately taken to a new page, so the session variable had not existed to create the links in the modal on the same page, that loaded once login was complete. 
-- To get around this problem I used javascript to construct the needed urls once login was complete, as the confirm login modal was launched. Using a variable returned during the fetch function. 
-```javascript
+- To get around this problem I used JavaScript to construct the needed urls once login was complete, as the confirm login modal was launched. Using a variable returned during the fetch function. 
+```JavaScript
 function openLoggedInModal(username) {
   let name = capFirst(username);
   $("#accountUrl").attr("href", `/editor/account/${username}`)
@@ -159,9 +160,9 @@ function openLoggedInModal(username) {
   ```
   
 6. **Carousel on home page not moving**
-- The reason for this bug was that I was looping through my activities to create my carousel, so every one of the slides had the class `.active` on them. When in order for the carousel to move this class has to be removed and applied using the bootstrap javascript. 
+- The reason for this bug was that I was looping through my activities to create my carousel, so every one of the slides had the class `.active` on them. When in order for the carousel to move this class has to be removed and applied using the bootstrap JavaScript. 
 - To get around this I wrote a function to remove all but the first `.active` class from my elements with `.carousel-item` on them.
-```javascript
+```JavaScript
 document.addEventListener("DOMContentLoaded", function() {
     let slides = $('.carousel-item').not(':first');
     slides.each(function() {
@@ -173,8 +174,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 7. **2nd carousel on home page refusing to display**
-- This bug took hours to track down as I originally blamed it on a cursor problem with mongoDB. Of course now I am writing my bug report with the one right above it I realise now how obvious it was!! The function above also removed the "active" class from all the slides on the second carousel. 
-- To fix this I adjusted my javascript function to be more specific to removing all but the first `.active` class from **each** one. 
+- This bug took hours to track down as I originally blamed it on a cursor problem with MongoDB. Of course now I am writing my bug report with the one right above it I realise now how obvious it was!! The function above also removed the "active" class from all the slides on the second carousel. 
+- To fix this I adjusted my JavaScript function to be more specific to removing all but the first `.active` class from **each** one. 
 
 8. **Pagination on click events not firing**
 - A simple jQuery on-click event on my pagination links refused to fire. 
@@ -197,7 +198,7 @@ document.addEventListener("DOMContentLoaded", function() {
 ![](https://i.ibb.co/DWcpBpK/Clipboard01.jpg)
 
 - Several hours of debugging led to a solution by changing the navbar position property to absolute, and adding margin above the rest of my content to push it down under the navbar. 
-- With this fix the content is not being pushed down when the navbar icon is clicked, I may add some javascript to change this later. 
+- With this fix the content is not being pushed down when the navbar icon is clicked, I may add some JavaScript to change this later. 
 ```css
 .navbar {
     position: absolute;
@@ -217,14 +218,3 @@ document.addEventListener("DOMContentLoaded", function() {
 ## Further testing: 
 1. Asked fellow students, friends and family to look at the site on their devices and report any issues they found.
 2. FamilyHub viewed on all devices and orientations available in Chrome DevTools, as well at a local tech store.
-
-### A note to my fellow Code Institute students
-
-I am happy that you have come to look at my testing.md file as an example 
-of how to write a good one for your second Milestone project. 
-You are welcome to learn how to structure and format your own testing.md from mine.
-
-However, it is not ok to copy and paste large portions of it into your own project. 
-Please remember to write your own, rather than copying mine or someone elses.
-
-Many thanks! Anna

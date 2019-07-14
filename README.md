@@ -298,7 +298,7 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
 
 - [Account and login pages flowchart](https://i.ibb.co/x1wxDsZ/flowchart.jpg). 
 
-This flowchart was created using [draw.io](https://www.draw.io) to plan and explain the flow of behavior between the user, javascript, data and the modal messages the user sees based on their interactions.
+This flowchart was created using [draw.io](https://www.draw.io) to plan and explain the flow of behavior between the user, JavaScript, data and the modal messages the user sees based on their interactions.
 
 ### PDF
 
@@ -467,9 +467,9 @@ Each listing page for an entry in the database displays that information in clea
 
 - The create account page features a simple form, where the user can input an account name, email address and password. The form was kept deliberately simple so that signup has minimum barriers. 
 
-- Once the form is complete the data is sent to the backend using javascript `fetch()` and then a request is made to MongoDB to check if the user name or email address already exists in the the database.
+- Once the form is complete the data is sent to the backend using JavaScript `fetch()` and then a request is made to MongoDB to check if the user name or email address already exists in the the database.
 
-- If it does then a response is returned to javascript so that a response can be given to the user via modal. 
+- If it does then a response is returned to JavaScript so that a response can be given to the user via modal. 
 
 - If the user does not already exist in the database then the account is created, and a modal informing the user of successful creation of their account appears. In the modal a button link to the log in page is provided.
 
@@ -806,7 +806,7 @@ Suitable for groups | groups | checkbox | boolean
 
 - The users `username` is added to each activity database entry automatically to match the user who created it. This links the two database collections together.
 
-- The `shortDescription` in the database is generated using python, taking the first 100 characters from the description provided by the user. This short description is displayed on the activity cards on the home page and search results.
+- The `shortDescription` in the database is generated using Python, taking the first 100 characters from the description provided by the user. This short description is displayed on the activity cards on the home page and search results.
 
 [Example JSON from the activities collection](familyhubapp\data\schemas\activities.json)
 
@@ -821,7 +821,7 @@ Suitable for groups | groups | checkbox | boolean
 - [Imgbb](https://imgbb.com) to store all external images for this project.
 - [Jasmine](https://jasmine.github.io/) to run automated tests on JavaScript and jQuery code.
 - [Jasmine-jQuery](https://github.com/velesin/jasmine-jquery) to make it possible to test jQuery code using Jasmine.
-- [PyMongo](https://api.mongodb.com/python/current/) to make communication between python and mongoDB possible.
+- [PyMongo](https://api.mongodb.com/python/current/) to make communication between Python and MongoDB possible.
 - [Flask](https://flask.palletsprojects.com/en/1.0.x/) to construct and render pages.
 - [Jinja](http://jinja.pocoo.org/docs/2.10/) to simplify displaying data from the backend of this project smoothly and effectively in html.
 - [PIP](https://pip.pypa.io/en/stable/installing/) for installation of tools needed in this project.
@@ -896,11 +896,11 @@ git clone https://github.com/AJGreaves/familyhub
 
 2. If possible open a terminal session in the unzip folder or cd to the correct location.
 
-3. A virtual environment is recommended for the python interpreter, I recommend using pythons built in virtual environment. Enter the command:
+3. A virtual environment is recommended for the Python interpreter, I recommend using Pythons built in virtual environment. Enter the command:
 ```
 python -m .venv venv
 ```  
-_NOTE: Your python command may differ, such as python3 or py_
+_NOTE: Your Python command may differ, such as python3 or py_
 
 4. Activate the .venv with the command:
 ```
@@ -979,9 +979,9 @@ python app.py
 
 - Code for animated side-nav taken from this [w3schools.com](https://www.w3schools.com/howto/howto_js_sidenav.asp) post.
 
-- Code to generate slug-friendly-urls in python taken from this [Flask](http://flask.pocoo.org/snippets/5/) post
+- Code to generate slug-friendly-urls in Python taken from this [Flask](http://flask.pocoo.org/snippets/5/) post
 
-- Code to generate slug-friendly-urls in javascript was taken from this [medium.com](https://medium.com/@mhagemann/the-ultimate-way-to-slugify-a-url-string-in-javascript-b8e4a0d849e1) post.
+- Code to generate slug-friendly-urls in JavaScript was taken from this [medium.com](https://medium.com/@mhagemann/the-ultimate-way-to-slugify-a-url-string-in-javascript-b8e4a0d849e1) post.
 
 ## Acknowledgements
 
