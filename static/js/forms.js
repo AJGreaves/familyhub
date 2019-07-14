@@ -66,16 +66,16 @@ $(document).ready(function () {
 
     function userExistsModal(emailExists, userExists) {
         if (emailExists && userExists) {
-            $('#alertHeading').text('Hello again');
-            $('#alertMessage').text('This account is already registered to Family Hub');
+            $('#userExistsAlertHeading').text('Hello again');
+            $('#userExistsAlertMessage').text('This account is already registered to Family Hub');
             $('#logInBtn').removeClass('d-none');
         } else if (emailExists) {
-            $('#alertHeading').text('Hello again');
-            $('#alertMessage').text('This email is already registered to Family Hub');
+            $('#userExistsAlertHeading').text('Hello again');
+            $('#userExistsAlertMessage').text('This email is already registered to Family Hub');
             $('#logInBtn').removeClass('d-none');
         } else if (userExists) {
-            $('#alertHeading').text('Sorry');
-            $('#alertMessage').text('This username is already in use, please choose another');
+            $('#userExistsAlertHeading').text('Sorry');
+            $('#userExistsAlertMessage').text('This username is already in use, please choose another');
             $('#logInBtn').addClass('d-none');
         }
         $('#userExistsModal').toggleClass('active');
