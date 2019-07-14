@@ -692,6 +692,9 @@ Name | username | text, `maxlength="40"` | string
 Email Address | email | email, `maxlength="40"` | string
 Password | password | text, `maxlength="15"` | string
 
+[Example JSON from the users collection](familyhubapp\data\schemas\users.json)
+
+
 #### Activities Collection
 
 | Title | Key in db | form validation type | Data type |
@@ -792,41 +795,31 @@ Suitable for groups | groups | checkbox | boolean
 
 - The `shortDescription` in the database is generated using python, taking the first 100 characters from the description provided by the user. This short description is displayed on the activity cards on the home page and search results.
 
+[Example JSON from the activities collection](familyhubapp\data\schemas\activities.json)
+
+
 # Technologies Used
 
-- [Visual Studio Code](https://code.visualstudio.com/) 
-    - Visual Studio Code is the IDE used for developing this project. 
-- [JQuery](https://jquery.com)
-    - The project uses JQuery to simplify DOM manipulation.
-- [Bootstrap](https://www.bootstrapcdn.com/)
-    - The project uses Bootstrap to simplify the structure of the website and make the website responsive easily.
-    - The project also uses Bootstrap to provide icons from [FontAwesome](https://www.bootstrapcdn.com/fontawesome/)
-- [Google Fonts](https://fonts.google.com/)
-    - The project uses Google fonts to style the website fonts.
-- [Imgbb](https://imgbb.com)
-    - All external images for this project are stored on Imgbb.com.
-- [Jasmine](https://jasmine.github.io/)
-    - This project used Jasmine to run automated tests all JavaScript and jQuery code.
-- [Jasmine-jQuery](https://github.com/velesin/jasmine-jquery)
-    - This project used Jasmine-jQuery CDN to make it possible to test jQuery code using Jasmine.
-- [PyMongo](https://api.mongodb.com/python/current/)
-    - The PyMongo API is used to make communication between python and mongoDB possible.
-- [Flask](https://flask.palletsprojects.com/en/1.0.x/)
-    - Flask is used in this project to construct and render pages.
-- [Jinja](http://jinja.pocoo.org/docs/2.10/)
-    - Jinja is used simplify displaying data from the backend of this project smoothly and effectively in html.
-- [GitHub](https://github.com/)
-    - This project uses GitHub to store and share all project code remotely. 
-- [Photoshop](www.adobe.com/Photoshop)
-    - This project used tools in Photoshop to edit, crop and save images as well as ulitizing the colour picker to ensure color consistency over the entire project.
-- [Browserstack](https://www.browserstack.com/)
-    - The project used Browserstack to test functionality on all browsers and devices.
-- [Gijgo](https://gijgo.com/)
-    - Gijgo is used to provide bootstrap styled date and time pickers.
-- [Am I Responsive](http://ami.responsivedesign.is/)
-    - Was used to create the images in this readme file of each page displayed on different screen sizes.
-- [EZgif](https://ezgif.com/video-to-gif)
-    - EZgif provided gif editing software for the gif in this readme file. 
+- [Visual Studio Code](https://code.visualstudio.com/) is the IDE used for developing this project. 
+- [JQuery](https://jquery.com) to simplify DOM manipulation.
+- [Bootstrap](https://www.bootstrapcdn.com/) to simplify the structure of the website and make the website responsive easily.
+- [FontAwesome](https://www.bootstrapcdn.com/fontawesome/) to provide icons for Family Hub.
+- [Google Fonts](https://fonts.google.com/) to style the website fonts.
+- [Imgbb](https://imgbb.com) to store all external images for this project.
+- [Jasmine](https://jasmine.github.io/) to run automated tests on JavaScript and jQuery code.
+- [Jasmine-jQuery](https://github.com/velesin/jasmine-jquery) to make it possible to test jQuery code using Jasmine.
+- [PyMongo](https://api.mongodb.com/python/current/) to make communication between python and mongoDB possible.
+- [Flask](https://flask.palletsprojects.com/en/1.0.x/) to construct and render pages.
+- [Jinja](http://jinja.pocoo.org/docs/2.10/) to simplify displaying data from the backend of this project smoothly and effectively in html.
+- [PIP](https://pip.pypa.io/en/stable/installing/) for installation of tools needed in this project.
+- [Git](https://gist.github.com/derhuerst/1b15ff4652a867391f03) to handle version control.
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) is the database for this project
+- [GitHub](https://github.com/) to store and share all project code remotely. 
+- [Photoshop](www.adobe.com/Photoshop) to edit, crop and save images as well as ulitizing the colour picker to ensure color consistency over the entire project.
+- [Browserstack](https://www.browserstack.com/) to test functionality on all browsers and devices.
+- [Gijgo](https://gijgo.com/) provided bootstrap styled date and time pickers.
+- [Am I Responsive](http://ami.responsivedesign.is/) to create the images in this readme file of each page displayed on different screen sizes.
+- [EZgif](https://ezgif.com/video-to-gif) provided gif editing software for the gif in this readme file. 
 - This project uses HTML, CSS, JavaScript and Python programming languages.
 
 # Testing 
@@ -871,19 +864,57 @@ SECRET_KEY | `<not_my_actual_secret_key>`
 
 ## How to run this project locally
 
-To clone this project from GitHub:
-1. Follow this link to the [FamilyHub GitHub repository](https://github.com/AJGreaves/familyhub).
-2. Under the repository name, click "Clone or download".
-3. In the Clone with HTTPs section, copy the clone URL for the repository. 
-4. In your local IDE open Git Bash.
-5. Change the current working directory to the location where you want the cloned directory to be made.
-6. Type ```git clone```, and then paste the URL you copied in Step 3.
-```console
-git clone https://github.com/USERNAME/REPOSITORY
-```
-7. Press Enter. Your local clone will be created.
+To run this project on your own IDE follow the instructions below:
 
-Further reading and troubleshooting on cloning a repository from GitHub [here](https://help.github.com/en/articles/cloning-a-repository).
+Ensure you have the following tools: 
+- An IDE such as [Visual Studio Code](https://code.visualstudio.com/)
+
+The following must be installed on your machine:
+- [PIP](https://pip.pypa.io/en/stable/installing/) installed on your machine.
+- [Python 3](https://www.python.org/downloads/) installed on your machine.
+- [Git](https://gist.github.com/derhuerst/1b15ff4652a867391f03) installed on your machine.
+- An account at [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) or MongoDB running locally on your machine.
+
+### Instructions
+1. Save a copy of the github repository located at https://github.com/AJGreaves/familyhub by clicking the "download zip" button at the top of the page and extracting the zip file to your chosen folder. If you have Git installed on your system, you can clone the repository with the following command.
+```
+git clone https://github.com/AJGreaves/familyhub
+```
+
+2. If possible open a terminal session in the unzip folder or cd to the correct location.
+
+3. A virtual environment is recommended for the python interpreter, I recommend using pythons built in virtual environment. Enter the command:
+```
+python -m .venv venv
+```  
+_NOTE: Your python command may differ, such as python3 or py_
+
+4. Activate the .venv with the command:
+```
+.venv\Scripts\activate 
+```
+_Again this may differ depending on your operating system, please check the [Python Documentation on virtual environments](https://docs.python.org/3/library/venv.html) for further instructions._
+
+4. If needed, Upgrade pip locally with
+```
+pip install --upgrade pip.
+```
+
+5. Install all required modules with the command 
+```
+pip -r requirements.txt.
+```
+
+6. In your local IDE create a file called `.flaskenv`.
+
+7. Inside the .flaskenv file, create a SECRET_KEY variable and a MONGO_URI to link to your own database. Please make sure to call your database `familyHub`, with 2 collections called `users` and `activities`. You will find example json structures for these collections in the [schemas](familyhubapp/data/schemas) folder.
+
+8. You can now run the application with the command
+```
+python app.py
+```
+
+9. You can visit the website at `http://127.0.0.1:5000`
 
 # Credits
 
