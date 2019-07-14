@@ -988,7 +988,7 @@ python app.py
 Special thanks to my mentor Simen Daehlin for his never-ending patience and willingness to teach me not only what code works, but what is expected of my websites and code in industry.
 
 # Contact
-To contact me fee free to send me an email to
+To contact me feel free to email
 
  `gilhespy (dot) anna (at) gmail (dot) com`
 
