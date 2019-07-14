@@ -169,7 +169,7 @@ As a visitor to FamilyHub I expect/want/need:
 
 3. The ability to search through small amounts of information to find what I need, and then be able to easily click to get more detailed information when I need it.
 
-4. To filter the events and activities to find the entires that are best for the age(s) of my child(ren).
+4. To filter the events and activities to find the entries that are best for the age(s) of my child(ren).
 
 5. As a user who does not want to travel far for the activity I am looking for, I want to search for activities in my town.
 
@@ -187,7 +187,7 @@ As a visitor to FamilyHub I expect/want/need:
 
 12. As a parent searching for ideas for things for my child(ren) to do, I want to be able to filter activities by categories they are interested in. 
 
-13. As a regular user of the Family Hub website, I expect to be able to connect to their social media channels, to keep up to date with new entires on the site. 
+13. As a regular user of the Family Hub website, I expect to be able to connect to their social media channels, to keep up to date with new entries on the site. 
 
 14. As a user of Family Hub, I expect to be able to easily get in contact via a contact form.
 
@@ -412,7 +412,7 @@ function scrollFunction() {
     - Other details
 - (see [Features Left to Implement](#features-left-to-implement) for filters to be included in future releases)
 
-- As soon as the user clicks on one of these options JavaScrip sends a fetch request to pull the relevant data and display it for the user, without having to reload the page. 
+- As soon as the user clicks on one of these options JavaScript sends a fetch request to pull the relevant data and display it for the user, without having to reload the page. 
 
 - The user is also provided with a clear filters button if they wish to return to looking at all the available listings. 
 
@@ -447,11 +447,11 @@ Each listing page for an entry in the database displays that information in clea
 
 - On the listing page the **Address** has been linked to google maps so that the location of the event can be easily found with one click. 
 
-- The **social links** available for the activity page are Facebook, Instagram and Twitter. They appear on the listings page only when the business has provided links for the platform.
+- The **social links** available for the activity page are Facebook, Instagram and Twitter. They appear on the listing page only when the business has provided links for the platform.
 
 - A list of **categories** that the activity applies to are provided above the description. Icons have been added to make assimilating this information faster for the user.
 
-- The **more info** section includes a list of other important aspects that user might need to know or filter their searches by. Such as "Free entrance" "Catering available" or "Suitable for bad weather". These items hare also displayed with relevant icons.
+- The **more info** section includes a list of other important aspects that user might need to know or filter their searches by. Such as "Free entrance" "Catering available" or "Suitable for bad weather". These items are also displayed with relevant icons.
 
 - The activity **description** is displayed underneath all the other information, for the user who has already scanned all the relevant data and wants to know more. 
 
@@ -527,7 +527,7 @@ Each listing page for an entry in the database displays that information in clea
 <img src="https://i.ibb.co/t2S8cyr/addnew.jpg" alt="Family Hub add new listing page on all major screen sizes" >
 </div>
 
-- The **Add New Listing Page** is where the business owner users provides the data for the Family Hub activities database. 
+- The **Add New Listing Page** is where the business user provides the data for the Family Hub activities database. 
 
 - The form is broken into sections, and laid out on a clean white background
 
@@ -588,7 +588,7 @@ Each listing page for an entry in the database displays that information in clea
 
     - The input `type` attributes are set to `text`, `email`, `url` and `number` where appropriate. 
 
-    - A dropdown menu is provided so that the town inputs match others in the database, this avoids spelling mistakes and businesses from outside of the area tha Family Hub serves from entering their data into the site.
+    - A dropdown menu is provided so that the town inputs match others in the database, this avoids spelling mistakes and businesses from outside of the area that Family Hub serves from entering their data into the site.
 
     - Datepickers and Timepickers have been combined with `pointer-events: none` css on the actual input fields, to force the user to use the Date and Timepickers to input this data and give the program the information in the correct format.
 
@@ -606,7 +606,7 @@ Each listing page for an entry in the database displays that information in clea
 
     - A preview bar along the top reminds the user that they are in preview mode, and need to click the publish button at the bottom of the page in order to make the listing live on the Family Hub website. 
 
-    - At the bottom left of the page the "share this page" icons do not work, as we do not want the user to accidentally share the preview page. If these icons are clikced a modal pops up to inform the user of this and tell them they can share the page once the listing has been published. 
+    - At the bottom left of the page the "share this page" icons do not work, as we do not want the user to accidentally share the preview page. If these icons are clicked a modal pops up to inform the user of this and tell them they can share the page once the listing has been published. 
 
     - On the bottom right of the page, the "search more activities" button has been replaced with **Edit** and **Publish** buttons. 
 
