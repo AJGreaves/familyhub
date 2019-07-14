@@ -972,10 +972,12 @@ python app.py
 
 ## Acknowledgements
 
-Special thanks to: 
-- list items here
+Special thanks to my mentor Simen Daehlin for his never-ending patience and willingness to teach me not only what code works, but what is expected of my websites and code in industry.
 
 # Contact
+To contact me fee free to send me an email to
+
+ `gilhespy (dot) anna (at) gmail (dot) com`
 
 ## Disclaimer
 The content of this website is educational purposes only.
