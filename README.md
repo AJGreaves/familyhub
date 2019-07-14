@@ -614,7 +614,12 @@ Each listing page for an entry in the database displays that information in clea
 ### Contact Page
 
 - The Contact Page features an **email contact form**, which is wired up to my email address with [EmailJS](http://www.emailjs.com/). 
-- The contact page also features the contact information for Family Hub as displayed in the footer, with a link to google maps for the location. 
+
+- The contact page also features the contact information for Family Hub as displayed in the footer, with a link to google maps for the location.
+
+### Privacy and Cookies Policy Page
+
+- Features a dummy privacy and cookies policy (to be updated and checked for legality before the site is launched for real).
 
 ### 404 Page
 
@@ -623,6 +628,7 @@ Each listing page for an entry in the database displays that information in clea
 ### Permission Denied page
 
 - The custom permission denied page features a humorous surprise for the user who attempts to access pages you must be logged in to access, while being logged out. 
+
 - Two buttons on this page give the user a choice to either go to the **log in** page or **go back** one item in their browser history to whatever page they were on before this one.
 
 ## Features Left to Implement
