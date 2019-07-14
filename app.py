@@ -342,14 +342,13 @@ def new_activity_page(username):
         post_request = request.form.to_dict()
         published = False
         obj = process_activity_data(db, user, post_request, published)
-        title = slugify(post_request['title'])
 
         newActivity_id = db.activities.insert_one(obj).inserted_id
         
         return redirect(url_for(
             'preview_activity_page', 
             username=session['user'], 
-            title=title, 
+            title=post_request['title'], 
             headTitle="Preview Activity",
             preview=True,
             activity_id=newActivity_id, 
@@ -465,7 +464,7 @@ def edit_activity_page(username, title):
         """
         openTimes = Helpers.open_times(openTimes_db)
         published = activity['published']
-        headTitle = 'Edit | ' + title
+        headTitle = 'Edit | ' + activity['title']
 
         if request.method == 'POST':
             post_request = request.form.to_dict()

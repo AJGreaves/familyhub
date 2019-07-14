@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}" type="text/css">
     {% if active == 'contact' %}
     <!-- scripts for EmailJs to work with sending email contact form -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
     {% endif %}
     <title>{{headTitle}} | Family Hub</title>
 </head>
@@ -40,8 +40,9 @@
     {% include 'components/modals/delete_warning_modal.html' %}
 
     <!-- Alert modal -->
+    {% if active != "login" %}
     {% include 'components/modals/alert.html' %}
-
+    {% endif %}
     <!-- Contact business modal -->
     {% if activity %}
     {% include 'components/modals/email_activity.html' %}

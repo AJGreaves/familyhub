@@ -10,7 +10,7 @@
     - [Validation services](#validation-services)
     - [Jasmine](#jasmine)
     - [Python Testing](#python-testing)
-2. [Client Stories Testing](#client-stories-testing)
+2. [User Stories Testing](#user-stories-testing)
     - [Visitor Stories](#visitor-stories)
     - [Business Stories](#business-stories)
 3. [Manual Testing](#manual-testing)
@@ -54,7 +54,9 @@ To create jasmine tests:
 2. Write your own tests using the jasmine 3.1 framework.
 3. Save [familyhubSpec.js](assets/jasmine-testing/spec/familyhubSpec.js), and then run/refresh [jasmine-testing.html](assets/jasmine-testing/jasmine-testing.html).
 
-## Client stories testing
+## User Stories Testing
+
+### Visitor Stories
 
 The following section goes through each of the user stories from the UX section of [README.md](README.md)
 
@@ -63,6 +65,8 @@ The following section goes through each of the user stories from the UX section 
 1. **User story 1**
 
     - list items here
+
+### Business Stories
     
 ## Manual testing
 Below is a detailed account of all the manual testing that has been done to confirm all areas of the site work as expected. 
