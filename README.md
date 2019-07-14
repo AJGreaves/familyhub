@@ -25,7 +25,8 @@ As a British mother of two, who moved to The Netherlands in 2003, I know what a 
         - [Business Stories](#business-stories)
     - [Design Choices](#design-choices)
     - [Wireframes](#wireframes)
-    - [Flowcharts](#flowcharts)
+    - [Flowchart](#flowchart)
+    - [PDF](#pdf)
 
 2. [Features](#features)
     - [Existing Features](#existing-features)
@@ -293,11 +294,19 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
 - [Create or Edit Activity page](https://ibb.co/Wv349RB)
 - [Create or Edit Event page](https://ibb.co/sqj60xb)
 
-### Flowcharts 
+### Flowchart
 
 - [Account and login pages flowchart](https://i.ibb.co/x1wxDsZ/flowchart.jpg). 
 
 This flowchart was created using [draw.io](https://www.draw.io) to plan and explain the flow of behavior between the user, javascript, data and the modal messages the user sees based on their interactions.
+
+### PDF
+
+- [Family Hub development planes PDF](static\pdf\family-hub-development-planes.pdf)
+
+This document was created during the planning phase of this project, the final website has some slight differences from what was planned.  
+
+I included this document in the project to provide insight into the original planning and direction of the site during the planning stages.  
 
 # Features
  
