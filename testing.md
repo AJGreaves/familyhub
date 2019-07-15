@@ -56,21 +56,49 @@ The files for jasmine testing Family Hub can be found here:
     - [listings.js](static/js/listings.js)
     - [sendemail.js](static/js/sendemail.js)
 
-#### How to run jasmine tests
+#### How to run Jasmine tests
 
 Before going further please make sure you have already cloned this project from the [Family Hub GitHub repository](https://github.com/AJGreaves/familyhub) 
 by following the steps in the [README.md](readme.md#how-to-run-this-project-locally) under "How to run this project locally" and that you have the entire project running on your own IDE.
 
-To run the jasmine tests: 
+To run the Jasmine tests: 
 1. Open [jasmine-testing.html](testing/jasmine/jasmine-testing.html).
 2. Run the html file and view it in your browser to see the test results. 
 
-#### How to create jasmine tests
+#### How to create Jasmine tests
 
-To create jasmine tests: 
+To create Jasmine tests: 
 1. Open the [familyhubSpec.js](testing/jasmine/spec/familyHubSpec.js) file.
 2. Write your own tests using the jasmine 3.1 framework.
 3. Save [familyhubSpec.js](testing/jasmine/spec/familyHubSpec.js), and then run/refresh [jasmine-testing.html](testing/jasmine/jasmine-testing.html).
+
+### Python Testing
+
+- Testing for my python code was run in the [test_familyhubapp.py](testing/test_familyhubapp.py) file. 
+- Family Hub Python files tested
+    - [app.py](app.py)
+    - [helpers.py](familyhubapp/helpers.py)
+
+#### How to run Python tests
+
+Before going further please make sure you have already cloned this project from the [Family Hub GitHub repository](https://github.com/AJGreaves/familyhub) 
+by following the steps in the [README.md](readme.md#how-to-run-this-project-locally) under "How to run this project locally" and that you have the entire project running on your own IDE.
+
+To run the Python tests: 
+1. Open [test_familyhubapp.py](testing/test_familyhubapp.py).
+2. In the terminal `cd` to the correct `testing` directory then input the following command:
+```
+python test_familyhubapp.py
+``` 
+_NOTE: Your Python command may differ, such as python3 or py_ 
+
+3. If all tests pass the terminal will simply print out `All tests passed`
+
+### A note about TDD
+
+This project did not utilize Test Driven Development for Jasmine or Python while it is a student project. The reason for this was that I am still very new to both JavaScript and Python and found it impossible to write tests for languages I did not understand well. 
+
+The automated tests for this project were created after the vast majority of the project was already complete, once I had a firmer grasp of how my functions were working and what their expected output was. Now that I have a better understanding of how automated tests work, I intend to attempt TDD with my next project.
 
 ## User Stories Testing
 
@@ -78,11 +106,91 @@ To create jasmine tests:
 
 The following section goes through each of the user stories from the UX section of [README.md](README.md)
 
-**As a user I want**
+**As a visitor to FamilyHub I expect/want/need**
 
-1. **User story 1**
+1. *To easily find what I am looking for, I want the layout of the site to make sense so I am not confused or put off using it.*
 
-    - list items here
+    - The Family Hub navbar is laid out in the conventional way: 
+    
+        - Navbar is at the top of the screen.
+
+        - The logo on the far left of the navbar and links to the home page.
+
+        - The primary purpose of the site - the Activities page - is easily found in the navbar.
+
+        - create account, log in links or my account dropdown links are all provided in the navbar where the user would expect to find them.
+
+        - The navbar shows the user appropriate links depending on if they are logged in or out. 
+
+    - The footer is also laid out in a conventional way: 
+
+        - Contact information and links are provided in the footer.
+
+        - A brief introduction to the goals behind the site are featured.
+
+        - Popular links section.
+
+        - Social media links also provided in the footer where the user would expect to find them. 
+
+    - Everything on the site is clearly labeled, with the users journey through the site carefully considered and buttons/links provided where they would need them. 
+
+2. *The information I am presented with to be laid out in a way that is easy for me to navigate and digest, so that I find what I need quickly and efficiently.*
+
+    - On full listing pages, where all the data for the user is displayed: 
+
+        - The page is broken up into easy to understand sections, and the data displayed in a way that is most easy to digest. 
+
+        - Tables and icons are used where applicable, which all aid in easily accessible and digestible information for the user.
+
+3. *The ability to search through small amounts of information to find what I need, and then be able to easily click to get more detailed information when I need it.*
+
+    - On search pages where multiple activities are displayed, only the most important information is provided on cards, in bite size amounts. Clear links on these cards lead the user to more information should they wish to see it. 
+
+4. *To filter the events and activities to find the entries that are best for the age(s) of my child(ren).*
+
+    - The filter navbar on the activities page provides multiple ways to filter results from the activities database collection.
+
+5. *As a user who does not want to travel far for the activity I am looking for, I want to search for activities in my town.*
+
+    - A dropdown menu allows user to filter results by town.'
+
+6. *The site to provide easy access to the contact information, phone number, email, website, social media links, and a google map link for an activity or event I am interested in attending.*
+
+    - All of these are provided in the listing page of each activity.
+
+7. *As a user on a budget, I want to be able to filter results by free entry. I also want to know at which events I am allowed to bring my own food to.*
+    - The Activities page provides: 
+
+        - a filter for all database entries that have free entry.
+
+        - A filter for all database entries that allow people to bring their own food.
+
+8. *As a user searching for things to do on a rainy day, I want to be able to filter results for ones suitable for poor weather.*
+    - The Activities page provides a filter for all database entries that are suitable for poor weather.
+
+9. *As a parent planning a birthday party, I am looking for ideas on places to hold it. I want to be able to filter results by those that run birthday parties.*
+    - The Activities page provides a filter for all database entries that host birthday parties.
+
+10. *As a parent looking for something to do on a certain day of the week, I want to be able to filter results for which days of the week they are open.*
+    - The Activities page provides filters to search for activities open on a certain day of the week, on a weekday or at the weekend.
+
+11. *As a user accessing this site from a mobile phone or tablet, I want the site to have been designed responsively so that it is still easy to navigate and use on my smaller devices. *
+    - Family Hub was carefully planned and designed to be responsive and work well on mobile, tablet and desktop devices. 
+
+12. *As a parent searching for ideas for things for my child(ren) to do, I want to be able to filter activities by categories they are interested in.* 
+    - The Activities page provides a dropdown menu to choose from a range of categories and interests.
+
+13. *As a regular user of the Family Hub website, I expect to be able to connect to their social media channels, to keep up to date with new entries on the site.* 
+    - Social media links are provided on the footer of every page.
+
+14. *As a user of Family Hub, I expect to be able to easily get in contact via a contact form.*
+    - An email contact form can be found on the contact page, a link to which is in the navbar and footer on every page.
+
+15. *As a user I expect feedback from the website I am using when I interact with it, I expect loading spinners when pages are taking a while to load, I expect pop ups and modals to inform me when my forms have been completed and sent correctly.*
+
+    - Loading spinner runs on each page as it is loading, and also shows when the database is being accessed via `fetch` to display data on the screen.
+
+    - Information modals are provided for every step of the site that they are needed on, which give the user feedback for correct and incorrect input or if there is an unexpected error. 
 
 ### Business Stories
     
