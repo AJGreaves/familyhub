@@ -394,7 +394,7 @@ Credit: https://stackoverflow.com/questions/17332431/how-can-i-control-the-speed
 .modal-content-box {
   max-width: 550px;
   min-height: 300px;
-  margin-top: 30vh;
+  margin-top: 10vh;
   padding-right: 1.5rem;
   padding-left: 1.5rem;
   background-color: white;
@@ -1264,6 +1264,9 @@ input.no-click {
   }
   .filters-shrink {
     margin-left: 275px;
+  }
+  .modal-content-box {
+    margin-top: 30vh;
   }
 }
 
