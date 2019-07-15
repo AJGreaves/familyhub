@@ -459,6 +459,86 @@ All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Exp
 
 - Click the confirm delete button, confirm that the selected listing is deleted from the database.
 
+#### Add new listing page
+
+- Open add new listing page, confirm it is laid out the way expected.
+
+- Try to preview a page with no input filled in, confirm that the browser alerts the user to all the input fields that are required. 
+
+- Try to enter a long string into the title input field, confirm that I cannot enter more than 50 characters in this field.
+
+- Try to enter a long sting into the address line 1 field, confirm that I cannot enter more than 50 characters in this field.
+
+- Try to enter a long non-postcode string into the postcode input field, confirm that I am limited to 7 characters in this field.
+
+- Try to enter a string of letters in the phone number field, confirm that the form alerts me to enter a number.
+
+- Try to enter a non-email address string into the email address input field, confirm that the form alerts me to enter a valid email.
+
+- Try to enter a non-url string into all the url fields (website, facebook, twitter, instagram, listing image), confirm that the form alerts me to input valid urls.
+
+- In the dates and times section confirm that the time fields are deactivated and cannot be clicked. 
+
+- Click a switch for a day, confirm that the fields for this days start and end times become active. 
+
+- Try to send the form with a day selected but no corresponding start and end times, confirm that the form responds by telling me to fill out these fields. 
+
+- Confirm that though the fields are active, I cannot input times manually and must use the time pickers provided. 
+
+- Enter a finish time that is before the start time, confirm that an alert modal is launched to tell me about my error, and that the end time field value is removed. 
+
+- Enter a finish time that is the same as the start time, confirm that an alert modal is launched to tell me about my error, and that the end time field value is removed. 
+
+- In the dates section, input a finish date that is before the start date, confirm that an alert modal is launched to tell me about my error, and that the end date field value is removed.
+
+- Click the "ongoing" switch underneath the start and end dates fields, confirm that doing so deactivates these fields and removes any values within them. 
+
+- Click the ongoing switch again to confirm this reactivates the start and end date fields.
+
+- Confirm that the form will not send without at least one checkbox from the category, age range and indoor/outdoor have been selected. 
+
+- Click the link to ImgBB, confirm it takes the user to the image loading site in a new browser tab. 
+
+- Paste a massive amount of text in the description field, confirm that the number or characters is limited to 2000
+
+- Attempt to reload the page page before completing the form, confirm that an alert message is launched warning the user that leaving the page will mean their data is not saved.
+
+- Attempt to go to another page before completing the form, confirm the same alert is launched.
+
+- Enter correct data for a listing, confirm that the preview button takes the user to the preview listing page. 
+
+#### Preview listing page
+
+- Open the preview listing page, confirm that the preview bar is visible warning the user that they are in preview mode and their listing is not published yet. 
+
+- Confirm that all the data input that is displayed on the listing page as it should be. 
+
+- Click the "share page" buttons, confirm that the modal informing the user that they cannot share a preview page works as expected. 
+
+- Click the edit button, confirm this takes the user to the edit listing page. 
+
+- Click the publish button, confirm this takes the user to the new listing page for this activity, and that the "new listing has been published" message is visible at the top of this new page. 
+
+- Go to the activities page and confirm that this new listing is now visible in the results, and that the filters relevant to it work as expected.
+
+#### Edit listing Page
+
+- Open the edit listing page to edit an existing listing, confirm that all the data is displayed as expected in the input, select, checkbox and textarea fields.
+
+- Remove input from a required field, then try to preview the listing, confirm that the form tells me I have an empty required field.
+
+- Make changes to the listing, click preview, confirm that these changes can be seen in the preview page. Click publish, confirm that these changes are also seen on the activities page listings. 
+
+- Attempt to go to another page after making changes to the for but before clicking the publish button, confirm the alert message is launched warning the user that leaving the page will mean their data is not saved.
+
+#### Contact Page
+
+#### Privacy and Cookies Policy Page
+
+#### 404 Page
+
+#### Permission Denied page
+
 ### Testing undertaken on tablet and phone devices
 All steps below were repeated to test mobile specific elements on the developers 2 Samsung phones and tablet. 
 And also in the Chrome Developer Tools device simulators on all options and orientations.
