@@ -25,9 +25,13 @@
 
 ### Validation services
 The following validation services and linter were used to check the validity of the website code.
+
 - [W3C Markup Validation]( https://validator.w3.org/) was used to validate HTML.
-    - On the pages that use [Gijgo](https://gijgo.com/) date and time pickers, the W3c validator throws many errors to do with the html code that is inserted by Gijo.js. I have double-checked that I am using the most up to date version of Gijgo. These errors are due to code I have not written myself, and that is added when the page is rendered via the Gijgo JavaScript file. 
+
+    - **Important note** On the pages that use [Gijgo](https://gijgo.com/) date and time pickers (Add New Listing Page and Edit Listing Page), the W3c validator throws many errors to do with the html code that is inserted by Gijo.js. I have double-checked that I am using the most up to date version of Gijgo. These errors are due to code I have not written myself, and that is added when the page is rendered via the Gijgo JavaScript file. 
+
 - [W3C CSS validation](https://jigsaw.w3.org/css-validator/) was used to validate CSS.
+
 - [JSHint](https://jshint.com/) was used to validate JavaScript.
 
 ### Jasmine
