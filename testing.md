@@ -568,14 +568,68 @@ All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Exp
 - Click the log in button, confirm this takes the user to the login page. 
 - Click the Go Back button, confirm this takes the user back one step in their browser history.
 
-### Testing undertaken on tablet and phone devices
-All steps below were repeated to test mobile specific elements on the developers 2 Samsung phones and tablet. 
-And also in the Chrome Developer Tools device simulators on all options and orientations.
+---
 
-### Elements on every page
+### Testing undertaken on tablet and phone devices
+All steps below were repeated to test mobile specific elements on my Samsung phone and tablet, in both the firefox browser and samsung internet browser.
+
+Responsive design waw also tested in the Chrome Developer Tools device simulators on all options and orientations.
+
+#### Elements on every page
 
 1. Navbar 
-    - List items here
+
+
+2. Footer
+
+
+3. Loading Spinner
+
+
+4. Floating to-top button
+
+#### Home Page
+
+1. Hero Image
+
+2. Event Cards
+    
+3. Carousels
+
+4. Top Tip Feature box
+
+5. Search More buttons
+
+#### Activities Page
+
+1. Filters
+
+3. Pagination
+
+#### Listing Page
+
+#### Create Account Page
+
+#### Log out feature
+
+#### Account settings page
+
+#### Account page
+
+#### Add new listing page
+
+#### Preview listing page
+
+#### Edit listing Page
+
+#### Contact Page
+
+#### Privacy and Cookies Policy Page
+
+#### 404 Page
+
+#### Permission Denied page
+
 
 
 ### Bugs discovered: 
