@@ -34,30 +34,43 @@ The following validation services and linter were used to check the validity of 
 
 - [JSHint](https://jshint.com/) was used to validate JavaScript.
 
+    - To save on loading times and to keep my JavaScript code organized I chose to break up the JS into several separate files. 
+    - When running JSHint, the errors `undefined variable` and `unused variable` appear when one file either creates or uses a function that is utilized or created in another file. As validates one JS file at a time, it is not aware of the other files. 
+    - To double-check that no errors occur with the entire files loaded I pasted in all the JavaScript code into JSHint and then it ran with no errors. 
+
+- [Python extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python) was used to validate Python.
+
 ### Jasmine
 
-[Jasmine-Jquery CDN](https://github.com/velesin/jasmine-jquery) has been imported into the jasmine testing to allow for jQuery within the JavaScript functions.
+- [Jasmine-Jquery CDN](https://github.com/velesin/jasmine-jquery) has been imported into the jasmine testing to allow for jQuery within the JavaScript functions.
 
 The files for jasmine testing Family Hub can be found here:
-- HTML page to run jasmine tests from: [jasmine-testing.html](assets/jasmine-testing/jasmine-testing.html)
-- JavaScript specifications (tests): [familyhubSpec.js](assets/jasmine-testing/spec/familyhubSpec.js)
-- Family Hub JavaScript functions to be tested: [familyhub.js](assets/js/familyhub.js)
+- HTML page to run jasmine tests from: [jasmine-testing.html](testing/jasmine/jasmine-testing.html)
+- JavaScript specifications (tests): [familyhubSpec.js](testing/jasmine/spec/familyHubSpec.js)
+- Family Hub JavaScript functions to be tested are in the [js directory](static/js)
+    - [common.js](static/js/common.js)
+    - [date-time-pickers.js](static/js/date-time-pickers.js)
+    - [filters.js](static/js/filters.js)
+    - [forms.js](static/js/forms.js)
+    - [index.js](static/js/index.js)
+    - [listings.js](static/js/listings.js)
+    - [sendemail.js](static/js/sendemail.js)
 
 #### How to run jasmine tests
 
-Before going further please make sure you have already cloned this project from the [PicFlip GitHub repository](https://github.com/AJGreaves/familyhub) 
-by following the steps in the [README.md](readme.md) under "How to run this project locally" and that you have the entire project running on your own IDE.
+Before going further please make sure you have already cloned this project from the [Family Hub GitHub repository](https://github.com/AJGreaves/familyhub) 
+by following the steps in the [README.md](readme.md#how-to-run-this-project-locally) under "How to run this project locally" and that you have the entire project running on your own IDE.
 
 To run the jasmine tests: 
-1. Open the [jasmine-testing.html](assets/jasmine-testing/jasmine-testing.html).
+1. Open [jasmine-testing.html](testing/jasmine/jasmine-testing.html).
 2. Run the html file and view it in your browser to see the test results. 
 
 #### How to create jasmine tests
 
 To create jasmine tests: 
-1. Open the [familyhubSpec.js](assets/jasmine-testing/spec/familyhubSpec.js) file.
+1. Open the [familyhubSpec.js](testing/jasmine/spec/familyHubSpec.js) file.
 2. Write your own tests using the jasmine 3.1 framework.
-3. Save [familyhubSpec.js](assets/jasmine-testing/spec/familyhubSpec.js), and then run/refresh [jasmine-testing.html](assets/jasmine-testing/jasmine-testing.html).
+3. Save [familyhubSpec.js](testing/jasmine/spec/familyHubSpec.js), and then run/refresh [jasmine-testing.html](testing/jasmine/jasmine-testing.html).
 
 ## User Stories Testing
 
