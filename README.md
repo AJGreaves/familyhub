@@ -208,6 +208,10 @@ As a Business advertising on FamilyHub I expect/want/need:
 
 6. Forms for inputting my data to make the process easy, that there is no wasting my time or making the process difficult or slow. 
 
+7. My data is not accessible by anyone but myself and the Family Hub administrators.
+
+8. Protections have been put in place to prevent me from accidentally deleting an activity listing.
+
 ## Design Choices
 
 The Family Hub website has an overall family friendly feel, with emphasis on providing complex information in a bite size, learnable format. The following design choices were made with this in mind:
