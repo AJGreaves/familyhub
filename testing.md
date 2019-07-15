@@ -262,7 +262,7 @@ All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Exp
     - Open any page and confirm that the **loading spinner** displays for 2 seconds as the page content is loaded.
     - Confirm the spinner animates as expected.
 
-4. Floating to top button
+4. Floating to-top button
     - Confirm that the **to-top button** is not visible when user is at the top of the page. 
     - Scroll the page down, confirm that the button is gently animated opacity increases.
     - Confirm that as the user scrolls the button remains in the same place on the screen. 
@@ -272,9 +272,32 @@ All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Exp
 #### Home Page
 
 1. Hero Image
+    - Confirm that hero image loads at a reasonable speed, and that the image is sharp and clear. 
+    - Confirm the heading for the page is easy to read.
+
 2. Event Cards
+    - View the event cards and confirm that they are all the same size.
+    - Confirm the card images are loading. 
+    - Confirm that the town they are based in is overlaid at the bottom right of the image.
+    - Confirm the activity title is correct and displaying correctly.
+    - Confirm the shadow effect on the card increases when the card is hovered over. 
+    - Click in various places on the cards, confirm that the entire card is clickable to take the user to the listing page. 
+    - Confirm that the link to the activities full listing page takes the user to the correct page.
+    
 3. Carousels
+    - View the carousels and confirm that they slide a comfortable speed and interval. 
+    - Hover over a carousel card, confirm that the carousel stops moving while hovered. 
+    - Move mouse away from carousel, confirm that carousel starts moving again.
+    - Click the carousel slide indicators below the carousels, confirm that the carousels move to match the slide selected.
+    - Reload the page and confirm that the cards displayed have been randomized, and that that other listings are being shown that were not before.
+
 4. Top Tip Feature box
+    - View the Top Tip Feature box, confirm that it displays the featured activity title and first 2 paragraphs of its description correctly.
+    - Hover over the box, confirm that the box-shadow hover effect increases when the box is hovered over.
+    - Click the Read More link confirm it takes the user to the listing for this activity.
+
+5. Search More buttons
+    - Click each of the "Search More" buttons on the home page, confirm that they all take the user to the activities page.
 
 
 ### Testing undertaken on tablet and phone devices
