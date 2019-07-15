@@ -709,7 +709,7 @@ Name | username | text, `maxlength="40"` | string
 Email Address | email | email, `maxlength="40"` | string
 Password | password | text, `maxlength="15"` | string
 
-[Example JSON from the users collection](familyhubapp\data\schemas\users.json)
+[Example JSON from the users collection](familyhubapp/data/schemas/users.json)
 
 
 #### Activities Collection
@@ -812,7 +812,7 @@ Suitable for groups | groups | checkbox | boolean
 
 - The `shortDescription` in the database is generated using Python, taking the first 100 characters from the description provided by the user. This short description is displayed on the activity cards on the home page and search results.
 
-[Example JSON from the activities collection](familyhubapp\data\schemas\activities.json)
+[Example JSON from the activities collection](familyhubapp/data/schemas/activities.json)
 
 
 # Technologies Used
