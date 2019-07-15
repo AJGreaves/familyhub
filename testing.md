@@ -387,9 +387,46 @@ All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Exp
 
 #### Create Account Page
 
+- Go to create account page, confirm the the form is displayed correctly. 
+
+- Try to create a new account that already exists (same email and username), confirm that the *alert modal* is launched informing the user that this **account already exists**, with a button to log in provided in it.
+
+- Try to create a new account with a new email address but a username that already exists in the database, confirm that the alert modal informing the user that this **username is already in use**. 
+
+- Try to create a new account with a new username but a email address that already exists in the database, confirm that the alert modal informing the user that this **email is already registered** with Family Hub pops up.
+
+- Create a new account with new username and email address, confirm that the **account conformation modal** is launched with a log in button provided. 
+
+- Click the log in button, confirm that it takes the user to the log in page.
+
 #### log In Page
 
+- Go to the log in page, confirm that the login form is displayed correctly.
+
+- Try to log in with a username that do not exist in the database, confirm that the alert modal is launched to inform the user that **no account with this username or email address** is registered to FamilyHub.
+
+- Repeat above with incorrect email address, confirm same reaction.
+
+- Try to log in with an existing username but incorrect password, confirm that the alert modal is launched with a message informing the user of **incorrect password** input.
+
+- Try to **log in** using correct **username and password**, confirm that this is successful. 
+
+- Log out, then try to log in using correct **email and password**, confirm that this is successful. 
+
+- Log out, then log in with correct details, confirm that the logged in conformation modal is launched, click both buttons provided on the modal to check that its **links** to the users account page and to create a new listing work as expected.
+
+#### Log out feature
+
+- When logged in, click the log out link, confirm that the user is no longer logged in by checking that no session data can be seen in developer tools. 
+
 #### Account settings page
+
+- Go to the settings page for the account I am logged in as, confirm that the forms on this page are displaying correcly. 
+- Try to change the email address by inputting an incorrect email into the Current Email input form, Confirm that the error modal is launched with a message "Current email is incorrect."
+- Try to change the email address by inputting the same email into both fields, Confirm that the error modal is launched with a message "These emails are the same."
+- Change the email address registered by inputting the correct old email and a new ones. Confirm that the success alert modal is launched to inform the user that the email has been successfully changed. 
+- Log out and back in with the new email address to confirm that it works. 
+- Repeat the steps above to check that the Change password form works in the same way.
 
 #### Account page
 
