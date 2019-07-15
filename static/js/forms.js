@@ -349,15 +349,15 @@ $(document).ready(function () {
 
     function compareDates() {
         let dates = [];
-        input = $('.compare-date-js');
+        let input = $('.compare-date-js');
 
         input.each(function () {
             let date = $(this).val();
             dates.push(date);
         });
 
-        first = dates[0].split('/').map(Number);
-        second = dates[1].split('/').map(Number);
+        let first = dates[0].split('/').map(Number);
+        let second = dates[1].split('/').map(Number);
 
         if (first[2] > second[2] ||
             first[2] === second[2] && first[1] > second[1] ||
@@ -392,13 +392,13 @@ $(document).ready(function () {
      * of fields if both are emptied. 
      */
 
-    inputClasses = [".email-input-js", ".password-input-js"];
+    let inputClasses = [".email-input-js", ".password-input-js"];
     $(inputClasses).each(function (i) {
         $(inputClasses[i]).change(function () {
 
             if (countTwo(inputClasses[i])) {
-                input = $(inputClasses[i]);
-                values = [];
+                let input = $(inputClasses[i]);
+                let values = [];
                 input.each(function () {
                     let val = $(this).val();
                     values.push(val);
@@ -413,7 +413,7 @@ $(document).ready(function () {
                 }
             }
         });
-    });;
+    });
 
     /**
      * Credit original code for this function from: https://dev.to/chromiumdev/sure-you-want-to-leavebrowser-beforeunload-event-4eg5

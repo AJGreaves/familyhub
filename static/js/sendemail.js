@@ -30,7 +30,7 @@ $(document).ready(function () {
                 console.log('Oops... ' + JSON.stringify(error));
                 alertModal('error');
             });
-        })
+        });
 
     }
 
@@ -63,11 +63,11 @@ $(document).ready(function () {
                 console.log('Oops... ' + JSON.stringify(error));
                 alertModal('error');
             });
-        })
+        });
 
         $('#emailOrganisers').click(function() {
             alert("Although this is a student project, the email forms on listing pages are wired up to real business's email addresses. Therefore if you wish to test this function please make sure you are testing it in a listing you created with your own email address in. Thank you!");
         });
 
     }
-})
+});

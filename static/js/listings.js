@@ -8,7 +8,7 @@ if (document.querySelector('#social-share-icons')) {
 }
 
 function addShareButtonLinks() {
-    let link = window.location.href
+    let link = window.location.href;
 
     $('#sharePageFb').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=' + link);
     $('#sharePageTwitter').attr('href', 'https://twitter.com/home?status=' + link);
@@ -17,8 +17,8 @@ function addShareButtonLinks() {
 
 $(".no-share").click(function () {
     alertModal('no share');
-})
+});
 
 $('#closeNotice').click(function () {
-    $('.hide').addClass('hidden')
-})
+    $('.hide').addClass('hidden');
+});
