@@ -111,7 +111,7 @@ The following section goes through each of the user stories from the UX section 
 1. *To easily find what I am looking for, I want the layout of the site to make sense so I am not confused or put off using it.*
 
     - The Family Hub navbar is laid out in the conventional way: 
-    
+
         - Navbar is at the top of the screen.
 
         - The logo on the far left of the navbar and links to the home page.
@@ -193,6 +193,37 @@ The following section goes through each of the user stories from the UX section 
     - Information modals are provided for every step of the site that they are needed on, which give the user feedback for correct and incorrect input or if there is an unexpected error. 
 
 ### Business Stories
+
+**As a Business user on FamilyHub I expect/want/need**
+
+1. *To see that the information other businesses have put on the site are being displayed in an attractive and useful way for the user.* 
+    - The home page, activities page and listing pages are all attractive and easy to navigate and understand.
+
+2. *To see that various methods of contacting my business are available to users using Family Hub.*
+    - Family Hub makes it possible for businesses to enter all of the following links to their own contacts:
+        - Website url
+        - Email form
+        - Phone number
+        - Facebook url
+        - Instagram url
+        - Twitter url
+        - Address
+
+3. *To be able to log in to access my existing entries, and for my data to only be editable with my account.*
+    - Business users can create an account and only have access to edit and delete the listings they created when logged in. 
+    - When returning to the site and logging in again all their activities are saved and accessible in their account page.
+
+4. *To create, edit and delete entries in my account.*
+    - Business users have easy access to The "Add New" and "Edit" pages, and the delete button is easily accessible on the account page too. 
+
+5. *A user interface that is simple and easy to use, that is laid out in a logical way with clear indications where necessary about the type and format of the data I need to provide.* 
+    - The "Add New" and "Edit" pages have a clearly laid out and easy to understand structure to them, with alerts and messages that pop up when incorrect data has been entered. 
+
+6. *Forms for inputting my data to make the process easy, that there is no wasting my time or making the process difficult or slow.* 
+    - Though the data input for an activity is large, it is arranged in learnable small chunks that walk the user through the steps clearly. 
+
+7. *Protections have been put in place to prevent me from accidentally deleting an activity listing.*
+    - When a business user clicks the "Delete" button for one of their listings in their account page, a modal pops up asking them to confirm they want to delete this listing by typing "DELETE" into the input field. Only when the input field's value is equal to `DELETE` will the confirm delete button become clickable. Once this is clicked the request will be sent to do the database to delete that entry.
     
 ## Manual testing
 Below is a detailed account of all the manual testing that has been done to confirm all areas of the site work as expected. 
