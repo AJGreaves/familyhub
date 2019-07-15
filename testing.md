@@ -657,10 +657,10 @@ Responsive design waw also tested in the Chrome Developer Tools device simulator
 pymongo.errors.ConfigurationError: The DNS response does not contain an answer to the question: _mongodb._tcp.<clustername>-qtxun.mongodb.net. IN SRV
 ```
 - multiple attempts to fix this involved: 
-- checking my MongoDB password was correct (it was)
-- logging my MONGO_URI connection string to the terminal to check it was coming through from the enviroment variable (it was)
-- giving the connection string to another student to try on his machine (it worked fine!)
-- Checking that I had installed dnsPython in both my .venv and also globally
+    - checking my MongoDB password was correct (it was)
+    - logging my MONGO_URI connection string to the terminal to check it was coming through from the enviroment variable (it was)
+    - giving the connection string to another student to try on his machine (it worked fine!)
+    - Checking that I had installed dnsPython in both my .venv and also globally
 - FIX: After a lengthy call with MongoDB customer service, the solution was to change the connection string from an SRV to the following which allowed me to connect. 
 ```
 mongodb://<username>:<password>@<clustername>-shard-00-00-qtxun.mongodb.net:27017,<clustername>-shard-00-01-qtxun.mongodb.net:27017,<clustername>-shard-00-02-qtxun.mongodb.net:27017/test?ssl=true&replicaSet=<clustername>-shard-0&authSource=admin&retryWrites=true&w=majority
@@ -673,7 +673,7 @@ _The root cause could be due to an older Python version that is installed, a net
 
 4. **Go back button js would not work**
 - On my custom "permission denied" page, the "Go Back" button was designed to return the user to whichever page they were previously on. 
-- Fix: Used an line script on the button in html.
+- Fix: Used inline script on the button in html.
 
 5. **Session variable not building url as expected**
 - For my logged in users I used a session variable to store their username and used this to construct urls for parts of the site they could only access when logged in.
@@ -706,6 +706,8 @@ document.addEventListener("DOMContentLoaded", function() {
 7. **2nd carousel on home page refusing to display**
 - This bug took hours to track down as I originally blamed it on a cursor problem with MongoDB. Of course now I am writing my bug report with the one right above it I realise now how obvious it was!! The function above also removed the "active" class from all the slides on the second carousel. 
 - To fix this I adjusted my JavaScript function to be more specific to removing all but the first `.active` class from **each** one. 
+
+[EDIT] - I later updated that function to *add* the active class to the first slide of each carousel, rather than remove all but the first one. Seemed a more elegent solution, with a few less lines of code.
 
 8. **Pagination on click events not firing**
 - A simple jQuery on-click event on my pagination links refused to fire. 
