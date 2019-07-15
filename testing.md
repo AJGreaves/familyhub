@@ -415,20 +415,49 @@ All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Exp
 
 - Log out, then log in with correct details, confirm that the logged in conformation modal is launched, click both buttons provided on the modal to check that its **links** to the users account page and to create a new listing work as expected.
 
+- Attempt to go to the login page url when already logged in, confirm that this redirects the user to their account page. 
+
 #### Log out feature
 
 - When logged in, click the log out link, confirm that the user is no longer logged in by checking that no session data can be seen in developer tools. 
 
 #### Account settings page
 
-- Go to the settings page for the account I am logged in as, confirm that the forms on this page are displaying correcly. 
+- Go to the settings page for the account I am logged in as, confirm that the forms on this page are displaying correctly. 
+
 - Try to change the email address by inputting an incorrect email into the Current Email input form, Confirm that the error modal is launched with a message "Current email is incorrect."
+
 - Try to change the email address by inputting the same email into both fields, Confirm that the error modal is launched with a message "These emails are the same."
+
 - Change the email address registered by inputting the correct old email and a new ones. Confirm that the success alert modal is launched to inform the user that the email has been successfully changed. 
+
 - Log out and back in with the new email address to confirm that it works. 
+
 - Repeat the steps above to check that the Change password form works in the same way.
 
 #### Account page
+
+- Open My Account page from the account that I used to create most of the listings on the Family Hub website, confirm that cards for each listing are displayed on the page.
+
+- Click the cog icon at the top right of the page, confirm it takes the user to the settings page.
+
+- Click the green Add New button, confirm it takes the user to the add new listing page.
+
+- Confirm that each listing card has a view, edit and delete button underneath it.
+
+- Click a view button, confirm that it takes the user to the listing page for that activity on the Family Hub website.
+
+- Click an edit button, confirm this takes the user to the edit page for this listing.
+
+- Click the delete button, confirm that this launches the confirm delete modal.
+
+- Try to click the confirm delete button without filling in anything in the required DELETE input field, confirm that the button does not allow any click events.
+
+- Fill in the DELETE input field with incorrect input, confirm that the confirm delete button remains unclickable. 
+
+- Fill in the DELETE input field with the "DELETE", confirm that the button is now active and can be clicked. 
+
+- Click the confirm delete button, confirm that the selected listing is deleted from the database.
 
 ### Testing undertaken on tablet and phone devices
 All steps below were repeated to test mobile specific elements on the developers 2 Samsung phones and tablet. 
