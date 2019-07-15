@@ -302,7 +302,7 @@ This flowchart was created using [draw.io](https://www.draw.io) to plan and expl
 
 ### PDF
 
-- [Family Hub development planes PDF](static\pdf\family-hub-development-planes.pdf)
+- [Family Hub development planes PDF](static/pdf/family-hub-development-planes.pdf)
 
 This document was created during the planning phase of this project. The final website has some slight differences from what was planned. But I included this document in the project to provide insight into the original planning and direction of the site during the planning stages.  
 
