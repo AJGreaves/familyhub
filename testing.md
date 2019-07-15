@@ -568,69 +568,60 @@ All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Exp
 - Click the log in button, confirm this takes the user to the login page. 
 - Click the Go Back button, confirm this takes the user back one step in their browser history.
 
----
-
 ### Testing undertaken on tablet and phone devices
-All steps below were repeated to test mobile specific elements on my Samsung phone and tablet, in both the firefox browser and samsung internet browser.
+All steps below were repeated to test mobile and tablet specific elements on my Samsung phone and tablet, in both the firefox browser and samsung internet browser.
 
 Responsive design waw also tested in the Chrome Developer Tools device simulators on all options and orientations.
 
 #### Elements on every page
 
 1. Navbar 
-
+- Open the website on mobile, confirm that the navbar is collapsed into a burger icon
+- click the burger icon, confirm that the navbar list appears are expected.
+- When logged in, confirm that the navbar list appears as expected for someone logged in.
+- When on tablet, confirm that the navbar is not collapsed on my larger tablet screen, but is on the smaller tablet. 
 
 2. Footer
-
-
-3. Loading Spinner
-
+- On mobile, confirm that the footer sections stack on top of each other as expected. 
+- On tablet, confirm that the footer sections appear as expected.
 
 4. Floating to-top button
+- Confirm that the floating to top button appears and behaves the same way on all devices and browsers.
 
 #### Home Page
 
-1. Hero Image
+- When viewing on **mobile**, Confirm that the home page appears as expected, with one listing taking up the full width of carousel slide, and with three slides on each carousel.
 
-2. Event Cards
-    
-3. Carousels
+- Confirm that the top tip for summer card is the full width of the mobile screen, with no curved edges. That the image for this card is on top with the text part of the card underneath. 
 
-4. Top Tip Feature box
+- Confirm that all buttons and links are clickable on the smaller screen. 
 
-5. Search More buttons
+- When viewing on **tablet** confirm that the home page appears as expected. With two listings on each carousel slide, and three slides on each carousel. 
+
+- Confirm thay the top tip for summer card is displayed as a card, with curved edges and margin around it. The image on the left side of the card and the text on the right.
 
 #### Activities Page
 
 1. Filters
 
+- When viewing on **mobile**, confirm that the filters side navigation is hidden when the page is loaded. 
+
+- Click the "open filters" button, confirm that the filters side nav animates open as expected. 
+
+- Click the close button on the filters side nav, confirm that the filters animate closed as expected.
+
+- When viewing on **tablet**, confirm that the filters side nav appears fixed on the side of the page. And that it appears nicely in both portrait and landscape view.
+
+- When viewing the activities page on tablet, the navigation bar is smaller to make room for the filters side nav. Confirm that the navigation menu is collapsed into a burger icon on this page only.
+
 3. Pagination
 
-#### Listing Page
+- Confirm that pagination is readable and useable on mobile and tablet size screens.
 
-#### Create Account Page
+#### All other pages
 
-#### Log out feature
-
-#### Account settings page
-
-#### Account page
-
-#### Add new listing page
-
-#### Preview listing page
-
-#### Edit listing Page
-
-#### Contact Page
-
-#### Privacy and Cookies Policy Page
-
-#### 404 Page
-
-#### Permission Denied page
-
-
+- Confirm the layout of all other pages is as designed on mobiles and tablets. 
+- Cause the alert modal to appear on any page that it is used on, confirm that it displays as expected.
 
 ### Bugs discovered: 
 #### Solved bugs
