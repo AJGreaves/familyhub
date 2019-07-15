@@ -533,11 +533,40 @@ All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Exp
 
 #### Contact Page
 
+- Open the contact page, confirm that it is laid out the way expected. 
+
+- Try to send the contact form without any input in it, confirm that the form tells the user to fill in the required fields. 
+
+- Enter a non-email address into the email input field and try to send it, confirm the form tells the user to enter a valid email. 
+
+- Fill in all the form correctly and hit send, confirm that the email sent modal is launched to inform the user that the email was successfully sent. 
+
+- Confirm that the forms values are removed on successful sending of email.
+
+- Confirm that the email is received in my email box formatted the way I expect.
+
+- Click the address link, confirm this opens the google maps link to this address in a separate tab. 
+
+- Click the email link, confirm this takes the user to the contact page. 
+
 #### Privacy and Cookies Policy Page
+
+- Open the privacy and cookies policy page, confirm that the sections and headings are laid out the way I expect. 
+
+- Click the links in the policy page, confirm that they each open to the right link and in a separate browser tab. 
 
 #### 404 Page
 
+- Type an incorrect url into the browser, confirm that the user is taken to the custom 404 page. 
+- Confirm that the animation on this page is working correctly.
+- Click the home button on this page, confirm that it takes the user back to the home page.
+- Click the activities button on this page, confirm that it takes the user to the activities page.
+
 #### Permission Denied page
+
+- When logged out, try to enter a url for a page you need to be logged in to access, confirm this takes the user to the custom permission denied page.
+- Click the log in button, confirm this takes the user to the login page. 
+- Click the Go Back button, confirm this takes the user back one step in their browser history.
 
 ### Testing undertaken on tablet and phone devices
 All steps below were repeated to test mobile specific elements on the developers 2 Samsung phones and tablet. 
