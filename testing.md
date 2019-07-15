@@ -647,7 +647,6 @@ Responsive design waw also tested in the Chrome Developer Tools device simulator
     background-color: rgba(0,0,0,0.4);
 }
 ```
-
 2. **pylinter on vscode causing errors**
 - Trying to import one py file into another was throwing confusing errors, running only once and then refusing to work again.
 - Fix: installed pylint-flask and the pylinter started working correctly again.
@@ -657,7 +656,6 @@ Responsive design waw also tested in the Chrome Developer Tools device simulator
 ```
 pymongo.errors.ConfigurationError: The DNS response does not contain an answer to the question: _mongodb._tcp.<clustername>-qtxun.mongodb.net. IN SRV
 ```
-
 - multiple attempts to fix this involved: 
 - checking my MongoDB password was correct (it was)
 - logging my MONGO_URI connection string to the terminal to check it was coming through from the enviroment variable (it was)
@@ -667,9 +665,7 @@ pymongo.errors.ConfigurationError: The DNS response does not contain an answer t
 ```
 mongodb://<username>:<password>@<clustername>-shard-00-00-qtxun.mongodb.net:27017,<clustername>-shard-00-01-qtxun.mongodb.net:27017,<clustername>-shard-00-02-qtxun.mongodb.net:27017/test?ssl=true&replicaSet=<clustername>-shard-0&authSource=admin&retryWrites=true&w=majority
 ``` 
-
-
-- The explanation for why this happend from MongoDB customer service was as follows: 
+- The explanation for why this happened from MongoDB customer service was as follows: 
 
 _The issue you encountered has to do with how your Python driver or network is resolving the DNS records in relation to the SRV string._
 
@@ -707,8 +703,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 ```
-
-
 7. **2nd carousel on home page refusing to display**
 - This bug took hours to track down as I originally blamed it on a cursor problem with MongoDB. Of course now I am writing my bug report with the one right above it I realise now how obvious it was!! The function above also removed the "active" class from all the slides on the second carousel. 
 - To fix this I adjusted my JavaScript function to be more specific to removing all but the first `.active` class from **each** one. 
@@ -744,12 +738,9 @@ document.addEventListener("DOMContentLoaded", function() {
     z-index: 1030;
 }
 ```
-
 #### Unsolved bugs
 
-1. 
-
-
+No unsolved bugs at the moment!
 
 ## Further testing: 
 1. Asked fellow students, friends and family to look at the site on their devices and report any issues they found.
