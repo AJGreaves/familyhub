@@ -299,6 +299,99 @@ All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Exp
 5. Search More buttons
     - Click each of the "Search More" buttons on the home page, confirm that they all take the user to the activities page.
 
+#### Activities Page
+
+- When the activities page is loaded, check what number of results displayed at the top of the page. 
+- Log in and go to my account page, choose to edit one of my activities, click "preview" - which sets `{ "published": false }` on that listing, and to _not_ click to publish it on the next page. 
+- Return to the activities page, confirm that the number of results displayed has dropped by one, and the activity I edited is no longer in the results show on the activities page. 
+- Go back to my edited listing and publish it, confirm that this change is reflected on the activities page again.
+
+1. Activity Cards
+    - The same html code is imported using Jinja to construct these cards as is used on the home page, so testing for these is already complete. 
+
+2. Filters
+    - Click the location dropdown menu, select a town, confirm that all listings loaded are in the town selected. Repeat this action for other towns in the list.
+    - Click the category dropdown menu, select a town, confirm that the listings loaded have this category selected. Repeat this action for other categries in the list.
+    - Repeat this action for all the filters in the filters side navigation. 
+    - Combine several filters at the same time, confirm that the results given match the filters selected. 
+    - Repeat several more times with different filters. 
+    - Click the "clear filters" button and confirm that it does indeed clear all filters selected.
+    - Scroll page downwards, confirm that filters remain fixed to the side of the page.
+
+3. Pagination
+    - Scroll to the bottom of the page and confirm that pagination has been loaded when there are more than 12 results. 
+    - Click each page in turn, confirm that the pages change and in the right order. 
+    - Click the previous and next buttons in pagination, confirm that they do load the correct pages results. 
+    - Filter results so there are less than 13 results, confirm that the pagination is not loaded in this case. 
+    - Filter results to load around 26 listings, confirm that pagination creates 3 pages (12 listings per page)
+
+
+#### Listing Page
+1. Url
+
+    - Check url for the listing page, confirm that the url includes the title of the activity, but that it has formatted as a slug. For example if the listing title is **Jungle in the library!**, the url is `https://family-hub-nl.herokuapp.com/listing/jungle-in-the-library`
+
+2. Listing details
+
+    - Confirm that the **title** is displaying correctly.
+
+    - Confirm that the **listing image** has loaded correctly, and is styled with box shadow and curved corners.
+
+    - Confirm that the **opening times** displayed are correct, and that the table is laid out in an easy to read manner. 
+
+    - Confirm that the **dates** section of the page **is visible** for a listing that has a start and end date. And that the dates are displayed correctly (Day/Month?Year)
+
+    - Confirm that the dates section of the page is **not visible** for a listing that has selected "ongoing" rather than start and end dates.
+
+    - Confirm that the **ages list** is displaying as desired, that the green check marks and red crosses display on the correct selections for age range for the listing.
+
+    - Confirm that the **address** the business user has input is displayed correctly, and that it links to the correct google maps page for that address, with a link that opens in a separate tab. 
+
+    - Check that the **categories** displayed on the listing page correspond with the ones selected when it was created. 
+
+    - Confirm that the correct **icons** for each categories are displaying on this page as well. 
+
+    - In the **More Info** section, confirm that the selections chosen are displaying and that the icons with them are the relevant ones. 
+
+    - Check that the **description** section is displaying the text supplied correctly, and that new paragraphs are started as expected. 
+
+    - Click the **share icons** at the bottom of the page, confirm that they each in turn launch pages where the user can either post a link to the page on facebook, twitter or send the link to a friend as an email. 
+
+    - Click the **Search More Activities** button, confirm that it takes the user back to the Activities page.
+
+    - Confirm that the **contact links** provided on the listing page are correct. 
+
+        - That the url to the activities **website** opens in tha new tab and leads to the correct website. 
+
+        - That the **telephone** button when clicked will launch an application to make a phone call to that number.
+
+        - That the **Email Organisers button** launches the email business modal
+
+    - Email business form:
+
+        - Confirm that the **email business modal** is launched with the business's email address in the top input field, and that this field is deactivated so the email address cannot be changed. 
+
+        - Confirm that trying to send the form without filling out any fields causes the form to prompt the user to fill out the fields. 
+
+        - Confirm that all fields are **required** and the form will not send without everything being filled in. 
+
+        - Confirm that after completing the email form and submitting it that the **email sent modal** is launched. 
+
+        - Break the email code so that the form will not send, confirm that the user is given a **error message modal** to inform them there was a problem. (fixed the code afterwards!)
+
+        - Open an activity I created that was set up to my own email address, confirm that on sending the form I receive the email laid out as expected.
+
+<div align="center">
+<img src="https://i.ibb.co/WvRBjrS/Clipboard01.jpg" alt="Example received email" width="400px" >
+</div>
+
+#### Create Account Page
+
+#### log In Page
+
+#### Account settings page
+
+#### Account page
 
 ### Testing undertaken on tablet and phone devices
 All steps below were repeated to test mobile specific elements on the developers 2 Samsung phones and tablet. 
