@@ -232,14 +232,58 @@ Below is a detailed account of all the manual testing that has been done to conf
 
 All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Explorer and on two different desktop screen sizes.
 
-1. first site feature
-    - List items here
+#### Elements on every page
+
+1. Navbar 
+    - Hover over each link, confirm the hover effect works as expected. 
+    - Click the **Family Hub logo**, confirm it takes the user to the home page.
+    - Click the **Home** link, confirm it takes the user to the home page.
+    - Click the **Activities** link, confirm it takes the user to the activities page.
+    - Click the **Contact** link, confirm it takes the user to the contact page.
+    - Click the **Create Account** link, confirm it takes the user to the create account page.
+    - Click the **Log In** link, confirm it takes the user to the login page.
+    - Log into Family hub, confirm that the navbar no longer displays the **Create Account** or **Log In** links but does now display the **My Account** dropdown menu.
+    - Click the **My Listings** link, confirm it takes the user to their account page.
+    - Click the **Add New** link, confirm it takes the user to the create new listing page.
+    - Click the **Settings** link, confirm it takes the user to their account settings page.
+    - Click the **Log out** link, confirm the user is logged out and the navbar returns to the logged out configuration.
+
+2. Footer
+    - Hover over each link, confirm the hover effect works as expected. 
+    - Click the **address link**, confirm this opens a google maps link to the address in a new tab.
+    - Click the **email link**, confirm this takes the user to the contact page.
+    - Click the **Search Activities link**, confirm it takes the user to the activities page. 
+    - Click the **Privacy Policy link**, confirm it takes the user to the privacy policy page.
+    - Click the **Create an Account link**, confirm it takes the user to the add new account page.
+    - Click the **Log in link**, confirm it takes the user to the log in page.
+    - Click the **Facebook**, **Instagram** and **Twitter icons** and confirm they open the relevant social media pages in separate browser tabs.
+
+3. Loading Spinner
+    - Open any page and confirm that the **loading spinner** displays for 2 seconds as the page content is loaded.
+    - Confirm the spinner animates as expected.
+
+4. Floating to top button
+    - Confirm that the **to-top button** is not visible when user is at the top of the page. 
+    - Scroll the page down, confirm that the button is gently animated opacity increases.
+    - Confirm that as the user scrolls the button remains in the same place on the screen. 
+    - Click the button, confirm the user is taken smoothly back up to the top of the page. 
+    - Confirm that when back up at the top of the page, the button animates back to invisible. 
+
+#### Home Page
+
+1. Hero Image
+2. Event Cards
+3. Carousels
+4. Top Tip Feature box
+
 
 ### Testing undertaken on tablet and phone devices
 All steps below were repeated to test mobile specific elements on the developers 2 Samsung phones and tablet. 
 And also in the Chrome Developer Tools device simulators on all options and orientations.
 
-1. first site feature
+### Elements on every page
+
+1. Navbar 
     - List items here
 
 
