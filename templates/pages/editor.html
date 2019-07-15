@@ -570,7 +570,7 @@
                     <div class="col-12">
                         <div class="form-group">
                             <h3>Description</h3>
-                            <textarea class="form-control" id="description" rows="11" name="description"
+                            <textarea class="form-control" id="description" rows="11" name="description" maxlength="2000"
                                 placeholder="The first sentence of this description will also appear with your listing in Family Hub search."
                                 required>{% if editor == 'edit' %}{{ activity.description }}{% endif %}</textarea>
                         </div>
