@@ -2,7 +2,9 @@
  * JS functions used on all/most pages
  ******************************************/
 
-// Shows spinner and hides page content until everything is loaded
+/**
+ * Shows spinner and hides page content until everything is loaded
+*/ 
 document.addEventListener("DOMContentLoaded", function () {
     setTimeout(function () {
         hideLoading();
@@ -11,23 +13,34 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
 });
 
-// Show and hide spinner animation
+/**
+ * Show spinner animation
+ */
 function showLoading() {
     $("#spinner-wrapper").css("visibility", "visible");
     return;
 }
 
+/**
+ * Hide spinner animation
+ */
 function hideLoading() {
     $("#spinner-wrapper").css("visibility", "hidden");
     return;
 }
 
-// CREDIT: code for floating buttons taken from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp 
+/**
+ * CREDIT: code for floating buttons taken from 
+ * https://www.w3schools.com/howto/howto_js_scroll_to_top.asp 
+ */
 window.onscroll = function () {
     scrollFunction();
 };
 
-// makes floating button for go to top visible once user starts scrolling.
+
+/**
+ * makes floating button for go to top visible once user starts scrolling.
+ */
 function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         $("#to-top-btn").addClass('active');
@@ -40,16 +53,13 @@ $('#to-top-btn').click(function () {
     topFunction();
 });
 
-// When the user clicks on the button, scroll to the top of the page
+/**
+ * Scrolls the user bACK to the top of the page
+ */
 function topFunction() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
-
-// animate changes in icons to reflect collapsed / opened elements on the page
-$(".collapse-link").click(function () {
-    $(this).children('i').toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
-});
 
 /*----------------------------------------
  * JS Modals
@@ -60,7 +70,6 @@ $(".collapse-link").click(function () {
  * of the alert modal to match the needs for this use.
  * @param {string} message 
  */
-
 function alertModal(message, date1, date2) {
     const heading = $('#alertHeading');
     const message1 = $('#alertMessage');
@@ -143,6 +152,10 @@ $('#alertModalClose').click(function (event) {
     return;
 });
 
+/**
+ * Inserts the correct urls into the confirm delete modal buttons when one 
+ * of the delete buttons on the page are clicked.
+ */
 $('.delete-button').click(function () {
     let activity_id = this.id;
     let href = '/deletelisting?activity_id=' + activity_id;
@@ -156,23 +169,20 @@ $('#delete-modal-submit-button').click(function () {
     return;
 });
 
+/**
+ * opens the delete warning modal.
+ */
 function openDeleteWarningModal() {
     $('#delete-warning-modal').toggleClass('active');
     return;
 }
 
-
 /**
  * Function takes username for this user passed from the 
  * database and constructs a welcome message with it, then
- * activates the modal so it can be seen.
- * 
- * BUG FIX: this function also uses the username variable to construct the nessasary 
- * urls for the login page modal. As the modal exists on the page before the user is
- * logged in. the usual session user variable could not be used to create these links 
+ * activates the modal so it can be seen. 
  * @param {string} username 
  */
-
 function openLoggedInModal(username) {
     let name = capFirst(username);
     let slug = slugify(username);
@@ -187,11 +197,14 @@ function openLoggedInModal(username) {
  * Code credit: https://paulund.co.uk/how-to-capitalize-the-first-letter-of-a-string-in-javascript
  * @param {string} string 
  */
-
 function capFirst(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+/**
+ * Makes sure that the confirm delete button is only clickable when the user has
+ * filled in the correct conformation input.
+ */
 $('input#inputDELETE').change(function () {
     let val = $('#inputDELETE').val();
     if (val == "DELETE") {
@@ -203,7 +216,9 @@ $('input#inputDELETE').change(function () {
 });
 
 /**
- * Function credit from: https://medium.com/@mhagemann/the-ultimate-way-to-slugify-a-url-string-in-javascript-b8e4a0d849e1
+ * Turns strings into slug friendly ones. Removes special characters, spaces etc, adds -
+ * where needed. 
+ * Credit: https://medium.com/@mhagemann/the-ultimate-way-to-slugify-a-url-string-in-javascript-b8e4a0d849e1
  * @param {string} string 
  */
 
@@ -228,7 +243,3 @@ function slugify(string) {
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()
 })
-
-$('[data-toggle="tooltip"]').tooltip({
-    container: 'body'
-});
