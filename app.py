@@ -168,7 +168,7 @@ def new_account_page():
     if loggedIn:
         user_in_db = db.users.find_one({"username": session['user']})
         if user_in_db:
-            return redirect(url_for('my_account_page', user=user_in_db['username']))
+            return redirect(url_for('my_account_page', username=user_in_db['username']))
 
     if request.method == 'POST':
         post_request = request.get_json()
