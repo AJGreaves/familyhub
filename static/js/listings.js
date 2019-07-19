@@ -7,6 +7,10 @@ if (document.querySelector('#social-share-icons')) {
     addShareButtonLinks();
 }
 
+/**
+ * Adds links to share buttons so user can share the 
+ * page they are currently on in facebook, twitter or by email
+ */
 function addShareButtonLinks() {
     let link = window.location.href;
 
