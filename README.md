@@ -300,7 +300,7 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
 
 ### Flowchart
 
-- [Account and login pages flowchart](https://i.ibb.co/x1wxDsZ/flowchart.jpg). 
+- [Account and Log In Pages Flowchart](https://i.ibb.co/x1wxDsZ/flowchart.jpg). 
 
 This flowchart was created using [draw.io](https://www.draw.io) to plan and explain the flow of behavior between the user, JavaScript, data and the modal messages the user sees based on their interactions.
 
@@ -477,7 +477,7 @@ Each listing page for an entry in the database displays that information in clea
 
 - If the user does not already exist in the database then the account is created, and a modal informing the user of successful creation of their account appears. In the modal a button link to the log in page is provided.
 
-- This [Account and login pages flowchart](https://i.ibb.co/x1wxDsZ/flowchart.jpg) fully explains the behavior of the forms, data checks and modal messages on this page and the [Log In Page](#log-in-page).
+- This [Account and Log In Pages Flowchart](https://i.ibb.co/x1wxDsZ/flowchart.jpg) fully explains the behavior of the forms, data checks and modal messages on this page and the [Log In Page](#log-in-page).
 
 - (see [Features Left to Implement](#features-left-to-implement) for additional features to be included on this page in future releases)
 
@@ -491,7 +491,7 @@ Each listing page for an entry in the database displays that information in clea
 
 - When the user logs in with a correct email and password a **success modal** appears with links to their personal account page and editor page to add a new activity to the database.
 
-- This [Account and login pages flowchart](https://i.ibb.co/x1wxDsZ/flowchart.jpg) fully explains the behavior of the forms, data checks and modal messages on this page and the [Account Page](#account-page).
+- This [Account and Log In Pages Flowchart](https://i.ibb.co/x1wxDsZ/flowchart.jpg) fully explains the behavior of the forms, data checks and modal messages on this page and the [Account Page](#account-page).
 
 ### Account Settings Page
 
@@ -817,27 +817,34 @@ Suitable for groups | groups | checkbox | boolean
 
 # Technologies Used
 
+### Tools
 - [Visual Studio Code](https://code.visualstudio.com/) is the IDE used for developing this project. 
-- [JQuery](https://jquery.com) to simplify DOM manipulation.
-- [Bootstrap](https://www.bootstrapcdn.com/) to simplify the structure of the website and make the website responsive easily.
-- [FontAwesome](https://www.bootstrapcdn.com/fontawesome/) to provide icons for Family Hub.
-- [Google Fonts](https://fonts.google.com/) to style the website fonts.
 - [Imgbb](https://imgbb.com) to store all external images for this project.
-- [Jasmine](https://jasmine.github.io/) to run automated tests on JavaScript and jQuery code.
-- [Jasmine-jQuery](https://github.com/velesin/jasmine-jquery) to make it possible to test jQuery code using Jasmine.
-- [PyMongo](https://api.mongodb.com/python/current/) to make communication between Python and MongoDB possible.
-- [Flask](https://flask.palletsprojects.com/en/1.0.x/) to construct and render pages.
-- [Jinja](http://jinja.pocoo.org/docs/2.10/) to simplify displaying data from the backend of this project smoothly and effectively in html.
 - [PIP](https://pip.pypa.io/en/stable/installing/) for installation of tools needed in this project.
 - [Git](https://gist.github.com/derhuerst/1b15ff4652a867391f03) to handle version control.
 - [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) is the database for this project
 - [GitHub](https://github.com/) to store and share all project code remotely. 
 - [Photoshop](www.adobe.com/Photoshop) to edit, crop and save images as well as ulitizing the colour picker to ensure color consistency over the entire project.
 - [Browserstack](https://www.browserstack.com/) to test functionality on all browsers and devices.
-- [Gijgo](https://gijgo.com/) provided bootstrap styled date and time pickers.
 - [Am I Responsive](http://ami.responsivedesign.is/) to create the images in this readme file of each page displayed on different screen sizes.
 - [EZgif](https://ezgif.com/video-to-gif) provided gif editing software for the gif in this readme file. 
+
+### Libraries
+- [JQuery](https://jquery.com) to simplify DOM manipulation.
+- [Jasmine](https://jasmine.github.io/) to run automated tests on JavaScript and jQuery code.
+- [Jasmine-jQuery](https://github.com/velesin/jasmine-jquery) to make it possible to test jQuery code using Jasmine.
+- [Bootstrap](https://www.bootstrapcdn.com/) to simplify the structure of the website and make the website responsive easily.
+- [FontAwesome](https://www.bootstrapcdn.com/fontawesome/) to provide icons for Family Hub.
+- [Gijgo](https://gijgo.com/) provided bootstrap styled date and time pickers.
+- [Google Fonts](https://fonts.google.com/) to style the website fonts.
+- [PyMongo](https://api.mongodb.com/python/current/) to make communication between Python and MongoDB possible.
+- [Flask](https://flask.palletsprojects.com/en/1.0.x/) to construct and render pages.
+- [Jinja](http://jinja.pocoo.org/docs/2.10/) to simplify displaying data from the backend of this project smoothly and effectively in html.
+
+### Languages
 - This project uses HTML, CSS, JavaScript and Python programming languages.
+
+
 
 # Testing 
 
