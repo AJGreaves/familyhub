@@ -325,7 +325,7 @@ All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Exp
     - Click each page in turn, confirm that the pages change and in the right order. 
     - Click the previous and next buttons in pagination, confirm that they do load the correct pages results. 
     - Filter results so there are less than 13 results, confirm that the pagination is not loaded in this case. 
-    - Filter results to load around 26 listings, confirm that pagination creates 3 pages (12 listings per page)
+    - Filter results to load around 26 listings, confirm that pagination creates 3 pages (12 listings per page).
 
 
 #### Listing Page
