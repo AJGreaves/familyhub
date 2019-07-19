@@ -62,8 +62,10 @@ Before going further please make sure you have already cloned this project from 
 by following the steps in the [README.md](readme.md#how-to-run-this-project-locally) under "How to run this project locally" and that you have the entire project running on your own IDE.
 
 To run the Jasmine tests: 
-1. Open [jasmine-testing.html](testing/jasmine/jasmine-testing.html).
-2. Run the html file and view it in your browser to see the test results. 
+1. **IMPORTANT: Comment out the document ready function in filters.js** as leaving it in causes errors with jasmine.
+2. Open [jasmine-testing.html](testing/jasmine/jasmine-testing.html).
+3. Run the html file and view it in your browser to see the test results. 
+4. When testing is complete **remember to comment the document ready function back in.**
 
 #### How to create Jasmine tests
 
