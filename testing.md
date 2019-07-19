@@ -241,7 +241,7 @@ All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Exp
     - Click the **Activities** link, confirm it takes the user to the activities page.
     - Click the **Contact** link, confirm it takes the user to the contact page.
     - Click the **Create Account** link, confirm it takes the user to the create account page.
-    - Click the **Log In** link, confirm it takes the user to the login page.
+    - Click the **Log In** link, confirm it takes the user to the log in page.
     - Log into Family hub, confirm that the navbar no longer displays the **Create Account** or **Log In** links but does now display the **My Account** dropdown menu.
     - Click the **My Listings** link, confirm it takes the user to their account page.
     - Click the **Add New** link, confirm it takes the user to the create new listing page.
@@ -401,7 +401,7 @@ All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Exp
 
 #### log In Page
 
-- Go to the log in page, confirm that the login form is displayed correctly.
+- Go to the log in page, confirm that the log in form is displayed correctly.
 
 - Try to log in with a username that do not exist in the database, confirm that the alert modal is launched to inform the user that **no account with this username or email address** is registered to FamilyHub.
 
@@ -415,7 +415,7 @@ All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Exp
 
 - Log out, then log in with correct details, confirm that the logged in conformation modal is launched, click both buttons provided on the modal to check that its **links** to the users account page and to create a new listing work as expected.
 
-- Attempt to go to the login page url when already logged in, confirm that this redirects the user to their account page. 
+- Attempt to go to the log in page url when already logged in, confirm that this redirects the user to their account page. 
 
 #### Log Out Feature
 
@@ -565,7 +565,7 @@ All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Exp
 #### Permission Denied Page
 
 - When logged out, try to enter a url for a page you need to be logged in to access, confirm this takes the user to the custom permission denied page.
-- Click the log in button, confirm this takes the user to the login page. 
+- Click the log in button, confirm this takes the user to the log in page. 
 - Click the Go Back button, confirm this takes the user back one step in their browser history.
 
 ### Testing undertaken on tablet and phone devices
@@ -677,9 +677,9 @@ _The root cause could be due to an older Python version that is installed, a net
 
 5. **Session variable not building url as expected**
 - For my logged in users I used a session variable to store their username and used this to construct urls for parts of the site they could only access when logged in.
-- However I hit a problem when trying to provide the users with links to their account pages on login. 
-- The reason for this was although the `session['name']` variable was assigned on login, the user was not then immediately taken to a new page, so the session variable had not existed to create the links in the modal on the same page, that loaded once login was complete. 
-- To get around this problem I used JavaScript to construct the needed urls once login was complete, as the confirm login modal was launched. Using a variable returned during the fetch function. 
+- However I hit a problem when trying to provide the users with links to their account pages on log in. 
+- The reason for this was although the `session['name']` variable was assigned on log in, the user was not then immediately taken to a new page, so the session variable had not existed to create the links in the modal on the same page, that loaded once log in was complete. 
+- To get around this problem I used JavaScript to construct the needed urls once log in was complete, as the confirm log in modal was launched. Using a variable returned during the fetch function. 
 ```JavaScript
 function openLoggedInModal(username) {
   let name = capFirst(username);
