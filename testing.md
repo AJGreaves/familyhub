@@ -23,7 +23,7 @@
 
 ## Automated Testing
 
-### Validation services
+### Validation Services
 The following validation services and linter were used to check the validity of the website code.
 
 - [W3C Markup Validation]( https://validator.w3.org/) was used to validate HTML.
@@ -225,7 +225,7 @@ The following section goes through each of the user stories from the UX section 
 7. *Protections have been put in place to prevent me from accidentally deleting an activity listing.*
     - When a business user clicks the "Delete" button for one of their listings in their account page, a modal pops up asking them to confirm they want to delete this listing by typing "DELETE" into the input field. Only when the input field's value is equal to `DELETE` will the confirm delete button become clickable. Once this is clicked the request will be sent to do the database to delete that entry.
     
-## Manual testing
+## Manual Testing
 Below is a detailed account of all the manual testing that has been done to confirm all areas of the site work as expected. 
 
 ### Testing undertaken on desktop
@@ -417,11 +417,11 @@ All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Exp
 
 - Attempt to go to the login page url when already logged in, confirm that this redirects the user to their account page. 
 
-#### Log out feature
+#### Log Out Feature
 
 - When logged in, click the log out link, confirm that the user is no longer logged in by checking that no session data can be seen in developer tools. 
 
-#### Account settings page
+#### Account Settings Page
 
 - Go to the settings page for the account I am logged in as, confirm that the forms on this page are displaying correctly. 
 
@@ -435,7 +435,7 @@ All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Exp
 
 - Repeat the steps above to check that the Change password form works in the same way.
 
-#### Account page
+#### Account Page
 
 - Open My Account page from the account that I used to create most of the listings on the Family Hub website, confirm that cards for each listing are displayed on the page.
 
@@ -459,7 +459,7 @@ All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Exp
 
 - Click the confirm delete button, confirm that the selected listing is deleted from the database.
 
-#### Add new listing page
+#### Add New Listing Page
 
 - Open add new listing page, confirm it is laid out the way expected.
 
@@ -507,7 +507,7 @@ All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Exp
 
 - Enter correct data for a listing, confirm that the preview button takes the user to the preview listing page. 
 
-#### Preview listing page
+#### Preview Listing Page
 
 - Open the preview listing page, confirm that the preview bar is visible warning the user that they are in preview mode and their listing is not published yet. 
 
@@ -521,7 +521,7 @@ All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Exp
 
 - Go to the activities page and confirm that this new listing is now visible in the results, and that the filters relevant to it work as expected.
 
-#### Edit listing Page
+#### Edit Listing Page
 
 - Open the edit listing page to edit an existing listing, confirm that all the data is displayed as expected in the input, select, checkbox and textarea fields.
 
@@ -562,7 +562,7 @@ All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Exp
 - Click the home button on this page, confirm that it takes the user back to the home page.
 - Click the activities button on this page, confirm that it takes the user to the activities page.
 
-#### Permission Denied page
+#### Permission Denied Page
 
 - When logged out, try to enter a url for a page you need to be logged in to access, confirm this takes the user to the custom permission denied page.
 - Click the log in button, confirm this takes the user to the login page. 
@@ -618,7 +618,7 @@ Responsive design waw also tested in the Chrome Developer Tools device simulator
 
 - Confirm that pagination is readable and useable on mobile and tablet size screens.
 
-#### All other pages
+#### All Other Pages
 
 - Confirm the layout of all other pages is as designed on mobiles and tablets. 
 - Cause the alert modal to appear on any page that it is used on, confirm that it displays as expected.
@@ -647,11 +647,11 @@ Responsive design waw also tested in the Chrome Developer Tools device simulator
     background-color: rgba(0,0,0,0.4);
 }
 ```
-2. **pylinter on vscode causing errors**
+2. **Pylinter on VSCode causing errors**
 - Trying to import one py file into another was throwing confusing errors, running only once and then refusing to work again.
 - Fix: installed pylint-flask and the pylinter started working correctly again.
 
-3. **Connection issues with vscode to MongoDB**
+3. **Connection issues with VSCode to MongoDB**
 - Despite my connection string to MongoDB working perfectly on cloud9, and other students vscode machines. If I tried to connect to it from my machine I got the following error: 
 ```
 pymongo.errors.ConfigurationError: The DNS response does not contain an answer to the question: _mongodb._tcp.<clustername>-qtxun.mongodb.net. IN SRV
@@ -671,7 +671,7 @@ _The issue you encountered has to do with how your Python driver or network is r
 
 _The root cause could be due to an older Python version that is installed, a network environment restriction or an old pymongo version._
 
-4. **Go back button js would not work**
+4. **Go back button JavaScript would not work**
 - On my custom "permission denied" page, the "Go Back" button was designed to return the user to whichever page they were previously on. 
 - Fix: Used inline script on the button in html.
 

@@ -369,10 +369,10 @@ function scrollFunction() {
 <img src="https://i.ibb.co/CBw04v7/home.jpg" alt="Family Hub home page on all major screen sizes" >
 </div>
 
-**hero image**
+**Hero Image**
 - The Family Hub home page features a colorful hero image of a child with paint on their hands. I chose this image because it is eye catching and striking, and it features a child doing an activity. The tagline for the website is laid over the image. This image was coded as a background-image in css and set to `background-size: cover;` so that it is responsive while never getting stretched or distorted. 
 
-**Event cards**
+**Event Cards**
 
 - Each event card on the home page gives the user some brief and useful information about each of the listings displayed. The activity image, town name, title and 100 character string introduces the activity to the user. Every card is clickable to go to the main listing page for that activity, so that if the user wishes to learn more the information is only one click away. 
 
@@ -493,7 +493,7 @@ Each listing page for an entry in the database displays that information in clea
 
 - This [Account and login pages flowchart](https://i.ibb.co/x1wxDsZ/flowchart.jpg) fully explains the behavior of the forms, data checks and modal messages on this page and the [Account Page](#account-page).
 
-### Account settings page
+### Account Settings Page
 
 - The account settings page includes two small forms for the user to update their email address or password. 
 
@@ -501,7 +501,7 @@ Each listing page for an entry in the database displays that information in clea
 
 - If the current data is not correct the user is informed of this via modal. 
 
-### Account page
+### Account Page
 
 <div align="center">
 <img src="https://i.ibb.co/2qfkKFx/account.jpg" alt="Family Hub account page on all major screen sizes" >
@@ -525,7 +525,7 @@ Each listing page for an entry in the database displays that information in clea
 
     - This feature was included to prevent accidental deletion of a complex data entry. 
 
-### Add new listing page
+### Add New Listing Page
 
 <div align="center">
 <img src="https://i.ibb.co/t2S8cyr/addnew.jpg" alt="Family Hub add new listing page on all major screen sizes" >
@@ -602,7 +602,7 @@ Each listing page for an entry in the database displays that information in clea
 
     - At the bottom of the page the user is given a button to preview their data in the listing page, before it is published to the website. When this button is pushed the data is put into the database with the additional key value pair of `{"published": false}` applied to it. Then the preview page is loaded.
 
-### Preview listing page
+### Preview Listing Page
 
 - The preview listing page is where the business user can preview their activity listing and see what it will look like on the Family Hub website. 
 
@@ -618,7 +618,7 @@ Each listing page for an entry in the database displays that information in clea
 
         - The Publish button updates the listing with `{"published": false}` so that the data can now be displayed on the Family Hub home page and activities page.
 
-### Edit listing Page
+### Edit Listing Page
 
 - The Edit Listing Page is identical to the [Add New Page](#add-new-page), except that the heading on the page says "Edit" and data for the activity to be edited has been pulled from the database and each `<input>`, `<select>`, `<checkbox>` and `<textarea>` values have been populated with the correct data.
 
@@ -681,7 +681,7 @@ This section will continue to grow as the site is deployed to it's own domain an
 
 # Information Architecture
 
-### Database choice
+### Database Choice
 
 A SQL database structure would have suited this project better, however this website is a student project and the current point that I am in the course is my only opportunity to use NoSQL as the final piece of coursework (the next one) required SQL. In order to get experience with using NoSQL this project utilizes the NoSQL database MongoDB. 
 
@@ -845,7 +845,7 @@ Testing information can be found in separate [testing.md](testing.md) file
 
 # Deployment
 
-## Heroku deployment
+## Heroku Deployment
 
 To deploy Family Hub to heroku, the following steps were taken:
 
@@ -977,7 +977,7 @@ python app.py
 
 - [Hex2rgba](http://hex2rgba.devoth.com/) was used to convert hex colours to rgba when I needed transparent background colours without using opacity css.
 
-- code for function to capitalize first letter of username was taken from this [paulund.co.uk](https://paulund.co.uk/how-to-capitalize-the-first-letter-of-a-string-in-javascript) post.
+- Code for function to capitalize first letter of username was taken from this [paulund.co.uk](https://paulund.co.uk/how-to-capitalize-the-first-letter-of-a-string-in-javascript) post.
 
 - Code to make sticky footer was taken from this [css-tricks.com](https://css-tricks.com/couple-takes-sticky-footer/) post.
 
@@ -989,7 +989,7 @@ python app.py
 
 ## Acknowledgements
 
-Special thanks to my mentor Simen Daehlin for his never-ending patience and willingness to teach me not only what code works, but what is expected of my websites and code in industry.
+Special thanks to my mentor [Simen Daehlin](https://github.com/Eventyret) for his never-ending patience and willingness to teach me not only what code works, but what is expected of my websites and code in industry.
 
 # Contact
 To contact me feel free to email
