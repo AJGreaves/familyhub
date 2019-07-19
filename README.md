@@ -852,40 +852,6 @@ Testing information can be found in separate [testing.md](testing.md) file
 
 # Deployment
 
-## Heroku Deployment
-
-To deploy Family Hub to heroku, the following steps were taken:
-
-1. Created a `requirements.txt` file using the terminal command `pip freeze > requirements.txt`.
-
-2. Created a `Procfile` with the terminal command `echo web: python app.py > Procfile`.
-
-3. `git add` and `git commit` the new requirements and Procfile and then `git push` the project to GitHub.
-
-3. Created a new app on the [Heroku website](https://dashboard.heroku.com/apps) by clicking the "New" button in my dashboard. Gave it a  name and set the region to Europe.
-
-4. From the heroku dashboard of my newly created applicaiton, clicked on "Deploy" > "Deployment method" and selected GitHub.
-
-5. Confirmed the linking of my heroku app to the correct GitHub repository.
-
-6. In the heroku dashboard for my application, clicked on "Settings" > "Reveal Config Vars".
-
-7. Set the following config vars:
-
-| Key | Value |
- --- | ---
-DEBUG | FALSE
-IP | 0.0.0.0
-MONGO_URI | `mongodb+srv://<username>:<password>@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority`
-PORT | 5000
-SECRET_KEY | `<not_my_actual_secret_key>`
-
-8. In the heroku dashboard, clicked "Deploy".
-
-9. In the "Manual Deployment" section of this page, made sure the master branch was selected and then clicked "Deploy Branch".
-
-10. The site was successfully deployed.
-
 ## How to run this project locally
 
 To run this project on your own IDE follow the instructions below:
@@ -893,11 +859,12 @@ To run this project on your own IDE follow the instructions below:
 Ensure you have the following tools: 
 - An IDE such as [Visual Studio Code](https://code.visualstudio.com/)
 
-The following must be installed on your machine:
-- [PIP](https://pip.pypa.io/en/stable/installing/) installed on your machine.
-- [Python 3](https://www.python.org/downloads/) installed on your machine.
-- [Git](https://gist.github.com/derhuerst/1b15ff4652a867391f03) installed on your machine.
-- An account at [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) or MongoDB running locally on your machine.
+The following **must be installed** on your machine:
+- [PIP](https://pip.pypa.io/en/stable/installing/)
+- [Python 3](https://www.python.org/downloads/)
+- [Git](https://gist.github.com/derhuerst/1b15ff4652a867391f03)
+- An account at [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) or MongoDB running locally on your machine. 
+    - How to set up your Mongo Atlas account [here](https://docs.atlas.mongodb.com/).
 
 ### Instructions
 1. Save a copy of the github repository located at https://github.com/AJGreaves/familyhub by clicking the "download zip" button at the top of the page and extracting the zip file to your chosen folder. If you have Git installed on your system, you can clone the repository with the following command.
@@ -917,7 +884,7 @@ _NOTE: Your Python command may differ, such as python3 or py_
 ```
 .venv\Scripts\activate 
 ```
-_Again this may differ depending on your operating system, please check the [Python Documentation on virtual environments](https://docs.python.org/3/library/venv.html) for further instructions._
+_Again this **command may differ depending on your operating system**, please check the [Python Documentation on virtual environments](https://docs.python.org/3/library/venv.html) for further instructions._
 
 4. If needed, Upgrade pip locally with
 ```
@@ -939,6 +906,42 @@ python app.py
 ```
 
 9. You can visit the website at `http://127.0.0.1:5000`
+
+## Heroku Deployment
+
+To deploy Family Hub to heroku, take the following steps:
+
+1. Create a `requirements.txt` file using the terminal command `pip freeze > requirements.txt`.
+
+2. Create a `Procfile` with the terminal command `echo web: python app.py > Procfile`.
+
+3. `git add` and `git commit` the new requirements and Procfile and then `git push` the project to GitHub.
+
+3. Create a new app on the [Heroku website](https://dashboard.heroku.com/apps) by clicking the "New" button in your dashboard. Give it a name and set the region to Europe.
+
+4. From the heroku dashboard of your newly created application, click on "Deploy" > "Deployment method" and select GitHub.
+
+5. Confirm the linking of the heroku app to the correct GitHub repository.
+
+6. In the heroku dashboard for the application, click on "Settings" > "Reveal Config Vars".
+
+7. Set the following config vars:
+
+| Key | Value |
+ --- | ---
+DEBUG | FALSE
+IP | 0.0.0.0
+MONGO_URI | `mongodb+srv://<username>:<password>@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority`
+PORT | 5000
+SECRET_KEY | `<your_secret_key>`
+
+- To get you MONGO_URI read the MongoDB Atlas documentation [here](https://docs.atlas.mongodb.com/)
+
+8. In the heroku dashboard, click "Deploy".
+
+9. In the "Manual Deployment" section of this page, made sure the master branch is selected and then click "Deploy Branch".
+
+10. The site is now successfully deployed.
 
 # Credits
 
