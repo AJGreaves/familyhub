@@ -9,7 +9,6 @@ $(document).ready(function () {
      * prevents errors in the console on pages that do not contain this element.
      * suggested by fellow student Seán Murphy
      **/
-
     if (document.querySelector('#new-account-form')) {
 
         const newAccountForm = document.querySelector('#new-account-form');
@@ -63,7 +62,6 @@ $(document).ready(function () {
      * @param {bool} emailExists 
      * @param {bool} userExists 
      */
-
     function userExistsModal(emailExists, userExists) {
         if (emailExists && userExists) {
             $('#userExistsAlertHeading').text('Hello again');
@@ -85,7 +83,6 @@ $(document).ready(function () {
      * Constructs welcome message for new account with their username included
      * @param {string} username 
      */
-
     function confirmAccountModal(username) {
         $('#alertHeading').text('Welcome to Family Hub ' + username + '!');
         $('#newUserConfirmModal').addClass('active');
@@ -97,7 +94,6 @@ $(document).ready(function () {
      * When the data has been checked and responses return from Flask, the function then 
      * responds to the user in the browser depending on what the response
      */
-
     if (document.querySelector('#login-form')) {
 
         const loginForm = document.querySelector('#login-form');
@@ -150,6 +146,13 @@ $(document).ready(function () {
         });
     }
 
+    /**
+     * Takes a string that indicates which form from the account settings page has been selected,
+     * Then packages this data to send to python and check if it is correct. Receives a response from
+     * python and launches modal to give appropriate response to the user.
+     * 
+     * @param {string} item | id of form that has been submitted
+     */
     function checkAndUpdate(item) {
 
         let key = item.slice(0, 4);
@@ -196,7 +199,6 @@ $(document).ready(function () {
     /**
      * toggle disabled/required attributes on elements when on/off switch clicked
      */
-
     $('#isFree').click(function () {
         let from = $('#from');
 
@@ -221,14 +223,17 @@ $(document).ready(function () {
         }
     });
 
-    /* to activate fields to input start / end times for days only when that day is clicked */
-
+    /**
+     *  to activate fields to input start / end times for days only when that day is clicked 
+     * */
     $(".click-days-js").click(function () {
         let day = this.id;
         activateTimes($('#' + day + 'Start'), $('#' + day + 'End'), $('.' + day + '-times'));
     });
 
-
+    /**
+     *  to activate fields to input start / end times for days only when that day is clicked 
+     * */
     function activateTimes(start, end, times) {
         if (start.attr('required')) {
             start.attr('disabled', '').removeAttr('required').val('');
@@ -269,7 +274,6 @@ $(document).ready(function () {
      * Returns true if both fields to be compared have been filled in
      * @param {string} day 
      */
-
     function countTwo(key) {
         let count = 0;
         let selector = $(key);
@@ -292,7 +296,6 @@ $(document).ready(function () {
      * day of the week have been filled in
      * @param {string} day 
      */
-
     function countTimes(day) {
         let count = 0;
         let selector = $('.compare-' + day + '-js');
@@ -316,7 +319,6 @@ $(document).ready(function () {
      * If incorrect input the end time is deleted so user cannot submit form with incorrect data
      * @param {string} day 
      */
-
     function compareTimes(day) {
 
         let times = [];
@@ -346,7 +348,6 @@ $(document).ready(function () {
      * them to see if the user selected end date the same as or before the start date. 
      * If incorrect input the end date is deleted so user cannot submit form with incorrect data
      */
-
     function compareDates() {
         let dates = [];
         let input = $('.compare-date-js');
@@ -371,7 +372,6 @@ $(document).ready(function () {
      * Function to make sure at least one checkbox is selected for categories, 
      * age range and indoor/outdoor in add/edit forms
      */
-
     let selectors = ['#timesInput :', '.in-out-js:', '.age-range-js:', '.categories :'];
     $(selectors).each(function (i) {
         let checkboxGroup = $(selectors[i] + 'checkbox[required]');
@@ -391,7 +391,6 @@ $(document).ready(function () {
      * cannot be sent with only one of the two fields filled in, but deactivates the required attribute on a pair
      * of fields if both are emptied. 
      */
-
     let inputClasses = [".email-input-js", ".password-input-js"];
     $(inputClasses).each(function (i) {
         $(inputClasses[i]).change(function () {
