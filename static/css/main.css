@@ -651,6 +651,7 @@ the inline background style for the background image  */
 }
 
 .readmore-link {
+  margin-top: 0.25rem;
   color: #5ca4a9;
   -webkit-transition: 0.3s ease-in-out 0.3s;
   transition: 0.3s ease-in-out 0.3s;
