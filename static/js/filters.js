@@ -1,9 +1,10 @@
 /**
- * Bug Fix: To run Jasmine testing comment out 
- * the document ready function as leaving it in causes errors. 
+ * Bug Fix: To run Jasmine testing 
+ * COMMENT OUT THE DOCUMENT READY FUNCTION 
+ * as leaving it in causes errors. 
  **/
 
-// $( document ).ready(function() {
+$( document ).ready(function() {
     /**
      * Variables
      */
@@ -69,6 +70,11 @@
             });
     }
 
+    /**
+     * returns and array of ids of all the checkbox input fields
+     * that have been selected.
+     * @param {array} input | array of all fields with specific class name.
+     */
     function getCheckedIds(input) {
         let ids = [];
         input.each(function () {
@@ -84,7 +90,6 @@
      * that an be accessed outside of the fetch function.
      * @param {array} data 
      */
-
     function getFullData(data) {
         let numResults = data.length;
         for (let i = 0; i < numResults; i++) {
@@ -146,7 +151,6 @@
      * @param {str} page | Collected id from pagination selection clicked
      * @param {int} numOfPages | Total number of pages available in pagination
      */
-
     function displayPages(page, numOfPages) {
         let pg_index = '';
         if (page != "prev" && page != "next") {
@@ -180,7 +184,6 @@
      * Builds html string for number of pages needed in pagination.
      * @param {int} num | number of pages needed
      */
-
     function buildPagination(num) {
         let paginationSubString = '';
         for (let i = 0; i < num; i++) {
@@ -238,7 +241,6 @@
      * for each card to display the search results
      * @param {array} searchResults 
      */
-
     function buildSearchResultsString(searchResults) {
         let searchResultsString = '';
         for (let i = 0; i < searchResults.length; i++) {
@@ -256,7 +258,6 @@
      * to be added to the final string of html to be inserted into the page.
      * @param {array object} searchResult 
      */
-
     function cardTemplate(searchResult) {
         let id_string = searchResult._id.$oid;
         let slug = slugify(searchResult.title);
@@ -290,7 +291,6 @@
      * Clears all checked filters and selected options on search page,
      * then reloads all results from the database.
      */
-
     $('.clear-filters').click(function () {
         let inputs = $('input');
         let options = $('option');
@@ -313,11 +313,17 @@
         return;
     });
 
+    /**
+     * Opens filters page on mobile
+     */
     function openFilters() {
         $('#filter-nav, main, footer, nav').addClass('filters-open');
         return;
     }
 
+    /**
+     * Closes filters page on mobile
+     */
     function closeFilters() {
         $('#filter-nav, main, footer, nav').removeClass('filters-open');
         return;
@@ -325,4 +331,4 @@
 
     fetchResults();
 
-// });
+});
