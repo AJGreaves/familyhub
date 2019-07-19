@@ -221,3 +221,14 @@ function slugify(string) {
         .replace(/^-+/, '') // Trim - from start of text
         .replace(/-+$/, ''); // Trim - from end of text
 }
+
+/**
+ * Activates tooltips
+ */
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
+
+$('[data-toggle="tooltip"]').tooltip({
+    container: 'body'
+});

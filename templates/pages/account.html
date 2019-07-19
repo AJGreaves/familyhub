@@ -14,8 +14,9 @@
             <div class="row">
                 <div class="col-12">
                     <h1>My account</h1>
-                    <a href="{{url_for('settings_page', username=session['user'])}}" aria-label="Account settings">
-                        <i class="fas fa-cog account-cog float-right heading-btn"></i>
+                    <a href="{{url_for('settings_page', username=session['user'])}}" aria-label="Account settings" 
+                    data-toggle="tooltip" data-placement="bottom" title="Account Settings" class="float-right">
+                        <i class="fas fa-cog account-cog heading-btn"></i>
                     </a>
                     <hr>
                 </div>
